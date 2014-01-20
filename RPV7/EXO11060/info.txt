@@ -1,0 +1,9 @@
+sqrts: 7.00
+lumi: 5.00
+exclusions: Rg3j 200 0 460
+contact: Dan Duggan
+pas: EXO-11-060
+url: https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsEXO11060
+private: 0
+order: nlonll
+comment: gluino into three jets

@@ -1,0 +1,8 @@
+sqrts: 7.00
+lumi: 1.10
+exclusions: T1bbbb 575 825
+exclusions: T1tttt 475 575
+pas: SUS-11-006
+url: https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS11006
+private: 0
+order: nlo

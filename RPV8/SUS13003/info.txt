@@ -1,0 +1,11 @@
+sqrts: 8.00
+lumi: 19.50
+exclusions: Stop233 0 930
+exclusions: Stop122 0 1100
+exclusions: StopLQD233 0 770
+contact: ?
+pas: SUS-13-003
+url: https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS13003
+private: 0
+order: nlonll
+journal: http://cds.cern.ch/record/1525539

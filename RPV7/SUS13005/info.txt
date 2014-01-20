@@ -1,0 +1,8 @@
+sqrts: 7.00
+lumi: 4.98
+contact: M. Ata, M. Endres, A. Guth, T. Hebbeker, A. Meyer, L. Sonnenschein, D.  Teyssier, M.Weber
+pas: SUS-13-005
+url: https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS13005
+private: 0
+order: nlonll
+comment: smuon versus chi10

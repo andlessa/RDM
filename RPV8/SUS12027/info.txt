@@ -1,0 +1,24 @@
+sqrts: 8.00
+lumi: 9.20
+exclusions: Hadronic112q 0 1750
+exclusions: SemiLeptonic231q 0 1300
+exclusions: Leptonic233q 0 1625
+exclusions: Leptonic123g 0 1300
+exclusions: SemiLeptonic233g 0 1000
+exclusions: Leptonic233g 0 1200
+exclusions: Leptonic122g 0 1450
+exclusions: Stop123 0 900
+exclusions: bprime 0 760
+exclusions: Stop233 0 850
+exclusions: SemiLeptonic231g 0 1000
+exclusions: Hadronic112g 0 1200
+exclusions: Leptonic122q 0 1875
+exclusions: Stop122 0 1000
+exclusions: SemiLeptonic233q 0 1325
+exclusions: Leptonic123q 0 1725
+contact: Sanjay Arora
+pas: SUS-12-027
+url: https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS12027
+private: 0
+order: nlonll
+journal: http://cdsweb.cern.ch/record/1494689/files/SUS-12-027-pas.pdf

@@ -1,0 +1,9 @@
+sqrts: 7.00
+lumi: 4.80
+exclusions: Rstop 0 453
+contact: ?
+pas: EXO-12-002
+url: https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsEXO12002
+private: 0
+order: nlonll
+comment: stop into t b tau, lambdaprime_333=1
