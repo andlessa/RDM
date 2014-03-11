@@ -11,7 +11,7 @@ publisheddata: True
 private: 0
 dictionary: 1
 condition: TSlepSlep -> [[['mu+']],[['mu-']]] > [[['e+']],[['e-']]]
-fuzzycondition: TSlepSlep -> Cgtr([[['mu+']],[['mu-']]],[[['e+']],[['e-']]])
+fuzzycondition: TSlepSlep -> cGtr([[['mu+']],[['mu-']]],[[['e+']],[['e-']]])
 constraint: TSlepSlep -> [[['e+']],[['e-']]]+[[['mu+']],[['mu-']]]
 category: TSlepSlep -> directslep
 axes: TSlepSlep: M1 M0, TSlepSlepL: M1 M0, TSlepSlepR: M1 M0, TChipChimSlepSnu: M1 M0 050
