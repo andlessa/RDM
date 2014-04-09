@@ -1,0 +1,7 @@
+sqrts: 8.00
+lumi: 20.10
+pas: ATLAS-CONF-2013-053
+constraint: T2bb -> [[['b']],[['b']]]
+condition: T2bb -> None
+fuzzycondition: T2bb -> None
+axes: T2bb: M1 M0

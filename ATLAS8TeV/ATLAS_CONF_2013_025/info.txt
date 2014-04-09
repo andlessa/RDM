@@ -1,0 +1,7 @@
+sqrts: 8.00
+lumi: 20.70
+pas: ATLAS-CONF-2013-025
+constraint: T6ttZZ -> [[['Z'],['t']],[['Z'],['t']]]
+condition: T6ttZZ -> None
+fuzzycondition: T6ttZZ -> None
+axes: T6ttZZ: M1 M0 x100C180

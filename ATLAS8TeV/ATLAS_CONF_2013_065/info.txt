@@ -1,0 +1,10 @@
+sqrts: 8.00
+lumi: 20.30
+pas: ATLAS-CONF-2013-065
+constraint: T2tt -> [[['t+']],[['t-']]]
+constraint: T6bbWW -> [[['b'],['W+']],[['b'],['W-']]]
+condition: T2tt -> None
+condition: T6bbWW -> None
+fuzzycondition: T2tt -> None
+fuzzycondition: T6bbWW -> None
+axes: T2tt: M1 M0, T6bbWW: M2 M0 M1300

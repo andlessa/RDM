@@ -1,0 +1,10 @@
+sqrts: 8.00
+lumi: 20.30
+pas: ATLAS-CONF-2013-048
+constraint: T2bbWW -> [[['b','W+']],[['b','W-']]]
+constraint: T6bbWW -> [[['b'],['W+']],[['b'],['W-']]]
+condition: T2bbWW -> None
+condition: T6bbWW -> None
+fuzzycondition: T2bbWW -> None
+fuzzycondition: T6bbWW -> None
+axes: T2bbWW: M1 M0,T6bbWW: M1 M2 LSP001 - M1 M0 D(M2/M1)=010 - M2 M0 M1300 - M1 M0 x200 - M1 M0 C150

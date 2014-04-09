@@ -1,0 +1,7 @@
+sqrts: 8.00
+lumi: 19.70
+pas: SUS-13-016
+constraint: T1tttt -> [[['t','t']],[['t','t']]]
+condition: T1tttt -> None
+fuzzycondition: T1tttt -> None
+axes: T1tttt: M1 M0

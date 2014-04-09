@@ -1,0 +1,7 @@
+sqrts: 8.00
+lumi: 19.50
+pas: SUS-13-017
+constraint: TChiChipmHW -> [[['higgs']],[['W']]]
+condition: TChiChipmHW -> None
+fuzzycondition: TChiChipmHW -> None
+axes: TChiChipmHW: M1 M0

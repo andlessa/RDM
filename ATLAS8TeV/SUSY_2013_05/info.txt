@@ -1,0 +1,14 @@
+sqrts: 8.00
+lumi: 20.10
+pas: SUSY-2013-05
+publication: http://link.springer.com/article/10.1007/JHEP10%282013%29189
+constraint: T6bbWWon -> [[['b'],['W']],[['b'],['W']]]
+constraint: T6bbWWoff -> [[['b'],['L','nu']],[['b'],['L','nu']]] + [[['b'],['L','nu']],[['b'],['jet','jet']]] + [[['b'],['jet','jet']],[['b'],['jet','jet']]]
+constraint: T2bb -> [[['b']],[['b']]]
+condition: T6bbWWon -> None
+condition: T6bbWWoff -> None
+condition: T2bb -> None
+fuzzycondition: T6bbWWon -> None
+fuzzycondition: T6bbWWoff -> None
+fuzzycondition: T2bb -> None
+axes: T2bb: M1 M0,T6bbWWoff: M2 M0 M1300 - M1 M0 D(M2/M0)=005 - M1 M0 D(M2/M0)=020, T6bbWWon: M2 M0 M1300

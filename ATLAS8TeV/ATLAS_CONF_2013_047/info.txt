@@ -1,0 +1,22 @@
+sqrts: 8.00
+lumi: 20.30
+pas: ATLAS-CONF-2013-047
+constraint: TGQ -> [[['jet','jet']],[['jet']]]
+constraint: T6WW -> [[['jet'],['W']],[['jet'],['W']]]
+constraint: T2 -> [[['jet']],[['jet']]]
+constraint: T1 -> [[['jet','jet']],[['jet','jet']]]
+constraint: T5WW -> [[['jet','jet'],['W']],[['jet','jet'],['W']]]
+constraint: T5tctc -> [[['t'],['jet']],[['t'],['jet']]]
+condition: TGQ -> None
+condition: T6WW -> None
+condition: T2 -> None
+condition: T1 -> None
+condition: T5WW -> None
+condition: T5tctc -> None
+fuzzycondition: TGQ -> None
+fuzzycondition: T6WW -> None
+fuzzycondition: T2 -> None
+fuzzycondition: T1 -> None
+fuzzycondition: T5WW -> None
+fuzzycondition: T5tctc -> None
+axes: T1: M1 M0, T2: M1 M0, TGQ: M1 M0, T5WW: M1 M2 LSP060 - M1 M0 050, T6WW: M1 M2 LSP060 - M1 M0 050, T5tctc: M1 M2 D(M2/M0)=020
