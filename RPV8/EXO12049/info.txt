@@ -1,9 +1,0 @@
-sqrts: 8.00
-lumi: 19.50
-exclusions: Gluino113/223 0 855
-exclusions: Rg3j 0 670
-contact: ?
-pas: EXO-12-049
-url: https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS12049
-private: 0
-order: nlonll
