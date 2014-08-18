@@ -3,9 +3,12 @@ lumi: 19.50
 pas: SUS-13-011
 publication: http://link.springer.com/article/10.1140%2Fepjc%2Fs10052-013-2677-2
 constraint: T2tt -> [[['t']],[['t']]]
+constraint: T2tt_offshelltop ->
 constraint: T6bbWW -> [[['b'],['W']],[['b'],['W']]]
 condition: T2tt -> None
 condition: T6bbWW -> None
 fuzzycondition: T2tt -> None
 fuzzycondition: T6bbWW -> None
-axes: T2tt: M1 M0, T6bbWW: M1 M0 025 - M1 M0 050 - M1 M0 075
+category: T2tt -> thirdgen
+category: T6bbWW -> thirdgen
+axes: T2tt: M1 M0, T2tt_offshelltop: M1 M0, T6bbWW: M1 M0 025 - M1 M0 050 - M1 M0 075

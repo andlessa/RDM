@@ -1,8 +1,0 @@
-sqrts: 8.00
-lumi: 9.20
-pas: SUS-12-026
-constraint: T1tttt -> [[['t+','t-']],[['t+','t-']]]
-condition: T1tttt -> None
-fuzzycondition: T1tttt -> None
-axes: T1tttt: M1 M0
-superseded_by: SUS13002 (more data)

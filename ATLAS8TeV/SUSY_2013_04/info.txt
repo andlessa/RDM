@@ -5,4 +5,5 @@ publication: http://link.springer.com/article/10.1007/JHEP10%282013%29130
 constraint: T1tttt -> [[['t','t']],[['t','t']]]
 condition: T1tttt -> None
 fuzzycondition: T1tttt -> None
+category: T1tttt -> hadronic
 axes: T1tttt: M1 M0

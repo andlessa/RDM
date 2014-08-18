@@ -1,8 +1,9 @@
 sqrts: 8.00
 lumi: 19.50
 pas: SUS-13-012
-constraint: T1tttt -> [[['t','t']],[['t','t']]]
+constraint: T2_OneSq ->
 constraint: T2 -> [[['jet']],[['jet']]]
+constraint: T1tttt -> [[['t','t']],[['t','t']]]
 constraint: T1 -> [[['jet','jet']],[['jet','jet']]]
 condition: T1tttt -> None
 condition: T2 -> None
@@ -10,4 +11,7 @@ condition: T1 -> None
 fuzzycondition: T1tttt -> None
 fuzzycondition: T2 -> None
 fuzzycondition: T1 -> None
-axes: T1: M1 M0, T2: M1 M0, T1tttt: M1 M0
+category: T1tttt -> hadronic
+category: T2 -> hadronic
+category: T1 -> hadronic
+axes: T1: M1 M0, T2: M1 M0, T1tttt: M1 M0, T2_OneSq: M1 M0

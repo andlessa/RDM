@@ -1,8 +1,0 @@
-sqrts: 8.00
-lumi: 12.80
-pas: ATLAS-CONF-2013-001
-constraint: T6bbWWoff -> [[['b'],['L','nu']],[['b'],['L','nu']]] + [[['b'],['L','nu']],[['b'],['jet','jet']]] + [[['b'],['jet','jet']],[['b'],['jet','jet']]]
-condition: T6bbWWoff -> None
-fuzzycondition: T6bbWWoff -> None
-axes: T6bbWWoff: M1 M0 D(M2/M0)=005 - M1 M0 D(M2/M0)=020
-superseded_by: SUSY_2013_05 (published version)

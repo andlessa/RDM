@@ -2,6 +2,11 @@ sqrts: 8.00
 lumi: 19.30
 pas: SUS-13-007
 constraint: T1tttt -> [[['t','t']],[['t','t']]]
+constraint: T5tttt -> [[['t'],['t']],[['t'],['t']]]
 condition: T1tttt -> None
+condition: T5tttt -> None
 fuzzycondition: T1tttt -> None
-axes: T1tttt: M1 M0
+fuzzycondition: T5tttt -> None
+category: T1tttt -> hadronic
+category: T5tttt -> hadronic, thirdgen
+axes: T1tttt: M1 M0, T5tttt: M2 M0 M11000 - M0 M2 LSP050

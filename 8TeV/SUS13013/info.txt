@@ -17,4 +17,9 @@ fuzzycondition: T5tttt -> None
 fuzzycondition: T7btbtWW -> Not yet assigned
 fuzzycondition: T1tttt -> None
 fuzzycondition: T5WW -> None
+category: T6ttWW -> thirdgen
+category: T5tttt -> hadronic, thirdgen
+category: T7btbtWW -> hadronic, thirdgen
+category: T1tttt -> hadronic
+category: T5WW -> hadronic
 axes: T1tttt: M1 M0, T5tttt: M1 M2 LSP050, T6ttWW: M1 M2 LSP050 - M1 M0 x200 - M1 M0 x125, T7btbtWW: M1 M2 M3150 LSP050 - M1 M2 M3300 LSP050, T5WW: M1 M0 020 - M1 M0 050

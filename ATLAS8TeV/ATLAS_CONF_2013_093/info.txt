@@ -1,7 +1,0 @@
-sqrts: 8.00
-lumi: 20.30
-pas: ATLAS-CONF-2013-093
-constraint: TChiChipmHW -> [[['higgs']],[['W']]]
-condition: TChiChipmHW -> None
-fuzzycondition: TChiChipmHW -> None
-axes: TChiChipmHW: M1 M0
