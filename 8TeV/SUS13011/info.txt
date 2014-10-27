@@ -11,4 +11,4 @@ fuzzycondition: T2tt -> None
 fuzzycondition: T6bbWW -> None
 category: T2tt -> thirdgen
 category: T6bbWW -> thirdgen
-axes: T2tt: M1 M0, T2tt_offshelltop: M1 M0, T6bbWW: M1 M0 025 - M1 M0 050 - M1 M0 075
+axes: T2tt: M1 M0, T2tt_offshelltop: M1 M0, T6bbWW:  M1 M0 050 - M1 M0 025 - M1 M0 075

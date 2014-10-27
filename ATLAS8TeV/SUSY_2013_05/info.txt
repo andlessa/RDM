@@ -14,4 +14,5 @@ fuzzycondition: T2bb -> None
 category: T6bbWWon -> thirdgen
 category: T6bbWWoff -> thirdgen
 category: T2bb -> thirdgen
-axes: T2bb: M1 M0,T6bbWWoff: M2 M0 M1300 - M1 M0 D(M2/M0)=005 - M1 M0 D(M2/M0)=020, T6bbWWon: M2 M0 M1300
+axes: T2bb: M1 M0,T6bbWWoff: M2 M0 M1300 - M1 M0 D(M2/M0)=005 - M1 M0 D(M2/M0)=020, T6bbWWon: M2 M0 M1300 - M1 M0 C150
+supersedes: ATLAS_CONF_2013_001

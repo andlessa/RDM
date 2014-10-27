@@ -1,0 +1,13 @@
+sqrts: 8.00
+lumi: 19.50
+pas: SUS-13-024
+publication: http://www.sciencedirect.com/science/article/pii/S0370269314005553
+constraint: T6ZZtt -> [[['Z'],['t']],[['Z'],['t']]]
+constraint: T6HHtt -> [[['higgs'],['t']],[['higgs'],['t']]]
+condition: T6ZZtt -> None
+condition: T6HHtt -> None
+fuzzycondition: T6ZZtt -> None
+fuzzycondition: T6HHtt -> None
+category: T6ZZtt -> thirdgen
+category: T6HHtt -> thirdgen
+axes: T6HHtt: M1 M2 D(M2/M0)=175, T6ZZtt: M1 M2 D(M2/M0)=175
