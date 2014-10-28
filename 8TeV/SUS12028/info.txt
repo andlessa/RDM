@@ -7,7 +7,6 @@ constraint: T2tt -> [[['t']],[['t']]]
 constraint: T1bbbb -> [[['b','b']],[['b','b']]]
 constraint: T2 -> [[['jet']],[['jet']]]
 constraint: T1 -> [[['jet','jet']],[['jet','jet']]]
-constraint: T2_OneSq -> [[['jet']],[['jet']]]
 constraint: T2bb -> [[['b']],[['b']]]
 condition: T1bbbb -> None
 condition: T2tt -> None

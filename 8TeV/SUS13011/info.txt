@@ -3,7 +3,6 @@ lumi: 19.50
 pas: SUS-13-011
 publication: http://link.springer.com/article/10.1140%2Fepjc%2Fs10052-013-2677-2
 constraint: T2tt -> [[['t']],[['t']]]
-constraint: T2tt_offshelltop ->
 constraint: T6bbWW -> [[['b'],['W']],[['b'],['W']]]
 condition: T2tt -> None
 condition: T6bbWW -> None
