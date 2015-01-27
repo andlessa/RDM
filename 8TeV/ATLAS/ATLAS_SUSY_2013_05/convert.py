@@ -8,15 +8,6 @@
 
 """   
 
-import sys
-sys.path.append('../../../../smodels-utils/smodels_utils/dataPreparation')
-#import dataPreparation
-#from dataPreparation import 
-from inputObjects import TxName, MetaInfo
-from databaseCreation import databaseCreator
-from origPlotObjects import x, y
-#import inputObjects
-
 
 info = MetaInfo('ATLAS-SUSY-2013-05')
 info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-05/'
