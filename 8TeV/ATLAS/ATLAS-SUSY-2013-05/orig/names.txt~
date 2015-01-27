@@ -1,0 +1,35 @@
+HepData     Figure      topology        object
+Table 1     Fig_5       T2bb            observed exclusion line
+Table 2     Fig_5       T2bb            observed exclusion line +1sigma
+Table 3     Fig_5       T2bb            observed exclusion line -1sigma
+Table 4     Fig_5       T2bb            expected exclusion line
+Table 5     Fig_5       T2bb            expected exclusion line +1sigma
+Table 6     Fig_5       T2bb            expected exclusion line -1sigma
+Table 7     Fig_6a      T6bbWWM1300     observed exclusion line
+Table 8     Fig_6a      T6bbWWM1300     observed exclusion line +1sigma
+Table 9     Fig_6a      T6bbWWM1300     observed exclusion line -1sigma
+Table 10    Fig_6a      T6bbWWM1300     expected exclusion line
+Table 11    Fig_6a      T6bbWWM1300     expected exclusion line +1sigma
+Table 12    Fig_6a      T6bbWWM1300     expected exclusion line -1sigma
+Table 13    Fig_6b      T6bbWWC150     observed exclusion line
+Table 14    Fig_6b      T6bbWWC150     observed exclusion line +1sigma
+Table 15    Fig_6b      T6bbWWC150     observed exclusion line -1sigma
+Table 16    Fig_6b      T6bbWWC150     expected exclusion line
+Table 17    Fig_6b      T6bbWWC150     expected exclusion line +1sigma
+Table 18    Fig_6b      T6bbWWC150     expected exclusion line -1sigma
+Table 19    Fig_6c      T6bbWWoffD005   observed exclusion line
+Table 20    Fig_6c      T6bbWWoffD005   observed exclusion line +1sigma
+Table 21    Fig_6c      T6bbWWoffD005   observed exclusion line -1sigma
+Table 22    Fig_6c      T6bbWWoffD005   expected exclusion line
+Table 23    Fig_6c      T6bbWWoffD005   expected exclusion line +1sigma
+Table 24    Fig_6c      T6bbWWoffD005   expected exclusion line -1sigma
+Table 25    Fig_6d      T6bbWWoffD020   observed exclusion line
+Table 26    Fig_6d      T6bbWWoffD020   observed exclusion line +1sigma
+Table 27    Fig_6d      T6bbWWoffD020   observed exclusion line -1sigma
+Table 28    Fig_6d      T6bbWWoffD020   expected exclusion line
+Table 29    Fig_6d      T6bbWWoffD020   expected exclusion line +1sigma
+Table 30    Fig_6d      T6bbWWoffD020   expected exclusion line -1sigma
+Table 32    AuxFig_4    T2bb            observed upper limits [pb]
+Table 37    AuxFig_8a   T6bbWWoffD005   observed upper limits [pb]
+Table 38    AuxFig_8b   T6bbWWoffD020   observed upper limits [pb]
+Table 39    AuxFig_9    T6bbWWM1300     observed upper limits [pb]
