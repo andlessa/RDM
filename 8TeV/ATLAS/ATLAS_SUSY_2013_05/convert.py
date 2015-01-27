@@ -8,6 +8,9 @@
 
 """   
 
+from smodels_utils.dataPreparation.inputObjects import TxName, MetaInfo
+from smodels_utils.dataPreparation.databaseCreation import databaseCreator
+from smodels_utils.dataPreparation.origPlotObjects import x, y
 
 info = MetaInfo('ATLAS-SUSY-2013-05')
 info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-05/'
