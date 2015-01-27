@@ -1,0 +1,120 @@
+HepData     Figure      topology        object
+Table 1     Fig_5       T2bb            observed exclusion line
+Table 2     Fig_5       T2bb            observed exclusion line +1sigma
+Table 3     Fig_5       T2bb            observed exclusion line -1sigma
+Table 4     Fig_5       T2bb            expected exclusion line
+Table 5     Fig_5       T2bb            expected exclusion line +1sigma
+Table 6     Fig_5       T2bb            expected exclusion line -1sigma
+Table 7     Fig_6a      T6bbWWM1300     observed exclusion line
+Table 8     Fig_6a      T6bbWWM1300     observed exclusion line +1sigma
+Table 9     Fig_6a      T6bbWWM1300     observed exclusion line -1sigma
+Table 10    Fig_6a      T6bbWWM1300     expected exclusion line
+Table 11    Fig_6a      T6bbWWM1300     expected exclusion line +1sigma
+Table 12    Fig_6a      T6bbWWM1300     expected exclusion line -1sigma
+Table 13    Fig_6b      T6bbWWC150     observed exclusion line
+Table 14    Fig_6b      T6bbWWC150     observed exclusion line +1sigma
+Table 15    Fig_6b      T6bbWWC150     observed exclusion line -1sigma
+Table 16    Fig_6b      T6bbWWC150     expected exclusion line
+Table 17    Fig_6b      T6bbWWC150     expected exclusion line +1sigma
+Table 18    Fig_6b      T6bbWWC150     expected exclusion line -1sigma
+Table 19    Fig_6c      T6bbWWoffD005   observed exclusion line
+Table 20    Fig_6c      T6bbWWoffD005   observed exclusion line +1sigma
+Table 21    Fig_6c      T6bbWWoffD005   observed exclusion line -1sigma
+Table 22    Fig_6c      T6bbWWoffD005   expected exclusion line
+Table 23    Fig_6c      T6bbWWoffD005   expected exclusion line +1sigma
+Table 24    Fig_6c      T6bbWWoffD005   expected exclusion line -1sigma
+Table 25    Fig_6d      T6bbWWoffD020   observed exclusion line
+Table 26    Fig_6d      T6bbWWoffD020   observed exclusion line +1sigma
+Table 27    Fig_6d      T6bbWWoffD020   observed exclusion line -1sigma
+Table 28    Fig_6d      T6bbWWoffD020   expected exclusion line
+Table 29    Fig_6d      T6bbWWoffD020   expected exclusion line +1sigma
+Table 30    Fig_6d      T6bbWWoffD020   expected exclusion line -1sigma
+Table 32    AuxFig_4    T2bb            observed upper limits [pb]
+Table 37    AuxFig_8a   T6bbWWoffD005   observed upper limits [pb]
+Table 38    AuxFig_8b   T6bbWWoffD020   observed upper limits [pb]
+Table 39    AuxFig_9    T6bbWWM1300     observed upper limits [pb]
+
+
+T2bb
+
+	Fig. 4	http://hepdata.cedar.ac.uk/resource/6144/figAuxiliaryFigure4.png
+
+	limit			T2bb_2014-09-22.dat		http://hepdata.cedar.ac.uk/view/ins1247462/d32/input	comment
+	expectedlimit		file	link	comment
+
+	Fig. 5	https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-05/fig_05.pdf
+
+	exclusion		T2bb_exc.dat	http://hepdata.cedar.ac.uk/view/ins1247462/d1/input	comment
+	exclusionp1		T2bb_excPlusSigma.dat	http://hepdata.cedar.ac.uk/view/ins1247462/d2/input	comment
+	exclusionm1		T2bb_excMinusSigma.dat	http://hepdata.cedar.ac.uk/view/ins1247462/d3/input	comment
+	expectedexclusion	T2bb_excExpected.dat	http://hepdata.cedar.ac.uk/view/ins1247462/d4/input	comment
+	expectedexclusionp1	T2bb_excExpectedPlusSigma.dat	http://hepdata.cedar.ac.uk/view/ins1247462/d5/input	comment
+	expectedexclusionm1	T2bb_excExpectedMinusSigma.dat	http://hepdata.cedar.ac.uk/view/ins1247462/d6/input	comment
+
+
+T6bbWWM1300
+
+	Fig. 9	http://hepdata.cedar.ac.uk/resource/6144/figAuxiliaryFigure9.png
+
+	limit			T6bbWWM1300_2014-09-22.dat		http://hepdata.cedar.ac.uk/view/ins1247462/d39/input	comment
+	expectedlimit		file	link	comment
+
+	Fig.6a	http://hepdata.cedar.ac.uk/resource/6144/figFigure6A.png
+
+	exclusion		T6bbWWM1300_exc.dat	http://hepdata.cedar.ac.uk/view/ins1247462/d7/input	comment
+	exclusionp1		T6bbWWM1300_excPlusSigma.dat	http://hepdata.cedar.ac.uk/view/ins1247462/d8/input	comment
+	exclusionm1		T6bbWWM1300_excMinusSigma.dat	http://hepdata.cedar.ac.uk/view/ins1247462/d9/input	comment
+	expectedexclusion	T6bbWWM1300_excExpected.dat	http://hepdata.cedar.ac.uk/view/ins1247462/d10/input	comment
+	expectedexclusionp1	T6bbWWM1300_excExpectedPlusSigma.dat	http://hepdata.cedar.ac.uk/view/ins1247462/d11/input	comment
+	expectedexclusionm1	T6bbWWM1300_excExpectedMinusSigma.dat	http://hepdata.cedar.ac.uk/view/ins1247462/d12/input	comment
+
+
+T6bbWWoffD005
+
+	Fig. 8a	http://hepdata.cedar.ac.uk/resource/6144/figAuxiliaryFigure8A.png
+
+	limit			T6bbWWoffD005_2014-09-22.dat		http://hepdata.cedar.ac.uk/view/ins1247462/d37/input	comment
+	expectedlimit		file	link	comment
+
+	Fig.6c	http://hepdata.cedar.ac.uk/resource/6144/figFigure6C.png
+
+	exclusion		T6bbWWD005_exc.dat	http://hepdata.cedar.ac.uk/view/ins1247462/d19/input	comment
+	exclusionp1		T6bbWWoffD005_excPlusSigma.dat	http://hepdata.cedar.ac.uk/view/ins1247462/d20/input	comment
+	exclusionm1		T6bbWWoffD005_excMinusSigma.dat	http://hepdata.cedar.ac.uk/view/ins1247462/d21/input	comment
+	expectedexclusion	T6bbWWoffD005_excExpected.dat	http://hepdata.cedar.ac.uk/view/ins1247462/d22/input	comment
+	expectedexclusionp1	T6bbWWoffD005_excExpectedPlusSigma.dat	http://hepdata.cedar.ac.uk/view/ins1247462/d23/input	comment
+	expectedexclusionm1	T6bbWWoffD005_excExpectedMinusSigma.dat	http://hepdata.cedar.ac.uk/view/ins1247462/d24/input	comment
+
+
+T6bbWWoffD020
+
+	Fig. 8b	http://hepdata.cedar.ac.uk/resource/6144/figAuxiliaryFigure8B.png
+
+	limit			T6bbWWoffD020_2014-09-22.dat		http://hepdata.cedar.ac.uk/view/ins1247462/d38/input	comment
+	expectedlimit		file	link	comment
+
+	Fig.6d	http://hepdata.cedar.ac.uk/resource/6144/figFigure6D.png
+
+	exclusion		T6bbWWD020_exc.dat	http://hepdata.cedar.ac.uk/view/ins1247462/d25/input	comment
+	exclusionp1		T6bbWWoffD020_excPlusSigma.dat	http://hepdata.cedar.ac.uk/view/ins1247462/d26/input	comment
+	exclusionm1		T6bbWWoffD020_excMinusSigma.dat	http://hepdata.cedar.ac.uk/view/ins1247462/d27/input	comment
+	expectedexclusion	T6bbWWoffD020_excExpected.dat	http://hepdata.cedar.ac.uk/view/ins1247462/d28/input	comment
+	expectedexclusionp1	T6bbWWoffD020_excExpectedPlusSigma.dat	http://hepdata.cedar.ac.uk/view/ins1247462/d29/input	comment
+	expectedexclusionm1	T6bbWWoffD020_excExpectedMinusSigma.dat	http://hepdata.cedar.ac.uk/view/ins1247462/d30/input	comment
+
+
+T6bbWWonC150
+
+	Fig. 	link
+
+	limit			file		link	comment
+	expectedlimit		file	link	comment
+
+	Fig.	link
+
+	exclusion		file	link	comment
+	exclusionp1		file	link	comment
+	exclusionm1		file	link	comment
+	expectedexclusion	file	link	comment
+	expectedexclusionp1	file	link	comment
+	expectedexclusionm1	file	link	comment
