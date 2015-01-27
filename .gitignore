@@ -4,6 +4,8 @@
 !info.txt
 !sms.root
 !sms.py
+!*/*/*/orig/*
+!convert.py
 2012/OSedge/orig/
 2012/RA2b/old/
 2012/RA4ANN/old/
