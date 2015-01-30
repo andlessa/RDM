@@ -3,8 +3,8 @@
 !*/
 !info.txt
 !sms.root
-!sms.py
 !*/*/*/orig/*
+!*/*/*/*.txt
 !convert.py
 2012/OSedge/orig/
 2012/RA2b/old/
