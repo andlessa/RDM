@@ -1,7 +1,8 @@
-id: T6bbWW
+txName: T6bbWW
 condition: None
 fuzzycondition: None
 constraint: [[['b'],['W']],[['b'],['W']]]
+validated: False
 axes: Eq(mother,300.0)_Eq(lsp,y)_Eq(inter,x)
 branchcondition: equal Branches
 checked: VM

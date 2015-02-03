@@ -24,7 +24,7 @@ info.arxiv = 'http://arxiv.org/abs/1308.2631'
 info.publication = 'http://link.springer.com/article/10.1007/JHEP10%282013%29189'
 info.comment = 'upper limits for T6bbWWC150 are not public'
 info.supersedes = 'ATLAS_CONF_2013_001;ATLAS_CONF_2013_053'
-info.implimented_by = 'MT'
+info.implemented_by = 'MT'
 info.comment = 'upper limits for T6bbWWC150 are not public'
 
 #+++++++++++ add new txName +++++++++++++++++
