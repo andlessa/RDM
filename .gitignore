@@ -3,6 +3,7 @@
 !*/
 !info.txt
 !sms.root
+!createEntry.py
 !*/*/*/orig/*
 !*/*/*/*.txt
 !convert.py
