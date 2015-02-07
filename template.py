@@ -54,11 +54,11 @@ def txNameBlock(txName):
     block =\
     "%s = TxName('%s')\n" %(txName, txName) +\
     "%s.checked =\n" %txName +\
-    "%s.constraint =\n" %txName +\
+    "%s.on.constraint =\n" %txName +\
     "%s.off.constraint =\n" %txName +\
-    "%s.condition =\n" %txName +\
+    "%s.on.condition =\n" %txName +\
     "%s.off.condition =\n" %txName +\
-    "%s.fuzzycondition =\n" %txName +\
+    "%s.on.fuzzycondition =\n" %txName +\
     "%s.off.fuzzycondition =\n" %txName 
     return block
     
