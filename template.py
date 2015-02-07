@@ -34,6 +34,9 @@ def head():
 
 def infoBlock(experiment, ID, sqrts): 
     block =\
+    "\n" +\
+    "#+++++++ global info block ++++++++++++++" +\
+    "\n" +\
     "info = MetaInfo('%s-%s')\n" %(experiment, ID) +\
     'info.url =\n' +\
     'info.sqrts = %s\n' %sqrts +\
@@ -52,6 +55,9 @@ def infoBlock(experiment, ID, sqrts):
 def txNameBlock(txName):
 
     block =\
+    "\n" +\
+    "#+++++++ next txName block ++++++++++++++" +\
+    "\n" +\
     "%s = TxName('%s')\n" %(txName, txName) +\
     "%s.checked =\n" %txName +\
     "%s.on.constraint =\n" %txName +\
@@ -94,16 +100,25 @@ def planeBlock(planeName):
     "%s.expectedExclusionP1.dataUrl =\n" %planeName 
     return block
     
-def setMassPlane(txName):
+def addMassPlane_singleDecay(txName, planeName):
     
-    return\
-    "%s.setMassPlane(motherMass = , lspMass = )\n" %txName
+    block =\
+    "\n" +\
+    "#+++++++ next mass plane block ++++++++++++++" +\
+    "\n" +\
+    "%s = %s.setMassPlane(motherMass = , lspMass = )\n" \
+    %(planeName, txName)
+    return block
     
-def addMassPlane(txName, planeName):
+def addMassPlane_multiDecay(txName, planeName):
 
-    return\
+    block =\
+    "\n" +\
+    "#+++++++ next mass plane block ++++++++++++++" +\
+    "\n" +\
     "%s = %s.addMassPlane(motherMass = , interMass = , lspMass = )\n"\
     %(planeName, txName)
+    return block
     
 def food():
 
@@ -183,11 +198,12 @@ def checkTxNameDict(txNameDict):
             print m
             sys.exit()
         interPart = txDecay.intermediateParticles
-        if not interPart and txNameDict[txName]:
-            m = '%s have no intermediate partice\n' %txName
-            m = m + 'set addional mass planes to None'
-            print m
-            txNameDict[txName] = None
+        if not interPart:
+            if txNameDict[txName] and txNameDict[txName] > 1:
+                m = '%s have no intermediate partice\n' %txName
+                m = m + 'set addional mass planes to 1'
+                print m
+                txNameDict[txName] = None
         if interPart and not txNameDict[txName]:
             m = '%s have intermediate partices' %txName 
             m = m + ',but addional mass planes not set\n' 
@@ -208,20 +224,18 @@ def main(experiment, ID, sqrts, txNames):
         sys.exit()
     path = createPath(sqrts, experiment, ID)
     contend = head()
-    contend = contend + '\n#++++metaInfo++++\n\n'
     contend = contend + infoBlock(experiment, ID, sqrts)
     for txName, planes in txNameDict.iteritems():
-        contend = contend + '\n#++++%s++++\n\n' %txName
         contend = contend + txNameBlock(txName)
         if not planes:
-            contend = contend + setMassPlane(txName)
-            contend = contend + planeBlock(txName)
+            plane = '%s_%s' %(txName, 1)
+            contend = contend + addMassPlane_singleDecay(txName, plane)
+            contend = contend + planeBlock(plane)
             continue
         for i in range(planes):
-            contend = contend + '\n#----next mass plane----\n'
             i += 1
             plane = '%s_%s' %(txName, i)
-            contend = contend + addMassPlane(txName, plane)
+            contend = contend + addMassPlane_multiDecay(txName, plane)
             contend = contend + planeBlock(plane)
     contend = contend + '\n' + food()
     convertPath = path + '/convert.py'
