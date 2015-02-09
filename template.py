@@ -44,6 +44,7 @@ def infoBlock(experiment, ID, sqrts):
     'info.prettyname =\n' +\
     'info.private =\n' +\
     'info.arxiv = \n' +\
+    'info.contact =\n' +\
     'info.publication =\n' +\
     'info.comment =\n' +\
     'info.supersedes =\n' +\
