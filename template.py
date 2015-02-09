@@ -60,7 +60,8 @@ def txNameBlock(txName):
     "#+++++++ next txName block ++++++++++++++" +\
     "\n" +\
     "%s = TxName('%s')\n" %(txName, txName) +\
-    "%s.checked =\n" %txName +\
+    "%s.on.checked =\n" %txName +\
+    "%s.off.checked =\n" %txName +\
     "%s.on.constraint =\n" %txName +\
     "%s.off.constraint =\n" %txName +\
     "%s.on.condition =\n" %txName +\
