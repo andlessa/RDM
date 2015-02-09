@@ -30,7 +30,8 @@ info.comment = 'upper limits for T6bbWWC150 are not public'
 #+++++++++++ add new txName +++++++++++++++++
 
 T2bb = TxName('T2bb')
-T2bb.checked = 'VM'
+T2bb.on.checked = 'VM'
+T2bb.off.checked = 'VM'
 #-----constraint,condition,....------------------------------
 T2bb.on.constraint = "[[['b']],[['b']]]"
 T2bb.on.condition = None
@@ -63,7 +64,8 @@ T2bb_1.expectedExclusionP1.dataUrl ='http://hepdata.cedar.ac.uk/view/ins1247462/
 #+++++++++++ add new txName +++++++++++++++++
 
 T6bbWW = TxName('T6bbWW')
-T6bbWW.checked = 'VM'
+T6bbWW.on.checked = 'VM'
+T6bbWW.off.checked = 'VM'
 #-----constraint,condition,....------------------------------
 T6bbWW.on.constraint = "[[['b'],['W']],[['b'],['W']]]"
 T6bbWW.off.constraint = "[[['b'],['L','nu']],[['b'],['L','nu']]] + [[['b'],['L','nu']],[['b'],['jet','jet']]] + [[['b'],['jet','jet']],[['b'],['jet','jet']]]"
