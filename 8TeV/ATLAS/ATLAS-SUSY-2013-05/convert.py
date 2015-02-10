@@ -24,49 +24,54 @@ info.arxiv = 'http://arxiv.org/abs/1308.2631'
 info.publication = 'http://link.springer.com/article/10.1007/JHEP10%282013%29189'
 info.comment = 'upper limits for T6bbWWC150 are not public'
 info.supersedes = 'ATLAS_CONF_2013_001;ATLAS_CONF_2013_053'
-info.implimented_by = 'MT'
+info.implemented_by = 'MT'
 info.comment = 'upper limits for T6bbWWC150 are not public'
 
 #+++++++++++ add new txName +++++++++++++++++
 
 T2bb = TxName('T2bb')
-T2bb.setMassPlane(motherMass = x, lspMass = y)
-T2bb.checked = 'VM'
-T2bb.figure = 'Fig.(aux) 4'
-T2bb.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-05/figaux_04.png'
+T2bb.on.checked = 'VM'
+T2bb.off.checked = 'VM'
 #-----constraint,condition,....------------------------------
-T2bb.constraint = "[[['b']],[['b']]]"
-T2bb.condition = None
-T2bb.fuzzycondition = None
+T2bb.on.constraint = "[[['b']],[['b']]]"
+T2bb.on.condition = None
+T2bb.on.fuzzycondition = None
+
+#------ add new massplane-------
+
+T2bb_1 = T2bb.addMassPlane(motherMass = x, lspMass = y)
+T2bb_1.figure = 'Fig.(aux) 4'
+T2bb_1.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-05/figaux_04.png'
 #-----limits------------------------------
-T2bb.limit.setSource('orig/T2bb_2014-09-22.dat','txt')
-T2bb.limit.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1247462/d32'
+T2bb_1.limit.setSource('orig/T2bb_2014-09-22.dat','txt')
+T2bb_1.limit.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1247462/d32'
 #-----exclusions------------------------------
-T2bb.exclusion.setSource('orig/T2bb_exc.dat','txt')
-T2bb.exclusionM1.setSource('orig/T2bb_excMinusSigma.dat','txt')
-T2bb.exclusionP1.setSource('orig/T2bb_excPlusSigma.dat','txt')
-T2bb.expectedExclusion.setSource('orig/T2bb_excExpected.dat','txt')
-T2bb.expectedExclusionM1.setSource('orig/T2bb_excExpectedMinusSigma.dat','txt')
-T2bb.expectedExclusionP1.setSource('orig/T2bb_excExpectedPlusSigma.dat','txt')
+T2bb_1.exclusion.setSource('orig/T2bb_exc.dat','txt')
+T2bb_1.exclusionM1.setSource('orig/T2bb_excMinusSigma.dat','txt')
+T2bb_1.exclusionP1.setSource('orig/T2bb_excPlusSigma.dat','txt')
+T2bb_1.expectedExclusion.setSource('orig/T2bb_excExpected.dat','txt')
+T2bb_1.expectedExclusionM1.setSource('orig/T2bb_excExpectedMinusSigma.dat','txt')
+T2bb_1.expectedExclusionP1.setSource('orig/T2bb_excExpectedPlusSigma.dat','txt')
 #-----exclusions.dataUrl------------------------------
-T2bb.exclusion.dataUrl ='http://hepdata.cedar.ac.uk/view/ins1247462/d1'
-T2bb.exclusionM1.dataUrl ='http://hepdata.cedar.ac.uk/view/ins1247462/d2'
-T2bb.exclusionP1.dataUrl ='http://hepdata.cedar.ac.uk/view/ins1247462/d3'
-T2bb.expectedExclusion.dataUrl ='http://hepdata.cedar.ac.uk/view/ins1247462/d4'
-T2bb.expectedExclusionM1.dataUrl ='http://hepdata.cedar.ac.uk/view/ins1247462/d5'
-T2bb.expectedExclusionP1.dataUrl ='http://hepdata.cedar.ac.uk/view/ins1247462/d5'
+T2bb_1.exclusion.dataUrl ='http://hepdata.cedar.ac.uk/view/ins1247462/d1'
+T2bb_1.exclusionM1.dataUrl ='http://hepdata.cedar.ac.uk/view/ins1247462/d2'
+T2bb_1.exclusionP1.dataUrl ='http://hepdata.cedar.ac.uk/view/ins1247462/d3'
+T2bb_1.expectedExclusion.dataUrl ='http://hepdata.cedar.ac.uk/view/ins1247462/d4'
+T2bb_1.expectedExclusionM1.dataUrl ='http://hepdata.cedar.ac.uk/view/ins1247462/d5'
+T2bb_1.expectedExclusionP1.dataUrl ='http://hepdata.cedar.ac.uk/view/ins1247462/d5'
 
 
 #+++++++++++ add new txName +++++++++++++++++
 
 T6bbWW = TxName('T6bbWW')
-T6bbWW.checked = 'VM'
+T6bbWW.on.checked = 'VM'
+T6bbWW.off.checked = 'VM'
 #-----constraint,condition,....------------------------------
-T6bbWW.constraint = "[[['b'],['W']],[['b'],['W']]]"
+T6bbWW.on.constraint = "[[['b'],['W']],[['b'],['W']]]"
 T6bbWW.off.constraint = "[[['b'],['L','nu']],[['b'],['L','nu']]] + [[['b'],['L','nu']],[['b'],['jet','jet']]] + [[['b'],['jet','jet']],[['b'],['jet','jet']]]"
-T6bbWW.condition = None
+T6bbWW.on.condition = None
 T6bbWW.off.condition = None
-T6bbWW.fuzzycondition = None
+T6bbWW.on.fuzzycondition = None
 T6bbWW.off.fuzzycondition = None
 
 #------ add new massplane-------

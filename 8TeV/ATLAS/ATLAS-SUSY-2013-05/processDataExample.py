@@ -75,7 +75,7 @@ def main():
     # from info.txt:
     equationSets = getEquationSets(txName)
     # chose equationSet:
-    equationSet = equationSets[0]
+    equationSet = equationSets[2]
     # init OrigPlot object with chosen equationSet:
     origPlot = OrigPlot.fromString(equationSet)
 

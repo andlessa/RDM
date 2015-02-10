@@ -1,0 +1,11 @@
+sqrts: 8.0*TeV
+lumi: 13.0/fb
+id: ATLAS-CONF-2012-166
+prettyname: ATLAS leptonic stop
+url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2012-166/
+superseded_by: ATLAS-CONF-2013-037
+comment: superseding publication contain more Data
+private: False
+implemented_by: MT
+lastUpdate: 2015/2/10
+
