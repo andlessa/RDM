@@ -2,7 +2,6 @@ sqrts: 8.0*TeV
 lumi: 20.0/fb
 id: ATLAS-CONF-2013-062-ANA3-SR9
 url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-062/
-superseded_by: SUSY-2013-20
-private: True
+private: False
 implemented_by: WW
 lastUpdate: 2015/2/10
