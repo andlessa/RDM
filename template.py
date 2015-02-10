@@ -77,15 +77,15 @@ def planeBlock(planeName):
     "%s.figure =\n" %planeName +\
     "%s.figureUrl =\n" %planeName +\
     "#----limit source----\n" +\
-    "%s.limit.setSource( path, type, object = None, index = None )\n" %planeName +\
-    "%s.expectedlimit.setSource( path, type, object = None, index = None )\n" %planeName +\
+    "%s.limit.setSource( path, type, objectName = None, index = None )\n" %planeName +\
+    "%s.expectedlimit.setSource( path, type, objectName = None, index = None )\n" %planeName +\
     "#----exclusion source----\n" +\
-    "%s.exclusion.setSource( path, type, object = None, index = None )\n" %planeName +\
-    "%s.exclusionM1.setSource( path, type, object = None, index = None )\n" %planeName +\
-    "%s.exclusionP1.setSource( path, type, object = None, index = None )\n" %planeName +\
-    "%s.expectedExclusion.setSource( path, type, object = None, index = None )\n" %planeName +\
-    "%s.expectedExclusionM1.setSource( path, type, object = None, index = None )\n" %planeName +\
-    "%s.expectedExclusionP1.setSource( path, type, object = None, index = None )\n" %planeName +\
+    "%s.exclusion.setSource( path, type, objectName = None, index = None )\n" %planeName +\
+    "%s.exclusionM1.setSource( path, type, objectName = None, index = None )\n" %planeName +\
+    "%s.exclusionP1.setSource( path, type, objectName = None, index = None )\n" %planeName +\
+    "%s.expectedExclusion.setSource( path, type, objectName = None, index = None )\n" %planeName +\
+    "%s.expectedExclusionM1.setSource( path, type, objectName = None, index = None )\n" %planeName +\
+    "%s.expectedExclusionP1.setSource( path, type, objectName = None, index = None )\n" %planeName +\
     "#----global url settings ----\n" +\
     "%s.dataUrl =\n" %planeName +\
     "%s.histoDataUrl =\n" %planeName +\
@@ -108,7 +108,7 @@ def addMassPlane_singleDecay(txName, planeName):
     "\n" +\
     "#+++++++ next mass plane block ++++++++++++++" +\
     "\n" +\
-    "%s = %s.setMassPlane(motherMass = , lspMass = )\n" \
+    "%s = %s.addMassPlane(motherMass = , lspMass = )\n" \
     %(planeName, txName)
     return block
     
