@@ -41,16 +41,16 @@ T1tttt.on.fuzzycondition ="None"
 #+++++++ next mass plane block ++++++++++++++
 T1tttt = T1tttt.addMassPlane(motherMass = x, lspMass = y)
 #----limit source----
-T1tttt.limit.setSource( 'orig/T1tttt.txt', 'txt', )
-T1tttt.limit.unit = 'fb'
-#T1tttt.expectedlimit.setSource( path, type, object = None, index = None )
+T1tttt.obsUpperLimit.setSource( 'orig/T1tttt.txt', 'txt', )
+T1tttt.obsUpperLimit.unit = 'fb'
+#T1tttt.expUpperLimit.setSource( path, type, object = None, index = None )
 #----exclusion source----
-#T1tttt.exclusion.setSource( path, type, object = None, index = None )
-#T1tttt.exclusionM1.setSource( path, type, object = None, index = None )
-#T1tttt.exclusionP1.setSource( path, type, object = None, index = None )
-#T1tttt.expectedExclusion.setSource( path, type, object = None, index = None )
-#T1tttt.expectedExclusionM1.setSource( path, type, object = None, index = None )
-#T1tttt.expectedExclusionP1.setSource( path, type, object = None, index = None )
+#T1tttt.obsExclusion.setSource( path, type, object = None, index = None )
+#T1tttt.obsExclusionM1.setSource( path, type, object = None, index = None )
+#T1tttt.obsExclusionP1.setSource( path, type, object = None, index = None )
+#T1tttt.expExclusion.setSource( path, type, object = None, index = None )
+#T1tttt.expExclusionM1.setSource( path, type, object = None, index = None )
+#T1tttt.expExclusionP1.setSource( path, type, object = None, index = None )
 #----global url settings ----
 #T1tttt.dataUrl =
 #T1tttt.histoDataUrl =
@@ -59,15 +59,15 @@ T1tttt.limit.unit = 'fb'
 T1tttt.figure = 'Fig. 3'
 T1tttt.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2012-105/fig_03.png'
 #----limit url settings ----
-#T1tttt.limit.dataUrl =
-#T1tttt.expectedlimit.dataUrl =
+#T1tttt.obsUpperLimit.dataUrl =
+#T1tttt.expUpperLimit.dataUrl =
 #----exclusion url settings ----
-#T1tttt.exclusion.dataUrl =
-#T1tttt.exclusionM1.dataUrl =
-#T1tttt.exclusionP1.dataUrl =
-#T1tttt.expectedExclusion.dataUrl =
-#T1tttt.expectedExclusionM1.dataUrl =
-#T1tttt.expectedExclusionP1.dataUrl =
+#T1tttt.obsExclusion.dataUrl =
+#T1tttt.obsExclusionM1.dataUrl =
+#T1tttt.obsExclusionP1.dataUrl =
+#T1tttt.expExclusion.dataUrl =
+#T1tttt.expExclusionM1.dataUrl =
+#T1tttt.expExclusionP1.dataUrl =
 
 databaseCreator.create()
 

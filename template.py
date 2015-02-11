@@ -49,8 +49,7 @@ def infoBlock(experiment, ID, sqrts):
     'info.comment =\n' +\
     'info.supersedes =\n' +\
     'info.superseded_by =\n' +\
-    'info.implemented_by =\n' +\
-    'info.comment =\n' 
+    'info.implemented_by =\n' 
     return block
 
 def txNameBlock(txName):
@@ -77,29 +76,29 @@ def planeBlock(planeName):
     "%s.figure =\n" %planeName +\
     "%s.figureUrl =\n" %planeName +\
     "#----limit source----\n" +\
-    "%s.limit.setSource( path, type, objectName = None, index = None )\n" %planeName +\
-    "%s.expectedlimit.setSource( path, type, objectName = None, index = None )\n" %planeName +\
+    "%s.obsUpperLimit.setSource( path, type, objectName = None, index = None )\n" %planeName +\
+    "%s.expUpperLimit.setSource( path, type, objectName = None, index = None )\n" %planeName +\
     "#----exclusion source----\n" +\
-    "%s.exclusion.setSource( path, type, objectName = None, index = None )\n" %planeName +\
-    "%s.exclusionM1.setSource( path, type, objectName = None, index = None )\n" %planeName +\
-    "%s.exclusionP1.setSource( path, type, objectName = None, index = None )\n" %planeName +\
-    "%s.expectedExclusion.setSource( path, type, objectName = None, index = None )\n" %planeName +\
-    "%s.expectedExclusionM1.setSource( path, type, objectName = None, index = None )\n" %planeName +\
-    "%s.expectedExclusionP1.setSource( path, type, objectName = None, index = None )\n" %planeName +\
+    "%s.obsExclusion.setSource( path, type, objectName = None, index = None )\n" %planeName +\
+    "%s.obsExclusionM1.setSource( path, type, objectName = None, index = None )\n" %planeName +\
+    "%s.obsExclusionP1.setSource( path, type, objectName = None, index = None )\n" %planeName +\
+    "%s.expExclusion.setSource( path, type, objectName = None, index = None )\n" %planeName +\
+    "%s.expExclusionM1.setSource( path, type, objectName = None, index = None )\n" %planeName +\
+    "%s.expExclusionP1.setSource( path, type, objectName = None, index = None )\n" %planeName +\
     "#----global url settings ----\n" +\
     "%s.dataUrl =\n" %planeName +\
-    "%s.histoDataUrl =\n" %planeName +\
     "#----limit url settings ----\n" +\
-    "%s.limit.dataUrl =\n" %planeName +\
-    "%s.expectedlimit.dataUrl =\n" %planeName +\
+    "%s.histoDataUrl =\n" %planeName +\
+    "%s.obsUpperLimit.dataUrl =\n" %planeName +\
+    "%s.expUpperlimit.dataUrl =\n" %planeName +\
     "#----exclusion url settings ----\n" +\
     "%s.exclusionDataUrl =\n" %planeName +\
-    "%s.exclusion.dataUrl =\n" %planeName +\
-    "%s.exclusionM1.dataUrl =\n" %planeName +\
-    "%s.exclusionP1.dataUrl =\n" %planeName +\
-    "%s.expectedExclusion.dataUrl =\n" %planeName +\
-    "%s.expectedExclusionM1.dataUrl =\n" %planeName +\
-    "%s.expectedExclusionP1.dataUrl =\n" %planeName 
+    "%s.obsExclusion.dataUrl =\n" %planeName +\
+    "%s.obsExclusionM1.dataUrl =\n" %planeName +\
+    "%s.obsExclusionP1.dataUrl =\n" %planeName +\
+    "%s.expExclusion.dataUrl =\n" %planeName +\
+    "%s.expExclusionM1.dataUrl =\n" %planeName +\
+    "%s.expExclusionP1.dataUrl =\n" %planeName 
     return block
     
 def addMassPlane_singleDecay(txName, planeName):
