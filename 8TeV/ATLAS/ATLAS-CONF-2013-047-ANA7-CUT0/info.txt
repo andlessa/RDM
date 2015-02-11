@@ -1,0 +1,12 @@
+sqrts: 8.0*TeV
+lumi: 20.3/fb
+prettyname: 0 leptons + jets + met
+id: ATLAS-CONF-2013-047-ANA7-CUT0
+url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-047/
+publication: http://cds.cern.ch/record/1547563
+private: True
+implemented_by: WW
+lastUpdate: 2015/2/11
+observedN: 5333
+expectedBG: 4700
+bgError: 500
