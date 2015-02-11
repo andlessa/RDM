@@ -129,9 +129,9 @@ T5tttt_2.obsUpperLimit.unit = 'fb'
 #T5tttt_2.expExclusionP1.setSource( path, type, objectName = None, index = None )
 #----global url settings ----
 #T5tttt_2.dataUrl = 
-T5tttt_2.histoDataUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13007/limits_model_C.txt'
+#T5tttt_2.histoDataUrl = 
 #----limit url settings ----
-#T5tttt_2.limit.dataUrl =
+T5tttt_2.obsUpperLimit.dataUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13007/limits_model_C.txt'
 #T5tttt_2.expectedlimit.dataUrl =
 #----exclusion url settings ----
 #T5tttt_2.exclusionDataUrl =
