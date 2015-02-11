@@ -44,29 +44,29 @@ T1bbbb_1 = T1bbbb.addMassPlane(motherMass = x, lspMass = y)
 T1bbbb_1.figure = 'Figure 12'
 T1bbbb_1.figureUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13004/T1bbbbRazorXSEC.pdf'
 #----limit source----
-T1bbbb_1.limit.setSource( './orig/xsecUL_SMS_Razor.root', 'root', objectName = "xsecUL_Obs_T1bbbb_MultiJet_Jet2b")
-T1bbbb_1.expectedlimit.setSource( './orig/xsecUL_SMS_Razor.root', 'root', objectName = 'xsecUL_Exp_T1bbbb_MultiJet_Jet2b', index = None )
+T1bbbb_1.obsUpperLimit.setSource( './orig/xsecUL_SMS_Razor.root', 'root', objectName = "xsecUL_Obs_T1bbbb_MultiJet_Jet2b")
+T1bbbb_1.expUpperLimit.setSource( './orig/xsecUL_SMS_Razor.root', 'root', objectName = 'xsecUL_Exp_T1bbbb_MultiJet_Jet2b', index = None )
 #----exclusion source----
-T1bbbb_1.exclusion.setSource( './orig/xsecUL_SMS_Razor.root', 'root', objectName = 'Obs_T1bbbb_MultiJet_Jet2b', index = None )
-T1bbbb_1.exclusionM1.setSource( './orig/xsecUL_SMS_Razor.root', 'root', objectName = 'ObsMinus_T1bbbb_MultiJet_Jet2b' , index = None )
-T1bbbb_1.exclusionP1.setSource( './orig/xsecUL_SMS_Razor.root', 'root', objectName = 'ObsPlus_T1bbbb_MultiJet_Jet2b', index = None )
-T1bbbb_1.expectedExclusion.setSource( './orig/xsecUL_SMS_Razor.root', 'root', objectName = 'Exp_T1bbbb_MultiJet_Jet2b', index = None )
-T1bbbb_1.expectedExclusionM1.setSource( './orig/xsecUL_SMS_Razor.root', 'root', objectName = 'ExpMinus_T1bbbb_MultiJet_Jet2b', index = None )
-T1bbbb_1.expectedExclusionP1.setSource( './orig/xsecUL_SMS_Razor.root', 'root', objectName = 'ExpPlus_T1bbbb_MultiJet_Jet2b', index = None )
+T1bbbb_1.obsExclusion.setSource( './orig/xsecUL_SMS_Razor.root', 'root', objectName = 'Obs_T1bbbb_MultiJet_Jet2b', index = None )
+T1bbbb_1.obsExclusionM1.setSource( './orig/xsecUL_SMS_Razor.root', 'root', objectName = 'ObsMinus_T1bbbb_MultiJet_Jet2b' , index = None )
+T1bbbb_1.obsExclusionP1.setSource( './orig/xsecUL_SMS_Razor.root', 'root', objectName = 'ObsPlus_T1bbbb_MultiJet_Jet2b', index = None )
+T1bbbb_1.expExclusion.setSource( './orig/xsecUL_SMS_Razor.root', 'root', objectName = 'Exp_T1bbbb_MultiJet_Jet2b', index = None )
+T1bbbb_1.expExclusionM1.setSource( './orig/xsecUL_SMS_Razor.root', 'root', objectName = 'ExpMinus_T1bbbb_MultiJet_Jet2b', index = None )
+T1bbbb_1.expExclusionP1.setSource( './orig/xsecUL_SMS_Razor.root', 'root', objectName = 'ExpPlus_T1bbbb_MultiJet_Jet2b', index = None )
 #----global url settings ----
 T1bbbb_1.dataUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13004/xsecUL_SMS_Razor.root'
 #----limit url settings ----
-#T1bbbb_1.limit.dataUrl =
-#T1bbbb_1.expectedlimit.dataUrl =
+#T1bbbb_1.obsUpperLimit.dataUrl =
+#T1bbbb_1.expUpperLimit.dataUrl =
 #T1bbbb_1.histoDataUrl =
 #----exclusion url settings ----
 #T1bbbb_1.exclusionDataUrl =
-#T1bbbb_1.exclusion.dataUrl =
-#T1bbbb_1.exclusionM1.dataUrl =
-#T1bbbb_1.exclusionP1.dataUrl =
-#T1bbbb_1.expectedExclusion.dataUrl =
-#T1bbbb_1.expectedExclusionM1.dataUrl =
-#T1bbbb_1.expectedExclusionP1.dataUrl =
+#T1bbbb_1.obsExclusion.dataUrl =
+#T1bbbb_1.obsExclusionM1.dataUrl =
+#T1bbbb_1.obsExclusionP1.dataUrl =
+#T1bbbb_1.expExclusion.dataUrl =
+#T1bbbb_1.expExclusionM1.dataUrl =
+#T1bbbb_1.expExclusionP1.dataUrl =
 
 #+++++++ next txName block ++++++++++++++
 T2tt = TxName('T2tt')
@@ -85,29 +85,29 @@ T2tt_1 = T2tt.addMassPlane(motherMass = x, lspMass = y )
 T2tt_1.figure = 'Figure 13'
 T2tt_1.figureUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13004/T1ttttRazorXSEC.pdf'
 #----limit source----
-T2tt_1.limit.setSource( './orig/xsecUL_SMS_Razor.root', 'root', objectName = 'xsecUL_Obs_T2tt_MultiJet_Jet2b_MuJet', index = None )
-T2tt_1.expectedlimit.setSource( './orig/xsecUL_SMS_Razor.root', 'root', objectName = 'xsecUL_Exp_T2tt_MultiJet_Jet2b_MuJet', index = None )
+T2tt_1.obsUpperLimit.setSource( './orig/xsecUL_SMS_Razor.root', 'root', objectName = 'xsecUL_Obs_T2tt_MultiJet_Jet2b_MuJet', index = None )
+T2tt_1.expUpperLimit.setSource( './orig/xsecUL_SMS_Razor.root', 'root', objectName = 'xsecUL_Exp_T2tt_MultiJet_Jet2b_MuJet', index = None )
 #----exclusion source----
-T2tt_1.exclusion.setSource( './orig/xsecUL_SMS_Razor.root', 'root', objectName = 'Obs_T2tt_MultiJet_Jet2b_MuJet', index = None )
-T2tt_1.exclusionM1.setSource( './orig/xsecUL_SMS_Razor.root', 'root', objectName = 'ObsMinus_T2tt_MultiJet_Jet2b_MuJet', index = None )
-T2tt_1.exclusionP1.setSource( './orig/xsecUL_SMS_Razor.root', 'root', objectName = 'ObsPlus_T2tt_MultiJet_Jet2b_MuJet', index = None )
-T2tt_1.expectedExclusion.setSource( './orig/xsecUL_SMS_Razor.root', 'root', objectName = 'Exp_T2tt_MultiJet_Jet2b_MuJet', index = None )
-T2tt_1.expectedExclusionM1.setSource( './orig/xsecUL_SMS_Razor.root', 'root', objectName = 'ExpMinus_T2tt_MultiJet_Jet2b_MuJet', index = None )
-T2tt_1.expectedExclusionP1.setSource( './orig/xsecUL_SMS_Razor.root', 'root', objectName = 'ExpPlus_T2tt_MultiJet_Jet2b_MuJet', index = None )
+T2tt_1.obsExclusion.setSource( './orig/xsecUL_SMS_Razor.root', 'root', objectName = 'Obs_T2tt_MultiJet_Jet2b_MuJet', index = None )
+T2tt_1.obsExclusionM1.setSource( './orig/xsecUL_SMS_Razor.root', 'root', objectName = 'ObsMinus_T2tt_MultiJet_Jet2b_MuJet', index = None )
+T2tt_1.obsExclusionP1.setSource( './orig/xsecUL_SMS_Razor.root', 'root', objectName = 'ObsPlus_T2tt_MultiJet_Jet2b_MuJet', index = None )
+T2tt_1.expExclusion.setSource( './orig/xsecUL_SMS_Razor.root', 'root', objectName = 'Exp_T2tt_MultiJet_Jet2b_MuJet', index = None )
+T2tt_1.expExclusionM1.setSource( './orig/xsecUL_SMS_Razor.root', 'root', objectName = 'ExpMinus_T2tt_MultiJet_Jet2b_MuJet', index = None )
+T2tt_1.expExclusionP1.setSource( './orig/xsecUL_SMS_Razor.root', 'root', objectName = 'ExpPlus_T2tt_MultiJet_Jet2b_MuJet', index = None )
 #----global url settings ----
 T2tt_1.dataUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13004/xsecUL_SMS_Razor.root'
 #T2tt_1.histoDataUrl =
 #----limit url settings ----
-#T2tt_1.limit.dataUrl =
-#T2tt_1.expectedlimit.dataUrl =
+#T2tt_1.obsUpperLimit.dataUrl =
+#T2tt_1.expUpperLimit.dataUrl =
 #----exclusion url settings ----
 #T2tt_1.exclusionDataUrl =
-#T2tt_1.exclusion.dataUrl =
-#T2tt_1.exclusionM1.dataUrl =
-#T2tt_1.exclusionP1.dataUrl =
-#T2tt_1.expectedExclusion.dataUrl =
-#T2tt_1.expectedExclusionM1.dataUrl =
-#T2tt_1.expectedExclusionP1.dataUrl =
+#T2tt_1.obsExclusion.dataUrl =
+#T2tt_1.obsExclusionM1.dataUrl =
+#T2tt_1.obsExclusionP1.dataUrl =
+#T2tt_1.expExclusion.dataUrl =
+#T2tt_1.expExclusionM1.dataUrl =
+#T2tt_1.expExclusionP1.dataUrl =
 
 #+++++++ next txName block ++++++++++++++
 T1tttt = TxName('T1tttt')
@@ -126,28 +126,28 @@ T1tttt_1 = T1tttt.addMassPlane(motherMass = x , lspMass = y)
 T1tttt_1.figure = 'Figure14'
 T1tttt_1.figureUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13004/T2ttRazorXSEC.pdf'
 #----limit source----
-T1tttt_1.limit.setSource( './orig/xsecUL_SMS_Razor.root', 'root', objectName = 'xsecUL_Obs_T1tttt_MultiJet_EleMultiJet_MuMultiJet', index = None )
-T1tttt_1.expectedlimit.setSource( './orig/xsecUL_SMS_Razor.root', 'root',  objectName = 'xsecUL_Exp_T1tttt_MultiJet_EleMultiJet_MuMultiJet', index = None )
+T1tttt_1.obsUpperLimit.setSource( './orig/xsecUL_SMS_Razor.root', 'root', objectName = 'xsecUL_Obs_T1tttt_MultiJet_EleMultiJet_MuMultiJet', index = None )
+T1tttt_1.expUpperLimit.setSource( './orig/xsecUL_SMS_Razor.root', 'root',  objectName = 'xsecUL_Exp_T1tttt_MultiJet_EleMultiJet_MuMultiJet', index = None )
 #----exclusion source----
-T1tttt_1.exclusion.setSource( './orig/xsecUL_SMS_Razor.root', 'root',  objectName= 'Obs_T1tttt_MultiJet_EleMultiJet_MuMultiJet', index = None )
-T1tttt_1.exclusionM1.setSource( './orig/xsecUL_SMS_Razor.root', 'root',  objectName = 'ObsMinus_T1tttt_MultiJet_EleMultiJet_MuMultiJet', index = None )
-T1tttt_1.exclusionP1.setSource( './orig/xsecUL_SMS_Razor.root', 'root',  objectName = 'ObsPlus_T1tttt_MultiJet_EleMultiJet_MuMultiJet', index = None )
-T1tttt_1.expectedExclusion.setSource( './orig/xsecUL_SMS_Razor.root', 'root',  objectName = 'Exp_T1tttt_MultiJet_EleMultiJet_MuMultiJet', index = None )
-T1tttt_1.expectedExclusionM1.setSource( './orig/xsecUL_SMS_Razor.root', 'root',  objectName = 'ExpMinus_T1tttt_MultiJet_EleMultiJet_MuMultiJet', index = None )
-T1tttt_1.expectedExclusionP1.setSource( './orig/xsecUL_SMS_Razor.root', 'root',  objectName = 'ExpPlus_T1tttt_MultiJet_EleMultiJet_MuMultiJet', index = None )
+T1tttt_1.obsExclusion.setSource( './orig/xsecUL_SMS_Razor.root', 'root',  objectName= 'Obs_T1tttt_MultiJet_EleMultiJet_MuMultiJet', index = None )
+T1tttt_1.obsExclusionM1.setSource( './orig/xsecUL_SMS_Razor.root', 'root',  objectName = 'ObsMinus_T1tttt_MultiJet_EleMultiJet_MuMultiJet', index = None )
+T1tttt_1.obsExclusionP1.setSource( './orig/xsecUL_SMS_Razor.root', 'root',  objectName = 'ObsPlus_T1tttt_MultiJet_EleMultiJet_MuMultiJet', index = None )
+T1tttt_1.expExclusion.setSource( './orig/xsecUL_SMS_Razor.root', 'root',  objectName = 'Exp_T1tttt_MultiJet_EleMultiJet_MuMultiJet', index = None )
+T1tttt_1.expExclusionM1.setSource( './orig/xsecUL_SMS_Razor.root', 'root',  objectName = 'ExpMinus_T1tttt_MultiJet_EleMultiJet_MuMultiJet', index = None )
+T1tttt_1.expExclusionP1.setSource( './orig/xsecUL_SMS_Razor.root', 'root',  objectName = 'ExpPlus_T1tttt_MultiJet_EleMultiJet_MuMultiJet', index = None )
 #----global url settings ----
 T1tttt_1.dataUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13004/xsecUL_SMS_Razor.root'
 #T1tttt_1.histoDataUrl =
 #----limit url settings ----
-#T1tttt_1.limit.dataUrl =
-#T1tttt_1.expectedlimit.dataUrl =
+#T1tttt_1.obsUpperLimit.dataUrl =
+#T1tttt_1.expUpperLimit.dataUrl =
 #----exclusion url settings ----
 #T1tttt_1.exclusionDataUrl =
-#T1tttt_1.exclusion.dataUrl =
-#T1tttt_1.exclusionM1.dataUrl =
-#T1tttt_1.exclusionP1.dataUrl =
-#T1tttt_1.expectedExclusion.dataUrl =
-#T1tttt_1.expectedExclusionM1.dataUrl =
-#T1tttt_1.expectedExclusionP1.dataUrl =
+#T1tttt_1.obsExclusion.dataUrl =
+#T1tttt_1.obsExclusionM1.dataUrl =
+#T1tttt_1.obsExclusionP1.dataUrl =
+#T1tttt_1.expExclusion.dataUrl =
+#T1tttt_1.expExclusionM1.dataUrl =
+#T1tttt_1.expExclusionP1.dataUrl =
 
 databaseCreator.create()
