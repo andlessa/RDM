@@ -48,8 +48,7 @@ def infoBlock(experiment, ID, sqrts):
     'info.publication =\n' +\
     'info.comment =\n' +\
     'info.supersedes =\n' +\
-    'info.superseded_by =\n' +\
-    'info.implemented_by =\n' 
+    'info.superseded_by =\n'
     return block
 
 def txNameBlock(txName):
