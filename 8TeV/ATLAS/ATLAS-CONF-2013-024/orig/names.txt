@@ -1,0 +1,17 @@
+
+
+T2tt
+
+	Fig. 3	https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-024/figaux_03.png
+
+	limit			fig3_aux_ATLAS-CONF-2013-024.txt		link	comment
+	expectedlimit		file	link	comment
+
+	Fig.	link
+
+	exclusion		exclusion_T2tt.txt	link	comment
+	exclusionp1		file	link	comment
+	exclusionm1		file	link	comment
+	expectedexclusion	file	link	comment
+	expectedexclusionp1	file	link	comment
+	expectedexclusionm1	file	link	comment
