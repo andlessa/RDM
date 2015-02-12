@@ -21,7 +21,7 @@ def head():
     '\n' +\
     '"""\n' +\
     '.. module:: convert\n' +\
-    '   :synopsis: uesed to create info.txt,sms.py,sms.root and newSms.py.\n' +\
+    '   :synopsis: used to create info.txt and the <txname>.txt files.\n' +\
     '\n' +\
     '"""\n' +\
     'import sys\n' +\
@@ -247,7 +247,7 @@ def main(experiment, ID, sqrts, txNames):
 if __name__ == '__main__':
     
     argparser = argparse.ArgumentParser(description = \
-    'Produces a template for implimentation of new publication')
+    'Produces a template for implementation of new publication')
     
     argparser.add_argument ('-id', '--ID', \
     help = 'full name of the paper',\
