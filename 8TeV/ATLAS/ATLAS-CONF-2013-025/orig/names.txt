@@ -1,0 +1,17 @@
+
+
+T6ZZttD180
+
+	Fig. 10	https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-025/figaux_10.png
+
+	limit			T6ZZttD180.txt		link	comment
+	expectedlimit		file	link	comment
+
+	Fig.	link
+
+	exclusion		exclusion_T6ZZttD180.txt	link	comment
+	exclusionp1		exclusionp1_T6ZZttD180.txt	link	comment
+	exclusionm1		exclusionm1_T6ZZttD180.txt	link	comment
+	expectedexclusion	file	link	comment
+	expectedexclusionp1	file	link	comment
+	expectedexclusionm1	file	link	comment

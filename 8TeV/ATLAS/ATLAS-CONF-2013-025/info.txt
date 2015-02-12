@@ -1,0 +1,11 @@
+sqrts: 8.0*TeV
+lumi: 20.7/fb
+id: ATLAS-CONF-2013-025
+prettyname: ATLAS heavy stop
+url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-025/
+superseded_by: ATLAS-SUSY-2013-08
+private: False
+implemented_by: MT
+
+lastUpdate: 2015/2/12
+
