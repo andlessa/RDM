@@ -6,6 +6,4 @@ url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-02
 superseded_by: ATLAS-SUSY-2013-08
 private: False
 implemented_by: MT
-
 lastUpdate: 2015/2/12
-

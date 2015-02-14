@@ -1,6 +1,6 @@
 txname: TChiWZoff
 condition: [[['mu+','mu-']],[['l','nu']]] > [[['e+','e-']],[['l','nu']]]
-fuzzycondition: [[['mu+','mu-']],[['l','nu']]] > [[['e+','e-']],[['l','nu']]]
+fuzzycondition: Cgtr([[['mu+','mu-']],[['l','nu']]],[[['e+','e-']],[['l','nu']]])
 constraint: 71.*([[['mu+','mu-']],[['l','nu']]] + [[['e+','e-']],[['l','nu']]])
 checked: VM
 validated: False

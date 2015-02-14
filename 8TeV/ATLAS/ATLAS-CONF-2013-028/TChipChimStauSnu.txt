@@ -1,6 +1,6 @@
 txname: TChipChimStauSnu
 condition: [[['ta-'],['nu']],[['nu'],['ta+']]] ~ [[['ta+'],['nu']],[['nu'],['ta-']]], [[['ta-'],['nu']],[['nu'],['ta+']]] ~ [[['ta+'],['nu']],[['ta-'],['nu']]] ,[[['ta-'],['nu']],[['nu'],['ta+']]] ~ [[['nu'],['ta+']],[['nu'],['ta-']]]
-fuzzycondition: [[['ta-'],['nu']],[['nu'],['ta+']]] ~ [[['ta+'],['nu']],[['nu'],['ta-']]], [[['ta-'],['nu']],[['nu'],['ta+']]] ~ [[['ta+'],['nu']],[['ta-'],['nu']]] ,[[['ta-'],['nu']],[['nu'],['ta+']]] ~ [[['nu'],['ta+']],[['nu'],['ta-']]]
+fuzzycondition: Csim([[['ta-'],['nu']],[['nu'],['ta+']]],[[['ta+'],['nu']],[['nu'],['ta-']]],[[['ta+'],['nu']],[['ta-'],['nu']]],[[['nu'],['ta+']],[['nu'],['ta-']]])
 constraint: [[['ta-'],['nu']],[['nu'],['ta+']]] + [[['ta+'],['nu']],[['nu'],['ta-']]] + [[['ta+'],['nu']],[['ta-'],['nu']]] + [[['nu'],['ta+']],[['nu'],['ta-']]]
 checked: A
 validated: False

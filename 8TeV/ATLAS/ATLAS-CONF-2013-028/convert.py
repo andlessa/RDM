@@ -34,7 +34,7 @@ TChiChipmStauL.on.constraint ="2.*([[['nu'],['ta']],[['ta+'],['ta-']]] + [[['ta'
 #TChiChipmStauL.off.constraint =
 TChiChipmStauL.on.condition ="[[['nu'],['ta']],[['ta+'],['ta-']]] ~ [[['ta'],['nu']],[['ta+'],['ta-']]],[[['nu'],['ta']],[['ta+'],['ta-']]] ~ [[['nu'],['ta']],[['ta-'],['ta+']]], [[['nu'],['ta']],[['ta+'],['ta-']]] ~ [[['ta'],['nu']],[['ta-'],['ta+']]]"
 #TChiChipmStauL.off.condition =
-TChiChipmStauL.on.fuzzycondition ="[[['nu'],['ta']],[['ta+'],['ta-']]] ~ [[['ta'],['nu']],[['ta+'],['ta-']]],[[['nu'],['ta']],[['ta+'],['ta-']]] ~ [[['nu'],['ta']],[['ta-'],['ta+']]], [[['nu'],['ta']],[['ta+'],['ta-']]] ~ [[['ta'],['nu']],[['ta-'],['ta+']]]"
+TChiChipmStauL.on.fuzzycondition ="Csim([[['nu'],['ta']],[['ta+'],['ta-']]],[[['ta'],['nu']],[['ta+'],['ta-']]],[[['nu'],['ta']],[['ta-'],['ta+']]],[[['ta'],['nu']],[['ta-'],['ta+']]])"
 #TChiChipmStauL.off.fuzzycondition =
 
 #+++++++ next mass plane block ++++++++++++++
@@ -75,7 +75,7 @@ TChipChimStauSnu.on.constraint ="[[['ta-'],['nu']],[['nu'],['ta+']]] + [[['ta+']
 #TChipChimStauSnu.off.constraint =
 TChipChimStauSnu.on.condition ="[[['ta-'],['nu']],[['nu'],['ta+']]] ~ [[['ta+'],['nu']],[['nu'],['ta-']]], [[['ta-'],['nu']],[['nu'],['ta+']]] ~ [[['ta+'],['nu']],[['ta-'],['nu']]] ,[[['ta-'],['nu']],[['nu'],['ta+']]] ~ [[['nu'],['ta+']],[['nu'],['ta-']]]"
 #TChipChimStauSnu.off.condition =
-TChipChimStauSnu.on.fuzzycondition ="[[['ta-'],['nu']],[['nu'],['ta+']]] ~ [[['ta+'],['nu']],[['nu'],['ta-']]], [[['ta-'],['nu']],[['nu'],['ta+']]] ~ [[['ta+'],['nu']],[['ta-'],['nu']]] ,[[['ta-'],['nu']],[['nu'],['ta+']]] ~ [[['nu'],['ta+']],[['nu'],['ta-']]]"
+TChipChimStauSnu.on.fuzzycondition ="Csim([[['ta-'],['nu']],[['nu'],['ta+']]],[[['ta+'],['nu']],[['nu'],['ta-']]],[[['ta+'],['nu']],[['ta-'],['nu']]],[[['nu'],['ta+']],[['nu'],['ta-']]])"
 #TChipChimStauSnu.off.fuzzycondition =
 
 #+++++++ next mass plane block ++++++++++++++
