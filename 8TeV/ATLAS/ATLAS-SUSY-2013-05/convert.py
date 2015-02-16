@@ -2,17 +2,36 @@
 
 """
 .. module:: convert
-   :synopsis: uesed to create info.txt,sms.py,sms.root and newSms.py.
+   :synopsis: uesed to create info.txt, txname.txt, twiki.txt and sms.py.
 
 .. moduleauthor:: Michael Traub <michael.traub@gmx.at>
 
 """   
 import sys
 import os
-sys.path.append(os.path.abspath('../../../../smodels-utils'))
+import argparse
+import types
+
+argparser = argparse.ArgumentParser(description = \
+'create info.txt, txname.txt, twiki.txt and sms.py')
+argparser.add_argument ('-utilsPath', '--utilsPath', \
+help = 'path to the package smodels_utils',\
+type = types.StringType)
+args = argparser.parse_args()
+    
+if args.utilsPath:
+    utilsPath = args.utilsPath
+else:
+    databaseRoot = '../../../'
+    sys.path.append(os.path.abspath(databaseRoot))
+    from utilsPath import utilsPath 
+    utilsPath = databaseRoot + utilsPath
+
+sys.path.append(os.path.abspath(utilsPath))
 from smodels_utils.dataPreparation.inputObjects import TxName, MetaInfo
 from smodels_utils.dataPreparation.databaseCreation import databaseCreator
 from smodels_utils.dataPreparation.origPlotObjects import x, y
+
 
 info = MetaInfo('ATLAS-SUSY-2013-05')
 info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-05/'
@@ -76,7 +95,7 @@ T6bbWW.off.fuzzycondition = None
 
 #------ add new massplane-------
 
-T6bbWWD005 = T6bbWW.addMassPlane(motherMass = x, interMass = y + 5., lspMass = y)
+T6bbWWD005 = T6bbWW.addMassPlane(motherMass = x, interMass0 = y + 5., lspMass = y)
 T6bbWWD005.figure = 'Fig.(aux) 8a'
 T6bbWWD005.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-05/figaux_08a.png'
 #-----limits------------------------------
@@ -99,7 +118,7 @@ T6bbWWD005.expExclusionP1.dataUrl ='http://hepdata.cedar.ac.uk/view/ins1247462/d
 
 #------ add new massplane-------
 
-T6bbWWD020 = T6bbWW.addMassPlane(motherMass = x, interMass = y + 20., lspMass = y)
+T6bbWWD020 = T6bbWW.addMassPlane(motherMass = x, interMass0 = y + 20., lspMass = y)
 T6bbWWD020.figure = 'Fig.(aux) 8b'
 T6bbWWD020.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-05/figaux_08b.png'
 #-----limits------------------------------
@@ -122,7 +141,7 @@ T6bbWWD020.expExclusionP1.dataUrl ='http://hepdata.cedar.ac.uk/view/ins1247462/d
 
 #------ add new massplane-------
 
-T6bbWWM1300 = T6bbWW.addMassPlane(motherMass = 300., interMass = x, lspMass = y)
+T6bbWWM1300 = T6bbWW.addMassPlane(motherMass = 300., interMass0 = x, lspMass = y)
 T6bbWWM1300.figure = 'Fig.(aux) 9'
 T6bbWWM1300.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-05/figaux_09.png'
 #-----limits------------------------------
@@ -145,7 +164,7 @@ T6bbWWM1300.expExclusionP1.dataUrl ='http://hepdata.cedar.ac.uk/view/ins1247462/
 
 #------ add new massplane-------
 
-T6bbWWC150 = T6bbWW.addMassPlane(motherMass = x, interMass = 150., lspMass = y)
+T6bbWWC150 = T6bbWW.addMassPlane(motherMass = x, interMass0 = 150., lspMass = y)
 T6bbWWC150.figure = 'Fig.(aux) 6b'
 T6bbWWC150.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-05/figaux_06b.png'
 #-----limits------------------------------

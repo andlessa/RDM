@@ -10,4 +10,3 @@ comment: upper limits for T6bbWWC150 are not public
 private: False
 implemented_by: MT
 lastUpdate: 2015/2/3
-

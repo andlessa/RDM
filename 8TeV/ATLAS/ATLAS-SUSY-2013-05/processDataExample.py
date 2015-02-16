@@ -40,14 +40,22 @@ def getUpperLimits(txName):
     f = open(txName + '.txt')
     lines = f.readlines()
     f.close()
+    upperLimitsBlock = False
     for line in lines:
         #print line
+        if upperLimitsBlock == True and ':' in line:
+            upperLimitsBlock = False
         if 'upperLimits' in line:
             line = line.replace('\n','')
             upperLimits = line.split(': ')[1]
-            upperLimits = upperLimits.replace('*GeV','')
-            upperLimits = upperLimits.replace('*pb','')
-            return eval(upperLimits)
+            upperLimitsBlock = True
+            continue
+        if upperLimitsBlock == True:
+            line = line.replace('\n','')
+            upperLimits = upperLimits + line
+    upperLimits = upperLimits.replace('*GeV','')
+    upperLimits = upperLimits.replace('*pb','')
+    return eval(upperLimits)
         
         
 def getHisto(points, txName, eqSet):
@@ -70,12 +78,12 @@ def getHisto(points, txName, eqSet):
     
 def main():
     # chose TxName:
-    txName = 'T6bbWWoff'
+    txName = 'T6bbWW'
     # get all available equationSets/massPlanes/plots
     # from info.txt:
     equationSets = getEquationSets(txName)
     # chose equationSet:
-    equationSet = equationSets[2]
+    equationSet = equationSets[0]
     # init OrigPlot object with chosen equationSet:
     origPlot = OrigPlot.fromString(equationSet)
 
