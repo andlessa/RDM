@@ -2,15 +2,36 @@
 
 """
 .. module:: convert
-   :synopsis: uesed to create info.txt,sms.py,sms.root and newSms.py.
+   :synopsis: uesed to create info.txt, txname.txt, twiki.txt and sms.py.
 
-"""
+.. moduleauthor:: Michael Traub <michael.traub@gmx.at>
+
+"""   
 import sys
 import os
-sys.path.append(os.path.abspath('../../../../smodels-utils'))
+import argparse
+import types
+
+argparser = argparse.ArgumentParser(description = \
+'create info.txt, txname.txt, twiki.txt and sms.py')
+argparser.add_argument ('-utilsPath', '--utilsPath', \
+help = 'path to the package smodels_utils',\
+type = types.StringType)
+args = argparser.parse_args()
+    
+if args.utilsPath:
+    utilsPath = args.utilsPath
+else:
+    databaseRoot = '../../../'
+    sys.path.append(os.path.abspath(databaseRoot))
+    from utilsPath import utilsPath 
+    utilsPath = databaseRoot + utilsPath
+
+sys.path.append(os.path.abspath(utilsPath))
 from smodels_utils.dataPreparation.inputObjects import TxName, MetaInfo
 from smodels_utils.dataPreparation.databaseCreation import databaseCreator
 from smodels_utils.dataPreparation.origPlotObjects import x, y
+
 
 #+++++++ global info block ++++++++++++++
 info = MetaInfo('ATLAS-CONF-2013-007')
@@ -39,7 +60,7 @@ T6ttWW.on.fuzzycondition ="None"
 T6ttWW.off.fuzzycondition = 'not yet assigned'
 
 #+++++++ next mass plane block ++++++++++++++
-T6ttWWLSP060 = T6ttWW.addMassPlane(motherMass = x, interMass = y, lspMass = 60.0)
+T6ttWWLSP060 = T6ttWW.addMassPlane(motherMass = x, interMass0 = y, lspMass = 60.0)
 #----limit source----
 T6ttWWLSP060.obsUpperLimit.setSource( 'orig/T6ttWWLSP060.txt', 'txt' )
 T6ttWWLSP060.obsUpperLimit.unit = 'fb'
@@ -70,7 +91,7 @@ T6ttWWLSP060.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOT
 #T6ttWWLSP060.expExclusionP1.dataUrl =
 
 #+++++++ next mass plane block ++++++++++++++
-T6ttWWx200 = T6ttWW.addMassPlane(motherMass = x, interMass = y * 2.0, lspMass = y)
+T6ttWWx200 = T6ttWW.addMassPlane(motherMass = x, interMass0 = y * 2.0, lspMass = y)
 #----limit source----
 T6ttWWx200.obsUpperLimit.setSource( 'orig/T6ttWWx200.txt', 'txt' )
 T6ttWWx200.obsUpperLimit.unit = 'fb'
@@ -154,7 +175,7 @@ T5tttt.on.fuzzycondition ="None"
 #T5tttt.off.fuzzycondition =
 
 #+++++++ next mass plane block ++++++++++++++
-T5ttttLSP060 = T5tttt.addMassPlane(motherMass = x, interMass = y, lspMass = 60.0)
+T5ttttLSP060 = T5tttt.addMassPlane(motherMass = x, interMass0 = y, lspMass = 60.0)
 #----limit source----
 T5ttttLSP060.obsUpperLimit.setSource( 'orig/T5ttttLSP060.txt', 'txt' )
 T5ttttLSP060.obsUpperLimit.unit = 'fb'
@@ -238,7 +259,7 @@ T5WW.on.fuzzycondition ="None"
 T5WW.off.fuzzycondition = 'not yet assigned'
 
 #+++++++ next mass plane block ++++++++++++++
-T5WWx200 = T5WW.addMassPlane(motherMass = x, interMass = y * 2.0, lspMass = y)
+T5WWx200 = T5WW.addMassPlane(motherMass = x, interMass0 = y * 2.0, lspMass = y)
 #----limit source----
 T5WWx200.obsUpperLimit.setSource( 'orig/T5WWx200.txt', 'txt' )
 T5WWx200.obsUpperLimit.unit = 'fb'
@@ -267,5 +288,141 @@ T5WWx200.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/A
 #T5WWx200.expExclusion.dataUrl =
 #T5WWx200.expExclusionM1.dataUrl =
 #T5WWx200.expExclusionP1.dataUrl =
+
+
+#+++++++ next txName block ++++++++++++++
+T8ChiSlep = TxName('T8ChiSlep')
+T8ChiSlep.on.checked ='VM'
+#T8ChiSlep.off.checked =
+T8ChiSlep.on.constraint ='not yet assigned'
+#T8ChiSlep.off.constraint = 'not yet assigned'
+T8ChiSlep.on.condition ='not yet assigned'
+#T8ChiSlep.off.condition = 'not yet assigned'
+T8ChiSlep.on.fuzzycondition ='not yet assigned'
+#T8ChiSlep.off.fuzzycondition = 'not yet assigned'
+T8ChiSlep.onShell = True
+T8ChiSlep.offShell = False
+
+#+++++++ next mass plane block ++++++++++++++
+T8ChiSlep05050 = T8ChiSlep.addMassPlane(motherMass = x, interMass0 = (2.*x + y)/3.,\
+    interMass1 = (x + 2.*y)/3., lspMass = y)
+#----limit source----
+T8ChiSlep05050.obsUpperLimit.setSource( 'orig/T8ChiSlep.txt', 'txt' )
+T8ChiSlep05050.obsUpperLimit.unit = 'fb'
+#T8ChiSlep05050.expUpperLimit.setSource( path, type, object = None, index = None )
+#----exclusion source----
+T8ChiSlep05050.obsExclusion.setSource( 'orig/exclusion_T8ChiSlep.txt', 'svg' )
+T8ChiSlep05050.obsExclusionM1.setSource( 'orig/exclusionm1_T8ChiSlep.txt', 'svg' )
+T8ChiSlep05050.obsExclusionP1.setSource( 'orig/exclusionp1_T8ChiSlep.txt', 'svg' )
+#T8ChiSlep05050.expExclusion.setSource( path, type, object = None, index = None )
+#T8ChiSlep05050.expExclusionM1.setSource( path, type, object = None, index = None )
+#T8ChiSlep05050.expExclusionP1.setSource( path, type, object = None, index = None )
+#----global url settings ----
+#T8ChiSlep05050.dataUrl =
+#T8ChiSlep05050.histoDataUrl =
+#T8ChiSlep05050.exclusionDataUrl =
+#----figure----
+T8ChiSlep05050.figure = 'Fig. 16'
+T8ChiSlep05050.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-007/fig_16.png'
+#----limit url settings ----
+#T8ChiSlep05050.obsUpperLimit.dataUrl =
+#T8ChiSlep050500.expUpperLimit.dataUrl =
+#----exclusion url settings ----
+#T8ChiSlep05050.obsExclusion.dataUrl =
+#T8ChiSlep05050.obsExclusionM1.dataUrl =
+#T8ChiSlep05050.obsExclusionP1.dataUrl =
+#T8ChiSlep05050.expExclusion.dataUrl =
+#T8ChiSlep05050.expExclusionM1.dataUrl =
+#T8ChiSlep05050.expExclusionP1.dataUrl =
+
+#+++++++ next txName block ++++++++++++++
+T7ChiSlep = TxName('T7ChiSlep')
+T7ChiSlep.on.checked ='VM'
+#T7ChiSlep.off.checked =
+T7ChiSlep.on.constraint ='not yet assigned'
+#T7ChiSlep.off.constraint = 'not yet assigned'
+T7ChiSlep.on.condition ='not yet assigned'
+#T7ChiSlep.off.condition = 'not yet assigned'
+T7ChiSlep.on.fuzzycondition ='not yet assigned'
+#T7ChiSlep.off.fuzzycondition = 'not yet assigned'
+T7ChiSlep.onShell = True
+T7ChiSlep.offShell = False
+
+#+++++++ next mass plane block ++++++++++++++
+T7ChiSlep05050 = T7ChiSlep.addMassPlane(motherMass = x, interMass0 = (2.*x + y)/3.,\
+    interMass1 = (x + 2.*y)/3., lspMass = y)
+#----limit source----
+T7ChiSlep05050.obsUpperLimit.setSource( 'orig/T7ChiSlep.txt', 'txt' )
+T7ChiSlep05050.obsUpperLimit.unit = 'fb'
+#T7ChiSlep05050.expUpperLimit.setSource( path, type, object = None, index = None )
+#----exclusion source----
+T7ChiSlep05050.obsExclusion.setSource( 'orig/exclusion_T7ChiSlep.txt', 'svg' )
+T7ChiSlep05050.obsExclusionM1.setSource( 'orig/exclusionm1_T7ChiSlep.txt', 'svg' )
+T7ChiSlep05050.obsExclusionP1.setSource( 'orig/exclusionp1_T7ChiSlep.txt', 'svg' )
+#T7ChiSlep05050.expExclusion.setSource( path, type, object = None, index = None )
+#T7ChiSlep05050.expExclusionM1.setSource( path, type, object = None, index = None )
+#T7ChiSlep05050.expExclusionP1.setSource( path, type, object = None, index = None )
+#----global url settings ----
+#T7ChiSlep05050.dataUrl =
+#T7ChiSlep05050.histoDataUrl =
+#T7ChiSlep05050.exclusionDataUrl =
+#----figure----
+T7ChiSlep05050.figure = 'Fig. 14'
+T7ChiSlep05050.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-007/fig_14.png'
+#----limit url settings ----
+#T7ChiSlep05050.obsUpperLimit.dataUrl =
+#T7ChiSlep050500.expUpperLimit.dataUrl =
+#----exclusion url settings ----
+#T7ChiSlep05050.obsExclusion.dataUrl =
+#T7ChiSlep05050.obsExclusionM1.dataUrl =
+#T7ChiSlep05050.obsExclusionP1.dataUrl =
+#T7ChiSlep05050.expExclusion.dataUrl =
+#T7ChiSlep05050.expExclusionM1.dataUrl =
+#T7ChiSlep05050.expExclusionP1.dataUrl =
+
+#+++++++ next txName block ++++++++++++++
+T7btbtWW = TxName('T7btbtWW')
+T7btbtWW.on.checked ='VM'
+#T7ChiSlep.off.checked =
+T7btbtWW.on.constraint ='not yet assigned'
+T7btbtWW.off.constraint = 'not yet assigned'
+T7btbtWW.on.condition ='not yet assigned'
+T7btbtWW.off.condition = 'not yet assigned'
+T7btbtWW.on.fuzzycondition ='not yet assigned'
+T7btbtWW.off.fuzzycondition = 'not yet assigned'
+T7btbtWW.onShell = False
+T7btbtWW.offShell = True
+
+#+++++++ next mass plane block ++++++++++++++
+T7btbtWWC118LSP060 = T7btbtWW.addMassPlane(motherMass = x, interMass0 = y,\
+interMass1 = 118., lspMass = 60.)
+#----limit source----
+T7btbtWWC118LSP060.obsUpperLimit.setSource( 'orig/T7tbtbWWoff.txt', 'txt' )
+T7btbtWWC118LSP060.obsUpperLimit.unit = 'fb'
+#T7ChiSlep05050.expUpperLimit.setSource( path, type, object = None, index = None )
+#----exclusion source----
+T7btbtWWC118LSP060.obsExclusion.setSource( 'orig/exclusion_T7tbtbWWoff.txt', 'svg' )
+T7btbtWWC118LSP060.obsExclusionM1.setSource( 'orig/exclusionm1_T7tbtbWWoff.txt', 'svg' )
+T7btbtWWC118LSP060.obsExclusionP1.setSource( 'orig/exclusionp1_T7tbtbWWoff.txt', 'svg' )
+#T7btbtWWC118LSP060.expExclusion.setSource( path, type, object = None, index = None )
+#T7btbtWWC118LSP060.expExclusionM1.setSource( path, type, object = None, index = None )
+#T7btbtWWC118LSP060.expExclusionP1.setSource( path, type, object = None, index = None )
+#----global url settings ----
+#T7btbtWWC118LSP060.dataUrl =
+#T7btbtWWC118LSP060.histoDataUrl =
+#T7btbtWWC118LSP060.exclusionDataUrl =
+#----figure----
+T7btbtWWC118LSP060.figure = 'Fig. 10'
+T7btbtWWC118LSP060.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-007/fig_10.png'
+#----limit url settings ----
+#T7btbtWWC118LSP060.obsUpperLimit.dataUrl =
+#T7btbtWWC118LSP060.expUpperLimit.dataUrl =
+#----exclusion url settings ----
+#T7btbtWWC118LSP060.obsExclusion.dataUrl =
+#T7btbtWWC118LSP060.obsExclusionM1.dataUrl =
+#T7btbtWWC118LSP060.obsExclusionP1.dataUrl =
+#T7btbtWWC118LSP060.expExclusion.dataUrl =
+#T7btbtWWC118LSP060.expExclusionM1.dataUrl =
+#T7btbtWWC118LSP060.expExclusionP1.dataUrl =
 
 databaseCreator.create()

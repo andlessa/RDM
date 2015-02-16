@@ -1,0 +1,38 @@
+txname: T7btbtWWoff
+condition: not yet assigned
+fuzzycondition: not yet assigned
+constraint: not yet assigned
+validated: False
+axes: Eq(mother,x)_Eq(inter0,y)_Eq(inter1,118.0)_Eq(lsp,60.0)
+branchcondition: equal branches
+publishedData: False
+upperLimits: [[[[800.0*GeV, 300.0*GeV, 118.0*GeV, 60.0*GeV], [800.0*GeV, 300.0*GeV, 118.0*GeV, 60.0*GeV]], 0.023*pb],
+[[[800.0*GeV, 400.0*GeV, 118.0*GeV, 60.0*GeV], [800.0*GeV, 400.0*GeV, 118.0*GeV, 60.0*GeV]], 0.046*pb],
+[[[800.0*GeV, 500.0*GeV, 118.0*GeV, 60.0*GeV], [800.0*GeV, 500.0*GeV, 118.0*GeV, 60.0*GeV]], 0.027*pb],
+[[[800.0*GeV, 600.0*GeV, 118.0*GeV, 60.0*GeV], [800.0*GeV, 600.0*GeV, 118.0*GeV, 60.0*GeV]], 0.021*pb],
+[[[900.0*GeV, 300.0*GeV, 118.0*GeV, 60.0*GeV], [900.0*GeV, 300.0*GeV, 118.0*GeV, 60.0*GeV]], 0.02*pb],
+[[[900.0*GeV, 400.0*GeV, 118.0*GeV, 60.0*GeV], [900.0*GeV, 400.0*GeV, 118.0*GeV, 60.0*GeV]], 0.021*pb],
+[[[900.0*GeV, 500.0*GeV, 118.0*GeV, 60.0*GeV], [900.0*GeV, 500.0*GeV, 118.0*GeV, 60.0*GeV]], 0.02*pb],
+[[[900.0*GeV, 600.0*GeV, 118.0*GeV, 60.0*GeV], [900.0*GeV, 600.0*GeV, 118.0*GeV, 60.0*GeV]], 0.019*pb],
+[[[900.0*GeV, 700.0*GeV, 118.0*GeV, 60.0*GeV], [900.0*GeV, 700.0*GeV, 118.0*GeV, 60.0*GeV]], 0.017*pb],
+[[[1000.0*GeV, 300.0*GeV, 118.0*GeV, 60.0*GeV], [1000.0*GeV, 300.0*GeV, 118.0*GeV, 60.0*GeV]], 0.017*pb],
+[[[1000.0*GeV, 400.0*GeV, 118.0*GeV, 60.0*GeV], [1000.0*GeV, 400.0*GeV, 118.0*GeV, 60.0*GeV]], 0.02*pb],
+[[[1000.0*GeV, 500.0*GeV, 118.0*GeV, 60.0*GeV], [1000.0*GeV, 500.0*GeV, 118.0*GeV, 60.0*GeV]], 0.017*pb],
+[[[1000.0*GeV, 600.0*GeV, 118.0*GeV, 60.0*GeV], [1000.0*GeV, 600.0*GeV, 118.0*GeV, 60.0*GeV]], 0.016*pb],
+[[[1000.0*GeV, 700.0*GeV, 118.0*GeV, 60.0*GeV], [1000.0*GeV, 700.0*GeV, 118.0*GeV, 60.0*GeV]], 0.013*pb],
+[[[1000.0*GeV, 800.0*GeV, 118.0*GeV, 60.0*GeV], [1000.0*GeV, 800.0*GeV, 118.0*GeV, 60.0*GeV]], 0.016*pb],
+[[[1100.0*GeV, 300.0*GeV, 118.0*GeV, 60.0*GeV], [1100.0*GeV, 300.0*GeV, 118.0*GeV, 60.0*GeV]], 0.018*pb],
+[[[1100.0*GeV, 400.0*GeV, 118.0*GeV, 60.0*GeV], [1100.0*GeV, 400.0*GeV, 118.0*GeV, 60.0*GeV]], 0.015*pb],
+[[[1100.0*GeV, 500.0*GeV, 118.0*GeV, 60.0*GeV], [1100.0*GeV, 500.0*GeV, 118.0*GeV, 60.0*GeV]], 0.015*pb],
+[[[1100.0*GeV, 600.0*GeV, 118.0*GeV, 60.0*GeV], [1100.0*GeV, 600.0*GeV, 118.0*GeV, 60.0*GeV]], 0.014*pb],
+[[[1100.0*GeV, 700.0*GeV, 118.0*GeV, 60.0*GeV], [1100.0*GeV, 700.0*GeV, 118.0*GeV, 60.0*GeV]], 0.015*pb],
+[[[1100.0*GeV, 800.0*GeV, 118.0*GeV, 60.0*GeV], [1100.0*GeV, 800.0*GeV, 118.0*GeV, 60.0*GeV]], 0.015*pb],
+[[[1100.0*GeV, 900.0*GeV, 118.0*GeV, 60.0*GeV], [1100.0*GeV, 900.0*GeV, 118.0*GeV, 60.0*GeV]], 0.012*pb],
+[[[1200.0*GeV, 300.0*GeV, 118.0*GeV, 60.0*GeV], [1200.0*GeV, 300.0*GeV, 118.0*GeV, 60.0*GeV]], 0.016*pb],
+[[[1200.0*GeV, 400.0*GeV, 118.0*GeV, 60.0*GeV], [1200.0*GeV, 400.0*GeV, 118.0*GeV, 60.0*GeV]], 0.015*pb],
+[[[1200.0*GeV, 500.0*GeV, 118.0*GeV, 60.0*GeV], [1200.0*GeV, 500.0*GeV, 118.0*GeV, 60.0*GeV]], 0.015*pb],
+[[[1200.0*GeV, 600.0*GeV, 118.0*GeV, 60.0*GeV], [1200.0*GeV, 600.0*GeV, 118.0*GeV, 60.0*GeV]], 0.013*pb],
+[[[1200.0*GeV, 700.0*GeV, 118.0*GeV, 60.0*GeV], [1200.0*GeV, 700.0*GeV, 118.0*GeV, 60.0*GeV]], 0.014*pb],
+[[[1200.0*GeV, 800.0*GeV, 118.0*GeV, 60.0*GeV], [1200.0*GeV, 800.0*GeV, 118.0*GeV, 60.0*GeV]], 0.013*pb],
+[[[1200.0*GeV, 900.0*GeV, 118.0*GeV, 60.0*GeV], [1200.0*GeV, 900.0*GeV, 118.0*GeV, 60.0*GeV]], 0.013*pb],
+[[[1200.0*GeV, 1000.0*GeV, 118.0*GeV, 60.0*GeV], [1200.0*GeV, 1000.0*GeV, 118.0*GeV, 60.0*GeV]], 0.013*pb]]
