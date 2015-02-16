@@ -42,7 +42,8 @@ T1_1 = T1.addMassPlane(motherMass = x , lspMass = y )
 T1_1.figure = 'fig_07a.pdf'
 T1_1.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-047/fig_07a.pdf'
 # ----limit source----
-T1_1.obsUpperLimit.setSource( './orig/ana_7_cut_0.effi', 'txt', objectName = None, index = None )
+## T1_1.obsUpperLimit.setSource( './orig/T1.effi', 'txt', objectName = None, index = None )
+T1_1.efficiencyMap.setSource( './orig/T1.effi', 'txt', objectName = None, index = None )
 # T1_1.obsUpperLimit.unit = 'fb'
 # T1_1.expUpperLimit.setSource( path, type, objectName = None, index = None )
 # ----exclusion source----
