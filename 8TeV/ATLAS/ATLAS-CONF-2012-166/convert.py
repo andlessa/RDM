@@ -2,12 +2,32 @@
 
 """
 .. module:: convert
-   :synopsis: uesed to create info.txt,sms.py,sms.root and newSms.py.
+   :synopsis: uesed to create info.txt, txname.txt, twiki.txt and sms.py.
 
-"""
+.. moduleauthor:: Michael Traub <michael.traub@gmx.at>
+
+"""   
 import sys
 import os
-sys.path.append(os.path.abspath('../../../../smodels-utils'))
+import argparse
+import types
+
+argparser = argparse.ArgumentParser(description = \
+'create info.txt, txname.txt, twiki.txt and sms.py')
+argparser.add_argument ('-utilsPath', '--utilsPath', \
+help = 'path to the package smodels_utils',\
+type = types.StringType)
+args = argparser.parse_args()
+    
+if args.utilsPath:
+    utilsPath = args.utilsPath
+else:
+    databaseRoot = '../../../'
+    sys.path.append(os.path.abspath(databaseRoot))
+    from utilsPath import utilsPath 
+    utilsPath = databaseRoot + utilsPath
+
+sys.path.append(os.path.abspath(utilsPath))
 from smodels_utils.dataPreparation.inputObjects import TxName, MetaInfo
 from smodels_utils.dataPreparation.databaseCreation import databaseCreator
 from smodels_utils.dataPreparation.origPlotObjects import x, y
@@ -80,7 +100,7 @@ T6bbWW.on.fuzzycondition ="None"
 T6bbWW.off.fuzzycondition ="Cgtr([[['b'],['L','nu']],[['b'],['jet','jet']]],3.*[[['b'],['ta','nu']],[['b'],['jet','jet']]]);Cgtr([[['b'],['L','nu']],[['b'],['jet','jet']]],3.*[[['b'],['e','nu']],[['b'],['jet','jet']]])"
 
 #+++++++ next mass plane block ++++++++++++++
-T6bbWWC150 = T6bbWW.addMassPlane(motherMass = x, interMass = 150.0, lspMass = y)
+T6bbWWC150 = T6bbWW.addMassPlane(motherMass = x, interMass0 = 150.0, lspMass = y)
 #----limit source----
 T6bbWWC150.obsUpperLimit.setSource( "orig/T6bbWWC150.txt", "txt")
 #T6bbWWC150.expUpperLimit.setSource( path, type, object = None, index = None )
@@ -110,7 +130,7 @@ T6bbWWC150.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES
 #T6bbWWC150.expExclusionP1.dataUrl =
 
 #+++++++ next mass plane block ++++++++++++++
-T6bbWWx200 = T6bbWW.addMassPlane(motherMass = x, interMass = y * 2.0, lspMass = y)
+T6bbWWx200 = T6bbWW.addMassPlane(motherMass = x, interMass0 = y * 2.0, lspMass = y)
 #----limit source----
 T6bbWWx200.obsUpperLimit.setSource( "orig/T6bbWWx2.txt", 'txt' )
 #T6bbWWx200.expUpperLimit.setSource( path, type, object = None, index = None )
