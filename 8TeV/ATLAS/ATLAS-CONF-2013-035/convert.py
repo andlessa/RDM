@@ -2,12 +2,32 @@
 
 """
 .. module:: convert
-   :synopsis: uesed to create info.txt,sms.py,sms.root and newSms.py.
+   :synopsis: uesed to create info.txt, txname.txt, twiki.txt and sms.py.
 
-"""
+.. moduleauthor:: Michael Traub <michael.traub@gmx.at>
+
+"""   
 import sys
 import os
-sys.path.append(os.path.abspath('../../../../smodels-utils'))
+import argparse
+import types
+
+argparser = argparse.ArgumentParser(description = \
+'create info.txt, txname.txt, twiki.txt and sms.py')
+argparser.add_argument ('-utilsPath', '--utilsPath', \
+help = 'path to the package smodels_utils',\
+type = types.StringType)
+args = argparser.parse_args()
+    
+if args.utilsPath:
+    utilsPath = args.utilsPath
+else:
+    databaseRoot = '../../../'
+    sys.path.append(os.path.abspath(databaseRoot))
+    from utilsPath import utilsPath 
+    utilsPath = databaseRoot + utilsPath
+
+sys.path.append(os.path.abspath(utilsPath))
 from smodels_utils.dataPreparation.inputObjects import TxName, MetaInfo
 from smodels_utils.dataPreparation.databaseCreation import databaseCreator
 from smodels_utils.dataPreparation.origPlotObjects import x, y
@@ -55,7 +75,7 @@ TChiWZ.obsExclusion.setSource( "orig/TChiWZ_exc.dat", "txt")
 #TChiWZ.exclusionDataUrl =
 #----figure----
 TChiWZ.figure = 'Fig.(aux) 1b'
-TChiWZ.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-035/fig_01b.png'
+TChiWZ.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-035/figaux_01b.png'
 #----limit url settings ----
 TChiWZ.obsUpperLimit.dataUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-035/figaux_01b_PRELIMINARY.data'
 #TChiWZ.expUpperLimit.dataUrl =
@@ -79,7 +99,7 @@ TChiChipmSlepL.on.fuzzycondition ="Csim([[['L'],['L']],[['L'],['nu']]],[[['L'],[
 #TChiChipmSlepL.off.fuzzycondition =
 
 #+++++++ next mass plane block ++++++++++++++
-TChiChipmSlepL050 = TChiChipmSlepL.addMassPlane(motherMass = x, interMass = x*0.5 + (1. - 0.5)*y, lspMass = y)
+TChiChipmSlepL050 = TChiChipmSlepL.addMassPlane(motherMass = x, interMass0 = x*0.5 + (1. - 0.5)*y, lspMass = y)
 #----limit source----
 TChiChipmSlepL050.obsUpperLimit.setSource( "orig/TChiChipmSlepL.txt", 'txt' )
 TChiChipmSlepL050.obsUpperLimit.unit = 'fb'
@@ -97,7 +117,7 @@ TChiChipmSlepL050.obsUpperLimit.unit = 'fb'
 #TChiChipmSlepL050.exclusionDataUrl =
 #----figure----
 TChiChipmSlepL050.figure = 'Fig.(aux) 1a'
-TChiChipmSlepL050.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-035/fig_01a.png'
+TChiChipmSlepL050.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-035/figaux_01a.png'
 #----limit url settings ----
 TChiChipmSlepL050.obsUpperLimit.dataUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-035/figaux_01a_PRELIMINARY.data'
 #TChiChipmSlepL050.expUpperLimit.dataUrl =
