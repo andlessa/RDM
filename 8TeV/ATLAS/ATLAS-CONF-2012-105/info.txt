@@ -6,4 +6,3 @@ url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2012-10
 private: False
 implemented_by: MT
 lastUpdate: 2015/2/9
-

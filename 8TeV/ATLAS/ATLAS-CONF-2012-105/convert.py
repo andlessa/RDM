@@ -2,15 +2,36 @@
 
 """
 .. module:: convert
-   :synopsis: uesed to create info.txt,sms.py,sms.root and newSms.py.
+   :synopsis: uesed to create info.txt, txname.txt, twiki.txt and sms.py.
 
-"""
+.. moduleauthor:: Michael Traub <michael.traub@gmx.at>
+
+"""   
 import sys
 import os
-sys.path.append(os.path.abspath('../../../../smodels-utils'))
+import argparse
+import types
+
+argparser = argparse.ArgumentParser(description = \
+'create info.txt, txname.txt, twiki.txt and sms.py')
+argparser.add_argument ('-utilsPath', '--utilsPath', \
+help = 'path to the package smodels_utils',\
+type = types.StringType)
+args = argparser.parse_args()
+    
+if args.utilsPath:
+    utilsPath = args.utilsPath
+else:
+    databaseRoot = '../../../'
+    sys.path.append(os.path.abspath(databaseRoot))
+    from utilsPath import utilsPath 
+    utilsPath = databaseRoot + utilsPath
+
+sys.path.append(os.path.abspath(utilsPath))
 from smodels_utils.dataPreparation.inputObjects import TxName, MetaInfo
 from smodels_utils.dataPreparation.databaseCreation import databaseCreator
 from smodels_utils.dataPreparation.origPlotObjects import x, y
+
 
 #+++++++ global info block ++++++++++++++
 info = MetaInfo('ATLAS-CONF-2012-105')
