@@ -2,15 +2,36 @@
 
 """
 .. module:: convert
-   :synopsis: uesed to create info.txt,sms.py,sms.root and newSms.py.
+   :synopsis: uesed to create info.txt, txname.txt, twiki.txt and sms.py.
 
-"""
+.. moduleauthor:: Michael Traub <michael.traub@gmx.at>
+
+"""   
 import sys
 import os
-sys.path.append(os.path.abspath('../../../../smodels-utils'))
+import argparse
+import types
+
+argparser = argparse.ArgumentParser(description = \
+'create info.txt, txname.txt, twiki.txt and sms.py')
+argparser.add_argument ('-utilsPath', '--utilsPath', \
+help = 'path to the package smodels_utils',\
+type = types.StringType)
+args = argparser.parse_args()
+    
+if args.utilsPath:
+    utilsPath = args.utilsPath
+else:
+    databaseRoot = '../../../'
+    sys.path.append(os.path.abspath(databaseRoot))
+    from utilsPath import utilsPath 
+    utilsPath = databaseRoot + utilsPath
+
+sys.path.append(os.path.abspath(utilsPath))
 from smodels_utils.dataPreparation.inputObjects import TxName, MetaInfo
 from smodels_utils.dataPreparation.databaseCreation import databaseCreator
 from smodels_utils.dataPreparation.origPlotObjects import x, y
+
 
 #+++++++ global info block ++++++++++++++
 info = MetaInfo('ATLAS-CONF-2013-028')
@@ -38,7 +59,7 @@ TChiChipmStauL.on.fuzzycondition ="Csim([[['nu'],['ta']],[['ta+'],['ta-']]],[[['
 #TChiChipmStauL.off.fuzzycondition =
 
 #+++++++ next mass plane block ++++++++++++++
-TChiChipmStauL050 = TChiChipmStauL.addMassPlane(motherMass = x, interMass = x*0.5 + (1. - 0.5)*y, lspMass = y)
+TChiChipmStauL050 = TChiChipmStauL.addMassPlane(motherMass = x, interMass0 = x*0.5 + (1. - 0.5)*y, lspMass = y)
 #----limit source----
 TChiChipmStauL050.obsUpperLimit.setSource( "orig/TChiChipmStauL.txt", "txt" )
 #TChiChipmStauL050.expUpperlimit.setSource( path, type, object = None, index = None )
@@ -55,7 +76,7 @@ TChiChipmStauL050.obsUpperLimit.setSource( "orig/TChiChipmStauL.txt", "txt" )
 #TChiChipmStauL050.exclusionDataUrl =
 #----figure----
 TChiChipmStauL050.figure = 'Fig.(aux) 8a'
-TChiChipmStauL050.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-028/fig_08a.png'
+TChiChipmStauL050.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-028/figaux_08a.png'
 #----limit url settings ----
 #TChiChipmStauL050.obsUpperLimit.dataUrl = 
 #TChiChipmStauL050.expUpperLimit.dataUrl =
@@ -79,7 +100,7 @@ TChipChimStauSnu.on.fuzzycondition ="Csim([[['ta-'],['nu']],[['nu'],['ta+']]],[[
 #TChipChimStauSnu.off.fuzzycondition =
 
 #+++++++ next mass plane block ++++++++++++++
-TChipChimStauSnu050 = TChipChimStauSnu.addMassPlane(motherMass = x, interMass = x*0.5 + (1. - 0.5)*y, lspMass = y)
+TChipChimStauSnu050 = TChipChimStauSnu.addMassPlane(motherMass = x, interMass0 = x*0.5 + (1. - 0.5)*y, lspMass = y)
 #----limit source----
 TChipChimStauSnu050.obsUpperLimit.setSource( "orig/TChipChimStauSnu.txt", "txt" )
 #TChipChimStauSnu050.expUpperlimit.setSource( path, type, object = None, index = None )
@@ -96,7 +117,7 @@ TChipChimStauSnu050.obsUpperLimit.setSource( "orig/TChipChimStauSnu.txt", "txt" 
 #TChipChimStauSnu050.exclusionDataUrl =
 #----figure----
 TChipChimStauSnu050.figure = 'Fig.(aux) 9a'
-TChipChimStauSnu050.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-028/fig_09a.png'
+TChipChimStauSnu050.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-028/figaux_09a.png'
 #----limit url settings ----
 #TChipChimStauSnu050.obsUpperLimit.dataUrl =
 #TChipChimStauSnu050.expUpperLimit.dataUrl =
