@@ -2,15 +2,36 @@
 
 """
 .. module:: convert
-   :synopsis: uesed to create info.txt,sms.py,sms.root and newSms.py.
+   :synopsis: uesed to create info.txt, txname.txt, twiki.txt and sms.py.
 
-"""
+.. moduleauthor:: Michael Traub <michael.traub@gmx.at>
+
+"""   
 import sys
 import os
-sys.path.append(os.path.abspath('../../../../smodels-utils'))
+import argparse
+import types
+
+argparser = argparse.ArgumentParser(description = \
+'create info.txt, txname.txt, twiki.txt and sms.py')
+argparser.add_argument ('-utilsPath', '--utilsPath', \
+help = 'path to the package smodels_utils',\
+type = types.StringType)
+args = argparser.parse_args()
+    
+if args.utilsPath:
+    utilsPath = args.utilsPath
+else:
+    databaseRoot = '../../../'
+    sys.path.append(os.path.abspath(databaseRoot))
+    from utilsPath import utilsPath 
+    utilsPath = databaseRoot + utilsPath
+
+sys.path.append(os.path.abspath(utilsPath))
 from smodels_utils.dataPreparation.inputObjects import TxName, MetaInfo
 from smodels_utils.dataPreparation.databaseCreation import databaseCreator
 from smodels_utils.dataPreparation.origPlotObjects import x, y
+
 
 #+++++++ global info block ++++++++++++++
 info = MetaInfo('CMS-SUS-13-007')
@@ -42,7 +63,7 @@ T1tttt.off.fuzzycondition = None
 T1tttt_1 = T1tttt.addMassPlane(motherMass = x , lspMass = y )
 #----figure----
 T1tttt_1.figure = 'combLimit_T1tttt_b.pdf'
-T1tttt_1.figureUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13007/combLimit_T1t1t_b.pdf'
+T1tttt_1.figureUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13007/combLimit_T1tttt_b.pdf'
 #----limit source----
 T1tttt_1.obsUpperLimit.setSource( './orig/T1tttt.txt', 'txt', objectName = None, index = None )
 T1tttt_1.obsUpperLimit.unit = 'fb'
@@ -81,7 +102,7 @@ T5tttt.on.fuzzycondition = None
 T5tttt.off.fuzzycondition = None
 
 #+++++++ next mass plane block ++++++++++++++
-T5tttt_1 = T5tttt.addMassPlane(motherMass = 1000. , interMass = x , lspMass = y )
+T5tttt_1 = T5tttt.addMassPlane(motherMass = 1000. , interMass0 = x , lspMass = y )
 #----figure----
 T5tttt_1.figure = 'combLimit_T1t1t_b.pdf'
 T5tttt_1.figureUrl ='https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13007/combLimit_T1t1t_b.png'
@@ -112,7 +133,7 @@ T5tttt_1.obsUpperLimit.dataUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/Phys
 #T5tttt_1.expectedExclusionP1.dataUrl =
 
 #+++++++ next mass plane block ++++++++++++++
-T5tttt_2 = T5tttt.addMassPlane(motherMass = x , interMass = y , lspMass = 50. )
+T5tttt_2 = T5tttt.addMassPlane(motherMass = x , interMass0 = y , lspMass = 50. )
 #----figure----
 T5tttt_2.figure = 'combLimit_T5tttt_b.pdf'
 T5tttt_2.figureUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13007/combLimit_T5tttt_b.png'
