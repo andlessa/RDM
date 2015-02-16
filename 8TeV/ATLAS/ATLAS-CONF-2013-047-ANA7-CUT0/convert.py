@@ -13,7 +13,8 @@ from smodels_utils.dataPreparation.databaseCreation import databaseCreator
 from smodels_utils.dataPreparation.origPlotObjects import x, y
 
 #+++++++ global info block ++++++++++++++
-info = MetaInfo('ATLAS-CONF-2013-047-ANA7-CUT0')
+info = MetaInfo('ATLAS-CONF-2013-047')
+info.signalRegion = 'ANA7-CUT0'
 info.url ='https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-047/' 
 info.sqrts = 8
 info.lumi = 20.3
