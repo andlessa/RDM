@@ -26,10 +26,29 @@ def head():
     '"""\n' +\
     'import sys\n' +\
     'import os\n' +\
-    "sys.path.append(os.path.abspath('../../../../smodels-utils'))\n" +\
+    'import argparse\n'
+    'import types\n'
+    '\n' +\
+    "argparser = argparse.ArgumentParser(description = \\\n" +\
+    "'create info.txt, txname.txt, twiki.txt and sms.py')\n" +\
+    "argparser.add_argument ('-utilsPath', '--utilsPath', \\\n" +\
+    "help = 'path to the package smodels_utils',\\\n"
+    "type = types.StringType)\n" +\
+    "args = argparser.parse_args()\n" +\
+    "\n" +\
+    "if args.utilsPath:\n" +\
+    "    utilsPath = args.utilsPath\n" +\
+    "else:\n" +\
+    "    databaseRoot = '../../../'\n" +\
+    "    sys.path.append(os.path.abspath(databaseRoot))\n" +\
+    "    from utilsPath import utilsPath\n" +\
+    "    utilsPath = databaseRoot + utilsPath\n" +\
+    "\n"
+    "sys.path.append(os.path.abspath(utilsPath))\n" +\
     'from smodels_utils.dataPreparation.inputObjects import TxName, MetaInfo\n' +\
     'from smodels_utils.dataPreparation.databaseCreation import databaseCreator\n' +\
     'from smodels_utils.dataPreparation.origPlotObjects import x, y\n'
+
     return block
 
 def infoBlock(experiment, ID, sqrts): 
@@ -115,9 +134,15 @@ def addMassPlane_multiDecay(txName, planeName):
     block =\
     "\n" +\
     "#+++++++ next mass plane block ++++++++++++++" +\
-    "\n" +\
-    "%s = %s.addMassPlane(motherMass = , interMass = , lspMass = )\n"\
-    %(planeName, txName)
+    "\n" 
+    if txName[:2] == 'T7' or txName[:2] == 'T8':
+        block = block +\
+        "%s = %s.addMassPlane(motherMass = , interMass0 = , interMass1 =, lspMass = )\n"\
+        %(planeName, txName)
+    else:
+        block = block +\
+        "%s = %s.addMassPlane(motherMass = , interMass0 = , lspMass = )\n"\
+        %(planeName, txName)
     return block
     
 def food():

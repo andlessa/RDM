@@ -4,6 +4,7 @@
 !info.txt
 !sms.root
 !template.py
+!utilsPath.py
 !*/*/*/orig/*
 !*/*/*/*.txt
 !convert.py
