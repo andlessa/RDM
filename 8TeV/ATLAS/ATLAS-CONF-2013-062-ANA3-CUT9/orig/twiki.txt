@@ -1,0 +1,1 @@
+||[[https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-062/|ATLAS-CONF-2013-062]]<<BR>>ss_by: SUSY-2013-20||[[smsDictionary#T1tttt|T1tttt]]<<BR>>[[smsDictionary#T1bbbb|T1bbbb]]||Eq(mother,x)_Eq(lsp,y)<<BR>>Eq(mother,x)_Eq(lsp,y)||[[None|None]]<<BR>>[[None|None]]||None<<BR>>None||None<<BR>>None||
