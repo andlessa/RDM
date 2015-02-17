@@ -68,4 +68,67 @@ T1_1.obsExclusion.setSource( './orig/T1_exc.dat', 'txt', objectName = None, inde
 #T1_1.expectedExclusionM1.dataUrl =
 #T1_1.expectedExclusionP1.dataUrl =
 
+T2tt = TxName('T2tt')
+T2tt.on.constraint = "[[['t']],[['t']]]"
+T2tt.on.condition = None
+T2tt.on.fuzzycondition = None
+T2tt_1 = T2tt.addMassPlane(motherMass = x , lspMass = y )
+T2tt_1.efficiencyMap.setSource( './orig/T2tt.effi', 'effi', objectName = None, index = None )
+
+T2bb = TxName('T2bb')
+T2bb.on.constraint = "[[['b']],[['b']]]"
+T2bb.on.condition = None
+T2bb.on.fuzzycondition = None
+T2bb_1 = T2bb.addMassPlane(motherMass = x , lspMass = y )
+T2bb_1.efficiencyMap.setSource( './orig/T2bb.effi', 'effi', objectName = None, index = None )
+
+T2bt = TxName('T2bt')
+T2bt.on.constraint = "[[['b']],[['t']]]"
+T2bt.on.condition = None
+T2bt.on.fuzzycondition = None
+T2bt_1 = T2bt.addMassPlane(motherMass = x , lspMass = y )
+T2bt_1.efficiencyMap.setSource( './orig/T2bt.effi', 'effi', objectName = None, index = None )
+
+T1tttt = TxName('T1tttt')
+T1tttt.on.constraint = "[[['t','t']],[['t','t']]]"
+T1tttt.on.condition = None
+T1tttt.on.fuzzycondition = None
+T1tttt_1 = T1tttt.addMassPlane(motherMass = x , lspMass = y )
+T1tttt_1.efficiencyMap.setSource( './orig/T1tttt.effi', 'effi', objectName = None, index = None )
+
+T1bbtt = TxName('T1bbtt')
+T1bbtt.on.constraint = "[[['b','b']],[['t','t']]]"
+T1bbtt.on.condition = None
+T1bbtt.on.fuzzycondition = None
+T1bbtt_1 = T1bbtt.addMassPlane(motherMass = x , lspMass = y )
+T1bbtt_1.efficiencyMap.setSource( './orig/T1bbtt.effi', 'effi', objectName = None, index = None )
+
+T1btbt = TxName('T1btbt')
+T1btbt.on.constraint = "[[['b','t']],[['b','t']]]"
+T1btbt.on.condition = None
+T1btbt.on.fuzzycondition = None
+T1btbt_1 = T1btbt.addMassPlane(motherMass = x , lspMass = y )
+T1btbt_1.efficiencyMap.setSource( './orig/T1btbt.effi', 'effi', objectName = None, index = None )
+
+T1btqq = TxName('T1btqq')
+T1btqq.on.constraint = "[[['b','t']],[['jet','jet']]]"
+T1btqq.on.condition = None
+T1btqq.on.fuzzycondition = None
+T1btqq_1 = T1btqq.addMassPlane(motherMass = x , lspMass = y )
+T1btqq_1.efficiencyMap.setSource( './orig/T1btqq.effi', 'effi', objectName = None, index = None )
+
+T1qqtt = TxName('T1qqtt')
+T1qqtt.on.constraint = "[[['jet','jet']],[['t','t']]]"
+T1qqtt.on.condition = None
+T1qqtt.on.fuzzycondition = None
+T1qqtt_1 = T1qqtt.addMassPlane(motherMass = x , lspMass = y )
+T1qqtt_1.efficiencyMap.setSource( './orig/T1qqtt.effi', 'effi', objectName = None, index = None )
+
+T1bttt = TxName('T1bttt')
+T1bttt.on.constraint = "[[['b','t']],[['t','t']]]"
+T1bttt.on.condition = None
+T1bttt.on.fuzzycondition = None
+T1bttt_1 = T1bttt.addMassPlane(motherMass = x , lspMass = y )
+T1bttt_1.efficiencyMap.setSource( './orig/T1bttt.effi', 'effi', objectName = None, index = None )
+
 databaseCreator.create()
