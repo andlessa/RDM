@@ -1,9 +1,10 @@
 sqrts: 8*TeV
 lumi: 20.3/fb
-id: ATLAS-CONF-2013-047-ANA7-CUT0
+id: ATLAS-CONF-2013-047
 prettyname: 0 leptons + jets + met
 url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-047/
 arxiv: http://arxiv.org/abs/arXiv:1311.4937
+signalRegion: ANA7-CUT0
 publication: http://cds.cern.ch/record/1547563
 contact: fastlim
 superseded_by: SUSY-2013-02
@@ -13,5 +14,5 @@ implemented_by: MT
 observedN: 5333
 expectedBG: 4700
 bgError: 500
-lastUpdate: 2015/2/16
+lastUpdate: 2015/2/17
 
