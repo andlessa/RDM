@@ -3,7 +3,7 @@ condition: None
 fuzzycondition: None
 constraint: [[['b','W']],[['b','W']]]
 validated: False
-axes: Eq(mother,x)_Eq(lsp,y);Eq(mother,x)_Eq(lsp,y)
+axes: 2*Eq(mother,x)_Eq(lsp,y);2*Eq(mother,x)_Eq(lsp,y)
 branchcondition: equal branches
 publishedData: True
 upperLimits: [[[[150.0*GeV, 0.0*GeV], [150.0*GeV, 0.0*GeV]], 203.939565716*pb],
