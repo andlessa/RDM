@@ -3,7 +3,7 @@ condition: [[['b','L','nu']],[['b','jet','jet']]] > 2.7* [[['b','ta','nu']],[['b
 fuzzycondition: Cgtr([[['b'],['L','nu']],[['b'],['jet','jet']]],3.*[[['b'],['ta','nu']],[['b'],['jet','jet']]]);Cgtr([[['b'],['L','nu']],[['b'],['jet','jet']]],3.*[[['b'],['e','nu']],[['b'],['jet','jet']]])
 constraint: 3.5*([[['b'],['L','nu']],[['b'],['jet','jet']]])
 validated: False
-axes: Eq(mother,x)_Eq(inter0,150.0)_Eq(lsp,y);Eq(mother,x)_Eq(inter0,2.0*y)_Eq(lsp,y)
+axes: 2*Eq(mother,x)_Eq(inter0,150.0)_Eq(lsp,y);2*Eq(mother,x)_Eq(inter0,2.0*y)_Eq(lsp,y)
 branchcondition: equal branches
 publishedData: False
 upperLimits: [[[[150.0*GeV, 150.0*GeV, 25.0*GeV], [150.0*GeV, 150.0*GeV, 25.0*GeV]], 47.7*pb],
