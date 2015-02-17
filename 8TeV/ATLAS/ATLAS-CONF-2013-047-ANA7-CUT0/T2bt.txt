@@ -5,7 +5,7 @@ constraint: [[['b']],[['t']]]
 validated: False
 axes: Eq(mother,x)_Eq(lsp,y)
 branchcondition: equal branches
-publishedData: True
+publishedData: False
 efficiencymap: [[[[180.0*GeV, 1.0*GeV], [180.0*GeV, 1.0*GeV]], 0.0012325154781],
 [[[200.0*GeV, 25.0*GeV], [200.0*GeV, 25.0*GeV]], 0.00218495502398],
 [[[200.0*GeV, 1.0*GeV], [200.0*GeV, 1.0*GeV]], 0.00236659717135],
