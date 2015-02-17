@@ -1,11 +1,17 @@
-sqrts: 8.0*TeV
+sqrts: 8*TeV
 lumi: 20.0/fb
-id: ATLAS-CONF-2013-062-ANA3-CUT9
+id: ATLAS-CONF-2013-062
+prettyname: leptons + jets + met
 url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-062/
+signalRegion: ANA3-CUT9
+publication: http://cds.cern.ch/record/1557779
+contact: fastlim
+superseded_by: SUSY-2013-20
+comment: created from fastlim-1.0
 private: True
-comment: fastlim-1.0
 implemented_by: WW
-lastUpdate: 2015/2/10
 observedN: 4
 expectedBG: 3.6
 bgError: 1.0
+lastUpdate: 2015/2/17
+
