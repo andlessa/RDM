@@ -78,12 +78,12 @@ def getHisto(points, txName, eqSet):
     
 def main():
     # chose TxName:
-    txName = 'T6bbWW'
+    txName = 'T6bbWWoff'
     # get all available equationSets/massPlanes/plots
     # from info.txt:
     equationSets = getEquationSets(txName)
     # chose equationSet:
-    equationSet = equationSets[0]
+    equationSet = equationSets[1]
     # init OrigPlot object with chosen equationSet:
     origPlot = OrigPlot.fromString(equationSet)
 
@@ -93,7 +93,7 @@ def main():
     upperLimits = getUpperLimits(txName)
     print upperLimits
     for entry in upperLimits:
-        massArray, limit = entry[0][0], entry[1]
+        massArray, limit = entry[0], entry[1]
         xy = origPlot.getXYValues(massArray)
         print '%s --> %s: %s' %(massArray, xy, limit )
         if not xy: continue
