@@ -59,7 +59,7 @@ T4tbW.off.fuzzycondition = "not yet assigned"
 T4tbW.branchingRatio = 0.5
 
 #+++++++ next mass plane block ++++++++++++++
-T4tbW_1 = T4tbW.addMassPlane(motherMass = x, interMass0 = y - 5., lspMass = y)
+T4tbW_1 = T4tbW.addMassPlane(motherMass = x, interMass0 = y + 5., lspMass = y)
 T4tbW_1.setBranch_2(motherMass = x, lspMass = y)
 #----figure----
 T4tbW_1.figure = 'Fig. 5'
