@@ -1,9 +1,9 @@
 txname: T1tttt
 condition: None
 fuzzycondition: None
-constraint: [[['t','t']],[['t','t']]]
+constraint: [[['t+','t-']],[['t+','t-']]]
 validated: False
-axes: Eq(mother,x)_Eq(lsp,y)
+axes: 2*Eq(mother,x)_Eq(lsp,y)
 branchcondition: equal branches
 publishedData: False
 efficiencymap: [[[[410.0*GeV, 60.0*GeV], [410.0*GeV, 60.0*GeV]], 0.00174109222884],
