@@ -8,7 +8,7 @@ publication: http://cds.cern.ch/record/1557779
 contact: fastlim
 superseded_by: SUSY-2013-20
 comment: created from fastlim-1.0
-private: True
+private: False
 implemented_by: WW
 observedN: 4
 expectedBG: 3.6

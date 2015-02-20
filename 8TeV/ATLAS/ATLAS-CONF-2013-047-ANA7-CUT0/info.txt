@@ -10,9 +10,9 @@ contact: fastlim
 superseded_by: SUSY-2013-02
 comment: created from fastlim-1.0
 private: True
-implemented_by: WW
+implemented_by: ww
 observedN: 5333
 expectedBG: 4700
 bgError: 500
-lastUpdate: 2015/2/18
+lastUpdate: 2015/2/19
 

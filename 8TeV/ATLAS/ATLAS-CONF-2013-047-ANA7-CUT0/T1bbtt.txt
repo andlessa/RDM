@@ -6,7 +6,7 @@ validated: False
 axes: 2*Eq(mother,x)_Eq(lsp,y)
 branchcondition: equal branches
 publishedData: False
-efficiencymap: [[[[410.0*GeV, 60.0*GeV], [410.0*GeV, 60.0*GeV]], 0.0118403992465],
+efficiencyMap: [[[[410.0*GeV, 60.0*GeV], [410.0*GeV, 60.0*GeV]], 0.0118403992465],
 [[[410.0*GeV, 1.0*GeV], [410.0*GeV, 1.0*GeV]], 0.0164140171277],
 [[[480.0*GeV, 130.0*GeV], [480.0*GeV, 130.0*GeV]], 0.0175790579918],
 [[[480.0*GeV, 65.0*GeV], [480.0*GeV, 65.0*GeV]], 0.0305079076879],

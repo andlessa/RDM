@@ -106,6 +106,12 @@ constraints =  { "T2tt": "[[['t+']],[['t-']]]", "T2bb": "[[['b']],[['b']]]",
 #T1_1.expectedExclusionM1.dataUrl =
 #T1_1.expectedExclusionP1.dataUrl =
 
+figure={}
+figure["T1"]='fig_07a.pdf'
+
+figureUrl={}
+figureUrl["T1"]='https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-047/fig_07a.pdf'
+
 for i in os.listdir("orig/"):
     if i[-5:]!=".effi": continue
     txname=i[:-5]
@@ -116,16 +122,18 @@ for i in os.listdir("orig/"):
     tmp.on.fuzzycondition = None
     tmp_1 = tmp.addMassPlane (motherMass = x , lspMass = y )
     tmp_1.efficiencyMap.setSource( './orig/%s.effi' % txname, 'effi', objectName = None, index = None ) 
-    if txname=="T1":
-        tmp_1.figure = 'fig_07a.pdf'
-        tmp_1.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-047/fig_07a.pdf'
+    if os.path.exists ( './orig/%s_exc.dat' % txname ):
+        tmp_1.obsExclusion.setSource( './orig/%s_exc.dat' % txname, 'txt', objectName = None, index = None )
+    if txname in figure:
+        tmp_1.figure = figure[txname]
+    if txname in figureUrl:
+        tmp_1.figureUrl = figureUrl[txname]
 # ----limit source----
 ## T1_1.obsUpperLimit.setSource( './orig/T1.effi', 'txt', objectName = None, index = None )
 #        tmp_1.efficiencyMap.setSource( './orig/T1.effi', 'txt', objectName = None, index = None )
 # T1_1.obsUpperLimit.unit = 'fb'
 # T1_1.expUpperLimit.setSource( path, type, objectName = None, index = None )
 # ----exclusion source----
-        tmp_1.obsExclusion.setSource( './orig/T1_exc.dat', 'txt', objectName = None, index = None )
         
 
 #T2tt = TxName('T2tt')
