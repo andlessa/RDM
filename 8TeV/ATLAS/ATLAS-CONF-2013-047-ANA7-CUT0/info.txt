@@ -1,8 +1,8 @@
 sqrts: 8*TeV
 lumi: 20.3/fb
-id: ATLAS-CONF-2013-047
+id: /home/walten/git/smodels-database/8TeV/ATLAS/ATLAS-CONF-2013-047
 prettyname: 0 leptons + jets + met
-url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-047/
+url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES//home/walten/git/smodels-database/8TeV/ATLAS/ATLAS-CONF-2013-047/
 arxiv: http://arxiv.org/abs/arXiv:1311.4937
 signalRegion: ANA7-CUT0
 publication: http://cds.cern.ch/record/1547563
@@ -10,9 +10,9 @@ contact: fastlim
 superseded_by: SUSY-2013-02
 comment: created from fastlim-1.0
 private: True
-implemented_by: MT
+implemented_by: ww
 observedN: 5333
 expectedBG: 4700
 bgError: 500
-lastUpdate: 2015/2/17
+lastUpdate: 2015/2/19
 

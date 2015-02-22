@@ -3,10 +3,10 @@ condition: None
 fuzzycondition: None
 constraint: [[['b']],[['b']]]
 validated: False
-axes: Eq(mother,x)_Eq(lsp,y)
+axes: 2*Eq(mother,x)_Eq(lsp,y)
 branchcondition: equal branches
 publishedData: False
-efficiencymap: [[[[180.0*GeV, 175.0*GeV], [180.0*GeV, 175.0*GeV]], 0.000160085378869],
+efficiencyMap: [[[[180.0*GeV, 175.0*GeV], [180.0*GeV, 175.0*GeV]], 0.000160085378869],
 [[[180.0*GeV, 131.0*GeV], [180.0*GeV, 131.0*GeV]], 0.000429196829666],
 [[[180.0*GeV, 87.0*GeV], [180.0*GeV, 87.0*GeV]], 0.000661394680086],
 [[[180.0*GeV, 43.0*GeV], [180.0*GeV, 43.0*GeV]], 0.000806846670317],
