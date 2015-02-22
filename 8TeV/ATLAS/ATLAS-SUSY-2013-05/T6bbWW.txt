@@ -5,7 +5,6 @@ constraint: [[['b'],['W']],[['b'],['W']]]
 checked: VM
 validated: False
 axes: 2*Eq(mother,300.0)_Eq(inter0,x)_Eq(lsp,y)
-branchcondition: equal branches
 publishedData: True
 upperLimits: [[[[150.0*GeV, 105.0*GeV, 100.0*GeV], [150.0*GeV, 105.0*GeV, 100.0*GeV]], 28.8953*pb],
 [[[150.0*GeV, 140.0*GeV, 135.0*GeV], [150.0*GeV, 140.0*GeV, 135.0*GeV]], 324.682*pb],
