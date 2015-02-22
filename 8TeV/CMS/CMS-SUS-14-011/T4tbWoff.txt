@@ -4,7 +4,6 @@ fuzzycondition: not yet assigned
 constraint: not yet assigned
 validated: False
 axes: Eq(mother,x)_Eq(inter0,y+5.0)_Eq(lsp,y)+Eq(mother,x)_Eq(lsp,y);Eq(mother,x)_Eq(inter0,y+5.0)_Eq(lsp,y)+Eq(mother,x)_Eq(lsp,y)
-branchcondition: asymetric branches BR = 0.5
 publishedData: True
 upperLimits: [[[[100.0*GeV, 5.0*GeV, 0.0*GeV], [100.0*GeV, 0.0*GeV]], 164.008232158*pb],
 [[[125.0*GeV, 5.0*GeV, 0.0*GeV], [125.0*GeV, 0.0*GeV]], 137.454148095*pb],

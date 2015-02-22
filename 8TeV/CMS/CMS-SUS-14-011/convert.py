@@ -56,7 +56,6 @@ T4tbW.off.constraint = "not yet assigned"
 T4tbW.off.condition = "not yet assigned"
 #T4tbW.on.fuzzycondition =
 T4tbW.off.fuzzycondition = "not yet assigned"
-T4tbW.branchingRatio = 0.5
 
 #+++++++ next mass plane block ++++++++++++++
 T4tbW_1 = T4tbW.addMassPlane(motherMass = x, interMass0 = y + 5., lspMass = y)
