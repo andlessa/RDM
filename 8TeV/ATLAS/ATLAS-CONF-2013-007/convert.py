@@ -28,13 +28,13 @@ else:
     utilsPath = databaseRoot + utilsPath
 
 sys.path.append(os.path.abspath(utilsPath))
-from smodels_utils.dataPreparation.inputObjects import TxName, MetaInfo
+from smodels_utils.dataPreparation.inputObjects import TxNameInput, MetaInfoInput
 from smodels_utils.dataPreparation.databaseCreation import databaseCreator
 from smodels_utils.dataPreparation.origPlotObjects import x, y
 
 
 #+++++++ global info block ++++++++++++++
-info = MetaInfo('ATLAS-CONF-2013-007')
+info = MetaInfoInput('ATLAS-CONF-2013-007')
 info.comment = 'A technical problem has been found in the pseudo-experiments used to make Table 4 in the conference note of March 1.'
 info.sqrts = '8.0'
 info.private = False
@@ -49,7 +49,7 @@ info.prettyname = 'ATLAS SS+b'
 info.implemented_by = 'MT'
 
 #+++++++ next txName block ++++++++++++++
-T6ttWW = TxName('T6ttWW')
+T6ttWW = TxNameInput('T6ttWW')
 T6ttWW.on.checked ='VM'
 #T6ttWW.off.checked =
 T6ttWW.on.constraint ="[[['t+'],['W-']],[['t+'],['W-']]]+[[['t-'],['W+']],[['t-'],['W+']]]+[[['t+'],['W-']],[['t-'],['W+']]]"
@@ -122,7 +122,7 @@ T6ttWWx200.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES
 #T6ttWWx200.expExclusionP1.dataUrl =
 
 #+++++++ next txName block ++++++++++++++
-T1tttt = TxName('T1tttt')
+T1tttt = TxNameInput('T1tttt')
 T1tttt.on.checked ="VM"
 #T1tttt.off.checked =
 T1tttt.on.constraint ="[[['t+','t-']],[['t+','t-']]]"
@@ -164,7 +164,7 @@ T1tttt.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATL
 #T1tttt.expExclusionP1.dataUrl =
 
 #+++++++ next txName block ++++++++++++++
-T5tttt = TxName('T5tttt')
+T5tttt = TxNameInput('T5tttt')
 T5tttt.on.checked ="VM"
 #T5tttt.off.checked =
 T5tttt.on.constraint ="[[['t+'],['t-']],[['t+'],['t-']]]+[[['t-'],['t+']],[['t-'],['t+']]]+[[['t+'],['t-']],[['t-'],['t+']]]"
@@ -206,7 +206,7 @@ T5ttttLSP060.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOT
 #T5ttttLSP060.expExclusionP1.dataUrl =
 
 #+++++++ next txName block ++++++++++++++
-T1tbtb = TxName('T1tbtb')
+T1tbtb = TxNameInput('T1tbtb')
 T1tbtb.on.checked ="VM"
 #T1tbtb.off.checked =
 T1tbtb.on.constraint ="[[['t','b']],[['t','b']]]"
@@ -248,7 +248,7 @@ T1tbtb.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATL
 #T1tbtb.expExclusionP1.dataUrl =
 
 #+++++++ next txName block ++++++++++++++
-T5WW = TxName('T5WW')
+T5WW = TxNameInput('T5WW')
 T5WW.on.checked ="VM"
 #T5WW.off.checked =
 T5WW.on.constraint ="[[['jet','jet'],['W']],[['jet','jet'],['W']]]"
@@ -291,7 +291,7 @@ T5WWx200.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/A
 
 
 #+++++++ next txName block ++++++++++++++
-T8ChiSlep = TxName('T8ChiSlep')
+T8ChiSlep = TxNameInput('T8ChiSlep')
 T8ChiSlep.on.checked ='VM'
 #T8ChiSlep.off.checked =
 T8ChiSlep.on.constraint ='not yet assigned'
@@ -336,7 +336,7 @@ T8ChiSlep05050.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFN
 #T8ChiSlep05050.expExclusionP1.dataUrl =
 
 #+++++++ next txName block ++++++++++++++
-T7ChiSlep = TxName('T7ChiSlep')
+T7ChiSlep = TxNameInput('T7ChiSlep')
 T7ChiSlep.on.checked ='VM'
 #T7ChiSlep.off.checked =
 T7ChiSlep.on.constraint ='not yet assigned'
@@ -381,7 +381,7 @@ T7ChiSlep05050.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFN
 #T7ChiSlep05050.expExclusionP1.dataUrl =
 
 #+++++++ next txName block ++++++++++++++
-T7btbtWW = TxName('T7btbtWW')
+T7btbtWW = TxNameInput('T7btbtWW')
 T7btbtWW.on.checked ='VM'
 #T7ChiSlep.off.checked =
 T7btbtWW.on.constraint ='not yet assigned'

@@ -32,7 +32,7 @@ def head():
     "argparser = argparse.ArgumentParser(description = \\\n" +\
     "'create info.txt, txname.txt, twiki.txt and sms.py')\n" +\
     "argparser.add_argument ('-utilsPath', '--utilsPath', \\\n" +\
-    "help = 'path to the package smodels_utils',\\\n"
+    "help = 'path to the package smodels_utils',\\\n" +\
     "type = types.StringType)\n" +\
     "args = argparser.parse_args()\n" +\
     "\n" +\
@@ -45,7 +45,7 @@ def head():
     "    utilsPath = databaseRoot + utilsPath\n" +\
     "\n"
     "sys.path.append(os.path.abspath(utilsPath))\n" +\
-    'from smodels_utils.dataPreparation.inputObjects import TxName, MetaInfo\n' +\
+    'from smodels_utils.dataPreparation.inputObjects import TxNameInput, MetaInfoInput\n' +\
     'from smodels_utils.dataPreparation.databaseCreation import databaseCreator\n' +\
     'from smodels_utils.dataPreparation.origPlotObjects import x, y\n'
 
@@ -56,7 +56,7 @@ def infoBlock(experiment, ID, sqrts):
     "\n" +\
     "#+++++++ global info block ++++++++++++++" +\
     "\n" +\
-    "info = MetaInfo('%s-%s')\n" %(experiment, ID) +\
+    "info = MetaInfoInput('%s-%s')\n" %(experiment, ID) +\
     'info.url =\n' +\
     'info.sqrts = %s\n' %sqrts +\
     'info.lumi = \n' +\
@@ -76,7 +76,7 @@ def txNameBlock(txName):
     "\n" +\
     "#+++++++ next txName block ++++++++++++++" +\
     "\n" +\
-    "%s = TxName('%s')\n" %(txName, txName) +\
+    "%s = TxNameInput('%s')\n" %(txName, txName) +\
     "%s.on.checked =\n" %txName +\
     "%s.off.checked =\n" %txName +\
     "%s.on.constraint =\n" %txName +\
@@ -84,7 +84,8 @@ def txNameBlock(txName):
     "%s.on.condition =\n" %txName +\
     "%s.off.condition =\n" %txName +\
     "%s.on.fuzzycondition =\n" %txName +\
-    "%s.off.fuzzycondition =\n" %txName 
+    "%s.off.fuzzycondition =\n" %txName +\
+    "#%s.branchingRatio =\n" %txName 
     return block
     
 def planeBlock(planeName):
@@ -127,6 +128,8 @@ def addMassPlane_singleDecay(txName, planeName):
     "\n" +\
     "%s = %s.addMassPlane(motherMass = , lspMass = )\n" \
     %(planeName, txName)
+    "#%s.setBranch_2(motherMass = , lspMass = )\n" \
+    %(planeName)
     return block
     
 def addMassPlane_multiDecay(txName, planeName):
@@ -139,10 +142,16 @@ def addMassPlane_multiDecay(txName, planeName):
         block = block +\
         "%s = %s.addMassPlane(motherMass = , interMass0 = , interMass1 =, lspMass = )\n"\
         %(planeName, txName)
+        block = block +\
+        "#%s.setBranch_2(motherMass = , interMass0 = , interMass1 =, lspMass = )\n"\
+        %(planeName)
     else:
         block = block +\
         "%s = %s.addMassPlane(motherMass = , interMass0 = , lspMass = )\n"\
         %(planeName, txName)
+        block = block +\
+        "#%s.setBranch_2(motherMass = , interMass0 = , lspMass = )\n"\
+        %(planeName)
     return block
     
 def food():

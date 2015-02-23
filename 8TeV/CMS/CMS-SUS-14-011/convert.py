@@ -28,12 +28,12 @@ else:
     utilsPath = databaseRoot + utilsPath
 
 sys.path.append(os.path.abspath(utilsPath))
-from smodels_utils.dataPreparation.inputObjects import TxName, MetaInfo
+from smodels_utils.dataPreparation.inputObjects import TxNameInput, MetaInfoInput
 from smodels_utils.dataPreparation.databaseCreation import databaseCreator
 from smodels_utils.dataPreparation.origPlotObjects import x, y
 
 #+++++++ global info block ++++++++++++++
-info = MetaInfo('CMS-SUS-14-011')
+info = MetaInfoInput('CMS-SUS-14-011')
 info.url ='https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS14011'
 info.sqrts = 8
 info.lumi = 19.3
@@ -47,7 +47,7 @@ info.supersedes = 'CMS-PAS-SUS-13-004'
 #info.superseded_by =
 
 #+++++++ next txName block ++++++++++++++
-T4tbW = TxName('T4tbW')
+T4tbW = TxNameInput('T4tbW')
 #T4tbW.on.checked =
 #T4tbW.off.checked =
 T4tbW.on.constraint = "[[['b'],['W']],[['t']]]"
@@ -89,7 +89,7 @@ T4tbW_1.expExclusionM1.dataUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/Phys
 T4tbW_1.expExclusionP1.dataUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS14011/StopLimitsRazor2014.root'
 
 ##+++++++ next txName block ++++++++++++++
-#T1tttt = TxName('T1tttt')
+#T1tttt = TxNameInput('T1tttt')
 #T1tttt.on.checked =
 #T1tttt.off.checked =
 #T1tttt.on.constraint =
@@ -131,7 +131,7 @@ T4tbW_1.expExclusionP1.dataUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/Phys
 #T1tttt_1.expExclusionP1.dataUrl =
 
 ##+++++++ next txName block ++++++++++++++
-#T5tbtbWW = TxName('T5tbtbWW')
+#T5tbtbWW = TxNameInput('T5tbtbWW')
 #T5tbtbWW.on.checked =
 #T5tbtbWW.off.checked =
 #T5tbtbWW.on.constraint =
@@ -174,7 +174,7 @@ T4tbW_1.expExclusionP1.dataUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/Phys
 #T5tbtbWW_1.expExclusionP1.dataUrl =
 
 ##+++++++ next txName block ++++++++++++++
-#T2tt = TxName('T2tt')
+#T2tt = TxNameInput('T2tt')
 #T2tt.on.checked =
 #T2tt.off.checked =
 #T2tt.on.constraint =
@@ -216,7 +216,7 @@ T4tbW_1.expExclusionP1.dataUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/Phys
 #T2tt_1.expExclusionP1.dataUrl =
 
 ##+++++++ next txName block ++++++++++++++
-#T1bbbb = TxName('T1bbbb')
+#T1bbbb = TxNameInput('T1bbbb')
 #T1bbbb.on.checked =
 #T1bbbb.off.checked =
 #T1bbbb.on.constraint =
@@ -258,7 +258,7 @@ T4tbW_1.expExclusionP1.dataUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/Phys
 #T1bbbb_1.expExclusionP1.dataUrl =
 
 ##+++++++ next txName block ++++++++++++++
-#T3tbbbW = TxName('T3tbbbW')
+#T3tbbbW = TxNameInput('T3tbbbW')
 #T3tbbbW.on.checked =
 #T3tbbbW.off.checked =
 #T3tbbbW.on.constraint =
@@ -301,7 +301,7 @@ T4tbW_1.expExclusionP1.dataUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/Phys
 #T3tbbbW_1.expExclusionP1.dataUrl =
 
 ##+++++++ next txName block ++++++++++++++
-#T3tttbW = TxName('T3tttbW')
+#T3tttbW = TxNameInput('T3tttbW')
 #T3tttbW.on.checked =
 #T3tttbW.off.checked =
 #T3tttbW.on.constraint =

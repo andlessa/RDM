@@ -28,12 +28,12 @@ else:
     utilsPath = databaseRoot + utilsPath
 
 sys.path.append(os.path.abspath(utilsPath))
-from smodels_utils.dataPreparation.inputObjects import TxName, MetaInfo
+from smodels_utils.dataPreparation.inputObjects import TxNameInput, MetaInfoInput
 from smodels_utils.dataPreparation.databaseCreation import databaseCreator
 from smodels_utils.dataPreparation.origPlotObjects import x, y
 
 
-info = MetaInfo('ATLAS-SUSY-2013-05')
+info = MetaInfoInput('ATLAS-SUSY-2013-05')
 info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-05/'
 info.sqrts = '8.0*TeV'
 info.lumi = 20.1
@@ -48,7 +48,7 @@ info.comment = 'upper limits for T6bbWWC150 are not public'
 
 #+++++++++++ add new txName +++++++++++++++++
 
-T2bb = TxName('T2bb')
+T2bb = TxNameInput('T2bb')
 T2bb.on.checked = 'VM'
 T2bb.off.checked = 'VM'
 #-----constraint,condition,....------------------------------
@@ -82,7 +82,7 @@ T2bb_1.expExclusionP1.dataUrl ='http://hepdata.cedar.ac.uk/view/ins1247462/d5'
 
 #+++++++++++ add new txName +++++++++++++++++
 
-T6bbWW = TxName('T6bbWW')
+T6bbWW = TxNameInput('T6bbWW')
 T6bbWW.on.checked = 'VM'
 T6bbWW.off.checked = 'VM'
 #-----constraint,condition,....------------------------------

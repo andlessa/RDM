@@ -28,12 +28,12 @@ else:
     utilsPath = databaseRoot + utilsPath
 
 sys.path.append(os.path.abspath(utilsPath))
-from smodels_utils.dataPreparation.inputObjects import TxName, MetaInfo
+    from smodels_utils.dataPreparation.inputObjects import TxNameInput, MetaInfoInput
 from smodels_utils.dataPreparation.databaseCreation import databaseCreator
 from smodels_utils.dataPreparation.origPlotObjects import x, y
 
 #+++++++ global info block ++++++++++++++
-info = MetaInfo('ATLAS-CONF-2013-035')
+info = MetaInfoInput('ATLAS-CONF-2013-035')
 #info.comment = 
 info.sqrts = '8.0'
 info.private = False
@@ -47,7 +47,7 @@ info.prettyname = 'ATLAS trilepton weakinos'
 #info.supersedes = 
 
 #+++++++ next txName block ++++++++++++++
-TChiWZ = TxName('TChiWZ')
+TChiWZ = TxNameInput('TChiWZ')
 TChiWZ.on.checked ="VM"
 TChiWZ.off.checked ="VM"
 TChiWZ.on.constraint ="[[['W']],[['Z']]]"
@@ -88,7 +88,7 @@ TChiWZ.obsUpperLimit.dataUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/C
 #TChiWZ.expExclusionP1.dataUrl =
 
 #+++++++ next txName block ++++++++++++++
-TChiChipmSlepL = TxName('TChiChipmSlepL')
+TChiChipmSlepL = TxNameInput('TChiChipmSlepL')
 TChiChipmSlepL.on.checked ="VM"
 #TChiChipmSlepL.off.checked =
 TChiChipmSlepL.on.constraint ="2.*([[['L'],['L']],[['L'],['nu']]] + [[['L'],['L']],[['nu'],['L']]])"

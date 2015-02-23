@@ -28,12 +28,12 @@ else:
     utilsPath = databaseRoot + utilsPath
 
 sys.path.append(os.path.abspath(utilsPath))
-from smodels_utils.dataPreparation.inputObjects import TxName, MetaInfo
+from smodels_utils.dataPreparation.inputObjects import TxNameInput, MetaInfoInput
 from smodels_utils.dataPreparation.databaseCreation import databaseCreator
 from smodels_utils.dataPreparation.origPlotObjects import x, y
 
 #+++++++ global info block ++++++++++++++
-info = MetaInfo('ATLAS-CONF-2013-024')
+info = MetaInfoInput('ATLAS-CONF-2013-024')
 info.comment = 'will be superseded by SUSY_2013_16'
 info.sqrts = '8.0'
 info.private = False
@@ -47,7 +47,7 @@ info.prettyname = 'ATLAS hadronic stop'
 #info.supersedes = 
 
 #+++++++ next txName block ++++++++++++++
-T2tt = TxName('T2tt')
+T2tt = TxNameInput('T2tt')
 T2tt.on.checked ="AL"
 #T2tt.off.checked =
 T2tt.on.constraint ="[[['t']],[['t']]]"

@@ -28,7 +28,7 @@ else:
     utilsPath = databaseRoot + utilsPath
 
 sys.path.append(os.path.abspath(utilsPath))
-from smodels_utils.dataPreparation.inputObjects import TxName, MetaInfo
+from smodels_utils.dataPreparation.inputObjects import TxNameInput, MetaInfoInput
 from smodels_utils.dataPreparation.databaseCreation import databaseCreator
 from smodels_utils.dataPreparation.origPlotObjects import x, y
 
@@ -44,7 +44,7 @@ print "expid=",expid
 signalregion=dir[pos+1:]
 print "signalregion=",signalregion
 
-info = MetaInfo(expid)
+info = MetaInfoInput(expid)
 info.signalRegion = signalregion
 info.url ='https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/%s/' % expid 
 info.sqrts = 8
@@ -69,7 +69,7 @@ constraints =  { "T2tt": "[[['t+']],[['t-']]]", "T2bb": "[[['b']],[['b']]]",
                  "T1bttt": "[[['b','t']],[['t','t']]]", "T1": "[[['jet','jet']],[['jet','jet']]]" }
 
 #+++++++ next txName block ++++++++++++++
-#T1 = TxName('T1')
+#T1 = TxNameInput('T1')
 #T1.on.constraint = constraints["T1"]
 #T1.on.condition = None
 #T1.on.fuzzycondition = None
@@ -110,7 +110,7 @@ for i in os.listdir("orig/"):
     if i[-5:]!=".effi": continue
     txname=i[:-5]
     print txname 
-    tmp= TxName ( txname )
+    tmp= TxNameInput ( txname )
     tmp.on.constraint = constraints[txname]
     tmp.on.condition=None
     tmp.on.fuzzycondition = None
@@ -128,7 +128,7 @@ for i in os.listdir("orig/"):
         tmp_1.obsExclusion.setSource( './orig/T1_exc.dat', 'txt', objectName = None, index = None )
         
 
-#T2tt = TxName('T2tt')
+#T2tt = TxNameInput('T2tt')
 #T2tt.on.constraint = "[[['t']],[['t']]]"
 #T2tt.on.condition = None
 #T2tt.on.fuzzycondition = None

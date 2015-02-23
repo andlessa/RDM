@@ -28,13 +28,13 @@ else:
     utilsPath = databaseRoot + utilsPath
 
 sys.path.append(os.path.abspath(utilsPath))
-from smodels_utils.dataPreparation.inputObjects import TxName, MetaInfo
+from smodels_utils.dataPreparation.inputObjects import TxNameInput, MetaInfoInput
 from smodels_utils.dataPreparation.databaseCreation import databaseCreator
 from smodels_utils.dataPreparation.origPlotObjects import x, y
 
 
 #+++++++ global info block ++++++++++++++
-info = MetaInfo('ATLAS-CONF-2012-105')
+info = MetaInfoInput('ATLAS-CONF-2012-105')
 #info.comment = 
 info.sqrts = '8.0'
 info.private = False
@@ -49,7 +49,7 @@ info.prettyname = 'ATLAS SS'
 info.implemented_by = 'MT'
 
 #+++++++ next txName block ++++++++++++++
-T1tttt = TxName('T1tttt')
+T1tttt = TxNameInput('T1tttt')
 T1tttt.on.checked ="AL"
 #T1tttt.off.checked =
 T1tttt.on.constraint ="[[['t+','t-']],[['t+','t-']]]"

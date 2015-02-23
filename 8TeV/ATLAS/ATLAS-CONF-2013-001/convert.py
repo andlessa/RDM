@@ -28,12 +28,12 @@ else:
     utilsPath = databaseRoot + utilsPath
 
 sys.path.append(os.path.abspath(utilsPath))
-from smodels_utils.dataPreparation.inputObjects import TxName, MetaInfo
+from smodels_utils.dataPreparation.inputObjects import TxNameInput, MetaInfoInput
 from smodels_utils.dataPreparation.databaseCreation import databaseCreator
 from smodels_utils.dataPreparation.origPlotObjects import x, y
 
 #+++++++ global info block ++++++++++++++
-info = MetaInfo('ATLAS-CONF-2013-001')
+info = MetaInfoInput('ATLAS-CONF-2013-001')
 info.comment = 'suberseding vesrion is published'
 info.sqrts = '8.0'
 info.private = False
@@ -48,7 +48,7 @@ info.prettyname = 'ATLAS W_{off} stop'
 info.implemented_by = 'MT'
 
 #+++++++ next txName block ++++++++++++++
-T6bbWW = TxName('T6bbWW')
+T6bbWW = TxNameInput('T6bbWW')
 #T6bbWW.on.checked =
 T6bbWW.off.checked ="AL"
 T6bbWW.on.constraint = "[[['b'],['W']],[['b'],['W']]]"

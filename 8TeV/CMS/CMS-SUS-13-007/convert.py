@@ -28,13 +28,13 @@ else:
     utilsPath = databaseRoot + utilsPath
 
 sys.path.append(os.path.abspath(utilsPath))
-from smodels_utils.dataPreparation.inputObjects import TxName, MetaInfo
+from smodels_utils.dataPreparation.inputObjects import TxNameInput, MetaInfoInput
 from smodels_utils.dataPreparation.databaseCreation import databaseCreator
 from smodels_utils.dataPreparation.origPlotObjects import x, y
 
 
 #+++++++ global info block ++++++++++++++
-info = MetaInfo('CMS-SUS-13-007')
+info = MetaInfoInput('CMS-SUS-13-007')
 info.url ='https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS13007'
 info.sqrts = 8
 info.lumi = 19.3
@@ -49,7 +49,7 @@ info.supersedes ='CMS-PAS-SUS-13-007'
 info.implemented_by = 'Federico Ambrogi'
 
 #+++++++ next txName block ++++++++++++++
-T1tttt = TxName('T1tttt')
+T1tttt = TxNameInput('T1tttt')
 #T1tttt.on.checked =
 #T1tttt.off.checked =
 T1tttt.on.constraint = "[[['t','t']],[['t','t']]]"
@@ -91,7 +91,7 @@ T1tttt_1.obsUpperLimit.dataUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/Phys
 #T1tttt_1.expectedExclusionP1.dataUrl =
 
 #+++++++ next txName block ++++++++++++++
-T5tttt = TxName('T5tttt')
+T5tttt = TxNameInput('T5tttt')
 #T5tttt.on.checked =
 #T5tttt.off.checked =
 T5tttt.on.constraint = "[[['t'],['t']],[['t'],['t']]]"
