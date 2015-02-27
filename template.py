@@ -12,7 +12,11 @@ import os
 import sys
 import argparse
 import types
-sys.path.append(os.path.abspath('../smodels-utils'))
+databaseRoot = './'
+sys.path.append(os.path.abspath(databaseRoot))
+from utilsPath import utilsPath
+utilsPath = databaseRoot + utilsPath
+sys.path.append(os.path.abspath(utilsPath))
 from smodels_utils.helper.txDecays import TxDecay
 
 def head():
