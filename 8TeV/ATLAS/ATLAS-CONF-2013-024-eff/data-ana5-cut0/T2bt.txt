@@ -6,7 +6,7 @@ validated: False
 axes: 2*Eq(mother,x)_Eq(lsp,y)
 publishedData: False
 efficiencyMap: [[[[180.0*GeV, 1.0*GeV], [180.0*GeV, 1.0*GeV]], 0.0],
-[[[200.0*GeV, 25.0*GeV], [200.0*GeV, 25.0*GeV]], 2.83760392724e-05],
+[[[200.0*GeV, 25.0*GeV], [200.0*GeV, 25.0*GeV]], 0.0],
 [[[200.0*GeV, 1.0*GeV], [200.0*GeV, 1.0*GeV]], 0.0],
 [[[220.0*GeV, 45.0*GeV], [220.0*GeV, 45.0*GeV]], 0.0],
 [[[220.0*GeV, 23.0*GeV], [220.0*GeV, 23.0*GeV]], 0.000111080255485],
