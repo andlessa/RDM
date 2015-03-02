@@ -5,7 +5,6 @@ constraint: [[['Z'],['t']],[['Z'],['t']]]
 checked: AL
 validated: False
 axes: 2*Eq(mother,x)_Eq(inter0,y+180.0)_Eq(lsp,y)
-branchcondition: equal branches
 publishedData: False
 upperLimits: [[[[300.0*GeV, 200.0*GeV, 20.0*GeV], [300.0*GeV, 200.0*GeV, 20.0*GeV]], 0.1146*pb],
 [[[350.0*GeV, 200.0*GeV, 20.0*GeV], [350.0*GeV, 200.0*GeV, 20.0*GeV]], 0.0601*pb],
