@@ -1,0 +1,4 @@
+datatype: efficiency-map
+observedN: 1
+expectedBG: 2.7
+bgError: 1.2
