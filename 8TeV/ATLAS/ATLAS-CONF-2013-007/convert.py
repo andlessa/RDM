@@ -35,7 +35,7 @@ from smodels_utils.dataPreparation.origPlotObjects import x, y
 
 #+++++++ global info block ++++++++++++++
 info = MetaInfoInput('ATLAS-CONF-2013-007')
-info.comment = 'A technical problem has been found in the pseudo-experiments used to make Table 4 in the conference note of March 1.'
+info.comment = 'A technical problem has been found in the pseudo-experiments used to make Table 4 in the conference note of March 1.; There is something wrong with T5WW (fig. 13), values leads to interMass > motherMass'
 info.sqrts = '8.0'
 info.private = False
 info.lumi = '20.7'
@@ -91,7 +91,7 @@ T6ttWWLSP060.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOT
 #T6ttWWLSP060.expExclusionP1.dataUrl =
 
 #+++++++ next mass plane block ++++++++++++++
-T6ttWWx200 = T6ttWW.addMassPlane(motherMass = x, interMass0 = y * 2.0, lspMass = y)
+T6ttWWx200 = T6ttWW.addMassPlane(motherMass = x, interMass0 = y, lspMass = y / 2.)
 #----limit source----
 T6ttWWx200.obsUpperLimit.setSource( 'orig/T6ttWWx200.txt', 'txt' )
 T6ttWWx200.obsUpperLimit.unit = 'fb'
@@ -259,15 +259,15 @@ T5WW.on.fuzzycondition ="None"
 T5WW.off.fuzzycondition = 'not yet assigned'
 
 #+++++++ next mass plane block ++++++++++++++
-T5WWx200 = T5WW.addMassPlane(motherMass = x, interMass0 = y * 2.0, lspMass = y)
+#T5WWx200 = T5WW.addMassPlane(motherMass = x, interMass0 = y * 2.0, lspMass = y)
 #----limit source----
-T5WWx200.obsUpperLimit.setSource( 'orig/T5WWx200.txt', 'txt' )
-T5WWx200.obsUpperLimit.unit = 'fb'
+#T5WWx200.obsUpperLimit.setSource( 'orig/T5WWx200.txt', 'txt' )
+#T5WWx200.obsUpperLimit.unit = 'fb'
 #T5WWx200.expUpperLimit.setSource( path, type, object = None, index = None )
 #----exclusion source----
-T5WWx200.obsExclusion.setSource( 'orig/exclusion_T5WWx200.txt', 'svg' )
-T5WWx200.obsExclusionM1.setSource( 'orig/exclusionm1_T5WWx200.txt', 'svg' )
-T5WWx200.obsExclusionP1.setSource( 'orig/exclusionp1_T5WWx200.txt', 'svg' )
+#T5WWx200.obsExclusion.setSource( 'orig/exclusion_T5WWx200.txt', 'svg' )
+#T5WWx200.obsExclusionM1.setSource( 'orig/exclusionm1_T5WWx200.txt', 'svg' )
+#T5WWx200.obsExclusionP1.setSource( 'orig/exclusionp1_T5WWx200.txt', 'svg' )
 #T5WWx200.expExclusion.setSource( path, type, object = None, index = None )
 #T5WWx200.expExclusionM1.setSource( path, type, object = None, index = None )
 #T5WWx200.expExclusionP1.setSource( path, type, object = None, index = None )
@@ -276,8 +276,8 @@ T5WWx200.obsExclusionP1.setSource( 'orig/exclusionp1_T5WWx200.txt', 'svg' )
 #T5WWx200.histoDataUrl =
 #T5WWx200.exclusionDataUrl =
 #----figure----
-T5WWx200.figure = 'Fig. 13'
-T5WWx200.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-007/fig_13.png'
+#T5WWx200.figure = 'Fig. 13'
+#T5WWx200.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-007/fig_13.png'
 #----limit url settings ----
 #T5WWx200.obsUpperLimit.dataUrl =
 #T5WWx200.expUpperLimit.dataUrl =

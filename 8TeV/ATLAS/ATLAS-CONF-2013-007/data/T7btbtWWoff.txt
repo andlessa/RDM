@@ -4,7 +4,6 @@ fuzzycondition: not yet assigned
 constraint: not yet assigned
 validated: False
 axes: 2*Eq(mother,x)_Eq(inter0,y)_Eq(inter1,118.0)_Eq(lsp,60.0)
-branchcondition: equal branches
 publishedData: False
 upperLimits: [[[[800.0*GeV, 300.0*GeV, 118.0*GeV, 60.0*GeV], [800.0*GeV, 300.0*GeV, 118.0*GeV, 60.0*GeV]], 0.023*pb],
 [[[800.0*GeV, 400.0*GeV, 118.0*GeV, 60.0*GeV], [800.0*GeV, 400.0*GeV, 118.0*GeV, 60.0*GeV]], 0.046*pb],

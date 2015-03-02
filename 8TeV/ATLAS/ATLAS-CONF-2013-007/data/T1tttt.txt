@@ -5,7 +5,6 @@ constraint: [[['t+','t-']],[['t+','t-']]]
 checked: VM
 validated: False
 axes: 2*Eq(mother,x)_Eq(lsp,y)
-branchcondition: equal branches
 publishedData: False
 upperLimits: [[[[450.0*GeV, 0.0*GeV], [450.0*GeV, 0.0*GeV]], 0.04*pb],
 [[[450.0*GeV, 50.0*GeV], [450.0*GeV, 50.0*GeV]], 0.035*pb],

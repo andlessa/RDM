@@ -5,7 +5,6 @@ constraint: not yet assigned
 checked: VM
 validated: False
 axes: 2*Eq(mother,x)_Eq(inter0,0.666666666666667*x+0.333333333333333*y)_Eq(inter1,0.333333333333333*x+0.666666666666667*y)_Eq(lsp,y)
-branchcondition: equal branches
 publishedData: False
 upperLimits: [[[[500.0*GeV, 426.666666667*GeV, 353.333333333*GeV, 280.0*GeV], [500.0*GeV, 426.666666667*GeV, 353.333333333*GeV, 280.0*GeV]], 0.048*pb],
 [[[675.0*GeV, 543.333333333*GeV, 411.666666667*GeV, 280.0*GeV], [675.0*GeV, 543.333333333*GeV, 411.666666667*GeV, 280.0*GeV]], 0.017*pb],
