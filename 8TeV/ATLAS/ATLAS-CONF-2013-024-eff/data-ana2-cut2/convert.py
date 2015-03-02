@@ -49,18 +49,15 @@ info = MetaInfoInput(expid)
 info.signalRegion = signalregion
 info.url ='https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/%s/' % expid 
 info.sqrts = 8
-info.lumi = 20.5
 info.prettyname = ''
 info.private = True
 info.arxiv = ''
 info.contact ='fastlim'
 info.publication = ''
+info.lumi = 1.0 
 info.comment = 'created from fastlim-1.0'
 info.superseded_by = ''
 info.implemented_by = ''
-info.observedN = 1
-info.expectedBG = 2.700000
-info.bgError = 1.200000
 
 
 constraints =  { "T2tt": "[[['t+']],[['t-']]]", "T2bb": "[[['b']],[['b']]]", 
@@ -138,8 +135,8 @@ for i in os.listdir("orig/"):
     else:
         tmp_1 = tmp.addMassPlane (motherMass = x , lspMass = y )
     tmp_1.efficiencyMap.setSource( './orig/%s.effi' % txname, 'effi', objectName = None, index = None ) 
-    if os.path.exists ( './orig/%s_exc.dat' % txname ):
-        tmp_1.obsExclusion.setSource( './orig/%s_exc.dat' % txname, 'txt', objectName = None, index = None )
+    if os.path.exists ( './orig/%s_excl.dat' % txname ):
+        tmp_1.obsExclusion.setSource( './orig/%s_excl.dat' % txname, 'txt', objectName = None, index = None )
     if txname in figure:
         tmp_1.figure = figure[txname]
     if txname in figureUrl:
@@ -182,5 +179,8 @@ def translate ( filename ):
 #T2tt_1 = T2tt.addMassPlane(motherMass = x , lspMass = y )
 #T2tt_1.efficiencyMap.setSource( './orig/T2tt.effi', 'effi', objectName = None, index = None )
 
-
+databaseCreator.infoFileDirectory="./"
 databaseCreator.create()
+
+import os
+os.unlink ("info.txt")

@@ -1,14 +1,8 @@
 sqrts: 8*TeV
 lumi: 20.5/fb
-id: ATLAS-CONF-2013-024
-prettyname: 
-url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-024/
-arxiv: 
-publication: 
+id: ATLAS-CONF-2013-024-eff
+url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-024-eff/
+implemented_by: WW
 contact: fastlim
-superseded_by: 
 comment: created from fastlim-1.0
-private: True
-implemented_by: ww
-lastUpdate: 2015/2/28
-
+last_update: 2015/03/02
