@@ -5,7 +5,6 @@ constraint: 2.*([[['nu'],['ta']],[['ta+'],['ta-']]] + [[['ta'],['nu']],[['ta+'],
 checked: AL
 validated: False
 axes: 2*Eq(mother,x)_Eq(inter0,0.5*x+0.5*y)_Eq(lsp,y)
-branchcondition: equal branches
 publishedData: False
 upperLimits: [[[[100.0*GeV, 50.0*GeV, 0.0*GeV], [100.0*GeV, 50.0*GeV, 0.0*GeV]], 0.67*pb],
 [[[100.0*GeV, 67.5*GeV, 35.0*GeV], [100.0*GeV, 67.5*GeV, 35.0*GeV]], 1.0*pb],
