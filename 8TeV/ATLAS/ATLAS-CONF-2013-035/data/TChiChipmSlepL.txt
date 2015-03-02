@@ -5,7 +5,6 @@ constraint: 2.*([[['L'],['L']],[['L'],['nu']]] + [[['L'],['L']],[['nu'],['L']]])
 checked: VM
 validated: False
 axes: 2*Eq(mother,x)_Eq(inter0,0.5*x+0.5*y)_Eq(lsp,y)
-branchcondition: equal branches
 publishedData: True
 upperLimits: [[[[112.5*GeV, 62.5*GeV, 12.5*GeV], [112.5*GeV, 62.5*GeV, 12.5*GeV]], 0.117762390137*pb],
 [[[112.5*GeV, 80.0*GeV, 47.5*GeV], [112.5*GeV, 80.0*GeV, 47.5*GeV]], 0.0951545715332*pb],

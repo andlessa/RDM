@@ -1,11 +1,10 @@
-txname: TChiWZ
-condition: None
-fuzzycondition: None
-constraint: [[['W']],[['Z']]]
+txname: TChiWZoff
+condition: [[['mu+','mu-']],[['l','nu']]] > [[['e+','e-']],[['l','nu']]]
+fuzzycondition: Cgtr([[['mu+','mu-']],[['l','nu']]],[[['e+','e-']],[['l','nu']]])
+constraint: 71.*([[['mu+','mu-']],[['l','nu']]] + [[['e+','e-']],[['l','nu']]])
 checked: VM
 validated: False
 axes: 2*Eq(mother,x)_Eq(lsp,y)
-branchcondition: equal branches
 publishedData: True
 upperLimits: [[[[100.0*GeV, 0.0*GeV], [100.0*GeV, 0.0*GeV]], 4.67358189303*pb],
 [[[100.0*GeV, 25.0*GeV], [100.0*GeV, 25.0*GeV]], 1.68130024176*pb],
