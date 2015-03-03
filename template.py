@@ -30,8 +30,8 @@ def head():
     '"""\n' +\
     'import sys\n' +\
     'import os\n' +\
-    'import argparse\n'
-    'import types\n'
+    'import argparse\n'+\
+    'import types\n'+\
     '\n' +\
     "argparser = argparse.ArgumentParser(description = \\\n" +\
     "'create info.txt, txname.txt, twiki.txt and sms.py')\n" +\
@@ -47,7 +47,7 @@ def head():
     "    sys.path.append(os.path.abspath(databaseRoot))\n" +\
     "    from utilsPath import utilsPath\n" +\
     "    utilsPath = databaseRoot + utilsPath\n" +\
-    "\n"
+    "\n"+\
     "sys.path.append(os.path.abspath(utilsPath))\n" +\
     'from smodels_utils.dataPreparation.inputObjects import TxNameInput, MetaInfoInput\n' +\
     'from smodels_utils.dataPreparation.databaseCreation import databaseCreator\n' +\
