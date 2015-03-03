@@ -1,2 +1,2 @@
-datatype: upperLimit
+datatype: upper-limit
 dataid: None
