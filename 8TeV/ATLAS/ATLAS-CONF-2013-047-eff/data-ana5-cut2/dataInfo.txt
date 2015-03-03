@@ -1,0 +1,5 @@
+datatype: efficiency-map
+dataid: ANA5-CUT2
+observedN: 29
+expectedBG: 33.0
+bgError: 7.0
