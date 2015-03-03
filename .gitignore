@@ -6,7 +6,7 @@
 !template.py
 !utilsPath.py
 !*/*/*/orig/*
-!*/*/*/*.txt
+!*/*/*/data/*.txt
 !convert.py
 2012/OSedge/orig/
 2012/RA2b/old/
