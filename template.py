@@ -35,7 +35,7 @@ def head():
     '\n' +\
     "argparser = argparse.ArgumentParser(description = \\\n" +\
     "'create info.txt, txname.txt, twiki.txt and sms.py')\n" +\
-    "argparser.add_argument ('-utilsPath', '--utilsPath', \\\n" +\
+    "argparser.add_argument ('-utilsPath', '--utilsPath', \n" +\
     "help = 'path to the package smodels_utils',\\\n" +\
     "type = types.StringType)\n" +\
     "args = argparser.parse_args()\n" +\
