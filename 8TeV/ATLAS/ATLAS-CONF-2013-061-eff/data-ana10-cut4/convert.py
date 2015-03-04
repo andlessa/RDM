@@ -128,7 +128,7 @@ for i in os.listdir("orig/"):
     tmp.on.condition=None
     tmp.on.fuzzycondition = None
     if i[:2] in [ "T5", "T6" ]:
-        tmp.globalEfficiencyMap.setSource ( './orig/%s.effi' % txname, 'effi', objectName = None, index = None )
+#        tmp.globalEfficiencyMap.setSource ( './orig/%s.effi' % txname, 'effi', objectName = None, index = None )
         continue
     if txname=="TGQ":
         tmp_1 = tmp.addMassPlane (motherMass = x , lspMass = y )
