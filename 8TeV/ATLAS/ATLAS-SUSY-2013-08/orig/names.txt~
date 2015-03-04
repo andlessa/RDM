@@ -1,0 +1,8 @@
+Figure      table        topology               object
+Fig4        tb. 8        T6ttZZ180              expected exclusion line
+Fig4        tb. 9        T6ttZZ180              expected exclusion line +sigma
+Fig4        tb. 10       T6ttZZ180              expected exclusion line -sigma
+Fig4        tb. 11       T6ttZZ180              observed exclusion line
+Fig4        tb. 12       T6ttZZ180              observed exclusion line +sigma
+Fig4        tb. 13       T6ttZZ180              observed exclusion line -sigma
+AuxFig6     tb. 33       T6ttZZ180              upper limit
