@@ -86,43 +86,43 @@ T2tt.obsExclusion.dataUrl = "https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPE
 #T2tt.expExclusionP1.dataUrl =
 
 #+++++++ next txName block ++++++++++++++
-#T2bbWW = TxNameInput('T2bbWW')
+T2bbWW = TxNameInput('T2bbWW')
 #T2bbWW.on.checked =
 #T2bbWW.off.checked =
-#T2bbWW.on.constraint ="[[['b','W+']],[['b','W-']]]"
+T2bbWW.on.constraint ="[[['b','W+']],[['b','W-']]]"
 #T2bbWW.off.constraint =
-#T2bbWW.on.condition ="None"
+T2bbWW.on.condition ="None"
 #T2bbWW.off.condition =
-#T2bbWW.on.fuzzycondition ="None"
+T2bbWW.on.fuzzycondition ="None"
 #T2bbWW.off.fuzzycondition =
 #
 ##+++++++ next mass plane block ++++++++++++++
-#T2bbWW = T2bbWW.addMassPlane(motherMass = x, lspMass = y)
+T2bbWW = T2bbWW.addMassPlane(motherMass = x, lspMass = y)
 ##----limit source----
-#T2bbWW.obsUpperLimit.setSource( path, filetype, objectName = None, index = None )
+T2bbWW.obsUpperLimit.setSource( "orig/T2bbWW.txt", "txt", objectName = None, index = None )
 #T2bbWW.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
 ##----exclusion source----
-#T2bbWW.obsExclusion.setSource( path, filetype, objectName = None, index = None )
+T2bbWW.obsExclusion.setSource( "orig/exclusionline_T2bbWW.txt", "txt", objectName = None, index = None )
 #T2bbWW.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
 #T2bbWW.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
 #T2bbWW.expExclusion.setSource( path, filetype, objectName = None, index = None )
 #T2bbWW.expExclusionM1.setSource( path, filetype, objectName = None, index = None )
 #T2bbWW.expExclusionP1.setSource( path, filetype, objectName = None, index = None )
 ##----global url settings ----
-#T2bbWW.dataUrl =
+#T2bbWW.dataUrl = 
 #T2bbWW.histoDataUrl =
-#T2bbWW.exclusionDataUrl =
+# T2bbWW.exclusionDataUrl = "https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-19/figaux_03e.png"
 ##----figure----
-#T2bbWW.figure = 'Fig.(aux) 3e'
-#T2bbWW.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-19/fig_19.png'
+T2bbWW.figure = 'Fig.(aux) 3e'
+T2bbWW.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-19/figaux_03e.png'
 ##----limit url settings ----
-#T2bbWW.obsUpperLimit.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1286444/d42'
+T2bbWW.obsUpperLimit.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1286444/d42'
 #T2bbWW.expUpperLimit.dataUrl =
 ##----exclusion url settings ----
-#T2bbWW.obsExclusion.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1286444/d22'
+T2bbWW.obsExclusion.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1286444/d22'
 #T2bbWW.obsExclusionM1.dataUrl =
-#T2bbWW.obsExclusionP1.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1286444/d24'
-#T2bbWW.expExclusion.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1286444/d20'
+T2bbWW.obsExclusionP1.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1286444/d24'
+T2bbWW.expExclusion.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1286444/d20'
 #T2bbWW.expExclusionM1.dataUrl =
 #T2bbWW.expExclusionP1.dataUrl =
 #
