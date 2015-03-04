@@ -1,0 +1,13 @@
+sqrts: 8.0*TeV
+lumi: 20.3/fb
+id: ATLAS-SUSY-2013-19
+prettyname: ATLAS stop dilepton
+url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-19/
+arxiv: http://arxiv.org/abs/1403.4853
+publication: http://link.springer.com/article/10.1007/JHEP06(2014)124
+supersedes: ATLAS-CONF-2013-048
+comment: T2tt UL are from DF channel only, no combined UL map available
+private: False
+implemented_by: WW
+lastUpdate: 2015/3/4
+
