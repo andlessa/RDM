@@ -21,15 +21,16 @@ database = DataBase("/home/walten/git/smodels-database/")
 #How to validate all plots for all Txnames in one ExpRes:
 expRes = database.getExpResults(analysisIDs=['ATLAS-SUSY-2013-19'],datasetIDs=[None])
 
+axes="2*Eq(mother,300.0)_Eq(inter0,x)_Eq(lsp,y)"
+
 def validate (exp ):
     print exp
     slhamain = '/home/walten/git/smodels-utils/slha/'
-    slhaDict = { # 'T1bbbb': os.path.join(slhamain,'T1bbbb'),
-          #        'T6bbWW': os.path.join(slhamain,'T6bbWW'),
-                  'T6bbWWD010': os.path.join(slhamain,'T6bbWWD010'),
-         #        'T2tt': os.path.join(slhamain,'T2tt'),
-    }  
-    print validateExpRes(exp,slhaDict)
+    #slhaDict = { # 'T1bbbb': os.path.join(slhamain,'T1bbbb'),
+    #              'T6bbWW': os.path.join(slhamain,'T6bbWW'),
+    #     #        'T2tt': os.path.join(slhamain,'T2tt'),
+    
+    print validatePlot(exp,"T6bbWW",axes,slhamain+"T6bbWWM1300")
 
 if type(expRes)==list:
     for exp in expRes:
