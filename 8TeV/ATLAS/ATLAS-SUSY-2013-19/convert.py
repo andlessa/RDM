@@ -127,23 +127,23 @@ T2bbWW.expExclusion.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1286444/d20'
 #T2bbWW.expExclusionP1.dataUrl =
 #
 ##+++++++ next txName block ++++++++++++++
-#T6bbWW = TxNameInput('T6bbWW')
+T6bbWW = TxNameInput('T6bbWW')
 #T6bbWW.on.checked =
 #T6bbWW.off.checked =
-#T6bbWW.on.constraint ="[[['b'],['W+']],[['b'],['W-']]]"
-#T6bbWW.off.constraint ="11.1*([[['b'],['L-','nu']],[['b'],['L+','nu']]])"
-#T6bbWW.on.condition ="None"
-#T6bbWW.off.condition ="[[['b'],['L','nu']],[['b'],['jet','> 2.7* [[['b'],['ta','nu']],[['b'],['jet','jet']]],[[['b'],['L','nu']],[jet','jet']]] > 2.7* [[['b'],['e','nu']],[['b'],['jet','jet']]]"
-#T6bbWW.on.fuzzycondition ="None"
-#T6bbWW.off.fuzzycondition ="Cgtr([[['b'],['L','nu']],[['b'],['jet','jet']]],3.*[[['b'],['ta','nu']],[['b'],['jet','jet']]]);Cgtr([[['b'],['L','nu']],[['b'],['jet','jet']]],3.*[[['b'],['e','nu']],[['b'],['jet','jet']]])"
+T6bbWW.on.constraint ="[[['b'],['W+']],[['b'],['W-']]]"
+T6bbWW.off.constraint ="11.1*([[['b'],['L-','nu']],[['b'],['L+','nu']]])"
+T6bbWW.on.condition ="None"
+T6bbWW.off.condition ="[[['b'],['L','nu']],[['b'],['jet','> 2.7* [[['b'],['ta','nu']],[['b'],['jet','jet']]],[[['b'],['L','nu']],[jet','jet']]] > 2.7* [[['b'],['e','nu']],[['b'],['jet','jet']]]"
+T6bbWW.on.fuzzycondition ="None"
+T6bbWW.off.fuzzycondition ="Cgtr([[['b'],['L','nu']],[['b'],['jet','jet']]],3.*[[['b'],['ta','nu']],[['b'],['jet','jet']]]);Cgtr([[['b'],['L','nu']],[['b'],['jet','jet']]],3.*[[['b'],['e','nu']],[['b'],['jet','jet']]])"
 #
 ##+++++++ next mass plane block ++++++++++++++
-#T6bbWWLSP001 = T6bbWW.addMassPlane(motherMass = x, interMass0 = y, lspMass = 1.0)
+T6bbWWLSP001 = T6bbWW.addMassPlane(motherMass = x, interMass0 = y, lspMass = 1.0)
 ##----limit source----
-#T6bbWWLSP001.obsUpperLimit.setSource( path, filetype, objectName = None, index = None )
+T6bbWWLSP001.obsUpperLimit.setSource( "orig/T6bbWWLSP001.txt", "txt", objectName = None, index = None )
 #T6bbWWLSP001.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
 ##----exclusion source----
-#T6bbWWLSP001.obsExclusion.setSource( path, filetype, objectName = None, index = None )
+T6bbWWLSP001.obsExclusion.setSource( "orig/exclusionline_T6bbWWLSP001.txt", "txt", objectName = None, index = None )
 #T6bbWWLSP001.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
 #T6bbWWLSP001.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
 #T6bbWWLSP001.expExclusion.setSource( path, filetype, objectName = None, index = None )
@@ -154,26 +154,26 @@ T2bbWW.expExclusion.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1286444/d20'
 #T6bbWWLSP001.histoDataUrl =
 #T6bbWWLSP001.exclusionDataUrl =
 ##----figure----
-#T6bbWWLSP001.figure = 'Fig.(aux) 3a'
-#T6bbWWLSP001.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-19/fig_14.png'
+T6bbWWLSP001.figure = 'Fig.(aux) 3a'
+T6bbWWLSP001.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-19/figaux_3a.png'
 ##----limit url settings ----
-#T6bbWWLSP001.obsUpperLimit.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1286444/d30'
+T6bbWWLSP001.obsUpperLimit.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1286444/d30'
 #T6bbWWLSP001.expUpperLimit.dataUrl =
 ##----exclusion url settings ----
-#T6bbWWLSP001.obsExclusion.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1286444/d7'
+T6bbWWLSP001.obsExclusion.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1286444/d7'
 #T6bbWWLSP001.obsExclusionM1.dataUrl =
-#T6bbWWLSP001.obsExclusionP1.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1286444/d9'
-#T6bbWWLSP001.expExclusion.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1286444/d8'
+T6bbWWLSP001.obsExclusionP1.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1286444/d9'
+T6bbWWLSP001.expExclusion.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1286444/d8'
 #T6bbWWLSP001.expExclusionM1.dataUrl =
 #T6bbWWLSP001.expExclusionP1.dataUrl =
 #
 ##+++++++ next mass plane block ++++++++++++++
-#T6bbWWD010 = T6bbWW.addMassPlane(motherMass = x, interMass0 = x - 10.0, lspMass = y)
+T6bbWWD010 = T6bbWW.addMassPlane(motherMass = x, interMass0 = x - 10.0, lspMass = y)
 ##----limit source----
-#T6bbWWD010.obsUpperLimit.setSource( path, filetype, objectName = None, index = None )
+T6bbWWD010.obsUpperLimit.setSource( "orig/T6bbWWD010.txt", "txt", objectName = None, index = None )
 #T6bbWWD010.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
 ##----exclusion source----
-#T6bbWWD010.obsExclusion.setSource( path, filetype, objectName = None, index = None )
+T6bbWWD010.obsExclusion.setSource( "orig/exclusionline_T6bbWWD10.txt", "txt", objectName = None, index = None )
 #T6bbWWD010.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
 #T6bbWWD010.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
 #T6bbWWD010.expExclusion.setSource( path, filetype, objectName = None, index = None )
@@ -184,8 +184,8 @@ T2bbWW.expExclusion.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1286444/d20'
 #T6bbWWD010.histoDataUrl =
 #T6bbWWD010.exclusionDataUrl =
 ##----figure----
-#T6bbWWD010.figure =
-#T6bbWWD010.figureUrl =
+T6bbWWD010.figure = "fig(aux) 3b"
+T6bbWWD010.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-19/figaux_3b.png'
 ##----limit url settings ----
 #T6bbWWD010.obsUpperLimit.dataUrl =
 #T6bbWWD010.expUpperLimit.dataUrl =
@@ -198,12 +198,12 @@ T2bbWW.expExclusion.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1286444/d20'
 #T6bbWWD010.expExclusionP1.dataUrl =
 #
 ##+++++++ next mass plane block ++++++++++++++
-#T6bbWWM1300 = T6bbWW.addMassPlane(motherMass = 300.0, interMass0 = x, lspMass = y)
+T6bbWWM1300 = T6bbWW.addMassPlane(motherMass = 300.0, interMass0 = x, lspMass = y)
 ##----limit source----
-#T6bbWWM1300.obsUpperLimit.setSource( path, filetype, objectName = None, index = None )
+T6bbWWM1300.obsUpperLimit.setSource( "orig/T6bbWWM1300.txt", "txt", objectName = None, index = None )
 #T6bbWWM1300.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
 ##----exclusion source----
-#T6bbWWM1300.obsExclusion.setSource( path, filetype, objectName = None, index = None )
+T6bbWWM1300.obsExclusion.setSource( "orig/exclusionline_T6bbWWM1300.txt", "txt", objectName = None, index = None )
 #T6bbWWM1300.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
 #T6bbWWM1300.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
 #T6bbWWM1300.expExclusion.setSource( path, filetype, objectName = None, index = None )
@@ -214,26 +214,26 @@ T2bbWW.expExclusion.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1286444/d20'
 #T6bbWWM1300.histoDataUrl =
 #T6bbWWM1300.exclusionDataUrl =
 ##----figure----
-#T6bbWWM1300.figure = 'Fig.(aux) 3c'
-#T6bbWWM1300.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-19/fig_16.png'
+T6bbWWM1300.figure = 'Fig.(aux) 3c'
+T6bbWWM1300.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-19/fig_16.png'
 ##----limit url settings ----
-#T6bbWWM1300.obsUpperLimit.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1286444/d36'
+T6bbWWM1300.obsUpperLimit.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1286444/d36'
 #T6bbWWM1300.expUpperLimit.dataUrl =
 ##----exclusion url settings ----
-#T6bbWWM1300.obsExclusion.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1286444/d13'
+T6bbWWM1300.obsExclusion.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1286444/d13'
 #T6bbWWM1300.obsExclusionM1.dataUrl =
-#T6bbWWM1300.obsExclusionP1.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1286444/d15'
-#T6bbWWM1300.expExclusion.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1286444/d14'
+T6bbWWM1300.obsExclusionP1.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1286444/d15'
+T6bbWWM1300.expExclusion.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1286444/d14'
 #T6bbWWM1300.expExclusionM1.dataUrl =
 #T6bbWWM1300.expExclusionP1.dataUrl =
 #
 ##+++++++ next mass plane block ++++++++++++++
-#T6bbWWC106 = T6bbWW.addMassPlane(motherMass = x, interMass0 = 106.0, lspMass = y)
+T6bbWWC106 = T6bbWW.addMassPlane(motherMass = x, interMass0 = 106.0, lspMass = y)
 ##----limit source----
-#T6bbWWC106.obsUpperLimit.setSource( path, filetype, objectName = None, index = None )
+T6bbWWC106.obsUpperLimit.setSource( "orig/T6bbWWC106.txt", "txt", objectName = None, index = None )
 #T6bbWWC106.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
 ##----exclusion source----
-#T6bbWWC106.obsExclusion.setSource( path, filetype, objectName = None, index = None )
+T6bbWWC106.obsExclusion.setSource( "orig/exclusionline_T6bbWWC106.txt", "txt", objectName = None, index = None )
 #T6bbWWC106.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
 #T6bbWWC106.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
 #T6bbWWC106.expExclusion.setSource( path, filetype, objectName = None, index = None )
@@ -244,26 +244,26 @@ T2bbWW.expExclusion.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1286444/d20'
 #T6bbWWC106.histoDataUrl =
 #T6bbWWC106.exclusionDataUrl =
 ##----figure----
-#T6bbWWC106.figure = 'Fig.(aux) 3f'
-#T6bbWWC106.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-19/fig_20.png'
+T6bbWWC106.figure = 'Fig.(aux) 3f'
+T6bbWWC106.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-19/fig_20.png'
 ##----limit url settings ----
-#T6bbWWC106.obsUpperLimit.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1286444/d68'
+T6bbWWC106.obsUpperLimit.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1286444/d68'
 #T6bbWWC106.expUpperLimit.dataUrl =
 ##----exclusion url settings ----
-#T6bbWWC106.obsExclusion.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1286444/d25'
+T6bbWWC106.obsExclusion.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1286444/d25'
 #T6bbWWC106.obsExclusionM1.dataUrl =
-#T6bbWWC106.obsExclusionP1.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1286444/d27'
-#T6bbWWC106.expExclusion.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1286444/d26'
+T6bbWWC106.obsExclusionP1.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1286444/d27'
+T6bbWWC106.expExclusion.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1286444/d26'
 #T6bbWWC106.expExclusionM1.dataUrl =
 #T6bbWWC106.expExclusionP1.dataUrl =
 #
 ##+++++++ next mass plane block ++++++++++++++
-#T6bbWWx200 = T6bbWW.addMassPlane(motherMass = x, interMass0 = y * 2.0, lspMass = y)
+T6bbWWx200 = T6bbWW.addMassPlane(motherMass = x, interMass0 = y * 2.0, lspMass = y)
 ##----limit source----
-#T6bbWWx200.obsUpperLimit.setSource( path, filetype, objectName = None, index = None )
+T6bbWWx200.obsUpperLimit.setSource( "orig/T6bbWWx200.txt", "txt", objectName = None, index = None )
 #T6bbWWx200.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
 ##----exclusion source----
-#T6bbWWx200.obsExclusion.setSource( path, filetype, objectName = None, index = None )
+T6bbWWx200.obsExclusion.setSource( "orig/exclusionline_T6bbWWx200.txt", "txt", objectName = None, index = None )
 #T6bbWWx200.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
 #T6bbWWx200.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
 #T6bbWWx200.expExclusion.setSource( path, filetype, objectName = None, index = None )
@@ -274,16 +274,16 @@ T2bbWW.expExclusion.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1286444/d20'
 #T6bbWWx200.histoDataUrl =
 #T6bbWWx200.exclusionDataUrl =
 ##----figure----
-#T6bbWWx200.figure = 'Fig.(aux) 3d'
-#T6bbWWx200.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-19/fig_17.png'
+T6bbWWx200.figure = 'Fig.(aux) 3d'
+T6bbWWx200.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-19/fig_17.png'
 ##----limit url settings ----
-#T6bbWWx200.obsUpperLimit.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1286444/d39'
+T6bbWWx200.obsUpperLimit.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1286444/d39'
 #T6bbWWx200.expUpperLimit.dataUrl =
 ##----exclusion url settings ----
-#T6bbWWx200.obsExclusion.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1286444/d16'
+T6bbWWx200.obsExclusion.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1286444/d16'
 #T6bbWWx200.obsExclusionM1.dataUrl =
-#T6bbWWx200.obsExclusionP1.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1286444/d18'
-#T6bbWWx200.expExclusion.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1286444/d17'
+T6bbWWx200.obsExclusionP1.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1286444/d18'
+T6bbWWx200.expExclusion.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1286444/d17'
 #T6bbWWx200.expExclusionM1.dataUrl =
 #T6bbWWx200.expExclusionP1.dataUrl =
 
