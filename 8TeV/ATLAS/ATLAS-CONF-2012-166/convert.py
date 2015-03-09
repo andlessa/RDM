@@ -64,7 +64,7 @@ T2tt = T2tt.addMassPlane(motherMass = x, lspMass = y)
 T2tt.obsUpperLimit.setSource( "orig/T2tt.txt", "txt" )
 #T2tt.expUpperLimit.setSource( path, type, object = None, index = None )
 #----exclusion source----
-#T2tt.obsExclusion.setSource( 'orig/exclusion_T2tt.txt', 'txt')
+T2tt.obsExclusion.setSource( 'orig/exclusion_T2tt.txt', 'txt')
 #T2tt.obsExclusionM1.setSource( path, type, object = None, index = None )
 #T2tt.obsExclusionP1.setSource( path, type, object = None, index = None )
 #T2tt.expExclusion.setSource( path, type, object = None, index = None )
