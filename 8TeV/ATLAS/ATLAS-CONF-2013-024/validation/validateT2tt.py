@@ -16,7 +16,7 @@ cl.setLevel(level=logging.DEBUG)
 dl.setLevel(level=logging.DEBUG)
 tl.setLevel(level=logging.DEBUG)
 
-database = DataBase("/home/walten/git/smodels-database/")
+database = DataBase("/home/walten/git/branches/smodels-database/")
 
 #How to validate all plots for all Txnames in one ExpRes:
 expRes = database.getExpResults(analysisIDs=['ATLAS-CONF-2013-024'],datasetIDs=[None])
@@ -24,12 +24,7 @@ expRes = database.getExpResults(analysisIDs=['ATLAS-CONF-2013-024'],datasetIDs=[
 def validate (exp ):
     print exp
     slhamain = '/home/walten/git/smodels-utils/slha/'
-    slhaDict = { # 'T1bbbb': os.path.join(slhamain,'T1bbbb'),
-          #        'T6bbWW': os.path.join(slhamain,'T6bbWW'),
-#                  'T6bbWWoff': os.path.join(slhamain,'T6bbWWoff'),
-                 'T2tt': os.path.join(slhamain,'T2tt.tar'),
-    }  
-    print validateExpRes(exp,slhaDict)
+    print validateExpRes(exp,slhamain)
 
 if type(expRes)==list:
     for exp in expRes:

@@ -5,7 +5,7 @@ sys.path.insert(0,"/home/walten/git/smodels-utils/andre_validation/")
 sys.path.insert(0,"/home/walten/git/smodels-utils/")
 
 
-from plotProducer import validateTxName,validatePlot,validateExpRes
+from validation.plotProducer import validateTxName,validatePlot,validateExpRes
 from smodels.experiment.databaseBrowser import Browser
 from smodels.experiment.databaseObjects import DataBase
 import logging
@@ -24,12 +24,7 @@ expRes = database.getExpResults(analysisIDs=['ATLAS-SUSY-2013-19'],datasetIDs=[N
 def validate (exp ):
     print exp
     slhamain = '/home/walten/git/smodels-utils/slha/'
-    slhaDict = { # 'T1bbbb': os.path.join(slhamain,'T1bbbb'),
-          #        'T6bbWW': os.path.join(slhamain,'T6bbWW'),
-                  'T6bbWWD010': os.path.join(slhamain,'T6bbWWD010'),
-         #        'T2tt': os.path.join(slhamain,'T2tt'),
-    }  
-    print validateExpRes(exp,slhaDict)
+    print validateExpRes(exp,slhamain)
 
 if type(expRes)==list:
     for exp in expRes:
