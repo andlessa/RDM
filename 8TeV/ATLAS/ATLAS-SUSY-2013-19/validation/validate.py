@@ -1,13 +1,11 @@
 #!/usr/bin/env python
 
-import sys,os
-sys.path.insert(0,"/home/walten/git/smodels-utils/andre_validation/")
-sys.path.insert(0,"/home/walten/git/smodels-utils/")
-sys.path.insert(0,"/home/walten/git/smodels/")
+import sys
+sys.path.insert(0,"../../../../../smodels-utils/")
+sys.path.insert(0,"../../../../../smodels/")
 
 
-from validation.plotProducer import validateTxName,validatePlot,validateExpRes
-from smodels.experiment.databaseBrowser import Browser
+from validation.plotProducer import validateExpRes, getExpIdFromPath
 from smodels.experiment.databaseObjects import DataBase
 import logging
 from smodels.theory.crossSection import logger as cl
@@ -17,18 +15,12 @@ cl.setLevel(level=logging.DEBUG)
 dl.setLevel(level=logging.DEBUG)
 tl.setLevel(level=logging.DEBUG)
 
-database = DataBase("/home/walten/git/smodels-database/")
 
+print "exp id=",getExpIdFromPath()
+
+database = DataBase("../../../../")
 #How to validate all plots for all Txnames in one ExpRes:
-expRes = database.getExpResults(analysisIDs=['ATLAS-SUSY-2013-19'],datasetIDs=[None])
+expRes = database.getExpResults(analysisIDs=[getExpIdFromPath()],datasetIDs=[None])
+slhamain = '../../../../../smodels-utils/slha/'
+validateExpRes(expRes,slhamain)
 
-def validate (exp ):
-    print exp
-    slhamain = '/home/walten/git/smodels-utils/slha/'
-    print validateExpRes(exp,slhamain)
-
-if type(expRes)==list:
-    for exp in expRes:
-        validate (exp)
-else:
-    validate (expRes)
