@@ -3,6 +3,7 @@
 import sys,os
 sys.path.insert(0,"/home/walten/git/smodels-utils/validation/")
 sys.path.insert(0,"/home/walten/git/smodels-utils/")
+sys.path.insert(0,"/home/walten/git/smodels/")
 
 
 from validation.plotProducer import validateTxName,validatePlot,validateExpRes
