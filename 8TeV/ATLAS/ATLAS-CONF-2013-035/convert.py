@@ -105,7 +105,7 @@ TChiChipmSlepL050.obsUpperLimit.setSource( "orig/TChiChipmSlepL.txt", 'txt' )
 TChiChipmSlepL050.obsUpperLimit.unit = 'fb'
 #TChiChipmSlepL050.expUpperlimit.setSource( path, type, object = None, index = None )
 #----exclusion source----
-#TChiChipmSlepL050.obsExclusion.setSource( path, type, object = None, index = None )
+TChiChipmSlepL050.obsExclusion.setSource( "orig/exclusion_TChiChipmSlepL.txt", "txt" ) #, object = None, index = None )
 #TChiChipmSlepL050.obsExclusionM1.setSource( path, type, object = None, index = None )
 #TChiChipmSlepL050.obsExclusionP1.setSource( path, type, object = None, index = None )
 #TChiChipmSlepL050.expExclusion.setSource( path, type, object = None, index = None )
