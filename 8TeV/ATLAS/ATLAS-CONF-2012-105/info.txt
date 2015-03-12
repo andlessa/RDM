@@ -4,5 +4,6 @@ id: ATLAS-CONF-2012-105
 prettyname: ATLAS SS
 url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2012-105/
 private: False
-implemented_by: MT
-lastUpdate: 2015/2/9
+implemented_by: AL
+lastUpdate: 2015/3/12
+

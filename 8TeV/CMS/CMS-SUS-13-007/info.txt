@@ -9,5 +9,6 @@ contact: Loukas Gouskos <loukas.gouskos@cern.ch>, Markus Stoye <Markus.Stoye@cer
 supersedes: CMS-PAS-SUS-13-007
 comment: observed limits for all three models in fb, no expected limits, combined exclusion lines
 private: False
-implemented_by: Federico Ambrogi
-lastUpdate: 2015/2/11
+implemented_by: AL
+lastUpdate: 2015/3/12
+

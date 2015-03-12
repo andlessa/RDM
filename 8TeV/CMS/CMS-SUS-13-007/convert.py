@@ -69,7 +69,7 @@ T1tttt_1.obsUpperLimit.setSource( './orig/T1tttt.txt', 'txt', objectName = None,
 T1tttt_1.obsUpperLimit.unit = 'fb'
 #T1tttt_1.expUpperLimit.setSource( path, type, objectName = None, index = None )
 #----exclusion source----
-#T1tttt_1.obsExclusion.setSource( path, type, objectName = None, index = None )
+T1tttt_1.obsExclusion.setSource( './orig/T1tttt_excl.txt', 'txt' )
 #T1tttt_1.obsExclusionM1.setSource( path, type, objectName = None, index = None )
 #T1tttt_1.obsExclusionP1.setSource( path, type, objectName = None, index = None )
 #T1tttt_1.expExclusion.setSource( path, type, objectName = None, index = None )
@@ -111,7 +111,7 @@ T5tttt_1.obsUpperLimit.setSource( './orig/T5tttt_mg1TeV.txt', 'txt', objectName 
 T1tttt_1.obsUpperLimit.unit = 'fb'
 #T5tttt_1.expUpperLimit.setSource( path, type, objectName = None, index = None )
 #----exclusion source----
-#T5tttt_1.obsExclusion.setSource( path, type, objectName = None, index = None )
+T5tttt_1.obsExclusion.setSource( './orig/T5tttt_mg1TeV_excl.txt', 'txt' )
 #T5tttt_1.obsExclusionM1.setSource( path, type, objectName = None, index = None )
 #T5tttt_1.obsExclusionP1.setSource( path, type, objectName = None, index = None )
 #T5tttt_1.expExclusion.setSource( path, type, objectName = None, index = None )
@@ -142,7 +142,7 @@ T5tttt_2.obsUpperLimit.setSource( './orig/T5tttt_mLSP50GeV.txt', 'txt', objectNa
 T5tttt_2.obsUpperLimit.unit = 'fb'
 #T5tttt_2.expexpectedlimit.setSource( path, type, objectName = None, index = None )
 #----exclusion source----
-#T5tttt_2.obsExclusion.setSource( path, type, objectName = None, index = None )
+T5tttt_2.obsExclusion.setSource( './orig/T5tttt_mLSP50GeV_excl.txt', 'txt' )
 #T5tttt_2.exclusionM1.setSource( path, type, objectName = None, index = None )
 #T5tttt_2.exclusionP1.setSource( path, type, objectName = None, index = None )
 #T5tttt_2.expectedExclusion.setSource( path, type, objectName = None, index = None )

@@ -105,7 +105,7 @@ T6bbWWC150 = T6bbWW.addMassPlane(motherMass = x, interMass0 = 150.0, lspMass = y
 T6bbWWC150.obsUpperLimit.setSource( "orig/T6bbWWC150.txt", "txt")
 #T6bbWWC150.expUpperLimit.setSource( path, type, object = None, index = None )
 #----exclusion source----
-#T6bbWWC150.obsExclusion.setSource( path, type, object = None, index = None )
+T6bbWWC150.obsExclusion.setSource( "orig/T6bbWWC150_excl.txt", "txt" )
 #T6bbWWC150.obsExclusionM1.setSource( path, type, object = None, index = None )
 #T6bbWWC150.obsExclusionP1.setSource( path, type, object = None, index = None )
 #T6bbWWC150.expExclusion.setSource( path, type, object = None, index = None )
@@ -135,7 +135,7 @@ T6bbWWx200 = T6bbWW.addMassPlane(motherMass = x, interMass0 = y * 2.0, lspMass =
 T6bbWWx200.obsUpperLimit.setSource( "orig/T6bbWWx2.txt", 'txt' )
 #T6bbWWx200.expUpperLimit.setSource( path, type, object = None, index = None )
 #----exclusion source----
-#T6bbWWx200.obsExclusion.setSource( path, type, object = None, index = None )
+T6bbWWx200.obsExclusion.setSource( "orig/T6bbWWx2_excl.txt", 'txt' )
 #T6bbWWx200.obsExclusionM1.setSource( path, type, object = None, index = None )
 #T6bbWWx200.obsExclusionP1.setSource( path, type, object = None, index = None )
 #T6bbWWx200.expExclusion.setSource( path, type, object = None, index = None )

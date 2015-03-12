@@ -5,6 +5,6 @@ prettyname: ATLAS multileptons
 url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-036/
 comment: will be superseded by SUSY_2013_36
 private: False
-implemented_by: MT
-lastUpdate: 2015/3/3
+implemented_by: AL
+lastUpdate: 2015/3/12
 

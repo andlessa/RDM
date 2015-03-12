@@ -61,7 +61,7 @@ TChiChiSlepSlepD080 = TChiChiSlepSlep.addMassPlane(motherMass = x, interMass0 = 
 TChiChiSlepSlepD080.obsUpperLimit.setSource( 'orig/TChiChiSlepSlepD080.txt', 'txt', objectName = None, index = None )
 #TChiChiSlepSlepD080.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
 #----exclusion source----
-#TChiChiSlepSlepD080.obsExclusion.setSource( path, filetype, objectName = None, index = None )
+TChiChiSlepSlepD080.obsExclusion.setSource( 'orig/TChiChiSlepSlepD080_excl.txt', 'txt' )
 #TChiChiSlepSlepD080.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
 #TChiChiSlepSlepD080.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
 #TChiChiSlepSlepD080.expExclusion.setSource( path, filetype, objectName = None, index = None )
@@ -91,7 +91,7 @@ TChiChiSlepSlep050 = TChiChiSlepSlep.addMassPlane(motherMass = x, interMass0 = x
 TChiChiSlepSlep050.obsUpperLimit.setSource( 'orig/TChiChiSlepSlep050.txt', 'txt', objectName = None, index = None )
 #TChiChiSlepSlep050.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
 #----exclusion source----
-#TChiChiSlepSlep050.obsExclusion.setSource( path, filetype, objectName = None, index = None )
+TChiChiSlepSlep050.obsExclusion.setSource( 'orig/TChiChiSlepSlep050_excl.txt', 'txt' )
 #TChiChiSlepSlep050.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
 #TChiChiSlepSlep050.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
 #TChiChiSlepSlep050.expExclusion.setSource( path, filetype, objectName = None, index = None )

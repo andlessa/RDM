@@ -62,11 +62,11 @@ T1tttt.on.fuzzycondition ="None"
 #+++++++ next mass plane block ++++++++++++++
 T1tttt = T1tttt.addMassPlane(motherMass = x, lspMass = y)
 #----limit source----
-T1tttt.obsUpperLimit.setSource( 'orig/T1tttt.txt', 'txt', )
+T1tttt.obsUpperLimit.setSource( 'orig/T1tttt.txt', 'txt')
 T1tttt.obsUpperLimit.unit = 'fb'
 #T1tttt.expUpperLimit.setSource( path, type, object = None, index = None )
 #----exclusion source----
-#T1tttt.obsExclusion.setSource( path, type, object = None, index = None )
+T1tttt.obsExclusion.setSource( 'orig/T1tttt_excl.txt', 'txt' )
 #T1tttt.obsExclusionM1.setSource( path, type, object = None, index = None )
 #T1tttt.obsExclusionP1.setSource( path, type, object = None, index = None )
 #T1tttt.expExclusion.setSource( path, type, object = None, index = None )
