@@ -127,23 +127,23 @@ TChiChipmStauL050.obsUpperLimit.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins13
 #TStauStau.expExclusionP1.dataUrl =
 #
 ##+++++++ next txName block ++++++++++++++
-#TChipChimStauSnu = TxNameInput('TChipChimStauSnu')
+TChipChimStauSnu = TxNameInput('TChipChimStauSnu')
 #TChipChimStauSnu.on.checked =
 #TChipChimStauSnu.off.checked =
-#TChipChimStauSnu.on.constraint ="[[['ta-'],['nu']],[['nu'],['ta+']]] + [[['ta+'],['nu']],[['nu'],['ta-']]] + [[['ta+'],['nu']],[['ta-'],['nu']]] + [[['nu'],['ta+']],[['nu'],['ta-']]]"
+TChipChimStauSnu.on.constraint ="[[['ta-'],['nu']],[['nu'],['ta+']]] + [[['ta+'],['nu']],[['nu'],['ta-']]] + [[['ta+'],['nu']],[['ta-'],['nu']]] + [[['nu'],['ta+']],[['nu'],['ta-']]]"
 #TChipChimStauSnu.off.constraint =
-#TChipChimStauSnu.on.condition ="[[['ta-'],['nu']],[['nu'],['ta+']]] ~ [[['ta+'],['nu']],[['nu'],['ta-']]], [[['ta-'],['nu']],[['nu'],['ta+']]] ~ [[['ta+'],['nu']],[['ta-'],['nu']]], [[['ta-'],['nu']],[['nu'],['ta+']]] ~ [[['nu'],['ta+']],[['nu'],['ta-']]]"
+TChipChimStauSnu.on.condition ="[[['ta-'],['nu']],[['nu'],['ta+']]] ~ [[['ta+'],['nu']],[['nu'],['ta-']]], [[['ta-'],['nu']],[['nu'],['ta+']]] ~ [[['ta+'],['nu']],[['ta-'],['nu']]], [[['ta-'],['nu']],[['nu'],['ta+']]] ~ [[['nu'],['ta+']],[['nu'],['ta-']]]"
 #TChipChimStauSnu.off.condition =
-#TChipChimStauSnu.on.fuzzycondition ="Csim([[['ta-'],['nu']],[['nu'],['ta+']]],[[['ta+'],['nu']],[['nu'],['ta-']]],[[['ta+'],['nu']],[['ta-'],['nu']]],[[['nu'],['ta+']],[['nu'],['ta-']]])"
+TChipChimStauSnu.on.fuzzycondition ="Csim([[['ta-'],['nu']],[['nu'],['ta+']]],[[['ta+'],['nu']],[['nu'],['ta-']]],[[['ta+'],['nu']],[['ta-'],['nu']]],[[['nu'],['ta+']],[['nu'],['ta-']]])"
 #TChipChimStauSnu.off.fuzzycondition =
 #
 ##+++++++ next mass plane block ++++++++++++++
-#TChipChimStauSnu050 = TChipChimStauSnu.addMassPlane(motherMass = x, interMass0 = x*0.5 + (1. - 0.5)*y, lspMass = y)
+TChipChimStauSnu050 = TChipChimStauSnu.addMassPlane(motherMass = x, interMass0 = x*0.5 + (1. - 0.5)*y, lspMass = y)
 ##----limit source----
-#TChipChimStauSnu050.obsUpperLimit.setSource( path, filetype, objectName = None, index = None )
+TChipChimStauSnu050.obsUpperLimit.setSource( "orig/limit_TChipChimStauSnu.txt", "txt", objectName = None, index = None )
 #TChipChimStauSnu050.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
 ##----exclusion source----
-#TChipChimStauSnu050.obsExclusion.setSource( path, filetype, objectName = None, index = None )
+TChipChimStauSnu050.obsExclusion.setSource( "orig/exclusion_TChipChimStauSnu.txt", "txt", objectName = None, index = None )
 #TChipChimStauSnu050.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
 #TChipChimStauSnu050.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
 #TChipChimStauSnu050.expExclusion.setSource( path, filetype, objectName = None, index = None )
@@ -154,8 +154,8 @@ TChiChipmStauL050.obsUpperLimit.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins13
 #TChipChimStauSnu050.histoDataUrl =
 #TChipChimStauSnu050.exclusionDataUrl =
 ##----figure----
-#TChipChimStauSnu050.figure = 'Fig.(aux) 11a'
-#TChipChimStauSnu050.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-14/fig_07b.png'
+TChipChimStauSnu050.figure = 'Fig.(aux) 11a'
+TChipChimStauSnu050.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-14/figaux_11a.png'
 ##----limit url settings ----
 #TChipChimStauSnu050.obsUpperLimit.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1304288/d28'
 #TChipChimStauSnu050.expUpperLimit.dataUrl =
