@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-f=open("2013_014.xml")
+f=open("chargino.xml")
 lines=f.readlines()
 f.close()
 
