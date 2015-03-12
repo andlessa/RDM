@@ -64,7 +64,7 @@ TChiChipmStauL050 = TChiChipmStauL.addMassPlane(motherMass = x, interMass0 = x*0
 TChiChipmStauL050.obsUpperLimit.setSource( "orig/TChiChipmStauL.txt", "txt" )
 #TChiChipmStauL050.expUpperlimit.setSource( path, type, object = None, index = None )
 #----exclusion source----
-#TChiChipmStauL050.obsExclusion.setSource( path, type, object = None, index = None )
+TChiChipmStauL050.obsExclusion.setSource( "orig/TChiChipmStauL_excl.txt", "txt")
 #TChiChipmStauL050.obsExclusionM1.setSource( path, type, object = None, index = None )
 #TChiChipmStauL050.obsExclusionP1.setSource( path, type, object = None, index = None )
 #TChiChipmStauL050.expExclusion.setSource( path, type, object = None, index = None )
@@ -105,7 +105,7 @@ TChipChimStauSnu050 = TChipChimStauSnu.addMassPlane(motherMass = x, interMass0 =
 TChipChimStauSnu050.obsUpperLimit.setSource( "orig/TChipChimStauSnu.txt", "txt" )
 #TChipChimStauSnu050.expUpperlimit.setSource( path, type, object = None, index = None )
 #----exclusion source----
-#TChipChimStauSnu050.obsExclusion.setSource( path, type, object = None, index = None )
+TChipChimStauSnu050.obsExclusion.setSource( "orig/TChipChimStauSnu_excl.txt", "txt")
 #TChipChimStauSnu050.obsExclusionM1.setSource( path, type, object = None, index = None )
 #TChipChimStauSnu050.obsExclusionP1.setSource( path, type, object = None, index = None )
 #TChipChimStauSnu050.expExclusion.setSource( path, type, object = None, index = None )
