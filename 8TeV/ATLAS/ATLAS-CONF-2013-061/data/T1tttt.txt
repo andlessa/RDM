@@ -3,7 +3,7 @@ condition: None
 fuzzycondition: None
 constraint: [[['t+','t-']],[['t+','t-']]]
 checked: VM
-validated: False
+validated: True
 axes: 2*Eq(mother,x)_Eq(lsp,y)
 publishedData: False
 upperLimits: [[[[450.0*GeV, 1.0*GeV], [450.0*GeV, 1.0*GeV]], 0.628538*pb],

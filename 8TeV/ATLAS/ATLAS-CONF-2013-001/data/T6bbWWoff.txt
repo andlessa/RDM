@@ -3,7 +3,7 @@ condition: None
 fuzzycondition: None
 constraint: [[['b'],['L','nu']],[['b'],['L','nu']]] + [[['b'],['L','nu']],[['b'],['jet','jet']]] + [[['b'],['jet','jet']],[['b'],['jet','jet']]]
 checked: AL
-validated: False
+validated: True
 axes: 2*Eq(mother,x)_Eq(inter0,y+20.0)_Eq(lsp,y);2*Eq(mother,x)_Eq(inter0,y+5.0)_Eq(lsp,y)
 publishedData: False
 upperLimits: [[[[150.0*GeV, 120.0*GeV, 100.0*GeV], [150.0*GeV, 120.0*GeV, 100.0*GeV]], 172.0*pb],
