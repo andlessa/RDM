@@ -155,7 +155,7 @@ TChiWW.obsExclusion.setSource( "orig/exclusion_TChiWW.txt", "txt", objectName = 
 #TChiWW.exclusionDataUrl =
 #----figure----
 TChiWW.figure = 'Fig.(aux) 18'
-TChiWW.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-11/fig_06a.png'
+TChiWW.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-11/figaux_18.png'
 #----limit url settings ----
 TChiWW.obsUpperLimit.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1286761/d62'
 #TChiWW.expUpperLimit.dataUrl =
@@ -181,7 +181,8 @@ TSlepSlep.on.fuzzycondition ="Cgtr([[['mu+']],[['mu-']]],[[['e+']],[['e-']]])"
 #+++++++ next mass plane block ++++++++++++++
 TSlepSlep = TSlepSlep.addMassPlane(motherMass = x, lspMass = y)
 #----limit source----
-TSlepSlep.obsUpperLimit.setSource( "orig/limit_TSelpSlep.txt", "txt", objectName = None, index = None )
+TSlepSlep.obsUpperLimit.unit = 'fb'
+TSlepSlep.obsUpperLimit.setSource( "orig/limit_TSlepSlep.txt", "txt", objectName = None, index = None )
 #TSlepSlep.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
 #----exclusion source----
 TSlepSlep.obsExclusion.setSource( "orig/exclusion_TSlepSlep.txt", "txt", objectName = None, index = None )
@@ -196,7 +197,7 @@ TSlepSlep.expExclusion.setSource( "orig/expectedexclusion_TSlepSlep.txt", "txt",
 #TSlepSlep.exclusionDataUrl =
 #----figure----
 TSlepSlep.figure = 'Fig.(aux) 20c'
-TSlepSlep.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-11/fig_08c.png'
+TSlepSlep.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-11/figaux_20c.png'
 #----limit url settings ----
 TSlepSlep.obsUpperLimit.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1286761/d67'
 #TSlepSlep.expUpperLimit.dataUrl =
