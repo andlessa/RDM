@@ -2,6 +2,7 @@ txname: T7btbtWWoff
 condition: not yet assigned
 fuzzycondition: not yet assigned
 constraint: not yet assigned
+figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-007/fig_10.png
 validated: False
 axes: 2*Eq(mother,x)_Eq(inter0,y)_Eq(inter1,118.0)_Eq(lsp,60.0)
 publishedData: False
