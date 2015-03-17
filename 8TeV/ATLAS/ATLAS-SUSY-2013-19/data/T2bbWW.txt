@@ -2,6 +2,7 @@ txname: T2bbWW
 condition: None
 fuzzycondition: None
 constraint: [[['b','W+']],[['b','W-']]]
+figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-19/figaux_03e.png
 validated: False
 axes: 2*Eq(mother,x)_Eq(lsp,y)
 publishedData: True

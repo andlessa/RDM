@@ -8,6 +8,6 @@ publication: http://link.springer.com/article/10.1007/JHEP06(2014)124
 supersedes: ATLAS-CONF-2013-048
 comment: T2tt UL are from DF channel only, no combined UL map available
 private: False
-implemented_by: WW
-lastUpdate: 2015/3/4
+implemented_by: AL
+lastUpdate: 2015/3/16
 

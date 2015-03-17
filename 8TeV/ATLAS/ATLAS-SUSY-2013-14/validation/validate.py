@@ -22,5 +22,5 @@ database = DataBase("../../../../")
 #How to validate all plots for all Txnames in one ExpRes:
 expRes = database.getExpResults(analysisIDs=[getExpIdFromPath()],datasetIDs=[None])
 slhamain = '../../../../../smodels-utils/slha/'
-validateExpRes(expRes,slhamain,kfactorDict={'TChiChipmStauL':1.2, 'TChipTchimStauSnu':1.2})
+validateExpRes(expRes,slhamain,kfactorDict={'TChiChipmStauL' : 1.25, 'TChipChimStauSnu' : 1.25})
 

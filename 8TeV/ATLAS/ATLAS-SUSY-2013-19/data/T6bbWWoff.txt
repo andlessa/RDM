@@ -1,7 +1,8 @@
 txname: T6bbWWoff
 condition: [[['b'],['L','nu']],[['b'],['jet','> 2.7* [[['b'],['ta','nu']],[['b'],['jet','jet']]],[[['b'],['L','nu']],[jet','jet']]] > 2.7* [[['b'],['e','nu']],[['b'],['jet','jet']]]
 fuzzycondition: Cgtr([[['b'],['L','nu']],[['b'],['jet','jet']]],3.*[[['b'],['ta','nu']],[['b'],['jet','jet']]]);Cgtr([[['b'],['L','nu']],[['b'],['jet','jet']]],3.*[[['b'],['e','nu']],[['b'],['jet','jet']]])
-constraint: 11.1*([[['b'],['L-','nu']],[['b'],['L+','nu']]])
+constraint: 9.18*([[['b'],['L-','nu']],[['b'],['L+','nu']]])
+figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-19/figaux_3b.png;https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-19/fig_16.png;https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-19/fig_20.png;https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-19/fig_17.png
 validated: False
 axes: 2*Eq(mother,x)_Eq(inter0,x-10.0)_Eq(lsp,y);2*Eq(mother,300.0)_Eq(inter0,x)_Eq(lsp,y);2*Eq(mother,x)_Eq(inter0,106.0)_Eq(lsp,y);2*Eq(mother,x)_Eq(inter0,2.0*y)_Eq(lsp,y)
 publishedData: False

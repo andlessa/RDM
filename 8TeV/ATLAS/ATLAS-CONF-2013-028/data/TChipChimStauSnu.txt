@@ -3,7 +3,8 @@ condition: [[['ta-'],['nu']],[['nu'],['ta+']]] ~ [[['ta+'],['nu']],[['nu'],['ta-
 fuzzycondition: Csim([[['ta-'],['nu']],[['nu'],['ta+']]],[[['ta+'],['nu']],[['nu'],['ta-']]],[[['ta+'],['nu']],[['ta-'],['nu']]],[[['nu'],['ta+']],[['nu'],['ta-']]])
 constraint: [[['ta-'],['nu']],[['nu'],['ta+']]] + [[['ta+'],['nu']],[['nu'],['ta-']]] + [[['ta+'],['nu']],[['ta-'],['nu']]] + [[['nu'],['ta+']],[['nu'],['ta-']]]
 checked: A
-validated: False
+figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-028/figaux_09a.png
+validated: True
 axes: 2*Eq(mother,x)_Eq(inter0,0.5*x+0.5*y)_Eq(lsp,y)
 publishedData: False
 upperLimits: [[[[100.0*GeV, 50.0*GeV, 0.0*GeV], [100.0*GeV, 50.0*GeV, 0.0*GeV]], 51.56*pb],

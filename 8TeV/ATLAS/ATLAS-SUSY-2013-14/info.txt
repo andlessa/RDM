@@ -11,4 +11,3 @@ comment: added TStauStau result for left handed stau pairs
 private: False
 implemented_by: AL
 lastUpdate: 2015/3/12
-
