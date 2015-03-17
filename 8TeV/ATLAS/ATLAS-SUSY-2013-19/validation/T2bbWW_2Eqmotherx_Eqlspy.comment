@@ -1,0 +1,9 @@
+comment_by: AL
+date: 2015/3/16
+comment: "The ATLAS grid is sparse, so interpolation happens over\
+almost an order of magnitude. Also, the NLLfast cross-sections for \
+stop pair production are somewhat smaller (by 10-20%) than the CMS reference\
+cross-sections. Using Prospino to compute the cross-sections, one can see\
+that there is still a large uncertainty in the NLO cross-section (~20%),\
+so even though the excluded region seems slightly smaller, the results\
+are consistent with the uncertainties."

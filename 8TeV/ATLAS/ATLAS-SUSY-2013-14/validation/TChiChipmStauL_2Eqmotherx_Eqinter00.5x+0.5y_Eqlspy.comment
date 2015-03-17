@@ -1,0 +1,7 @@
+comment_by: AL
+date: 2015/3/16
+comment: "Compared against ATLAS UL grid.\
+The ATLAS grid has large value jumps from point to point, which results\
+in interpolation over an order of magnitude or more.\
+Comparing against CMS/ATLAS reference cross-sections the\
+results seem consistent."
