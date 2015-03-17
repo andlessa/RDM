@@ -2,9 +2,9 @@ txname: T6bbWWoff
 condition: [[['b'],['L','nu']],[['b'],['jet','jet']]] > 2.7* [[['b'],['ta','nu']],[['b'],['jet','jet']]],[[['b'],['L','nu']],[['b'],['jet','jet']]] > 2.7* [[['b'],['e','nu']],[['b'],['jet','jet']]]
 fuzzycondition: Cgtr([[['b'],['L','nu']],[['b'],['jet','jet']]],3.*[[['b'],['ta','nu']],[['b'],['jet','jet']]]);Cgtr([[['b'],['L','nu']],[['b'],['jet','jet']]],3.*[[['b'],['e','nu']],[['b'],['jet','jet']]])
 constraint: 2.3*([[['b'],['L','nu']],[['b'],['jet','jet']]])
-figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-15/figaux_021.png;https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-15/figaux_019.png;https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-15/figaux_020.png;https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-15/figaux_022.png;https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-15/figaux_016.png;https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-15/figaux_018.png
+figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-15/figaux_021.png;https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-15/figaux_019.png;https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-15/figaux_020.png;https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-15/figaux_022.png;https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-15/figaux_016.png;https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-15/figaux_018.png;https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-15/figaux_017.png
 validated: False
-axes: 2*Eq(mother,x)_Eq(inter0,x-10.0)_Eq(lsp,y);2*Eq(mother,x)_Eq(inter0,y+5.0)_Eq(lsp,y);2*Eq(mother,x)_Eq(inter0,y+20)_Eq(lsp,y);2*Eq(mother,300)_Eq(inter0,x)_Eq(lsp,y);2*Eq(mother,x)_Eq(inter0,2.0*y)_Eq(lsp,y);2*Eq(mother,x)_Eq(inter0,106.0)_Eq(lsp,y)
+axes: 2*Eq(mother,x)_Eq(inter0,x-10.0)_Eq(lsp,y);2*Eq(mother,x)_Eq(inter0,y+5.0)_Eq(lsp,y);2*Eq(mother,x)_Eq(inter0,y+20)_Eq(lsp,y);2*Eq(mother,300)_Eq(inter0,x)_Eq(lsp,y);2*Eq(mother,x)_Eq(inter0,2.0*y)_Eq(lsp,y);2*Eq(mother,x)_Eq(inter0,106.0)_Eq(lsp,y);2*Eq(mother,x)_Eq(inter0,150.0)_Eq(lsp,y)
 publishedData: False
 upperLimits: [[[[150.0*GeV, 140.0*GeV, 1.0*GeV], [150.0*GeV, 140.0*GeV, 1.0*GeV]], 22.0*pb],
 [[[150.0*GeV, 140.0*GeV, 25.0*GeV], [150.0*GeV, 140.0*GeV, 25.0*GeV]], 24.0*pb],
@@ -345,4 +345,25 @@ upperLimits: [[[[150.0*GeV, 140.0*GeV, 1.0*GeV], [150.0*GeV, 140.0*GeV, 1.0*GeV]
 [[[600.0*GeV, 106.0*GeV, 100.0*GeV], [600.0*GeV, 106.0*GeV, 100.0*GeV]], 0.018*pb],
 [[[600.0*GeV, 106.0*GeV, 105.0*GeV], [600.0*GeV, 106.0*GeV, 105.0*GeV]], 0.67*pb],
 [[[650.0*GeV, 106.0*GeV, 100.0*GeV], [650.0*GeV, 106.0*GeV, 100.0*GeV]], 0.019*pb],
-[[[650.0*GeV, 106.0*GeV, 105.0*GeV], [650.0*GeV, 106.0*GeV, 105.0*GeV]], 0.82*pb]]
+[[[650.0*GeV, 106.0*GeV, 105.0*GeV], [650.0*GeV, 106.0*GeV, 105.0*GeV]], 0.82*pb],
+[[[200.0*GeV, 150.0*GeV, 25.0*GeV], [200.0*GeV, 150.0*GeV, 25.0*GeV]], 23.0*pb],
+[[[200.0*GeV, 150.0*GeV, 100.0*GeV], [200.0*GeV, 150.0*GeV, 100.0*GeV]], 18.0*pb],
+[[[200.0*GeV, 150.0*GeV, 115.0*GeV], [200.0*GeV, 150.0*GeV, 115.0*GeV]], 20.0*pb],
+[[[200.0*GeV, 150.0*GeV, 145.0*GeV], [200.0*GeV, 150.0*GeV, 145.0*GeV]], 408.0*pb],
+[[[250.0*GeV, 150.0*GeV, 100.0*GeV], [250.0*GeV, 150.0*GeV, 100.0*GeV]], 7.5*pb],
+[[[250.0*GeV, 150.0*GeV, 115.0*GeV], [250.0*GeV, 150.0*GeV, 115.0*GeV]], 9.4*pb],
+[[[250.0*GeV, 150.0*GeV, 145.0*GeV], [250.0*GeV, 150.0*GeV, 145.0*GeV]], 13.0*pb],
+[[[300.0*GeV, 150.0*GeV, 100.0*GeV], [300.0*GeV, 150.0*GeV, 100.0*GeV]], 1.4*pb],
+[[[300.0*GeV, 150.0*GeV, 115.0*GeV], [300.0*GeV, 150.0*GeV, 115.0*GeV]], 1.2*pb],
+[[[350.0*GeV, 150.0*GeV, 100.0*GeV], [350.0*GeV, 150.0*GeV, 100.0*GeV]], 0.44*pb],
+[[[350.0*GeV, 150.0*GeV, 115.0*GeV], [350.0*GeV, 150.0*GeV, 115.0*GeV]], 0.42*pb],
+[[[400.0*GeV, 150.0*GeV, 100.0*GeV], [400.0*GeV, 150.0*GeV, 100.0*GeV]], 0.16*pb],
+[[[400.0*GeV, 150.0*GeV, 115.0*GeV], [400.0*GeV, 150.0*GeV, 115.0*GeV]], 0.16*pb],
+[[[500.0*GeV, 150.0*GeV, 1.0*GeV], [500.0*GeV, 150.0*GeV, 1.0*GeV]], 0.078*pb],
+[[[500.0*GeV, 150.0*GeV, 100.0*GeV], [500.0*GeV, 150.0*GeV, 100.0*GeV]], 0.068*pb],
+[[[500.0*GeV, 150.0*GeV, 115.0*GeV], [500.0*GeV, 150.0*GeV, 115.0*GeV]], 0.048*pb],
+[[[600.0*GeV, 150.0*GeV, 1.0*GeV], [600.0*GeV, 150.0*GeV, 1.0*GeV]], 0.042*pb],
+[[[600.0*GeV, 150.0*GeV, 25.0*GeV], [600.0*GeV, 150.0*GeV, 25.0*GeV]], 0.05*pb],
+[[[600.0*GeV, 150.0*GeV, 50.0*GeV], [600.0*GeV, 150.0*GeV, 50.0*GeV]], 0.048*pb],
+[[[600.0*GeV, 150.0*GeV, 100.0*GeV], [600.0*GeV, 150.0*GeV, 100.0*GeV]], 0.064*pb],
+[[[600.0*GeV, 150.0*GeV, 115.0*GeV], [600.0*GeV, 150.0*GeV, 115.0*GeV]], 0.031*pb]]

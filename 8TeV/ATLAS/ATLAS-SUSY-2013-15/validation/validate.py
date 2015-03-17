@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 
 import sys
-sys.path.insert(0,"../../../../../../smodels-utils/")
-sys.path.insert(0,"../../../../../smodels/")#
+sys.path.insert(0,"../../../../../smodels-utils/")
+sys.path.insert(0,"../../../../../smodels/")
 
 
 from validation.plotProducer import validateExpRes, getExpIdFromPath

@@ -338,27 +338,27 @@ T6bbWWoffC106.expExclusionM1.dataUrl =
 T6bbWWoffC106.expExclusionP1.dataUrl =
 """
 
-"""
 #+++++++ next mass plane block ++++++++++++++
-T6bbWWC150 = T6bbWW.addMassPlane(motherMass = x, interMass0 = 150.0, lspMass = y)
+T6bbWWoffC150 = T6bbWW.addMassPlane(motherMass = x, interMass0 = 150.0, lspMass = y)
 #----limit source----
-T6bbWWoffC150.obsUpperLimit.setSource( path, filetype, objectName = None, index = None )
-T6bbWWoffC150.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
+T6bbWWoffC150.obsUpperLimit.setSource( "orig/limit_T6bbWWoffC150.txt", "txt", objectName = None, index = None )
+#T6bbWWoffC150.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
 #----exclusion source----
-T6bbWWoffC150.obsExclusion.setSource( path, filetype, objectName = None, index = None )
-T6bbWWoffC150.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
-T6bbWWoffC150.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
-T6bbWWoffC150.expExclusion.setSource( path, filetype, objectName = None, index = None )
-T6bbWWoffC150.expExclusionM1.setSource( path, filetype, objectName = None, index = None )
-T6bbWWoffC150.expExclusionP1.setSource( path, filetype, objectName = None, index = None )
+T6bbWWoffC150.obsExclusion.setSource( "orig/exclusion_T6bbWWoffC150.txt", "txt", objectName = None, index = None )
+#T6bbWWoffC150.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
+#T6bbWWoffC150.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
+#T6bbWWoffC150.expExclusion.setSource( path, filetype, objectName = None, index = None )
+#T6bbWWoffC150.expExclusionM1.setSource( path, filetype, objectName = None, index = None )
+#T6bbWWoffC150.expExclusionP1.setSource( path, filetype, objectName = None, index = None )
 #----global url settings ----
-T6bbWWoffC150.dataUrl =
-T6bbWWoffC150.histoDataUrl =
-T6bbWWoffC150.exclusionDataUrl =
+#T6bbWWoffC150.dataUrl =
+#T6bbWWoffC150.histoDataUrl =
+#T6bbWWoffC150.exclusionDataUrl =
 #----figure----
-T6bbWWoffC150.figure =
-T6bbWWoffC150.figureUrl =
+T6bbWWoffC150.figure = "fig(aux) 17"
+T6bbWWoffC150.figureUrl = "https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-15/figaux_017.png"
 #----limit url settings ----
+"""
 T6bbWWoffC150.obsUpperLimit.dataUrl =
 T6bbWWoffC150.expUpperLimit.dataUrl =
 #----exclusion url settings ----
