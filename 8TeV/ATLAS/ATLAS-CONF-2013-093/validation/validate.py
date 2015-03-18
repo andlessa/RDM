@@ -23,6 +23,6 @@ database = DataBase("../../../../")
 expRes = database.getExpResults(analysisIDs=[getExpIdFromPath()],datasetIDs=[None])
 slhamain = '../../../../../smodels-utils/slha/'
 # kfactorDict = { "TChiWZ": 1.25, "TChiWW": 1.25 }
-kfactorDict= {} 
+kfactorDict= { "TChiWH": 1.25 } 
 validateExpRes(expRes,slhamain, kfactorDict = kfactorDict )
 
