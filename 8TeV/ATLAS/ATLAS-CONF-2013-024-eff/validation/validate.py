@@ -17,13 +17,12 @@ tl.setLevel(level=logging.DEBUG)
 
 
 print "exp id=",getExpIdFromPath()
-print "dataset ids=",getDatasetIdsFromPath()
 
 database = DataBase("../../../../")
 #How to validate all plots for all Txnames in one ExpRes:
 expRes = database.getExpResults(analysisIDs=[getExpIdFromPath()],datasetIDs=getDatasetIdsFromPath() )
-print "expRes=",expRes
-    
 slhamain = '../../../../../smodels-utils/slha/'
-validateExpRes(expRes,slhamain)
+# kfactorDict = { "TChiWZ": 1.25, "TChiWW": 1.25 }
+kfactorDict= {} 
+validateExpRes(expRes,slhamain, kfactorDict = kfactorDict )
 
