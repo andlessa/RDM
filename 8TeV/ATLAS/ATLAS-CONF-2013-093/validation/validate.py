@@ -5,7 +5,7 @@ sys.path.insert(0,"../../../../../smodels-utils/")
 sys.path.insert(0,"../../../../../smodels/")
 
 
-from validation.plotProducer import validateExpRes, getExpIdFromPath, getDatasetIdsFromPath
+from validation.plotProducer import validateExpRes, getExpIdFromPath
 from smodels.experiment.databaseObjects import DataBase
 import logging
 from smodels.theory.crossSection import logger as cl
@@ -20,9 +20,9 @@ print "exp id=",getExpIdFromPath()
 
 database = DataBase("../../../../")
 #How to validate all plots for all Txnames in one ExpRes:
-expRes = database.getExpResults(analysisIDs=[getExpIdFromPath()],datasetIDs=getDatasetIdsFromPath() )
+expRes = database.getExpResults(analysisIDs=[getExpIdFromPath()],datasetIDs=[None])
 slhamain = '../../../../../smodels-utils/slha/'
 # kfactorDict = { "TChiWZ": 1.25, "TChiWW": 1.25 }
-kfactorDict= {} 
+kfactorDict= { "TChiWH": 1.25 } 
 validateExpRes(expRes,slhamain, kfactorDict = kfactorDict )
 
