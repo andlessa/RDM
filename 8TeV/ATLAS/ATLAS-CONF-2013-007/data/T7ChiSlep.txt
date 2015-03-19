@@ -4,7 +4,7 @@ fuzzycondition: not yet assigned
 constraint: not yet assigned
 checked: VM
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-007/fig_14.png
-validated: False
+validated: None
 axes: 2*Eq(mother,x)_Eq(inter0,0.666666666666667*x+0.333333333333333*y)_Eq(inter1,0.333333333333333*x+0.666666666666667*y)_Eq(lsp,y)
 publishedData: False
 upperLimits: [[[[500.0*GeV, 426.666666667*GeV, 353.333333333*GeV, 280.0*GeV], [500.0*GeV, 426.666666667*GeV, 353.333333333*GeV, 280.0*GeV]], 0.048*pb],

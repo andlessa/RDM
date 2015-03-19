@@ -3,7 +3,7 @@ condition: not yet assigned
 fuzzycondition: not yet assigned
 constraint: not yet assigned
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-007/fig_15b.png
-validated: False
+validated: None
 axes: 2*Eq(mother,x)_Eq(inter0,y)_Eq(lsp,0.5*y)
 publishedData: False
 upperLimits: [[[[350.0*GeV, 150.0*GeV, 60.0*GeV], [350.0*GeV, 150.0*GeV, 60.0*GeV]], 0.298*pb],

@@ -2,7 +2,7 @@ txname: T4tbWoff
 condition: not yet assigned
 fuzzycondition: not yet assigned
 constraint: not yet assigned
-validated: False
+validated: None
 axes: Eq(mother,x)_Eq(inter0,y+5.0)_Eq(lsp,y)+Eq(mother,x)_Eq(lsp,y);Eq(mother,x)_Eq(inter0,y+5.0)_Eq(lsp,y)+Eq(mother,x)_Eq(lsp,y)
 publishedData: True
 upperLimits: [[[[100.0*GeV, 5.0*GeV, 0.0*GeV], [100.0*GeV, 0.0*GeV]], 164.008232158*pb],

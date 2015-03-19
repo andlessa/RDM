@@ -2,7 +2,7 @@ txname: T1btbt
 condition: None
 fuzzycondition: None
 constraint: [[['b','t']],[['b','t']]]
-validated: False
+validated: None
 axes: 2*Eq(mother,x)_Eq(lsp,y)
 publishedData: False
 efficiencyMap: [[[[300.0*GeV, 114.0*GeV], [300.0*GeV, 114.0*GeV]], 0.0],
