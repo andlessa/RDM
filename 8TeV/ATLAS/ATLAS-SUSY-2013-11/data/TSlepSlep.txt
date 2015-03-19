@@ -3,7 +3,7 @@ condition: [[['mu+']],[['mu-']]] > [[['e+']],[['e-']]]
 fuzzycondition: Cgtr([[['mu+']],[['mu-']]],[[['e+']],[['e-']]])
 constraint: [[['e+']],[['e-']]]+[[['mu+']],[['mu-']]]
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-11/figaux_20c.png
-validated: True
+validated: False
 axes: 2*Eq(mother,x)_Eq(lsp,y)
 publishedData: True
 upperLimits: [[[[99.95*GeV, 19.84*GeV], [99.95*GeV, 19.84*GeV]], 0.08043*pb],

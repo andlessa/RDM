@@ -3,7 +3,7 @@ condition: None
 fuzzycondition: None
 constraint: [[['W']],[['Z']]]
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-11/fig_07a.png
-validated: True
+validated: False
 axes: 2*Eq(mother,x)_Eq(lsp,y)
 publishedData: True
 upperLimits: [[[[125.0*GeV, 0.0*GeV], [125.0*GeV, 0.0*GeV]], 540.198*pb],
