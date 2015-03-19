@@ -1,1 +1,1 @@
-validationData = [{'kfactor': 1.0, 'signal': 1.83E+00 *pb, 'axes': [300.0, 100.0], 'dataset': None, 'UL': 3.18E+01 *pb, 'slhafile': '/home/lessa/smodels-utils/validation/tmp2HKenZ/T6bbWW_300_100_1.slha', 'condition': None}]
+validationData = [{'kfactor': 1.0, 'signal': 1.83E+00 *pb, 'axes': [300.0, 100.0], 'dataset': None, 'UL': 3.18E+01 *pb, 'slhafile': '/home/lessa/smodels-utils/validation/tmpHpcTiH/T6bbWW_300_100_1.slha', 'condition': None}]
