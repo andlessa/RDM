@@ -8,5 +8,6 @@ publication: http://link.springer.com/article/10.1007/JHEP04(2014)169
 supersedes: ATLAS-CONF-2013-035; CONF-2012-154
 comment: TChiWh renamed to TChiWH
 private: False
-implemented_by: ww
-lastUpdate: 2015/3/16
+implemented_by: AL
+lastUpdate: 2015/3/20
+

@@ -189,6 +189,7 @@ TChiChipmSlepL050 = TChiChipmSlepL.addMassPlane(motherMass = x, interMass0 = x*0
 #----limit source----
 TChiChipmSlepL050.obsUpperLimit.setSource( "orig/TChiChipmSlepL.txt", "txt", objectName = None, index = None )
 #TChiChipmSlepL050.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
+TChiChipmSlepL050.obsUpperLimit.unit = 'fb'
 #----exclusion source----
 TChiChipmSlepL050.obsExclusion.setSource( "orig/exc_slepL_obs.txt", "txt", objectName = None, index = None )
 #TChiChipmSlepL050.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
