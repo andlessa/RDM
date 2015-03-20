@@ -7,4 +7,3 @@ superseded_by: ATLAS-SUSY-2013-12
 private: False
 implemented_by: ww
 lastUpdate: 2015/3/10
-
