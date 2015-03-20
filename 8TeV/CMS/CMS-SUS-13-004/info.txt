@@ -5,5 +5,6 @@ prettyname: Razor with b-jets
 url: https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS13004
 comment: Not updated with arXiv publication results, superseded_by to be set after arXiv results?
 private: False
-implemented_by: Suchita Kulkarni
-lastUpdate: 2015/2/11
+implemented_by: ww
+lastUpdate: 2015/3/20
+
