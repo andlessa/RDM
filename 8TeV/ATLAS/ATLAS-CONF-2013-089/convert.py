@@ -51,9 +51,9 @@ T6WW.on.checked ="VM"
 T6WW.on.constraint ="[[['jet'],['W+']],[['jet'],['W-']]]"
 T6WW.off.constraint = "9.34*[[['jet'],['L+','nu']],[['jet'],['L-','nu']]]"
 T6WW.on.condition ="None"
-T6WW.off.condition = "[[['jet'],['L+','nu']],[['jet'],['L-','nu']]] > 9 * [[['jet'],['tau+','nu']],[['jet'],['tau-','nu']]]"
+T6WW.off.condition = "[[['jet'],['L+','nu']],[['jet'],['L-','nu']]] > 9 * [[['jet'],['ta+','nu']],[['jet'],['ta-','nu']]]"
 T6WW.on.fuzzycondition ="None"
-T6WW.off.fuzzycondition = "Cgtr([[['jet'],['L+','nu']],[['jet'],['L-','nu']]],9 * [[['jet'],['tau+','nu']],[['jet'],['tau-','nu']]]);Cgtr([[['jet'],['L+','nu']],[['jet'],['L-','nu']]],9 * [[['jet'],['e+','nu']],[['jet'],['e-','nu']]])"
+T6WW.off.fuzzycondition = "Cgtr([[['jet'],['L+','nu']],[['jet'],['L-','nu']]],9 * [[['jet'],['ta+','nu']],[['jet'],['ta-','nu']]]);Cgtr([[['jet'],['L+','nu']],[['jet'],['L-','nu']]],9 * [[['jet'],['e+','nu']],[['jet'],['e-','nu']]])"
 
 #+++++++ next mass plane block ++++++++++++++
 T6WW050 = T6WW.addMassPlane(motherMass = x, interMass0 = x*0.5 + (1. - 0.5)*y, lspMass = y)
