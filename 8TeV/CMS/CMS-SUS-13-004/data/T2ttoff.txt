@@ -2,7 +2,8 @@ txname: T2ttoff
 condition: None
 fuzzycondition: None
 constraint: [[['b','W']],[['b','W']]]
-validated: True
+figureUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13004/T1ttttRazorXSEC.pdf;https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13004/T1ttttRazorXSEC.pdf
+validated: None
 axes: 2*Eq(mother,x)_Eq(lsp,y);2*Eq(mother,x)_Eq(lsp,y)
 publishedData: True
 upperLimits: [[[[150.0*GeV, 0.0*GeV], [150.0*GeV, 0.0*GeV]], 203.939565716*pb],

@@ -2,6 +2,7 @@ txname: T5ttttoff
 condition: None
 fuzzycondition: None
 constraint: [[['b','W'],['b','W']],[['b','W'],['b','W']]]
+figureUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13007/combLimit_T1t1t_b.png
 validated: None
 axes: 2*Eq(mother,1000.0)_Eq(inter0,x)_Eq(lsp,y)
 publishedData: True
