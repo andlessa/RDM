@@ -32,7 +32,7 @@ plot.data=validationData
 agreement = plot.computeAgreementFactor()
 print "agreement=",agreement
 
-plot.getPlot()
+plot.getUpperLimitPlot()
 plot.savePlot()
 
 # import IPython
