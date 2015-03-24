@@ -44,48 +44,51 @@ info.arxiv = 'http://arxiv.org/abs/1405.7875'
 info.prettyname =  "jets and met"
 info.supersedes = 'ATLAS-CONF-2013-047'
 
-"""
 #+++++++ next txName block ++++++++++++++
 TGQ = TxNameInput('TGQ')
-TGQ.on.checked =
-TGQ.off.checked =
+#TGQ.on.checked =
+#TGQ.off.checked =
 TGQ.on.constraint ="[[['jet','jet']],[['jet']]]"
-TGQ.off.constraint =
+# TGQ.off.constraint ="[[['jet','jet']],[['jet']]]"
+#TGQ.off.constraint =
 TGQ.on.condition ="None"
-TGQ.off.condition =
+#TGQ.off.condition =
 TGQ.on.fuzzycondition ="None"
-TGQ.off.fuzzycondition =
+#TGQ.off.fuzzycondition =
 
 #+++++++ next mass plane block ++++++++++++++
-TGQ = TGQ.addMassPlane(motherMass = x, lspMass = y)
+TGQ0 = TGQ.addMassPlane(motherMass = x, lspMass = 0.0 )
+TGQ0.setBranch_1 ( motherMass = x, lspMass = 0.0 )
+TGQ0.setBranch_2 ( motherMass = y, lspMass = 0.0 )
 #----limit source----
-TGQ.obsUpperLimit.setSource( path, filetype, objectName = None, index = None )
-TGQ.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
+TGQ0.obsUpperLimit.setSource( "orig/limit_TGQ.txt", "txt", objectName = None, index = None )
+# TGQ.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
 #----exclusion source----
-TGQ.obsExclusion.setSource( path, filetype, objectName = None, index = None )
-TGQ.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
-TGQ.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
-TGQ.expExclusion.setSource( path, filetype, objectName = None, index = None )
-TGQ.expExclusionM1.setSource( path, filetype, objectName = None, index = None )
-TGQ.expExclusionP1.setSource( path, filetype, objectName = None, index = None )
+TGQ0.obsExclusion.setSource( "orig/exclusion_TGQ.txt", "txt", objectName = None, index = None )
+#TGQ.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
+#TGQ.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
+#TGQ.expExclusion.setSource( path, filetype, objectName = None, index = None )
+#TGQ.expExclusionM1.setSource( path, filetype, objectName = None, index = None )
+#TGQ.expExclusionP1.setSource( path, filetype, objectName = None, index = None )
 #----global url settings ----
-TGQ.dataUrl =
-TGQ.histoDataUrl =
-TGQ.exclusionDataUrl =
+#TGQ.dataUrl =
+#TGQ.histoDataUrl =
+#TGQ.exclusionDataUrl =
 #----figure----
-TGQ.figure =
-TGQ.figureUrl =
+TGQ0.figure = "fig(aux) 7a"
+TGQ0.figureUrl = "https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-02/figaux_07a.png"
 #----limit url settings ----
-TGQ.obsUpperLimit.dataUrl =
-TGQ.expUpperLimit.dataUrl =
+#TGQ.obsUpperLimit.dataUrl =
+#TGQ.expUpperLimit.dataUrl =
 #----exclusion url settings ----
-TGQ.obsExclusion.dataUrl =
-TGQ.obsExclusionM1.dataUrl =
-TGQ.obsExclusionP1.dataUrl =
-TGQ.expExclusion.dataUrl =
-TGQ.expExclusionM1.dataUrl =
-TGQ.expExclusionP1.dataUrl =
+#TGQ.obsExclusion.dataUrl =
+#TGQ.obsExclusionM1.dataUrl =
+#TGQ.obsExclusionP1.dataUrl =
+#TGQ.expExclusion.dataUrl =
+#TGQ.expExclusionM1.dataUrl =
+#TGQ.expExclusionP1.dataUrl =
 
+"""
 #+++++++ next txName block ++++++++++++++
 T6WW = TxNameInput('T6WW')
 T6WW.on.checked =
@@ -156,38 +159,40 @@ T6WW050.obsExclusionP1.dataUrl =
 T6WW050.expExclusion.dataUrl =
 T6WW050.expExclusionM1.dataUrl =
 T6WW050.expExclusionP1.dataUrl =
+"""
 
 #+++++++ next txName block ++++++++++++++
 T2 = TxNameInput('T2')
-T2.on.checked =
-T2.off.checked =
+#T2.on.checked =
+#T2.off.checked =
 T2.on.constraint ="[[['jet']],[['jet']]]"
-T2.off.constraint =
+#T2.off.constraint =
 T2.on.condition ="None"
-T2.off.condition =
+#T2.off.condition =
 T2.on.fuzzycondition ="None"
-T2.off.fuzzycondition =
+#T2.off.fuzzycondition =
 
 #+++++++ next mass plane block ++++++++++++++
 T2 = T2.addMassPlane(motherMass = x, lspMass = y)
 #----limit source----
-T2.obsUpperLimit.setSource( path, filetype, objectName = None, index = None )
-T2.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
+T2.obsUpperLimit.setSource( "orig/limit_T2.txt", "txt", objectName = None, index = None )
+#T2.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
 #----exclusion source----
-T2.obsExclusion.setSource( path, filetype, objectName = None, index = None )
-T2.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
-T2.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
-T2.expExclusion.setSource( path, filetype, objectName = None, index = None )
-T2.expExclusionM1.setSource( path, filetype, objectName = None, index = None )
-T2.expExclusionP1.setSource( path, filetype, objectName = None, index = None )
+T2.obsExclusion.setSource( "orig/exclusion_T2.txt", "txt", objectName = None, index = None )
+#T2.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
+#T2.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
+#T2.expExclusion.setSource( path, filetype, objectName = None, index = None )
+#T2.expExclusionM1.setSource( path, filetype, objectName = None, index = None )
+#T2.expExclusionP1.setSource( path, filetype, objectName = None, index = None )
 #----global url settings ----
-T2.dataUrl =
-T2.histoDataUrl =
-T2.exclusionDataUrl =
+#T2.dataUrl =
+#T2.histoDataUrl =
+#T2.exclusionDataUrl =
 #----figure----
-T2.figure =
-T2.figureUrl =
+T2.figure = "Fig(aux) 8b"
+T2.figureUrl = "https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-02/figaux_08b.png"
 #----limit url settings ----
+"""
 T2.obsUpperLimit.dataUrl =
 T2.expUpperLimit.dataUrl =
 #----exclusion url settings ----
@@ -214,6 +219,7 @@ T1.on.fuzzycondition ="None"
 T1 = T1.addMassPlane(motherMass = x, lspMass = y)
 #----limit source----
 T1.obsUpperLimit.setSource( "orig/limit_T1.txt", "txt", objectName = None, index = None )
+T1.obsUpperLimit.unit = 'fb' 
 #T1.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
 #----exclusion source----
 T1.obsExclusion.setSource( "orig/exclusion_T1.txt", "txt", objectName = None, index = None )
@@ -227,8 +233,8 @@ T1.obsExclusion.setSource( "orig/exclusion_T1.txt", "txt", objectName = None, in
 #T1.histoDataUrl =
 #T1.exclusionDataUrl =
 #----figure----
-T1.figure = "Fig(aux) 8a"
-T1.figureUrl = "https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-02/figaux_08a.png"
+T1.figure = "Fig(aux) 9a"
+T1.figureUrl = "https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-02/figaux_09a.png"
 #----limit url settings ----
 #T1.obsUpperLimit.dataUrl =
 #T1.expUpperLimit.dataUrl =
