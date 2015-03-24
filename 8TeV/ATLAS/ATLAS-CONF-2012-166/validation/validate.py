@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 
 import sys,os
-sys.path.insert(0,"/home/walten/git/smodels-utils/")
-sys.path.insert(0,"/home/walten/git/smodels/")
+home = os.path.expanduser("~")
+sys.path.insert(0,os.path.join(home,"smodels-utils/"))
+sys.path.insert(0,os.path.join(home,"smodels/"))
 
 
-from validation.plotProducer import validateTxName,validatePlot,validateExpRes
-from smodels.experiment.databaseBrowser import Browser
+from validation.plotProducer import validateExpRes, getExpIdFromPath
 from smodels.experiment.databaseObjects import DataBase
 import logging
 from smodels.theory.crossSection import logger as cl
@@ -16,18 +16,14 @@ cl.setLevel(level=logging.DEBUG)
 dl.setLevel(level=logging.DEBUG)
 tl.setLevel(level=logging.DEBUG)
 
-database = DataBase("../../../../")
 
+print "exp id=",getExpIdFromPath()
+
+database = DataBase(os.path.join(home,"smodels-database"))
 #How to validate all plots for all Txnames in one ExpRes:
-expRes = database.getExpResults(analysisIDs=['ATLAS-CONF-2012-166'],datasetIDs=[None])
+expRes = database.getExpResults(analysisIDs=[getExpIdFromPath()],datasetIDs=[None])
+slhamain = os.path.join(home,"smodels-utils/slha")
+# kfactorDict = { "TChiWZ": 1.25, "TChiWW": 1.25 }
+kfactorDict= {} 
+validateExpRes(expRes,slhamain, kfactorDict = kfactorDict )
 
-def validate (exp ):
-    print exp
-    slhamain = '../../../../../smodels-utils/slha/'
-    print validateExpRes(exp,slhamain)
-
-if type(expRes)==list:
-    for exp in expRes:
-        validate (exp)
-else:
-    validate (expRes)
