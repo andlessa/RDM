@@ -176,6 +176,7 @@ T2.on.fuzzycondition ="None"
 T2 = T2.addMassPlane(motherMass = x, lspMass = y)
 #----limit source----
 T2.obsUpperLimit.setSource( "orig/limit_T2.txt", "txt", objectName = None, index = None )
+T2.obsUpperLimit.unit = 'fb' 
 #T2.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
 #----exclusion source----
 T2.obsExclusion.setSource( "orig/exclusion_T2.txt", "txt", objectName = None, index = None )
