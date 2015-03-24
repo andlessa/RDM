@@ -3,8 +3,8 @@ condition: None
 fuzzycondition: None
 constraint: [[['t','t']],[['t','t']]]
 checked: VM
-figureUrl: https://atlas.wet.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-061/fig_12b.png
-validated: True
+figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-061/fig_12b.png
+validated: None
 axes: 2*Eq(mother,x)_Eq(lsp,y)
 publishedData: False
 upperLimits: [[[[450.0*GeV, 1.0*GeV], [450.0*GeV, 1.0*GeV]], 0.628538*pb],

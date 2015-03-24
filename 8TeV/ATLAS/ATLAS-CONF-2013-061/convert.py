@@ -72,7 +72,7 @@ T1tttt.obsUpperLimit.setSource( 'orig/Fig12b.txt', 'txt' )
 T1tttt.obsUpperLimit.unit = 'fb'
 T1tttt.obsExclusion.setSource( 'orig/exclusion_T1tttt.txt', 'txt' )
 T1tttt.figure = 'Fig. 12b'
-T1tttt.figureUrl = 'https://atlas.wet.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-061/fig_12b.png'
+T1tttt.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-061/fig_12b.png'
 
 #+++++++ next txName block ++++++++++++++
 T1tbtb = TxNameInput('T1tbtb')
@@ -86,6 +86,6 @@ T1tbtb.obsUpperLimit.setSource( 'orig/Fig12c.txt', 'txt' )
 T1tbtb.obsUpperLimit.unit = 'fb'
 T1tbtb.obsExclusion.setSource( 'orig/exclusion_T1tbtb.txt', 'txt' )
 T1tbtb.figure = 'Fig. 12c'
-T1tbtb.figureUrl = 'https://atlas.wet.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-061/fig_12c.png'
+T1tbtb.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-061/fig_12c.png'
 
 databaseCreator.create()
