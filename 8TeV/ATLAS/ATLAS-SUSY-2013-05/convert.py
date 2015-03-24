@@ -164,6 +164,7 @@ T6bbWWM1300.expExclusionP1.dataUrl ='http://hepdata.cedar.ac.uk/view/ins1247462/
 
 #------ add new massplane-------
 
+"""
 T6bbWWC150 = T6bbWW.addMassPlane(motherMass = x, interMass0 = 150., lspMass = y)
 T6bbWWC150.figure = 'Fig.(aux) 6b'
 T6bbWWC150.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-05/figaux_06b.png'
@@ -184,6 +185,7 @@ T6bbWWC150.obsExclusionP1.dataUrl ='http://hepdata.cedar.ac.uk/view/ins1247462/d
 T6bbWWC150.expExclusion.dataUrl ='http://hepdata.cedar.ac.uk/view/ins1247462/d16'
 T6bbWWC150.expExclusionM1.dataUrl ='http://hepdata.cedar.ac.uk/view/ins1247462/d17'
 T6bbWWC150.expExclusionP1.dataUrl ='http://hepdata.cedar.ac.uk/view/ins1247462/d18'
+"""
 
 
 databaseCreator.create()
