@@ -250,31 +250,31 @@ T1.figureUrl = "https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-
 """
 #+++++++ next txName block ++++++++++++++
 T5WW = TxNameInput('T5WW')
-T5WW.on.checked =
-T5WW.off.checked =
+#T5WW.on.checked =
+#T5WW.off.checked =
 T5WW.on.constraint ="[[['jet','jet'],['W']],[['jet','jet'],['W']]]"
-T5WW.off.constraint =
+#T5WW.off.constraint =
 T5WW.on.condition ="None"
-T5WW.off.condition =
+#T5WW.off.condition =
 T5WW.on.fuzzycondition ="None"
-T5WW.off.fuzzycondition =
+#T5WW.off.fuzzycondition =
 
 #+++++++ next mass plane block ++++++++++++++
 T5WWLSP060 = T5WW.addMassPlane(motherMass = x, interMass0 = y, lspMass = 60.0)
 #----limit source----
-T5WWLSP060.obsUpperLimit.setSource( path, filetype, objectName = None, index = None )
-T5WWLSP060.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
+T5WWLSP060.obsUpperLimit.setSource( "orig/limit_T5WWLSP060.txt", "txt", objectName = None, index = None )
+#T5WWLSP060.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
 #----exclusion source----
-T5WWLSP060.obsExclusion.setSource( path, filetype, objectName = None, index = None )
-T5WWLSP060.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
-T5WWLSP060.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
-T5WWLSP060.expExclusion.setSource( path, filetype, objectName = None, index = None )
-T5WWLSP060.expExclusionM1.setSource( path, filetype, objectName = None, index = None )
-T5WWLSP060.expExclusionP1.setSource( path, filetype, objectName = None, index = None )
+T5WWLSP060.obsExclusion.setSource( "orig/exclusion_T5WWLSP060.txt", "txt", objectName = None, index = None )
+#T5WWLSP060.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
+#T5WWLSP060.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
+#T5WWLSP060.expExclusion.setSource( path, filetype, objectName = None, index = None )
+#T5WWLSP060.expExclusionM1.setSource( path, filetype, objectName = None, index = None )
+#T5WWLSP060.expExclusionP1.setSource( path, filetype, objectName = None, index = None )
 #----global url settings ----
-T5WWLSP060.dataUrl =
-T5WWLSP060.histoDataUrl =
-T5WWLSP060.exclusionDataUrl =
+#T5WWLSP060.dataUrl =
+#T5WWLSP060.histoDataUrl =
+#T5WWLSP060.exclusionDataUrl =
 #----figure----
 T5WWLSP060.figure =
 T5WWLSP060.figureUrl =
@@ -288,7 +288,9 @@ T5WWLSP060.obsExclusionP1.dataUrl =
 T5WWLSP060.expExclusion.dataUrl =
 T5WWLSP060.expExclusionM1.dataUrl =
 T5WWLSP060.expExclusionP1.dataUrl =
+"""
 
+"""
 #+++++++ next mass plane block ++++++++++++++
 T5WW050 = T5WW.addMassPlane(motherMass = x, interMass0 = x*0.5 + (1. - 0.5)*y, lspMass = y)
 #----limit source----
