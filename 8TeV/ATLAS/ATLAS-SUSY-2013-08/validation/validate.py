@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 
 import sys,os
-sys.path.insert(0,"/home/walten/git/smodels-utils/andre_validation/")
-sys.path.insert(0,"/home/walten/git/smodels-utils/")
+home = os.path.expanduser("~")
+sys.path.insert(0,os.path.join(home,"smodels-utils/"))
+sys.path.insert(0,os.path.join(home,"smodels/"))
 
 
-from plotProducer import validateTxName,validatePlot,validateExpRes
-from smodels.experiment.databaseBrowser import Browser
-from smodels.experiment.databaseObjects import DataBase
+from validation.plotProducer import validateExpRes, getExpIdFromPath
+from smodels.experiment.databaseObjects import Database
 import logging
 from smodels.theory.crossSection import logger as cl
 from smodels.theory.slhaDecomposer import logger as dl
@@ -16,18 +16,14 @@ cl.setLevel(level=logging.DEBUG)
 dl.setLevel(level=logging.DEBUG)
 tl.setLevel(level=logging.DEBUG)
 
-database = DataBase("/home/walten/git/smodels-database/")
 
+print "exp id=",getExpIdFromPath()
+
+database = Database(os.path.join(home,"smodels-database"))
 #How to validate all plots for all Txnames in one ExpRes:
-expRes = database.getExpResults( analysisIDs=['ATLAS-SUSY-2013-08'],datasetIDs=[None])
+expRes = database.getExpResults(analysisIDs=[getExpIdFromPath()],datasetIDs=[None])
+slhamain = os.path.join(home,"smodels-utils/slha")
+# kfactorDict = { "TChiWZ": 1.25, "TChiWW": 1.25 }
+kfactorDict= {} 
+validateExpRes(expRes,slhamain, kfactorDict = kfactorDict )
 
-print "expRes=",expRes
-
-for exp in expRes:
-    print exp
-    slhamain = '/home/walten/git/smodels-utils/myslha/'
-    slhaDict = { # 'T1bbbb': os.path.join(slhamain,'T1bbbb'),
-                 # 'T1tttt': os.path.join(slhamain,'T1tttt'),
-                 'T6ZZtt': os.path.join(slhamain,'T6ZZtt'),
-    }  
-    validateExpRes(exp,slhaDict)

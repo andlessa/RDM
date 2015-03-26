@@ -52,13 +52,16 @@ TChiChiSlepSlep.on.constraint ="[[['l+'],['l-']],[['l+'],['l-']]]+[[['l-'],['l+'
 #TChiChiSlepSlep.off.constraint =
 TChiChiSlepSlep.on.condition ="[[['l+'],['l-']],[['l+'],['l-']]] ~ [[['l-'],['l+']],[['l-'],['l+']]], 2.*[[['l+'],['l-']],[['l+'],['l-']]] ~ [[['l+'],['l-']],[['l-'],['l+']]], [[['mu+'],['mu-']],[['e+'],['e-']]] ~ 2.*[[['mu+'],['mu-']],[['mu+'],['mu-']]], [[['mu+'],['mu-']],[['e+'],['e-']]] ~ 2.*[[['e+'],['e-']],[['e+'],['e-']]], [[['mu-'],['mu+']],[['e-'],['e+']]] ~ 2.*[[['e-'],['e+']],[['e-'],['e+']]], [[['mu-'],['mu+']],[['e-'],['e+']]] ~ 2.*[[['mu-'],['mu+']],[['mu-'],['mu+']]], [[['mu+'],['mu-']],[['e-'],['e+']]] ~ 2.*[[['e+'],['e-']],[['e-'],['e+']]], [[['mu+'],['mu-']],[['e-'],['e+']]] ~ 2.*[[['mu+'],['mu-']],[['mu-'],['mu+']]]"
 #TChiChiSlepSlep.off.condition =
-TChiChiSlepSlep.on.fuzzycondition ="Csim([[['l+'],['l-']],[['l+'],['l-']]],[[['l-'],['l+']],[['l-'],['l+']]],0.5*[[['l+'],['l-']],[['l-'],['l+']]]); Csim([[['mu+'],['mu-']],[['e+'],['e-']]],2.*[[['mu+'],['mu-']],[['mu+'],['mu-']]],2.*[[['e+'],['e-']],[['e+'],['e-']]]); Csim([[['mu-'],['mu+']],[['e-'],['e+']]],2.*[[['e-'],['e+']],[['e-'],['e+']]],2.*[[['mu-'],['mu+']],[['mu-'],['mu+']]]); Csim([[['mu+'],['mu-']],[['e-'],['e+']]],2.*[[['e+'],['e-']],[['e-'],['e+']]],2.*[[['mu+'],['mu-']],[['mu-'],['mu+']]])"
+TChiChiSlepSlep.on.fuzzycondition ="Csim([[['l+'],['l-']],[['l+'],['l-']]],[[['l-'],['l+']],[['l-'],['l+']]],0.5*[[['l+'],['l-']],[['l-'],['l+']]]); Csim([[['mu+'],['mu-']],[['e+'],['e-']]],2.*[[['mu+'],['mu-']],[['mu+'],['mu-']]],2.*[[['e+'],['e-']],[['e+'],['e-']]]); Csim([[['mu-'],['mu+']],[['e-'],['e+']]],2.*[[['e-'],['e+']],[['e-'],['e+']]],2.*[[['mu-'],['mu+']],[['mu-'],['mu+']]]); Csim([[['mu+'],['mu-']],[['e-'],['e+']]],[[['e+'],['e-']],[['e-'],['e+']]],[[['mu+'],['mu-']],[['mu-'],['mu+']]])"
 #TChiChiSlepSlep.off.fuzzycondition =
 
 #+++++++ next mass plane block ++++++++++++++
-TChiChiSlepSlepD080 = TChiChiSlepSlep.addMassPlane(motherMass = x, interMass0 = y, lspMass = x - 80.0)
+TChiChiSlepSlepD080 = TChiChiSlepSlep.addMassPlane(motherMass = x+80., interMass0 = x+80.-y, lspMass = x)
+TChiChiSlepSlepD080.setBranch_1(motherMass = x+80., interMass0 = x+80.-y, lspMass = x)
+TChiChiSlepSlepD080.setBranch_2(motherMass = x+75., interMass0 = x+80.-y, lspMass = x)
 #----limit source----
 TChiChiSlepSlepD080.obsUpperLimit.setSource( 'orig/TChiChiSlepSlepD080.txt', 'txt', objectName = None, index = None )
+TChiChiSlepSlepD080.obsUpperLimit.unit = 'fb'
 #TChiChiSlepSlepD080.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
 #----exclusion source----
 TChiChiSlepSlepD080.obsExclusion.setSource( 'orig/TChiChiSlepSlepD080_excl.txt', 'txt' )
@@ -72,8 +75,8 @@ TChiChiSlepSlepD080.obsExclusion.setSource( 'orig/TChiChiSlepSlepD080_excl.txt',
 #TChiChiSlepSlepD080.histoDataUrl =
 #TChiChiSlepSlepD080.exclusionDataUrl =
 #----figure----
-#TChiChiSlepSlepD080.figure =
-#TChiChiSlepSlepD080.figureUrl =
+TChiChiSlepSlepD080.figure = 'Fig.(aux) 1a'
+TChiChiSlepSlepD080.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-036/figaux_01a.png'
 #----limit url settings ----
 #TChiChiSlepSlepD080.obsUpperLimit.dataUrl =
 #TChiChiSlepSlepD080.expUpperLimit.dataUrl =
@@ -86,9 +89,10 @@ TChiChiSlepSlepD080.obsExclusion.setSource( 'orig/TChiChiSlepSlepD080_excl.txt',
 #TChiChiSlepSlepD080.expExclusionP1.dataUrl =
 
 #+++++++ next mass plane block ++++++++++++++
-TChiChiSlepSlep050 = TChiChiSlepSlep.addMassPlane(motherMass = x, interMass0 = x*0.5 + (1. - 0.5)*y, lspMass = y)
+TChiChiSlepSlep050 = TChiChiSlepSlep.addMassPlane(motherMass = y+x, interMass0 = 0.5*(y+x+x), lspMass = x)
 #----limit source----
 TChiChiSlepSlep050.obsUpperLimit.setSource( 'orig/TChiChiSlepSlep050.txt', 'txt', objectName = None, index = None )
+TChiChiSlepSlep050.obsUpperLimit.unit = 'fb'
 #TChiChiSlepSlep050.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
 #----exclusion source----
 TChiChiSlepSlep050.obsExclusion.setSource( 'orig/TChiChiSlepSlep050_excl.txt', 'txt' )

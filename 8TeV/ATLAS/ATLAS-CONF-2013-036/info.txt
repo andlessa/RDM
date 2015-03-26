@@ -6,5 +6,4 @@ url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-03
 comment: will be superseded by SUSY_2013_36
 private: False
 implemented_by: AL
-lastUpdate: 2015/3/12
-
+lastUpdate: 2015/3/26

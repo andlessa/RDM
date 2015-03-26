@@ -59,6 +59,7 @@ T6ZZtt.on.fuzzycondition ="None"
 T6ZZttD180 = T6ZZtt.addMassPlane(motherMass = x, interMass0 = y + 180.0, lspMass = y)
 #----limit source----
 T6ZZttD180.obsUpperLimit.setSource( "orig/limit_T6ZZtt.txt" , "txt", objectName = None, index = None )
+T6ZZttD180.obsUpperLimit.unit = 'fb'
 #T6ZZttD180.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
 #----exclusion source----
 T6ZZttD180.obsExclusion.setSource( "orig/exclusion_T6ZZtt.txt", "txt", objectName = None, index = None )

@@ -12,12 +12,12 @@ args=argparser.parse_args()
 
 
 import sys,os
-sys.path.insert(0,"/home/lessa/smodels-utils/validation/")
-sys.path.insert(0,"/home/lessa/smodels-utils/")
-sys.path.insert(0,"/home/lessa/smodels/")
+sys.path.insert(0,"/home/lessa/smodels-utils/validation")
+sys.path.insert(0,"/home/lessa/smodels-utils")
+sys.path.insert(0,"/home/lessa/smodels")
 
 from validation.plotProducer import validateTxName,validatePlot,validateExpRes, getExpIdFromPath
-from smodels.experiment.databaseObjects import DataBase
+from smodels.experiment.databaseObjects import Database
 import logging
 from smodels.theory.crossSection import logger as cl
 from smodels.theory.slhaDecomposer import logger as dl
@@ -26,7 +26,7 @@ cl.setLevel(level=logging.DEBUG)
 dl.setLevel(level=logging.DEBUG)
 tl.setLevel(level=logging.DEBUG)
 
-database = DataBase("../../../../")
+database = Database("../../../../")
 
 #How to validate all plots for all Txnames in one ExpRes:
 expRes = database.getExpResults(analysisIDs=[getExpIdFromPath()],datasetIDs=[None])

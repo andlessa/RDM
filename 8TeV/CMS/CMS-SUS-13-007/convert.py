@@ -108,7 +108,7 @@ T5tttt_1.figure = 'combLimit_T1t1t_b.pdf'
 T5tttt_1.figureUrl ='https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13007/combLimit_T1t1t_b.png'
 #----limit source----
 T5tttt_1.obsUpperLimit.setSource( './orig/T5tttt_mg1TeV.txt', 'txt', objectName = None, index = None )
-T1tttt_1.obsUpperLimit.unit = 'fb'
+T5tttt_1.obsUpperLimit.unit = 'fb'
 #T5tttt_1.expUpperLimit.setSource( path, type, objectName = None, index = None )
 #----exclusion source----
 T5tttt_1.obsExclusion.setSource( './orig/T5tttt_mg1TeV_excl.txt', 'txt' )
