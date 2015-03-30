@@ -1,12 +1,12 @@
 #!/usr/bin/python
 
-a=open("limit_T6WWLSP060.txt")
+a=open("limit_T5WWLSP060.txt")
 lines=a.readlines()
 a.close()
 
 mchi0=60.
 
-f=open("limit_T6WWLSP060.corr.txt","w")
+f=open("limit_T5WWLSP060.corr.txt","w")
 for line in lines:
     values=map ( float, line.split () )
     print values

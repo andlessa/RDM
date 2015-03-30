@@ -1,12 +1,12 @@
 #!/usr/bin/python
 
-a=open("exclusion_T6WWLSP060.txt")
+a=open("exclusion_T5WWLSP060.txt")
 lines=a.readlines()
 a.close()
 
 mchi0=60.
 
-f=open("exclusion_T6WWLSP060.corr.txt","w")
+f=open("exclusion_T5WWLSP060.corr.txt","w")
 for line in lines:
     values=map ( float, line.split () )
     print values
