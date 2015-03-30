@@ -41,7 +41,7 @@ info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-
 info.superseded_by =  "SUSY-2013-20"
 #info.arxiv = 
 #info.contact = 
-info.prettyname = 'ATLAS Razor'
+info.prettyname = '2l'
 #info.supersedes = 
 
 #+++++++ next txName block ++++++++++++++
@@ -122,10 +122,11 @@ T5WW = TxNameInput('T5WW')
 T5WW.on.checked ="VM"
 #T5WW.off.checked =
 T5WW.on.constraint ="[[['jet','jet'],['W']],[['jet','jet'],['W']]]"
-#T5WW.off.constraint =
+T5WW.off.constraint ="9.34*[[['jet','jet'],['L+','nu']],[['jet','jet'],['L-','nu']]]"
 T5WW.on.condition ="None"
-#T5WW.off.condition =
+T5WW.off.condition = "[[['jet','jet'],['L+','nu']],[['jet','jet'],['L-','nu']]] > 9 * [[['jet','jet'],['ta+','nu']],[['jet','jet'],['ta-','nu']]]"
 T5WW.on.fuzzycondition ="None"
+T5WW.off.fuzzycondition = "Cgtr([[['jet','jet'],['L+','nu']],[['jet','jet'],['L-','nu']]],9 * [[['jet','jet'],['ta+','nu']],[['jet','jet'],['ta-','nu']]]);Cgtr([[['jet','jet'],['L+','nu']],[['jet','jet'],['L-','nu']]],9 * [[['jet','jet'],['e+','nu']],[['jet','jet'],['e-','nu']]])"
 #T5WW.off.fuzzycondition =
 
 #+++++++ next mass plane block ++++++++++++++
