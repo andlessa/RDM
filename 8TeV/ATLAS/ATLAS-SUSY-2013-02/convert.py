@@ -134,26 +134,29 @@ T6WWLSP060.obsExclusionP1.dataUrl =
 T6WWLSP060.expExclusion.dataUrl =
 T6WWLSP060.expExclusionM1.dataUrl =
 T6WWLSP060.expExclusionP1.dataUrl =
+"""
 
 #+++++++ next mass plane block ++++++++++++++
 T6WW050 = T6WW.addMassPlane(motherMass = x, interMass0 = x*0.5 + (1. - 0.5)*y, lspMass = y)
 #----limit source----
-T6WW050.obsUpperLimit.setSource( path, filetype, objectName = None, index = None )
-T6WW050.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
+T6WW050.obsUpperLimit.setSource( "orig/limit_T6WW050.txt", "txt", objectName = None, index = None )
+T6WW050.obsUpperLimit.unit = 'fb'
+#T6WW050.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
 #----exclusion source----
-T6WW050.obsExclusion.setSource( path, filetype, objectName = None, index = None )
-T6WW050.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
-T6WW050.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
-T6WW050.expExclusion.setSource( path, filetype, objectName = None, index = None )
-T6WW050.expExclusionM1.setSource( path, filetype, objectName = None, index = None )
-T6WW050.expExclusionP1.setSource( path, filetype, objectName = None, index = None )
+T6WW050.obsExclusion.setSource( "orig/exclusion_T6WW050.txt", "txt", objectName = None, index = None )
+#T6WW050.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
+#T6WW050.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
+#T6WW050.expExclusion.setSource( path, filetype, objectName = None, index = None )
+#T6WW050.expExclusionM1.setSource( path, filetype, objectName = None, index = None )
+#T6WW050.expExclusionP1.setSource( path, filetype, objectName = None, index = None )
 #----global url settings ----
-T6WW050.dataUrl =
-T6WW050.histoDataUrl =
-T6WW050.exclusionDataUrl =
+#T6WW050.dataUrl =
+#T6WW050.histoDataUrl =
+#T6WW050.exclusionDataUrl =
 #----figure----
-T6WW050.figure =
-T6WW050.figureUrl =
+T6WW050.figure = "fig(aux) 11d"
+T6WW050.figureUrl = "https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-02/figaux_11d.png"
+"""
 #----limit url settings ----
 T6WW050.obsUpperLimit.dataUrl =
 T6WW050.expUpperLimit.dataUrl =
@@ -261,12 +264,13 @@ T5WW.off.constraint = "2.22 * [[['jet','jet'],['jet','jet']],[['jet','jet'],['je
 T5WW.on.condition ="None"
 T5WW.off.condition = "None"
 T5WW.on.fuzzycondition ="None"
-T5WW.off.fuzzycondition = "none"
+T5WW.off.fuzzycondition = "None"
 
 #+++++++ next mass plane block ++++++++++++++
 T5WWLSP060 = T5WW.addMassPlane(motherMass = x, interMass0 = y, lspMass = 60.0)
 #----limit source----
 T5WWLSP060.obsUpperLimit.setSource( "orig/limit_T5WWLSP060.corr.txt", "txt", objectName = None, index = None )
+T5WWLSP060.obsUpperLimit.unit = 'fb'
 #T5WWLSP060.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
 #----exclusion source----
 T5WWLSP060.obsExclusion.setSource( "orig/exclusion_T5WWLSP060.corr.txt", "txt", objectName = None, index = None )
@@ -295,27 +299,28 @@ T5WWLSP060.expExclusionM1.dataUrl =
 T5WWLSP060.expExclusionP1.dataUrl =
 """
 
-"""
 #+++++++ next mass plane block ++++++++++++++
 T5WW050 = T5WW.addMassPlane(motherMass = x, interMass0 = x*0.5 + (1. - 0.5)*y, lspMass = y)
 #----limit source----
-T5WW050.obsUpperLimit.setSource( path, filetype, objectName = None, index = None )
-T5WW050.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
+T5WW050.obsUpperLimit.setSource( "orig/limit_T5WW050.txt", "txt", objectName = None, index = None )
+T5WW050.obsUpperLimit.unit = 'fb'
+#T5WW050.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
 #----exclusion source----
-T5WW050.obsExclusion.setSource( path, filetype, objectName = None, index = None )
-T5WW050.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
-T5WW050.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
-T5WW050.expExclusion.setSource( path, filetype, objectName = None, index = None )
-T5WW050.expExclusionM1.setSource( path, filetype, objectName = None, index = None )
-T5WW050.expExclusionP1.setSource( path, filetype, objectName = None, index = None )
+T5WW050.obsExclusion.setSource( "orig/exclusion_T5WW050.txt", "txt", objectName = None, index = None )
+#T5WW050.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
+#T5WW050.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
+#T5WW050.expExclusion.setSource( path, filetype, objectName = None, index = None )
+#T5WW050.expExclusionM1.setSource( path, filetype, objectName = None, index = None )
+#T5WW050.expExclusionP1.setSource( path, filetype, objectName = None, index = None )
 #----global url settings ----
-T5WW050.dataUrl =
-T5WW050.histoDataUrl =
-T5WW050.exclusionDataUrl =
+#T5WW050.dataUrl =
+#T5WW050.histoDataUrl =
+#T5WW050.exclusionDataUrl =
 #----figure----
-T5WW050.figure =
-T5WW050.figureUrl =
+T5WW050.figure = "fig(aux) 11b"
+T5WW050.figureUrl = "https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-02/figaux_11b.png"
 #----limit url settings ----
+"""
 T5WW050.obsUpperLimit.dataUrl =
 T5WW050.expUpperLimit.dataUrl =
 #----exclusion url settings ----
@@ -325,47 +330,50 @@ T5WW050.obsExclusionP1.dataUrl =
 T5WW050.expExclusion.dataUrl =
 T5WW050.expExclusionM1.dataUrl =
 T5WW050.expExclusionP1.dataUrl =
+"""
 
 #+++++++ next txName block ++++++++++++++
-T5ttcc = TxNameInput('T5ttcc')
-T5ttcc.on.checked =
-T5ttcc.off.checked =
-T5ttcc.on.constraint ="[[['t'],['jet']],[['t'],['jet']]]"
-T5ttcc.off.constraint =
-T5ttcc.on.condition ="None"
-T5ttcc.off.condition =
-T5ttcc.on.fuzzycondition ="None"
-T5ttcc.off.fuzzycondition =
+T5tctc = TxNameInput('T5tctc')
+#T5tctc.on.checked =
+#T5tctc.off.checked =
+T5tctc.on.constraint ="[[['t'],['jet']],[['t'],['jet']]]"
+T5tctc.off.constraint ="[[['W','b'],['jet']],[['W','b'],['jet']]]"
+T5tctc.on.condition ="None"
+#T5tctc.off.condition =
+T5tctc.on.fuzzycondition ="None"
+#T5tctc.off.fuzzycondition =
 
 #+++++++ next mass plane block ++++++++++++++
-T5ttccD020 = T5ttcc.addMassPlane(motherMass = x, interMass0 = y, lspMass = y + 20.0)
+T5tctcD020 = T5tctc.addMassPlane(motherMass = x, interMass0 = y, lspMass = y - 20.0)
 #----limit source----
-T5ttccD020.obsUpperLimit.setSource( path, filetype, objectName = None, index = None )
-T5ttccD020.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
+T5tctcD020.obsUpperLimit.setSource( "orig/limit_T5tctcD020.txt", "txt", objectName = None, index = None )
+T5tctcD020.obsUpperLimit.unit = 'fb'
+# T5tctcD020.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
 #----exclusion source----
-T5ttccD020.obsExclusion.setSource( path, filetype, objectName = None, index = None )
-T5ttccD020.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
-T5ttccD020.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
-T5ttccD020.expExclusion.setSource( path, filetype, objectName = None, index = None )
-T5ttccD020.expExclusionM1.setSource( path, filetype, objectName = None, index = None )
-T5ttccD020.expExclusionP1.setSource( path, filetype, objectName = None, index = None )
+T5tctcD020.obsExclusion.setSource( "orig/exclusion_T5tctcD020.txt", "txt", objectName = None, index = None )
+#T5tctcD020.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
+#T5tctcD020.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
+#T5tctcD020.expExclusion.setSource( path, filetype, objectName = None, index = None )
+#T5tctcD020.expExclusionM1.setSource( path, filetype, objectName = None, index = None )
+#T5tctcD020.expExclusionP1.setSource( path, filetype, objectName = None, index = None )
 #----global url settings ----
-T5ttccD020.dataUrl =
-T5ttccD020.histoDataUrl =
-T5ttccD020.exclusionDataUrl =
+#T5tctcD020.dataUrl =
+#T5tctcD020.histoDataUrl =
+#T5tctcD020.exclusionDataUrl =
 #----figure----
-T5ttccD020.figure =
-T5ttccD020.figureUrl =
+T5tctcD020.figure = "fig(aux) 13"
+T5tctcD020.figureUrl = "https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-02/figaux_13.png"
 #----limit url settings ----
-T5ttccD020.obsUpperLimit.dataUrl =
-T5ttccD020.expUpperLimit.dataUrl =
+"""
+T5tctcD020.obsUpperLimit.dataUrl =
+T5tctcD020.expUpperLimit.dataUrl =
 #----exclusion url settings ----
-T5ttccD020.obsExclusion.dataUrl =
-T5ttccD020.obsExclusionM1.dataUrl =
-T5ttccD020.obsExclusionP1.dataUrl =
-T5ttccD020.expExclusion.dataUrl =
-T5ttccD020.expExclusionM1.dataUrl =
-T5ttccD020.expExclusionP1.dataUrl =
+T5tctcD020.obsExclusion.dataUrl =
+T5tctcD020.obsExclusionM1.dataUrl =
+T5tctcD020.obsExclusionP1.dataUrl =
+T5tctcD020.expExclusion.dataUrl =
+T5tctcD020.expExclusionM1.dataUrl =
+T5tctcD020.expExclusionP1.dataUrl =
 """
 
 databaseCreator.create()
