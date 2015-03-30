@@ -9,14 +9,17 @@ argparser.add_argument ( '-p', '--plottype', nargs='?', help=
                 type=types.StringType, default='plain' )
 argparser.add_argument ( '-a', '--axes', nargs='?', help='axes description [default 2*Eq(mother,x)_Eq(lsp,y)]',
                 type=types.StringType, default='2*Eq(mother,x)_Eq(lsp,y)' )
+argparser.add_argument ( '-n', '--nthpoint', nargs='?', help='plot only every nthpoint',
+                type=types.IntType, default=1 )
 args=argparser.parse_args() 
 
 
 import sys,os
-sys.path.insert(0,"../../../../../smodels-utils/")
-sys.path.insert(0,"../../../../../smodels/")
+home = os.path.expanduser("~")
+sys.path.insert(0,os.path.join(home,"smodels-utils/"))
+sys.path.insert(0,os.path.join(home,"smodels/"))
 
-from smodels.experiment.databaseObjects import DataBase
+from smodels.experiment.databaseObjects import Database
 from validation.plotProducer import ValidationPlot, getExpIdFromPath
 from smodels.tools.physicsUnits import pb, fb
 NAN=float('nan')
@@ -26,7 +29,7 @@ NAN=float('nan')
 filename="%s_%s.py" % ( args.txname, args.axes.replace("(","").replace(")","").replace(",","").replace("*","") )
 execfile(filename)
 
-database = DataBase("../../../../")
+database = Database(os.path.join(home,"smodels-database"))
 expRes = database.getExpResults(analysisIDs=[ getExpIdFromPath() ],datasetIDs=[None])
 
 
@@ -38,7 +41,7 @@ print "agreement=",agreement
 if args.plottype=="plain":
     plot.getPlot()
 else:
-    plot.getSpecialPlot( what=args.plottype )
+    plot.getSpecialPlot( what=args.plottype, nthpoint=args.nthpoint )
 plot.savePlot()
 
 # import IPython
