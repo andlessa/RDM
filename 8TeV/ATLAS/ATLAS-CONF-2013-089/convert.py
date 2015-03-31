@@ -61,7 +61,7 @@ T6WW050 = T6WW.addMassPlane(motherMass = x, interMass0 = x*0.5 + (1. - 0.5)*y, l
 T6WW050.obsUpperLimit.setSource( "orig/T6WW050.data", "txt", objectName = None, index = None )
 #T6WW050.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
 #----exclusion source----
-T6WW050.obsExclusion.setSource( "orig/exclusion_T6WW_050.txt", "txt", objectName = None, index = None )
+T6WW050.obsExclusion.setSource( "orig/exclusion_T6WW050.txt", "txt", objectName = None, index = None )
 #T6WW050.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
 #T6WW050.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
 #T6WW050.expExclusion.setSource( path, filetype, objectName = None, index = None )
@@ -72,8 +72,8 @@ T6WW050.obsExclusion.setSource( "orig/exclusion_T6WW_050.txt", "txt", objectName
 #T6WW050.histoDataUrl =
 #T6WW050.exclusionDataUrl =
 #----figure----
-T6WW050.figure = 'Fig. 22a'
-T6WW050.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-089/figaux_22a.png'
+T6WW050.figure = 'Fig. 23a'
+T6WW050.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-089/fig_23a.png'
 #----limit url settings ----
 T6WW050.obsUpperLimit.dataUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-089/fig_22a_PRELIMINARY.data'
 #T6WW050.expUpperLimit.dataUrl =
@@ -85,28 +85,28 @@ T6WW050.obsUpperLimit.dataUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/
 #T6WW050.expExclusionM1.dataUrl =
 #T6WW050.expExclusionP1.dataUrl =
 
-"""
 #+++++++ next mass plane block ++++++++++++++
 T6WWLSP060 = T6WW.addMassPlane(motherMass = x, interMass0 = y, lspMass = 60.0)
 #----limit source----
-T6WWLSP060.obsUpperLimit.setSource( path, filetype, objectName = None, index = None )
-T6WWLSP060.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
+T6WWLSP060.obsUpperLimit.setSource( "orig/T6WWLSP060corr.data", "txt", objectName = None, index = None )
+# T6WWLSP060.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
 #----exclusion source----
-T6WWLSP060.obsExclusion.setSource( path, filetype, objectName = None, index = None )
-T6WWLSP060.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
-T6WWLSP060.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
-T6WWLSP060.expExclusion.setSource( path, filetype, objectName = None, index = None )
-T6WWLSP060.expExclusionM1.setSource( path, filetype, objectName = None, index = None )
-T6WWLSP060.expExclusionP1.setSource( path, filetype, objectName = None, index = None )
+T6WWLSP060.obsExclusion.setSource( "orig/exclusion_T6WWLSP060.corr.txt", "txt", objectName = None, index = None )
+# T6WWLSP060.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
+# T6WWLSP060.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
+# T6WWLSP060.expExclusion.setSource( path, filetype, objectName = None, index = None )
+# T6WWLSP060.expExclusionM1.setSource( path, filetype, objectName = None, index = None )
+# T6WWLSP060.expExclusionP1.setSource( path, filetype, objectName = None, index = None )
 #----global url settings ----
-T6WWLSP060.dataUrl =
-T6WWLSP060.histoDataUrl =
-T6WWLSP060.exclusionDataUrl =
+# T6WWLSP060.dataUrl =
+# T6WWLSP060.histoDataUrl =
+# T6WWLSP060.exclusionDataUrl =
 #----figure----
-T6WWLSP060.figure = 'Fig. 22b'
-T6WWLSP060.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-089/fig_18b.png'
+T6WWLSP060.figure = 'Fig. 23b'
+T6WWLSP060.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-089/fig_23b.png'
 #----limit url settings ----
-T6WWLSP060.obsUpperLimit.dataUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-089/fig_22b_PRELIMINARY.data'
+T6WWLSP060.obsUpperLimit.dataUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-089/fig_23b_PRELIMINARY.data'
+"""
 T6WWLSP060.expUpperLimit.dataUrl =
 #----exclusion url settings ----
 T6WWLSP060.obsExclusion.dataUrl =
@@ -135,7 +135,7 @@ T5WWLSP060 = T5WW.addMassPlane(motherMass = x, interMass0 = y, lspMass = 60.0)
 T5WWLSP060.obsUpperLimit.setSource( "orig/T5WWLSP060corr.data", "txt", objectName = None, index = None )
 #T5WWLSP060.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
 #----exclusion source----
-T5WWLSP060.obsExclusion.setSource( "orig/exclusion_T5WWLSP60.txt", "txt", objectName = None, index = None )
+T5WWLSP060.obsExclusion.setSource( "orig/exclusion_T5WWLSP060.corr.txt", "txt", objectName = None, index = None )
 """
 T5WWLSP060.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
 T5WWLSP060.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
@@ -148,8 +148,8 @@ T5WWLSP060.histoDataUrl =
 T5WWLSP060.exclusionDataUrl =
 """
 #----figure----
-T5WWLSP060.figure = 'Fig (aux). 23b'
-T5WWLSP060.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-089/figaux_23b.png'
+T5WWLSP060.figure = 'Fig (aux). 22b'
+T5WWLSP060.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-089/fig_22b.png'
 #----limit url settings ----
 T5WWLSP060.obsUpperLimit.dataUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-089/fig_23b_PRELIMINARY.data'
 """
@@ -161,28 +161,30 @@ T5WWLSP060.obsExclusionP1.dataUrl =
 T5WWLSP060.expExclusion.dataUrl =
 T5WWLSP060.expExclusionM1.dataUrl =
 T5WWLSP060.expExclusionP1.dataUrl =
+"""
 
 #+++++++ next mass plane block ++++++++++++++
 T5WW050 = T5WW.addMassPlane(motherMass = x, interMass0 = x*0.5 + (1. - 0.5)*y, lspMass = y)
 #----limit source----
-T5WW050.obsUpperLimit.setSource( path, filetype, objectName = None, index = None )
-T5WW050.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
+T5WW050.obsUpperLimit.setSource( "orig/T5WW050.data", "txt", objectName = None, index = None )
+#T5WW050.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
 #----exclusion source----
-T5WW050.obsExclusion.setSource( path, filetype, objectName = None, index = None )
-T5WW050.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
-T5WW050.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
-T5WW050.expExclusion.setSource( path, filetype, objectName = None, index = None )
-T5WW050.expExclusionM1.setSource( path, filetype, objectName = None, index = None )
-T5WW050.expExclusionP1.setSource( path, filetype, objectName = None, index = None )
+T5WW050.obsExclusion.setSource( "orig/exclusion_T5WW050.txt", "txt", objectName = None, index = None )
+#T5WW050.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
+#T5WW050.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
+#T5WW050.expExclusion.setSource( path, filetype, objectName = None, index = None )
+#T5WW050.expExclusionM1.setSource( path, filetype, objectName = None, index = None )
+#T5WW050.expExclusionP1.setSource( path, filetype, objectName = None, index = None )
 #----global url settings ----
-T5WW050.dataUrl =
-T5WW050.histoDataUrl =
-T5WW050.exclusionDataUrl =
+#T5WW050.dataUrl =
+#T5WW050.histoDataUrl =
+#T5WW050.exclusionDataUrl =
 #----figure----
-T5WW050.figure = 'Fig. 23a'
-T5WW050.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-089/fig_19a.png'
+T5WW050.figure = 'Fig. 22a'
+T5WW050.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-089/fig_22a.png'
 #----limit url settings ----
-T5WW050.obsUpperLimit.dataUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-089/fig_23a_PRELIMINARY.data'
+T5WW050.obsUpperLimit.dataUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-089/fig_22a_PRELIMINARY.data'
+"""
 T5WW050.expUpperLimit.dataUrl =
 #----exclusion url settings ----
 T5WW050.obsExclusion.dataUrl =

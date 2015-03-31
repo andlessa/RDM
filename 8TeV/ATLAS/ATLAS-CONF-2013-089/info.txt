@@ -7,5 +7,5 @@ superseded_by: SUSY-2013-20
 comment: T5WWLSP060 and T6WWLSP060 originally have xvalue on y-axes, changed by us to M2 - there are more topologies (with more then three masses)
 private: False
 implemented_by: ww
-lastUpdate: 2015/3/30
+lastUpdate: 2015/3/31
 
