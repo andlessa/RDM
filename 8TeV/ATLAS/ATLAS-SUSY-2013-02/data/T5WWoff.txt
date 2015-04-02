@@ -1,6 +1,6 @@
 txname: T5WWoff
-condition: None
-fuzzycondition: None
+condition: 2.22 * [[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]] ~ 9.04 * [[['L','nu'],['jet','jet']],[['jet','jet'],['jet','jet']]] ~ 9.18 * [[['jet','jet'],['L','nu']],[['jet','jet'],['L','nu']]] 
+fuzzycondition: Csim ( 2.22 * [[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]] , 9.18 * [[['jet','jet'],['L','nu']],[['jet','jet'],['L','nu']]] )
 constraint: 2.22 * [[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-02/figaux_10a.png;https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-02/figaux_11b.png
 validated: True
