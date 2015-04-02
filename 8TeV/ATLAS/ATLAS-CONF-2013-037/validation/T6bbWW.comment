@@ -1,0 +1,3 @@
+comment_by: WW
+date: Thu 02 Apr 2015 03:32:50 PM BRT 
+comment: "Looking at https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-037/figaux_06.png the exclusion line seems inconsistent with the data. E.g. at mstop=350 GeV we expect a cross section of ~ 0.7 pb -- see https://twiki.cern.ch/twiki/bin/view/LHCPhysics/SUSYCrossSections8TeVstopsbottom. So the region at around 120 GeV should be allowed (contrary to the plot), while the region at around 160 GeV should be excluded (contrary to the plot)."
