@@ -3,3 +3,4 @@ dataid: ANA3-CUT2
 observedN: 1
 expectedBG: 2.7
 bgError: 1.2
+upperLimit: 0.19*fb

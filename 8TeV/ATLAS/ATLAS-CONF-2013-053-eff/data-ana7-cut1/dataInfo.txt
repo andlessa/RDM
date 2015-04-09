@@ -3,3 +3,4 @@ dataid: ANA7-CUT1
 observedN: 48
 expectedBG: 39.0
 bgError: 6.0
+upperLimit: 1.31*fb

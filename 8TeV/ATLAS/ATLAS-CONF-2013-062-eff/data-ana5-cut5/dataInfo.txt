@@ -3,3 +3,4 @@ dataid: ANA5-CUT5
 observedN: 9
 expectedBG: 14.8
 bgError: 3.7
+upperLimit: 0.37*fb
