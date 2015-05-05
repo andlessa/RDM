@@ -88,49 +88,46 @@ TChiWZ.expExclusionM1.dataUrl =
 TChiWZ.expExclusionP1.dataUrl =
 """
 
-"""
-
 #+++++++ next txName block ++++++++++++++
 TChiChipmStauStau = TxNameInput('TChiChipmStauStau')
 TChiChipmStauStau.on.checked ="A"
-TChiChipmStauStau.off.checked =
+#TChiChipmStauStau.off.checked =
 TChiChipmStauStau.on.constraint ="[[['ta'],['ta']],[['nu'],['ta']]]"
-TChiChipmStauStau.off.constraint =
+#TChiChipmStauStau.off.constraint =
 TChiChipmStauStau.on.condition ="None"
-TChiChipmStauStau.off.condition =
+#TChiChipmStauStau.off.condition =
 TChiChipmStauStau.on.fuzzycondition ="None"
-TChiChipmStauStau.off.fuzzycondition =
+#TChiChipmStauStau.off.fuzzycondition =
 
 #+++++++ next mass plane block ++++++++++++++
 TChiChipmStauStau050 = TChiChipmStauStau.addMassPlane(motherMass = x, interMass0 = x*0.5 + (1. - 0.5)*y, lspMass = y)
 #----limit source----
-TChiChipmStauStau050.obsUpperLimit.setSource( path, filetype, objectName = None, index = None )
-TChiChipmStauStau050.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
+TChiChipmStauStau050.obsUpperLimit.setSource( "orig/exclusion_TChiStauSnu_0_5.root", "canvas", objectName = "interpret", index = 2 )
+# TChiChipmStauStau050.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
 #----exclusion source----
-TChiChipmStauStau050.obsExclusion.setSource( path, filetype, objectName = None, index = None )
-TChiChipmStauStau050.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
-TChiChipmStauStau050.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
-TChiChipmStauStau050.expExclusion.setSource( path, filetype, objectName = None, index = None )
-TChiChipmStauStau050.expExclusionM1.setSource( path, filetype, objectName = None, index = None )
-TChiChipmStauStau050.expExclusionP1.setSource( path, filetype, objectName = None, index = None )
+TChiChipmStauStau050.obsExclusion.setSource( "orig/exclusion_TChiStauSnu_0_5.root", "canvas", objectName = "interpret", index = 8 )
+#TChiChipmStauStau050.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
+#TChiChipmStauStau050.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
+#TChiChipmStauStau050.expExclusion.setSource( path, filetype, objectName = None, index = None )
+#TChiChipmStauStau050.expExclusionM1.setSource( path, filetype, objectName = None, index = None )
+#TChiChipmStauStau050.expExclusionP1.setSource( path, filetype, objectName = None, index = None )
 #----global url settings ----
-TChiChipmStauStau050.dataUrl =
-TChiChipmStauStau050.histoDataUrl =
-TChiChipmStauStau050.exclusionDataUrl =
+#TChiChipmStauStau050.dataUrl =
+#TChiChipmStauStau050.histoDataUrl =
+#TChiChipmStauStau050.exclusionDataUrl =
 #----figure----
-TChiChipmStauStau050.figure =
-TChiChipmStauStau050.figureUrl =
+TChiChipmStauStau050.figure = "Fig. 17"
+TChiChipmStauStau050.figureUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12022/exclusion_TChiStauSnu_0_5.pdf"
 #----limit url settings ----
-TChiChipmStauStau050.obsUpperLimit.dataUrl =
-TChiChipmStauStau050.expUpperLimit.dataUrl =
+##TChiChipmStauStau050.obsUpperLimit.dataUrl =
+#TChiChipmStauStau050.expUpperLimit.dataUrl =
 #----exclusion url settings ----
-TChiChipmStauStau050.obsExclusion.dataUrl =
-TChiChipmStauStau050.obsExclusionM1.dataUrl =
-TChiChipmStauStau050.obsExclusionP1.dataUrl =
-TChiChipmStauStau050.expExclusion.dataUrl =
-TChiChipmStauStau050.expExclusionM1.dataUrl =
-TChiChipmStauStau050.expExclusionP1.dataUrl =
-"""
+#TChiChipmStauStau050.obsExclusion.dataUrl =
+#TChiChipmStauStau050.obsExclusionM1.dataUrl =
+#TChiChipmStauStau050.obsExclusionP1.dataUrl =
+#TChiChipmStauStau050.expExclusion.dataUrl =
+#TChiChipmStauStau050.expExclusionM1.dataUrl =
+#TChiChipmStauStau050.expExclusionP1.dataUrl =
 
 #+++++++ next txName block ++++++++++++++
 TSlepSlep = TxNameInput('TSlepSlep')
@@ -192,11 +189,11 @@ TChiChipmSlepStau.on.fuzzycondition ="Cgtr([[['L'],['L']],[['nu'],['ta']]],3.*[[
 #+++++++ next mass plane block ++++++++++++++
 TChiChipmSlepStau095 = TChiChipmSlepStau.addMassPlane(motherMass = x, interMass0 = x*0.95 + (1. - 0.95)*y, lspMass = y)
 #----limit source----
-TChiChipmSlepStau095.obsUpperLimit.setSource( "orig/exclusion_TChiSlepSnu_2a_0_05.root", "canvas", objectName = 
+TChiChipmSlepStau095.obsUpperLimit.setSource( "orig/exclusion_TChiSlepSnu_2a_0_95.root", "canvas", objectName = 
         "interpret", index = 2 )
 # TChiChipmSlepStau095.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
 #----exclusion source----
-TChiChipmSlepStau095.obsExclusion.setSource( "orig/exclusion_TChiSlepSnu_2a_0_05.root", "canvas", objectName = "interpret", index = 8 )
+TChiChipmSlepStau095.obsExclusion.setSource( "orig/exclusion_TChiSlepSnu_2a_0_95.root", "canvas", objectName = "interpret", index = 8 )
 """
 TChiChipmSlepStau095.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
 TChiChipmSlepStau095.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
@@ -222,14 +219,16 @@ TChiChipmSlepStau095.obsExclusionP1.dataUrl =
 TChiChipmSlepStau095.expExclusion.dataUrl =
 TChiChipmSlepStau095.expExclusionM1.dataUrl =
 TChiChipmSlepStau095.expExclusionP1.dataUrl =
+"""
 
 #+++++++ next mass plane block ++++++++++++++
 TChiChipmSlepStau050 = TChiChipmSlepStau.addMassPlane(motherMass = x, interMass0 = x*0.5 + (1. - 0.5)*y, lspMass = y)
 #----limit source----
-TChiChipmSlepStau050.obsUpperLimit.setSource( path, filetype, objectName = None, index = None )
-TChiChipmSlepStau050.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
+TChiChipmSlepStau050.obsUpperLimit.setSource( "orig/exclusion_TChiSlepSnu_2a_0_5.root", "canvas", objectName = "interpret", index = 2 )
+# TChiChipmSlepStau050.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
 #----exclusion source----
-TChiChipmSlepStau050.obsExclusion.setSource( path, filetype, objectName = None, index = None )
+TChiChipmSlepStau050.obsExclusion.setSource( "orig/exclusion_TChiSlepSnu_2a_0_5.root", "canvas", objectName = "interpret", index = 8 )
+"""
 TChiChipmSlepStau050.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
 TChiChipmSlepStau050.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
 TChiChipmSlepStau050.expExclusion.setSource( path, filetype, objectName = None, index = None )
@@ -252,14 +251,16 @@ TChiChipmSlepStau050.obsExclusionP1.dataUrl =
 TChiChipmSlepStau050.expExclusion.dataUrl =
 TChiChipmSlepStau050.expExclusionM1.dataUrl =
 TChiChipmSlepStau050.expExclusionP1.dataUrl =
+"""
 
 #+++++++ next mass plane block ++++++++++++++
 TChiChipmSlepStau005 = TChiChipmSlepStau.addMassPlane(motherMass = x, interMass0 = x*0.05 + (1. - 0.05)*y, lspMass = y)
 #----limit source----
-TChiChipmSlepStau005.obsUpperLimit.setSource( path, filetype, objectName = None, index = None )
-TChiChipmSlepStau005.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
+TChiChipmSlepStau005.obsUpperLimit.setSource( "orig/exclusion_TChiSlepSnu_2a_0_05.root", "canvas", objectName = "interpret", index = 2 )
+#TChiChipmSlepStau005.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
 #----exclusion source----
-TChiChipmSlepStau005.obsExclusion.setSource( path, filetype, objectName = None, index = None )
+TChiChipmSlepStau005.obsExclusion.setSource( "orig/exclusion_TChiSlepSnu_2a_0_05.root", "canvas", objectName = "interpret", index = 8 )
+"""
 TChiChipmSlepStau005.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
 TChiChipmSlepStau005.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
 TChiChipmSlepStau005.expExclusion.setSource( path, filetype, objectName = None, index = None )
@@ -270,8 +271,10 @@ TChiChipmSlepStau005.dataUrl =
 TChiChipmSlepStau005.histoDataUrl =
 TChiChipmSlepStau005.exclusionDataUrl =
 #----figure----
-TChiChipmSlepStau005.figure =
-TChiChipmSlepStau005.figureUrl =
+"""
+TChiChipmSlepStau005.figure = "Fig. 16a"
+TChiChipmSlepStau005.figureUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12022/exclusion_TChiSlepSnu_2a_0_05.pdf"
+"""
 #----limit url settings ----
 TChiChipmSlepStau005.obsUpperLimit.dataUrl =
 TChiChipmSlepStau005.expUpperLimit.dataUrl =
@@ -282,6 +285,7 @@ TChiChipmSlepStau005.obsExclusionP1.dataUrl =
 TChiChipmSlepStau005.expExclusion.dataUrl =
 TChiChipmSlepStau005.expExclusionM1.dataUrl =
 TChiChipmSlepStau005.expExclusionP1.dataUrl =
+"""
 
 #+++++++ next txName block ++++++++++++++
 TChiChipmSlepL = TxNameInput('TChiChipmSlepL')
@@ -297,10 +301,11 @@ TChiChipmSlepL.on.fuzzycondition ="Csim([[['L'],['L']],[['L'],['nu']]],[[['L'],[
 #+++++++ next mass plane block ++++++++++++++
 TChiChipmSlepL005 = TChiChipmSlepL.addMassPlane(motherMass = x, interMass0 = x*0.05 + (1. - 0.05)*y, lspMass = y)
 #----limit source----
-TChiChipmSlepL005.obsUpperLimit.setSource( path, filetype, objectName = None, index = None )
-TChiChipmSlepL005.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
+TChiChipmSlepL005.obsUpperLimit.setSource( "orig/exclusion_TChiSlepSnu_2i_0_05.root", "canvas", objectName = "interpret", index = 2 )
+# TChiChipmSlepL005.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
 #----exclusion source----
-TChiChipmSlepL005.obsExclusion.setSource( path, filetype, objectName = None, index = None )
+TChiChipmSlepL005.obsExclusion.setSource( "orig/exclusion_TChiSlepSnu_2i_0_05.root", "canvas", objectName = "interpret", index = 8 )
+"""
 TChiChipmSlepL005.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
 TChiChipmSlepL005.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
 TChiChipmSlepL005.expExclusion.setSource( path, filetype, objectName = None, index = None )
@@ -323,107 +328,103 @@ TChiChipmSlepL005.obsExclusionP1.dataUrl =
 TChiChipmSlepL005.expExclusion.dataUrl =
 TChiChipmSlepL005.expExclusionM1.dataUrl =
 TChiChipmSlepL005.expExclusionP1.dataUrl =
+"""
 
 #+++++++ next mass plane block ++++++++++++++
 TChiChipmSlepL095 = TChiChipmSlepL.addMassPlane(motherMass = x, interMass0 = x*0.95 + (1. - 0.95)*y, lspMass = y)
 #----limit source----
-TChiChipmSlepL095.obsUpperLimit.setSource( path, filetype, objectName = None, index = None )
-TChiChipmSlepL095.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
+TChiChipmSlepL095.obsUpperLimit.setSource( "orig/exclusion_TChiSlepSnu_2i_0_95.root", "canvas", objectName = "interpret", index = 2 )
+# TChiChipmSlepL095.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
 #----exclusion source----
-TChiChipmSlepL095.obsExclusion.setSource( path, filetype, objectName = None, index = None )
-TChiChipmSlepL095.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
-TChiChipmSlepL095.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
-TChiChipmSlepL095.expExclusion.setSource( path, filetype, objectName = None, index = None )
-TChiChipmSlepL095.expExclusionM1.setSource( path, filetype, objectName = None, index = None )
-TChiChipmSlepL095.expExclusionP1.setSource( path, filetype, objectName = None, index = None )
+TChiChipmSlepL095.obsExclusion.setSource( "orig/exclusion_TChiSlepSnu_2i_0_95.root", "canvas", objectName = "interpret", index = 8 )
+#TChiChipmSlepL095.expExclusionP1.setSource( path, filetype, objectName = None, index = None )
 #----global url settings ----
-TChiChipmSlepL095.dataUrl =
-TChiChipmSlepL095.histoDataUrl =
-TChiChipmSlepL095.exclusionDataUrl =
+#TChiChipmSlepL095.dataUrl =
+#TChiChipmSlepL095.histoDataUrl =
+#TChiChipmSlepL095.exclusionDataUrl =
 #----figure----
-TChiChipmSlepL095.figure =
-TChiChipmSlepL095.figureUrl =
+TChiChipmSlepL095.figure = "Fig. 15b" 
+TChiChipmSlepL095.figureUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12022/exclusion_TChiSlepSnu_2i_0_95.pdf"
 #----limit url settings ----
-TChiChipmSlepL095.obsUpperLimit.dataUrl =
-TChiChipmSlepL095.expUpperLimit.dataUrl =
+#TChiChipmSlepL095.obsUpperLimit.dataUrl =
+#TChiChipmSlepL095.expUpperLimit.dataUrl =
 #----exclusion url settings ----
-TChiChipmSlepL095.obsExclusion.dataUrl =
-TChiChipmSlepL095.obsExclusionM1.dataUrl =
-TChiChipmSlepL095.obsExclusionP1.dataUrl =
-TChiChipmSlepL095.expExclusion.dataUrl =
-TChiChipmSlepL095.expExclusionM1.dataUrl =
-TChiChipmSlepL095.expExclusionP1.dataUrl =
+#TChiChipmSlepL095.obsExclusion.dataUrl =
+#TChiChipmSlepL095.obsExclusionM1.dataUrl =
+#TChiChipmSlepL095.obsExclusionP1.dataUrl =
+#TChiChipmSlepL095.expExclusion.dataUrl =
+#TChiChipmSlepL095.expExclusionM1.dataUrl =
+#TChiChipmSlepL095.expExclusionP1.dataUrl =
 
 #+++++++ next mass plane block ++++++++++++++
 TChiChipmSlepL050 = TChiChipmSlepL.addMassPlane(motherMass = x, interMass0 = x*0.5 + (1. - 0.5)*y, lspMass = y)
 #----limit source----
-TChiChipmSlepL050.obsUpperLimit.setSource( path, filetype, objectName = None, index = None )
-TChiChipmSlepL050.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
+TChiChipmSlepL050.obsUpperLimit.setSource( "orig/exclusion_TChiSlepSnu_2i_0_5.root", "canvas", objectName = "interpret", index = 2 )
+# TChiChipmSlepL050.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
 #----exclusion source----
-TChiChipmSlepL050.obsExclusion.setSource( path, filetype, objectName = None, index = None )
-TChiChipmSlepL050.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
-TChiChipmSlepL050.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
-TChiChipmSlepL050.expExclusion.setSource( path, filetype, objectName = None, index = None )
-TChiChipmSlepL050.expExclusionM1.setSource( path, filetype, objectName = None, index = None )
-TChiChipmSlepL050.expExclusionP1.setSource( path, filetype, objectName = None, index = None )
+TChiChipmSlepL050.obsExclusion.setSource( "orig/exclusion_TChiSlepSnu_2i_0_5.root", "canvas", objectName = "interpret", index = 8 )
+#TChiChipmSlepL050.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
+#TChiChipmSlepL050.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
+#TChiChipmSlepL050.expExclusion.setSource( path, filetype, objectName = None, index = None )
+#TChiChipmSlepL050.expExclusionM1.setSource( path, filetype, objectName = None, index = None )
+#TChiChipmSlepL050.expExclusionP1.setSource( path, filetype, objectName = None, index = None )
 #----global url settings ----
-TChiChipmSlepL050.dataUrl =
-TChiChipmSlepL050.histoDataUrl =
-TChiChipmSlepL050.exclusionDataUrl =
+#TChiChipmSlepL050.dataUrl =
+#TChiChipmSlepL050.histoDataUrl =
+#TChiChipmSlepL050.exclusionDataUrl =
 #----figure----
-TChiChipmSlepL050.figure =
-TChiChipmSlepL050.figureUrl =
+TChiChipmSlepL050.figure = "Fig. 14"
+TChiChipmSlepL050.figureUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12022/exclusion_TChiSlepSnu_2i_0_5.pdf"
 #----limit url settings ----
-TChiChipmSlepL050.obsUpperLimit.dataUrl =
-TChiChipmSlepL050.expUpperLimit.dataUrl =
+#TChiChipmSlepL050.obsUpperLimit.dataUrl =
+#TChiChipmSlepL050.expUpperLimit.dataUrl =
 #----exclusion url settings ----
-TChiChipmSlepL050.obsExclusion.dataUrl =
-TChiChipmSlepL050.obsExclusionM1.dataUrl =
-TChiChipmSlepL050.obsExclusionP1.dataUrl =
-TChiChipmSlepL050.expExclusion.dataUrl =
-TChiChipmSlepL050.expExclusionM1.dataUrl =
-TChiChipmSlepL050.expExclusionP1.dataUrl =
+#TChiChipmSlepL050.obsExclusion.dataUrl =
+#TChiChipmSlepL050.obsExclusionM1.dataUrl =
+#TChiChipmSlepL050.obsExclusionP1.dataUrl =
+#TChiChipmSlepL050.expExclusion.dataUrl =
+#TChiChipmSlepL050.expExclusionM1.dataUrl =
+#TChiChipmSlepL050.expExclusionP1.dataUrl =
 
 #+++++++ next txName block ++++++++++++++
 TChipChimSlepSnu = TxNameInput('TChipChimSlepSnu')
 TChipChimSlepSnu.on.checked ="A"
-TChipChimSlepSnu.off.checked =
+#TChipChimSlepSnu.off.checked =
 TChipChimSlepSnu.on.constraint ="[[['L-'],['nu']],[['nu'],['L+']]] + [[['L+'],['nu']],[['nu'],['L-']]] + [[['L+'],['nu']],[['L-'],['nu']]] + [[['nu'],['L+']],[['nu'],['L-']]]"
-TChipChimSlepSnu.off.constraint =
+#TChipChimSlepSnu.off.constraint =
 TChipChimSlepSnu.on.condition ="[[['L-'],['nu']],[['nu'],['L+']]] ~ [[['L+'],['nu']],[['nu'],['L-']]],[[['L-'],['nu']],[['nu'],['L+']]] ~ [[['L+'],['nu']],[['L-'],['nu']]],[[['L-'],['nu']],[['nu'],['L+']]] ~ [[['nu'],['L+']],[['nu'],['L-']]],[[['L-'],['nu']],[['nu'],['L+']]] > 2.7*[[['ta-'],['nu']],['nu'],['L+']]],[[['L-'],['nu']],[['nu'],['L+']]] > 2.7*[[['L-'],['nu']],[['nu'],['ta+']]],[[['L+'],['nu']],[['nu'],['L-']]] > 2.7*[[['ta+'],['nu']],[['nu'],['L-']]],[[['L+'],['nu']],[['nu'],['L-']]] > 2.7*[[['L+'],['nu']],[['nu'],['ta-']]],[[['L+'],['nu']],[['L-'],['nu']]] > 2.7*[[['ta+'],['nu']],[['L-'],['nu']]],[[['L+'],['nu']],[['L-'],['nu']]] > 2.7*[[['L+'],['nu']],[['ta-'],['nu']]],[[['nu'],['L+']],[['nu'],['L-']]] > 2.7*[[['nu'],['ta+']],[['nu'],[L-']]],[[['nu'],['L+']],[['nu'],['L-']]] > 2.7*[[['nu'],['L+']],[['nu'],[ta-']]],[[['L-'],['nu']],[['nu'],['L+']]] > 2.7*[[['e-'],['nu']],[['nu'],['L+']]],[[['L-'],['nu']],[['nu'],['L+']]] > 2.7*[[['L-'],['nu']],[['nu'],['e+']]],[[['L+'],['nu']],[['nu'],['L-']]] > 2.7*[[['e+'],['nu']],[['nu'],['L-']]],[[['L+'],['nu']],[['nu'],['L-']]] > 2.7*[[['L+'],['nu']],[['nu'],['e-']]], [[['L+'],['nu']],[['L-'],['nu']]] > 2.7*[[['e+'],['nu']],[['L-'],['nu']]],[[['L+'],['nu']],[['L-'],['nu']]] > 2.7*[[['L+'],['nu']],[['e-'],['nu']]], [[['nu'],['L+']],[['nu'],['L-']]] > 2.7*[[['nu'],['e+']],[['nu'],['L-']]],[[['nu'],['L+']],[['nu'],['L-']]] > 2.7*[[['nu'],['L+']],[['nu'],['e-']]]"
-TChipChimSlepSnu.off.condition =
+#TChipChimSlepSnu.off.condition =
 TChipChimSlepSnu.on.fuzzycondition ="Csim([[['L-'],['nu']],[['nu'],['L+']]],[[['L+'],['nu']],[['nu'],['L-']]],[[['L+'],['nu']],[['L-'],['nu']]],[[['nu'],['L+']],[['nu'],['L-']]]);Cgtr([[['L-'],['nu']],[['nu'],['L+']]],3.*[[['ta-'],['nu']],[['nu'],['L+']]]);Cgtr([[['L-'],['nu']],[['nu'],['L+']]],3.*[[['L-'],['nu']],[['nu'],['ta+']]]);Cgtr([[['L+'],['nu']],[['nu'],['L-']]],3.*[[['ta+'],['nu']],[['nu'],['L-']]]);Cgtr([[['L+'],['nu']],[['nu'],['L-']]],3.* [[['L+'],['nu']],[['nu'],['ta-']]]);Cgtr([[['L+'],['nu']],[['L-'],['nu']]],3.*[[['ta+'],['nu']],[['L-'],['nu']]]);Cgtr([[['L+'],['nu']],[['L-'],['nu']]],3.*[[['L+'],['nu']],[['ta-'],['nu']]]);Cgtr([[['nu'],['L+']],[['nu'],[L-']]],3.*[[['nu'],['ta+']],[['nu'],[L-']]]);Cgtr([[['nu'],['L+']],[['nu'],[L-']]],3.*[[['nu'],['L+']],[['nu'],[ta-']]]);Cgtr([[['L-'],['nu']],[['nu'],['L+']]],3.*[[['e-'],['nu']],[['nu'],['L+']]]);Cgtr([[['L-'],['nu']],[['nu'],['L+']]],3.*[[['L-'],['nu']],[['nu'],['e+']]]);Cgtr([[['L+'],['nu']],[['nu'],['L-']]],3.*[[['e+'],['nu']],[['nu'],['L-']]]);Cgtr([[['L+'],['nu']],[['nu'],['L-']]],3.* [[['L+'],['nu']],[['nu'],['e-']]]);Cgtr([[['L+'],['nu']],[['L-'],['nu']]],3.*[[['e+'],['nu']],[['L-'],['nu']]]);Cgtr([[['L+'],['nu']],[['L-'],['nu']]],3.*[[['L+'],['nu']],[['e-'],['nu']]]);Cgtr([[['nu'],['L+']],[['nu'],[L-']]],3.*[[['nu'],['e+']],[['nu'],[L-']]]);Cgtr([[['nu'],['L+']],[['nu'],[L-']]],3.*[[['nu'],['L+']],[['nu'],[e-']]])"
-TChipChimSlepSnu.off.fuzzycondition =
+#TChipChimSlepSnu.off.fuzzycondition =
 
 #+++++++ next mass plane block ++++++++++++++
 TChipChimSlepSnu050 = TChipChimSlepSnu.addMassPlane(motherMass = x, interMass0 = x*0.5 + (1. - 0.5)*y, lspMass = y)
 #----limit source----
-TChipChimSlepSnu050.obsUpperLimit.setSource( path, filetype, objectName = None, index = None )
-TChipChimSlepSnu050.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
+TChipChimSlepSnu050.obsUpperLimit.setSource( "orig/exclusion_TChipmSlepSnu.root", "canvas", objectName = "interpret", index = 2 )
+# TChipChimSlepSnu050.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
 #----exclusion source----
-TChipChimSlepSnu050.obsExclusion.setSource( path, filetype, objectName = None, index = None )
-TChipChimSlepSnu050.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
-TChipChimSlepSnu050.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
-TChipChimSlepSnu050.expExclusion.setSource( path, filetype, objectName = None, index = None )
-TChipChimSlepSnu050.expExclusionM1.setSource( path, filetype, objectName = None, index = None )
-TChipChimSlepSnu050.expExclusionP1.setSource( path, filetype, objectName = None, index = None )
+TChipChimSlepSnu050.obsExclusion.setSource( "orig/exclusion_TChipmSlepSnu.root", "canvas", objectName = "interpret", index = 8 )
+#TChipChimSlepSnu050.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
+#TChipChimSlepSnu050.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
+#TChipChimSlepSnu050.expExclusion.setSource( path, filetype, objectName = None, index = None )
+#TChipChimSlepSnu050.expExclusionM1.setSource( path, filetype, objectName = None, index = None )
+#TChipChimSlepSnu050.expExclusionP1.setSource( path, filetype, objectName = None, index = None )
 #----global url settings ----
-TChipChimSlepSnu050.dataUrl =
-TChipChimSlepSnu050.histoDataUrl =
-TChipChimSlepSnu050.exclusionDataUrl =
+#TChipChimSlepSnu050.dataUrl =
+#TChipChimSlepSnu050.histoDataUrl =
+#TChipChimSlepSnu050.exclusionDataUrl =
 #----figure----
-TChipChimSlepSnu050.figure =
-TChipChimSlepSnu050.figureUrl =
+TChipChimSlepSnu050.figure = "Fig. 20"
+TChipChimSlepSnu050.figureUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12022/exclusion_TChipmSlepSnu.pdf"
 #----limit url settings ----
-TChipChimSlepSnu050.obsUpperLimit.dataUrl =
-TChipChimSlepSnu050.expUpperLimit.dataUrl =
+#TChipChimSlepSnu050.obsUpperLimit.dataUrl =
+#TChipChimSlepSnu050.expUpperLimit.dataUrl =
 #----exclusion url settings ----
-TChipChimSlepSnu050.obsExclusion.dataUrl =
-TChipChimSlepSnu050.obsExclusionM1.dataUrl =
-TChipChimSlepSnu050.obsExclusionP1.dataUrl =
-TChipChimSlepSnu050.expExclusion.dataUrl =
-TChipChimSlepSnu050.expExclusionM1.dataUrl =
-TChipChimSlepSnu050.expExclusionP1.dataUrl =
-"""
+#TChipChimSlepSnu050.obsExclusion.dataUrl =
+#TChipChimSlepSnu050.obsExclusionM1.dataUrl =
+#TChipChimSlepSnu050.obsExclusionP1.dataUrl =
+#TChipChimSlepSnu050.expExclusion.dataUrl =
+#TChipChimSlepSnu050.expExclusionM1.dataUrl =
+#TChipChimSlepSnu050.expExclusionP1.dataUrl =
 
 databaseCreator.create()
