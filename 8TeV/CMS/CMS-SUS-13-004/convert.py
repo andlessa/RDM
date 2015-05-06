@@ -37,15 +37,15 @@ info = MetaInfoInput('CMS-SUS-13-004')
 info.url = 'https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS13004'
 info.sqrts = 8
 info.lumi = 19.3
-info.prettyname = 'Razor with b-jets'
+info.prettyName = 'Razor with b-jets'
 info.private  = False
 #info.arxiv =
 #info.contact =
 #info.publication =
-info.comment = 'Not updated with arXiv publication results, superseded_by to be set after arXiv results?'
+info.comment = 'Not updated with arXiv publication results, supersededBy to be set after arXiv results?'
 #info.supersedes =
-#info.superseded_by =
-info.implemented_by = 'Suchita Kulkarni'
+#info.supersededBy =
+info.implementedBy = 'Suchita Kulkarni'
 
 #+++++++ next txName block ++++++++++++++
 T1bbbb = TxNameInput('T1bbbb')
@@ -53,10 +53,10 @@ T1bbbb = TxNameInput('T1bbbb')
 #T1bbbb.off.checked =
 T1bbbb.on.constraint = "[[['b','b']],[['b','b']]]"
 #T1bbbb.off.constraint =
+T1bbbb.on.conditionDescription = None
+#T1bbbb.off.conditionDescription =
 T1bbbb.on.condition = None
-#T1bbbb.off.condition =
-T1bbbb.on.fuzzycondition = None
-T1bbbb.off.fuzzycondition = None
+T1bbbb.off.condition = None
 
 #+++++++ next mass plane block ++++++++++++++
 T1bbbb_1 = T1bbbb.addMassPlane(motherMass = x, lspMass = y)
@@ -94,10 +94,10 @@ T2tt = TxNameInput('T2tt')
 #T2tt.off.checked =
 T2tt.on.constraint = "[[['t']],[['t']]]"
 T2tt.off.constraint = "[[['b','W']],[['b','W']]]"
+T2tt.on.conditionDescription = None
+T2tt.off.conditionDescription = None
 T2tt.on.condition = None
 T2tt.off.condition = None
-T2tt.on.fuzzycondition = None
-T2tt.off.fuzzycondition = None
 
 #+++++++ next mass plane block ++++++++++++++
 T2tt_1 = T2tt.addMassPlane(motherMass = x, lspMass = y )
@@ -135,10 +135,10 @@ T1tttt = TxNameInput('T1tttt')
 #T1tttt.off.checked =
 T1tttt.on.constraint = "[[['t','t']],[['t','t']]]"
 T1tttt.off.constraint = "[[['b','W','b','W']],[['b','W','b','W']]]"
+T1tttt.on.conditionDescription = None
+T1tttt.off.conditionDescription = None
 T1tttt.on.condition = None
 T1tttt.off.condition = None
-T1tttt.on.fuzzycondition = None
-T1tttt.off.fuzzycondition = None
 
 #+++++++ next mass plane block ++++++++++++++
 T1tttt_1 = T1tttt.addMassPlane(motherMass = x , lspMass = y)

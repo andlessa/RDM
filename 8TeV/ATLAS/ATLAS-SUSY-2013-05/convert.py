@@ -37,13 +37,13 @@ info = MetaInfoInput('ATLAS-SUSY-2013-05')
 info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-05/'
 info.sqrts = '8.0*TeV'
 info.lumi = 20.1
-info.prettyname = 'ATLAS 2b'
+info.prettyName = 'ATLAS 2b'
 info.private = False
 info.arxiv = 'http://arxiv.org/abs/1308.2631'
 info.publication = 'http://link.springer.com/article/10.1007/JHEP10%282013%29189'
 info.comment = 'upper limits for T6bbWWC150 are not public'
 info.supersedes = 'ATLAS_CONF_2013_001;ATLAS_CONF_2013_053'
-info.implemented_by = 'MT'
+info.implementedBy = 'MT'
 info.comment = 'upper limits for T6bbWWC150 are not public'
 
 #+++++++++++ add new txName +++++++++++++++++
@@ -53,8 +53,8 @@ T2bb.on.checked = 'VM'
 T2bb.off.checked = 'VM'
 #-----constraint,condition,....------------------------------
 T2bb.on.constraint = "[[['b']],[['b']]]"
+T2bb.on.conditionDescription = None
 T2bb.on.condition = None
-T2bb.on.fuzzycondition = None
 
 #------ add new massplane-------
 
@@ -88,10 +88,10 @@ T6bbWW.off.checked = 'VM'
 #-----constraint,condition,....------------------------------
 T6bbWW.on.constraint = "[[['b'],['W']],[['b'],['W']]]"
 T6bbWW.off.constraint = "[[['b'],['L','nu']],[['b'],['L','nu']]] + [[['b'],['L','nu']],[['b'],['jet','jet']]] + [[['b'],['jet','jet']],[['b'],['jet','jet']]]"
+T6bbWW.on.conditionDescription = None
+T6bbWW.off.conditionDescription = None
 T6bbWW.on.condition = None
 T6bbWW.off.condition = None
-T6bbWW.on.fuzzycondition = None
-T6bbWW.off.fuzzycondition = None
 
 #------ add new massplane-------
 

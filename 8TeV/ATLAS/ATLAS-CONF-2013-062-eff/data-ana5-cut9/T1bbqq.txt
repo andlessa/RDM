@@ -1,7 +1,8 @@
 txname: T1bbqq
+conditionDescription: None
 condition: None
-fuzzycondition: None
 constraint: [[['b','b']],[['jet','jet']]]
+figureUrl: None
 validated: None
 axes: 2*Eq(mother,x)_Eq(lsp,y)
 publishedData: False

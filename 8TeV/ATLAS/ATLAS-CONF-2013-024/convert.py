@@ -40,10 +40,10 @@ info.private = False
 info.lumi = '21.0'
 #info.publication = 
 info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-024/'
-#info.superseded_by = 
+#info.supersededBy = 
 #info.arxiv = 
 #info.contact = 
-info.prettyname = 'ATLAS hadronic stop'
+info.prettyName = 'ATLAS hadronic stop'
 #info.supersedes = 
 
 #+++++++ next txName block ++++++++++++++
@@ -52,10 +52,10 @@ T2tt.on.checked ="AL"
 #T2tt.off.checked =
 T2tt.on.constraint ="[[['t']],[['t']]]"
 #T2tt.off.constraint =
+T2tt.on.conditionDescription ="None"
+#T2tt.off.conditionDescription =
 T2tt.on.condition ="None"
 #T2tt.off.condition =
-T2tt.on.fuzzycondition ="None"
-#T2tt.off.fuzzycondition =
 
 #+++++++ next mass plane block ++++++++++++++
 T2tt = T2tt.addMassPlane(motherMass = x, lspMass = y)

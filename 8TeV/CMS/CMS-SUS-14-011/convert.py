@@ -37,14 +37,14 @@ info = MetaInfoInput('CMS-SUS-14-011')
 info.url ='https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS14011'
 info.sqrts = 8
 info.lumi = 19.3
-info.prettyname = 'razor'
+info.prettyName = 'razor'
 info.private = False
 #info.arxiv = 
 info.contact = 'jduarte@caltech.edu, maurizio.pierini@cern.ch, r.lucas11@imperial.ac.uk'
 #info.publication =
 info.comment = 'combination of SUS13004 and SUS13011'
 info.supersedes = 'CMS-PAS-SUS-13-004'
-#info.superseded_by =
+#info.supersededBy =
 
 #+++++++ next txName block ++++++++++++++
 T4tbW = TxNameInput('T4tbW')
@@ -52,10 +52,10 @@ T4tbW = TxNameInput('T4tbW')
 #T4tbW.off.checked =
 T4tbW.on.constraint = "[[['b'],['W']],[['t']]]"
 T4tbW.off.constraint = "not yet assigned"
+#T4tbW.on.conditionDescription =
+T4tbW.off.conditionDescription = "not yet assigned"
 #T4tbW.on.condition =
 T4tbW.off.condition = "not yet assigned"
-#T4tbW.on.fuzzycondition =
-T4tbW.off.fuzzycondition = "not yet assigned"
 
 #+++++++ next mass plane block ++++++++++++++
 T4tbW_1 = T4tbW.addMassPlane(motherMass = x, interMass0 = y + 5., lspMass = y)
@@ -94,10 +94,10 @@ T4tbW_1.expExclusionP1.dataUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/Phys
 #T1tttt.off.checked =
 #T1tttt.on.constraint =
 #T1tttt.off.constraint =
+#T1tttt.on.conditionDescription =
+#T1tttt.off.conditionDescription =
 #T1tttt.on.condition =
 #T1tttt.off.condition =
-#T1tttt.on.fuzzycondition =
-#T1tttt.off.fuzzycondition =
 ##T1tttt.branchingRatio =
 
 ##+++++++ next mass plane block ++++++++++++++
@@ -136,10 +136,10 @@ T4tbW_1.expExclusionP1.dataUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/Phys
 #T5tbtbWW.off.checked =
 #T5tbtbWW.on.constraint =
 #T5tbtbWW.off.constraint =
+#T5tbtbWW.on.conditionDescription =
+#T5tbtbWW.off.conditionDescription =
 #T5tbtbWW.on.condition =
 #T5tbtbWW.off.condition =
-#T5tbtbWW.on.fuzzycondition =
-#T5tbtbWW.off.fuzzycondition =
 ##T5tbtbWW.branchingRatio =
 
 ##+++++++ next mass plane block ++++++++++++++
@@ -179,10 +179,10 @@ T4tbW_1.expExclusionP1.dataUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/Phys
 #T2tt.off.checked =
 #T2tt.on.constraint =
 #T2tt.off.constraint =
+#T2tt.on.conditionDescription =
+#T2tt.off.conditionDescription =
 #T2tt.on.condition =
 #T2tt.off.condition =
-#T2tt.on.fuzzycondition =
-#T2tt.off.fuzzycondition =
 ##T2tt.branchingRatio =
 
 ##+++++++ next mass plane block ++++++++++++++
@@ -221,10 +221,10 @@ T4tbW_1.expExclusionP1.dataUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/Phys
 #T1bbbb.off.checked =
 #T1bbbb.on.constraint =
 #T1bbbb.off.constraint =
+#T1bbbb.on.conditionDescription =
+#T1bbbb.off.conditionDescription =
 #T1bbbb.on.condition =
 #T1bbbb.off.condition =
-#T1bbbb.on.fuzzycondition =
-#T1bbbb.off.fuzzycondition =
 ##T1bbbb.branchingRatio =
 
 ##+++++++ next mass plane block ++++++++++++++
@@ -263,10 +263,10 @@ T4tbW_1.expExclusionP1.dataUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/Phys
 #T3tbbbW.off.checked =
 #T3tbbbW.on.constraint =
 #T3tbbbW.off.constraint =
+#T3tbbbW.on.conditionDescription =
+#T3tbbbW.off.conditionDescription =
 #T3tbbbW.on.condition =
 #T3tbbbW.off.condition =
-#T3tbbbW.on.fuzzycondition =
-#T3tbbbW.off.fuzzycondition =
 ##T3tbbbW.branchingRatio =
 
 ##+++++++ next mass plane block ++++++++++++++
@@ -306,10 +306,10 @@ T4tbW_1.expExclusionP1.dataUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/Phys
 #T3tttbW.off.checked =
 #T3tttbW.on.constraint =
 #T3tttbW.off.constraint =
+#T3tttbW.on.conditionDescription =
+#T3tttbW.off.conditionDescription =
 #T3tttbW.on.condition =
 #T3tttbW.off.condition =
-#T3tttbW.on.fuzzycondition =
-#T3tttbW.off.fuzzycondition =
 ##T3tttbW.branchingRatio =
 
 ##+++++++ next mass plane block ++++++++++++++

@@ -1,9 +1,9 @@
-txname: TChiWW
+txName: TChiWW
+conditionDescription: None
 condition: None
-fuzzycondition: None
 constraint: [[['W+']],[['W-']]]
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-11/figaux_18.png
-validated: True
+validated: None
 axes: 2*Eq(mother,x)_Eq(lsp,y)
 publishedData: True
 upperLimits: [[[[100.0*GeV, 0.0*GeV], [100.0*GeV, 0.0*GeV]], 4.606893*pb],

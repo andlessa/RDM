@@ -38,10 +38,10 @@ info.private = False
 info.lumi = '20.3'
 #info.publication = 
 info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-048/ http://cds.cern.ch/record/1547564'
-info.superseded_by = 'ATLAS-SUSY-2013-19'
+info.supersededBy = 'ATLAS-SUSY-2013-19'
 #info.arxiv = 
 #info.contact = 
-info.prettyname = 'ATLAS dileptonic stop'
+info.prettyName = 'ATLAS dileptonic stop'
 #info.supersedes = 
 
 #+++++++ next txName block ++++++++++++++
@@ -50,10 +50,10 @@ T2bbWW.on.checked ="VM"
 #T2bbWW.off.checked =
 T2bbWW.on.constraint ="[[['b','W+']],[['b','W-']]]"
 #T2bbWW.off.constraint =
+T2bbWW.on.conditionDescription ="None"
+#T2bbWW.off.conditionDescription =
 T2bbWW.on.condition ="None"
 #T2bbWW.off.condition =
-T2bbWW.on.fuzzycondition ="None"
-#T2bbWW.off.fuzzycondition =
 
 #+++++++ next mass plane block ++++++++++++++
 T2bbWW = T2bbWW.addMassPlane(motherMass = x, lspMass = y)
@@ -91,10 +91,10 @@ T6bbWW.on.checked ="VM"
 #T6bbWW.off.checked =
 T6bbWW.on.constraint ="[[['b'],['W+']],[['b'],['W-']]]"
 T6bbWW.off.constraint = "9.18*([[['b'],['L-','nu']],[['b'],['L+','nu']]])"
+T6bbWW.on.conditionDescription ="None"
+T6bbWW.off.conditionDescription = "None"
 T6bbWW.on.condition ="None"
 T6bbWW.off.condition = "None"
-T6bbWW.on.fuzzycondition ="None"
-T6bbWW.off.fuzzycondition = "None"
 
 #+++++++ next mass plane block ++++++++++++++
 T6bbWWLSP001 = T6bbWW.addMassPlane(motherMass = x, interMass0 = y, lspMass = 1.0)

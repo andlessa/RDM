@@ -1,6 +1,6 @@
-txname: T6WW
+txName: T6WW
+conditionDescription: None
 condition: None
-fuzzycondition: None
 constraint: [[['jet'],['W']],[['jet'],['W']]]
 checked: VM
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-047/fig_21c.png;https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-047/fig_21c.png

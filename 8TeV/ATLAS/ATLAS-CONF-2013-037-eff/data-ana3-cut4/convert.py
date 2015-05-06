@@ -49,15 +49,15 @@ info = MetaInfoInput(expid)
 info.signalRegion = signalregion
 info.url ='https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/%s/' % expid 
 info.sqrts = 8
-info.prettyname = ''
+info.prettyName = ''
 info.private = True
 info.arxiv = ''
 info.contact ='fastlim'
 info.publication = ''
 info.lumi = 1.0 
 info.comment = 'created from fastlim-1.0'
-info.superseded_by = ''
-info.implemented_by = ''
+info.supersededBy = ''
+info.implementedBy = ''
 
 
 constraints =  { "T2tt": "[[['t+']],[['t-']]]", "T2bb": "[[['b']],[['b']]]", 
@@ -78,8 +78,8 @@ constraints =  { "T2tt": "[[['t+']],[['t-']]]", "T2bb": "[[['b']],[['b']]]",
 #+++++++ next txName block ++++++++++++++
 #T1 = TxName('T1')
 #T1.on.constraint = constraints["T1"]
+#T1.on.conditionDescription = None
 #T1.on.condition = None
-#T1.on.fuzzycondition = None
 #
 ##+++++++ next mass plane block ++++++++++++++
 #T1_1 = T1.addMassPlane(motherMass = x , lspMass = y )
@@ -125,8 +125,8 @@ for i in os.listdir("orig/"):
     print txname 
     tmp= TxNameInput ( txname )
     tmp.on.constraint = constraints[txname]
-    tmp.on.condition=None
-    tmp.on.fuzzycondition = None
+    tmp.on.conditionDescription=None
+    tmp.on.condition = None
     if i[:2] in [ "T5", "T6" ]:
         tmp.globalEfficiencyMap.setSource ( './orig/%s.effi' % txname, 'effi', objectName = None, index = None )
         continue
@@ -159,8 +159,8 @@ def translate ( filename ):
 
 #T5tttt = TxName ( "T5tttt" )
 #T5tttt.on.constraint = "[[['t+'],['t-']],[['t+'],['t-']]]"
+#T5tttt.on.conditionDescription = None
 #T5tttt.on.condition = None
-#T5tttt.on.fuzzycondition = None
 ## T5tttt.globalEfficiencyMap.setSource ( './orig/T5tttt.effi', 'effi', objectName = None, index = None )
 #translate ( './orig/T5tttt.effi' )
 
@@ -174,8 +174,8 @@ def translate ( filename ):
 
 #T2tt = TxName('T2tt')
 #T2tt.on.constraint = "[[['t']],[['t']]]"
+#T2tt.on.conditionDescription = None
 #T2tt.on.condition = None
-#T2tt.on.fuzzycondition = None
 #T2tt_1 = T2tt.addMassPlane(motherMass = x , lspMass = y )
 #T2tt_1.efficiencyMap.setSource( './orig/T2tt.effi', 'effi', objectName = None, index = None )
 

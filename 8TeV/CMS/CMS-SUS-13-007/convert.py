@@ -38,15 +38,15 @@ info = MetaInfoInput('CMS-SUS-13-007')
 info.url ='https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS13007'
 info.sqrts = 8
 info.lumi = 19.3
-info.prettyname = 'e/\mu DP'
+info.prettyName = 'e/\mu DP'
 info.private = False
 info.arxiv = 'http://arxiv.org/abs/arXiv:1311.4937'
 info.contact ='Loukas Gouskos <loukas.gouskos@cern.ch>, Markus Stoye <Markus.Stoye@cern.ch>'
 info.publication = 'http://www.sciencedirect.com/science/article/pii/S037026931400255X'
 info.comment = 'observed limits for all three models in fb, no expected limits, combined exclusion lines'
 info.supersedes ='CMS-PAS-SUS-13-007'
-#info.superseded_by =
-info.implemented_by = 'Federico Ambrogi'
+#info.supersededBy =
+info.implementedBy = 'Federico Ambrogi'
 
 #+++++++ next txName block ++++++++++++++
 T1tttt = TxNameInput('T1tttt')
@@ -54,10 +54,10 @@ T1tttt = TxNameInput('T1tttt')
 #T1tttt.off.checked =
 T1tttt.on.constraint = "[[['t','t']],[['t','t']]]"
 T1tttt.off.constraint ="[[['b','W','b','W']],[['b','W','b','W']]]"
+T1tttt.on.conditionDescription = None
+T1tttt.off.conditionDescription = None
 T1tttt.on.condition = None
 T1tttt.off.condition = None
-T1tttt.on.fuzzycondition = None
-T1tttt.off.fuzzycondition = None
 
 #+++++++ next mass plane block ++++++++++++++
 T1tttt_1 = T1tttt.addMassPlane(motherMass = x , lspMass = y )
@@ -96,10 +96,10 @@ T5tttt = TxNameInput('T5tttt')
 #T5tttt.off.checked =
 T5tttt.on.constraint = "[[['t'],['t']],[['t'],['t']]]"
 T5tttt.off.constraint = "[[['b','W'],['b','W']],[['b','W'],['b','W']]]"
+T5tttt.on.conditionDescription = None
+T5tttt.off.conditionDescription = None
 T5tttt.on.condition = None
 T5tttt.off.condition = None
-T5tttt.on.fuzzycondition = None
-T5tttt.off.fuzzycondition = None
 
 #+++++++ next mass plane block ++++++++++++++
 T5tttt_1 = T5tttt.addMassPlane(motherMass = 1000. , interMass0 = x , lspMass = y )

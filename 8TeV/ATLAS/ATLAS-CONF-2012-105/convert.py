@@ -41,12 +41,12 @@ info.private = False
 info.lumi = '5.8'
 #info.publication = 
 info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2012-105/'
-#info.superseded_by = 
+#info.supersededBy = 
 #info.arxiv = 
 #info.contact = 
-info.prettyname = 'ATLAS SS'
+info.prettyName = 'ATLAS SS'
 #info.supersedes = 
-info.implemented_by = 'MT'
+info.implementedBy = 'MT'
 
 #+++++++ next txName block ++++++++++++++
 T1tttt = TxNameInput('T1tttt')
@@ -54,10 +54,10 @@ T1tttt.on.checked ="AL"
 #T1tttt.off.checked =
 T1tttt.on.constraint ="[[['t+','t-']],[['t+','t-']]]"
 #T1tttt.off.constraint =
+T1tttt.on.conditionDescription ="None"
+#T1tttt.off.conditionDescription =
 T1tttt.on.condition ="None"
 #T1tttt.off.condition =
-T1tttt.on.fuzzycondition ="None"
-#T1tttt.off.fuzzycondition =
 
 #+++++++ next mass plane block ++++++++++++++
 T1tttt = T1tttt.addMassPlane(motherMass = x, lspMass = y)

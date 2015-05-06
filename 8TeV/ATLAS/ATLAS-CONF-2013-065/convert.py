@@ -38,10 +38,10 @@ info.private = False
 info.lumi = '20.3'
 #info.publication = 
 info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-065/ http://cds.cern.ch/record/1562840'
-info.superseded_by =  "SUSY-2013-19"
+info.supersededBy =  "SUSY-2013-19"
 #info.arxiv = 
 #info.contact = 
-info.prettyname = 'ATLAS dileptonic stop'
+info.prettyName = 'ATLAS dileptonic stop'
 #info.supersedes = 
 
 #+++++++ next txName block ++++++++++++++
@@ -50,10 +50,10 @@ T2tt.on.checked ="VM"
 #T2tt.off.checked =
 T2tt.on.constraint ="[[['t+']],[['t-']]]"
 #T2tt.off.constraint =
+T2tt.on.conditionDescription ="None"
+#T2tt.off.conditionDescription =
 T2tt.on.condition ="None"
 #T2tt.off.condition =
-T2tt.on.fuzzycondition ="None"
-#T2tt.off.fuzzycondition =
 
 #+++++++ next mass plane block ++++++++++++++
 T2tt = T2tt.addMassPlane(motherMass = x, lspMass = y)
@@ -95,10 +95,10 @@ T6bbWW.on.checked ="VM"
 #T6bbWW.off.checked =
 T6bbWW.on.constraint ="[[['b'],['W+']],[['b'],['W-']]]"
 T6bbWW.off.constraint ="9.18*([[['b'],['L-','nu']],[['b'],['L+','nu']]])"
+T6bbWW.on.conditionDescription ="None"
+T6bbWW.off.conditionDescription ="[[['b'],['L','nu']],[['b'],['jet','> 2.7* [[['b'],['ta','nu']],[['b'],['jet','jet']]],[[['b'],['L','nu']],[jet','jet']]] > 2.7* [[['b'],['e','nu']],[['b'],['jet','jet']]]"
 T6bbWW.on.condition ="None"
-T6bbWW.off.condition ="[[['b'],['L','nu']],[['b'],['jet','> 2.7* [[['b'],['ta','nu']],[['b'],['jet','jet']]],[[['b'],['L','nu']],[jet','jet']]] > 2.7* [[['b'],['e','nu']],[['b'],['jet','jet']]]"
-T6bbWW.on.fuzzycondition ="None"
-T6bbWW.off.fuzzycondition ="Cgtr([[['b'],['L','nu']],[['b'],['jet','jet']]],3.*[[['b'],['ta','nu']],[['b'],['jet','jet']]]);Cgtr([[['b'],['L','nu']],[['b'],['jet','jet']]],3.*[[['b'],['e','nu']],[['b'],['jet','jet']]])"
+T6bbWW.off.condition ="Cgtr([[['b'],['L','nu']],[['b'],['jet','jet']]],3.*[[['b'],['ta','nu']],[['b'],['jet','jet']]]);Cgtr([[['b'],['L','nu']],[['b'],['jet','jet']]],3.*[[['b'],['e','nu']],[['b'],['jet','jet']]])"
 
 #+++++++ next mass plane block ++++++++++++++
 T6bbWWM1300 = T6bbWW.addMassPlane(motherMass = 300.0, interMass0 = x, lspMass = y)

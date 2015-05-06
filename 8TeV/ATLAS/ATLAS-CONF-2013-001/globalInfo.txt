@@ -1,0 +1,10 @@
+sqrts: 8.0*TeV
+lumi: 12.8/fb
+id: ATLAS-CONF-2013-001
+prettyName: ATLAS W_{off} stop
+url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-001/
+supersededBy: ATLAS-SUSY-2013-05
+comment: suberseding vesrion is published
+private: False
+implementedBy: Wolfgang Waltenberger
+lastUpdate: 2015/5/6

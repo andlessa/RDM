@@ -38,10 +38,10 @@ info.private = False
 info.lumi = '20.7'
 #info.publication = 
 info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-036/'
-#info.superseded_by = 
+#info.supersededBy = 
 #info.arxiv = 
 #info.contact = 
-info.prettyname = 'ATLAS multileptons'
+info.prettyName = 'ATLAS multileptons'
 #info.supersedes = 
 
 #+++++++ next txName block ++++++++++++++
@@ -50,10 +50,10 @@ TChiChiSlepSlep.on.checked ="VM"
 #TChiChiSlepSlep.off.checked =
 TChiChiSlepSlep.on.constraint ="[[['l+'],['l-']],[['l+'],['l-']]]+[[['l-'],['l+']],[['l-'],['l+']]]+[[['l+'],['l-']],[['l-'],['l+']]]"
 #TChiChiSlepSlep.off.constraint =
-TChiChiSlepSlep.on.condition ="[[['l+'],['l-']],[['l+'],['l-']]] ~ [[['l-'],['l+']],[['l-'],['l+']]], 2.*[[['l+'],['l-']],[['l+'],['l-']]] ~ [[['l+'],['l-']],[['l-'],['l+']]], [[['mu+'],['mu-']],[['e+'],['e-']]] ~ 2.*[[['mu+'],['mu-']],[['mu+'],['mu-']]], [[['mu+'],['mu-']],[['e+'],['e-']]] ~ 2.*[[['e+'],['e-']],[['e+'],['e-']]], [[['mu-'],['mu+']],[['e-'],['e+']]] ~ 2.*[[['e-'],['e+']],[['e-'],['e+']]], [[['mu-'],['mu+']],[['e-'],['e+']]] ~ 2.*[[['mu-'],['mu+']],[['mu-'],['mu+']]], [[['mu+'],['mu-']],[['e-'],['e+']]] ~ 2.*[[['e+'],['e-']],[['e-'],['e+']]], [[['mu+'],['mu-']],[['e-'],['e+']]] ~ 2.*[[['mu+'],['mu-']],[['mu-'],['mu+']]]"
+TChiChiSlepSlep.on.conditionDescription ="[[['l+'],['l-']],[['l+'],['l-']]] ~ [[['l-'],['l+']],[['l-'],['l+']]], 2.*[[['l+'],['l-']],[['l+'],['l-']]] ~ [[['l+'],['l-']],[['l-'],['l+']]], [[['mu+'],['mu-']],[['e+'],['e-']]] ~ 2.*[[['mu+'],['mu-']],[['mu+'],['mu-']]], [[['mu+'],['mu-']],[['e+'],['e-']]] ~ 2.*[[['e+'],['e-']],[['e+'],['e-']]], [[['mu-'],['mu+']],[['e-'],['e+']]] ~ 2.*[[['e-'],['e+']],[['e-'],['e+']]], [[['mu-'],['mu+']],[['e-'],['e+']]] ~ 2.*[[['mu-'],['mu+']],[['mu-'],['mu+']]], [[['mu+'],['mu-']],[['e-'],['e+']]] ~ 2.*[[['e+'],['e-']],[['e-'],['e+']]], [[['mu+'],['mu-']],[['e-'],['e+']]] ~ 2.*[[['mu+'],['mu-']],[['mu-'],['mu+']]]"
+#TChiChiSlepSlep.off.conditionDescription =
+TChiChiSlepSlep.on.condition ="Csim([[['l+'],['l-']],[['l+'],['l-']]],[[['l-'],['l+']],[['l-'],['l+']]],0.5*[[['l+'],['l-']],[['l-'],['l+']]]); Csim([[['mu+'],['mu-']],[['e+'],['e-']]],2.*[[['mu+'],['mu-']],[['mu+'],['mu-']]],2.*[[['e+'],['e-']],[['e+'],['e-']]]); Csim([[['mu-'],['mu+']],[['e-'],['e+']]],2.*[[['e-'],['e+']],[['e-'],['e+']]],2.*[[['mu-'],['mu+']],[['mu-'],['mu+']]]); Csim([[['mu+'],['mu-']],[['e-'],['e+']]],[[['e+'],['e-']],[['e-'],['e+']]],[[['mu+'],['mu-']],[['mu-'],['mu+']]])"
 #TChiChiSlepSlep.off.condition =
-TChiChiSlepSlep.on.fuzzycondition ="Csim([[['l+'],['l-']],[['l+'],['l-']]],[[['l-'],['l+']],[['l-'],['l+']]],0.5*[[['l+'],['l-']],[['l-'],['l+']]]); Csim([[['mu+'],['mu-']],[['e+'],['e-']]],2.*[[['mu+'],['mu-']],[['mu+'],['mu-']]],2.*[[['e+'],['e-']],[['e+'],['e-']]]); Csim([[['mu-'],['mu+']],[['e-'],['e+']]],2.*[[['e-'],['e+']],[['e-'],['e+']]],2.*[[['mu-'],['mu+']],[['mu-'],['mu+']]]); Csim([[['mu+'],['mu-']],[['e-'],['e+']]],[[['e+'],['e-']],[['e-'],['e+']]],[[['mu+'],['mu-']],[['mu-'],['mu+']]])"
-#TChiChiSlepSlep.off.fuzzycondition =
 
 #+++++++ next mass plane block ++++++++++++++
 TChiChiSlepSlepD080 = TChiChiSlepSlep.addMassPlane(motherMass = x+80., interMass0 = x+80.-y, lspMass = x)

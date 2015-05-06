@@ -38,10 +38,10 @@ info.private = False
 info.lumi = '20.3'
 # info.publication = 
 info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-093/'
-info.superseded_by =  'SUSY-2013-23'
+info.supersededBy =  'SUSY-2013-23'
 #info.arxiv = 
 #info.contact = 
-info.prettyname = 'ATLAS ew higgs'
+info.prettyName = 'ATLAS ew higgs'
 #info.supersedes = 
 
 #+++++++ next txName block ++++++++++++++
@@ -50,10 +50,10 @@ TChiWH.on.checked ="VM"
 #TChiWH.off.checked =
 TChiWH.on.constraint ="[[['higgs']],[['W']]]"
 #TChiWH.off.constraint =
+TChiWH.on.conditionDescription ="None"
+#TChiWH.off.conditionDescription =
 TChiWH.on.condition ="None"
-#TChiWH.off.condition =
-TChiWH.on.fuzzycondition ="None"
-# TChiWH.off.fuzzycondition =
+# TChiWH.off.condition =
 
 #+++++++ next mass plane block ++++++++++++++
 TChiWH = TChiWH.addMassPlane(motherMass = x, lspMass = y)

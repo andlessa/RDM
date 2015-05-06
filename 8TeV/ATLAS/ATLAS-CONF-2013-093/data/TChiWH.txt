@@ -1,10 +1,10 @@
-txname: TChiWH
+txName: TChiWH
+conditionDescription: None
 condition: None
-fuzzycondition: None
 constraint: [[['higgs']],[['W']]]
 checked: VM
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-093/fig_10.png
-validated: True
+validated: None
 axes: 2*Eq(mother,x)_Eq(lsp,y)
 publishedData: False
 upperLimits: [[[[130.0*GeV, 0.0*GeV], [130.0*GeV, 0.0*GeV]], 3.69177022288*pb],

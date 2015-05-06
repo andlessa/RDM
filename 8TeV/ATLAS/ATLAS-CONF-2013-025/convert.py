@@ -40,10 +40,10 @@ info.private = False
 info.lumi = '20.7'
 #info.publication = 
 info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-025/'
-info.superseded_by = 'ATLAS-SUSY-2013-08' 
+info.supersededBy = 'ATLAS-SUSY-2013-08' 
 #info.arxiv = 
 #info.contact = 
-info.prettyname = 'ATLAS heavy stop'
+info.prettyName = 'ATLAS heavy stop'
 #info.supersedes = 
 
 #+++++++ next txName block ++++++++++++++
@@ -52,10 +52,10 @@ T6ZZtt.on.checked ="AL"
 #T6ZZtt.off.checked =
 T6ZZtt.on.constraint ="[[['Z'],['t']],[['Z'],['t']]]"
 #T6ZZtt.off.constraint =
+T6ZZtt.on.conditionDescription ="None"
+#T6ZZtt.off.conditionDescription =
 T6ZZtt.on.condition ="None"
 #T6ZZtt.off.condition =
-T6ZZtt.on.fuzzycondition ="None"
-#T6ZZtt.off.fuzzycondition =
 
 #+++++++ next mass plane block ++++++++++++++
 T6ZZttD180 = T6ZZtt.addMassPlane(motherMass = x, interMass0 = y + 180.0, lspMass = y)

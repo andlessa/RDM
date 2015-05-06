@@ -1,0 +1,10 @@
+sqrts: 8.0*TeV
+lumi: 20.3/fb
+id: ATLAS-CONF-2013-047
+prettyName: ATLAS hadronic TGQ
+url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-047/ http://cds.cern.ch/record/1547563
+supersededBy: ATLAS-SUSY-2013-02
+comment: T5WWLSP060 and T6WWLSP060 originally have xvalue on y-axes, changed by us to M2
+private: False
+implementedBy: Wolfgang Waltenberger
+lastUpdate: 2015/5/6

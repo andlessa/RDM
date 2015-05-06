@@ -1,6 +1,6 @@
-txname: T6WWoff
-condition: 2.23 * [[['jet'],['jet','jet']],[['jet'],['jet','jet']]] ~ 9.18 * [[['jet'],['L','nu']],[['jet'],['L','nu']]]; 2.23 * [[['jet'],['jet','jet']],[['jet'],['jet','jet']]] ~ 2.26 * [[['jet'],['L','nu']],[['jet'],['jet','jet']]]
-fuzzycondition: Csim ( 2.23 * [[['jet'],['jet','jet']],[['jet'],['jet','jet']]], 9.18 * [[['jet'],['L','nu']],[['jet'],['L','nu']]] ); Csim ( 2.23 * [[['jet'],['jet','jet']],[['jet'],['jet','jet']]], 2.26 * [[['jet'],['L','nu']],[['jet'],['jet','jet']]] )
+txName: T6WWoff
+conditionDescription: 2.23 * [[['jet'],['jet','jet']],[['jet'],['jet','jet']]] ~ 9.18 * [[['jet'],['L','nu']],[['jet'],['L','nu']]]; 2.23 * [[['jet'],['jet','jet']],[['jet'],['jet','jet']]] ~ 2.26 * [[['jet'],['L','nu']],[['jet'],['jet','jet']]]
+condition: Csim ( 2.23 * [[['jet'],['jet','jet']],[['jet'],['jet','jet']]], 9.18 * [[['jet'],['L','nu']],[['jet'],['L','nu']]] ); Csim ( 2.23 * [[['jet'],['jet','jet']],[['jet'],['jet','jet']]], 2.26 * [[['jet'],['L','nu']],[['jet'],['jet','jet']]] )
 constraint: 2.23 * [[['jet'],['jet','jet']],[['jet'],['jet','jet']]]
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-047/fig_21c.png;https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-047/fig_21c.png
 validated: None

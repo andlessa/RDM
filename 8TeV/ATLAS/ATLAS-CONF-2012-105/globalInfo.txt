@@ -1,0 +1,9 @@
+sqrts: 8.0*TeV
+lumi: 5.8/fb
+id: ATLAS-CONF-2012-105
+prettyName: ATLAS SS
+url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2012-105/
+private: False
+implementedBy: Wolfgang Waltenberger
+lastUpdate: 2015/5/6
+

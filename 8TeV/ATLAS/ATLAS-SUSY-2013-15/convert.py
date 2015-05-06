@@ -38,10 +38,10 @@ info.private = False
 info.lumi = '20.3'
 info.publication =  'link.springer.com/article/10.1007/JHEP11(2014)118'
 info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-15/'
-# info.superseded_by = 
+# info.supersededBy = 
 info.arxiv = 'http://arxiv.org/abs/1407.0583'
 info.contact =  "ATLAS collaboration"
-info.prettyname = 'ATLAS (aysmmetric) stop'
+info.prettyName = 'ATLAS (aysmmetric) stop'
 info.supersedes = 'ATLAS-CONF-2013-037; CONF-2012-166'
 
 #+++++++ next txName block ++++++++++++++
@@ -50,10 +50,10 @@ T2bbWW = TxNameInput('T2bbWW')
 #T2bbWW.off.checked =
 T2bbWW.on.constraint ="[[['b','W']],[['b','W']]]"
 T2bbWW.off.constraint ="2.3*([[['b','L','nu']],[['b','jet','jet']]])"
+T2bbWW.on.conditionDescription ="None"
+T2bbWW.off.conditionDescription ="[[['b','L','nu']],[['b','jet','jet']]] > 2.7* [[['b','ta','nu']],[['b','jet','jet']]], [[['b','L','nu']],[['b','jet','jet']]] > 2.7* [[['b','e','nu']],[['b','jet','jet']]]"
 T2bbWW.on.condition ="None"
-T2bbWW.off.condition ="[[['b','L','nu']],[['b','jet','jet']]] > 2.7* [[['b','ta','nu']],[['b','jet','jet']]], [[['b','L','nu']],[['b','jet','jet']]] > 2.7* [[['b','e','nu']],[['b','jet','jet']]]"
-T2bbWW.on.fuzzycondition ="None"
-T2bbWW.off.fuzzycondition ="Cgtr([[['b','L','nu']],[['b','jet','jet']]],3.*[[['b','ta','nu']],[['b','jet','jet']]]);Cgtr([[['b','L','nu']],[['b','jet','jet']]],3.*[[['b','e','nu']],[['b','jet','jet']]])"
+T2bbWW.off.condition ="Cgtr([[['b','L','nu']],[['b','jet','jet']]],3.*[[['b','ta','nu']],[['b','jet','jet']]]);Cgtr([[['b','L','nu']],[['b','jet','jet']]],3.*[[['b','e','nu']],[['b','jet','jet']]])"
 
 #+++++++ next mass plane block ++++++++++++++
 T2bbWW = T2bbWW.addMassPlane(motherMass = x, lspMass = y)
@@ -91,10 +91,10 @@ T2tt = TxNameInput('T2tt')
 #T2tt.off.checked =
 T2tt.on.constraint ="[[['t']],[['t']]]"
 #T2tt.off.constraint =
+T2tt.on.conditionDescription ="None"
+#T2tt.off.conditionDescription =
 T2tt.on.condition ="None"
 #T2tt.off.condition =
-T2tt.on.fuzzycondition ="None"
-#T2tt.off.fuzzycondition =
 
 #+++++++ next mass plane block ++++++++++++++
 T2tt = T2tt.addMassPlane(motherMass = x, lspMass = y)
@@ -135,10 +135,10 @@ T6bbWW = TxNameInput('T6bbWW')
 #T6bbWW.off.checked =
 T6bbWW.on.constraint ="[[['b'],['W']],[['b'],['W']]]"
 T6bbWW.off.constraint ="2.3*([[['b'],['L','nu']],[['b'],['jet','jet']]])"
+T6bbWW.on.conditionDescription = "None"
+T6bbWW.off.conditionDescription ="[[['b'],['L','nu']],[['b'],['jet','jet']]] > 2.7* [[['b'],['ta','nu']],[['b'],['jet','jet']]],[[['b'],['L','nu']],[['b'],['jet','jet']]] > 2.7* [[['b'],['e','nu']],[['b'],['jet','jet']]]"
 T6bbWW.on.condition = "None"
-T6bbWW.off.condition ="[[['b'],['L','nu']],[['b'],['jet','jet']]] > 2.7* [[['b'],['ta','nu']],[['b'],['jet','jet']]],[[['b'],['L','nu']],[['b'],['jet','jet']]] > 2.7* [[['b'],['e','nu']],[['b'],['jet','jet']]]"
-T6bbWW.on.fuzzycondition = "None"
-T6bbWW.off.fuzzycondition ="Cgtr([[['b'],['L','nu']],[['b'],['jet','jet']]],3.*[[['b'],['ta','nu']],[['b'],['jet','jet']]]);Cgtr([[['b'],['L','nu']],[['b'],['jet','jet']]],3.*[[['b'],['e','nu']],[['b'],['jet','jet']]])"
+T6bbWW.off.condition ="Cgtr([[['b'],['L','nu']],[['b'],['jet','jet']]],3.*[[['b'],['ta','nu']],[['b'],['jet','jet']]]);Cgtr([[['b'],['L','nu']],[['b'],['jet','jet']]],3.*[[['b'],['e','nu']],[['b'],['jet','jet']]])"
 
 #+++++++ next mass plane block ++++++++++++++
 T6bbWWoffD10 = T6bbWW.addMassPlane(motherMass = x, interMass0 = x-10., lspMass = y)

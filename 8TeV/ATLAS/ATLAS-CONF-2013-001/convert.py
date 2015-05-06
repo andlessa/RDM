@@ -40,12 +40,12 @@ info.private = False
 info.lumi = '12.8'
 #info.publication = 
 info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-001/'
-info.superseded_by = 'ATLAS-SUSY-2013-05'
+info.supersededBy = 'ATLAS-SUSY-2013-05'
 #info.arxiv = 
 #info.contact = 
-info.prettyname = 'ATLAS W_{off} stop'
+info.prettyName = 'ATLAS W_{off} stop'
 #info.supersedes = 
-info.implemented_by = 'MT'
+info.implementedBy = 'MT'
 
 #+++++++ next txName block ++++++++++++++
 T6bbWW = TxNameInput('T6bbWW')
@@ -53,10 +53,10 @@ T6bbWW = TxNameInput('T6bbWW')
 T6bbWW.off.checked ="AL"
 T6bbWW.on.constraint = "[[['b'],['W']],[['b'],['W']]]"
 T6bbWW.off.constraint ="[[['b'],['L','nu']],[['b'],['L','nu']]] + [[['b'],['L','nu']],[['b'],['jet','jet']]] + [[['b'],['jet','jet']],[['b'],['jet','jet']]]"
+#T6bbWW.on.conditionDescription =
+T6bbWW.off.conditionDescription ="None"
 #T6bbWW.on.condition =
 T6bbWW.off.condition ="None"
-#T6bbWW.on.fuzzycondition =
-T6bbWW.off.fuzzycondition ="None"
 
 #+++++++ next mass plane block ++++++++++++++
 T6bbWWD020 = T6bbWW.addMassPlane(motherMass = x, interMass0 = y + 20.0, lspMass = y)

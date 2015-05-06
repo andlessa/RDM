@@ -1,9 +1,9 @@
-txname: T2tt
+txName: T2tt
+conditionDescription: None
 condition: None
-fuzzycondition: None
 constraint: [[['t']],[['t']]]
 figureUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13004/T1ttttRazorXSEC.pdf
-validated: True
+validated: None
 axes: 2*Eq(mother,x)_Eq(lsp,y)
 publishedData: True
 upperLimits: [[[[150.0*GeV, 0.0*GeV], [150.0*GeV, 0.0*GeV]], 203.939565716*pb],

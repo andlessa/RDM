@@ -1,6 +1,6 @@
-txname: T6WWoff
-condition: [[['jet'],['L+','nu']],[['jet'],['L-','nu']]] > 9 * [[['jet'],['ta+','nu']],[['jet'],['ta-','nu']]]
-fuzzycondition: Cgtr([[['jet'],['L+','nu']],[['jet'],['L-','nu']]],9 * [[['jet'],['ta+','nu']],[['jet'],['ta-','nu']]]);Cgtr([[['jet'],['L+','nu']],[['jet'],['L-','nu']]],9 * [[['jet'],['e+','nu']],[['jet'],['e-','nu']]])
+txName: T6WWoff
+conditionDescription: [[['jet'],['L+','nu']],[['jet'],['L-','nu']]] > 9 * [[['jet'],['ta+','nu']],[['jet'],['ta-','nu']]]
+condition: Cgtr([[['jet'],['L+','nu']],[['jet'],['L-','nu']]],9 * [[['jet'],['ta+','nu']],[['jet'],['ta-','nu']]]);Cgtr([[['jet'],['L+','nu']],[['jet'],['L-','nu']]],9 * [[['jet'],['e+','nu']],[['jet'],['e-','nu']]])
 constraint: 9.34*[[['jet'],['L+','nu']],[['jet'],['L-','nu']]]
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-089/fig_23a.png;https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-089/fig_23b.png
 validated: None

@@ -40,12 +40,12 @@ info.private = False
 info.lumi = '13.0'
 #info.publication = 
 info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2012-166/'
-info.superseded_by = 'ATLAS-CONF-2013-037'
+info.supersededBy = 'ATLAS-CONF-2013-037'
 #info.arxiv = 
 #info.contact = 
-info.prettyname = 'ATLAS leptonic stop'
+info.prettyName = 'ATLAS leptonic stop'
 #info.supersedes = 
-info.implemented_by = 'MT'
+info.implementedBy = 'MT'
 
 #+++++++ next txName block ++++++++++++++
 T2tt = TxNameInput('T2tt')
@@ -53,10 +53,10 @@ T2tt.on.checked ="AL"
 #T2tt.off.checked =
 T2tt.on.constraint ="[[['t']],[['t']]]"
 #T2tt.off.constraint =
+T2tt.on.conditionDescription ="None"
+#T2tt.off.conditionDescription =
 T2tt.on.condition ="None"
 #T2tt.off.condition =
-T2tt.on.fuzzycondition ="None"
-#T2tt.off.fuzzycondition =
 
 #+++++++ next mass plane block ++++++++++++++
 T2tt = T2tt.addMassPlane(motherMass = x, lspMass = y)
@@ -94,10 +94,10 @@ T6bbWW.on.checked ="AL"
 #T6bbWW.off.checked =
 T6bbWW.on.constraint ="[[['b'],['W']],[['b'],['W']]]"
 T6bbWW.off.constraint ="3.5*([[['b'],['L','nu']],[['b'],['jet','jet']]])"
+T6bbWW.on.conditionDescription ="None"
+T6bbWW.off.conditionDescription ="[[['b','L','nu']],[['b','jet','jet']]] > 2.7* [[['b','ta','nu']],[['b','jet','jet']]], [[['b','L','nu']],[['b','jet','jet']]] > 2.7* [[['b','e','nu']],[['b','jet','jet']]]"
 T6bbWW.on.condition ="None"
-T6bbWW.off.condition ="[[['b','L','nu']],[['b','jet','jet']]] > 2.7* [[['b','ta','nu']],[['b','jet','jet']]], [[['b','L','nu']],[['b','jet','jet']]] > 2.7* [[['b','e','nu']],[['b','jet','jet']]]"
-T6bbWW.on.fuzzycondition ="None"
-T6bbWW.off.fuzzycondition ="Cgtr([[['b'],['L','nu']],[['b'],['jet','jet']]],3.*[[['b'],['ta','nu']],[['b'],['jet','jet']]]);Cgtr([[['b'],['L','nu']],[['b'],['jet','jet']]],3.*[[['b'],['e','nu']],[['b'],['jet','jet']]])"
+T6bbWW.off.condition ="Cgtr([[['b'],['L','nu']],[['b'],['jet','jet']]],3.*[[['b'],['ta','nu']],[['b'],['jet','jet']]]);Cgtr([[['b'],['L','nu']],[['b'],['jet','jet']]],3.*[[['b'],['e','nu']],[['b'],['jet','jet']]])"
 
 #+++++++ next mass plane block ++++++++++++++
 T6bbWWC150 = T6bbWW.addMassPlane(motherMass = x, interMass0 = 150.0, lspMass = y)

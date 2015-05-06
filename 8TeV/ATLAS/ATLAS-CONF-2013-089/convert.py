@@ -38,10 +38,10 @@ info.private = False
 info.lumi = '20.3'
 #info.publication = 
 info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-089/ https://cds.cern.ch/record/1595272'
-info.superseded_by =  "SUSY-2013-20"
+info.supersededBy =  "SUSY-2013-20"
 #info.arxiv = 
 #info.contact = 
-info.prettyname = '2l'
+info.prettyName = '2l'
 #info.supersedes = 
 
 #+++++++ next txName block ++++++++++++++
@@ -50,10 +50,10 @@ T6WW.on.checked ="VM"
 #T6WW.off.checked =
 T6WW.on.constraint ="[[['jet'],['W+']],[['jet'],['W-']]]"
 T6WW.off.constraint = "9.34*[[['jet'],['L+','nu']],[['jet'],['L-','nu']]]"
+T6WW.on.conditionDescription ="None"
+T6WW.off.conditionDescription = "[[['jet'],['L+','nu']],[['jet'],['L-','nu']]] > 9 * [[['jet'],['ta+','nu']],[['jet'],['ta-','nu']]]"
 T6WW.on.condition ="None"
-T6WW.off.condition = "[[['jet'],['L+','nu']],[['jet'],['L-','nu']]] > 9 * [[['jet'],['ta+','nu']],[['jet'],['ta-','nu']]]"
-T6WW.on.fuzzycondition ="None"
-T6WW.off.fuzzycondition = "Cgtr([[['jet'],['L+','nu']],[['jet'],['L-','nu']]],9 * [[['jet'],['ta+','nu']],[['jet'],['ta-','nu']]]);Cgtr([[['jet'],['L+','nu']],[['jet'],['L-','nu']]],9 * [[['jet'],['e+','nu']],[['jet'],['e-','nu']]])"
+T6WW.off.condition = "Cgtr([[['jet'],['L+','nu']],[['jet'],['L-','nu']]],9 * [[['jet'],['ta+','nu']],[['jet'],['ta-','nu']]]);Cgtr([[['jet'],['L+','nu']],[['jet'],['L-','nu']]],9 * [[['jet'],['e+','nu']],[['jet'],['e-','nu']]])"
 
 #+++++++ next mass plane block ++++++++++++++
 T6WW050 = T6WW.addMassPlane(motherMass = x, interMass0 = x*0.5 + (1. - 0.5)*y, lspMass = y)
@@ -123,11 +123,11 @@ T5WW.on.checked ="VM"
 #T5WW.off.checked =
 T5WW.on.constraint ="[[['jet','jet'],['W']],[['jet','jet'],['W']]]"
 T5WW.off.constraint ="9.34*[[['jet','jet'],['L+','nu']],[['jet','jet'],['L-','nu']]]"
+T5WW.on.conditionDescription ="None"
+T5WW.off.conditionDescription = "[[['jet','jet'],['L+','nu']],[['jet','jet'],['L-','nu']]] > 9 * [[['jet','jet'],['ta+','nu']],[['jet','jet'],['ta-','nu']]]"
 T5WW.on.condition ="None"
-T5WW.off.condition = "[[['jet','jet'],['L+','nu']],[['jet','jet'],['L-','nu']]] > 9 * [[['jet','jet'],['ta+','nu']],[['jet','jet'],['ta-','nu']]]"
-T5WW.on.fuzzycondition ="None"
-T5WW.off.fuzzycondition = "Cgtr([[['jet','jet'],['L+','nu']],[['jet','jet'],['L-','nu']]],9 * [[['jet','jet'],['ta+','nu']],[['jet','jet'],['ta-','nu']]]);Cgtr([[['jet','jet'],['L+','nu']],[['jet','jet'],['L-','nu']]],9 * [[['jet','jet'],['e+','nu']],[['jet','jet'],['e-','nu']]])"
-#T5WW.off.fuzzycondition =
+T5WW.off.condition = "Cgtr([[['jet','jet'],['L+','nu']],[['jet','jet'],['L-','nu']]],9 * [[['jet','jet'],['ta+','nu']],[['jet','jet'],['ta-','nu']]]);Cgtr([[['jet','jet'],['L+','nu']],[['jet','jet'],['L-','nu']]],9 * [[['jet','jet'],['e+','nu']],[['jet','jet'],['e-','nu']]])"
+#T5WW.off.condition =
 
 #+++++++ next mass plane block ++++++++++++++
 T5WWLSP060 = T5WW.addMassPlane(motherMass = x, interMass0 = y, lspMass = 60.0)

@@ -38,10 +38,10 @@ info.private = False
 info.lumi = '20.3'
 #info.publication = 
 info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-049/ https://cds.cern.ch/record/1547565'
-info.superseded_by = 'ATLAS-SUSY-2013-11'
+info.supersededBy = 'ATLAS-SUSY-2013-11'
 #info.arxiv = 
 #info.contact = 
-info.prettyname = 'ATLAS OS e/\mu'
+info.prettyName = 'ATLAS OS e/\mu'
 #info.supersedes = 
 
 #+++++++ next txName block ++++++++++++++
@@ -50,10 +50,10 @@ TSlepSlep.on.checked ="VM"
 #TSlepSlep.off.checked =
 TSlepSlep.on.constraint ="[[['e+']],[['e-']]]+[[['mu+']],[['mu-']]]"
 #TSlepSlep.off.constraint =
-TSlepSlep.on.condition ="[[['mu+']],[['mu-']]] > [[['e+']],[['e-']]]"
+TSlepSlep.on.conditionDescription ="[[['mu+']],[['mu-']]] > [[['e+']],[['e-']]]"
+#TSlepSlep.off.conditionDescription =
+TSlepSlep.on.condition ="Cgtr([[['mu+']],[['mu-']]],[[['e+']],[['e-']]])"
 #TSlepSlep.off.condition =
-TSlepSlep.on.fuzzycondition ="Cgtr([[['mu+']],[['mu-']]],[[['e+']],[['e-']]])"
-#TSlepSlep.off.fuzzycondition =
 
 #+++++++ next mass plane block ++++++++++++++
 TSlepSlep = TSlepSlep.addMassPlane(motherMass = x, lspMass = y)

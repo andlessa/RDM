@@ -1,9 +1,10 @@
-txname: T4tbWoff
+txName: T4tbWoff
+conditionDescription: not yet assigned
 condition: not yet assigned
-fuzzycondition: not yet assigned
 constraint: not yet assigned
+figureUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS14011/T2tbHybridNew0Lp1Lp2LXSEC.pdf
 validated: None
-axes: Eq(mother,x)_Eq(inter0,y+5.0)_Eq(lsp,y)+Eq(mother,x)_Eq(lsp,y);Eq(mother,x)_Eq(inter0,y+5.0)_Eq(lsp,y)+Eq(mother,x)_Eq(lsp,y)
+axes: Eq(mother,x)_Eq(inter0,y+5.0)_Eq(lsp,y)+Eq(mother,x)_Eq(lsp,y)
 publishedData: True
 upperLimits: [[[[100.0*GeV, 5.0*GeV, 0.0*GeV], [100.0*GeV, 0.0*GeV]], 164.008232158*pb],
 [[[125.0*GeV, 5.0*GeV, 0.0*GeV], [125.0*GeV, 0.0*GeV]], 137.454148095*pb],

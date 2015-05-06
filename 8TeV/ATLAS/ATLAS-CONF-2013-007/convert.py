@@ -41,12 +41,12 @@ info.private = False
 info.lumi = '20.7'
 #info.publication = 
 info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-007/'
-info.superseded_by = 'ATLAS-SUSY-2013-09'
+info.supersededBy = 'ATLAS-SUSY-2013-09'
 #info.arxiv = 
 #info.contact = 
-info.prettyname = 'ATLAS SS+b'
+info.prettyName = 'ATLAS SS+b'
 #info.supersedes = 
-info.implemented_by = 'MT'
+info.implementedBy = 'MT'
 
 #+++++++ next txName block ++++++++++++++
 T6ttWW = TxNameInput('T6ttWW')
@@ -54,10 +54,10 @@ T6ttWW.on.checked ='VM'
 #T6ttWW.off.checked =
 T6ttWW.on.constraint ="[[['t+'],['W-']],[['t+'],['W-']]]+[[['t-'],['W+']],[['t-'],['W+']]]+[[['t+'],['W-']],[['t-'],['W+']]]"
 T6ttWW.off.constraint = 'not yet assigned'
+T6ttWW.on.conditionDescription ="None"
+T6ttWW.off.conditionDescription = 'not yet assigned'
 T6ttWW.on.condition ="None"
 T6ttWW.off.condition = 'not yet assigned'
-T6ttWW.on.fuzzycondition ="None"
-T6ttWW.off.fuzzycondition = 'not yet assigned'
 
 #+++++++ next mass plane block ++++++++++++++
 T6ttWWLSP060 = T6ttWW.addMassPlane(motherMass = x, interMass0 = y, lspMass = 60.0)
@@ -127,10 +127,10 @@ T1tttt.on.checked ="VM"
 #T1tttt.off.checked =
 T1tttt.on.constraint ="[[['t+','t-']],[['t+','t-']]]"
 #T1tttt.off.constraint =
+T1tttt.on.conditionDescription ="None"
+#T1tttt.off.conditionDescription =
 T1tttt.on.condition ="None"
 #T1tttt.off.condition =
-T1tttt.on.fuzzycondition ="None"
-#T1tttt.off.fuzzycondition =
 
 #+++++++ next mass plane block ++++++++++++++
 T1tttt = T1tttt.addMassPlane(motherMass = x, lspMass = y)
@@ -169,10 +169,10 @@ T5tttt.on.checked ="VM"
 #T5tttt.off.checked =
 T5tttt.on.constraint ="[[['t+'],['t-']],[['t+'],['t-']]]+[[['t-'],['t+']],[['t-'],['t+']]]+[[['t+'],['t-']],[['t-'],['t+']]]"
 #T5tttt.off.constraint =
+T5tttt.on.conditionDescription ="None"
+#T5tttt.off.conditionDescription =
 T5tttt.on.condition ="None"
 #T5tttt.off.condition =
-T5tttt.on.fuzzycondition ="None"
-#T5tttt.off.fuzzycondition =
 
 #+++++++ next mass plane block ++++++++++++++
 T5ttttLSP060 = T5tttt.addMassPlane(motherMass = x, interMass0 = y, lspMass = 60.0)
@@ -211,10 +211,10 @@ T1tbtb.on.checked ="VM"
 #T1tbtb.off.checked =
 T1tbtb.on.constraint ="[[['t','b']],[['t','b']]]"
 #T1tbtb.off.constraint =
+T1tbtb.on.conditionDescription ="None"
+#T1tbtb.off.conditionDescription =
 T1tbtb.on.condition ="None"
 #T1tbtb.off.condition =
-T1tbtb.on.fuzzycondition ="None"
-#T1tbtb.off.fuzzycondition =
 
 #+++++++ next mass plane block ++++++++++++++
 T1tbtb = T1tbtb.addMassPlane(motherMass = x, lspMass = y)
@@ -253,10 +253,10 @@ T5WW.on.checked ="VM"
 #T5WW.off.checked =
 T5WW.on.constraint ="[[['jet','jet'],['W']],[['jet','jet'],['W']]]"
 T5WW.off.constraint = 'not yet assigned'
+T5WW.on.conditionDescription ="None"
+T5WW.off.conditionDescription = 'not yet assigned'
 T5WW.on.condition ="None"
 T5WW.off.condition = 'not yet assigned'
-T5WW.on.fuzzycondition ="None"
-T5WW.off.fuzzycondition = 'not yet assigned'
 
 #+++++++ next mass plane block ++++++++++++++
 #T5WWx200 = T5WW.addMassPlane(motherMass = x, interMass0 = y * 2.0, lspMass = y)
@@ -296,10 +296,10 @@ T8ChiSlep.on.checked ='VM'
 #T8ChiSlep.off.checked =
 T8ChiSlep.on.constraint ='not yet assigned'
 #T8ChiSlep.off.constraint = 'not yet assigned'
+T8ChiSlep.on.conditionDescription ='not yet assigned'
+#T8ChiSlep.off.conditionDescription = 'not yet assigned'
 T8ChiSlep.on.condition ='not yet assigned'
 #T8ChiSlep.off.condition = 'not yet assigned'
-T8ChiSlep.on.fuzzycondition ='not yet assigned'
-#T8ChiSlep.off.fuzzycondition = 'not yet assigned'
 T8ChiSlep.onShell = True
 T8ChiSlep.offShell = False
 
@@ -341,10 +341,10 @@ T7ChiSlep.on.checked ='VM'
 #T7ChiSlep.off.checked =
 T7ChiSlep.on.constraint ='not yet assigned'
 #T7ChiSlep.off.constraint = 'not yet assigned'
+T7ChiSlep.on.conditionDescription ='not yet assigned'
+#T7ChiSlep.off.conditionDescription = 'not yet assigned'
 T7ChiSlep.on.condition ='not yet assigned'
 #T7ChiSlep.off.condition = 'not yet assigned'
-T7ChiSlep.on.fuzzycondition ='not yet assigned'
-#T7ChiSlep.off.fuzzycondition = 'not yet assigned'
 T7ChiSlep.onShell = True
 T7ChiSlep.offShell = False
 
@@ -386,10 +386,10 @@ T7btbtWW.on.checked ='VM'
 #T7ChiSlep.off.checked =
 T7btbtWW.on.constraint ='not yet assigned'
 T7btbtWW.off.constraint = 'not yet assigned'
+T7btbtWW.on.conditionDescription ='not yet assigned'
+T7btbtWW.off.conditionDescription = 'not yet assigned'
 T7btbtWW.on.condition ='not yet assigned'
 T7btbtWW.off.condition = 'not yet assigned'
-T7btbtWW.on.fuzzycondition ='not yet assigned'
-T7btbtWW.off.fuzzycondition = 'not yet assigned'
 T7btbtWW.onShell = False
 T7btbtWW.offShell = True
 

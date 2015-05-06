@@ -1,10 +1,10 @@
-txname: T5WW
+txName: T5WW
+conditionDescription: None
 condition: None
-fuzzycondition: None
 constraint: [[['jet','jet'],['W']],[['jet','jet'],['W']]]
 checked: VM
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-089/fig_22b.png;https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-089/fig_22a.png
-validated: False
+validated: None
 axes: 2*Eq(mother,x)_Eq(inter0,y)_Eq(lsp,60.0);2*Eq(mother,x)_Eq(inter0,0.5*x+0.5*y)_Eq(lsp,y)
 publishedData: True
 upperLimits: [[[[1100.0*GeV, 110.0*GeV, 60.0*GeV], [1100.0*GeV, 110.0*GeV, 60.0*GeV]], 6.608396*pb],

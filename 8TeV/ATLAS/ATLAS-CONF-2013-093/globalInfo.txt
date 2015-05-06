@@ -1,0 +1,10 @@
+sqrts: 8.0*TeV
+lumi: 20.3/fb
+id: ATLAS-CONF-2013-093
+prettyName: ATLAS ew higgs
+url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-093/
+supersededBy: SUSY-2013-23
+private: False
+implementedBy: Wolfgang Waltenberger
+lastUpdate: 2015/5/6
+

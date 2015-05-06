@@ -38,10 +38,10 @@ info.private = False
 info.lumi = '20.0'
 info.publication =  'SUSY-2013-20'
 info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-062/ http://cds.cern.ch/record/1557779'
-info.superseded_by = 'ATLAS-SUSY-2013-20'
+info.supersededBy = 'ATLAS-SUSY-2013-20'
 #info.arxiv = 
 #info.contact = 
-info.prettyname = 'ATLAS soft leptons'
+info.prettyName = 'ATLAS soft leptons'
 #info.supersedes = 
 
 """
@@ -51,10 +51,10 @@ T6WW.on.checked ="VM"
 #T6WW.off.checked =
 T6WW.on.constraint ="[[['jet'],['W']],[['jet'],['W']]]"
 #T6WW.off.constraint =
+T6WW.on.conditionDescription ="None"
+#T6WW.off.conditionDescription =
 T6WW.on.condition ="None"
 #T6WW.off.condition =
-T6WW.on.fuzzycondition ="None"
-#T6WW.off.fuzzycondition =
 
 #+++++++ next mass plane block ++++++++++++++
 T6WWLSP060 = T6WW.addMassPlane(motherMass = x, interMass0 = y, lspMass = 60.0)
@@ -122,10 +122,10 @@ T6bbWW.on.checked =
 T6bbWW.off.checked ="VM"
 T6bbWW.on.constraint =
 T6bbWW.off.constraint ="[[['b'],['L','nu']],[['b'],['L','nu']]] + [[['b'],['L','nu']],[['b'],['jet','jet']]] + [[['b'],['jet','jet']],[['b'],['jet','jet']]]"
+T6bbWW.on.conditionDescription =
+T6bbWW.off.conditionDescription ="None"
 T6bbWW.on.condition =
 T6bbWW.off.condition ="None"
-T6bbWW.on.fuzzycondition =
-T6bbWW.off.fuzzycondition ="None"
 
 #+++++++ next mass plane block ++++++++++++++
 T6bbWWD020 = T6bbWW.addMassPlane(motherMass = x, interMass0 = y + 20.0, lspMass = y)
@@ -194,10 +194,10 @@ T5WW.on.checked ="VM"
 #T5WW.off.checked =
 T5WW.on.constraint ="[[['jet','jet'],['W']],[['jet','jet'],['W']]]"
 T5WW.off.constraint ="2.3 * [[['jet','jet'],['L','nu']],[['jet','jet'],['jet','jet']]]"
+T5WW.on.conditionDescription ="None"
+T5WW.off.conditionDescription = "[[['jet','jet'],['L','nu']],[['jet','jet'],['jet','jet']]] > 2.7* [[['jet','jet'],['ta','nu']],[['jet','jet'],['jet','jet']]], [[['jet','jet'],['L','nu']],[['jet','jet'],['jet','jet']]] > 2.7* [[['jet','jet'],['e','nu']],[['jet','jet'],['jet','jet']]]" 
 T5WW.on.condition ="None"
-T5WW.off.condition = "[[['jet','jet'],['L','nu']],[['jet','jet'],['jet','jet']]] > 2.7* [[['jet','jet'],['ta','nu']],[['jet','jet'],['jet','jet']]], [[['jet','jet'],['L','nu']],[['jet','jet'],['jet','jet']]] > 2.7* [[['jet','jet'],['e','nu']],[['jet','jet'],['jet','jet']]]" 
-T5WW.on.fuzzycondition ="None"
-T5WW.off.fuzzycondition = "Cgtr([[['jet','jet'],['L','nu']],[['jet','jet'],['jet','jet']]],3.*[[['jet','jet'],['ta','nu']],[['jet','jet'],['jet','jet']]]);Cgtr([[['jet','jet'],['L','nu']],[['jet','jet'],['jet','jet']]],3.*[[['jet','jet'],['e','nu']],[['jet','jet'],['jet','jet']]])"
+T5WW.off.condition = "Cgtr([[['jet','jet'],['L','nu']],[['jet','jet'],['jet','jet']]],3.*[[['jet','jet'],['ta','nu']],[['jet','jet'],['jet','jet']]]);Cgtr([[['jet','jet'],['L','nu']],[['jet','jet'],['jet','jet']]],3.*[[['jet','jet'],['e','nu']],[['jet','jet'],['jet','jet']]])"
 
 #+++++++ next mass plane block ++++++++++++++
 T5WW050 = T5WW.addMassPlane(motherMass = x, interMass0 = x*0.5 + (1. - 0.5)*y, lspMass = y)

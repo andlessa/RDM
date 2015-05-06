@@ -38,10 +38,10 @@ info.private = False
 info.lumi = '20.3'
 info.publication = 'link.springer.com/article/10.1007/JHEP10(2014)096'
 info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-14/'
-# info.superseded_by = 
+# info.supersededBy = 
 info.arxiv = 'http://arxiv.org/abs/1407.0350'
 info.contact = '?'
-info.prettyname = 'ATLAS di-tau'
+info.prettyName = 'ATLAS di-tau'
 info.supersedes = 'ATLAS-CONF-2013-028'
 
 ##+++++++ next txName block ++++++++++++++
@@ -50,10 +50,10 @@ TChiChipmStauL = TxNameInput('TChiChipmStauL')
 #ChiChipmStauL.off.checked =
 TChiChipmStauL.on.constraint ="2.*([[['ta'],['ta']],[['nu'],['ta']]]+[[['ta'],['ta']],[['ta'],['nu']]])"
 #TChiChipmStauL.off.constraint =
-TChiChipmStauL.on.condition ="[[['ta'],['ta']],[['nu'],['ta']]] ~ [[['ta'],['ta']],[['ta'],['nu']]]"
+TChiChipmStauL.on.conditionDescription ="[[['ta'],['ta']],[['nu'],['ta']]] ~ [[['ta'],['ta']],[['ta'],['nu']]]"
+#TChiChipmStauL.off.conditionDescription =
+TChiChipmStauL.on.condition ="Csim([[['ta'],['ta']],[['nu'],['ta']]],[[['ta'],['ta']],[['ta'],['nu']]])"
 #TChiChipmStauL.off.condition =
-TChiChipmStauL.on.fuzzycondition ="Csim([[['ta'],['ta']],[['nu'],['ta']]],[[['ta'],['ta']],[['ta'],['nu']]])"
-#TChiChipmStauL.off.fuzzycondition =
 #
 ##+++++++ next mass plane block ++++++++++++++
 TChiChipmStauL050 = TChiChipmStauL.addMassPlane(motherMass = x,interMass0 = x*0.5 + (1. - 0.5)*y, lspMass = y)
@@ -91,10 +91,10 @@ TChiChipmStauL050.obsUpperLimit.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins13
 ##TStauStau.off.checked =
 #TStauStau.on.constraint ="[[['ta+']],[['ta-']]]"
 ##TStauStau.off.constraint =
+#TStauStau.on.conditionDescription ="None"
+##TStauStau.off.conditionDescription =
 #TStauStau.on.condition ="None"
 ##TStauStau.off.condition =
-#TStauStau.on.fuzzycondition ="None"
-##TStauStau.off.fuzzycondition =
 #
 ##+++++++ next mass plane block ++++++++++++++
 #TStauStau = TStauStau.addMassPlane(motherMass = x, lspMass = y)
@@ -132,10 +132,10 @@ TChipChimStauSnu = TxNameInput('TChipChimStauSnu')
 #TChipChimStauSnu.off.checked =
 TChipChimStauSnu.on.constraint ="[[['ta-'],['nu']],[['nu'],['ta+']]] + [[['ta+'],['nu']],[['nu'],['ta-']]] + [[['ta+'],['nu']],[['ta-'],['nu']]] + [[['nu'],['ta+']],[['nu'],['ta-']]]"
 #TChipChimStauSnu.off.constraint =
-TChipChimStauSnu.on.condition ="[[['ta-'],['nu']],[['nu'],['ta+']]] ~ [[['ta+'],['nu']],[['nu'],['ta-']]], [[['ta-'],['nu']],[['nu'],['ta+']]] ~ [[['ta+'],['nu']],[['ta-'],['nu']]], [[['ta-'],['nu']],[['nu'],['ta+']]] ~ [[['nu'],['ta+']],[['nu'],['ta-']]]"
+TChipChimStauSnu.on.conditionDescription ="[[['ta-'],['nu']],[['nu'],['ta+']]] ~ [[['ta+'],['nu']],[['nu'],['ta-']]], [[['ta-'],['nu']],[['nu'],['ta+']]] ~ [[['ta+'],['nu']],[['ta-'],['nu']]], [[['ta-'],['nu']],[['nu'],['ta+']]] ~ [[['nu'],['ta+']],[['nu'],['ta-']]]"
+#TChipChimStauSnu.off.conditionDescription =
+TChipChimStauSnu.on.condition ="Csim([[['ta-'],['nu']],[['nu'],['ta+']]],[[['ta+'],['nu']],[['nu'],['ta-']]],[[['ta+'],['nu']],[['ta-'],['nu']]],[[['nu'],['ta+']],[['nu'],['ta-']]])"
 #TChipChimStauSnu.off.condition =
-TChipChimStauSnu.on.fuzzycondition ="Csim([[['ta-'],['nu']],[['nu'],['ta+']]],[[['ta+'],['nu']],[['nu'],['ta-']]],[[['ta+'],['nu']],[['ta-'],['nu']]],[[['nu'],['ta+']],[['nu'],['ta-']]])"
-#TChipChimStauSnu.off.fuzzycondition =
 #
 ##+++++++ next mass plane block ++++++++++++++
 TChipChimStauSnu050 = TChipChimStauSnu.addMassPlane(motherMass = x, interMass0 = x*0.5 + (1. - 0.5)*y, lspMass = y)

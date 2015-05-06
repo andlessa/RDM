@@ -38,10 +38,10 @@ info.private = False
 info.lumi = '20.3'
 info.publication = 'http://link.springer.com/article/10.1007/JHEP06(2014)035'
 info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-09/'
-#info.superseded_by = 
+#info.supersededBy = 
 info.arxiv = 'http://arxiv.org/abs/1404.2500'
 info.contact = "ATLAS collaboration"
-info.prettyname = 'ATLAS SS+b'
+info.prettyName = 'ATLAS SS+b'
 info.supersedes = 'ATLAS-CONF-2013-007; ATLAS-CONF-2012-151'
 
 """
@@ -51,10 +51,10 @@ T6ttWW.on.checked =
 T6ttWW.off.checked =
 T6ttWW.on.constraint ="[[[t+],[W-]],[[t+],[W-]]]+[[[t-],[W+]],[[t-],[W+]]]+[[[t+],[W-]],[[t-],[W+]]]"
 T6ttWW.off.constraint =
+T6ttWW.on.conditionDescription ="None"
+T6ttWW.off.conditionDescription =
 T6ttWW.on.condition ="None"
 T6ttWW.off.condition =
-T6ttWW.on.fuzzycondition ="None"
-T6ttWW.off.fuzzycondition =
 
 #+++++++ next mass plane block ++++++++++++++
 T6ttWWx200 = T6ttWW.addMassPlane(motherMass = x, interMass0 = y * 2.0, lspMass = y)
@@ -123,10 +123,10 @@ T1tttt = TxNameInput('T1tttt')
 #T1tttt.off.checked =
 T1tttt.on.constraint ="[[['t','t']],[['t','t']]]"
 #T1tttt.off.constraint =
+T1tttt.on.conditionDescription ="None"
+#T1tttt.off.conditionDescription =
 T1tttt.on.condition ="None"
 #T1tttt.off.condition =
-T1tttt.on.fuzzycondition ="None"
-#T1tttt.off.fuzzycondition =
 
 #+++++++ next mass plane block ++++++++++++++
 T1tttt = T1tttt.addMassPlane(motherMass = x, lspMass = y)
@@ -168,10 +168,10 @@ T5ttcc.on.checked =
 T5ttcc.off.checked =
 T5ttcc.on.constraint ="[[[t],[jet]],[[t],[jet]]]"
 T5ttcc.off.constraint =
+T5ttcc.on.conditionDescription ="None"
+T5ttcc.off.conditionDescription =
 T5ttcc.on.condition ="None"
 T5ttcc.off.condition =
-T5ttcc.on.fuzzycondition ="None"
-T5ttcc.off.fuzzycondition =
 
 #+++++++ next mass plane block ++++++++++++++
 T5ttccD20 = T5ttcc.addMassPlane(motherMass = y + 20.0, interMass0 = x, lspMass = y)
@@ -209,10 +209,10 @@ T5WW.on.checked =
 T5WW.off.checked =
 T5WW.on.constraint ="[[[jet,jet],[W]],[[jet,jet],[W]]]"
 T5WW.off.constraint =
+T5WW.on.conditionDescription ="None"
+T5WW.off.conditionDescription =
 T5WW.on.condition ="None"
 T5WW.off.condition =
-T5WW.on.fuzzycondition ="None"
-T5WW.off.fuzzycondition =
 
 #+++++++ next mass plane block ++++++++++++++
 T5WWx200 = T5WW.addMassPlane(motherMass = x, interMass0 = y * 2.0, lspMass = y)

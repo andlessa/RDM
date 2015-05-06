@@ -1,9 +1,9 @@
-txname: T6ZZtt
+txName: T6ZZtt
+conditionDescription: None
 condition: None
-fuzzycondition: None
 constraint: [[['Z'],['t']],[['Z'],['t']]]
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-08/figaux_06.png
-validated: True
+validated: None
 axes: 2*Eq(mother,x)_Eq(inter0,y+180.0)_Eq(lsp,y)
 publishedData: False
 upperLimits: [[[[300.0*GeV, 200.0*GeV, 20.0*GeV], [300.0*GeV, 200.0*GeV, 20.0*GeV]], 0.0830462308*pb],

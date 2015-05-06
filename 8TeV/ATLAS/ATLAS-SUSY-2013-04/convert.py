@@ -38,10 +38,10 @@ info.private = False
 info.lumi = '20.3'
 info.publication = 'http://link.springer.com/article/10.1007/JHEP10%282013%29130'
 info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-04/'
-# info.superseded_by = 
+# info.supersededBy = 
 info.arxiv = 'http://arxiv.org/abs/1308.1841'
 info.contact = "ATLAS collaboration"
-info.prettyname = 'ATLAS \ge 7 jets'
+info.prettyName = 'ATLAS \ge 7 jets'
 info.supersedes = 'ATLAS-CONF-2012-103'
 
 """
@@ -51,10 +51,10 @@ T5WW.on.checked =
 T5WW.off.checked =
 T5WW.on.constraint ="[[['jet','jet'],['W']],[['jet','jet'],['W']]]"
 T5WW.off.constraint =
+T5WW.on.conditionDescription ="None"
+T5WW.off.conditionDescription =
 T5WW.on.condition ="None"
 T5WW.off.condition =
-T5WW.on.fuzzycondition ="None"
-T5WW.off.fuzzycondition =
 
 #+++++++ next mass plane block ++++++++++++++
 T5WW050 = T5WW.addMassPlane(motherMass = x, interMass0 = x*0.5 + (1. - 0.5)*y, lspMass = y)
@@ -93,10 +93,10 @@ T1tttt.on.checked ="VM"
 #T1tttt.off.checked =
 T1tttt.on.constraint ="[[['t','t']],[['t','t']]]"
 #T1tttt.off.constraint =
+T1tttt.on.conditionDescription ="None"
+#T1tttt.off.conditionDescription =
 T1tttt.on.condition ="None"
 #T1tttt.off.condition =
-T1tttt.on.fuzzycondition ="None"
-#T1tttt.off.fuzzycondition =
 
 #+++++++ next mass plane block ++++++++++++++
 T1tttt = T1tttt.addMassPlane(motherMass = x, lspMass = y)
@@ -138,10 +138,10 @@ T5tttt.on.checked =
 T5tttt.off.checked =
 T5tttt.on.constraint ="[[['t'],['t']],[['t'],['t']]]"
 T5tttt.off.constraint =
+T5tttt.on.conditionDescription ="None"
+T5tttt.off.conditionDescription =
 T5tttt.on.condition ="None"
 T5tttt.off.condition =
-T5tttt.on.fuzzycondition ="None"
-T5tttt.off.fuzzycondition =
 
 #+++++++ next mass plane block ++++++++++++++
 T5ttttLSP060 = T5tttt.addMassPlane(motherMass = x, interMass0 = y, lspMass = 60.0)

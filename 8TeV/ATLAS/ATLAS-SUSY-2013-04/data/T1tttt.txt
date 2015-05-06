@@ -1,10 +1,10 @@
-txname: T1tttt
+txName: T1tttt
+conditionDescription: None
 condition: None
-fuzzycondition: None
 constraint: [[['t','t']],[['t','t']]]
 checked: VM
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-04/figaux_11a.png
-validated: True
+validated: None
 axes: 2*Eq(mother,x)_Eq(lsp,y)
 publishedData: False
 upperLimits: [[[[630.0*GeV, 50.0*GeV], [630.0*GeV, 50.0*GeV]], 0.026*pb],

@@ -1,6 +1,6 @@
-txname: T6ttWWoff
+txName: T6ttWWoff
+conditionDescription: not yet assigned
 condition: not yet assigned
-fuzzycondition: not yet assigned
 constraint: not yet assigned
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-007/fig_15b.png
 validated: None

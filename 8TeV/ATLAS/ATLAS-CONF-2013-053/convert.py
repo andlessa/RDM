@@ -38,10 +38,10 @@ info.private = False
 info.lumi = '20.1'
 #info.publication = 
 info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-053/'
-info.superseded_by = 'ATLAS-SUSY-2013-05'
+info.supersededBy = 'ATLAS-SUSY-2013-05'
 #info.arxiv = 
 #info.contact = 
-info.prettyname = 'ATLAS 2 b + \slash{E}_{T}'
+info.prettyName = 'ATLAS 2 b + \slash{E}_{T}'
 #info.supersedes = 
 
 #+++++++ next txName block ++++++++++++++
@@ -50,10 +50,10 @@ T2bb.on.checked ="VM"
 #T2bb.off.checked =
 T2bb.on.constraint ="[[['b']],[['b']]]"
 #T2bb.off.constraint =
+T2bb.on.conditionDescription ="None"
+#T2bb.off.conditionDescription =
 T2bb.on.condition ="None"
 #T2bb.off.condition =
-T2bb.on.fuzzycondition ="None"
-#T2bb.off.fuzzycondition =
 
 #+++++++ next mass plane block ++++++++++++++
 T2bb = T2bb.addMassPlane(motherMass = x, lspMass = y)

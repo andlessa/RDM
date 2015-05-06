@@ -1,6 +1,6 @@
-txname: T8ChiSlep
+txName: T8ChiSlep
+conditionDescription: not yet assigned
 condition: not yet assigned
-fuzzycondition: not yet assigned
 constraint: not yet assigned
 checked: VM
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-007/fig_16.png
