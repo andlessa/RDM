@@ -1,5 +1,5 @@
-datatype: efficiency-map
-dataid: ANA3-CUT4
+dataType: efficiencyMap
+dataId: ANA3-CUT4
 observedN: 6
 expectedBG: 7.0
 bgError: 3.0
