@@ -1,6 +1,6 @@
-txname: TChiWZ
+txName: TChiWZ
+conditionDescription: None
 condition: None
-fuzzycondition: None
 constraint: [[['W']],[['Z']]]
 checked: A
 figureUrl: None

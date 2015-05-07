@@ -1,6 +1,6 @@
-txname: TChiChipmStauStau
+txName: TChiChipmStauStau
+conditionDescription: None
 condition: None
-fuzzycondition: None
 constraint: [[['ta'],['ta']],[['nu'],['ta']]]
 checked: A
 figureUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12022/exclusion_TChiStauSnu_0_5.pdf

@@ -1,6 +1,6 @@
-txname: TSlepSlep
-condition: [[['mu+']],[['mu-']]] > [[['e+']],[['e-']]]
-fuzzycondition: Cgtr([[['mu+']],[['mu-']]],[[['e+']],[['e-']]])
+txName: TSlepSlep
+conditionDescription: [[['mu+']],[['mu-']]] > [[['e+']],[['e-']]]
+condition: Cgtr([[['mu+']],[['mu-']]],[[['e+']],[['e-']]])
 constraint: [[['e+']],[['e-']]]+[[['mu+']],[['mu-']]]
 checked: A
 figureUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12022/exclusion_TSlepSlep.pdf

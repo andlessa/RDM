@@ -1,11 +1,11 @@
 sqrts: 8.0*TeV
 lumi: 9.2/fb
 id: CMS-SUS-PAS-12-022
-prettyname: weakinos
+prettyName: weakinos
 url: https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS12022
 contact: Benjamin Hooberman <hooberman@gmail.com>, Lesya Shchutska <lesya.shchutska@cern.ch>
-superseded_by: CMS-SUS-13-006 (more data)
+supersededBy: CMS-SUS-13-006 (more data)
 private: False
-implemented_by: ww
-lastUpdate: 2015/5/5
+implementedBy: Wolfgang Waltenberger
+lastUpdate: 2015/5/7
 
