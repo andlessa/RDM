@@ -1,6 +1,6 @@
-txname: T1bbbb
+txName: T1bbbb
+conditionDescription: None
 condition: None
-fuzzycondition: None
 constraint: [[['b','b']],[['b','b']]]
 validated: None
 axes: 2*Eq(mother,x)_Eq(lsp,y)

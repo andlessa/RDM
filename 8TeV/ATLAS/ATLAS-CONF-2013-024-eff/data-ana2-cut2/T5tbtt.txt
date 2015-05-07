@@ -1,6 +1,6 @@
-txname: T5tbtt
+txName: T5tbtt
+conditionDescription: None
 condition: None
-fuzzycondition: None
 constraint: [[['t'],['b']],[['t'],['t']]]
 publishedData: False
 validated: None

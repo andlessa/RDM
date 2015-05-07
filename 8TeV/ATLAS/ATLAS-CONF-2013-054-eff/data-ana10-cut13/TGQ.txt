@@ -1,6 +1,6 @@
-txname: TGQ
+txName: TGQ
+conditionDescription: None
 condition: None
-fuzzycondition: None
 constraint: [[['jet']],[['jet','jet']]]
 validated: None
 axes: 2*Eq(mother,x)_Eq(lsp,y)
