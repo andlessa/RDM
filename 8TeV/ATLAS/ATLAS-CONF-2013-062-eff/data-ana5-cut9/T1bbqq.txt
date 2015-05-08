@@ -1,5 +1,4 @@
 txName: T1bbqq
-conditionDescriptionDescription: None
 conditionDescription: None
 constraint: [[['b','b']],[['jet','jet']]]
 figureUrl: None
