@@ -3,4 +3,4 @@ dataId: ANA10-CUT8
 observedN: 0
 expectedBG: 3.0
 bgError: 2.8
-upperLimit: nan*fb
+upperLimit: .15*fb
