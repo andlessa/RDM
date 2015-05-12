@@ -86,7 +86,6 @@ T1bbbb.obsExclusion.dataUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/Physics
 #T1bbbb.expExclusionM1.dataUrl =
 #T1bbbb.expExclusionP1.dataUrl =
 
-"""
 # +++++++ next txName block ++++++++++++++
 T1tttt = TxNameInput('T1tttt')
 T1tttt.on.checked ="AL"
@@ -101,7 +100,9 @@ T1tttt.off.condition ="None"
 #+++++++ next mass plane block ++++++++++++++
 T1tttt = T1tttt.addMassPlane(motherMass = x, lspMass = y)
 #----limit source----
-T1tttt.obsUpperLimit.setSource( "orig/T1tttt_exclusion_corrected.C", "cMacro", objectName = "hXsec_obs_final", index = None )
+# T1tttt.obsUpperLimit.setSource( "orig/T1tttt_exclusion_corrected.C", "cMacro", objectName = "hXsec_obs_final", index = None )
+T1tttt.efficiencyMap.setSource( "orig/efficiency_T1tttt_multi.root", "root", objectName = "heff_MET2_HT1_nb3", index = None, dataset="MET2_HT1_nb3" )
+T1tttt.efficiencyMap.setStatistics ( observedN=161, expectedBG=157, bgError=13 )
 # T1tttt.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
 #----exclusion source----
 T1tttt.obsExclusion.setSource( "orig/T1tttt_exclusion_corrected.C", "cMacro", objectName = "graph_smoothed_Obs_T1tttt", index = None )
@@ -127,7 +128,6 @@ T1tttt.obsExclusion.dataUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/Physics
 #T1tttt.expExclusion.dataUrl =
 #T1tttt.expExclusionM1.dataUrl =
 #T1tttt.expExclusionP1.dataUrl =
-"""
 
 """
 #+++++++ next txName block ++++++++++++++
@@ -206,5 +206,93 @@ databaseCreator.create()
 
 T1bbbb.efficiencyMap.setSource( "orig/efficiency_T1bbbb_multi.root", "root", objectName = "heff_MET2_HT2_nb3", index = None, dataset="MET2_HT2_nb3" )
 T1bbbb.efficiencyMap.setStatistics ( observedN=182, expectedBG=179, bgError=13 )
+
+T1tttt.efficiencyMap.setSource( "orig/efficiency_T1tttt_multi.root", "root", objectName = "heff_MET2_HT2_nb3", index = None, dataset="MET2_HT2_nb3" )
+T1tttt.efficiencyMap.setStatistics ( observedN=182, expectedBG=179, bgError=13 )
+
+databaseCreator.create( True )
+
+T1bbbb.efficiencyMap.setSource( "orig/efficiency_T1bbbb_multi.root", "root", objectName = "heff_MET2_HT3_nb3", index = None, dataset="MET2_HT3_nb3" )
+T1bbbb.efficiencyMap.setStatistics ( observedN=18, expectedBG=23.2, bgError=3.8 )
+
+T1tttt.efficiencyMap.setSource( "orig/efficiency_T1tttt_multi.root", "root", objectName = "heff_MET2_HT3_nb3", index = None, dataset="MET2_HT3_nb3" )
+T1tttt.efficiencyMap.setStatistics ( observedN=18, expectedBG=23.2, bgError=3.8 )
+
+
+databaseCreator.create( True )
+
+T1bbbb.efficiencyMap.setSource( "orig/efficiency_T1bbbb_multi.root", "root", objectName = "heff_MET2_HT4_nb3", index = None, dataset="MET2_HT4_nb3" )
+T1bbbb.efficiencyMap.setStatistics ( observedN=14, expectedBG=12.3, bgError=2.7 )
+T1tttt.efficiencyMap.setSource( "orig/efficiency_T1tttt_multi.root", "root", objectName = "heff_MET2_HT4_nb3", index = None, dataset="MET2_HT4_nb3" )
+T1tttt.efficiencyMap.setStatistics ( observedN=14, expectedBG=12.3, bgError=2.7 )
+
+databaseCreator.create( True )
+
+T1bbbb.efficiencyMap.setSource( "orig/efficiency_T1bbbb_multi.root", "root", objectName = "heff_MET3_HT1_nb3", index = None, dataset="MET3_HT1_nb3" )
+T1bbbb.efficiencyMap.setStatistics ( observedN=15, expectedBG=15.5, bgError=3.0 )
+T1tttt.efficiencyMap.setSource( "orig/efficiency_T1tttt_multi.root", "root", objectName = "heff_MET3_HT1_nb3", index = None, dataset="MET3_HT1_nb3" )
+T1tttt.efficiencyMap.setStatistics ( observedN=15, expectedBG=15.5, bgError=3.0 )
+
+databaseCreator.create( True )
+
+T1bbbb.efficiencyMap.setSource( "orig/efficiency_T1bbbb_multi.root", "root", objectName = "heff_MET3_HT2_nb3", index = None, dataset="MET3_HT2_nb3" )
+T1bbbb.efficiencyMap.setStatistics ( observedN=36, expectedBG=32.1, bgError=4.3 )
+T1tttt.efficiencyMap.setSource( "orig/efficiency_T1tttt_multi.root", "root", objectName = "heff_MET3_HT2_nb3", index = None, dataset="MET3_HT2_nb3" )
+T1tttt.efficiencyMap.setStatistics ( observedN=36, expectedBG=32.1, bgError=4.3 )
+
+databaseCreator.create( True )
+
+T1bbbb.efficiencyMap.setSource( "orig/efficiency_T1bbbb_multi.root", "root", objectName = "heff_MET3_HT3_nb3", index = None, dataset="MET3_HT3_nb3" )
+T1bbbb.efficiencyMap.setStatistics ( observedN=6, expectedBG=5.9, bgError=1.9 )
+T1tttt.efficiencyMap.setSource( "orig/efficiency_T1tttt_multi.root", "root", objectName = "heff_MET3_HT3_nb3", index = None, dataset="MET3_HT3_nb3" )
+T1tttt.efficiencyMap.setStatistics ( observedN=6, expectedBG=5.9, bgError=1.9 )
+
+databaseCreator.create( True )
+
+T1bbbb.efficiencyMap.setSource( "orig/efficiency_T1bbbb_multi.root", "root", objectName = "heff_MET3_HT4_nb3", index = None, dataset="MET3_HT4_nb3" )
+T1bbbb.efficiencyMap.setStatistics ( observedN=4, expectedBG=2.9, bgError=1.3 )
+T1tttt.efficiencyMap.setSource( "orig/efficiency_T1tttt_multi.root", "root", objectName = "heff_MET3_HT4_nb3", index = None, dataset="MET3_HT4_nb3" )
+T1tttt.efficiencyMap.setStatistics ( observedN=4, expectedBG=2.9, bgError=1.3 )
+
+databaseCreator.create( True )
+
+T1bbbb.efficiencyMap.setSource( "orig/efficiency_T1bbbb_multi.root", "root", objectName = "heff_MET4_HT2_nb3", index = None, dataset="MET4_HT2_nb3" )
+T1bbbb.efficiencyMap.setStatistics ( observedN=8, expectedBG=8.4, bgError=2.1 )
+T1tttt.efficiencyMap.setSource( "orig/efficiency_T1tttt_multi.root", "root", objectName = "heff_MET4_HT2_nb3", index = None, dataset="MET4_HT2_nb3" )
+T1tttt.efficiencyMap.setStatistics ( observedN=8, expectedBG=8.4, bgError=2.1 )
+
+databaseCreator.create( True )
+
+T1bbbb.efficiencyMap.setSource( "orig/efficiency_T1bbbb_multi.root", "root", objectName = "heff_MET4_HT3_nb3", index = None, dataset="MET4_HT3_nb3" )
+T1bbbb.efficiencyMap.setStatistics ( observedN=2, expectedBG=2.0, bgError=1.0 )
+T1tttt.efficiencyMap.setSource( "orig/efficiency_T1tttt_multi.root", "root", objectName = "heff_MET4_HT2_nb3", index = None, dataset="MET4_HT2_nb3" )
+T1tttt.efficiencyMap.setStatistics ( observedN=2, expectedBG=2.0, bgError=1.0 )
+
+databaseCreator.create( True )
+
+T1bbbb.efficiencyMap.setSource( "orig/efficiency_T1bbbb_multi.root", "root", objectName = "heff_MET4_HT4_nb3", index = None, dataset="MET4_HT4_nb3" )
+T1bbbb.efficiencyMap.setStatistics ( observedN=4, expectedBG=2.1, bgError=1.1 )
+T1tttt.efficiencyMap.setSource( "orig/efficiency_T1tttt_multi.root", "root", objectName = "heff_MET4_HT4_nb3", index = None, dataset="MET4_HT4_nb3" )
+T1tttt.efficiencyMap.setStatistics ( observedN=4, expectedBG=2.1, bgError=1.1 )
+
+databaseCreator.create( True )
+
+T1bbbb.efficiencyMap.setSource( "orig/efficiency_T1bbbb_multi.root", "root", objectName = "heff_MET4_HT2_nb2", index = None, dataset="MET4_HT2_nb2" )
+T1bbbb.efficiencyMap.setStatistics ( observedN=66, expectedBG=70.5, bgError=6.3 )
+T1tttt.efficiencyMap.setSource( "orig/efficiency_T1tttt_multi.root", "root", objectName = "heff_MET4_HT2_nb2", index = None, dataset="MET4_HT2_nb2" )
+T1tttt.efficiencyMap.setStatistics ( observedN=66, expectedBG=70.5, bgError=6.3 )
+databaseCreator.create( True )
+
+T1bbbb.efficiencyMap.setSource( "orig/efficiency_T1bbbb_multi.root", "root", objectName = "heff_MET4_HT3_nb2", index = None, dataset="MET4_HT3_nb2" )
+T1bbbb.efficiencyMap.setStatistics ( observedN=19, expectedBG=20.7, bgError=3.2 )
+T1tttt.efficiencyMap.setSource( "orig/efficiency_T1tttt_multi.root", "root", objectName = "heff_MET4_HT3_nb2", index = None, dataset="MET4_HT3_nb2" )
+T1tttt.efficiencyMap.setStatistics ( observedN=19, expectedBG=20.7, bgError=3.2 )
+
+databaseCreator.create( True )
+
+T1bbbb.efficiencyMap.setSource( "orig/efficiency_T1bbbb_multi.root", "root", objectName = "heff_MET4_HT4_nb2", index = None, dataset="MET4_HT4_nb2" )
+T1bbbb.efficiencyMap.setStatistics ( observedN=19, expectedBG=19.0, bgError=3.2 )
+T1tttt.efficiencyMap.setSource( "orig/efficiency_T1tttt_multi.root", "root", objectName = "heff_MET4_HT4_nb2", index = None, dataset="MET4_HT4_nb2" )
+T1tttt.efficiencyMap.setStatistics ( observedN=19, expectedBG=19.0, bgError=3.2 )
 
 databaseCreator.create( True )
