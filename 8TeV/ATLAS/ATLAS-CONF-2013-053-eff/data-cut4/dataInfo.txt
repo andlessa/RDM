@@ -1,0 +1,6 @@
+dataType: efficiencyMap
+dataId: data-cut4
+observedN: 3
+expectedBG: 2.5
+bgError: 0.6
+upperLimit: 0.29*fb
