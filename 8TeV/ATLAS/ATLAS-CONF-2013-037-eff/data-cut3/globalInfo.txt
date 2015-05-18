@@ -1,0 +1,15 @@
+sqrts: 8*TeV
+lumi: 1.0/fb
+id: ATLAS-CONF-2013-037-eff/data-cut
+prettyName: 
+url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-037-eff/data-cut/
+arxiv: 
+signalRegion: /home/walten/git/tryout/smodels-database/8TeV/ATLAS/ATLAS-CONF-2013-037-eff/data-cut3
+publication: 
+contact: fastlim
+supersededBy: 
+comment: created from fastlim-1.0
+private: True
+implementedBy: Wolfgang Waltenberger
+lastUpdate: 2015/5/18
+
