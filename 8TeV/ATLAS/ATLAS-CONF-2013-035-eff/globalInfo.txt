@@ -2,7 +2,7 @@ sqrts: 8*TeV
 lumi: 20.7/fb
 id: ATLAS-CONF-2013-035
 url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-035/
-implementedBy: Wolfgang Waltenberger
+implementedBy: WW
 contact: fastlim
 comment: created from fastlim-1.0
-lastUpdate: 2015/03/04
+lastUpdate: 2015/05/15
