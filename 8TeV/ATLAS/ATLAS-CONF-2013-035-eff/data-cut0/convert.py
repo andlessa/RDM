@@ -184,3 +184,8 @@ databaseCreator.create()
 
 import os
 os.unlink ("globalInfo.txt")
+
+import glob
+for i in glob.iglob ( "*/validation", "*/sms.root" ):
+    print "[convert.py] unlinking",i,"from",os.getcwd()
+    os.unlink ( i )
