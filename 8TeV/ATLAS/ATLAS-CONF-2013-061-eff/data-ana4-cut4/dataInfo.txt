@@ -1,6 +1,0 @@
-dataType: efficiencyMap
-dataId: ANA4-CUT4
-observedN: 3
-expectedBG: 3.6
-bgError: 2.5
-upperLimit: 0.30*fb
