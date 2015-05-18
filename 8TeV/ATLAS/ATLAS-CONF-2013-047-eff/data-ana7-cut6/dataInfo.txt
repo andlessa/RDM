@@ -1,6 +1,0 @@
-dataType: efficiencyMap
-dataId: ANA7-CUT6
-observedN: 18
-expectedBG: 15.0
-bgError: 5.0
-upperLimit: 0.79*fb
