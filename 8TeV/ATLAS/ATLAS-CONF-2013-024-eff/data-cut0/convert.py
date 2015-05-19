@@ -180,12 +180,15 @@ def translate ( filename ):
 #T2tt_1.efficiencyMap.setSource( './orig/T2tt.effi', 'effi', objectName = None, index = None )
 
 databaseCreator.infoFileDirectory="./"
-databaseCreator.create()
+databaseCreator.create( ask_for_name = False )
 
 import os
 os.unlink ("globalInfo.txt")
 
 import glob
-for i in glob.iglob ( "*/*/validation" ):
-    print "[convert.py] unlinking",i
+for i in glob.iglob ( "*/validation" ):
+    print "[convert.py] unlinking",i,"from",os.getcwd()
+    os.unlink ( i )
+for i in glob.iglob ( "*/sms.root" ):
+    print "[convert.py] unlinking",i,"from",os.getcwd()
     os.unlink ( i )
