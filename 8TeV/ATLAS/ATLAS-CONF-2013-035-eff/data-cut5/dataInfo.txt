@@ -1,3 +1,6 @@
 dataType: efficiencyMap
-dataId: None
-observedN: None
+dataId: data-cut5
+observedN: 6
+expectedBG: 6.3
+bgError: 1.5
+upperLimit: 0.31*fb
