@@ -3,4 +3,4 @@ dataId: data-cut2
 observedN: 456
 expectedBG: 482.0
 bgError: 76.0
-upperLimit: 6.72*fb
+upperLimit: 4.00*fb
