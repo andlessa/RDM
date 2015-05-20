@@ -180,7 +180,12 @@ def translate ( filename ):
 #T2tt_1.efficiencyMap.setSource( './orig/T2tt.effi', 'effi', objectName = None, index = None )
 
 databaseCreator.infoFileDirectory="./"
-databaseCreator.create()
+databaseCreator.create( ask_for_name = False )
 
 import os
 os.unlink ("globalInfo.txt")
+os.unlink ("sms.root")
+
+import commands
+cmd="rm -r ./validation"
+commands.getoutput ( cmd )
