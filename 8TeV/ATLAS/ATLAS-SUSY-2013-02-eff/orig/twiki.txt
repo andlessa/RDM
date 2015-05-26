@@ -1,0 +1,1 @@
+||[[https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-02/|ATLAS-SUSY-2013-02]]||[[smsDictionary#T2|T2]]||2*Eq(mother,x)_Eq(lsp,y)||[[None|figaux_15b]]||None||[[https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-02/figaux_15b.png|EFF]]||None||
