@@ -1,0 +1,6 @@
+dataType: efficiencyMap
+dataId: MJ420_8ij50_GttOffShell
+observedN: 37
+expectedBG: 45
+bgError: 14
+upperLimit: 1.26318129132*fb
