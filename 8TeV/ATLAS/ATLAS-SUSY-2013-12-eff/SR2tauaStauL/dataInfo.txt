@@ -1,0 +1,6 @@
+dataType: efficiencyMap
+dataId: SR2tauaStauL
+observedN: 6
+expectedBG: 6.9
+bgError: 0.8
+upperLimit: 0.31575449272*fb
