@@ -3,4 +3,4 @@ dataId: GtGrid_SR_10ij50_bjetblind
 observedN: 3
 expectedBG: 1.37
 bgError: 0.35
-upperLimit: 0.320834683308*fb
+upperLimit: 0.321553455846*fb

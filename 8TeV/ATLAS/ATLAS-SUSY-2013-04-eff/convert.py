@@ -109,98 +109,118 @@ T1tttt.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2
 ## EFFICIENCIES
 
 T1tttt.efficiencyMap.setSource( "./orig/GtGrid_SR_10ij50_bjetblind.txt", "txt" , objectName =  "GtGrid_SR_10ij50_bjetblind.txt", index = None , dataset = "GtGrid_SR_10ij50_bjetblind" )
+T1tttt.dataUrl="http://hepdata.cedar.ac.uk/resource/6095/bjetstream/GtGrid_SR_10ij50_bjetblind.txt"
 T1tttt.efficiencyMap.setStatistics( observedN= 3 ,  expectedBG= 1.37   , bgError=  0.35 )
 
 databaseCreator.create()
 
 
 T1tttt.efficiencyMap.setSource( "./orig/GtGrid_SR_7ej80_0bjet.txt", "txt" , objectName =  "GtGrid_SR_7ej80_0bjet.txt", index = None , dataset = "GtGrid_SR_7ej80_0bjet" )
+T1tttt.dataUrl = "http://hepdata.cedar.ac.uk/resource/6095/bjetstream/GtGrid_SR_7ej80_0bjet.txt"
 T1tttt.efficiencyMap.setStatistics( observedN=  12 ,  expectedBG= 11.0  , bgError= 2.2  )
 
 databaseCreator.create(True)
 
 
 T1tttt.efficiencyMap.setSource( "./orig/GtGrid_SR_7ej80_1bjet.txt", "txt" , objectName =  "GtGrid_SR_7ej80_1bjet.txt", index = None , dataset = "GtGrid_SR_7ej80_1bjet" )
+T1tttt.dataUrl = "http://hepdata.cedar.ac.uk/resource/6095/bjetstream/GtGrid_SR_7ej80_1bjet.txt"
 T1tttt.efficiencyMap.setStatistics( observedN=  17,  expectedBG= 17  , bgError=  6 )
 
 databaseCreator.create(True)
 
 T1tttt.efficiencyMap.setSource( "./orig/GtGrid_SR_7ej80_2ibjet.txt", "txt" , objectName =  "GtGrid_SR_7ej80_2ibjet.txt", index = None , dataset = "GtGrid_SR_7ej80_2ibjet" )
+T1tttt.dataUrl = "http://hepdata.cedar.ac.uk/resource/6095/bjetstream/GtGrid_SR_7ej80_2ibjet.txt"
 T1tttt.efficiencyMap.setStatistics( observedN= 13 ,  expectedBG=  25 , bgError=  10 )
 
 databaseCreator.create(True)
 
 T1tttt.efficiencyMap.setSource( "./orig/GtGrid_SR_8ej50_0bjet.txt", "txt" , objectName =  "GtGrid_SR_8ej50_0bjet.txt", index = None , dataset = "GtGrid_SR_8ej50_0bjet" )
+T1tttt.dataUrl = "http://hepdata.cedar.ac.uk/resource/6095/bjetstream/GtGrid_SR_8ej50_0bjet.txt"
 T1tttt.efficiencyMap.setStatistics( observedN= 40 ,  expectedBG= 35  , bgError= 4  )
 
 databaseCreator.create(True)
 
 T1tttt.efficiencyMap.setSource( "./orig/GtGrid_SR_8ej50_1bjet.txt", "txt" , objectName =  "GtGrid_SR_8ej50_1bjet.txt", index = None , dataset = "GtGrid_SR_8ej50_1bjet" )
+T1tttt.dataUrl = "http://hepdata.cedar.ac.uk/resource/6095/bjetstream/GtGrid_SR_8ej50_1bjet.txt"
 T1tttt.efficiencyMap.setStatistics( observedN= 44 ,  expectedBG=  40 , bgError= 10  )
 
 databaseCreator.create(True)
 
 T1tttt.efficiencyMap.setSource( "./orig/GtGrid_SR_8ej50_2ibjet.txt", "txt" , objectName =  "GtGrid_SR_8ej50_2ibjet.txt", index = None , dataset = "GtGrid_SR_8ej50_2ibjet" )
+T1tttt.dataUrl = "http://hepdata.cedar.ac.uk/resource/6095/bjetstream/GtGrid_SR_8ej50_2ibjet.txt"
 T1tttt.efficiencyMap.setStatistics( observedN= 44 ,  expectedBG= 50  , bgError= 10  )
 
 databaseCreator.create(True)
 
 T1tttt.efficiencyMap.setSource( "./orig/GtGrid_SR_8ij80_0bjet.txt", "txt" , objectName =  "GtGrid_SR_8ij80_0bjet.txt", index = None , dataset = "GtGrid_SR_8ij80_0bjet" )
+T1tttt.dataUrl = "http://hepdata.cedar.ac.uk/resource/6095/bjetstream/GtGrid_SR_8ij80_0bjet.txt"
 T1tttt.efficiencyMap.setStatistics( observedN= 2 ,  expectedBG= 0.9  , bgError=  0.6 )
 
 databaseCreator.create(True)
 
 T1tttt.efficiencyMap.setSource( "./orig/GtGrid_SR_8ij80_1bjet.txt", "txt" , objectName =  "GtGrid_SR_8ij80_1bjet.txt", index = None , dataset = "GtGrid_SR_8ij80_1bjet" )
+T1tttt.dataUrl = "http://hepdata.cedar.ac.uk/resource/6095/bjetstream/GtGrid_SR_8ij80_1bjet.txt"
 T1tttt.efficiencyMap.setStatistics( observedN= 1 ,  expectedBG=  1.5 , bgError=  0.9 )
 
 databaseCreator.create(True)
 
 T1tttt.efficiencyMap.setSource( "./orig/GtGrid_SR_8ij80_2ibjet.txt", "txt" , objectName =  "GtGrid_SR_8ij80_2ibjet.txt", index = None , dataset = "GtGrid_SR_8ij80_2ibjet" )
+T1tttt.dataUrl = "http://hepdata.cedar.ac.uk/resource/6095/bjetstream/GtGrid_SR_8ij80_2ibjet.txt"
 T1tttt.efficiencyMap.setStatistics( observedN= 3 ,  expectedBG= 3.3  , bgError= 2.2  )
 
 databaseCreator.create(True)
 
 T1tttt.efficiencyMap.setSource( "./orig/GtGrid_SR_9ej50_0bjet.txt", "txt" , objectName =  "GtGrid_SR_9ej50_0bjet.txt", index = None , dataset = "GtGrid_SR_9ej50_0bjet" )
+T1tttt.dataUrl = "http://hepdata.cedar.ac.uk/resource/6095/bjetstream/GtGrid_SR_9ej50_0bjet.txt"
 T1tttt.efficiencyMap.setStatistics( observedN= 5 ,  expectedBG= 3.3  , bgError=  0.7 )
 
 databaseCreator.create(True)
 
 T1tttt.efficiencyMap.setSource( "./orig/GtGrid_SR_9ej50_1bjet.txt", "txt" , objectName =  "GtGrid_SR_9ej50_1bjet.txt", index = None , dataset = "GtGrid_SR_9ej50_1bjet" )
+T1tttt.dataUrl = "http://hepdata.cedar.ac.uk/resource/6095/bjetstream/GtGrid_SR_9ej50_1bjet.txt"
 T1tttt.efficiencyMap.setStatistics( observedN= 8 ,  expectedBG= 6.1  , bgError= 1.7  )
 
 databaseCreator.create(True)
 
 T1tttt.efficiencyMap.setSource( "./orig/GtGrid_SR_9ej50_2ibjet.txt", "txt" , objectName =  "GtGrid_SR_9ej50_2ibjet.txt", index = None , dataset = "GtGrid_SR_9ej50_2ibjet" )
+T1tttt.dataUrl = "http://hepdata.cedar.ac.uk/resource/6095/bjetstream/GtGrid_SR_9ej50_2ibjet.txt"
 T1tttt.efficiencyMap.setStatistics( observedN= 7 ,  expectedBG= 8.0  , bgError= 2.7  )
 
 databaseCreator.create(True)
 
 T1tttt.efficiencyMap.setSource( "./orig/HEPdata.MJ340.10ij50.GttOffShell.txt", "txt" , objectName =  "HEPdata.MJ340.10ij50.GttOffShell.txt", index = None , dataset = "MJ340_10ij50_GttOffShell" )
+T1tttt.dataUrl = "http://hepdata.cedar.ac.uk/resource/6095/mjstream/HEPdata.MJ340.10ij50.GttOffShell.txt"
 T1tttt.efficiencyMap.setStatistics( observedN= 1 ,  expectedBG=  3.2 , bgError=  3.2 )
 
 databaseCreator.create(True)
 
 T1tttt.efficiencyMap.setSource( "./orig/HEPdata.MJ340.8ij50.GttOffShell.txt", "txt" , objectName =  "HEPdata.MJ340.8ij50.GttOffShell.txt", index = None , dataset = "MJ340_8ij50_GttOffShell" )
+T1tttt.dataUrl = "http://hepdata.cedar.ac.uk/resource/6095/mjstream/HEPdata.MJ340.8ij50.GttOffShell.txt"
 T1tttt.efficiencyMap.setStatistics( observedN= 69 ,  expectedBG= 75  , bgError= 19 )
 
 databaseCreator.create(True)
 
 T1tttt.efficiencyMap.setSource( "./orig/HEPdata.MJ340.9ij50.GttOffShell.txt", "txt" , objectName =  "HEPdata.MJ340.9ij50.GttOffShell.txt", index = None , dataset = "MJ340_9ij50_GttOffShell" )
+T1tttt.dataUrl = "http://hepdata.cedar.ac.uk/resource/6095/mjstream/HEPdata.MJ340.9ij50.GttOffShell.txt"
 T1tttt.efficiencyMap.setStatistics( observedN= 13 ,  expectedBG= 17  , bgError= 7  )
 
 databaseCreator.create(True)
 
 T1tttt.efficiencyMap.setSource( "./orig/HEPdata.MJ420.10ij50.GttOffShell.txt", "txt" , objectName =  "HEPdata.MJ420.10ij50.GttOffShell.txt", index = None , dataset = "MJ420_10ij50_GttOffShell" )
+T1tttt.dataUrl = "http://hepdata.cedar.ac.uk/resource/6095/mjstream/HEPdata.MJ420.10ij50.GttOffShell.txt"
 T1tttt.efficiencyMap.setStatistics( observedN=  1,  expectedBG= 2.2   , bgError=  2.0 )
 
 databaseCreator.create(True)
 
 T1tttt.efficiencyMap.setSource( "./orig/HEPdata.MJ420.8ij50.GttOffShell.txt", "txt" , objectName =  "HEPdata.MJ420.8ij50.GttOffShell.txt", index = None , dataset = "MJ420_8ij50_GttOffShell" )
+T1tttt.dataUrl = "http://hepdata.cedar.ac.uk/resource/6095/mjstream/HEPdata.MJ420.8ij50.GttOffShell.txt"
 T1tttt.efficiencyMap.setStatistics( observedN= 37 ,  expectedBG=  45 , bgError= 14  )
 
 databaseCreator.create(True)
 
 T1tttt.efficiencyMap.setSource( "./orig/HEPdata.MJ420.9ij50.GttOffShell.txt", "txt" , objectName =  "HEPdata.MJ420.9ij50.GttOffShell.txt", index = None , dataset = "MJ420_9ij50_GttOffShell" )
+T1tttt.dataUrl = "http://hepdata.cedar.ac.uk/resource/6095/mjstream/HEPdata.MJ420.9ij50.GttOffShell.txt"
+
 T1tttt.efficiencyMap.setStatistics( observedN= 9 ,  expectedBG=  11 , bgError=  5 )
 
 databaseCreator.create(True)

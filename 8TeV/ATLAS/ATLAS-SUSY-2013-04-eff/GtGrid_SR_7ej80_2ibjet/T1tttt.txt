@@ -4,9 +4,10 @@ condition: None
 constraint: [[['t','t']],[['t','t']]]
 checked: None
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-04/figaux_11a.png
+dataUrl: http://hepdata.cedar.ac.uk/resource/6095/bjetstream/GtGrid_SR_7ej80_2ibjet.txt
 validated: None
 axes: 2*Eq(mother,x)_Eq(lsp,y)
-publishedData: False
+publishedData: True
 efficiencyMap: [[[[500.0*GeV, 1.0*GeV], [500.0*GeV, 1.0*GeV]], 0.0024196806],
 [[[500.0*GeV, 50.0*GeV], [500.0*GeV, 50.0*GeV]], 0.0025911435],
 [[[500.0*GeV, 100.0*GeV], [500.0*GeV, 100.0*GeV]], 0.0010204755],
