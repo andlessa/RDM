@@ -97,17 +97,18 @@ def efficiencyBlock(planeName,signalregion,first):
     if first:
         createTrue=""
     block =\
+    "#---- new efficiency map -----\n" +\
     "#----figure----\n" +\
     "%s.figure =\n" %planeName +\
     "%s.figureUrl =\n" %planeName +\
     "#----limit source----\n" +\
     '%s.efficiencyMap.setSource( path, type, objectName = None, index = None, dataset="%s" )\n' % ( planeName, signalregion ) +\
     "%s.efficiencyMap.setStatistics( observedN=, expectedBG=, bgError= )\n" %planeName +\
-    "#----global url settings ----\n" +\
-    "%s.dataUrl =\n" %planeName +\
-    "#----limit url settings ----\n" +\
+#    "#----global url settings ----\n" +\
+#    "%s.dataUrl =\n" %planeName +\
+    "#----efficiency map url settings ----\n" +\
     "%s.efficiencyMap.dataUrl =\n" %planeName+\
-    "databaseCreator.create(%s)\n" % createTrue
+    "databaseCreator.create(%s)\n\n" % createTrue
     return block
     
 def planeBlock(planeName):
