@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 
 """
-.. module:: convert
-   :synopsis: uesed to create a new database entry.
+.. module:: template
+   :synopsis: used to create a new database entry.
 
 .. moduleauthor:: Michael Traub <michael.traub@gmx.at>
 
@@ -64,14 +64,14 @@ def infoBlock(experiment, ID, sqrts):
     'info.url =\n' +\
     'info.sqrts = %s\n' %sqrts +\
     'info.lumi = \n' +\
-    'info.prettyname =\n' +\
+    'info.prettyName =\n' +\
     'info.private =\n' +\
     'info.arxiv = \n' +\
     'info.contact =\n' +\
     'info.publication =\n' +\
     'info.comment =\n' +\
     'info.supersedes =\n' +\
-    'info.superseded_by =\n'
+    'info.supersededBy =\n'
     return block
 
 def txNameBlock(txName):
@@ -85,11 +85,29 @@ def txNameBlock(txName):
     "%s.off.checked =\n" %txName +\
     "%s.on.constraint =\n" %txName +\
     "%s.off.constraint =\n" %txName +\
+    "%s.on.conditionDescription =\n" %txName +\
+    "%s.off.conditionDescription =\n" %txName +\
     "%s.on.condition =\n" %txName +\
     "%s.off.condition =\n" %txName +\
-    "%s.on.fuzzycondition =\n" %txName +\
-    "%s.off.fuzzycondition =\n" %txName +\
     "#%s.branchingRatio =\n" %txName 
+    return block
+
+def efficiencyBlock(planeName,signalregion,first):
+    createTrue="True"
+    if first:
+        createTrue=""
+    block =\
+    "#----figure----\n" +\
+    "%s.figure =\n" %planeName +\
+    "%s.figureUrl =\n" %planeName +\
+    "#----limit source----\n" +\
+    '%s.efficiencyMap.setSource( path, type, objectName = None, index = None, dataset="%s" )\n' % ( planeName, signalregion ) +\
+    "%s.efficiencyMap.setStatistics( observedN=, expectedBG=, bgError= )\n" %planeName +\
+    "#----global url settings ----\n" +\
+    "%s.dataUrl =\n" %planeName +\
+    "#----limit url settings ----\n" +\
+    "%s.efficiencyMap.dataUrl =\n" %planeName+\
+    "databaseCreator.create(%s)\n" % createTrue
     return block
     
 def planeBlock(planeName):
@@ -158,10 +176,10 @@ def addMassPlane_multiDecay(txName, planeName):
         %(planeName)
     return block
     
-def food():
-
-    return "databaseCreator.create()"
-    
+def footer( effmap ):
+    if not effmap:
+        return "databaseCreator.create()\n"
+    return ""
     
 def SqrtsAsInteger(sqrts):
 
@@ -204,7 +222,7 @@ def createPath(sqrts, experiment, ID):
 def createTxNameDict(txNames):
     
     txNameDict = {}
-    txNames = txNames.split(',')
+    ## txNames = txNames.split(',')
     for txName in txNames:
         txName = txName.strip()
         if not '[' in txName and not ']' in txName:
@@ -251,7 +269,7 @@ def checkTxNameDict(txNameDict):
     return txNameDict
         
         
-def main(experiment, ID, sqrts, txNames):
+def main(experiment, ID, sqrts, txNames, signalregions ):
     
 
     txNameDict = createTxNameDict(txNames)  
@@ -261,25 +279,39 @@ def main(experiment, ID, sqrts, txNames):
         print 'sqrts must be an integer or integer*TeV'
         sys.exit()
     path = createPath(sqrts, experiment, ID)
-    contend = head()
-    contend = contend + infoBlock(experiment, ID, sqrts)
+    content = head()
+    content = content + infoBlock(experiment, ID, sqrts)
+    createTrue=False
+    first=True
     for txName, planes in txNameDict.iteritems():
-        contend = contend + txNameBlock(txName)
+        content = content + txNameBlock(txName)
         if not planes:
             plane = '%s_%s' %(txName, 1)
-            contend = contend + addMassPlane_singleDecay(txName, plane)
-            contend = contend + planeBlock(plane)
+            content = content + addMassPlane_singleDecay(txName, plane)
+            if not signalregions:
+                content = content + planeBlock(plane)
+            else:
+                createTrue=True
+                for signalregion in signalregions:
+                    content = content + efficiencyBlock(plane,signalregion,first)
+                    first=False
             continue
         for i in range(planes):
             i += 1
             plane = '%s_%s' %(txName, i)
-            contend = contend + addMassPlane_multiDecay(txName, plane)
-            contend = contend + planeBlock(plane)
-    contend = contend + '\n' + food()
+            content = content + addMassPlane_multiDecay(txName, plane)
+            if not signalregions:
+                content = content + planeBlock(plane)
+            else:
+                for signalregion in signalregions:
+                    createTrue=True
+                    content = content + efficiencyBlock(plane,signalregion,first)
+                    first=False
+    content = content + '\n' + footer( createTrue )
     convertPath = path + '/convert.py'
     convert = open(path + '/convert.py','w')
     print 'creating file: %s' %convertPath
-    convert.write(contend)
+    convert.write(content)
     convert.close
 
 if __name__ == '__main__':
@@ -296,8 +328,8 @@ if __name__ == '__main__':
     type = types.StringType)
     
     argparser.add_argument ('-txNames', '--txNames', \
-    help = 'list of txNames, separated by comma, addional numbers of mass planes in brackets ', \
-    type = types.StringType)
+    help = 'list of txNames, additional numbers of mass planes in brackets ', \
+    nargs='*', type = types.StringType)
     
     argparser.add_argument ('-CMS', '--cms', \
     help = 'experiment must be CMS or ATLAS ', \
@@ -306,9 +338,13 @@ if __name__ == '__main__':
     argparser.add_argument ('-ATLAS', '--atlas', \
     help = 'experiment must be CMS or ATLAS ', \
     action = "store_true")
+
+    argparser.add_argument ( '-SR', '--signalregions', \
+    help = 'signal regions, empty for UL-type analysis', \
+    nargs='*', type = types.StringType )
     
     args = argparser.parse_args()
-    
+
     if args.cms and args.atlas:
         print 'publication can only belong to one experiment'
         sys.exit()
@@ -328,7 +364,7 @@ if __name__ == '__main__':
         sys.exit()
         
 
-    main(experiment, args.ID, args.sqrts, args.txNames)
+    main(experiment, args.ID, args.sqrts, args.txNames, args.signalregions )
 
 
     
