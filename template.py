@@ -104,11 +104,11 @@ def efficiencyBlock(planeName,signalregion,first):
     "#----limit source----\n" +\
     '%s.efficiencyMap.setSource( path, type, objectName = None, index = None, dataset="%s" )\n' % ( planeName, signalregion ) +\
     "%s.efficiencyMap.setStatistics( observedN=, expectedBG=, bgError= )\n" %planeName +\
-#    "#----global url settings ----\n" +\
-#    "%s.dataUrl =\n" %planeName +\
+    '''"#----global url settings ----\n" +\
+    "%s.dataUrl =\n" %planeName +\
     "#----efficiency map url settings ----\n" +\
     "%s.efficiencyMap.dataUrl =\n" %planeName+\
-    "databaseCreator.create(%s)\n\n" % createTrue
+    "databaseCreator.create(%s)\n\n" % createTrue'''
     return block
     
 def planeBlock(planeName):
