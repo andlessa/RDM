@@ -92,7 +92,11 @@ def txNameBlock(txName):
     "#%s.branchingRatio =\n" %txName 
     return block
 
-def efficiencyBlock(planeName,signalregion,first):
+def efficiencyBlock(planeName,signalregion,first,firstOfThisTopology):
+    """ create efficiency block
+        :param first: is this the first efficiency block at all?
+        :param firstOfThisTopology: is this the first efficiency block of this topo?
+    """
     createTrue="True"
     if first:
         createTrue=""
@@ -100,7 +104,17 @@ def efficiencyBlock(planeName,signalregion,first):
     "#---- new efficiency map -----\n" +\
     "#----figure----\n" +\
     "%s.figure =\n" %planeName +\
-    "%s.figureUrl =\n" %planeName +\
+    "%s.figureUrl =\n" %planeName 
+    if firstOfThisTopology: 
+        block +=\
+        "#----exclusion source----\n" +\
+        "%s.obsExclusion.setSource( path, type, objectName = None, index = None )\n" %planeName +\
+        "%s.obsExclusionM1.setSource( path, type, objectName = None, index = None )\n" %planeName +\
+        "%s.obsExclusionP1.setSource( path, type, objectName = None, index = None )\n" %planeName +\
+        "%s.expExclusion.setSource( path, type, objectName = None, index = None )\n" %planeName +\
+        "%s.expExclusionM1.setSource( path, type, objectName = None, index = None )\n" %planeName +\
+        "%s.expExclusionP1.setSource( path, type, objectName = None, index = None )\n" %planeName
+    block+=\
     "#----limit source----\n" +\
     '%s.efficiencyMap.setSource( path, type, objectName = None, index = None, dataset="%s" )\n' % ( planeName, signalregion ) +\
     "%s.efficiencyMap.setStatistics( observedN=, expectedBG=, bgError= )\n" %planeName +\
@@ -293,8 +307,10 @@ def main(experiment, ID, sqrts, txNames, signalregions ):
                 content = content + planeBlock(plane)
             else:
                 createTrue=True
+                firstSignalRegion=True
                 for signalregion in signalregions:
-                    content = content + efficiencyBlock(plane,signalregion,first)
+                    content = content + efficiencyBlock(plane,signalregion,first,firstSignalRegion)
+                    firstSignalRegion=False
                     first=False
             continue
         for i in range(planes):
