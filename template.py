@@ -320,9 +320,11 @@ def main(experiment, ID, sqrts, txNames, signalregions ):
             if not signalregions:
                 content = content + planeBlock(plane)
             else:
+                firstSignalRegion=True
                 for signalregion in signalregions:
                     createTrue=True
-                    content = content + efficiencyBlock(plane,signalregion,first)
+                    content = content + efficiencyBlock(plane,signalregion,first,firstSignalRegion)
+                    firstSignalRegion=False
                     first=False
     content = content + '\n' + footer( createTrue )
     convertPath = path + '/convert.py'
