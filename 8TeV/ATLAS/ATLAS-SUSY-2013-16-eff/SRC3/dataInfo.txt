@@ -1,0 +1,6 @@
+dataType: efficiencyMap
+dataId: SRC3
+observedN: 15
+expectedBG: 20.3
+bgError: 3.0
+upperLimit: 0.414502412531*fb
