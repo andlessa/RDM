@@ -3,4 +3,4 @@ dataId: SRC1
 observedN: 59
 expectedBG: 68
 bgError: 7
-upperLimit: 0.824630463833*fb
+upperLimit: 0.845218600985*fb

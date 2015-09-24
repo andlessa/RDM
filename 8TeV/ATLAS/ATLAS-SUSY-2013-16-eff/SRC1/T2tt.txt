@@ -6,7 +6,7 @@ checked:
 figureUrl: None
 validated: None
 axes: 2*Eq(mother,x)_Eq(lsp,y)
-dataUrl: http://hepdata.cedar.ac.uk/view/ins1299143/next
+dataUrl: http://hepdata.cedar.ac.uk/view/ins1299143/d27/input
 publishedData: True
 efficiencyMap: [[[[230.0*GeV, 50.0*GeV], [230.0*GeV, 50.0*GeV]], 1.4369e-05],
 [[[250.0*GeV, 1.0*GeV], [250.0*GeV, 1.0*GeV]], 6.8921552e-05],

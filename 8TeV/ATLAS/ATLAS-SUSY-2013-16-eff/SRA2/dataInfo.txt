@@ -1,0 +1,6 @@
+dataType: efficiencyMap
+dataId: SRA2
+observedN: 4
+expectedBG: 4.1
+bgError: 0.8
+upperLimit: 0.299659870078*fb
