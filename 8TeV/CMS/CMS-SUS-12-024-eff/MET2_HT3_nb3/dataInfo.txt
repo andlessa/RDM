@@ -3,4 +3,5 @@ dataId: MET2_HT3_nb3
 observedN: 18
 expectedBG: 23.2
 bgError: 3.8
-upperLimit: 0.509405182511*fb
+upperLimit: 0.499579958001*fb
+expectedUpperLimit: 0.688641637314*fb

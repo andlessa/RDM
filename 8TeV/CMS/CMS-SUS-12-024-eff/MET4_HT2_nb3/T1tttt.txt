@@ -4,6 +4,7 @@ condition: None
 constraint: [[['t','t']],[['t','t']]]
 checked: AL
 figureUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12024/T1tttt_exclusions_corrected.pdf
+dataUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12024/T1tttt_exclusion_corrected.C
 validated: None
 axes: 2*Eq(mother,x)_Eq(lsp,y)
 publishedData: True
