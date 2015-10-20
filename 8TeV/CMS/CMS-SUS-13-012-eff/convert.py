@@ -98,8 +98,8 @@ T1 = T1.addMassPlane(motherMass = x, lspMass = y)
 
 #----limit source----
 
-T1.expUpperLimit.setSource( "orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName = "combined_expLimit", index = None )
-T1.obsUpperLimit.setSource( "orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName = "combined_obsLimit", index = None )
+## T1.expUpperLimit.setSource( "orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName = "combined_expLimit", index = None )
+## T1.obsUpperLimit.setSource( "orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName = "combined_obsLimit", index = None )
 #----exclusion source----
 T1.obsExclusion.setSource( "orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName = "combined_obsExclOneTimesProspino", index = None )
 T1.obsExclusionM1.setSource( "orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName = "combined_obsExclMinusSysErrProspino", index = None )
@@ -117,7 +117,7 @@ T1.figure = "Fig_7b"
 T1.figureUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13012/Fig_7b.pdf"
 #----limit url settings ----
 T1.efficiencyMap.dataUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13012/c_AccEffMap_T1qqqq.tar"
-T1.expUpperLimit.dataUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13012/SUS13012_XsecLimits_T1qqqq.root"
+## T1.expUpperLimit.dataUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13012/SUS13012_XsecLimits_T1qqqq.root"
 #----exclusion url settings ----
 T1.obsExclusion.dataUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13012/SUS13012_XsecLimits_T1qqqq.root"
 #T1bbbb.obsExclusionM1.dataUrl =

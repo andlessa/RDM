@@ -2,7 +2,8 @@ txName: T1
 conditionDescription: None
 condition: None
 constraint: [[['jet','jet']],[['jet','jet']]]
-figureUrl: None
+figureUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13012/Fig_7b.pdf
+dataUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13012/c_AccEffMap_T1qqqq.tar
 validated: None
 axes: 2*Eq(mother,x)_Eq(lsp,y)
 publishedData: False

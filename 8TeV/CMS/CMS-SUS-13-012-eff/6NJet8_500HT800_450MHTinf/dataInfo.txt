@@ -3,4 +3,5 @@ dataId: 6NJet8_500HT800_450MHTinf
 observedN: 9
 expectedBG: 0.8
 bgError: 0.6
-upperLimit: 0.762986078282*fb
+upperLimit: 0.763632135033*fb
+expectedUpperLimit: 0.155617712618*fb
