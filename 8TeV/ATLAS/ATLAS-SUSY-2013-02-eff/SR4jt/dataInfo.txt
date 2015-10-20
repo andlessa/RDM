@@ -3,4 +3,5 @@ dataId: SR4jt
 observedN: 0
 expectedBG: 2.5
 bgError: 1.0
-upperLimit: 0.140580631468*fb
+upperLimit: 0.149731435689*fb
+expectedUpperLimit: 0.242330759834*fb
