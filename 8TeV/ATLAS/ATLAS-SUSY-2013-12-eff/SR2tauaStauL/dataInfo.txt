@@ -3,4 +3,5 @@ dataId: SR2tauaStauL
 observedN: 6
 expectedBG: 6.9
 bgError: 0.8
-upperLimit: 0.31575449272*fb
+upperLimit: 0.308808788102*fb
+expectedUpperLimit: 0.319208816454*fb

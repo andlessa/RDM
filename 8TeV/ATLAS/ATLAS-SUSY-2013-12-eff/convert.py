@@ -10,9 +10,9 @@ import os
 import argparse
 import types
 
-argparser = argparse.ArgumentParser(description =  
+argparser = argparse.ArgumentParser(description =
 'create info.txt, txname.txt, twiki.txt and sms.py')
-argparser.add_argument ('-utilsPath', '--utilsPath', 
+argparser.add_argument ('-utilsPath', '--utilsPath',
 help = 'path to the package smodels_utils',\
 type = types.StringType)
 args = argparser.parse_args()
@@ -38,9 +38,9 @@ info.private = False
 info.lumi = '20.3'
 info.publication = 'http://link.springer.com/article/10.1007/JHEP04(2014)169'
 info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-12/'
-#info.supersededBy = 
+#info.supersededBy =
 info.arxiv = 'http://arxiv.org/abs/1402.7029'
-#info.contact = 
+#info.contact =
 info.prettyName = 'ATLAS trilepton inc Wh decay'
 info.supersedes = 'ATLAS-CONF-2013-035; CONF-2012-154'
 
@@ -62,9 +62,10 @@ TChiChipmStauL050 = TChiChipmStauL.addMassPlane(motherMass = x, interMass0 = x*0
 
 TChiChipmStauL050.efficiencyMap.setSource("orig/SR2taua_stauL.txt", "txt",  objectName = "orig/SR2taua_stauL.txt", index = None, dataset="SR2tauaStauL" )
 TChiChipmStauL050.efficiencyMap.setStatistics ( observedN=6, expectedBG=6.9, bgError=0.8 )  #check asymmetric error
-
-
-
+TChiChipmStauL050.obsExclusion.setSource( "orig/exc_stauL_obs.txt", "txt", objectName = None, index = None )
+TChiChipmStauL050.expExclusion.setSource( "orig/exc_stauL_expected.txt", "txt", objectName = None, index = None )
+TChiChipmStauL050.obsExclusion.dataUrl = "http://hepdata.cedar.ac.uk/view/ins1282905/d22"
+TChiChipmStauL050.expExclusion.dataUrl = "http://hepdata.cedar.ac.uk/view/ins1282905/d23"
 
 databaseCreator.create()
 
@@ -92,8 +93,10 @@ TChiChipmSlepL050 = TChiChipmSlepL.addMassPlane(motherMass = x, interMass0 = x*0
 
 TChiChipmSlepL050.efficiencyMap.setSource("orig/SR0taua_slepL.txt", "txt",  objectName = "orig/SR0taua_slepL.txt", index = None, dataset="SR0tauaSlepL-bin20" )
 TChiChipmSlepL050.efficiencyMap.setStatistics ( observedN=0, expectedBG=0.29, bgError=0.17 )  #check asymmetric error
-
-
+TChiChipmSlepL050.obsExclusion.setSource( "orig/exc_slepL_obs.txt", "txt", objectName = None, index = None )
+TChiChipmSlepL050.expExclusion.setSource( "orig/exc_slepL_expected.txt", "txt", objectName = None, index = None )
+TChiChipmSlepL050.obsExclusion.dataUrl = "http://hepdata.cedar.ac.uk/view/ins1282905/d18"
+TChiChipmSlepL050.expExclusion.dataUrl = "http://hepdata.cedar.ac.uk/view/ins1282905/d19"
 databaseCreator.create(True)
 
 
