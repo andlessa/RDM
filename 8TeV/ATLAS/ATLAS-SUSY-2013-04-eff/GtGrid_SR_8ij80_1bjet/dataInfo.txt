@@ -3,4 +3,5 @@ dataId: GtGrid_SR_8ij80_1bjet
 observedN: 1
 expectedBG: 1.5
 bgError: 0.9
-upperLimit: 0.198480512217*fb
+upperLimit: 0.201762906841*fb
+expectedUpperLimit: 0.199281978498*fb

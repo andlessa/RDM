@@ -3,4 +3,5 @@ dataId: GtGrid_SR_8ij80_2ibjet
 observedN: 3
 expectedBG: 3.3
 bgError: 2.2
-upperLimit: 0.30192163736*fb
+upperLimit: 0.295992668232*fb
+expectedUpperLimit: 0.296996408568*fb
