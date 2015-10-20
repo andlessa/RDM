@@ -3,9 +3,9 @@ conditionDescription: None
 condition: None
 constraint: [[['b'],['W']],[['b'],['W']]]
 figureUrl: None
+dataUrl: http://hepdata.cedar.ac.uk/view/ins1299143/next
 validated: None
 axes: 2*Eq(mother,x)_Eq(inter0,2*y)_Eq(lsp,y)
-dataUrl: http://hepdata.cedar.ac.uk/view/ins1299143/next
 publishedData: True
 efficiencyMap: [[[[230.0*GeV, 100.0*GeV, 50.0*GeV], [230.0*GeV, 100.0*GeV, 50.0*GeV]], 0.000445142532],
 [[[250.0*GeV, 100.0*GeV, 50.0*GeV], [250.0*GeV, 100.0*GeV, 50.0*GeV]], 0.00088477108],

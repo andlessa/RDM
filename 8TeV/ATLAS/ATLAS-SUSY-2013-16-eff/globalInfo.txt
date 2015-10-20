@@ -1,11 +1,9 @@
 sqrts: 8*TeV
 lumi: 20.1/fb
 id: ATLAS-SUSY-2013-16
-prettyName: 
 url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-16/
 arxiv: http://arxiv.org/abs/1406.1122
 publication: http://link.springer.com/article/10.1007%2FJHEP09%282014%29015
-contact: 
 comment: EM given for All SRs for one topo, only for 3 for the other. Only these 3 are implemented.
 private: False
 implementedBy: Federico Ambrogi 

@@ -3,4 +3,5 @@ dataId: SRA4
 observedN: 4
 expectedBG: 2.4
 bgError: 0.7
-upperLimit: 0.353607967799*fb
+upperLimit: 0.349887850816*fb
+expectedUpperLimit: 0.243365845327*fb

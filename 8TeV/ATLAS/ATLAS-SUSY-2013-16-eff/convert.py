@@ -73,7 +73,7 @@ T2tt_1.obsExclusion.setSource( "./orig/T2tt_Exclusion.txt", "txt", objectName = 
 T2tt_1.efficiencyMap.setSource( "./orig/EffMap_T2tt_SRC1.txt", "txt", objectName = None, index = None, dataset="SRC1" )
 T2tt_1.efficiencyMap.setStatistics( observedN=59, expectedBG=68, bgError=7)
 #----global url settings ----
-T2tt_1.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1299143/next'
+T2tt_1.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1299143/d27/input'
 #----efficiency map url settings ----
 #T2tt_1.efficiencyMap.dataUrl =
 databaseCreator.create()
