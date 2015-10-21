@@ -3,5 +3,5 @@ dataId: 3NJet6_1250HT1500_200MHT300
 observedN: 98
 expectedBG: 109
 bgError: 18
-upperLimit: 1.72640284687*fb
-expectedUpperLimit: 2.17555626361*fb
+upperLimit: 1.76676979433*fb
+expectedUpperLimit: 2.16361229008*fb

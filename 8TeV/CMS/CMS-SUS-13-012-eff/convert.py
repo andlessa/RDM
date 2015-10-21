@@ -10,9 +10,9 @@ import os
 import argparse
 import types
 
-argparser = argparse.ArgumentParser(description =  
+argparser = argparse.ArgumentParser(description =
 'create info.txt, txname.txt, twiki.txt and sms.py')
-argparser.add_argument ('-utilsPath', '--utilsPath', 
+argparser.add_argument ('-utilsPath', '--utilsPath',
 help = 'path to the package smodels_utils',\
 type = types.StringType)
 args = argparser.parse_args()
@@ -32,13 +32,13 @@ from smodels_utils.dataPreparation.origPlotObjects import x, y
 
 #+++++++ global info block ++++++++++++++
 info = MetaInfoInput('CMS-SUS-13-012')
-#info.comment = 
+#info.comment =
 info.sqrts = '8.0'
 info.private = False
 info.lumi = '19.5'
 info.publication = 'JHEP06(2014)055'
 info.url = 'https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS13012'
-#info.superseded_by = 
+#info.superseded_by =
 info.arxiv = 'http://arxiv.org/abs/1402.4770'
 info.contact = 'cms-pag-conveners-sus@NOSPAMcernSPAMNOT.ch'
 info.prettyName = ''
@@ -57,6 +57,16 @@ T2.on.conditionDescription ="None"
 T2.on.condition ="None"
 T2 = T2.addMassPlane(motherMass = x, lspMass = y)
 
+#----exclusion source----
+T2.obsExclusion.setSource( "orig/SUS13012_XsecLimits_T2qq.root", "root", objectName = "combined_obsExclOneTimesProspino", index = None )
+T2.obsExclusionM1.setSource( "orig/SUS13012_XsecLimits_T2qq.root", "root", objectName = "combined_obsExclMinusSysErrProspino", index = None )
+T2.obsExclusionP1.setSource( "orig/SUS13012_XsecLimits_T2qq.root", "root", objectName = "combined_obsExclPlusSysErrProspino", index = None )
+T2.expExclusion.setSource( "orig/SUS13012_XsecLimits_T2qq.root", "root", objectName = "combined_expExclOneTimesProspino", index = None )
+T2.expExclusionM1.setSource( "orig/SUS13012_XsecLimits_T2qq.root", "root", objectName = "combined_expExclMinusOneSigmaProspino", index = None )
+T2.expExclusionP1.setSource( "orig/SUS13012_XsecLimits_T2qq.root", "root", objectName = "combined_expExclPlusOneSigmaProspino", index = None )
+
+T2.figure = "Fig_7a"
+T2.figureUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13012/Fig_7a.pdf"
 
 # +++++++ T5WZ block ++++++++++++++
 T5WZ = TxNameInput('T5WZ')
@@ -69,6 +79,16 @@ T5WZ.on.conditionDescription ="None"
 T5WZ.on.condition ="None"
 T5WZ = T5WZ.addMassPlane(motherMass = x, interMass0 = 0.5*(x+y), lspMass = y)
 
+#----exclusion source----
+T5WZ.obsExclusion.setSource( "orig/SUS13012_XsecLimits_T5VV.root", "root", objectName = "combined_obsExclOneTimesProspino", index = None )
+T5WZ.obsExclusionM1.setSource( "orig/SUS13012_XsecLimits_T5VV.root", "root", objectName = "combined_obsExclMinusSysErrProspino", index = None )
+T5WZ.obsExclusionP1.setSource( "orig/SUS13012_XsecLimits_T5VV.root", "root", objectName = "combined_obsExclPlusSysErrProspino", index = None )
+T5WZ.expExclusion.setSource( "orig/SUS13012_XsecLimits_T5VV.root", "root", objectName = "combined_expExclOneTimesProspino", index = None )
+T5WZ.expExclusionM1.setSource( "orig/SUS13012_XsecLimits_T5VV.root", "root", objectName = "combined_expExclMinusOneSigmaProspino", index = None )
+T5WZ.expExclusionP1.setSource( "orig/SUS13012_XsecLimits_T5VV.root", "root", objectName = "combined_expExclPlusOneSigmaProspino", index = None )
+
+T5WZ.figure = "Fig_7d"
+T5WZ.figureUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13012/Fig_7d.pdf"
 
 #+++++++ T1tttt Block  ++++++++++++
 T1tttt = TxNameInput('T1tttt')
@@ -80,6 +100,15 @@ T1tttt.off.condition = "None"
 T1tttt.on.condition ="None"
 T1tttt = T1tttt.addMassPlane(motherMass = x, lspMass = y)
 
+T1tttt.obsExclusion.setSource( "orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName = "combined_obsExclOneTimesProspino", index = None )
+T1tttt.obsExclusionM1.setSource( "orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName = "combined_obsExclMinusSysErrProspino", index = None )
+T1tttt.obsExclusionP1.setSource( "orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName = "combined_obsExclPlusSysErrProspino", index = None )
+T1tttt.expExclusion.setSource( "orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName = "combined_expExclOneTimesProspino", index = None )
+T1tttt.expExclusionM1.setSource( "orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName = "combined_expExclMinusOneSigmaProspino", index = None )
+T1tttt.expExclusionP1.setSource( "orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName = "combined_expExclPlusOneSigmaProspino", index = None )
+
+T1tttt.figure = "Fig_7c"
+T1tttt.figureUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13012/Fig_7c.pdf"
 
 # +++++++ T1 block ++++++++++++++
 T1 = TxNameInput('T1')
