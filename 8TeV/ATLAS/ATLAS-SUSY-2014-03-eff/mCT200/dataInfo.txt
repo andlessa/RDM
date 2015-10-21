@@ -1,0 +1,6 @@
+dataType: efficiencyMap
+dataId: mCT200
+observedN: 11
+expectedBG: 16
+bgError: 3
+upperLimit: 0.378299898447*fb
