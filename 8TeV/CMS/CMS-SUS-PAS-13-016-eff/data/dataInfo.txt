@@ -1,6 +1,0 @@
-dataType: efficiencyMap
-dataId: data
-observedN: 1
-expectedBG: 1.2
-bgError: 1.16
-upperLimit: 0.2*fb

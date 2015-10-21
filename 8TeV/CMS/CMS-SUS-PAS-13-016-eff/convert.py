@@ -9,6 +9,7 @@ import sys
 import os
 import argparse
 import types
+import math
 
 argparser = argparse.ArgumentParser(description =  
 'create info.txt, txname.txt, twiki.txt and sms.py')
@@ -58,7 +59,8 @@ T1tttt.off.conditionDescription ="None"
 #+++++++ next mass plane block ++++++++++++++
 T1tttt = T1tttt.addMassPlane(motherMass = x, lspMass = y)
 #----limit source----
-T1tttt.efficiencyMapList.addSource( "sr0", "orig/Acceptance_OS_T1tttt.root", "root", objectName = "AccANN", index = None )
+T1tttt.efficiencyMap.setSource( "orig/Acceptance_OS_T1tttt.root", "root", objectName = "AccANN", index = None, dataset="sr0" )
+T1tttt.efficiencyMap.setStatistics ( observedN = 1, expectedBG=1.2, bgError = math.sqrt ( 0.86**2 + 0.60**2 ) )
 # T1tttt.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
 #----exclusion source----
 T1tttt.obsExclusion.setSource( "orig/Results_SUS13016.root", "root", objectName = "GR_ns", index = None )
