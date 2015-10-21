@@ -22,10 +22,12 @@ print "exp id=",getExpIdFromPath(),"datasetid=",getDatasetIdsFromPath()
 database = Database(os.path.join(home,"smodels-database"))
 #How to validate all plots for all Txnames in one ExpRes:
 expRes = database.getExpResults(analysisIDs=[getExpIdFromPath()],datasetIDs=getDatasetIdsFromPath() )
+print("expRes=",expRes)
 slhamain = os.path.join(home,"smodels-utils/slha")
 kfactorDict = { "TChiWZ": 1.2, "TChiWW": 1.2, "TChiChipmSlepL": 1.2, "TChiChipmSlepStau": 1.2, "TChiChipmStauStau": 1.2, \
                 "TChiSlepSnu": 1.2, "TChiStauSnu": 1.2, "TChiWH": 1.2, "TChiWZoff": 1.2 }
 ## kfactorDict= {} 
 for i in expRes:
+    print("[validate.py] validate %s" % i )
     validateExpRes(i,slhamain, kfactorDict = kfactorDict )
 

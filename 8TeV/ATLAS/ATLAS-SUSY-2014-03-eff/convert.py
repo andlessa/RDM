@@ -31,7 +31,7 @@ from smodels_utils.dataPreparation.databaseCreation import databaseCreator
 from smodels_utils.dataPreparation.origPlotObjects import x, y
 
 #+++++++ global info block ++++++++++++++
-info = MetaInfoInput('ATLAS-SUSY-2014-03-eff')
+info = MetaInfoInput('ATLAS-SUSY-2014-03')
 info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2014-03/'
 info.sqrts = 8
 info.lumi = 20.3 
