@@ -1,0 +1,14 @@
+sqrts: 8*TeV
+lumi: 19.3/fb
+id: CMS-SUS-13-007
+prettyName: e/\mu DP
+url: https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS13007
+arxiv: http://arxiv.org/abs/arXiv:1311.4937
+publication: http://www.sciencedirect.com/science/article/pii/S037026931400255X
+contact: Loukas Gouskos <loukas.gouskos@cern.ch>, Markus Stoye <Markus.Stoye@cern.ch>
+supersedes: CMS-PAS-SUS-13-007
+comment: observed limits for all three models in fb, no expected limits, combined exclusion lines
+private: False
+implementedBy: Federico A 
+lastUpdate: 2016/2/19
+
