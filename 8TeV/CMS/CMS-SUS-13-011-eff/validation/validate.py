@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 
 import sys,os
-home = os.path.expanduser("~")
+home = "/home/federico/SModelS_Jan2016/"
+
 sys.path.insert(0,os.path.join(home,"smodels-utils/"))
 sys.path.insert(0,os.path.join(home,"smodels/"))
 

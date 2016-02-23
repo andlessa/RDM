@@ -48,12 +48,12 @@ info.supersededBy =''
 T2tt = TxNameInput('T2tt')
 T2tt.on.checked =''
 T2tt.off.checked =''
-T2tt.on.constraint = "[[['t']],[['t']]]"
-#T2tt.off.constraint =
+T2tt.on.constraint =  "[[['t']],[['t']]]"
+T2tt.off.constraint = "[[['W','b']],[['W','b']]]"
 T2tt.on.conditionDescription ="None"
-#T2tt.off.conditionDescription =
+T2tt.off.conditionDescription ="None"
 T2tt.on.condition = None
-#T2tt.off.condition =
+T2tt.off.condition = None
 #T2tt.branchingRatio =
 
 #+++++++ next mass plane block ++++++++++++++
@@ -63,10 +63,10 @@ T2tt_1 = T2tt.addMassPlane(motherMass = x, lspMass = y)
 T2tt_1.figure = 'topneutralino_cutbased_efficiencies'
 T2tt_1.figureUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13011/topneutralino_cutbased_efficiencies.pdf'
 #----exclusion source----
-T2tt_1.obsExclusion.setSource( 'orig/topneutralino_cutbased.root', 'root', objectName = 'observed_exclusion', index = None )
+T2tt_1.obsExclusion.setSource( 'orig/SUS13011_T2tt_exclusion.txt', 'txt', objectName = 'observed_exclusion', index = None )
 #T2tt_1.obsExclusionM1.setSource( path, type, objectName = None, index = None )
 #T2tt_1.obsExclusionP1.setSource( path, type, objectName = None, index = None )
-T2tt_1.expExclusion.setSource( 'orig/topneutralino_cutbased.root', 'root', objectName = 'expected_exclusion', index = None )
+#T2tt_1.expExclusion.setSource( 'orig/topneutralino_cutbased.root', 'root', objectName = 'expected_exclusion', index = None )
 #T2tt_1.expExclusionM1.setSource( path, type, objectName = None, index = None )
 #T2tt_1.expExclusionP1.setSource( path, type, objectName = None, index = None )
 #----limit source----
@@ -98,7 +98,7 @@ T2tt_1.figure = 'topneutralino_cutbased_efficiencies'
 T2tt_1.figureUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13011/topneutralino_cutbased_efficiencies.pdf'
 #----limit source----
 T2tt_1.efficiencyMap.setSource( 'orig/topneutralino_cutbased_efficiencies.root', 'root', objectName = 'efficiency_LM250', index = None, dataset="LM250" )
-T2tt_1.efficiencyMap.setStatistics( observedN=21, expectedBG=12, bgError=1.2 )
+T2tt_1.efficiencyMap.setStatistics( observedN=21, expectedBG=31, bgError=8 )
 #----global url settings ----
 T2tt_1.dataUrl = 'https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS13011'
 #----efficiency map url settings ----

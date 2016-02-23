@@ -1,0 +1,7 @@
+dataType: efficiencyMap
+dataId: LM250
+observedN: 21
+expectedBG: 31
+bgError: 8
+upperLimit: 0.694726130515*fb
+expectedUpperLimit: 1.03929514996*fb
