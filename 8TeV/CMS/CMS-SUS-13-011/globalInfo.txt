@@ -1,9 +1,12 @@
 sqrts: 8*TeV
 lumi: 19.5/fb
 id: CMS-SUS-13-011
+prettyName: leptonic stop
 url: https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS13011
 arxiv: arXiv:1308.1586v2
-publication: Eur. Phys. J. C 73 (2013) 2677
+publication: http://link.springer.com/article/10.1140%2Fepjc%2Fs10052-013-2677-2
+contact: Benjamin Hooberman <hooberman@gmail.com>, Mariarosaria DAlfonso <dalfonso@mail.cern.ch>
+supersedes: CMS-PAS-SUS-12-023
 private: False
 implementedBy: Federico A 
-lastUpdate: 2016/2/18
+lastUpdate: 2016/2/29
