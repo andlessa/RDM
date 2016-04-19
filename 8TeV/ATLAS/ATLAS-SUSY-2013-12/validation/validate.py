@@ -1,27 +1,33 @@
 #!/usr/bin/env python
 
-import sys
-sys.path.insert(0,"../../../../../smodels-utils/")
-sys.path.insert(0,"../../../../../smodels/")
+import sys,os
+home = os.path.expanduser("~")
+sys.path.insert(0,os.path.join(home,"smodels-utils/"))
+sys.path.insert(0,os.path.join(home,"smodels/"))
 
 
-from validation.plotProducer import validateExpRes, getExpIdFromPath
-from smodels.experiment.databaseObjects import DataBase
+from validation.plotProducer import validateExpRes, getExpIdFromPath, getDatasetIdsFromPath
+from smodels.experiment.databaseObj import Database
 import logging
 from smodels.theory.crossSection import logger as cl
 from smodels.theory.slhaDecomposer import logger as dl
-from smodels.experiment.txnameObject import logger as tl
-cl.setLevel(level=logging.DEBUG) 
-dl.setLevel(level=logging.DEBUG)
-tl.setLevel(level=logging.DEBUG)
+from smodels.experiment.txnameObj import logger as tl
+from validation.gridSModelS import logger as gl
+cl.setLevel(level=logging.INFO) 
+dl.setLevel(level=logging.WARNING)
+tl.setLevel(level=logging.INFO)
+gl.setLevel(level=logging.INFO)
 
 
-print "exp id=",getExpIdFromPath()
+print "exp id=",getExpIdFromPath(),"datasetid=",getDatasetIdsFromPath()
 
-database = DataBase("../../../../")
+database = Database(os.path.join(home,"smodels-database"))
 #How to validate all plots for all Txnames in one ExpRes:
-expRes = database.getExpResults(analysisIDs=[getExpIdFromPath()],datasetIDs=[None])
-slhamain = '../../../../../smodels-utils/slha/'
-kfactorDict = { "TChiChipmSlepL" : 1.25, "TChiWZ": 1.25, "TChiWW": 1.25, "TChiChipmStauL" : 1.25, "TChiWH" : 1.25, "TChiWZoff" : 1.25}
-validateExpRes(expRes,slhamain, kfactorDict = kfactorDict )
+expRes = database.getExpResults(analysisIDs=[getExpIdFromPath()],datasetIDs=getDatasetIdsFromPath() )
+slhamain = os.path.join(home,"smodels-utils/slha")
+kfactorDict = { "TChiWZ": 1.2, "TChiWW": 1.2, "TChiChipmSlepL": 1.2, "TChiChipmSlepStau": 1.2, "TChiChipmStauStau": 1.2, \
+                "TChiSlepSnu": 1.2, "TChiStauSnu": 1.2, "TChiWH": 1.2, "TChiWZoff": 1.2 }
+## kfactorDict= {} 
+for i in expRes:
+    validateExpRes(i,slhamain, kfactorDict = kfactorDict )
 
