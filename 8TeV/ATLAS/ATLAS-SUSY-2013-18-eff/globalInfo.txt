@@ -1,0 +1,11 @@
+sqrts: 8.0*TeV
+lumi: 20.1/fb
+id: ATLAS-SUSY-2013-18
+prettyName: Three b
+url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-18/
+arxiv: http://arxiv.org/abs/1407.0600
+publication: http://link.springer.com/article/10.1007/JHEP10(2014)024
+private: False
+implementedBy: Federico A 
+lastUpdate: 2016/4/29
+
