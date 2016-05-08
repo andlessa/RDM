@@ -1,12 +1,10 @@
 sqrts: 8*TeV
 lumi: 19.3/fb
 id: CMS-SUS-14-011
-prettyName: razor
+prettyName: RAZOR
 url: https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS14011
-contact: jduarte@caltech.edu, maurizio.pierini@cern.ch, r.lucas11@imperial.ac.uk
-supersedes: CMS-PAS-SUS-13-004
-comment: combination of SUS13004 and SUS13011
+supersedes: CMS-SUS-13-004
+comment: Only PAS document https://cms-physics.web.cern.ch/cms-physics/public/SUS-14-011-pas.pdf
 private: False
-implementedBy: Wolfgang Waltenberger
-lastUpdate: 2015/5/6
-
+implementedBy: Federico A
+lastUpdate: 2016/5/7
