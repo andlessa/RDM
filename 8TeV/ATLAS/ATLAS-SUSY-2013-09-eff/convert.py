@@ -31,7 +31,7 @@ from smodels_utils.dataPreparation.databaseCreation import databaseCreator
 from smodels_utils.dataPreparation.origPlotObjects import x, y
 
 #+++++++ global info block ++++++++++++++
-info = MetaInfoInput('ATLAS-SUSY-2013-09-eff')
+info = MetaInfoInput('ATLAS-SUSY-2013-09')
 info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-09/'
 info.sqrts = 8
 info.lumi = '20.3'
@@ -122,7 +122,7 @@ databaseCreator.create(True)
 T1tttt_1.figure ="No Figure"
 T1tttt_1.figureUrl ="No Figure"
 #----limit source----
-T1tttt_1.efficiencyMap.setSource( "orig/EffMap_T1tttt_SR3Lhigh.txt", "txt", objectName = None, index = None, dataset="SR3Lhigh" )
+T1tttt_1.efficiencyMap.setSource( "orig/EffMap_T1tttt_SR3LHigh.txt", "txt", objectName = None, index = None, dataset="SR3Lhigh" )
 T1tttt_1.efficiencyMap.setStatistics( observedN=2, expectedBG=2.5, bgError=0.9 )
 #----global url settings ----
 T1tttt_1.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1289225'

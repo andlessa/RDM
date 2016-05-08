@@ -1,1 +1,0 @@
-||[[https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-12/|ATLAS-SUSY-2013-12]]||[[smsDictionary#TChiChipmStauL|TChiChipmStauL]]||2*Eq(mother,x)_Eq(inter0,0.5*x+0.5*y)_Eq(lsp,y)||[[None|None]]||None||None||[[http://hepdata.cedar.ac.uk/view/ins1282905/d22|OBS]][[http://hepdata.cedar.ac.uk/view/ins1282905/d23|EXP]]||

@@ -1,7 +1,0 @@
-dataType: efficiencyMap
-dataId: SR0tauaSlepL-bin20
-observedN: 0
-expectedBG: 0.29
-bgError: 0.17
-upperLimit: 0.147402849284*fb
-expectedUpperLimit: 0.147656813378*fb
