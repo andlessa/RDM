@@ -8,4 +8,3 @@ comment: T6bbWWM1300 combines the T6bbWW result from ATLAS-CONF-2013-065 and fro
 private: False
 implementedBy: Wolfgang Waltenberger
 lastUpdate: 2015/5/6
-

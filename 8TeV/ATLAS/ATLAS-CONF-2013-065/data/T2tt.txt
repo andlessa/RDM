@@ -4,6 +4,7 @@ condition: None
 constraint: [[['t+']],[['t-']]]
 checked: VM
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-065/fig_07a.png
+dataUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-065/fig_07a_PRELIMINARY.data
 validated: None
 axes: 2*Eq(mother,x)_Eq(lsp,y)
 publishedData: True

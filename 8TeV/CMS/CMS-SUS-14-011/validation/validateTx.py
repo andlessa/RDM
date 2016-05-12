@@ -12,7 +12,7 @@ args=argparser.parse_args()
 
 
 import sys,os
-home = '/home/federico/SModelS_Jan2016/'
+home = '/home/walten/'
 sys.path.insert(0,os.path.join(home,"smodels-utils/validation"))
 sys.path.insert(0,os.path.join(home,"smodels-utils"))
 sys.path.insert(0,os.path.join(home,"smodels/"))

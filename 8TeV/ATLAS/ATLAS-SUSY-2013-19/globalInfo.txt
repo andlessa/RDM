@@ -10,4 +10,3 @@ comment: T2tt UL are from DF channel only, no combined UL map available
 private: False
 implementedBy: Wolfgang Waltenberger
 lastUpdate: 2015/5/6
-

@@ -3,5 +3,5 @@ dataId: mCT150
 observedN: 19
 expectedBG: 30
 bgError: 6
-upperLimit: 0.504427189802*fb
-expectedUpperLimit: 0.840998325342*fb
+upperLimit: 0.512695728533*fb
+expectedUpperLimit: 0.842278526944*fb

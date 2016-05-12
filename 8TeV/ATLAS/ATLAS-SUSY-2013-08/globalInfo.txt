@@ -6,10 +6,7 @@ url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-08/
 arxiv: http://arxiv.org/abs/1403.5222
 publication: http://link.springer.com/article/10.1140/epjc/s10052-014-2883-6
 contact: ATLAS collaboration
-supersededBy: 
 supersedes: ATLAS-CONF-2013-025
-comment: 
 private: False
 implementedBy: Wolfgang Waltenberger
 lastUpdate: 2015/5/6
-

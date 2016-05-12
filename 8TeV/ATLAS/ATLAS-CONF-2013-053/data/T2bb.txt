@@ -7,10 +7,10 @@ figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2
 validated: None
 axes: 2*Eq(mother,x)_Eq(lsp,y)
 publishedData: False
-upperLimits: [[[[100.0*GeV, 0.0*GeV], [100.0*GeV, 0.0*GeV]], 2800.77*pb],
+upperLimits: [[[[100.0*GeV, 0.0*GeV], [100.0*GeV, 0.0*GeV]], 2800.8*pb],
 [[[100.0*GeV, 50.0*GeV], [100.0*GeV, 50.0*GeV]], 357.38*pb],
 [[[100.0*GeV, 70.0*GeV], [100.0*GeV, 70.0*GeV]], 128.98*pb],
-[[[100.0*GeV, 90.0*GeV], [100.0*GeV, 90.0*GeV]], 1104.14*pb],
+[[[100.0*GeV, 90.0*GeV], [100.0*GeV, 90.0*GeV]], 1104.1*pb],
 [[[150.0*GeV, 0.0*GeV], [150.0*GeV, 0.0*GeV]], 33.13*pb],
 [[[150.0*GeV, 50.0*GeV], [150.0*GeV, 50.0*GeV]], 35.21*pb],
 [[[150.0*GeV, 100.0*GeV], [150.0*GeV, 100.0*GeV]], 28.5*pb],

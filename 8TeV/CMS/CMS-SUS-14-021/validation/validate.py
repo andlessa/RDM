@@ -33,8 +33,10 @@ if expRes == []:
         if line[:3]=="id:":
             Id=line[4:]
             Id=Id.replace("\n","")
-            if Id != getExpIdFromPath():
-                print "[validate.py] Error: path directory ``%s'' does not match exp id ``%s'' in ../globalInfo.txt" % ( getExpIdFromPath(), Id  )
+            idfromPath=getExpIdFromPath()
+            if not ( Id == idfromPath ):
+                print "[validate.py] Error: path directory ``%s'' does not "  \
+                      "match exp id ``%s'' in ../globalInfo.txt" % ( idfromPath, Id  )
                 sys.exit()
 
 slhamain = os.path.join(home,"smodels-utils/slha")

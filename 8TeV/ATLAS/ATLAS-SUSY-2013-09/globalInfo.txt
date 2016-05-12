@@ -11,4 +11,3 @@ comment: exclusionLines digitized by hand (MT)
 private: False
 implementedBy: Wolfgang Waltenberger
 lastUpdate: 2015/5/6
-
