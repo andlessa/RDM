@@ -9,4 +9,3 @@ comment: T5WWLSP060 and T6WWLSP060 originally have xvalue on y-axes, changed by 
 private: False
 implementedBy: Wolfgang Waltenberger
 lastUpdate: 2015/5/6
-

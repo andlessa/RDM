@@ -3,5 +3,5 @@ dataId: SR2jm
 observedN: 715
 expectedBG: 760
 bgError: 50
-upperLimit: 4.29124497356*fb
-expectedUpperLimit: 5.50793528628*fb
+upperLimit: 4.25628472846*fb
+expectedUpperLimit: 5.57695011048*fb

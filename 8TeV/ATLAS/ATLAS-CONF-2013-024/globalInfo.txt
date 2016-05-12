@@ -7,4 +7,3 @@ comment: will be superseded by SUSY_2013_16
 private: False
 implementedBy: Wolfgang Waltenberger
 lastUpdate: 2015/5/6
-

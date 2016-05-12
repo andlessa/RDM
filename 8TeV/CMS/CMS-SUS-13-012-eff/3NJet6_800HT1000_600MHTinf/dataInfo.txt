@@ -3,5 +3,5 @@ dataId: 3NJet6_800HT1000_600MHTinf
 observedN: 52
 expectedBG: 54.8
 bgError: 9.7
-upperLimit: 1.19230702488*fb
-expectedUpperLimit: 1.25968536913*fb
+upperLimit: 1.1703161501*fb
+expectedUpperLimit: 1.26522233261*fb

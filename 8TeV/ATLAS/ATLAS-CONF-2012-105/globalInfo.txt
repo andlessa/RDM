@@ -5,5 +5,4 @@ prettyName: ATLAS SS
 url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2012-105/
 private: False
 implementedBy: Wolfgang Waltenberger
-lastUpdate: 2015/5/6
-
+lastUpdate: 2016/5/12

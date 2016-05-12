@@ -3,5 +3,5 @@ dataId: SR6jl
 observedN: 121
 expectedBG: 111
 bgError: 11
-upperLimit: 1.92640188895*fb
-expectedUpperLimit: 1.56839450336*fb
+upperLimit: 1.91475263202*fb
+expectedUpperLimit: 1.51525183759*fb

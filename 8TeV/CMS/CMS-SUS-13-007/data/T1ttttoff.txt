@@ -3,6 +3,7 @@ conditionDescription: None
 condition: None
 constraint: [[['b','W','b','W']],[['b','W','b','W']]]
 figureUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13007/combLimit_T1tttt_b.pdf
+dataUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13007/limits_model_A.txt
 validated: None
 axes: 2*Eq(mother,x)_Eq(lsp,y)
 publishedData: True

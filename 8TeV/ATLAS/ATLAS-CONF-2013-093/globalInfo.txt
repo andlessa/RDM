@@ -7,4 +7,3 @@ supersededBy: SUSY-2013-23
 private: False
 implementedBy: Wolfgang Waltenberger
 lastUpdate: 2015/5/6
-

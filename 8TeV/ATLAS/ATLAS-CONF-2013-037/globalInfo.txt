@@ -8,4 +8,4 @@ supersededBy: ATLAS-SUSY-2013-15
 supersedes: ATLAS-CONF-2012-166
 private: False
 implementedBy: Wolfgang Waltenberger
-lastUpdate: 2015/5/6
+lastUpdate: 2016/5/12

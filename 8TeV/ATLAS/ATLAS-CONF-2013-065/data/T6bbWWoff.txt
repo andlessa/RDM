@@ -3,7 +3,8 @@ conditionDescription: [[['b'],['L','nu']],[['b'],['jet','> 2.7* [[['b'],['ta','n
 condition: Cgtr([[['b'],['L','nu']],[['b'],['jet','jet']]],3.*[[['b'],['ta','nu']],[['b'],['jet','jet']]]);Cgtr([[['b'],['L','nu']],[['b'],['jet','jet']]],3.*[[['b'],['e','nu']],[['b'],['jet','jet']]])
 constraint: 9.18*([[['b'],['L-','nu']],[['b'],['L+','nu']]])
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-065/fig_11.png
-validated: None
+dataUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-065/fig_11_PRELIMINARY.data
+validated: False
 axes: 2*Eq(mother,300.0)_Eq(inter0,x)_Eq(lsp,y)
 publishedData: True
 upperLimits: [[[[300.0*GeV, 100.0*GeV, 1.0*GeV], [300.0*GeV, 100.0*GeV, 1.0*GeV]], 0.5*pb],
