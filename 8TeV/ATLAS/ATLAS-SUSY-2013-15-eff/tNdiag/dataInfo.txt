@@ -3,5 +3,5 @@ dataId: tNdiag
 observedN: 217
 expectedBG: 236
 bgError: 29
-upperLimit: 2.60173809197*fb
-expectedUpperLimit: 3.21249296314*fb
+upperLimit: 2.65438764733*fb
+expectedUpperLimit: 3.19265735401*fb

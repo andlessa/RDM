@@ -3,5 +3,5 @@ dataId: tNboost
 observedN: 5
 expectedBG: 3.3
 bgError: 0.7
-upperLimit: 0.374632789762*fb
-expectedUpperLimit: 0.266469503176*fb
+upperLimit: 0.372921822698*fb
+expectedUpperLimit: 0.267388744437*fb
