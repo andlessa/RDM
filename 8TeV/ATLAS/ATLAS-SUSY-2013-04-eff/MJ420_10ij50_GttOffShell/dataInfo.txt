@@ -3,5 +3,5 @@ dataId: MJ420_10ij50_GttOffShell
 observedN: 1
 expectedBG: 2.2
 bgError: 2.0
-upperLimit: 0.196930147011*fb
-expectedUpperLimit: 0.253637822856*fb
+upperLimit: 0.20082362092*fb
+expectedUpperLimit: 0.252843040536*fb
