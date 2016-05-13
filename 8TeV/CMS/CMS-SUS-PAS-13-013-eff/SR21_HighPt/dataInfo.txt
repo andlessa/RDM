@@ -3,5 +3,5 @@ dataId: SR21_HighPt
 observedN: 12
 expectedBG: 7.06
 bgError: 2.5
-upperLimit: 0.699841260168*fb
-expectedUpperLimit: 0.437106107445*fb
+upperLimit: 0.7014*fb
+expectedUpperLimit: 0.4399*fb

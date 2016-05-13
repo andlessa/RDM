@@ -3,5 +3,5 @@ dataId: mu250Nb2
 observedN: 9
 expectedBG: 6
 bgError: 2.37
-upperLimit: 0.57849642681*fb
-expectedUpperLimit: 0.415467881572*fb
+upperLimit: 0.578*fb
+expectedUpperLimit: 0.4175*fb

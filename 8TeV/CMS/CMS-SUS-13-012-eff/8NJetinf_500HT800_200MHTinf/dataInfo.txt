@@ -3,5 +3,5 @@ dataId: 8NJetinf_500HT800_200MHTinf
 observedN: 8
 expectedBG: 4.8
 bgError: 2.1
-upperLimit: 0.54999867131*fb
-expectedUpperLimit: 0.334989733553*fb
+upperLimit: 0.5459*fb
+expectedUpperLimit: 0.3338*fb

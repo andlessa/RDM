@@ -3,5 +3,5 @@ dataId: HM250
 observedN: 3
 expectedBG: 9.5
 bgError: 2.8
-upperLimit: 0.252395056696*fb
-expectedUpperLimit: 0.473723439499*fb
+upperLimit: 0.2438*fb
+expectedUpperLimit: 0.4686*fb

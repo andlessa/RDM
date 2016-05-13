@@ -3,5 +3,5 @@ dataId: SR3b
 observedN: 1
 expectedBG: 2.2
 bgError: 0.8
-upperLimit: 0.194886675113*fb
-expectedUpperLimit: 0.244989086583*fb
+upperLimit: 0.1918*fb
+expectedUpperLimit: 0.244*fb

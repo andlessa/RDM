@@ -3,5 +3,5 @@ dataId: SR28_HighPt
 observedN: 2
 expectedBG: 2.15
 bgError: 0.98
-upperLimit: 0.259437995391*fb
-expectedUpperLimit: 0.261962567452*fb
+upperLimit: 0.2598*fb
+expectedUpperLimit: 0.2584*fb

@@ -3,5 +3,5 @@ dataId: LM300
 observedN: 9
 expectedBG: 11.5
 bgError: 3.6
-upperLimit: 0.452527459368*fb
-expectedUpperLimit: 0.545455614417*fb
+upperLimit: 0.4614*fb
+expectedUpperLimit: 0.5343*fb

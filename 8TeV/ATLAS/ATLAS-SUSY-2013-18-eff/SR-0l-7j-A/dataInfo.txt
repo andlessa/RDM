@@ -3,5 +3,5 @@ dataId: SR-0l-7j-A
 observedN: 21
 expectedBG: 21.2
 bgError: 4.6
-upperLimit: 0.684943946122*fb
-expectedUpperLimit: 0.694628903972*fb
+upperLimit: 0.6933*fb
+expectedUpperLimit: 0.6999*fb

@@ -3,5 +3,5 @@ dataId: mCT250
 observedN: 4
 expectedBG: 8.2
 bgError: 1.9
-upperLimit: 0.259212845009*fb
-expectedUpperLimit: 0.405742165606*fb
+upperLimit: 0.254*fb
+expectedUpperLimit: 0.4039*fb

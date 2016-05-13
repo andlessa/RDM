@@ -3,5 +3,5 @@ dataId: SRA3
 observedN: 5
 expectedBG: 4.1
 bgError: 0.9
-upperLimit: 0.353369451322*fb
-expectedUpperLimit: 0.29639410785*fb
+upperLimit: 0.3542*fb
+expectedUpperLimit: 0.3035*fb
