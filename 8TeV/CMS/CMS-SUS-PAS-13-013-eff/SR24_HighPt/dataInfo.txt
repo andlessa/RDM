@@ -1,0 +1,7 @@
+dataType: efficiencyMap
+dataId: SR24_HighPt
+observedN: 7
+expectedBG: 2.75
+bgError: 1.18
+upperLimit: 0.549125870775*fb
+expectedUpperLimit: 0.251186411162*fb
