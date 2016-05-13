@@ -3,5 +3,5 @@ dataId: SR2jW
 observedN: 0
 expectedBG: 2.3
 bgError: 1.4
-upperLimit: 0.152839526014*fb
-expectedUpperLimit: 0.253369980171*fb
+upperLimit: 0.148995548478*fb
+expectedUpperLimit: 0.249814493502*fb

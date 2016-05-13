@@ -4,7 +4,7 @@ condition: Cgtr([[['jet','jet'],['L','nu']],[['jet','jet'],['jet','jet']]],3.*[[
 constraint: 2.3 * [[['jet','jet'],['L','nu']],[['jet','jet'],['jet','jet']]]
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-062/fig_13a.png
 dataUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-062/fig_13a_PRELIMINARY.data
-validated: False
+validated: None
 axes: 2*Eq(mother,x)_Eq(inter0,0.5*x+0.5*y)_Eq(lsp,y)
 publishedData: True
 upperLimits: [[[[1025.0*GeV, 545.0*GeV, 65.0*GeV], [1025.0*GeV, 545.0*GeV, 65.0*GeV]], 0.037*pb],
