@@ -4,7 +4,7 @@ condition: None
 constraint: [[['jet']],[['jet']]]
 figureUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/t2.pdf
 dataUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/t2.root;https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/T2.root
-validated: None
+validated: True
 axes: 2*Eq(mother,x)_Eq(lsp,y)
 publishedData: True
 upperLimits: [[[[300.0*GeV, 0.0*GeV], [300.0*GeV, 0.0*GeV]], 0.928286226871*pb],
