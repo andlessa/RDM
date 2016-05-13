@@ -4,7 +4,7 @@ condition: None
 constraint: [[['b','W'],['b','W']],[['b','W'],['b','W']]]
 figureUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13007/combLimit_T1t1t_b.png
 dataUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13007/limits_model_B.txt
-validated: None
+validated: True
 axes: 2*Eq(mother,1000.0)_Eq(inter0,x)_Eq(lsp,y)
 publishedData: True
 upperLimits: [[[[1000.0*GeV, 400.0*GeV, 300.0*GeV], [1000.0*GeV, 400.0*GeV, 300.0*GeV]], 0.0066*pb],

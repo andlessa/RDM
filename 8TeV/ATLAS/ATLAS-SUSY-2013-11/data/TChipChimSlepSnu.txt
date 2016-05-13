@@ -4,7 +4,7 @@ condition: Csim([[['L-'],['nu']],[['nu'],['L+']]],[[['L+'],['nu']],[['nu'],['L-'
 constraint: [[['L-'],['nu']],[['nu'],['L+']]] + [[['L+'],['nu']],[['nu'],['L-']]] + [[['L+'],['nu']],[['L-'],['nu']]] + [[['nu'],['L+']],[['nu'],['L-']]]
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-11/fig_05.png
 dataUrl: http://hepdata.cedar.ac.uk/view/ins1286761/d63
-validated: None
+validated: True
 axes: 2*Eq(mother,x)_Eq(inter0,0.5*x+0.5*y)_Eq(lsp,y)
 publishedData: True
 upperLimits: [[[[112.5*GeV, 62.5*GeV, 12.5*GeV], [112.5*GeV, 62.5*GeV, 12.5*GeV]], 5.9294*pb],
