@@ -4,7 +4,7 @@ condition: None
 constraint: [[['jet']],[['jet']]]
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-02/figaux_15b.png
 dataUrl: http://hepdata.cedar.ac.uk/view/ins1298722/d106
-validated: None
+validated: True
 axes: 2*Eq(mother,x)_Eq(lsp,y)
 publishedData: True
 efficiencyMap: [[[[87.0*GeV, 62.0*GeV], [87.0*GeV, 62.0*GeV]], 0.0006184],

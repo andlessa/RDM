@@ -5,7 +5,7 @@ constraint: [[['t+']],[['t-']]]
 checked: VM
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-065/fig_07a.png
 dataUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-065/fig_07a_PRELIMINARY.data
-validated: None
+validated: True
 axes: 2*Eq(mother,x)_Eq(lsp,y)
 publishedData: True
 upperLimits: [[[[200.0*GeV, 1.0*GeV], [200.0*GeV, 1.0*GeV]], 58.0*pb],

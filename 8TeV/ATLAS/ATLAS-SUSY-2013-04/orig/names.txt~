@@ -1,7 +1,0 @@
-Figure      File from HepData                            topology                object
-Fig_9       Multijet_Gtt_limits.root                     T1tttt                  observed/expected exclusion line
-Fig_10      Multijet_GttOnShell_limits.root              T5tttt                  observed/expected exclusion line
-Fig_11a     Multijet_SM_GG_onestepCC_NE60_limits.root    T5WW050                 observed/expected exclusion line
-Fig_11b     Multijet_SM_GG_onestepCC_EE60_limits.root    T5WWLSP060(y = xvalue)   observed/expected exclusion line
-Fig_12      Multijet_SMGG2WWZZ_limits.root               T7WZWZ050050            observed/expected exclusion line
-
