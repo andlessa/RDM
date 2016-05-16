@@ -1,0 +1,7 @@
+dataType: efficiencyMap
+dataId: Zjets
+observedN: 1
+expectedBG: 1.4
+bgError: 0.6
+upperLimit: 0.202825704389*fb
+expectedUpperLimit: 0.20138216934*fb
