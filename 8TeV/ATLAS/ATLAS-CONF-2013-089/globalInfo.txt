@@ -3,7 +3,6 @@ lumi: 20.3/fb
 id: ATLAS-CONF-2013-089
 prettyName: 2l
 url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-089/ https://cds.cern.ch/record/1595272
-supersededBy: SUSY-2013-20
 comment: T5WWLSP060 and T6WWLSP060 originally have xvalue on y-axes, changed by us to M2 - there are more topologies (with more then three masses)
 private: False
 implementedBy: Wolfgang Waltenberger
