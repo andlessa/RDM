@@ -40,9 +40,9 @@ info.private = False
 info.arxiv = ''
 info.contact = ''
 info.publication = ''
-info.comment = 'Only https://cds.cern.ch/record/1693164?ln=it available document'
+info.comment = 'Only https://cds.cern.ch/record/1693164?ln=it document,will be superseeded by CMS-SUS-14-001'
 info.supersedes =''
-info.supersededBy = 'CMS-SUS-14-001'
+info.supersededBy = ''
 
 #+++++++ next txName block ++++++++++++++
 T2bb = TxNameInput('T2bb')

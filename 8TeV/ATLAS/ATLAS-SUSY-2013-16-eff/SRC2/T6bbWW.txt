@@ -4,7 +4,7 @@ condition: None
 constraint: [[['b'],['W']],[['b'],['W']]]
 figureUrl: None
 dataUrl: http://hepdata.cedar.ac.uk/view/ins1299143/next
-validated: None
+validated: False
 axes: 2*Eq(mother,x)_Eq(inter0,2.0*y)_Eq(lsp,y)
 publishedData: True
 efficiencyMap: [[[[230.0*GeV, 100.0*GeV, 50.0*GeV], [230.0*GeV, 100.0*GeV, 50.0*GeV]], 0.00014579],
