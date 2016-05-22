@@ -42,7 +42,7 @@ info.contact =''
 info.publication ='http://cds.cern.ch/record/1635353/files/SUS-13-015-pas.pdf'
 info.comment ='PAS so no arxiv publication - only cds.cern; asymmetric bkg errors, I took the largest value'
 info.supersedes =''
-info.supersededBy ='CMS-SUS-14-001'
+#info.supersededBy ='CMS-SUS-14-001'
 
 #+++++++ next txName block ++++++++++++++
 T2tt = TxNameInput('T2tt')

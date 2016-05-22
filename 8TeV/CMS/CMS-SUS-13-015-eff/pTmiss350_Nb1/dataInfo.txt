@@ -3,5 +3,5 @@ dataId: pTmiss350_Nb1
 observedN: 45
 expectedBG: 40.9
 bgError: 9.6
-upperLimit: 1.393*fb
-expectedUpperLimit: 1.213*fb
+upperLimit: 1.396*fb
+expectedUpperLimit: 1.188*fb
