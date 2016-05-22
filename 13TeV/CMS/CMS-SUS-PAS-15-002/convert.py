@@ -42,7 +42,7 @@ info.contact = ''
 info.publication = ''
 info.comment = 'Only CDS entry https://cds.cern.ch/record/2114817'
 info.supersedes = 'None'
-info.supersededBy = 'SUS-15-002'
+#info.supersededBy = 'SUS-15-002'
 
 #+++++++ next txName block ++++++++++++++
 T1bbbb = TxNameInput('T1bbbb')
