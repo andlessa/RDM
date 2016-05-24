@@ -22,9 +22,26 @@ if os.path.exists ( fastlimdir ):
 cmd="mkdir %s" % fastlimdir 
 run ( cmd )
 
+def isFastlim ( path ):
+    print "%s is fastlim!" % path
+    cmd = "mv %s %s" % ( path, fastlimdir )
+    # commands.getoutput ( cmd )
+
 ## now traverse the *TeV dirs
 for i in os.listdir("."):
     if not os.path.isdir ( i ) or i in [ ".git" ]:
         continue
     for j in os.listdir ( i ):
-        print i,j
+        fulldir = os.path.join ( i, j )
+        if not os.path.isdir ( fulldir ):
+            continue
+        for analysis in os.listdir ( fulldir ):
+            fullpath = os.path.join ( fulldir, analysis )
+            gif=open ( fullpath + "/globalInfo.txt" )
+            lines=gif.readlines()
+            for line in lines:
+                if "fastlim" in line:
+                    isFastlim ( fullpath )
+                    break
+            gif.close()
+
