@@ -25,7 +25,7 @@ run ( cmd )
 def isFastlim ( path ):
     print "%s is fastlim!" % path
     cmd = "mv %s %s" % ( path, fastlimdir )
-    # commands.getoutput ( cmd )
+    commands.getoutput ( cmd )
 
 ## now traverse the *TeV dirs
 for i in os.listdir("."):
