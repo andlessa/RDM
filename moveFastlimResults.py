@@ -6,42 +6,80 @@
 import os
 import commands
 
-def run ( cmd ):
+fastlimdir = "../smodels-fastlim"
+
+def run ( cmd, dryrun=False ):
+    if dryrun:
+        print "Dry-run: skipping %s." % cmd
+    else:
+        print "Executing: %s." % cmd
+        commands.getoutput ( cmd )
+
+def backupScript():
+    ## first we copy ourself to /tmp
+    cmd="cp ./moveFastlimResults.py /tmp/"
     commands.getoutput ( cmd )
 
-## first we copy ourself to /tmp
-cmd="cp ./moveFastlimResults.py /tmp/"
-commands.getoutput ( cmd )
+def rmDirs():
+    if os.path.exists ( fastlimdir ):
+        cmd = "rm -r %s" % fastlimdir
+        run ( cmd )
 
-## then make the fastlim dir
-fastlimdir = "../smodels-fastlim"
-if os.path.exists ( fastlimdir ):
-    cmd = "rm -r %s" % fastlimdir
+def mkDirs():
+    cmd="mkdir %s" % fastlimdir
     run ( cmd )
 
-cmd="mkdir %s" % fastlimdir 
-run ( cmd )
+def isFastlim ( path, dryrun ):
+    dname = os.path.dirname ( path )
+    bname = os.path.basename ( path )
+    print "%s is fastlim!" % bname
+    cmd = "mkdir -p %s/%s" % ( fastlimdir, dname )
+    run ( cmd )
+    cmd = "mv %s %s/%s" % ( path, fastlimdir, dname )
+    if dryrun:
+        cmd = "cp -a %s %s/%s" % ( path, fastlimdir, dname )
+    run ( cmd )
+    cmd = "rm -r %s/%s/*/orig" % ( fastlimdir, path )
+    run ( cmd )
+    cmd = "rm -r %s/%s/*/convert.py" % ( fastlimdir, path )
+    run ( cmd )
+    cmd = "rm -r %s/%s/validation" % ( fastlimdir, path )
+    run ( cmd )
+    cmd = "rm -r %s/%s/sms.root" % ( fastlimdir, path )
+    run ( cmd )
 
-def isFastlim ( path ):
-    print "%s is fastlim!" % path
-    cmd = "mv %s %s" % ( path, fastlimdir )
-    commands.getoutput ( cmd )
+def createFastlimTarball():
+    cmd = "cd %s; tar czvf smodels-fastlim.tar.gz ./" % fastlimdir
+    run ( cmd )
 
 ## now traverse the *TeV dirs
-for i in os.listdir("."):
-    if not os.path.isdir ( i ) or i in [ ".git" ]:
-        continue
-    for j in os.listdir ( i ):
-        fulldir = os.path.join ( i, j )
-        if not os.path.isdir ( fulldir ):
+def traverse( dryrun ):
+    for i in os.listdir("."):
+        if not os.path.isdir ( i ) or i in [ ".git" ]:
             continue
-        for analysis in os.listdir ( fulldir ):
-            fullpath = os.path.join ( fulldir, analysis )
-            gif=open ( fullpath + "/globalInfo.txt" )
-            lines=gif.readlines()
-            for line in lines:
-                if "fastlim" in line:
-                    isFastlim ( fullpath )
-                    break
-            gif.close()
+        for j in os.listdir ( i ):
+            fulldir = os.path.join ( i, j )
+            if not os.path.isdir ( fulldir ):
+                continue
+            for analysis in os.listdir ( fulldir ):
+                fullpath = os.path.join ( fulldir, analysis )
+                gif=open ( fullpath + "/globalInfo.txt" )
+                lines=gif.readlines()
+                for line in lines:
+                    if "fastlim" in line:
+                        isFastlim ( fullpath, dryrun )
+                        break
+                gif.close()
 
+if __name__ == "__main__":
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument( '-d', '--dryrun', 
+            help='Dry-run, dont actuall move or create anything',
+            action='store_true')
+    args = ap.parse_args()
+    backupScript()
+    rmDirs()
+    mkDirs()
+    traverse( args.dryrun )
+    createFastlimTarball()
