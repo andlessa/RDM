@@ -3,5 +3,5 @@ dataId: WWc-DF
 observedN: 11
 expectedBG: 9.0
 bgError: 2.2
-upperLimit: 0.529410628195*fb
-expectedUpperLimit: 0.439055787481*fb
+upperLimit: 0.53*fb
+expectedUpperLimit: 0.4373*fb

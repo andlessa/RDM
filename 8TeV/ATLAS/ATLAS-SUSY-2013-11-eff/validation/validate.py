@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 import sys,os
-home = '/home/federico/SModelS_Jan2016/'
+home = '/scratch/federico/SModelS_June2016_Version2_Intact/SModelS_June2016/'
 sys.path.insert(0,os.path.join(home,"smodels-utils/"))
 sys.path.insert(0,os.path.join(home,"smodels/"))
 

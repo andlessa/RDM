@@ -3,5 +3,5 @@ dataId: WWa-DF
 observedN: 70
 expectedBG: 73.6
 bgError: 7.9
-upperLimit: 1.0699035151*fb
-expectedUpperLimit: 1.16871213117*fb
+upperLimit: 1.055*fb
+expectedUpperLimit: 1.174*fb

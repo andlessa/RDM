@@ -1,402 +1,383 @@
 #MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-100   1   0.0137232
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-100   15   0.0137131
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-100   30   0.0092585
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-100   45   0.0040675
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-100   60   0.0005562
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-120   1   0.0197611
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-120   15   0.0191779
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-120   30   0.0176401
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-120   45   0.0149290
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-120   60   0.0090482
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-120   75   0.0021020
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-140   1   0.0205772
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-140   105   0.0004594
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-140   15   0.0211023
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-140   30   0.0209541
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-140   45   0.0216683
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-140   60   0.0188361
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-140   75   0.0151844
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-140   90   0.0049431
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-160   1   0.0219719
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-160   105   0.0095690
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-160   120   0.0013844
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-160   15   0.0214476
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-160   30   0.0215344
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-160   45   0.0224809
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-160   60   0.0219563
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-160   75   0.0216702
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-160   90   0.0171952
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-180   1   0.0202120
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-180   105   0.0201024
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-180   120   0.0142113
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-180   135   0.0032078
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-180   15   0.0193299
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-180   30   0.0210270
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-180   45   0.0199256
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-180   60   0.0220783
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-180   75   0.0222869
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-180   90   0.0226731
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-200   105   0.0231685
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-200   120   0.0217595
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-200   135   0.0182643
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-200   15   0.0187920
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-200   150   0.0082628
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-200   165   0.0004815
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-200   45   0.0199053
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-200   60   0.0198948
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-200   75   0.0208774
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-200   90   0.0215621
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-220   1   0.0167515
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-220   105   0.0208626
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-220   120   0.0223193
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-220   135   0.0226483
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-220   15   0.0169473
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-220   150   0.0205342
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-220   165   0.0127973
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-220   180   0.0015126
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-220   30   0.0180045
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-220   45   0.0179195
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-220   60   0.0178297
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-220   75   0.0195460
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-220   90   0.0200720
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-240   1   0.0149967
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-240   105   0.0193057
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-240   120   0.0214980
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-240   135   0.0219227
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-240   15   0.0147386
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-240   150   0.0224870
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-240   165   0.0225989
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-240   180   0.0169092
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-240   195   0.0045296
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-240   30   0.0154616
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-240   45   0.0164282
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-240   60   0.0173153
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-240   75   0.0171416
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-240   90   0.0184238
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-260   1   0.0137993
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-260   105   0.0172977
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-260   120   0.0189725
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-260   135   0.0198408
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-260   15   0.0135179
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-260   150   0.0213544
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-260   165   0.0230495
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-260   180   0.0231650
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-260   195   0.0196575
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-260   210   0.0095717
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-260   225   0.0005721
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-260   30   0.0141562
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-260   45   0.0143861
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-260   60   0.0145467
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-260   75   0.0154402
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-260   90   0.0155959
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-280   1   0.0123606
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-280   105   0.0151194
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-280   120   0.0166209
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-280   135   0.0177664
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-280   15   0.0122950
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-280   150   0.0194594
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-280   165   0.0198849
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-280   180   0.0221059
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-280   195   0.0235781
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-280   210   0.0220721
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-280   225   0.0141429
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-280   30   0.0127886
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-280   45   0.0129846
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-280   60   0.0133033
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-280   75   0.0132542
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-280   90   0.0146911
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-300   1   0.0107826
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-300   105   0.0134748
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-300   120   0.0153032
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-300   135   0.0154579
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-300   15   0.0117662
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-300   150   0.0173105
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-300   165   0.0180560
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-300   180   0.0199640
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-300   195   0.0214709
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-300   210   0.0228580
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-300   225   0.0227667
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-300   45   0.0111774
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-300   75   0.0127293
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-300   90   0.0133149
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-320   1   0.0105885
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-320   105   0.0125952
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-320   120   0.0124442
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-320   135   0.0140950
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-320   15   0.0104997
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-320   150   0.0151135
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-320   165   0.0158879
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-320   180   0.0174436
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-320   195   0.0192793
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-320   210   0.0223388
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-320   225   0.0221225
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-320   30   0.0107630
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-320   45   0.0101441
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-320   60   0.0106568
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-320   75   0.0108591
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-320   90   0.0115254
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-340   1   0.0091995
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-340   105   0.0104937
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-340   120   0.0110105
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-340   135   0.0123342
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-340   15   0.0097034
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-340   150   0.0130697
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-340   165   0.0144880
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-340   180   0.0150024
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-340   195   0.0168172
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-340   210   0.0186684
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-340   225   0.0205365
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-340   30   0.0096805
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-340   45   0.0092960
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-340   60   0.0099502
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-340   75   0.0098951
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-340   90   0.0101254
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-360   1   0.0084182
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-360   105   0.0106268
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-360   120   0.0101921
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-360   135   0.0110060
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-360   15   0.0089020
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-360   150   0.0114768
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-360   165   0.0126492
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-360   180   0.0136478
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-360   195   0.0148725
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-360   210   0.0158275
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-360   225   0.0173459
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-360   30   0.0081127
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-360   45   0.0088136
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-360   60   0.0087834
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-360   75   0.0093749
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-360   90   0.0092777
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-380   1   0.0075191
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-380   105   0.0081449
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-380   120   0.0088781
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-380   135   0.0101937
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-380   15   0.0074315
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-380   150   0.0104935
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-380   165   0.0109290
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-380   180   0.0121418
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-380   195   0.0132183
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-380   210   0.0140928
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-380   225   0.0159449
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-380   30   0.0073893
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-380   45   0.0072125
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-380   60   0.0078678
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-380   75   0.0079981
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-380   90   0.0083127
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-400   1   0.0068355
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-400   105   0.0084819
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-400   120   0.0089558
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-400   135   0.0095169
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-400   15   0.0066342
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-400   150   0.0093709
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-400   165   0.0093945
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-400   180   0.0102677
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-400   195   0.0109645
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-400   210   0.0117187
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-400   225   0.0133580
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-400   30   0.0072927
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-400   45   0.0072399
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-400   60   0.0072031
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-400   75   0.0075854
-#MA5 EffMap for txName: TSlepSlep , Analysis: atlas_susy_2013_11 , SR: WWa-SF
-400   90   0.0074362
+# Mother  Daughter  Eff. 
+160   30   0.0218063
+280   20   0.0127338
+260   180   0.0226671
+280   30   0.0128121
+230   40   0.0165981
+330   190   0.0178556
+340   0   0.0088123
+330   80   0.0105453
+240   70   0.0168298
+270   190   0.0229434
+180   60   0.0215139
+180   20   0.0201766
+280   80   0.0134896
+290   60   0.0126970
+330   50   0.0099700
+140   0   0.0215163
+290   160   0.0185956
+170   70   0.0222757
+350   150   0.0122432
+240   30   0.0157331
+160   130   0.0001168
+160   70   0.0205214
+200   10   0.0196301
+230   190   0.0016626
+200   160   0.0014473
+200   80   0.0210817
+260   90   0.0164264
+340   70   0.0097843
+250   140   0.0212862
+230   110   0.0211506
+190   70   0.0210084
+320   110   0.0126706
+240   100   0.0198814
+230   20   0.0163299
+340   130   0.0114554
+140   30   0.0219933
+250   80   0.0165115
+260   160   0.0226555
+100   30   0.0096096
+220   160   0.0160088
+180   30   0.0209148
+340   160   0.0133826
+220   50   0.0179472
+220   110   0.0214311
+130   20   0.0207688
+160   60   0.0215469
+260   10   0.0133045
+250   180   0.0215130
+280   40   0.0128178
+290   180   0.0214790
+220   20   0.0166918
+330   70   0.0102687
+220   180   0.0016518
+200   0   0.0186211
+270   20   0.0127215
+320   130   0.0136455
+220   190   0.0001125
+210   150   0.0163434
+170   50   0.0213987
+180   0   0.0197525
+280   190   0.0232561
+130   60   0.0154399
+290   170   0.0197929
+320   160   0.0159478
+250   170   0.0231026
+330   120   0.0118257
+210   20   0.0179617
+170   10   0.0207464
+350   170   0.0140087
+110   80   0.0000841
+180   90   0.0218129
+200   50   0.0193388
+240   150   0.0230893
+340   150   0.0127283
+280   180   0.0225767
+210   170   0.0014384
+320   120   0.0132416
+190   110   0.0215256
+350   100   0.0100457
+230   100   0.0196456
+190   150   0.0013546
+330   10   0.0095652
+200   120   0.0217135
+100   10   0.0130981
+100   50   0.0023643
+220   30   0.0172297
+140   40   0.0206190
+220   130   0.0236120
+280   170   0.0213555
+180   50   0.0213584
+240   140   0.0225837
+230   30   0.0162495
+220   70   0.0190522
+210   70   0.0202636
+290   0   0.0121308
+350   110   0.0102949
+280   60   0.0135875
+350   160   0.0128539
+120   10   0.0193341
+340   20   0.0092172
+280   90   0.0143580
+130   90   0.0009116
+290   20   0.0116549
+220   120   0.0223202
+240   20   0.0154934
+240   160   0.0222883
+330   100   0.0112787
+150   70   0.0191862
+250   100   0.0177959
+270   10   0.0126590
+260   140   0.0200507
+280   100   0.0149740
+250   30   0.0148040
+210   50   0.0189234
+180   130   0.0070279
+290   150   0.0180481
+270   120   0.0175793
+280   160   0.0201263
+340   110   0.0113895
+280   70   0.0137780
+240   10   0.0153252
+200   130   0.0199028
+330   0   0.0095399
+340   40   0.0090532
+150   110   0.0010948
+190   140   0.0075887
+210   120   0.0224666
+220   60   0.0188020
+320   40   0.0102019
+230   120   0.0215379
+140   50   0.0207178
+160   0   0.0211111
+120   90   0.0001264
+350   0   0.0092419
+320   30   0.0101676
+330   130   0.0127574
+240   80   0.0173744
+350   140   0.0118768
+290   50   0.0123385
+130   30   0.0198008
+140   20   0.0216095
+130   40   0.0192212
+290   10   0.0108545
+270   160   0.0218997
+330   180   0.0163105
+290   190   0.0221667
+290   130   0.0163101
+210   30   0.0174035
+260   120   0.0182309
+260   40   0.0145812
+210   180   0.0001066
+190   30   0.0201802
+280   10   0.0125429
+200   40   0.0196760
+350   130   0.0112245
+250   190   0.0170842
+350   10   0.0086639
+130   10   0.0208149
+160   20   0.0213126
+140   110   0.0001546
+230   10   0.0160119
+170   80   0.0223038
+190   100   0.0224763
+200   90   0.0219297
+250   120   0.0192090
+270   0   0.0130355
+220   150   0.0202024
+290   120   0.0153964
+280   0   0.0124629
+330   20   0.0096414
+240   180   0.0167514
+220   90   0.0201769
+230   70   0.0177970
+260   150   0.0218065
+120   40   0.0159793
+140   60   0.0191954
+160   110   0.0060898
+240   110   0.0198750
+340   80   0.0099781
+330   60   0.0100905
+180   40   0.0205014
+170   120   0.0065855
+210   90   0.0217478
+260   130   0.0189696
+250   10   0.0147717
+130   0   0.0203129
+100   0   0.0136087
+240   130   0.0213337
+330   110   0.0115871
+260   0   0.0137374
+190   80   0.0221788
+140   100   0.0012065
+150   80   0.0169276
+320   70   0.0108361
+110   30   0.0143044
+150   10   0.0214418
+330   90   0.0111306
+150   90   0.0120296
+150   100   0.0055601
+140   70   0.0159608
+260   100   0.0168236
+250   0   0.0145472
+280   50   0.0133919
+170   60   0.0220081
+210   10   0.0180592
+230   0   0.0153714
+210   0   0.0177964
+110   60   0.0031418
+210   110   0.0225663
+340   170   0.0144848
+320   100   0.0120800
+230   180   0.0090102
+210   140   0.0203331
+250   150   0.0222878
+340   60   0.0094893
+150   30   0.0216015
+120   80   0.0007633
+290   80   0.0127440
+240   170   0.0208810
+200   60   0.0201146
+320   60   0.0107746
+230   170   0.0157656
+160   120   0.0013411
+230   160   0.0201393
+190   160   0.0001119
+270   140   0.0192203
+290   30   0.0121706
+270   80   0.0148634
+260   20   0.0138711
+320   50   0.0108299
+120   50   0.0134162
+160   90   0.0177809
+330   150   0.0138031
+170   130   0.0013863
+330   40   0.0099773
+340   50   0.0092015
+280   130   0.0175610
+240   50   0.0156428
+190   120   0.0190180
+270   110   0.0165676
+270   100   0.0157395
+130   80   0.0042035
+270   30   0.0132566
+140   10   0.0215735
+320   80   0.0114542
+260   30   0.0134424
+340   190   0.0163619
+280   140   0.0184866
+210   130   0.0221214
+170   90   0.0207995
+240   120   0.0207870
+180   140   0.0013911
+240   90   0.0185613
+180   150   0.0001535
+160   10   0.0211527
+120   20   0.0193778
+200   150   0.0079258
+170   0   0.0212003
+250   110   0.0187226
+110   50   0.0076580
+200   170   0.0001430
+270   150   0.0204543
+190   50   0.0205263
+100   60   0.0006755
+330   30   0.0095778
+100   40   0.0060034
+230   150   0.0223785
+230   90   0.0191881
+110   70   0.0007389
+340   90   0.0103900
+170   110   0.0133292
+320   140   0.0134665
+270   90   0.0157855
+190   0   0.0200548
+120   30   0.0181654
+120   60   0.0090818
+250   50   0.0146150
+280   110   0.0152757
+350   120   0.0107528
+260   80   0.0159843
+120   0   0.0199103
+230   60   0.0173008
+160   80   0.0194128
+210   100   0.0212543
+160   50   0.0213998
+250   40   0.0148926
+170   30   0.0213114
+220   40   0.0172554
+130   100   0.0001347
+100   70   0.0001368
+230   140   0.0224570
+250   20   0.0146585
+140   80   0.0112707
+270   60   0.0134576
+260   190   0.0209300
+230   80   0.0181728
+230   50   0.0167855
+150   120   0.0001785
+200   110   0.0224135
+320   150   0.0151770
+220   100   0.0207664
+200   70   0.0210392
+160   100   0.0132858
+340   120   0.0110242
+210   60   0.0194407
+330   140   0.0130831
+340   10   0.0092749
+190   40   0.0205678
+260   70   0.0156864
+270   70   0.0144892
+320   90   0.0117167
+220   140   0.0214991
+180   100   0.0213177
+150   40   0.0204252
+190   90   0.0221920
+170   40   0.0209311
+260   60   0.0146547
+320   170   0.0167014
+240   60   0.0167362
+220   170   0.0082305
+290   110   0.0146820
+270   180   0.0222466
+290   100   0.0150901
+270   40   0.0140072
+290   140   0.0170501
+250   130   0.0205498
+150   50   0.0218613
+220   10   0.0172174
+110   0   0.0168158
+160   40   0.0213641
+180   70   0.0220722
+340   30   0.0091737
+230   130   0.0224343
+150   20   0.0217843
+180   10   0.0196032
+240   0   0.0155346
+320   180   0.0177461
+210   80   0.0205711
+280   120   0.0160964
+270   170   0.0223086
+240   190   0.0090330
+170   20   0.0205768
+290   70   0.0126672
+130   50   0.0178679
+120   70   0.0036238
+260   50   0.0145420
+290   40   0.0124771
+110   40   0.0118045
+110   10   0.0172596
+150   60   0.0212274
+250   70   0.0157039
+190   10   0.0188338
+190   130   0.0147899
+340   100   0.0108889
+320   190   0.0194070
+220   0   0.0172371
+340   140   0.0124875
+330   170   0.0151107
+270   130   0.0188851
+150   0   0.0216318
+100   20   0.0117012
+140   90   0.0051343
+180   80   0.0220885
+190   20   0.0192648
+250   160   0.0227835
+170   140   0.0001290
+210   160   0.0081785
+330   160   0.0147154
+240   40   0.0152436
+250   90   0.0172622
+280   150   0.0192365
+200   140   0.0149346
+180   110   0.0191512
+180   120   0.0141983
+220   80   0.0195749
+250   60   0.0154297
+260   110   0.0179814
+340   180   0.0154999
+270   50   0.0137211
+260   170   0.0226143
+130   70   0.0104203
