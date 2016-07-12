@@ -40,8 +40,8 @@ info.private = False
 info.arxiv = 'http://arxiv.org/abs/arXiv:1311.4937'
 info.contact ='Loukas Gouskos <loukas.gouskos@cern.ch>, Markus Stoye <Markus.Stoye@cern.ch>'
 info.publication = 'http://www.sciencedirect.com/science/article/pii/S037026931400255X'
-info.comment = 'observed limits for all three models in fb, no expected limits, combined exclusion lines'
-info.supersedes ='CMS-PAS-SUS-13-007'
+info.comment = 'Only two mass planes for T5tttt'
+#info.supersedes =''
 #info.supersededBy =
 info.implementedBy = 'Federico Ambrogi'
 
