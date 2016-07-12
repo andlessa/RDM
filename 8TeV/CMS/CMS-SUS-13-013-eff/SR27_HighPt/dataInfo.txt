@@ -1,0 +1,7 @@
+dataType: efficiencyMap
+dataId: SR27_HighPt
+observedN: 0
+expectedBG: 1.22
+bgError: 0.62
+upperLimit: 0.1546*fb
+expectedUpperLimit: 0.2126*fb
