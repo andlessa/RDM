@@ -31,7 +31,7 @@ from smodels_utils.dataPreparation.databaseCreation import databaseCreator
 from smodels_utils.dataPreparation.origPlotObjects import x, y
 
 #+++++++ global info block ++++++++++++++
-info = MetaInfoInput('CMS-PAS-SUS-13-015')
+info = MetaInfoInput('CMS-SUS-PAS-13-015')
 info.url = 'https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS13015'
 info.sqrts = 8
 info.lumi = 19.4
