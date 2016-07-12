@@ -35,7 +35,7 @@ info = MetaInfoInput('CMS-SUS-12-028')
 info.url ="https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS12028"
 info.sqrts = 8
 info.lumi = 11.7
-info.prettyName ="\alpha_{T}"
+info.prettyName ="alphaT"
 info.private = False
 info.arxiv ='http://arxiv.org/abs/1303.2985'
 info.contact ='Edward Laird <edward.laird@cern.ch>, Rob Bainbridge <robert.bainbridge@cern.ch>'
@@ -59,7 +59,7 @@ T1tttt.on.condition ="None"
 #+++++++ next mass plane block ++++++++++++++
 T1tttt_1 = T1tttt.addMassPlane(motherMass = x, lspMass = y )
 #----figure----
-T1tttt_1.figure ="t1tttt"
+T1tttt_1.figure ="Figure 8"
 T1tttt_1.figureUrl ="https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/t1tttt.pdf"
 #----limit source----
 T1tttt_1.obsUpperLimit.setSource( 'orig/T1tttt.root', 'root', objectName = "UpperLimit", index = None )
@@ -74,7 +74,7 @@ T1tttt_1.obsExclusion.setSource( 'orig/T1tttt.root', 'root', objectName = "Upper
 #----global url settings ----
 T1tttt_1.dataUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/T1tttt.root"
 #----limit url settings ----
-T1tttt_1.histoDataUrl ="https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/t1tttt.pdf"
+T1tttt_1.histoDataUrl ="https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/T1tttt.pdf"
 T1tttt_1.obsUpperLimit.dataUrl ="https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/T1tttt.root"
 T1tttt_1.expUpperLimit.dataUrl ="https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/T1tttt.root"
 #----exclusion url settings ----
@@ -116,7 +116,7 @@ T2tt_1.obsExclusion.setSource('orig/T2tt.root', 'root', objectName = "ExpectedUp
 #----global url settings ----
 T2tt_1.dataUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/T2tt.root"
 #----limit url settings ----
-T2tt_1.histoDataUrl ="https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/t2tt.pdf"
+T2tt_1.histoDataUrl ="https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/T2tt.pdf"
 T2tt_1.obsUpperLimit.dataUrl ="https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/T2tt.root"
 T2tt_1.expUpperLimit.dataUrl ="https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/T2tt.root"
 #----exclusion url settings ----
@@ -143,7 +143,7 @@ T1bbbb.on.condition ="None"
 #+++++++ next mass plane block ++++++++++++++
 T1bbbb_1 = T1bbbb.addMassPlane(motherMass = x, lspMass = y)
 #----figure----
-T1bbbb_1.figure ="t1bbbb"
+T1bbbb_1.figure ="Figure 8"
 T1bbbb_1.figureUrl ="https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/t1bbbb.pdf"
 #----limit source----
 T1bbbb_1.obsUpperLimit.setSource( 'orig/T1bbbb.root', 'root', objectName = "UpperLimit", index = None )
@@ -159,10 +159,10 @@ T1bbbb_1.obsExclusion.setSource( 'orig/T1bbbb.root', 'root', objectName = "Upper
 T1bbbb_1.dataUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/T1bbbb.root"
 #----limit url settings ----
 T1bbbb_1.histoDataUrl ="https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/t1bbbb.pdf"
-T1bbbb_1.obsUpperLimit.dataUrl ="https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/t1bbbb.root"
-T1bbbb_1.expUpperLimit.dataUrl ="https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/t1bbbb.root"
+T1bbbb_1.obsUpperLimit.dataUrl ="https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/T1bbbb.root"
+T1bbbb_1.expUpperLimit.dataUrl ="https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/T1bbbb.root"
 #----exclusion url settings ----
-T1bbbb_1.exclusionDataUrl ="https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/t1bbbb.root"
+T1bbbb_1.exclusionDataUrl ="https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/T1bbbb.root"
 #T1bbbb_1.exclusionDataUrl =
 #T1bbbb_1.obsExclusion.dataUrl =
 #T1bbbb_1.obsExclusionM1.dataUrl =
@@ -186,7 +186,7 @@ T2.on.condition ="None"
 #+++++++ next mass plane block ++++++++++++++
 T2_1 = T2.addMassPlane(motherMass = x, lspMass = y)
 #----figure----
-T2_1.figure ="t2"
+T2_1.figure ="Figure 8"
 T2_1.figureUrl ="https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/t2.pdf"
 #----limit source----
 T2_1.obsUpperLimit.setSource( 'orig/T2.root', 'root', objectName = "T2_UpperLimit", index = None )
@@ -202,10 +202,10 @@ T2_1.obsExclusion.setSource( 'orig/T2.root', 'root', objectName = "UpperLimit_xs
 T2_1.dataUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/T2.root"
 #----limit url settings ----
 T2_1.histoDataUrl ="https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/t2.pdf"
-T2_1.obsUpperLimit.dataUrl ="https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/t2.root"
-T2_1.expUpperLimit.dataUrl ="https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/t2.root"
+T2_1.obsUpperLimit.dataUrl ="https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/T2.root"
+T2_1.expUpperLimit.dataUrl ="https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/T2.root"
 #----exclusion url settings ----
-T2_1.exclusionDataUrl ="https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/t2.root"
+T2_1.exclusionDataUrl ="https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/T2.root"
 #T2_1.obsExclusion.dataUrl =
 #T2_1.obsExclusionM1.dataUrl =
 #T2_1.obsExclusionP1.dataUrl =
@@ -228,7 +228,7 @@ T1.on.condition ="None"
 #+++++++ next mass plane block ++++++++++++++
 T1_1 = T1.addMassPlane(motherMass = x, lspMass = y )
 #----figure----
-T1_1.figure ="t1"
+T1_1.figure ="Figure 8"
 T1_1.figureUrl ="https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/t1.pdf"
 #----limit source----
 T1_1.obsUpperLimit.setSource( 'orig/T1.root', 'root', objectName = "UpperLimit", index = None )
@@ -244,10 +244,10 @@ T1_1.obsExclusion.setSource( 'orig/T1.root', 'root', objectName = "UpperLimit_gr
 T1_1.dataUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/T1.root"
 #----limit url settings ----
 T1_1.histoDataUrl ="https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/t1.pdf"
-T1_1.obsUpperLimit.dataUrl ="https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/t1.root"
-T1_1.expUpperLimit.dataUrl ="https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/t1.root"
+T1_1.obsUpperLimit.dataUrl ="https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/T1.root"
+T1_1.expUpperLimit.dataUrl ="https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/T1.root"
 #----exclusion url settings ----
-T1_1.exclusionDataUrl ="https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/t1.root"
+T1_1.exclusionDataUrl ="https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/T1.root"
 #T1_1.obsExclusion.dataUrl =
 #T1_1.obsExclusionM1.dataUrl =
 #T1_1.obsExclusionP1.dataUrl =
@@ -270,7 +270,7 @@ T2bb.on.condition ="None"
 #+++++++ next mass plane block ++++++++++++++
 T2bb_1 = T2bb.addMassPlane(motherMass = x, lspMass = y)
 #----figure----
-T2bb_1.figure ="t2bb"
+T2bb_1.figure ="Figure 8"
 T2bb_1.figureUrl ="https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/t2bb.pdf"
 #----limit source----
 T2bb_1.obsUpperLimit.setSource( 'orig/T2bb.root', 'root', objectName = "UpperLimit", index = None )
@@ -286,10 +286,10 @@ T2bb_1.obsExclusion.setSource( 'orig/T2bb.root', 'root', objectName = "UpperLimi
 T2bb_1.dataUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/T2bb.root"
 #----limit url settings ----
 T2bb_1.histoDataUrl ="https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/t2bb.pdf"
-T2bb_1.obsUpperLimit.dataUrl ="https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/t2bb.root"
-T2bb_1.expUpperLimit.dataUrl ="https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/t2bb.root"
+T2bb_1.obsUpperLimit.dataUrl ="https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/T2bb.root"
+T2bb_1.expUpperLimit.dataUrl ="https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/T2bb.root"
 #----exclusion url settings ----
-T2bb_1.exclusionDataUrl ="https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/t2bb.root"
+T2bb_1.exclusionDataUrl ="https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/T2bb.root"
 #T2bb_1.obsExclusion.dataUrl =
 #T2bb_1.obsExclusionM1.dataUrl =
 #T2bb_1.obsExclusionP1.dataUrl =
