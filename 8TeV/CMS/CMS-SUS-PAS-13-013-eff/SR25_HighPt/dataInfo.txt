@@ -1,7 +1,0 @@
-dataType: efficiencyMap
-dataId: SR25_HighPt
-observedN: 4
-expectedBG: 2.86
-bgError: 1.14
-upperLimit: 0.3577*fb
-expectedUpperLimit: 0.2535*fb
