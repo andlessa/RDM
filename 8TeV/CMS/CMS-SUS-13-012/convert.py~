@@ -63,6 +63,7 @@ T2.on.condition ="None"
 
 T2 = T2.addMassPlane(motherMass = x, lspMass = y)
 
+#T1bbbb.off.fuzzycondition =
 #+++++++ next mass plane block ++++++++++++++
 
 T2.expUpperLimit.setSource( "orig/SUS13012_XsecLimits_T2qq.root", "root", objectName = "combined_expLimit", index = None )
