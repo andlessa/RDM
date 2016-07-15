@@ -31,7 +31,7 @@ from smodels_utils.dataPreparation.databaseCreation import databaseCreator
 from smodels_utils.dataPreparation.origPlotObjects import x, y
 
 #+++++++ global info block ++++++++++++++
-info = MetaInfoInput('CMS-SUS-14-021')
+info = MetaInfoInput('CMS-SUS-14-021')
 info.url = 'https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS14021'
 info.sqrts = 8
 info.lumi = 19.7
@@ -49,7 +49,7 @@ T2bbWW = TxNameInput('T2bbWW')
 T2bbWW.on.checked = ''
 T2bbWW.off.checked = ''
 T2bbWW.on.constraint = "[[['b','W']],[['b','W']]]"
-T2bbWW.off.constraint = "[[['b','l','l']],[['b','l','l']]]+[[['b','q','q']],[['b','q','q']]]"
+T2bbWW.off.constraint = "[[['b','L','nu']],[['b','L','nu']]]+[[['b','q','q']],[['b','q','q']]]+[[['b','q','q']],[['b','L','nu']]]"
 T2bbWW.on.conditionDescription = None
 T2bbWW.off.conditionDescription =None
 T2bbWW.on.condition =None
