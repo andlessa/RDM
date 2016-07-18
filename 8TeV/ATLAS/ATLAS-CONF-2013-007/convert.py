@@ -48,6 +48,7 @@ info.prettyName = 'ATLAS SS+b'
 #info.supersedes = 
 info.implementedBy = 'MT'
 
+'''
 #+++++++ next txName block ++++++++++++++
 T6ttWW = TxNameInput('T6ttWW')
 T6ttWW.on.checked ='VM'
@@ -120,12 +121,12 @@ T6ttWWx200.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES
 #T6ttWWx200.expExclusion.dataUrl =
 #T6ttWWx200.expExclusionM1.dataUrl =
 #T6ttWWx200.expExclusionP1.dataUrl =
-
+'''
 #+++++++ next txName block ++++++++++++++
 T1tttt = TxNameInput('T1tttt')
 T1tttt.on.checked ="VM"
 #T1tttt.off.checked =
-T1tttt.on.constraint ="[[['t+','t-']],[['t+','t-']]]"
+T1tttt.on.constraint ="[[['t','t']],[['t','t']]]"
 #T1tttt.off.constraint =
 T1tttt.on.conditionDescription ="None"
 #T1tttt.off.conditionDescription =
@@ -162,12 +163,12 @@ T1tttt.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATL
 #T1tttt.expExclusion.dataUrl =
 #T1tttt.expExclusionM1.dataUrl =
 #T1tttt.expExclusionP1.dataUrl =
-
+'''
 #+++++++ next txName block ++++++++++++++
 T5tttt = TxNameInput('T5tttt')
 T5tttt.on.checked ="VM"
 #T5tttt.off.checked =
-T5tttt.on.constraint ="[[['t+'],['t-']],[['t+'],['t-']]]+[[['t-'],['t+']],[['t-'],['t+']]]+[[['t+'],['t-']],[['t-'],['t+']]]"
+T5tttt.on.constraint ="[[['t'],['t']],[['t'],['t']]]+[[['t'],['t']],[['t'],['t']]]+[[['t'],['t']],[['t'],['t+']]]"
 #T5tttt.off.constraint =
 T5tttt.on.conditionDescription ="None"
 #T5tttt.off.conditionDescription =
@@ -204,12 +205,12 @@ T5ttttLSP060.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOT
 #T5ttttLSP060.expExclusion.dataUrl =
 #T5ttttLSP060.expExclusionM1.dataUrl =
 #T5ttttLSP060.expExclusionP1.dataUrl =
-
+'''
 #+++++++ next txName block ++++++++++++++
 T1tbtb = TxNameInput('T1tbtb')
 T1tbtb.on.checked ="VM"
 #T1tbtb.off.checked =
-T1tbtb.on.constraint ="[[['t','b']],[['t','b']]]"
+T1tbtb.on.constraint ="[[['t+','b-']],[['t-','b+']]]"
 #T1tbtb.off.constraint =
 T1tbtb.on.conditionDescription ="None"
 #T1tbtb.off.conditionDescription =
@@ -246,7 +247,7 @@ T1tbtb.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATL
 #T1tbtb.expExclusion.dataUrl =
 #T1tbtb.expExclusionM1.dataUrl =
 #T1tbtb.expExclusionP1.dataUrl =
-
+'''
 #+++++++ next txName block ++++++++++++++
 T5WW = TxNameInput('T5WW')
 T5WW.on.checked ="VM"
@@ -424,5 +425,5 @@ T7btbtWWC118LSP060.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/C
 #T7btbtWWC118LSP060.expExclusion.dataUrl =
 #T7btbtWWC118LSP060.expExclusionM1.dataUrl =
 #T7btbtWWC118LSP060.expExclusionP1.dataUrl =
-
+'''
 databaseCreator.create()
