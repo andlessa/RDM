@@ -35,13 +35,13 @@ from smodels_utils.dataPreparation.origPlotObjects import x, y
 
 #+++++++ global info block ++++++++++++++
 info = MetaInfoInput('ATLAS-CONF-2012-105')
-#info.comment = 
+#info.comment = ''
 info.sqrts = '8.0'
 info.private = False
 info.lumi = '5.8'
 #info.publication = 
 info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2012-105/'
-#info.supersededBy = 
+info.supersededBy = 'ATLAS-SUSY-2013-09'
 #info.arxiv = 
 #info.contact = 
 info.prettyName = 'ATLAS SS'
