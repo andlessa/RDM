@@ -32,7 +32,7 @@ from smodels_utils.dataPreparation.origPlotObjects import x, y
 
 #+++++++ global info block ++++++++++++++
 info = MetaInfoInput('ATLAS-SUSY-2013-14')
-info.comment = 'added TStauStau result for left handed stau pairs'
+#info.comment = 
 info.sqrts = '8.0'
 info.private = False
 info.lumi = '20.3'
