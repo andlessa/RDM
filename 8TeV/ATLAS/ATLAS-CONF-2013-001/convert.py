@@ -34,7 +34,7 @@ from smodels_utils.dataPreparation.origPlotObjects import x, y
 
 #+++++++ global info block ++++++++++++++
 info = MetaInfoInput('ATLAS-CONF-2013-001')
-info.comment = 'suberseding vesrion is published'
+#info.comment =
 info.sqrts = '8.0'
 info.private = False
 info.lumi = '12.8'
