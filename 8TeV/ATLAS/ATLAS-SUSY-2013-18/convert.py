@@ -40,7 +40,7 @@ info.private =False
 info.arxiv = 'http://arxiv.org/abs/1407.0600'
 info.contact =''
 info.publication ='http://link.springer.com/article/10.1007/JHEP10(2014)024'
-info.comment =''
+info.comment ='Used 1lep+3b UL result, since they give the two analyses UL separately and no combination'
 info.supersedes =''
 info.supersededBy =''
 
@@ -60,7 +60,7 @@ T1bbbb.on.condition ="None"
 T1bbbb_1 = T1bbbb.addMassPlane(motherMass = x, lspMass = y )
 #----figure----
 T1bbbb_1.figure = "Figure 13a"
-T1bbbb_1.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-18/figaux_12b.png'
+T1bbbb_1.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-18/figaux_03.png'
 #----limit source----
 T1bbbb_1.obsUpperLimit.setSource( 'orig/T1bbbb_ATLAS-SUSY-2013-18_UL.dat', 'txt', objectName = None, index = None )
 T1bbbb_1.obsUpperLimit.unit = 'fb'
@@ -76,7 +76,7 @@ T1bbbb_1.obsExclusion.setSource( 'orig/T1bbbb_ATLAS-SUSY-2013-18-Obs_Excl.dat', 
 T1bbbb_1.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1304457/all'
 #----limit url settings ----
 T1bbbb_1.histoDataUrl = 'http://hepdata.cedar.ac.uk/view/ins1304457/all'
-T1bbbb_1.obsUpperLimit.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1304457/all'
+T1bbbb_1.obsUpperLimit.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1304457/d28/input'
 #T1bbbb_1.expUpperlimit.dataUrl =
 #----exclusion url settings ----
 T1bbbb_1.exclusionDataUrl = 'http://hepdata.cedar.ac.uk/view/ins1304457/all'
@@ -103,7 +103,7 @@ T1tttt.on.condition ="None"
 T1tttt_1 = T1tttt.addMassPlane(motherMass = x , lspMass = y )
 #----figure----
 T1tttt_1.figure ='Figure 12b aux'
-T1tttt_1.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-18/.thumb_figaux_12a.png'
+T1tttt_1.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-18/figaux_12b.png'
 #----limit source----
 T1tttt_1.obsUpperLimit.setSource( 'orig/T1tttt_ATLAS-SUSY-2013-18_UL.dat', 'txt', objectName = None, index = None )
 T1tttt_1.obsUpperLimit.unit = 'fb'
@@ -119,7 +119,7 @@ T1tttt_1.obsExclusion.setSource( 'orig/T1tttt_ATLAS-SUSY-2013-18-Obs_Excl.dat', 
 T1tttt_1.dataUrl = ''
 #----limit url settings ----
 T1tttt_1.histoDataUrl = 'http://hepdata.cedar.ac.uk/view/ins1304457/all'
-T1tttt_1.obsUpperLimit.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1304457/all'
+T1tttt_1.obsUpperLimit.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1304457/d41/input'
 #T1tttt_1.expUpperlimit.dataUrl =
 #----exclusion url settings ----
 T1tttt_1.exclusionDataUrl = 'http://hepdata.cedar.ac.uk/view/ins1304457/all'
