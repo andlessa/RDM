@@ -130,12 +130,13 @@ T2bbWW.expExclusion.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1286444/d20'
 T6bbWW = TxNameInput('T6bbWW')
 #T6bbWW.on.checked =
 #T6bbWW.off.checked =
-T6bbWW.on.constraint ="[[['b'],['W+']],[['b'],['W-']]]"
-T6bbWW.off.constraint ="9.18*([[['b'],['L-','nu']],[['b'],['L+','nu']]])"
+T6bbWW.on.constraint ="[[['b'],['W+']],[['b'],['W-']]]
+T6bbWW.off.constraint ="9.48*([[['b'],['L+','nu']],[['b'],['L-','nu']]])"
 T6bbWW.on.conditionDescription ="None"
-T6bbWW.off.conditionDescription ="[[['b'],['L','nu']],[['b'],['jet','> 2.7* [[['b'],['ta','nu']],[['b'],['jet','jet']]],[[['b'],['L','nu']],[jet','jet']]] > 2.7* [[['b'],['e','nu']],[['b'],['jet','jet']]]"
+T6bbWW.off.conditionDescription="[[['b'],['L+','nu']],[['b'],['L-','nu']]] > 2.7*[[['b'],['ta+','nu']],[['b'],['L-','nu']]],[[['b'],['L+','nu']],[['b'],['L-','nu']]],3*[[['b'],['e+','nu']],[['b'],['e-','nu']]"
 T6bbWW.on.condition ="None"
-T6bbWW.off.condition ="Cgtr([[['b'],['L','nu']],[['b'],['jet','jet']]],3.*[[['b'],['ta','nu']],[['b'],['jet','jet']]]);Cgtr([[['b'],['L','nu']],[['b'],['jet','jet']]],3.*[[['b'],['e','nu']],[['b'],['jet','jet']]])"
+T6bbWW.off.condition="Cgtr([[['b'],['L+','nu']],[['b'],['L-','nu']]],2.7*[[['b'],['ta+','nu']],[['b'],['L-','nu']]]);Cgtr([[['b'],['L+','nu']],[['b'],['L-','nu']]],3 *[[['b'],['e+','nu']],[['b'],['e-','nu']]])"
+
 #
 ##+++++++ next mass plane block ++++++++++++++
 T6bbWWLSP001 = T6bbWW.addMassPlane(motherMass = x, interMass0 = y, lspMass = 1.0)
