@@ -32,7 +32,7 @@ from smodels_utils.dataPreparation.origPlotObjects import x, y
 
 #+++++++ global info block ++++++++++++++
 info = MetaInfoInput('ATLAS-CONF-2013-089')
-info.comment = 'T5WWLSP060 and T6WWLSP060 originally have xvalue on y-axes, changed by us to M2 - there are more topologies (with more then three masses)'
+info.comment = 'T5WWLSP060 and T6WWLSP060 originally have xvalue on y-axes, changed by us to M2 - there are more topologies (with more then three masses). Will be superseeded by ATLAS-SUSY-2013-20'
 info.sqrts = '8.0'
 info.private = False
 info.lumi = '20.3'
@@ -49,11 +49,11 @@ T6WW = TxNameInput('T6WW')
 T6WW.on.checked ="VM"
 #T6WW.off.checked =
 T6WW.on.constraint ="[[['jet'],['W+']],[['jet'],['W-']]]"
-T6WW.off.constraint = "9.34*[[['jet'],['L+','nu']],[['jet'],['L-','nu']]]"
+T6WW.off.constraint = "9.48*[[['jet'],['L+','nu']],[['jet'],['L-','nu']]]"
 T6WW.on.conditionDescription ="None"
 T6WW.off.conditionDescription = "[[['jet'],['L+','nu']],[['jet'],['L-','nu']]] > 9 * [[['jet'],['ta+','nu']],[['jet'],['ta-','nu']]]"
 T6WW.on.condition ="None"
-T6WW.off.condition = "Cgtr([[['jet'],['L+','nu']],[['jet'],['L-','nu']]],9 * [[['jet'],['ta+','nu']],[['jet'],['ta-','nu']]]);Cgtr([[['jet'],['L+','nu']],[['jet'],['L-','nu']]],9 * [[['jet'],['e+','nu']],[['jet'],['e-','nu']]])"
+T6WW.off.condition = "Cgtr([[['jet'],['L','nu']],[['jet'],['L','nu']]], 3 * [[['jet'],['ta','nu']],[['jet'],['L','nu']]]); Cgtr([[['jet'],['L','nu']],[['jet'],['L','nu']]], 3 * [[['jet'],['e','nu']],[['jet'],['L','nu']]])"
 
 #+++++++ next mass plane block ++++++++++++++
 T6WW050 = T6WW.addMassPlane(motherMass = x, interMass0 = x*0.5 + (1. - 0.5)*y, lspMass = y)
@@ -72,8 +72,8 @@ T6WW050.obsExclusion.setSource( "orig/exclusion_T6WW050.txt", "txt", objectName 
 #T6WW050.histoDataUrl =
 #T6WW050.exclusionDataUrl =
 #----figure----
-T6WW050.figure = 'Fig. 23a'
-T6WW050.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-089/fig_23a.png'
+T6WW050.figure = 'Fig. 22a'
+T6WW050.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-089/fig_22a.png'
 #----limit url settings ----
 T6WW050.obsUpperLimit.dataUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-089/fig_22a_PRELIMINARY.data'
 #T6WW050.expUpperLimit.dataUrl =
@@ -122,11 +122,11 @@ T5WW = TxNameInput('T5WW')
 T5WW.on.checked ="VM"
 #T5WW.off.checked =
 T5WW.on.constraint ="[[['jet','jet'],['W']],[['jet','jet'],['W']]]"
-T5WW.off.constraint ="9.34*[[['jet','jet'],['L+','nu']],[['jet','jet'],['L-','nu']]]"
+T5WW.off.constraint ="9.48*[[['jet','jet'],['L','nu']],[['jet','jet'],['L','nu']]]"
 T5WW.on.conditionDescription ="None"
-T5WW.off.conditionDescription = "[[['jet','jet'],['L+','nu']],[['jet','jet'],['L-','nu']]] > 9 * [[['jet','jet'],['ta+','nu']],[['jet','jet'],['ta-','nu']]]"
+T5WW.off.conditionDescription = "[[['jet','jet'],['L','nu']],[['jet','jet'],['L','nu']]] > 9 * [[['jet','jet'],['ta','nu']],[['jet','jet'],['ta','nu']]]"
 T5WW.on.condition ="None"
-T5WW.off.condition = "Cgtr([[['jet','jet'],['L+','nu']],[['jet','jet'],['L-','nu']]],9 * [[['jet','jet'],['ta+','nu']],[['jet','jet'],['ta-','nu']]]);Cgtr([[['jet','jet'],['L+','nu']],[['jet','jet'],['L-','nu']]],9 * [[['jet','jet'],['e+','nu']],[['jet','jet'],['e-','nu']]])"
+T5WW.off.condition = "Cgtr([[['jet','jet'],['L','nu']],[['jet','jet'],['L','nu']]], 3 * [[['jet','jet'],['ta','nu']],[['jet','jet'],['L','nu']]]); Cgtr([[['jet','jet'],['L','nu']],[['jet','jet'],['L','nu']]], 3 * [[['jet','jet'],['e','nu']],[['jet','jet'],['L','nu']]])"
 #T5WW.off.condition =
 
 #+++++++ next mass plane block ++++++++++++++
@@ -151,7 +151,7 @@ T5WWLSP060.exclusionDataUrl =
 T5WWLSP060.figure = 'Fig (aux). 22b'
 T5WWLSP060.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-089/fig_22b.png'
 #----limit url settings ----
-T5WWLSP060.obsUpperLimit.dataUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-089/fig_23b_PRELIMINARY.data'
+T5WWLSP060.obsUpperLimit.dataUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-089/fig_22b_PRELIMINARY.data'
 """
 T5WWLSP060.expUpperLimit.dataUrl =
 #----exclusion url settings ----
