@@ -48,7 +48,7 @@ info.supersedes = 'ATLAS-CONF-2013-035; CONF-2012-154'
 TChiChipmStauL = TxNameInput('TChiChipmStauL')
 #TChiChipmStauL.on.checked =
 #TChiChipmStauL.off.checked =
-TChiChipmStauL.on.constraint ="2.*([[['nu'],['ta']],[['ta+'],['ta-']]] + [[['ta'],['nu']],[['ta+'],['ta-']]]+[[['nu'],['ta']],[['ta-'],['ta+']]] + [[['ta'],['nu']],[['ta-'],['ta+']]])"
+TChiChipmStauL.on.constraint ="2.*([[['nu'],['ta']],[['ta+'],['ta-']]] + [[['ta'],['nu']] , [['ta+'],['ta-']]]+[[['nu'],['ta']],[['ta-'],['ta+']]] + [[['ta'],['nu']],[['ta-'],['ta+']]])"
 #TChiChipmStauL.off.constraint =
 TChiChipmStauL.on.conditionDescription ="[[['nu'],['ta']],[['ta+'],['ta-']]] ~ [[['ta'],['nu']],[['ta+'],['ta-']]],[[['nu'],['ta']],[['ta+'],['ta-']]] ~ [[['nu'],['ta']],[['ta-'],['ta+']]], [[['nu'],['ta']],[['ta+'],['ta-']]] ~ [[['ta'],['nu']],[['ta-'],['ta+']]]"
 #TChiChipmStauL.off.conditionDescription =
@@ -177,11 +177,11 @@ TChiWZ.expExclusion.dataUrl = "http://hepdata.cedar.ac.uk/view/ins1282905/d21"
 TChiChipmSlepL = TxNameInput('TChiChipmSlepL')
 #TChiChipmSlepL.on.checked =
 #TChiChipmSlepL.off.checked =
-TChiChipmSlepL.on.constraint ="2.*([[['L'],['L']],[['L'],['nu']]] + [[['L'],['L']],[['nu'],['L']]])"
+TChiChipmSlepL.on.constraint ="2.*([[['L+'],['L-']],[['L'],['nu']]] + [[['L+'],['L-']],[['nu'],['L']]])"
 #TChiChipmSlepL.off.constraint =
-TChiChipmSlepL.on.conditionDescription ="[[['L'],['L']],[['L'],['nu']]] ~ [[['L'],['L']],[['nu'],['L']]], [[['L'],['L']],[['nu'],['L']]] > 2.7*[[['ta'],['ta']],[['nu'],['L']]], [[['L'],['L']],[['L'],['nu']]] > 2.7*[[['ta'],['ta']],[['L'],['nu']]], [[['L'],['L']],[['nu'],['L']]] > 2.7*[[['L'],['L']],[['nu'],['ta']]], [[['L'],['L']],[['L'],['nu']]] > 2.7*[[['L'],['L']],[['ta'],['nu']]],[[['L'],['L']],[['nu'],['L']]] > 2.7*[[['e'],['e']],[['nu'],['L']]], [[['L'],['L']],[['L'],['nu']]] > 2.7*[[['e'],['e']],[['L'],['nu']]], [[['L'],['L']],[['nu'],['L']]] > 2.7*[[['L'],['L']],[['nu'],['e']]], [[['L'],['L']],[['L'],['nu']]] > 2.7*[[['L'],['L']],[['e'],['nu']]]"
+TChiChipmSlepL.on.conditionDescription ="[[['L+'],['L-']],[['L'],['nu']]] ~ [[['L+'],['L-']],[['nu'],['L']]], [[['L+'],['L-']],[['nu'],['L']]] > 2.7*[[['ta+'],['ta-']],[['nu'],['L']]], [[['L+'],['L-']],[['L'],['nu']]] > 2.7*[[['ta+'],['ta-']],[['L'],['nu']]], [[['L+'],['L-']],[['nu'],['L']]] > 2.7*[[['L+'],['L-']],[['nu'],['ta']]], [[['L+'],['L-']],[['L'],['nu']]] > 2.7*[[['L+'],['L-']],[['ta'],['nu']]],[[['L+'],['L-']],[['nu'],['L']]] > 2.7*[[['e+'],['e-']],[['nu'],['L']]], [[['L+'],['L-']],[['L'],['nu']]] > 2.7*[[['e+'],['e-']],[['L'],['nu']]], [[['L+'],['L-']],[['nu'],['L']]] > 2.7*[[['L+'],['L-']],[['nu'],['e']]], [[['L+'],['L-']],[['L'],['nu']]] > 2.7*[[['L+'],['L-']],[['e'],['nu']]]"
 #TChiChipmSlepL.off.conditionDescription =
-TChiChipmSlepL.on.condition ="Csim([[['L'],['L']],[['L'],['nu']]],[[['L'],['L']],[['nu'],['L']]]); Cgtr([[['L'],['L']],[['nu'],['L']]],3.*[[['ta'],['ta']],[['nu'],['L']]]); Cgtr([[['L'],['L']],[['L'],['nu']]],3.*[[['ta'],['ta']],[['L'],['nu']]]);Cgtr([[['L'],['L']],[['nu'],['L']]],3.*[[['L'],['L']],[['nu'],['ta']]]); Cgtr([[['L'],['L']],[['L'],['nu']]],3.*[[['L'],['L']],[['ta'],['nu']]]);Cgtr([[['L'],['L']],[['nu'],['L']]],3.*[[['e'],['e']],[['nu'],['L']]]); Cgtr([[['L'],['L']],[['L'],['nu']]],3.*[[['e'],['e']],[['L'],['nu']]]); Cgtr([[['L'],['L']],[['nu'],['L']]],3.*[[['L'],['L']],[['nu'],['e']]]); Cgtr([[['L'],['L']],[['L'],['nu']]],3.*[[['L'],['L']],[['e'],['nu']]])"
+TChiChipmSlepL.on.condition ="Csim([[['L+'],['L-']],[['L'],['nu']]],[[['L+'],['L-']],[['nu'],['L']]]); Cgtr([[['L+'],['L-']],[['nu'],['L']]],3.*[[['ta+'],['ta-']],[['nu'],['L']]]); Cgtr([[['L+'],['L-']],[['L'],['nu']]],3.*[[['ta+'],['ta-']],[['L'],['nu']]]);Cgtr([[['L+'],['L-']],[['nu'],['L']]],3.*[[['L+'],['L-']],[['nu'],['ta']]]); Cgtr([[['L+'],['L-']],[['L'],['nu']]],3.*[[['L+'],['L-']],[['ta'],['nu']]]);Cgtr([[['L+'],['L-']],[['nu'],['L']]],3.*[[['e+'],['e-']],[['nu'],['L']]]); Cgtr([[['L+'],['L-']],[['L'],['nu']]],3.*[[['e+'],['e-']],[['L'],['nu']]]); Cgtr([[['L+'],['L-']],[['nu'],['L']]],3.*[[['L+'],['L-']],[['nu'],['e']]]); Cgtr([[['L+'],['L-']],[['L'],['nu']]],3.*[[['L+'],['L-']],[['e'],['nu']]])"
 #TChiChipmSlepL.off.condition =
 
 #+++++++ next mass plane block ++++++++++++++
