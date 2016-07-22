@@ -51,9 +51,9 @@ T2bbWW.off.checked = ''
 T2bbWW.on.constraint = "[[['b','W']],[['b','W']]]"
 T2bbWW.off.constraint = "[[['b','l','nu']],[['b','l','nu']]]+[[['b','q','q']],[['b','q','q']]]+[[['b','q','q']],[['b','l','nu']]]"
 T2bbWW.on.conditionDescription = None
-T2bbWW.off.conditionDescription =None
+T2bbWW.off.conditionDescription ="[[['b','l','nu']],[['b','l','nu']]] > 4*[[['b','mu','nu']],[['b','mu','nu']]]"
 T2bbWW.on.condition =None
-T2bbWW.off.condition =None
+T2bbWW.off.condition ="Cgtr([[['b','l','nu']],[['b','l','nu']]] , 4*[[['b','mu','nu']],[['b','mu','nu']]] "
 #T2bbWW.branchingRatio =
 
 #+++++++ next mass plane block ++++++++++++++
