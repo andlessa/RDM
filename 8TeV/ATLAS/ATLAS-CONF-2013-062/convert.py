@@ -32,13 +32,13 @@ from smodels_utils.dataPreparation.origPlotObjects import x, y
 
 #+++++++ global info block ++++++++++++++
 info = MetaInfoInput('ATLAS-CONF-2013-062')
-info.comment = 'T5WWLSP060 and T6WWLSP060 originally have xvalue on y-axes, changed by us to M2'
+info.comment = 'T5WWLSP060 and T6WWLSP060 originally have xvalue on y-axes, changed by us to M2. Will be supers. by ATLAS-SUSY-2013-20 (no data yet). Other topologies available but not with 3 mass planes.'
 info.sqrts = '8.0'
 info.private = False
-info.lumi = '20.0'
+info.lumi = '20.3'
 info.publication =  'SUSY-2013-20'
 info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-062/ http://cds.cern.ch/record/1557779'
-info.supersededBy = 'ATLAS-SUSY-2013-20'
+#info.supersededBy =
 #info.arxiv = 
 #info.contact = 
 info.prettyName = 'ATLAS soft leptons'
