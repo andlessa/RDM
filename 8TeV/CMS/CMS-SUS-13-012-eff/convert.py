@@ -298,11 +298,11 @@ databaseCreator.create( True )
 
 
 T2.efficiencyMap.setSource( "orig/SUS13012_XsecLimits_T2qq.root", "root", objectName = "h_EffAcc_3NJet6_1000HT1250_450MHT600", index = None, dataset="3NJet6_1000HT1250_450MHT600" )
-T2.efficiencyMap.setStatistics ( observedN=34, expectedBG=32.3, bgError=34 )
+T2.efficiencyMap.setStatistics ( observedN=34, expectedBG=32.3, bgError=6.1 )
 T1tttt.efficiencyMap.setSource( "orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName = "h_EffAcc_3NJet6_1000HT1250_450MHT600", index = None, dataset="3NJet6_1000HT1250_450MHT600" )
-T1tttt.efficiencyMap.setStatistics ( observedN=34, expectedBG=32.3, bgError=34 )
+T1tttt.efficiencyMap.setStatistics ( observedN=34, expectedBG=32.3, bgError=6.1 )
 T1.efficiencyMap.setSource( "orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName = "h_EffAcc_3NJet6_1000HT1250_450MHT600", index = None, dataset="3NJet6_1000HT1250_450MHT600" )
-T1.efficiencyMap.setStatistics ( observedN=34, expectedBG=32.3, bgError=34 )
+T1.efficiencyMap.setStatistics ( observedN=34, expectedBG=32.3, bgError=6.1 )
 #T5VV.efficiencyMap.setSource( "orig/SUS13012_XsecLimits_#T5VV.root", "root", objectName = "h_EffAcc_3NJet6_1000HT1250_450MHT600", index = None, dataset="3NJet6_1000HT1250_450MHT600" )
 #T5VV.efficiencyMap.setStatistics ( observedN=34, expectedBG=32.3, bgError=34 )
 
@@ -433,11 +433,11 @@ databaseCreator.create( True )
 
 
 T2.efficiencyMap.setSource( "orig/SUS13012_XsecLimits_T2qq.root", "root", objectName = "h_EffAcc_6NJet8_500HT800_450MHTinf", index = None, dataset="6NJet8_500HT800_450MHTinf" )
-T2.efficiencyMap.setStatistics ( observedN=9, expectedBG=0.8, bgError=0.6 ) ### check error
+T2.efficiencyMap.setStatistics ( observedN=9, expectedBG=0.8, bgError=3.3 ) ### check error
 T1tttt.efficiencyMap.setSource( "orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName = "h_EffAcc_6NJet8_500HT800_450MHTinf", index = None, dataset="6NJet8_500HT800_450MHTinf" )
-T1tttt.efficiencyMap.setStatistics ( observedN=9, expectedBG=0.8, bgError=0.6 ) ### check error
+T1tttt.efficiencyMap.setStatistics ( observedN=9, expectedBG=0.8, bgError=3.3 ) ### check error
 T1.efficiencyMap.setSource(  "orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName = "h_EffAcc_6NJet8_500HT800_450MHTinf", index = None, dataset="6NJet8_500HT800_450MHTinf" )
-T1.efficiencyMap.setStatistics ( observedN=9, expectedBG=0.8, bgError=0.6 ) ### check error
+T1.efficiencyMap.setStatistics ( observedN=9, expectedBG=0.8, bgError=3.3 ) ### check error
 #T5VV.efficiencyMap.setSource( "orig/SUS13012_XsecLimits_#T5VV.root", "root", objectName = "h_EffAcc_6NJet8_500HT800_450MHTinf", index = None, dataset="6NJet8_500HT800_450MHTinf" )
 #T5VV.efficiencyMap.setStatistics ( observedN=9, expectedBG=0.8, bgError=0.6 ) ### check error
 
@@ -494,11 +494,11 @@ databaseCreator.create( True )
 
 
 T2.efficiencyMap.setSource( "orig/SUS13012_XsecLimits_T2qq.root", "root", objectName = "h_EffAcc_6NJet8_1000HT1250_200MHT300", index = None, dataset="6NJet8_1000HT1250_200MHT300" )
-T2.efficiencyMap.setStatistics ( observedN=67, expectedBG=70, bgError=67 )
+T2.efficiencyMap.setStatistics ( observedN=67, expectedBG=70, bgError=16 )
 T1tttt.efficiencyMap.setSource( "orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName = "h_EffAcc_6NJet8_1000HT1250_200MHT300", index = None, dataset="6NJet8_1000HT1250_200MHT300" )
-T1tttt.efficiencyMap.setStatistics ( observedN=67, expectedBG=70, bgError=67 )
+T1tttt.efficiencyMap.setStatistics ( observedN=67, expectedBG=70, bgError=16 )
 T1.efficiencyMap.setSource(  "orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName = "h_EffAcc_6NJet8_1000HT1250_200MHT300", index = None, dataset="6NJet8_1000HT1250_200MHT300" )
-T1.efficiencyMap.setStatistics ( observedN=67, expectedBG=70, bgError=67 )
+T1.efficiencyMap.setStatistics ( observedN=67, expectedBG=70, bgError=16 )
 #T5VV.efficiencyMap.setSource( "orig/SUS13012_XsecLimits_#T5VV.root", "root", objectName = "h_EffAcc_6NJet8_1000HT1250_200MHT300", index = None, dataset="6NJet8_1000HT1250_200MHT300" )
 #T5VV.efficiencyMap.setStatistics ( observedN=67, expectedBG=70, bgError=67 )
 
@@ -526,11 +526,11 @@ databaseCreator.create( True )
 
 
 T2.efficiencyMap.setSource( "orig/SUS13012_XsecLimits_T2qq.root", "root", objectName = "h_EffAcc_6NJet8_1000HT1250_450MHTinf", index = None, dataset="6NJet8_1000HT1250_450MHTinf" )
-T2.efficiencyMap.setStatistics ( observedN=4, expectedBG=2.2, bgError=1.1 ) ### check error
+T2.efficiencyMap.setStatistics ( observedN=4, expectedBG=2.2, bgError=3.8 ) ### check error
 T1tttt.efficiencyMap.setSource( "orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName = "h_EffAcc_6NJet8_1000HT1250_450MHTinf", index = None, dataset="6NJet8_1000HT1250_450MHTinf" )
-T1tttt.efficiencyMap.setStatistics ( observedN=4, expectedBG=2.2, bgError=1.1 )
+T1tttt.efficiencyMap.setStatistics ( observedN=4, expectedBG=2.2, bgError=3.8 )
 T1.efficiencyMap.setSource(  "orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName = "h_EffAcc_6NJet8_1000HT1250_450MHTinf", index = None, dataset="6NJet8_1000HT1250_450MHTinf" )
-T1.efficiencyMap.setStatistics ( observedN=4, expectedBG=2.2, bgError=1.1 ) ### check error
+T1.efficiencyMap.setStatistics ( observedN=4, expectedBG=2.2, bgError=3.8 ) ### check error
 #T5VV.efficiencyMap.setSource( "orig/SUS13012_XsecLimits_#T5VV.root", "root", objectName = "h_EffAcc_6NJet8_1000HT1250_450MHTinf", index = None, dataset="6NJet8_1000HT1250_450MHTinf" )
 #T5VV.efficiencyMap.setStatistics ( observedN=4, expectedBG=2.2, bgError=1.1 ) ### check error
 
@@ -571,11 +571,11 @@ databaseCreator.create( True )
 
 
 T2.efficiencyMap.setSource( "orig/SUS13012_XsecLimits_T2qq.root", "root", objectName = "h_EffAcc_6NJet8_1250HT1500_450MHTinf", index = None, dataset="6NJet8_1250HT1500_450MHTinf" )
-T2.efficiencyMap.setStatistics ( observedN=2, expectedBG=0.5, bgError=0.4 ) #check error
+T2.efficiencyMap.setStatistics ( observedN=2, expectedBG=0.5, bgError=2.6  ) #check error
 T1tttt.efficiencyMap.setSource( "orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName = "h_EffAcc_6NJet8_1250HT1500_450MHTinf", index = None, dataset="6NJet8_1250HT1500_450MHTinf" )
-T1tttt.efficiencyMap.setStatistics ( observedN=2, expectedBG=0.5, bgError=0.4 ) #check error
+T1tttt.efficiencyMap.setStatistics ( observedN=2, expectedBG=0.5, bgError=2.6  ) #check error
 T1.efficiencyMap.setSource(  "orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName = "h_EffAcc_6NJet8_1250HT1500_450MHTinf", index = None, dataset="6NJet8_1250HT1500_450MHTinf" )
-T1.efficiencyMap.setStatistics ( observedN=2, expectedBG=0.5, bgError=0.4 ) #check error
+T1.efficiencyMap.setStatistics ( observedN=2, expectedBG=0.5, bgError=2.6 ) #check error
 #T5VV.efficiencyMap.setSource( "orig/SUS13012_XsecLimits_#T5VV.root", "root", objectName = "h_EffAcc_6NJet8_1250HT1500_450MHTinf", index = None, dataset="6NJet8_1250HT1500_450MHTinf" )
 #T5VV.efficiencyMap.setStatistics ( observedN=2, expectedBG=0.5, bgError=0.4 ) #check error
 
@@ -616,11 +616,11 @@ databaseCreator.create( True )
 
 
 T2.efficiencyMap.setSource( "orig/SUS13012_XsecLimits_T2qq.root", "root", objectName = "h_EffAcc_8NJetinf_500HT800_200MHTinf", index = None, dataset="8NJetinf_500HT800_200MHTinf" )
-T2.efficiencyMap.setStatistics ( observedN=8, expectedBG=4.8, bgError=2.1 )#### check error
+T2.efficiencyMap.setStatistics ( observedN=8, expectedBG=4.8, bgError=2.3 )#### check error
 T1tttt.efficiencyMap.setSource( "orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName = "h_EffAcc_8NJetinf_500HT800_200MHTinf", index = None, dataset="8NJetinf_500HT800_200MHTinf" )
-T1tttt.efficiencyMap.setStatistics ( observedN=8, expectedBG=4.8, bgError=2.1 )#### check error
+T1tttt.efficiencyMap.setStatistics ( observedN=8, expectedBG=4.8, bgError=2.3 )#### check error
 T1.efficiencyMap.setSource(  "orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName = "h_EffAcc_8NJetinf_500HT800_200MHTinf", index = None, dataset="8NJetinf_500HT800_200MHTinf" )
-T1.efficiencyMap.setStatistics ( observedN=8, expectedBG=4.8, bgError=2.1 )#### check error
+T1.efficiencyMap.setStatistics ( observedN=8, expectedBG=4.8, bgError=2.3 )#### check error
 #T5VV.efficiencyMap.setSource( "orig/SUS13012_XsecLimits_#T5VV.root", "root", objectName = "h_EffAcc_8NJetinf_500HT800_200MHTinf", index = None, dataset="8NJetinf_500HT800_200MHTinf" )
 #T5VV.efficiencyMap.setStatistics ( observedN=8, expectedBG=4.8, bgError=2.1 )#### check error
 
@@ -629,11 +629,11 @@ databaseCreator.create( True )
 
 
 T2.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T2qq.root", "root", objectName = "h_EffAcc_8NJetinf_800HT1000_200MHTinf", index = None, dataset="8NJetinf_800HT1000_200MHTinf" )
-T2.efficiencyMap.setStatistics ( observedN=9, expectedBG=8.3, bgError=3.3 )#### check error
+T2.efficiencyMap.setStatistics ( observedN=9, expectedBG=8.3, bgError=3.4 )#### check error
 T1tttt.efficiencyMap.setSource( "orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName = "h_EffAcc_8NJetinf_800HT1000_200MHTinf", index = None, dataset="8NJetinf_800HT1000_200MHTinf" )
-T1tttt.efficiencyMap.setStatistics ( observedN=9, expectedBG=8.3, bgError=3.3 )#### check error
+T1tttt.efficiencyMap.setStatistics ( observedN=9, expectedBG=8.3, bgError=3.4 )#### check error
 T1.efficiencyMap.setSource(  "orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName = "h_EffAcc_8NJetinf_800HT1000_200MHTinf", index = None, dataset="8NJetinf_800HT1000_200MHTinf" )
-T1.efficiencyMap.setStatistics ( observedN=9, expectedBG=8.3, bgError=3.3 )#### check error
+T1.efficiencyMap.setStatistics ( observedN=9, expectedBG=8.3, bgError=3.4 )#### check error
 #T5VV.efficiencyMap.setSource( "orig/SUS13012_XsecLimits_#T5VV.root", "root", objectName = "h_EffAcc_8NJetinf_800HT1000_200MHTinf", index = None, dataset="8NJetinf_800HT1000_200MHTinf" )
 #T5VV.efficiencyMap.setStatistics ( observedN=9, expectedBG=8.3, bgError=3.3 )#### check error
 
@@ -658,11 +658,11 @@ databaseCreator.create( True )
 
 
 T2.efficiencyMap.setSource( "orig/SUS13012_XsecLimits_T2qq.root", "root", objectName = "h_EffAcc_8NJetinf_1250HT1500_200MHTinf", index = None, dataset="8NJetinf_1250HT1500_200MHTinf" )
-T2.efficiencyMap.setStatistics ( observedN=5, expectedBG=3.3, bgError=1.7 )#### check error
+T2.efficiencyMap.setStatistics ( observedN=5, expectedBG=7.1, bgError=3.8 )#### check error
 T1tttt.efficiencyMap.setSource( "orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName = "h_EffAcc_8NJetinf_1250HT1500_200MHTinf", index = None, dataset="8NJetinf_1250HT1500_200MHTinf" )
-T1tttt.efficiencyMap.setStatistics ( observedN=5, expectedBG=3.3, bgError=1.7 )#### check error
+T1tttt.efficiencyMap.setStatistics ( observedN=5, expectedBG=7.1, bgError=3.8 )#### check error
 T1.efficiencyMap.setSource(  "orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName = "h_EffAcc_8NJetinf_1250HT1500_200MHTinf", index = None, dataset="8NJetinf_1250HT1500_200MHTinf" )
-T1.efficiencyMap.setStatistics ( observedN=5, expectedBG=3.3, bgError=1.7 )#### check error
+T1.efficiencyMap.setStatistics ( observedN=5, expectedBG=7.1, bgError=3.8 )#### check error
 #T5VV.efficiencyMap.setSource( "orig/SUS13012_XsecLimits_#T5VV.root", "root", objectName = "h_EffAcc_8NJetinf_1250HT1500_200MHTinf", index = None, dataset="8NJetinf_1250HT1500_200MHTinf" )
 #T5VV.efficiencyMap.setStatistics ( observedN=5, expectedBG=3.3, bgError=1.7 )#### check error
 
@@ -673,11 +673,11 @@ databaseCreator.create( True )
 
 
 T2.efficiencyMap.setSource( "orig/SUS13012_XsecLimits_T2qq.root", "root", objectName = "h_EffAcc_8NJetinf_1500HTinf_200MHTinf", index = None, dataset="8NJetinf_1500HTinf_200MHTinf" )
-T2.efficiencyMap.setStatistics ( observedN=2, expectedBG=3.3, bgError=1.7 )#### check error
+T2.efficiencyMap.setStatistics ( observedN=2, expectedBG=3.3, bgError=4.7 )#### check error
 T1tttt.efficiencyMap.setSource( "orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName = "h_EffAcc_8NJetinf_1500HTinf_200MHTinf", index = None, dataset="8NJetinf_1500HTinf_200MHTinf" )
-T1tttt.efficiencyMap.setStatistics ( observedN=2, expectedBG=3.3, bgError=1.7 )#### check error
+T1tttt.efficiencyMap.setStatistics ( observedN=2, expectedBG=3.3, bgError=4.7 )#### check error
 T1.efficiencyMap.setSource(  "orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName = "h_EffAcc_8NJetinf_1500HTinf_200MHTinf", index = None, dataset="8NJetinf_1500HTinf_200MHTinf" )
-T1.efficiencyMap.setStatistics ( observedN=2, expectedBG=3.3, bgError=1.7 )#### check error
+T1.efficiencyMap.setStatistics ( observedN=2, expectedBG=3.3, bgError=4.7 )#### check error
 #T5VV.efficiencyMap.setSource( "orig/SUS13012_XsecLimits_#T5VV.root", "root", objectName = "h_EffAcc_8NJetinf_1500HTinf_200MHTinf", index = None, dataset="8NJetinf_1500HTinf_200MHTinf" )
 #T5VV.efficiencyMap.setStatistics ( observedN=2, expectedBG=3.3, bgError=1.7 )#### check error
 

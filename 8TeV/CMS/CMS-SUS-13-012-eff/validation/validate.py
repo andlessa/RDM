@@ -2,6 +2,7 @@
 
 import sys,os
 home = os.path.expanduser("~")
+home = '/home/federico/git/SModelS_July2016/'
 sys.path.insert(0,os.path.join(home,"smodels-utils/"))
 sys.path.insert(0,os.path.join(home,"smodels/"))
 

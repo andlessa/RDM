@@ -3,5 +3,5 @@ dataId: 3NJet6_1500HTinf_300MHTinf
 observedN: 39
 expectedBG: 29.7
 bgError: 5.8
-upperLimit: 1.293*fb
-expectedUpperLimit: 0.8406*fb
+upperLimit: 1.284*fb
+expectedUpperLimit: 0.8411*fb
