@@ -32,7 +32,7 @@ from smodels_utils.dataPreparation.origPlotObjects import x, y
 
 #+++++++ global info block ++++++++++++++
 info = MetaInfoInput('ATLAS-CONF-2013-036')
-info.comment = 'will be superseded by SUSY_2013_36'
+info.comment = 'Will be superseded by SUSY-2013-13 (no data available yet)'
 info.sqrts = '8.0'
 info.private = False
 info.lumi = '20.7'
@@ -48,11 +48,11 @@ info.prettyName = 'ATLAS multileptons'
 TChiChiSlepSlep = TxNameInput('TChiChiSlepSlep')
 TChiChiSlepSlep.on.checked ="VM"
 #TChiChiSlepSlep.off.checked =
-TChiChiSlepSlep.on.constraint ="[[['l+'],['l-']],[['l+'],['l-']]]+[[['l-'],['l+']],[['l-'],['l+']]]+[[['l+'],['l-']],[['l-'],['l+']]]"
+TChiChiSlepSlep.on.constraint ="[[['e+'],['e-']],[['e+'],['e-']]]+[[['e-'],['e+']],[['e-'],['e+']]]+[[['e+'],['e-']],[['e-'],['e+']]] + [[['mu+'],['mu-']],[['mu+'],['mu-']]]+[[['mu-'],['mu+']],[['mu-'],['mu+']]]+[[['mu+'],['mu-']],[['mu-'],['mu+']]] + [[['e+'],['e-']],[['mu+'],['mu-']]]+[[['e-'],['e+']],[['mu-'],['mu+']]]+[[['e+'],['e-']],[['mu-'],['mu+']]]"
 #TChiChiSlepSlep.off.constraint =
-TChiChiSlepSlep.on.conditionDescription ="[[['l+'],['l-']],[['l+'],['l-']]] ~ [[['l-'],['l+']],[['l-'],['l+']]], 2.*[[['l+'],['l-']],[['l+'],['l-']]] ~ [[['l+'],['l-']],[['l-'],['l+']]], [[['mu+'],['mu-']],[['e+'],['e-']]] ~ 2.*[[['mu+'],['mu-']],[['mu+'],['mu-']]], [[['mu+'],['mu-']],[['e+'],['e-']]] ~ 2.*[[['e+'],['e-']],[['e+'],['e-']]], [[['mu-'],['mu+']],[['e-'],['e+']]] ~ 2.*[[['e-'],['e+']],[['e-'],['e+']]], [[['mu-'],['mu+']],[['e-'],['e+']]] ~ 2.*[[['mu-'],['mu+']],[['mu-'],['mu+']]], [[['mu+'],['mu-']],[['e-'],['e+']]] ~ 2.*[[['e+'],['e-']],[['e-'],['e+']]], [[['mu+'],['mu-']],[['e-'],['e+']]] ~ 2.*[[['mu+'],['mu-']],[['mu-'],['mu+']]]"
+TChiChiSlepSlep.on.conditionDescription ="[[['mu+'],['mu-']],[['e+'],['e-']]] ~ 2.*[[['mu+'],['mu-']],[['mu+'],['mu-']]], [[['mu+'],['mu-']],[['e+'],['e-']]] ~ 2.*[[['e+'],['e-']],[['e+'],['e-']]], [[['mu-'],['mu+']],[['e-'],['e+']]] ~ 2.*[[['e-'],['e+']],[['e-'],['e+']]], [[['mu-'],['mu+']],[['e-'],['e+']]] ~ 2.*[[['mu-'],['mu+']],[['mu-'],['mu+']]], [[['mu+'],['mu-']],[['e-'],['e+']]] ~ 2.*[[['e+'],['e-']],[['e-'],['e+']]], [[['mu+'],['mu-']],[['e-'],['e+']]] ~ 2.*[[['mu+'],['mu-']],[['mu-'],['mu+']]]"
 #TChiChiSlepSlep.off.conditionDescription =
-TChiChiSlepSlep.on.condition ="Csim([[['l+'],['l-']],[['l+'],['l-']]],[[['l-'],['l+']],[['l-'],['l+']]],0.5*[[['l+'],['l-']],[['l-'],['l+']]]); Csim([[['mu+'],['mu-']],[['e+'],['e-']]],2.*[[['mu+'],['mu-']],[['mu+'],['mu-']]],2.*[[['e+'],['e-']],[['e+'],['e-']]]); Csim([[['mu-'],['mu+']],[['e-'],['e+']]],2.*[[['e-'],['e+']],[['e-'],['e+']]],2.*[[['mu-'],['mu+']],[['mu-'],['mu+']]]); Csim([[['mu+'],['mu-']],[['e-'],['e+']]],[[['e+'],['e-']],[['e-'],['e+']]],[[['mu+'],['mu-']],[['mu-'],['mu+']]])"
+TChiChiSlepSlep.on.condition ="Csim([[['mu+'],['mu-']],[['e+'],['e-']]],2.*[[['mu+'],['mu-']],[['mu+'],['mu-']]],2.*[[['e+'],['e-']],[['e+'],['e-']]]); Csim([[['mu-'],['mu+']],[['e-'],['e+']]],2.*[[['e-'],['e+']],[['e-'],['e+']]],2.*[[['mu-'],['mu+']],[['mu-'],['mu+']]]); Csim([[['mu+'],['mu-']],[['e-'],['e+']]],[[['e+'],['e-']],[['e-'],['e+']]],[[['mu+'],['mu-']],[['mu-'],['mu+']]])"
 #TChiChiSlepSlep.off.condition =
 
 #+++++++ next mass plane block ++++++++++++++

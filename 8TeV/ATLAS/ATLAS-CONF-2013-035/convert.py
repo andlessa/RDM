@@ -51,11 +51,11 @@ TChiWZ = TxNameInput('TChiWZ')
 TChiWZ.on.checked ="VM"
 TChiWZ.off.checked ="VM"
 TChiWZ.on.constraint ="[[['W']],[['Z']]]"
-TChiWZ.off.constraint ="71.*([[['mu+','mu-']],[['l','nu']]] + [[['e+','e-']],[['l','nu']]])"
+TChiWZ.off.constraint ="30.3*([[['L','nu']],[['e+','e-']]] + [[['L','nu']],[['mu+','mu-']]] + [[['L','nu']],[['tau+','tau-']]] "
 TChiWZ.on.conditionDescription ="None"
-TChiWZ.off.conditionDescription ="[[['mu+','mu-']],[['l','nu']]] > [[['e+','e-']],[['l','nu']]]"
+TChiWZ.off.conditionDescription ="[[['mu+','mu-']],[['l','nu']]] > [[['e+','e-']],[['l','nu']]] , [[['e+','e-']],[['L','nu']]] > [[['tau+','tau-']],[['L','nu']]] "
 TChiWZ.on.condition ="None"
-TChiWZ.off.condition ="Cgtr([[['mu+','mu-']],[['l','nu']]],[[['e+','e-']],[['l','nu']]])"
+TChiWZ.off.condition ="Cgtr([[['mu+','mu-']],[['L','nu']]],[[['e+','e-']],[['L','nu']]]) , Cgtr([[['e+','e-']],[['L','nu']]],[[['tau+','tau-']],[['L','nu']]]) "
 
 #+++++++ next mass plane block ++++++++++++++
 TChiWZ = TChiWZ.addMassPlane(motherMass = x, lspMass = y)

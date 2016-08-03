@@ -1,7 +1,7 @@
 txName: T2bbWWoff
 conditionDescription: None
 condition: None
-constraint: [[['b','l','l']],[['b','l','l']]]+[[['b','q','q']],[['b','q','q']]]
+constraint: [[['b','L','nu']],[['b','L','nu']]]+[[['b','q','q']],[['b','q','q']]]+[[['b','q','q']],[['b','L','nu']]]
 figureUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS14021/efficienciesSRSL2.png
 dataUrl: https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS14021;https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS14021/efficienciesSRSL.root
 validated: None

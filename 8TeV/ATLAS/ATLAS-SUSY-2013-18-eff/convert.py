@@ -40,7 +40,7 @@ info.private =False
 info.arxiv = 'http://arxiv.org/abs/1407.0600'
 info.contact =''
 info.publication ='http://link.springer.com/article/10.1007/JHEP10(2014)024'
-info.comment =''
+info.comment ='Using combined Exclusion line'
 info.supersedes =''
 info.supersededBy =''
 
@@ -75,7 +75,7 @@ T1bbbb_1.efficiencyMap.setStatistics( observedN=2, expectedBG=1.6, bgError=0.9 )
 #----global url settings ----
 T1bbbb_1.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1304457/all'
 #----efficiency map url settings ----
-T1bbbb_1.efficiencyMap.dataUrl ='http://hepdata.cedar.ac.uk/view/ins1304457/all'
+T1bbbb_1.efficiencyMap.dataUrl ='http://hepdata.cedar.ac.uk/view/ins1304457/d30/input http://hepdata.cedar.ac.uk/view/ins1304457/d31/input'
 databaseCreator.create()
 
 #---- new efficiency map -----
@@ -88,7 +88,7 @@ T1bbbb_1.efficiencyMap.setStatistics( observedN=3, expectedBG=1.3, bgError=0.9 )
 #----global url settings ----
 T1bbbb_1.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1304457/all'
 #----efficiency map url settings ----
-T1bbbb_1.efficiencyMap.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1304457/all'
+T1bbbb_1.efficiencyMap.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1304457/d30/input http://hepdata.cedar.ac.uk/view/ins1304457/d31/input'
 databaseCreator.create(True)
 
 #---- new efficiency map -----
@@ -101,7 +101,7 @@ T1bbbb_1.efficiencyMap.setStatistics( observedN= 1, expectedBG=1.6, bgError=0.7 
 #----global url settings ----
 T1bbbb_1.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1304457/all'
 #----efficiency map url settings ----
-T1bbbb_1.efficiencyMap.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1304457/all'
+T1bbbb_1.efficiencyMap.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1304457/d30/input http://hepdata.cedar.ac.uk/view/ins1304457/d31/input'
 databaseCreator.create(True)
 
 
@@ -123,7 +123,7 @@ T1tttt.on.condition ="None"
 T1tttt_1 = T1tttt.addMassPlane(motherMass = x, lspMass = y )
 #---- new efficiency map -----
 #----figure----
-T1tttt_1.figure = 'Figure 14a and Figure 15a'
+T1tttt_1.figure = 'Figure 13b'
 T1tttt_1.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-18/figaux_14a.png'
 #----exclusion source----
 T1tttt_1.obsExclusion.setSource( 'orig/T1tttt_ATLAS-SUSY-2013-18-Obs_Excl.dat', 'txt', objectName = None, index = None )
@@ -136,9 +136,9 @@ T1tttt_1.obsExclusion.setSource( 'orig/T1tttt_ATLAS-SUSY-2013-18-Obs_Excl.dat', 
 T1tttt_1.efficiencyMap.setSource( 'orig/EffMap_T1tttt_SR-0l-7j-A.txt', 'txt', objectName = None, index = None, dataset="SR-0l-7j-A" )
 T1tttt_1.efficiencyMap.setStatistics( observedN=21, expectedBG=21.2, bgError=4.6 )
 #----global url settings ----
-T1tttt_1.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1304457/all'
+T1tttt_1.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1304457/d43/input http://hepdata.cedar.ac.uk/view/ins1304457/d44/input'
 #----efficiency map url settings ----
-T1tttt_1.efficiencyMap.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1304457/all'
+T1tttt_1.efficiencyMap.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1304457/d43/input http://hepdata.cedar.ac.uk/view/ins1304457/d44/input'
 databaseCreator.create(True)
 
 #---- new efficiency map -----
@@ -151,7 +151,7 @@ T1tttt_1.efficiencyMap.setStatistics( observedN=3, expectedBG=3.2, bgError=1.6 )
 #----global url settings ----
 T1tttt_1.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1304457/all'
 #----efficiency map url settings ----
-T1tttt_1.efficiencyMap.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1304457/all'
+T1tttt_1.efficiencyMap.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1304457/d43/input http://hepdata.cedar.ac.uk/view/ins1304457/d44/input'
 databaseCreator.create(True)
 
 #---- new efficiency map -----
@@ -164,7 +164,7 @@ T1tttt_1.efficiencyMap.setStatistics( observedN=1, expectedBG=0.9, bgError=1 )
 #----global url settings ----
 T1tttt_1.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1304457/all'
 #----efficiency map url settings ----
-T1tttt_1.efficiencyMap.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1304457/all'
+T1tttt_1.efficiencyMap.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1304457/d43/input http://hepdata.cedar.ac.uk/view/ins1304457/d44/input'
 databaseCreator.create(True)
 
 #---- new efficiency map -----
@@ -177,7 +177,7 @@ T1tttt_1.efficiencyMap.setStatistics( observedN=7, expectedBG=13.5, bgError=3.2 
 #----global url settings ----
 T1tttt_1.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1304457/all'
 #----efficiency map url settings ----
-T1tttt_1.efficiencyMap.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1304457/all'
+T1tttt_1.efficiencyMap.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1304457/d43/input http://hepdata.cedar.ac.uk/view/ins1304457/d44/input'
 databaseCreator.create(True)
 
 #---- new efficiency map -----
@@ -190,7 +190,7 @@ T1tttt_1.efficiencyMap.setStatistics( observedN=0, expectedBG=6.1, bgError=1.8 )
 #----global url settings ----
 T1tttt_1.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1304457/all'
 #----efficiency map url settings ----
-T1tttt_1.efficiencyMap.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1304457/all'
+T1tttt_1.efficiencyMap.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1304457/d43/input http://hepdata.cedar.ac.uk/view/ins1304457/d44/input'
 databaseCreator.create(True)
 
 #---- new efficiency map -----
@@ -203,7 +203,7 @@ T1tttt_1.efficiencyMap.setStatistics( observedN=0, expectedBG=2.3, bgError=0.7 )
 #----global url settings ----
 T1tttt_1.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1304457/all'
 #----efficiency map url settings ----
-T1tttt_1.efficiencyMap.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1304457/all'
+T1tttt_1.efficiencyMap.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1304457/d43/input http://hepdata.cedar.ac.uk/view/ins1304457/d44/input'
 databaseCreator.create(True)
 
 

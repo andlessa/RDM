@@ -89,16 +89,18 @@ T2tt.expExclusionM1.dataUrl =
 T2tt.expExclusionP1.dataUrl =
 """
 
+
 #+++++++ next txName block ++++++++++++++
 T6bbWW = TxNameInput('T6bbWW')
 T6bbWW.on.checked ="VM"
 #T6bbWW.off.checked =
-T6bbWW.on.constraint ="[[['b'],['W+']],[['b'],['W-']]]"
-T6bbWW.off.constraint ="9.18*([[['b'],['L-','nu']],[['b'],['L+','nu']]])"
+T6bbWW.on.constraint ="[[['b'],['W+']],[['b'],['W-']]]
+T6bbWW.off.constraint ="9.48*([[['b'],['L+','nu']],[['b'],['L-','nu']]])"
 T6bbWW.on.conditionDescription ="None"
-T6bbWW.off.conditionDescription ="[[['b'],['L','nu']],[['b'],['jet','> 2.7* [[['b'],['ta','nu']],[['b'],['jet','jet']]],[[['b'],['L','nu']],[jet','jet']]] > 2.7* [[['b'],['e','nu']],[['b'],['jet','jet']]]"
+T6bbWW.off.conditionDescription="[[['b'],['L+','nu']],[['b'],['L-','nu']]] > 2.7*[[['b'],['ta+','nu']],[['b'],['L-','nu']]],[[['b'],['L+','nu']],[['b'],['L-','nu']]],3*[[['b'],['e+','nu']],[['b'],['e-','nu']]"
 T6bbWW.on.condition ="None"
-T6bbWW.off.condition ="Cgtr([[['b'],['L','nu']],[['b'],['jet','jet']]],3.*[[['b'],['ta','nu']],[['b'],['jet','jet']]]);Cgtr([[['b'],['L','nu']],[['b'],['jet','jet']]],3.*[[['b'],['e','nu']],[['b'],['jet','jet']]])"
+T6bbWW.off.condition="Cgtr([[['b'],['L+','nu']],[['b'],['L-','nu']]],2.7*[[['b'],['ta+','nu']],[['b'],['L-','nu']]]);Cgtr([[['b'],['L+','nu']],[['b'],['L-','nu']]],3 *[[['b'],['e+','nu']],[['b'],['e-','nu']]])"
+
 
 #+++++++ next mass plane block ++++++++++++++
 T6bbWWM1300 = T6bbWW.addMassPlane(motherMass = 300.0, interMass0 = x, lspMass = y)

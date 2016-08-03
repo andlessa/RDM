@@ -96,9 +96,9 @@ T6WW = TxNameInput('T6WW')
 T6WW.on.constraint ="[[['jet'],['W']],[['jet'],['W']]]"
 T6WW.off.constraint = "2.23 * [[['jet'],['jet','jet']],[['jet'],['jet','jet']]]"
 T6WW.on.conditionDescription ="None"
-T6WW.off.conditionDescription = "2.23 * [[['jet'],['jet','jet']],[['jet'],['jet','jet']]] ~ 9.18 * [[['jet'],['L','nu']],[['jet'],['L','nu']]]; 2.23 * [[['jet'],['jet','jet']],[['jet'],['jet','jet']]] ~ 2.26 * [[['jet'],['L','nu']],[['jet'],['jet','jet']]]"
+T6WW.off.conditionDescription = "None"
 T6WW.on.condition = "None"
-T6WW.off.condition ="Csim ( 2.23 * [[['jet'],['jet','jet']],[['jet'],['jet','jet']]], 9.18 * [[['jet'],['L','nu']],[['jet'],['L','nu']]] ) ; Csim ( 2.23 * [[['jet'],['jet','jet']],[['jet'],['jet','jet']]], 2.26 * [[['jet'],['L','nu']],[['jet'],['jet','jet']]])"
+T6WW.off.condition ="None"
 
 #+++++++ next mass plane block ++++++++++++++
 T6WWLSP060 = T6WW.addMassPlane(motherMass = x, interMass0 = y, lspMass = 60.0)
@@ -199,7 +199,7 @@ T2.obsExclusion.setSource( "orig/exclusion_T2.txt", "txt", objectName = None, in
 #T2.exclusionDataUrl =
 #----figure----
 T2.figure = "Fig(aux) 8b"
-T2.figureUrl = "https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-02/figaux_08b.png"
+T2.figureUrl = "https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-02/figaux_09c.png"
 #----limit url settings ----
 """
 T2.obsUpperLimit.dataUrl =
@@ -262,9 +262,9 @@ T5WW = TxNameInput('T5WW')
 T5WW.on.constraint ="[[['jet','jet'],['W']],[['jet','jet'],['W']]]"
 T5WW.off.constraint = "2.23 * [[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
 T5WW.on.conditionDescription ="None"
-T5WW.off.conditionDescription = "2.23 * [[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]] ~ 9.18 * [[['jet','jet'],['L','nu']],[['jet','jet'],['L','nu']]] ; 2.23 * [[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]] ~ 2.26 * [[['jet','jet'],['L','nu']],[['jet','jet'],['jet','jet']]]"
+T5WW.off.conditionDescription = "None"
 T5WW.on.condition ="None"
-T5WW.off.condition = "Csim ( 2.23 * [[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]], 9.18 * [[['jet','jet'],['L','nu']],[['jet','jet'],['L','nu']]] ); Csim ( 2.23 * [[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]], 2.26 * [[['jet','jet'],['L','nu']],[['jet','jet'],['jet','jet']]] )"
+T5WW.off.condition = "None"
 
 #+++++++ next mass plane block ++++++++++++++
 T5WWLSP060 = T5WW.addMassPlane(motherMass = x, interMass0 = y, lspMass = 60.0)
@@ -285,7 +285,7 @@ T5WWLSP060.obsExclusion.setSource( "orig/exclusion_T5WWLSP060.corr.txt", "txt", 
 #T5WWLSP060.exclusionDataUrl =
 #----figure----
 T5WWLSP060.figure = "fig(aux) 10a"
-T5WWLSP060.figureUrl = "https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-02/figaux_10a.png"
+T5WWLSP060.figureUrl = "https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-02/figaux_11a.png"
 """
 #----limit url settings ----
 T5WWLSP060.obsUpperLimit.dataUrl =

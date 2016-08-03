@@ -73,7 +73,7 @@ T2tt.obsExclusion.setSource( "orig/exclusion_T2tt.txt", "txt", objectName = None
 #T2tt.exclusionDataUrl =
 #----figure----
 T2tt.figure = 'Fig. 4'
-T2tt.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-037/fig_07a.png'
+T2tt.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-037/figaux_04.png'
 #----limit url settings ----
 #T2tt.obsUpperLimit.dataUrl =
 #T2tt.expUpperLimit.dataUrl =

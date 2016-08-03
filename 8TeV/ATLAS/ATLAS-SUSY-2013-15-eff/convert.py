@@ -75,7 +75,7 @@ T2tt_1.efficiencyMap.setStatistics( observedN=217, expectedBG=236, bgError=29 )
 #----global url settings ----
 T2tt_1.dataUrl = "http://hepdata.cedar.ac.uk/view/ins1304456"
 #----efficiency map url settings ----
-T2tt_1.efficiencyMap.dataUrl ="http://hepdata.cedar.ac.uk/view/ins1304456"
+T2tt_1.efficiencyMap.dataUrl ="http://hepdata.cedar.ac.uk/view/ins1304456/d65/input http://hepdata.cedar.ac.uk/view/ins1304456/d51/input"
 databaseCreator.create()
 
 #---- new efficiency map -----
@@ -88,7 +88,7 @@ T2tt_1.efficiencyMap.setStatistics( observedN=5, expectedBG=3.3, bgError=0.7 )
 #----global url settings ----
 T2tt_1.dataUrl ="http://hepdata.cedar.ac.uk/view/ins1304456"
 #----efficiency map url settings ----
-T2tt_1.efficiencyMap.dataUrl ="http://hepdata.cedar.ac.uk/view/ins1304456"
+T2tt_1.efficiencyMap.dataUrl ="http://hepdata.cedar.ac.uk/view/ins1304456/d67/input http://hepdata.cedar.ac.uk/view/ins1304456/d53/input"
 databaseCreator.create(True)
 
 
@@ -102,7 +102,7 @@ T2tt_1.efficiencyMap.setStatistics( observedN=12, expectedBG=13, bgError=2.2 )
 #----global url settings ----
 T2tt_1.dataUrl = "http://hepdata.cedar.ac.uk/view/ins1304456"
 #----efficiency map url settings ----
-T2tt_1.efficiencyMap.dataUrl = "http://hepdata.cedar.ac.uk/view/ins1304456"
+T2tt_1.efficiencyMap.dataUrl = "http://hepdata.cedar.ac.uk/view/ins1304456/d66/input http://hepdata.cedar.ac.uk/view/ins1304456/d52/input"
 databaseCreator.create(True)
 
 

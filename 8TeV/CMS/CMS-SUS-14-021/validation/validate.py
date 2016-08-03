@@ -2,6 +2,8 @@
 
 import sys,os
 home = os.path.expanduser("~")
+home = "../../../../../"
+
 sys.path.insert(0,os.path.join(home,"smodels-utils/"))
 sys.path.insert(0,os.path.join(home,"smodels/"))
 
@@ -33,10 +35,8 @@ if expRes == []:
         if line[:3]=="id:":
             Id=line[4:]
             Id=Id.replace("\n","")
-            idfromPath=getExpIdFromPath()
-            if not ( Id == idfromPath ):
-                print "[validate.py] Error: path directory ``%s'' does not "  \
-                      "match exp id ``%s'' in ../globalInfo.txt" % ( idfromPath, Id  )
+            if Id != getExpIdFromPath():
+                print "[validate.py] Error: path directory ``%s'' does not match exp id ``%s'' in ../globalInfo.txt" % ( getExpIdFromPath(), Id  )
                 sys.exit()
 
 slhamain = os.path.join(home,"smodels-utils/slha")

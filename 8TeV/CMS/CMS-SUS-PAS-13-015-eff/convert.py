@@ -40,7 +40,7 @@ info.private = False
 info.arxiv = ''
 info.contact =''
 info.publication ='http://cds.cern.ch/record/1635353/files/SUS-13-015-pas.pdf'
-info.comment ='PAS so no arxiv publication - only cds.cern; since bkg error is asymmetric, the largest value is used'
+info.comment ='PAS so no arxiv publication - only cds.cern; whenever the error on the expected SM background is asymmetric for some signal regions, the largest value is used'
 info.supersedes =''
 #info.supersededBy ='CMS-SUS-14-001'
 
