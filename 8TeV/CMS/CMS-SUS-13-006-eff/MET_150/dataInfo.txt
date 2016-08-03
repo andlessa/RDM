@@ -1,0 +1,7 @@
+dataType: efficiencyMap
+dataId: MET_150
+observedN: 3
+expectedBG: 3.8
+bgError: 1.0
+upperLimit: 0.2695*fb
+expectedUpperLimit: 0.2738*fb
