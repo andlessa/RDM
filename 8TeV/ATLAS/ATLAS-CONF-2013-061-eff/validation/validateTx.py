@@ -31,8 +31,11 @@ database = Database(os.path.join(home,"smodels-database"))
 
 print "exp id",getExpIdFromPath(),"dataId=",getDatasetIdsFromPath()
 
+datasets = getDatasetIdsFromPath()
+#Force to use only the 0l channel:
+#datasets = ['data-cut0','data-cut1','data-cut2','data-cut3','data-cut4','data-cut5']
 #How to validate all plots for all Txnames in one ExpRes:
-expRes = database.getExpResults(analysisIDs=[getExpIdFromPath()],datasetIDs=getDatasetIdsFromPath() )
+expRes = database.getExpResults(analysisIDs=[getExpIdFromPath()],datasetIDs= datasets)
 
 ## axes="2*Eq(mother,x)_Eq(lsp,y)"
 slhamain = os.path.join(home,"smodels-utils/slha/")

@@ -1,0 +1,6 @@
+comment_by: AL
+date: Fri 05 Aug 2016 15:34:03 PM BRT 
+comment: "The official exclusion curve includes one signal region
+which relies on a shape analysis. This SR is the one responsible for excluding
+the region with highest neutralino masses. Since Fastlim does not include this
+SR (SRtN1shape), the exclusion area is slightly smaller than the official value."
