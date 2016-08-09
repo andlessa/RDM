@@ -94,12 +94,12 @@ T2tt.expExclusionP1.dataUrl =
 T6bbWW = TxNameInput('T6bbWW')
 T6bbWW.on.checked ="VM"
 #T6bbWW.off.checked =
-T6bbWW.on.constraint ="[[['b'],['W+']],[['b'],['W-']]]
-T6bbWW.off.constraint ="9.48*([[['b'],['L+','nu']],[['b'],['L-','nu']]])"
+T6bbWW.on.constraint ="[[['b'],['W+']],[['b'],['W-']]]"
+T6bbWW.off.constraint ="20.25*([[['b'],['l+','nu']],[['b'],['l-','nu']]])"
 T6bbWW.on.conditionDescription ="None"
-T6bbWW.off.conditionDescription="[[['b'],['L+','nu']],[['b'],['L-','nu']]] > 2.7*[[['b'],['ta+','nu']],[['b'],['L-','nu']]],[[['b'],['L+','nu']],[['b'],['L-','nu']]],3*[[['b'],['e+','nu']],[['b'],['e-','nu']]"
+T6bbWW.off.conditionDescription="[[['b'],['l+','nu']],[['b'],['l-','nu']]] > 2*[[['b'],['e+','nu']],[['b'],['e-','nu']]]"
 T6bbWW.on.condition ="None"
-T6bbWW.off.condition="Cgtr([[['b'],['L+','nu']],[['b'],['L-','nu']]],2.7*[[['b'],['ta+','nu']],[['b'],['L-','nu']]]);Cgtr([[['b'],['L+','nu']],[['b'],['L-','nu']]],3 *[[['b'],['e+','nu']],[['b'],['e-','nu']]])"
+T6bbWW.off.condition="Cgtr([[['b'],['l+','nu']],[['b'],['l-','nu']]],2*[[['b'],['e+','nu']],[['b'],['e-','nu']]]"
 
 
 #+++++++ next mass plane block ++++++++++++++
