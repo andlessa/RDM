@@ -51,11 +51,11 @@ TChiWZ = TxNameInput('TChiWZ')
 TChiWZ.on.checked ="VM"
 TChiWZ.off.checked ="VM"
 TChiWZ.on.constraint ="[[['W']],[['Z']]]"
-TChiWZ.off.constraint ="30.3*([[['L','nu']],[['e+','e-']]] + [[['L','nu']],[['mu+','mu-']]] + [[['L','nu']],[['tau+','tau-']]] "
+TChiWZ.off.constraint ="25*([[['l','nu']],[['e+','e-']]]+[[['l','nu']],[['mu+','mu-']]]"
 TChiWZ.on.conditionDescription ="None"
-TChiWZ.off.conditionDescription ="[[['mu+','mu-']],[['l','nu']]] > [[['e+','e-']],[['l','nu']]] , [[['e+','e-']],[['L','nu']]] > [[['tau+','tau-']],[['L','nu']]] "
+TChiWZ.off.conditionDescription ="[[['mu','nu']],[['e+','e-']]]>[[['e','nu']],[['e+','e-']]],[[['e','nu']],[['e+','e-']]]>[[['tau','nu']],[['e+','e-']]],[[['mu','nu']],[['mu+','mu-']]]>[[['e','nu']],[['mu+','mu-']]],[[['e','nu']],[['mu+','mu-']]]>[[['tau','nu']],[['mu+','mu-']]],[[['mu','nu']],[['tau+','tau-']]]>[[['e','nu']],[['tau+','tau-']]],[[['e','nu']],[['tau+','tau-']]]>[[['tau','nu']],[['tau+','tau-']]],[[['L','nu']],[['mu+','mu-']]]>[[['L','nu']],[['e+','e-']]],[[['L','nu']],[['e+','e-']]]>[[['L','nu']],[['tau+','tau-']]]"
 TChiWZ.on.condition ="None"
-TChiWZ.off.condition ="Cgtr([[['mu+','mu-']],[['L','nu']]],[[['e+','e-']],[['L','nu']]]) , Cgtr([[['e+','e-']],[['L','nu']]],[[['tau+','tau-']],[['L','nu']]]) "
+TChiWZ.off.condition ="Cgtr([[['mu','nu']],[['e+','e-']]],[[['e','nu']],[['e+','e-']]]),Cgtr([[['e','nu']],[['e+','e-']]],[[['tau','nu']],[['e+','e-']]]),Cgtr([[['mu','nu']],[['mu+','mu-']]],[[['e','nu']],[['mu+','mu-']]]),Cgtr([[['e','nu']],[['mu+','mu-']]],[[['tau','nu']],[['mu+','mu-']]]),Cgtr([[['mu','nu']],[['tau+','tau-']]],[[['e','nu']],[['tau+','tau-']]]),Cgtr([[['e','nu']],[['tau+','tau-']]],[[['tau','nu']],[['tau+','tau-']]]),Cgtr([[['L','nu']],[['mu+','mu-']]],[[['L','nu']],[['e+','e-']]]),Cgtr([[['L','nu']],[['e+','e-']]],[[['L','nu']],[['tau+','tau-']]])"
 
 #+++++++ next mass plane block ++++++++++++++
 TChiWZ = TChiWZ.addMassPlane(motherMass = x, lspMass = y)
