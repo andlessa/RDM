@@ -40,7 +40,7 @@ info.private = False
 info.arxiv = 'http://arxiv.org/abs/1512.08002'
 info.contact = ''
 info.publication =''
-info.comment ='ISR production'
+info.comment ='ISR jet. Only single lepton analysis data available and implemented.'
 info.supersedes =''
 info.supersededBy =''
 
@@ -49,11 +49,11 @@ T2bbWW = TxNameInput('T2bbWW')
 T2bbWW.on.checked = ''
 T2bbWW.off.checked = ''
 T2bbWW.on.constraint = "[[['b','W']],[['b','W']]]"
-T2bbWW.off.constraint = "[[['b','l','nu']],[['b','l','nu']]]+[[['b','q','q']],[['b','q','q']]]+[[['b','q','q']],[['b','l','nu']]]"
+T2bbWW.off.constraint = "7.1*[[['b','l','mu']],[['b','q','q']]"
 T2bbWW.on.conditionDescription = None
-T2bbWW.off.conditionDescription ="[[['b','l','nu']],[['b','l','nu']]] > 4*[[['b','mu','nu']],[['b','mu','nu']]]"
+T2bbWW.off.conditionDescription ="None"
 T2bbWW.on.condition =None
-T2bbWW.off.condition ="Cgtr([[['b','l','nu']],[['b','l','nu']]] , 4*[[['b','mu','nu']],[['b','mu','nu']]] "
+T2bbWW.off.condition ="None"
 #T2bbWW.branchingRatio =
 
 #+++++++ next mass plane block ++++++++++++++
@@ -72,7 +72,7 @@ T2bbWW_1.expExclusion.setSource( 'orig/singleLeptonLimitHistograms.root', 'root'
 T2bbWW_1.expExclusionM1.setSource( 'orig/singleLeptonLimitHistograms.root', 'root', objectName = 'gExpectedDown', index = None )
 T2bbWW_1.expExclusionP1.setSource( 'orig/singleLeptonLimitHistograms.root', 'root', objectName = 'gExpectedUp', index = None )
 #----global url settings ----
-T2bbWW_1.dataUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS14021/'
+T2bbWW_1.dataUrl = 'https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS14021'
 #----limit url settings ----
 T2bbWW_1.histoDataUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS14021/singleLeptonLimitHistograms.root'
 T2bbWW_1.obsUpperLimit.dataUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS14021/singleLeptonLimitHistograms.root'
