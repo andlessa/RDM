@@ -117,6 +117,7 @@ def efficiencyBlock(planeName,signalregion,first,firstOfThisTopology):
     block+=\
     "#----limit source----\n" +\
     '%s.efficiencyMap.setSource( path, type, objectName = None, index = None, dataset="%s" )\n' % ( planeName, signalregion ) +\
+    '%s.efficiencyMap.usePercentage(False)\n' % planeName +\
     "%s.efficiencyMap.setStatistics( observedN=, expectedBG=, bgError= )\n" %planeName +\
     "#----global url settings ----\n" +\
     "%s.dataUrl =\n" %planeName +\
@@ -343,8 +344,8 @@ if __name__ == '__main__':
     type = types.StringType)
     
     argparser.add_argument ('-sqrts', '--sqrts', \
-    help = 'center of mass energy',\
-    type = types.StringType)
+    help = 'center of mass energy (e.g. 13*TeV)',\
+    type = types.StringType, default = "8*TeV" )
     
     argparser.add_argument ('-txNames', '--txNames', \
     help = 'list of txNames, additional numbers of mass planes in brackets ', \
