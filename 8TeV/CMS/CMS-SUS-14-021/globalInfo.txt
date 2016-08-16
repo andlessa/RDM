@@ -4,7 +4,8 @@ id: CMS-SUS-14-021
 prettyName: stop 4body decay
 url: https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS14021
 arxiv: http://arxiv.org/abs/1512.08002
-comment: ISR production
+comment: ISR jet. Only single lepton analysis data available and implemented.
 private: False
 implementedBy: Federico A
-lastUpdate: 2016/7/15
+lastUpdate: 2016/8/16
+
