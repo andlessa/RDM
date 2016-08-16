@@ -40,7 +40,7 @@ info.private = False
 info.arxiv = 'http://arxiv.org/abs/1512.08002'
 info.contact = ''
 info.publication =''
-info.comment ='ISR production'
+info.comment ='stop 4 body decay'
 info.supersedes =''
 info.supersededBy =''
 
@@ -49,7 +49,7 @@ T2bbWW = TxNameInput('T2bbWW')
 T2bbWW.on.checked = ''
 T2bbWW.off.checked = ''
 T2bbWW.on.constraint = "[[['b','W']],[['b','W']]]"
-T2bbWW.off.constraint = "[[['b','L','nu']],[['b','L','nu']]]+[[['b','q','q']],[['b','q','q']]]+[[['b','q','q']],[['b','L','nu']]]"
+T2bbWW.off.constraint = "6.94*[[['b','mu','nu']],[['b','jet','jet']]]"
 T2bbWW.on.conditionDescription = None
 T2bbWW.off.conditionDescription =None
 T2bbWW.on.condition =None
@@ -72,6 +72,7 @@ T2bbWW_1.expExclusionP1.setSource( 'orig/singleLeptonLimitHistograms.root', 'roo
 #----limit source----
 T2bbWW_1.efficiencyMap.setSource( 'orig/efficienciesSRSL.root', 'root', objectName = 'effSRSL1a',  index = None, dataset="SRSL1a" )
 T2bbWW_1.efficiencyMap.setStatistics( observedN=121, expectedBG=134.5, bgError=19.8 )
+T2bbWW_1.efficiencyMap.usePercentage(True)
 #----global url settings ----
 T2bbWW_1.dataUrl = 'https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS14021'
 #----efficiency map url settings ----
@@ -85,6 +86,7 @@ T2bbWW_1.figureUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSU
 #----limit source----
 T2bbWW_1.efficiencyMap.setSource( 'orig/efficienciesSRSL.root', 'root', objectName = 'effSRSL1b', index = None, dataset="SRSL1b" )
 T2bbWW_1.efficiencyMap.setStatistics( observedN=59, expectedBG=81.3, bgError=19.1 )
+T2bbWW_1.efficiencyMap.usePercentage(True)
 #----global url settings ----
 T2bbWW_1.dataUrl = 'https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS14021'
 #----efficiency map url settings ----
@@ -98,6 +100,7 @@ T2bbWW_1.figureUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSU
 #----limit source----
 T2bbWW_1.efficiencyMap.setSource( 'orig/efficienciesSRSL.root', 'root', objectName = 'effSRSL1c', index = None, dataset="SRSL1c" )
 T2bbWW_1.efficiencyMap.setStatistics( observedN=12, expectedBG=12.3, bgError=4.0 )
+T2bbWW_1.efficiencyMap.usePercentage(True)
 #----global url settings ----
 T2bbWW_1.dataUrl = 'https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS14021'
 #----efficiency map url settings ----
@@ -111,6 +114,7 @@ T2bbWW_1.figureUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSU
 #----limit source----
 T2bbWW_1.efficiencyMap.setSource( 'orig/efficienciesSRSL.root', 'root', objectName = 'effSRSL2', index = None, dataset="SRSL2" )
 T2bbWW_1.efficiencyMap.setStatistics( observedN=41, expectedBG=32.1, bgError=7.7 )
+T2bbWW_1.efficiencyMap.usePercentage(True)
 #----global url settings ----
 T2bbWW_1.dataUrl = 'https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS14021'
 #----efficiency map url settings ----

@@ -3,5 +3,5 @@ dataId: SRSL1a
 observedN: 121
 expectedBG: 134.5
 bgError: 19.8
-upperLimit: 1.905*fb
-expectedUpperLimit: 2.32*fb
+upperLimit: 1.888*fb
+expectedUpperLimit: 2.291*fb
