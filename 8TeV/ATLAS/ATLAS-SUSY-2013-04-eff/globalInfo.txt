@@ -7,7 +7,7 @@ arxiv: http://arxiv.org/abs/1308.1841
 publication: http://link.springer.com/article/10.1007/JHEP10%282013%29130
 contact: ATLAS collaboration
 supersedes: ATLAS-CONF-2012-103
-comment: there is eff.map also for T5WW but no excl. line. Erratum: JHEP01(2014)109
+comment: Erratum: JHEP01(2014)109
 private: False
 implementedBy: Federico A
-lastUpdate: 2015/5/21
+lastUpdate: 2016/8/17
