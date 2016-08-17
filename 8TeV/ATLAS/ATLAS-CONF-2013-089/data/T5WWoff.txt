@@ -1,9 +1,9 @@
 txName: T5WWoff
-conditionDescription: [[['jet','jet'],['L+','nu']],[['jet','jet'],['L-','nu']]] > 9 * [[['jet','jet'],['ta+','nu']],[['jet','jet'],['ta-','nu']]]
-condition: Cgtr([[['jet','jet'],['L+','nu']],[['jet','jet'],['L-','nu']]],9 * [[['jet','jet'],['ta+','nu']],[['jet','jet'],['ta-','nu']]]);Cgtr([[['jet','jet'],['L+','nu']],[['jet','jet'],['L-','nu']]],9 * [[['jet','jet'],['e+','nu']],[['jet','jet'],['e-','nu']]])
-constraint: 9.34*[[['jet','jet'],['L+','nu']],[['jet','jet'],['L-','nu']]]
+conditionDescription: [[['jet','jet'],['l','nu']],[['jet','jet'],['l','nu']]] > 2 * [[['jet','jet'],['e','nu']],[['jet','jet'],['l','nu']]]
+condition: Cgtr([[['jet','jet'],['l','nu']],[['jet','jet'],['l','nu']]],2*[[['jet','jet'], ['e','nu']],[['jet','jet'],['l','nu']]])
+constraint: 20.2*[[['jet','jet'],['l','nu']],[['jet','jet'],['l','nu']]]
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-089/fig_22b.png;https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-089/fig_22a.png
-dataUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-089/fig_23b_PRELIMINARY.data;https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-089/fig_22a_PRELIMINARY.data
+dataUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-089/fig_22b_PRELIMINARY.data;https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-089/fig_22a_PRELIMINARY.data
 validated: None
 axes: 2*Eq(mother,x)_Eq(inter0,y)_Eq(lsp,60.0);2*Eq(mother,x)_Eq(inter0,0.5*x+0.5*y)_Eq(lsp,y)
 publishedData: True
