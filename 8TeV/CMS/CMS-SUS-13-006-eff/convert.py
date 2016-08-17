@@ -70,6 +70,7 @@ TChiWH_1.expExclusionM1.setSource("orig/exclusion_TChiWH.root", "canvas", object
 TChiWH_1.expExclusionP1.setSource( "orig/exclusion_TChiWH.root", "canvas", objectName = "interpret", index = 5 )
 #----limit source----
 TChiWH_1.efficiencyMap.setSource( 'orig/singlelep_results.root', 'root', objectName = 'h_eff_met100', index = None, dataset="MET_100" )
+TChiWH_1.efficiencyMap.usePercentage(True)
 TChiWH_1.efficiencyMap.setStatistics( observedN=7, expectedBG=7.7, bgError=1.9 )
 #----global url settings ----
 TChiWH_1.dataUrl = 'https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS13006'
@@ -84,6 +85,7 @@ databaseCreator.create()
 #TChiWH_1.figureUrl =
 #----limit source----
 TChiWH_1.efficiencyMap.setSource( 'orig/singlelep_results.root', 'root',  objectName = 'h_eff_met125', index = None, dataset="MET_125" )
+TChiWH_1.efficiencyMap.usePercentage(True)
 TChiWH_1.efficiencyMap.setStatistics( observedN=6, expectedBG=5.4, bgError=1.3 )
 #----global url settings ----
 TChiWH_1.dataUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13006/ss_eff_map.root'
@@ -97,6 +99,7 @@ databaseCreator.create(True)
 #TChiWH_1.figureUrl =
 #----limit source----
 TChiWH_1.efficiencyMap.setSource( 'orig/singlelep_results.root', 'root',  objectName = 'h_eff_met150', index = None, dataset="MET_150" )
+TChiWH_1.efficiencyMap.usePercentage(True)
 TChiWH_1.efficiencyMap.setStatistics( observedN=3, expectedBG=3.8, bgError=1.0 )
 #----global url settings ----
 TChiWH_1.dataUrl ='https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13006/ss_eff_map.root'
@@ -110,6 +113,7 @@ databaseCreator.create(True)
 #TChiWH_1.figureUrl =
 #----limit source----
 TChiWH_1.efficiencyMap.setSource( 'orig/singlelep_results.root', 'root',  objectName = 'h_eff_met175', index = None, dataset="MET_175" )
+TChiWH_1.efficiencyMap.usePercentage(True)
 TChiWH_1.efficiencyMap.setStatistics( observedN=3, expectedBG=2.3, bgError=0.6 )
 #----global url settings ----
 TChiWH_1.dataUrl ='https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13006/ss_eff_map.root'
