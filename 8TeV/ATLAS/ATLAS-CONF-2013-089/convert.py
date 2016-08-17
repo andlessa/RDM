@@ -49,11 +49,11 @@ T6WW = TxNameInput('T6WW')
 T6WW.on.checked ="VM"
 #T6WW.off.checked =
 T6WW.on.constraint ="[[['jet'],['W']],[['jet'],['W']]]"
-T6WW.off.constraint = "20.25*[[['jet'],['l','nu']],[['jet'],['l','nu']]]"
+T6WW.off.constraint = "22*[[['jet'],['l','nu']],[['jet'],['l','nu']]]"
 T6WW.on.conditionDescription ="None"
-T6WW.off.conditionDescription = "[[['jet'],['l','nu']],[['jet'],['l','nu']]] > 2*[[['jet'],['e','nu']],[['jet'],['l','nu']]]"
+T6WW.off.conditionDescription = "[[['jet'],['l','nu']],[['jet'],['l','nu']]] > 2*[[['jet'], ['e','nu']],[['jet'],['l','nu']]]"
 T6WW.on.condition ="None"
-T6WW.off.condition = "Cgtr([[['jet'],['l','nu']],[['jet'],['l','nu']]], 2*[[['jet'],['e','nu']],[['jet'],['l','nu']]])"
+T6WW.off.condition = "Cgtr([[['jet'],['l','nu']],[['jet'],['l','nu']]], 2*[[['jet'],['e','nu']],[['jet'], ['l','nu']]])"
 
 #+++++++ next mass plane block ++++++++++++++
 T6WW050 = T6WW.addMassPlane(motherMass = x, interMass0 = x*0.5 + (1. - 0.5)*y, lspMass = y)
@@ -122,12 +122,11 @@ T5WW = TxNameInput('T5WW')
 T5WW.on.checked ="VM"
 #T5WW.off.checked =
 T5WW.on.constraint ="[[['jet','jet'],['W']],[['jet','jet'],['W']]]"
-T5WW.off.constraint ="20.25*[[['jet','jet'],['l','nu']],[['jet','jet'],['l','nu']]]"
+T5WW.off.constraint ="20.2*[[['jet','jet'],['l','nu']],[['jet','jet'],['l','nu']]]"
 T5WW.on.conditionDescription ="None"
 T5WW.off.conditionDescription = "[[['jet','jet'],['l','nu']],[['jet','jet'],['l','nu']]] > 2 * [[['jet','jet'],['e','nu']],[['jet','jet'],['l','nu']]]"
 T5WW.on.condition ="None"
-T5WW.off.condition = "Cgtr([[['jet','jet'],['l','nu']],[['jet','jet'],['l','nu']]],2*[[['jet','jet'],['e','nu']],[['jet','jet'],['l','nu']]])"
-#T5WW.off.condition =
+T5WW.off.condition = "Cgtr([[['jet','jet'],['l','nu']],[['jet','jet'],['l','nu']]],2*[[['jet','jet'], ['e','nu']],[['jet','jet'],['l','nu']]])"
 
 #+++++++ next mass plane block ++++++++++++++
 T5WWLSP060 = T5WW.addMassPlane(motherMass = x, interMass0 = y, lspMass = 60.0)
