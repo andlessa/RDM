@@ -43,7 +43,7 @@ info.private = False
 info.comment = 'PAS:http://inspirehep.net/record/1387812/files/SUS-13-023-pas.pdf'
 #info.supersedes =
 #info.supersededBy =
-'''
+
 #+++++++ next txName block ++++++++++++++
 T2tt = TxNameInput('T2tt')
 T2tt.on.checked =''
@@ -85,7 +85,7 @@ T2tt_1.obsExclusionP1.dataUrl ='https://twiki.cern.ch/twiki/pub/CMSPublic/Physic
 #T2tt_1.expExclusion.dataUrl =
 #T2tt_1.expExclusionM1.dataUrl =
 #T2tt_1.expExclusionP1.dataUrl =
-'''
+
 
 #+++++++ next txName block ++++++++++++++
 T6bbWW = TxNameInput('T6bbWW')
@@ -110,8 +110,8 @@ T6bbWW_1.obsUpperLimit.setSource( 'orig/T2bw_0p25_observed_xsection_UL.root', 'c
 #T6bbWW_1.expUpperLimit.setSource( path, type, objectName = None, index = None )
 #----exclusion source----
 T6bbWW_1.obsExclusion.setSource( 'orig/T2bbWW_x025_Obs.txt', 'txt', objectName = None, index = None )
-T6bbWW_1.obsExclusionM1.setSource( 'orig/T2bbWW_x025_ObsMinus.txt', 'txt', objectName = None, index = None )
-T6bbWW_1.obsExclusionP1.setSource( 'orig/T2bbWW_x025_ObsPlus.txt', 'txt', objectName = None, index = None )
+#T6bbWW_1.obsExclusionM1.setSource( 'orig/T2bbWW_x025_ObsMinus.txt', 'txt', objectName = None, index = None )
+#T6bbWW_1.obsExclusionP1.setSource( 'orig/T2bbWW_x025_ObsPlus.txt', 'txt', objectName = None, index = None )
 #T6bbWW_1.expExclusion.setSource( path, type, objectName = None, index = None )
 #T6bbWW_1.expExclusionM1.setSource( path, type, objectName = None, index = None )
 #T6bbWW_1.expExclusionP1.setSource( path, type, objectName = None, index = None )
@@ -142,8 +142,8 @@ T6bbWW_2.obsUpperLimit.setSource('orig/T2bw_0p75_observed_xsection_UL.root', 'ca
 #T6bbWW_2.expUpperLimit.setSource( path, type, objectName = None, index = None )
 #----exclusion source----
 T6bbWW_2.obsExclusion.setSource( 'orig/T2bbWW_x075_Obs.txt', 'txt', objectName = None, index = None)
-T6bbWW_2.obsExclusionM1.setSource('orig/T2bbWW_x075_ObsMinus.txt', 'txt', objectName = None, index = None )
-T6bbWW_2.obsExclusionP1.setSource( 'orig/T2bbWW_x075_ObsPlus.txt', 'txt', objectName = None, index = None )
+#T6bbWW_2.obsExclusionM1.setSource('orig/T2bbWW_x075_ObsMinus.txt', 'txt', objectName = None, index = None )
+#T6bbWW_2.obsExclusionP1.setSource( 'orig/T2bbWW_x075_ObsPlus.txt', 'txt', objectName = None, index = None )
 #T6bbWW_2.expExclusion.setSource( path, type, objectName = None, index = None )
 #T6bbWW_2.expExclusionM1.setSource( path, type, objectName = None, index = None )
 #T6bbWW_2.expExclusionP1.setSource( path, type, objectName = None, index = None )
@@ -173,8 +173,8 @@ T6bbWW_3.obsUpperLimit.setSource('orig/T2bw_0p50_observed_xsection_UL.root', 'ca
 #T6bbWW_3.expUpperLimit.setSource( path, type, objectName = None, index = None )
 #----exclusion source----
 T6bbWW_3.obsExclusion.setSource( 'orig/T2bbWW_x050_Obs.txt', 'txt', objectName = None, index = None )
-T6bbWW_3.obsExclusionM1.setSource('orig/T2bbWW_x050_ObsMinus.txt', 'txt', objectName = None, index = None )
-T6bbWW_3.obsExclusionP1.setSource( 'orig/T2bbWW_x050_ObsPlus.txt', 'txt', objectName = None, index = None )
+#T6bbWW_3.obsExclusionM1.setSource('orig/T2bbWW_x050_ObsMinus.txt', 'txt', objectName = None, index = None )
+#T6bbWW_3.obsExclusionP1.setSource( 'orig/T2bbWW_x050_ObsPlus.txt', 'txt', objectName = None, index = None )
 #T6bbWW_3.expExclusion.setSource( path, type, objectName = None, index = None )
 #T6bbWW_3.expExclusionM1.setSource( path, type, objectName = None, index = None )
 #T6bbWW_3.expExclusionP1.setSource( path, type, objectName = None, index = None )
@@ -192,5 +192,6 @@ T6bbWW_3.obsExclusionP1.dataUrl ='https://twiki.cern.ch/twiki/pub/CMSPublic/Phys
 T6bbWW_3.expExclusion.dataUrl ='https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13023/T2bw_0p50_observed_xsection_UL.root'
 T6bbWW_3.expExclusionM1.dataUrl ='https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13023/T2bw_0p50_observed_xsection_UL.root'
 T6bbWW_3.expExclusionP1.dataUrl ='https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13023/T2bw_0p50_observed_xsection_UL.root'
+
 databaseCreator.create()
 
