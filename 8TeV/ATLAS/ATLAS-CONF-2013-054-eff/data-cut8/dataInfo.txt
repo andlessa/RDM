@@ -1,5 +1,5 @@
 dataType: efficiencyMap
-dataId: data-cut8
+dataId: 7j80 flavor 1 b-jets
 observedN: 17
 expectedBG: 17.0
 bgError: 6.0

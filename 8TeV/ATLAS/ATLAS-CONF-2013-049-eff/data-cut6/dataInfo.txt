@@ -1,5 +1,5 @@
 dataType: efficiencyMap
-dataId: data-cut6
+dataId: WWa
 observedN: 123
 expectedBG: 117.9
 bgError: 14.6

@@ -1,5 +1,5 @@
 dataType: efficiencyMap
-dataId: data-cut3
+dataId: SRA mCT300
 observedN: 7
 expectedBG: 5.9
 bgError: 1.1

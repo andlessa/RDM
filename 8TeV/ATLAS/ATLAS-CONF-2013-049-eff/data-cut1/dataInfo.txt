@@ -1,5 +1,5 @@
 dataType: efficiencyMap
-dataId: data-cut1
+dataId: em: mT2 > 90
 observedN: 19
 expectedBG: 20.7
 bgError: 3.2

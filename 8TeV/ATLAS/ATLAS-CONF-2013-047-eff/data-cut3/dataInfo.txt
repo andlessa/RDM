@@ -1,5 +1,5 @@
 dataType: efficiencyMap
-dataId: data-cut3
+dataId: B Tight
 observedN: 4
 expectedBG: 2.4
 bgError: 1.4

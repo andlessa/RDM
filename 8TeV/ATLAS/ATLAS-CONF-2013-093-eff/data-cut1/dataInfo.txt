@@ -1,5 +1,5 @@
 dataType: efficiencyMap
-dataId: data-cut1
+dataId: SRBh
 observedN: 2
 expectedBG: 2.1
 bgError: 0.7

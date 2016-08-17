@@ -1,5 +1,5 @@
 dataType: efficiencyMap
-dataId: data-cut2
+dataId: SR3: MET > 350
 observedN: 1
 expectedBG: 2.7
 bgError: 1.2

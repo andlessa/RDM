@@ -1,5 +1,5 @@
 dataType: efficiencyMap
-dataId: data-cut13
+dataId: 8j50 MJ 340
 observedN: 69
 expectedBG: 75.0
 bgError: 19.0
