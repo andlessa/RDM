@@ -1,5 +1,7 @@
 txName: T5ZZoff
 constraint: 2.1*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]
+conditionDescription: None
+condition: None
 figureUrl: None
 validated: None
 axes: 2*Eq(mother,x)_Eq(inter0,0.95*x+0.05*y)_Eq(lsp,y)
