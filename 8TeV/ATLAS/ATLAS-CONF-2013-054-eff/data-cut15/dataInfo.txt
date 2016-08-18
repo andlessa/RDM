@@ -3,5 +3,5 @@ dataId: 9j50 MJ 340
 observedN: 13
 expectedBG: 17.0
 bgError: 7.0
-upperLimit: 0.50*fb
-expectedUpperLimit: 0.80*fb
+upperLimit: 0.5*fb
+expectedUpperLimit: 0.797*fb

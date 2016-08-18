@@ -3,5 +3,5 @@ dataId: C Medium
 observedN: 228
 expectedBG: 210.0
 bgError: 40.0
-upperLimit: 4.00*fb
-expectedUpperLimit: 4.13*fb
+upperLimit: 4*fb
+expectedUpperLimit: 4.16*fb

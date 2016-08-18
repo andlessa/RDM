@@ -3,5 +3,5 @@ dataId: 7j80 flavor 0 b-jets
 observedN: 12
 expectedBG: 11.0
 bgError: 2.2
-upperLimit: 0.50*fb
-expectedUpperLimit: 0.46*fb
+upperLimit: 0.5*fb
+expectedUpperLimit: 0.463*fb

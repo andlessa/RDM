@@ -3,5 +3,5 @@ dataId: SRA mCT150
 observedN: 102
 expectedBG: 94.0
 bgError: 13.0
-upperLimit: 1.90*fb
-expectedUpperLimit: 1.65*fb
+upperLimit: 1.9*fb
+expectedUpperLimit: 1.63*fb

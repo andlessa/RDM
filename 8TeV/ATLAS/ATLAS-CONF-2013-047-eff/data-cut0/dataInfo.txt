@@ -3,5 +3,5 @@ dataId: A Loose
 observedN: 5333
 expectedBG: 4700.0
 bgError: 500.0
-upperLimit: 66.07*fb
-expectedUpperLimit: 49.66*fb
+upperLimit: 66.1*fb
+expectedUpperLimit: 48.8*fb

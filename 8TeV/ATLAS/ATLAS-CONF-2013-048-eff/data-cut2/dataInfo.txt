@@ -3,5 +3,5 @@ dataId: SR M110
 observedN: 7
 expectedBG: 11.0
 bgError: 4.0
-upperLimit: 0.40*fb
-expectedUpperLimit: 0.56*fb
+upperLimit: 0.4*fb
+expectedUpperLimit: 0.557*fb

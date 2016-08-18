@@ -3,5 +3,5 @@ dataId: SRtN2
 observedN: 14
 expectedBG: 13.0
 bgError: 3.0
-upperLimit: 0.50*fb
-expectedUpperLimit: 0.52*fb
+upperLimit: 0.5*fb
+expectedUpperLimit: 0.521*fb

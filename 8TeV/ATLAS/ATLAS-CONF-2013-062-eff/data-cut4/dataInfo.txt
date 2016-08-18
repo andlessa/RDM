@@ -3,5 +3,5 @@ dataId: SL3j
 observedN: 7
 expectedBG: 5.6
 bgError: 1.6
-upperLimit: 0.40*fb
-expectedUpperLimit: 0.33*fb
+upperLimit: 0.4*fb
+expectedUpperLimit: 0.335*fb
