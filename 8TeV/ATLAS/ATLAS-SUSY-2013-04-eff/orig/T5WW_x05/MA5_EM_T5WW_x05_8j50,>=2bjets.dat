@@ -1,2001 +1,667 @@
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 100.0   0.0   0.0000000
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 100.0   40.0   0.0000000
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 100.0   80.0   0.0000000
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1000   0   0.0042101
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1000   30   0.0041159
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1000   60   0.0038092
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1000   90   0.0036331
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1000   120   0.0039876
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1000   150   0.0037945
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1000   180   0.0039292
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1000   210   0.0033238
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1000   240   0.0036194
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1000   270   0.0035700
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1000   300   0.0034688
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1000   330   0.0032310
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1000   360   0.0029715
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1000   390   0.0026024
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1000   420   0.0024887
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1000   450   0.0022729
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1000   480   0.0024891
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1000   510   0.0017192
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1000   540   0.0016327
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1000   570   0.0014210
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1000   600   0.0014181
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1000   630   0.0010974
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1000   660   0.0005663
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1000   690   0.0006222
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1000   720   0.0004244
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1040   0   0.0043389
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1040   30   0.0045563
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1040   60   0.0048816
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1040   90   0.0039810
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1040   120   0.0041619
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1040   150   0.0043114
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1040   180   0.0041473
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1040   210   0.0038519
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1040   240   0.0034732
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1040   270   0.0034189
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1040   300   0.0036976
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1040   330   0.0033221
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1040   360   0.0033923
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1040   390   0.0029573
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1040   420   0.0026885
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1040   450   0.0025215
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1040   480   0.0024199
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1040   510   0.0021448
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1040   540   0.0020967
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1040   570   0.0018044
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1040   600   0.0014626
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1040   630   0.0013398
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1040   660   0.0009875
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1040   690   0.0008262
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1040   720   0.0006687
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1080.0   510.0   0.0025953
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1080   0   0.0041134
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1080   30   0.0046063
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1080   60   0.0044680
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1080   90   0.0042274
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1080   120   0.0044297
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1080   150   0.0042253
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1080   180   0.0039358
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1080   210   0.0038960
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1080   240   0.0040395
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1080   270   0.0038929
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1080   300   0.0038087
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1080   330   0.0036657
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1080   360   0.0036037
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1080   390   0.0034259
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1080   420   0.0032446
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1080   450   0.0026920
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1080   480   0.0026354
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1080   495   0.0030156
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1080   540   0.0022065
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1080   585   0.0020499
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1080   630   0.0013708
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1080   660   0.0013841
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1080   705   0.0010553
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1080   750   0.0004898
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1120.0   0.0   0.0043288
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1120.0   690.0   0.0011873
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1120   30   0.0047751
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1120   60   0.0044319
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1120   90   0.0043246
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1120   120   0.0042877
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1120   150   0.0047274
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1120   180   0.0043704
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1120   210   0.0037875
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1120   240   0.0041606
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1120   270   0.0041726
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1120   300   0.0039649
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1120   330   0.0037477
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1120   360   0.0033580
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1120   390   0.0036312
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1120   420   0.0032580
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1120   450   0.0032659
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1120   480   0.0027579
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1120   525   0.0028171
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1120   570   0.0027150
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1120   630   0.0020731
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1120   660   0.0017002
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1120   750   0.0009381
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1160.0   240.0   0.0042320
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1160.0   270.0   0.0039292
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1160.0   300.0   0.0043304
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1160.0   360.0   0.0036264
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1160.0   390.0   0.0036249
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1160.0   510.0   0.0031831
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1160.0   540.0   0.0025450
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1160.0   570.0   0.0027860
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1160.0   630.0   0.0022170
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1160.0   660.0   0.0018165
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1160.0   690.0   0.0017625
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1160   0   0.0045336
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1160   30   0.0049298
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1160   60   0.0043243
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1160   90   0.0046941
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1160   120   0.0044752
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1160   150   0.0046651
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1160   180   0.0048581
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1160   210   0.0040436
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1160   330   0.0042437
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1160   420   0.0037316
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1160   450   0.0032182
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1160   480   0.0036700
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1160   555   0.0029378
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1160   600   0.0025006
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1160   750   0.0010741
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1200.0   600.0   0.0025430
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1200.0   690.0   0.0020668
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1200   15   0.0053575
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1200   60   0.0042794
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1200   105   0.0047238
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1200   165   0.0044665
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1200   180   0.0045018
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1200   210   0.0046448
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1200   240   0.0045733
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1200   270   0.0044509
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1200   300   0.0035150
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1200   330   0.0035862
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1200   360   0.0037960
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1200   390   0.0040568
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1200   420   0.0035590
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1200   450   0.0035484
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1200   480   0.0033196
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1200   525   0.0030566
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1200   570   0.0029860
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1200   630   0.0028217
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1200   645   0.0026535
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1200   750   0.0015910
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1240.0   90.0   0.0048191
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1240.0   120.0   0.0048386
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1240.0   210.0   0.0044772
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1240.0   570.0   0.0035342
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1240.0   600.0   0.0028237
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1240.0   690.0   0.0021640
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1240   0   0.0043928
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1240   30   0.0050541
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1240   60   0.0054866
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1240   135   0.0050961
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1240   180   0.0043131
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1240   255   0.0043393
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1240   300   0.0043948
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1240   330   0.0042420
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1240   360   0.0048173
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1240   390   0.0046137
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1240   420   0.0037606
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1240   450   0.0035197
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1240   480   0.0034593
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1240   510   0.0036541
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1240   540   0.0031035
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1240   630   0.0026627
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1240   660   0.0028640
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1240   750   0.0017284
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1280.0   450.0   0.0044689
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1280.0   510.0   0.0036904
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1280.0   540.0   0.0041307
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1280.0   570.0   0.0033780
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1280.0   600.0   0.0034752
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1280.0   660.0   0.0028416
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1280.0   690.0   0.0026062
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1280   750   0.0018549
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1280   0   0.0052447
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1280   30   0.0047213
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1280   60   0.0050461
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1280   90   0.0051171
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1280   120   0.0048459
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1280   150   0.0046329
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1280   180   0.0046900
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1280   210   0.0044787
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1280   240   0.0047345
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1280   285   0.0045204
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1280   330   0.0043156
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1280   360   0.0040648
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1280   405   0.0038500
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1280   480   0.0037055
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1280   630   0.0031278
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1320.0   690.0   0.0027538
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1320.0   210.0   0.0047930
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1320.0   240.0   0.0044468
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1320.0   270.0   0.0048106
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1320.0   390.0   0.0045982
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1320.0   420.0   0.0043415
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1320.0   450.0   0.0045115
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1320.0   570.0   0.0038842
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1320.0   600.0   0.0034968
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1320.0   630.0   0.0029463
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1320.0   660.0   0.0028644
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1320   750   0.0025837
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1320   0   0.0048115
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1320   30   0.0053481
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1320   60   0.0050250
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1320   90   0.0049454
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1320   120   0.0047100
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1320   150   0.0048813
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1320   180   0.0044472
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1320   300   0.0044801
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1320   330   0.0045670
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1320   360   0.0042983
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1320   480   0.0040785
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1320   510   0.0038398
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1320   540   0.0034167
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1360.0   660.0   0.0036845
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1360.0   690.0   0.0030072
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1360.0   0.0   0.0052330
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1360.0   60.0   0.0050128
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1360.0   90.0   0.0044465
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1360.0   150.0   0.0051243
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1360.0   210.0   0.0046186
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1360.0   240.0   0.0048753
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1360.0   300.0   0.0044997
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1360.0   390.0   0.0042013
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1360.0   450.0   0.0041449
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1360.0   540.0   0.0038341
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1360.0   570.0   0.0037431
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1360.0   600.0   0.0038301
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1360   750   0.0023178
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1360   30   0.0054802
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1360   105   0.0051266
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1360   180   0.0049064
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1360   255   0.0049056
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1360   330   0.0043724
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1360   360   0.0044175
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1360   420   0.0042926
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1360   510   0.0045013
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1360   630   0.0035701
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1400   615   0.0034612
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1400   675   0.0035554
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1400   15   0.0054865
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1400   75   0.0055298
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1400   135   0.0053093
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1400   195   0.0047937
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1400   255   0.0043900
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1400   315   0.0045219
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1400   375   0.0044073
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1400   435   0.0046276
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1400   495   0.0041392
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1400   555   0.0038313
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1440   570   0.0044395
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1440   630   0.0037520
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1440   690   0.0038619
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1440   30   0.0049640
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1440   90   0.0050429
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1440   150   0.0048129
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1440   210   0.0051429
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1440   270   0.0044981
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1440   330   0.0046049
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1440   390   0.0040846
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1440   450   0.0046044
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1440   510   0.0037969
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1480   525   0.0041228
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1480   585   0.0042448
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1480   645   0.0038732
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1480   705   0.0038354
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1480   45   0.0051446
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1480   105   0.0050299
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1480   165   0.0047593
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1480   225   0.0049745
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1480   285   0.0053130
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1480   345   0.0048602
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1480   405   0.0043524
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1480   465   0.0045403
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 150.0   80.0   0.0000142
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 150.0   120.0   0.0000000
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 150.0   0.0   0.0000000
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 150.0   40.0   0.0000000
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1520   495   0.0045411
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1520   555   0.0042980
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1520   615   0.0040758
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1520   675   0.0038439
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1520   15   0.0052581
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1520   75   0.0051087
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1520   135   0.0053351
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1520   195   0.0052838
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1520   255   0.0046180
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1520   315   0.0045580
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1520   375   0.0045812
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1520   435   0.0040155
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1560   450   0.0045323
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1560   510   0.0048445
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1560   570   0.0050262
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1560   630   0.0043001
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1560   690   0.0039087
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1560   30   0.0057855
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1560   90   0.0055739
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1560   150   0.0049506
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1560   210   0.0047605
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1560   270   0.0050697
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1560   330   0.0046240
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1560   390   0.0047836
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1600   435   0.0047061
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1600   495   0.0043456
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1600   555   0.0048566
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1600   630   0.0045938
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1600   705   0.0037504
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1600   15   0.0052515
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1600   75   0.0051598
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1600   135   0.0050515
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1600   195   0.0050647
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1600   255   0.0046586
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1600   315   0.0048204
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 1600   375   0.0047242
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 200.0   0.0   0.0000000
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 200.0   40.0   0.0000154
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 200.0   80.0   0.0000000
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 200.0   120.0   0.0000000
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 200.0   160.0   0.0000000
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 250.0   0.0   0.0000163
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 250.0   40.0   0.0000000
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 250.0   80.0   0.0000326
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 250.0   120.0   0.0000000
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 250.0   160.0   0.0000000
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 250.0   200.0   0.0000000
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 250.0   240.0   0.0000000
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 300.0   0.0   0.0000509
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 300.0   40.0   0.0000170
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 300.0   80.0   0.0000340
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 300.0   120.0   0.0001018
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 300.0   160.0   0.0000170
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 300.0   200.0   0.0000000
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 300.0   240.0   0.0000000
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 300.0   280.0   0.0000000
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 350.0   0.0   0.0001928
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 350.0   40.0   0.0001915
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 350.0   80.0   0.0001924
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 350.0   120.0   0.0000874
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 350.0   160.0   0.0000525
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 350.0   200.0   0.0000175
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 350.0   240.0   0.0000000
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 350.0   280.0   0.0000000
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 400.0   0.0   0.0005743
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 400.0   40.0   0.0005027
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 400.0   80.0   0.0003416
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 400.0   120.0   0.0002674
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 400.0   160.0   0.0001429
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 400.0   200.0   0.0000892
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 400.0   280.0   0.0000000
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 400   30   0.0005170
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 400   60   0.0004105
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 400   90   0.0002499
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 400   150   0.0001426
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 400   180   0.0002156
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 400   210   0.0000895
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 400   240   0.0001603
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 400   270   0.0000356
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 400   300   0.0000357
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 400   330   0.0000178
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 400   360   0.0000000
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 440   0   0.0005609
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 440   30   0.0005240
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 440   60   0.0003615
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 440   90   0.0005397
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 440   120   0.0003778
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 440   150   0.0003072
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 440   180   0.0002717
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 440   210   0.0001268
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 440   240   0.0001258
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 440   270   0.0000722
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 440   300   0.0000180
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 440   330   0.0000360
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 440   360   0.0000000
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 440   390   0.0000000
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 480   0   0.0010531
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 480   30   0.0007092
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 480   60   0.0006042
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 480   90   0.0006354
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 480   120   0.0005446
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 480   150   0.0005126
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 480   180   0.0005087
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 480   210   0.0004725
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 480   240   0.0002554
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 480   270   0.0000548
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 480   300   0.0000546
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 480   330   0.0000364
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 480   360   0.0000365
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 480   390   0.0000000
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 480   420   0.0000000
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 480   450   0.0000182
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 50.0   0.0   0.0000000
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 50.0   40.0   0.0000000
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 520   0   0.0011018
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 520   30   0.0011337
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 520   60   0.0007701
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 520   90   0.0008244
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 520   120   0.0008611
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 520   150   0.0008911
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 520   180   0.0005312
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 520   210   0.0004207
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 520   240   0.0004397
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 520   270   0.0003464
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 520   300   0.0002197
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 520   330   0.0000731
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 520   360   0.0000919
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 520   390   0.0000000
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 520   420   0.0000367
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 520   450   0.0000000
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 520   480   0.0000000
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 560   0   0.0014207
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 560   30   0.0015804
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 560   60   0.0011773
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 560   90   0.0011584
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 560   120   0.0010703
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 560   150   0.0009926
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 560   180   0.0008056
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 560   210   0.0005517
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 560   240   0.0003491
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 560   270   0.0003280
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 560   300   0.0002574
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 560   330   0.0002015
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 560   360   0.0000734
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 560   390   0.0000554
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 560   420   0.0000368
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 560   450   0.0000000
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 560   480   0.0000551
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 560   510   0.0000184
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 600   0   0.0019245
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 600   30   0.0017121
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 600   60   0.0016412
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 600   90   0.0020342
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 600   120   0.0017860
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 600   150   0.0011208
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 600   180   0.0011569
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 600   210   0.0010497
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 600   240   0.0008987
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 600   270   0.0007361
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 600   300   0.0005696
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 600   330   0.0004050
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 600   360   0.0002388
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 600   390   0.0001106
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 600   420   0.0001101
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 600   450   0.0000368
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 600   480   0.0000367
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 600   510   0.0000000
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 600   540   0.0000000
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 600   570   0.0000000
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 640   0   0.0023817
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 640   30   0.0022077
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 640   60   0.0017577
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 640   90   0.0020769
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 640   120   0.0018835
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 640   150   0.0014297
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 640   180   0.0017070
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 640   210   0.0011261
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 640   240   0.0008284
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 640   270   0.0009381
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 640   300   0.0005513
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 640   330   0.0006641
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 640   360   0.0002926
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 640   390   0.0002749
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 640   420   0.0002018
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 640   450   0.0001105
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 640   480   0.0000552
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 640   510   0.0000000
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 640   540   0.0000184
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 640   570   0.0000000
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 640   600   0.0000000
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 680.0   60.0   0.0024679
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 680.0   90.0   0.0022426
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 680.0   120.0   0.0018557
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 680.0   660.0   0.0000000
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 680   0   0.0027815
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 680   30   0.0023334
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 680   150   0.0022158
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 680   180   0.0016308
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 680   210   0.0015988
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 680   240   0.0013984
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 680   270   0.0009157
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 680   300   0.0009340
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 680   330   0.0006810
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 680   360   0.0005907
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 680   390   0.0005867
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 680   420   0.0003125
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 680   450   0.0001643
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 680   480   0.0001484
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 680   510   0.0000552
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 680   540   0.0000550
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 680   570   0.0000367
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 680   600   0.0000000
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 680   630   0.0000183
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 720.0   510.0   0.0001649
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 720.0   540.0   0.0000551
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 720.0   570.0   0.0001461
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 720.0   600.0   0.0000183
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 720.0   630.0   0.0000000
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 720.0   660.0   0.0000000
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 720.0   690.0   0.0000000
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 720   0   0.0023655
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 720   30   0.0025359
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 720   60   0.0027429
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 720   90   0.0024899
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 720   120   0.0027765
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 720   150   0.0022854
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 720   180   0.0021671
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 720   210   0.0019083
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 720   240   0.0014659
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 720   270   0.0013546
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 720   300   0.0012575
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 720   330   0.0011718
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 720   360   0.0009878
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 720   390   0.0006798
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 720   420   0.0004030
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 720   450   0.0004567
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 720   480   0.0001645
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 760.0   180.0   0.0025235
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 760.0   210.0   0.0020265
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 760.0   630.0   0.0000000
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 760.0   660.0   0.0000184
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 760.0   690.0   0.0000000
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 760   0   0.0031526
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 760   30   0.0025329
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 760   60   0.0025206
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 760   90   0.0024632
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 760   120   0.0024934
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 760   150   0.0024707
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 760   240   0.0022643
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 760   285   0.0016043
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 760   330   0.0012240
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 760   375   0.0011998
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 760   420   0.0006008
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 760   465   0.0004747
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 760   510   0.0003282
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 760   555   0.0000909
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 760   600   0.0000183
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 760   645   0.0000366
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 800.0   180.0   0.0024195
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 800.0   540.0   0.0002904
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 800.0   570.0   0.0003650
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 800.0   600.0   0.0000362
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 800.0   630.0   0.0000364
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 800.0   660.0   0.0000000
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 800.0   690.0   0.0000000
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 800   0   0.0032295
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 800   30   0.0032030
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 800   60   0.0027569
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 800   90   0.0028584
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 800   120   0.0032808
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 800   150   0.0027698
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 800   210   0.0026113
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 800   240   0.0022988
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 800   270   0.0020383
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 800   300   0.0018415
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 800   330   0.0017328
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 800   360   0.0013966
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 800   390   0.0012036
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 800   420   0.0007651
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 800   450   0.0009977
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 800   480   0.0005272
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 800   510   0.0006130
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 840.0   120.0   0.0028990
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 840.0   150.0   0.0034574
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 840.0   210.0   0.0025922
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 840.0   240.0   0.0027240
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 840.0   690.0   0.0000543
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 840   0   0.0036293
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 840   30   0.0030749
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 840   60   0.0031172
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 840   90   0.0032664
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 840   180   0.0029929
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 840   270   0.0025302
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 840   300   0.0022190
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 840   330   0.0020711
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 840   360   0.0019110
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 840   390   0.0011187
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 840   420   0.0014971
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 840   450   0.0008686
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 840   480   0.0010502
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 840   510   0.0005255
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 840   525   0.0004532
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 840   540   0.0004714
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 840   570   0.0002543
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 840   600   0.0002887
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 840   630   0.0001993
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 840   660   0.0000724
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 880.0   210.0   0.0031478
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 880.0   270.0   0.0025970
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 880.0   300.0   0.0026345
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 880.0   330.0   0.0023166
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 880.0   480.0   0.0010758
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 880.0   510.0   0.0009185
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 880.0   570.0   0.0005045
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 880.0   690.0   0.0001082
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 880   0   0.0033344
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 880   30   0.0041341
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 880   60   0.0033772
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 880   90   0.0035093
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 880   120   0.0032479
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 880   150   0.0031224
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 880   180   0.0029634
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 880   240   0.0027354
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 880   360   0.0019619
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 880   390   0.0016165
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 880   420   0.0016572
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 880   450   0.0014443
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 880   540   0.0005079
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 880   600   0.0004522
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 880   630   0.0002158
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 880   660   0.0001985
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 880   720   0.0000180
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 920.0   600.0   0.0005574
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 920   0   0.0033317
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 920   30   0.0037723
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 920   60   0.0041410
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 920   90   0.0038152
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 920   120   0.0038342
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 920   150   0.0035518
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 920   180   0.0036384
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 920   210   0.0029164
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 920   240   0.0031744
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 920   270   0.0027551
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 920   300   0.0026234
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 920   330   0.0028213
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 920   360   0.0023968
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 920   390   0.0019907
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 920   420   0.0020661
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 920   450   0.0016863
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 920   480   0.0012738
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 920   525   0.0010865
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 920   570   0.0007165
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 920   630   0.0003935
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 920   675   0.0002685
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 920   705   0.0001798
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 920   750   0.0001080
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 960.0   510.0   0.0016748
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 960.0   600.0   0.0010165
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 960.0   630.0   0.0009098
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 960.0   660.0   0.0005151
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 960.0   690.0   0.0003904
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 960   0   0.0039629
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 960   30   0.0040306
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 960   60   0.0039603
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 960   90   0.0038807
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 960   120   0.0038706
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 960   150   0.0035189
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 960   180   0.0038258
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 960   210   0.0035121
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 960   240   0.0034694
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 960   270   0.0032615
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 960   300   0.0030596
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 960   330   0.0029700
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 960   360   0.0024963
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 960   390   0.0023548
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 960   420   0.0026270
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 960   450   0.0022437
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 960   540   0.0014388
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 960   570   0.0010906
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 960   675   0.0004266
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 960   720   0.0002497
-#MA5 EffMap for txName: T5WW , Analysis: atlas_susy_2013_04 , SR: 8j50,>=2bjets
-# Mother Daughter  Eff. 
 960   750   0.0001250

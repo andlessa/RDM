@@ -1,7 +1,0 @@
-dataType: efficiencyMap
-dataId: MA5_EM_7j80_0bjet
-observedN: 12
-expectedBG: 11
-bgError: 2.2
-upperLimit: 0.5023*fb
-expectedUpperLimit: 0.4711*fb
