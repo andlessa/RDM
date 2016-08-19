@@ -1,6 +1,6 @@
 txName: T6bbWWoff
 conditionDescription: [[['b'],['l+','nu']],[['b'],['l-','nu']]] > 2*[[['b'],['e+','nu']],[['b'],['e-','nu']]]
-condition: Cgtr([[['b'],['l+','nu']],[['b'],['l-','nu']]],2*[[['b'],['e+','nu']],[['b'],['e-','nu']]]
+condition: Cgtr([[['b'],['l+','nu']],[['b'],['l-','nu']]],2*[[['b'],['e+','nu']],[['b'],['e-','nu']]])
 constraint: 22*([[['b'],['l+','nu']],[['b'],['l-','nu']]])
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-19/figaux_3b.png;https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-19/fig_16.png;https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-19/fig_20.png;https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-19/fig_17.png
 dataUrl: http://hepdata.cedar.ac.uk/view/ins1286444/d36;http://hepdata.cedar.ac.uk/view/ins1286444/d68;http://hepdata.cedar.ac.uk/view/ins1286444/d39
