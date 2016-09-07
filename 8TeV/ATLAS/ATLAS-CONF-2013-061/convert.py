@@ -75,17 +75,17 @@ T1tttt.figure = 'Fig. 12b'
 T1tttt.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-061/fig_12b.png'
 
 #+++++++ next txName block ++++++++++++++
-T1tbtb = TxNameInput('T1tbtb')
-T1tbtb.on.checked ="VM"
-T1tbtb.on.constraint = "[[['t','b']],[['t','b']]]"
-T1tbtb.on.conditionDescription ="None"
-T1tbtb.on.condition ="None"
+T1btbt = TxNameInput('T1btbt')
+T1btbt.on.checked ="VM"
+T1btbt.on.constraint = "[[['t','b']],[['t','b']]]"
+T1btbt.on.conditionDescription ="None"
+T1btbt.on.condition ="None"
 
-T1tbtb = T1tbtb.addMassPlane(motherMass = x, lspMass = y)
-T1tbtb.obsUpperLimit.setSource( 'orig/Fig12c.txt', 'txt' )
-T1tbtb.obsUpperLimit.unit = 'fb'
-T1tbtb.obsExclusion.setSource( 'orig/exclusion_T1tbtb.txt', 'txt' )
-T1tbtb.figure = 'Fig. 12c'
-T1tbtb.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-061/fig_12c.png'
+T1btbt = T1btbt.addMassPlane(motherMass = x, lspMass = y)
+T1btbt.obsUpperLimit.setSource( 'orig/Fig12c.txt', 'txt' )
+T1btbt.obsUpperLimit.unit = 'fb'
+T1btbt.obsExclusion.setSource( 'orig/exclusion_T1tbtb.txt', 'txt' )
+T1btbt.figure = 'Fig. 12c'
+T1btbt.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-061/fig_12c.png'
 
 databaseCreator.create()
