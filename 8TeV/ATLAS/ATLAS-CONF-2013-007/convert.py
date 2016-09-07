@@ -48,7 +48,6 @@ info.prettyName = 'ATLAS SS+b'
 #info.supersedes = 
 info.implementedBy = 'MT'
 
-'''
 #+++++++ next txName block ++++++++++++++
 T6ttWW = TxNameInput('T6ttWW')
 T6ttWW.on.checked ='VM'
@@ -121,12 +120,12 @@ T6ttWWx200.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES
 #T6ttWWx200.expExclusion.dataUrl =
 #T6ttWWx200.expExclusionM1.dataUrl =
 #T6ttWWx200.expExclusionP1.dataUrl =
-'''
+
 #+++++++ next txName block ++++++++++++++
 T1tttt = TxNameInput('T1tttt')
 T1tttt.on.checked ="VM"
 #T1tttt.off.checked =
-T1tttt.on.constraint ="[[['t','t']],[['t','t']]]"
+T1tttt.on.constraint ="[[['t+','t-']],[['t+','t-']]]"
 #T1tttt.off.constraint =
 T1tttt.on.conditionDescription ="None"
 #T1tttt.off.conditionDescription =
@@ -163,12 +162,12 @@ T1tttt.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATL
 #T1tttt.expExclusion.dataUrl =
 #T1tttt.expExclusionM1.dataUrl =
 #T1tttt.expExclusionP1.dataUrl =
-'''
+
 #+++++++ next txName block ++++++++++++++
 T5tttt = TxNameInput('T5tttt')
 T5tttt.on.checked ="VM"
 #T5tttt.off.checked =
-T5tttt.on.constraint ="[[['t'],['t']],[['t'],['t']]]+[[['t'],['t']],[['t'],['t']]]+[[['t'],['t']],[['t'],['t+']]]"
+T5tttt.on.constraint ="[[['t+'],['t-']],[['t+'],['t-']]]+[[['t-'],['t+']],[['t-'],['t+']]]+[[['t+'],['t-']],[['t-'],['t+']]]"
 #T5tttt.off.constraint =
 T5tttt.on.conditionDescription ="None"
 #T5tttt.off.conditionDescription =
@@ -205,28 +204,28 @@ T5ttttLSP060.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOT
 #T5ttttLSP060.expExclusion.dataUrl =
 #T5ttttLSP060.expExclusionM1.dataUrl =
 #T5ttttLSP060.expExclusionP1.dataUrl =
-'''
+
 #+++++++ next txName block ++++++++++++++
-T1tbtb = TxNameInput('T1tbtb')
-T1tbtb.on.checked ="VM"
+T1btbt = TxNameInput('T1btbt')
+T1btbt.on.checked ="VM"
 #T1tbtb.off.checked =
-T1tbtb.on.constraint ="[[['t+','b-']],[['t-','b+']]]"
+T1btbt.on.constraint ="[[['t','b']],[['t','b']]]"
 #T1tbtb.off.constraint =
-T1tbtb.on.conditionDescription ="None"
+T1btbt.on.conditionDescription ="None"
 #T1tbtb.off.conditionDescription =
-T1tbtb.on.condition ="None"
+T1btbt.on.condition ="None"
 #T1tbtb.off.condition =
 
 #+++++++ next mass plane block ++++++++++++++
-T1tbtb = T1tbtb.addMassPlane(motherMass = x, lspMass = y)
+T1btbt = T1btbt.addMassPlane(motherMass = x, lspMass = y)
 #----limit source----
-T1tbtb.obsUpperLimit.setSource( 'orig/T1tbtb.txt', 'txt' )
-T1tbtb.obsUpperLimit.unit = 'fb'
+T1btbt.obsUpperLimit.setSource( 'orig/T1tbtb.txt', 'txt' )
+T1btbt.obsUpperLimit.unit = 'fb'
 #T1tbtb.expUpperLimit.setSource( path, type, object = None, index = None )
 #----exclusion source----
-T1tbtb.obsExclusion.setSource( 'orig/exclusion_T1tbtb.txt', 'svg' )
-T1tbtb.obsExclusionM1.setSource( 'orig/exclusionm1_T1tbtb.txt', 'svg' )
-T1tbtb.obsExclusionP1.setSource( 'orig/exclusionp1_T1tbtb.txt', 'svg' )
+T1btbt.obsExclusion.setSource( 'orig/exclusion_T1tbtb.txt', 'svg' )
+T1btbt.obsExclusionM1.setSource( 'orig/exclusionm1_T1tbtb.txt', 'svg' )
+T1btbt.obsExclusionP1.setSource( 'orig/exclusionp1_T1tbtb.txt', 'svg' )
 #T1tbtb.expExclusion.setSource( path, type, object = None, index = None )
 #T1tbtb.expExclusionM1.setSource( path, type, object = None, index = None )
 #T1tbtb.expExclusionP1.setSource( path, type, object = None, index = None )
@@ -235,8 +234,8 @@ T1tbtb.obsExclusionP1.setSource( 'orig/exclusionp1_T1tbtb.txt', 'svg' )
 #T1tbtb.histoDataUrl =
 #T1tbtb.exclusionDataUrl =
 #----figure----
-T1tbtb.figure = 'Fig. 11'
-T1tbtb.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-007/fig_11.png'
+T1btbt.figure = 'Fig. 11'
+T1btbt.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-007/fig_11.png'
 #----limit url settings ----
 #T1tbtb.obsUpperLimit.dataUrl =
 #T1tbtb.expUpperLimit.dataUrl =
@@ -247,7 +246,7 @@ T1tbtb.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATL
 #T1tbtb.expExclusion.dataUrl =
 #T1tbtb.expExclusionM1.dataUrl =
 #T1tbtb.expExclusionP1.dataUrl =
-'''
+
 #+++++++ next txName block ++++++++++++++
 T5WW = TxNameInput('T5WW')
 T5WW.on.checked ="VM"
@@ -290,7 +289,7 @@ T5WW.off.condition = 'not yet assigned'
 #T5WWx200.expExclusionM1.dataUrl =
 #T5WWx200.expExclusionP1.dataUrl =
 
-
+'''
 #+++++++ next txName block ++++++++++++++
 T8ChiSlep = TxNameInput('T8ChiSlep')
 T8ChiSlep.on.checked ='VM'
