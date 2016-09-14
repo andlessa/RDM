@@ -86,7 +86,7 @@ T2tt_1.expExclusion.dataUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/Physics
 T2tt_1.expExclusionM1.dataUrl =''
 T2tt_1.expExclusionP1.dataUrl =''
 
-databaseCreator.create(True)
+
 
 #+++++++ next txName block ++++++++++++++
 T6bbWW = TxNameInput('T6bbWW')
@@ -104,13 +104,13 @@ T6bbWW.off.condition ="None"
 T6bbWW_1 = T6bbWW.addMassPlane(motherMass = x, interMass0 = x*0.5 + (1. - 0.5)*y, lspMass = y)
 #T6bbWW_1.setBranch_2(motherMass = , interMass0 = , lspMass = )
 #----figure----
-T6bbWW_1.figure = '20c'
-T6bbWW_1.figureUrl ='https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13011/fig20c.pdf'
+T6bbWW_1.figure = '10c'
+T6bbWW_1.figureUrl ='https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13011/fig10c.pdf'
 #----limit source----
 T6bbWW_1.obsUpperLimit.setSource( 'orig/bottomchargino_x50_BDT.root', "root", objectName = 'xsec_upperlimit', index = None )
 #T6bbWW050.expUpperlimit.s
 #----exclusion source----
-T6bbWW_1.obsExclusion.setSource( 'orig/Obs_Excl_50.C', "cMacro", objectName = 'observed_exclusion__1', index = None ) # TODO check!
+T6bbWW_1.obsExclusion.setSource( 'orig/Obs_BDT_x05.txt', "txt", objectName = None, index = None ) # TODO check!
 #T6bbWW050.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
 #T6bbWW050.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
 #T6bbWW050.expExclusion.setSource( path, filetype, objectName = None, index = None )
@@ -131,19 +131,18 @@ T6bbWW_1.exclusionDataUrl ='https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsRes
 #T6bbWW_1.expExclusionM1.dataUrl =
 #T6bbWW_1.expExclusionP1.dataUrl =
 
-databaseCreator.create()
 
 #+++++++ next mass plane block ++++++++++++++
 T6bbWW_2 = T6bbWW.addMassPlane(motherMass = x, interMass0 = x*0.25 + (1. - 0.25)*y, lspMass = y)
 #T6bbWW_2.setBranch_2(motherMass = , interMass0 = , lspMass = )
 #----figure----
-T6bbWW_2.figure ='20b'
-T6bbWW_2.figureUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13011/fig20b.pdf'
+T6bbWW_2.figure ='10b'
+T6bbWW_2.figureUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13011/fig10b.pdf'
 #----limit source----
 T6bbWW_2.obsUpperLimit.setSource( 'orig/bottomchargino_x25_BDT.root', "root", objectName = 'xsec_upperlimit', index = None )
 #T6bbWW_2.expUpperLimit.setSource( path, type, objectName = None, index = None )
 #----exclusion source----
-T6bbWW_2.obsExclusion.setSource( 'orig/Obs_Excl_25.C', "cMacro", objectName = 'observed_exclusion__1', index = None )
+T6bbWW_2.obsExclusion.setSource( 'orig/Obs_BDT_x025.txt', "txt", objectName = None, index = None )
 #T6bbWW_2.obsExclusionM1.setSource( path, type, objectName = None, index = None )
 #T6bbWW_2.obsExclusionP1.setSource( path, type, objectName = None, index = None )
 #T6bbWW_2.expExclusion.setSource( path, type, objectName = None, index = None )
@@ -152,11 +151,11 @@ T6bbWW_2.obsExclusion.setSource( 'orig/Obs_Excl_25.C', "cMacro", objectName = 'o
 #----global url settings ----
 T6bbWW_2.dataUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13011/'
 #----limit url settings ----
-T6bbWW_2.histoDataUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13011/bottomchargino_x25_cutbased.root'
+T6bbWW_2.histoDataUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13011/bottomchargino_x25_BDT.root'
 T6bbWW_2.obsUpperLimit.dataUrl =''
 T6bbWW_2.expUpperLimit.dataUrl =''
 #----exclusion url settings ----
-T6bbWW_2.exclusionDataUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13011/bottomchargino_x25_cutbased.root'
+T6bbWW_2.exclusionDataUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13011/bottomchargino_x25_BDT.root'
 #T6bbWW_2.obsExclusion.dataUrl =
 #T6bbWW_2.obsExclusionM1.dataUrl =
 #T6bbWW_2.obsExclusionP1.dataUrl =
@@ -164,19 +163,18 @@ T6bbWW_2.exclusionDataUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsRe
 #T6bbWW_2.expExclusionM1.dataUrl =
 #T6bbWW_2.expExclusionP1.dataUrl =
 
-databaseCreator.create()
 
 #+++++++ next mass plane block ++++++++++++++
 T6bbWW_3 = T6bbWW.addMassPlane(motherMass = x, interMass0 = x*0.75 + (1. - 0.75)*y, lspMass = y)
 #T6bbWW_2.setBranch_2(motherMass = , interMass0 = , lspMass = )
 #----figure----
-T6bbWW_3.figure = '20d'
-T6bbWW_3.figureUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13011/fig20d.pdf'
+T6bbWW_3.figure = '10d'
+T6bbWW_3.figureUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13011/fig10d.pdf'
 #----limit source----
 T6bbWW_3.obsUpperLimit.setSource( 'orig/bottomchargino_x75_BDT.root', "root", objectName = 'xsec_upperlimit', index = None )
 #T6bbWW_3.expUpperLimit.setSource( path, type, objectName = None, index = None )
 #----exclusion source----
-T6bbWW_3.obsExclusion.setSource( 'orig/Obs_Excl_75.C', "cMacro", objectName = 'observed_exclusion__1', index = None )
+T6bbWW_3.obsExclusion.setSource( 'orig/Obs_BDT_x075.txt', "txt", objectName = None, index = None )
 
 #T6bbWW_2.obsExclusionM1.setSource( path, type, objectName = None, index = None )
 #T6bbWW_2.obsExclusionP1.setSource( path, type, objectName = None, index = None )
@@ -186,11 +184,11 @@ T6bbWW_3.obsExclusion.setSource( 'orig/Obs_Excl_75.C', "cMacro", objectName = 'o
 #----global url settings ----
 T6bbWW_3.dataUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13011/'
 #----limit url settings ----
-T6bbWW_3.histoDataUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13011/bottomchargino_x75_cutbased.root'
+T6bbWW_3.histoDataUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13011/bottomchargino_x75_BDT.root'
 T6bbWW_3.obsUpperLimit.dataUrl =''
 T6bbWW_3.expUpperLimit.dataUrl =''
 #----exclusion url settings ----
-T6bbWW_3.exclusionDataUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13011/bottomchargino_x75_cutbased.root'
+T6bbWW_3.exclusionDataUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13011/bottomchargino_x75_BDT.root'
 #T6bbWW_2.obsExclusion.dataUrl =
 #T6bbWW_2.obsExclusionM1.dataUrl =
 #T6bbWW_2.obsExclusionP1.dataUrl =
