@@ -3,7 +3,10 @@ lumi: 19.3/fb
 id: CMS-SUS-13-004
 prettyName: Razor with b-jets
 url: https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS13004
-comment: Not updated with arXiv publication results, supersededBy to be set after arXiv results?
+arxiv: http://arxiv.org/abs/1502.00300v2
+publication: http://dx.doi.org/10.1103/PhysRevD.91.052018
+comment: Other topologies have a compressed mass spectrum (decays with intermediate charginos, <= 5 GeV mass difference)
 private: False
-implementedBy: Wolfgang Waltenberger
-lastUpdate: 2015/5/6
+implementedBy: Federico A
+lastUpdate: 2016/9/14
+
