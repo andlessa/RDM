@@ -175,6 +175,7 @@ TSlepSlep.expExclusionM1.dataUrl =
 TSlepSlep.expExclusionP1.dataUrl =
 """
 
+
 #+++++++ next txName block ++++++++++++++
 TChiChipmSlepStau = TxNameInput('TChiChipmSlepStau')
 TChiChipmSlepStau.on.checked ="A"
@@ -207,7 +208,7 @@ TChiChipmSlepStau095.exclusionDataUrl =
 #----figure----
 """
 TChiChipmSlepStau095.figure = "Fig. 16a"
-TChiChipmSlepStau095.figureUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12022/exclusion_TChiSlepSnu_2a_0_05.pdf"
+TChiChipmSlepStau095.figureUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12022/exclusion_TChiSlepSnu_2a_0_95.pdf"
 #----limit url settings ----
 """
 TChiChipmSlepStau095.obsUpperLimit.dataUrl =
@@ -252,6 +253,10 @@ TChiChipmSlepStau050.expExclusion.dataUrl =
 TChiChipmSlepStau050.expExclusionM1.dataUrl =
 TChiChipmSlepStau050.expExclusionP1.dataUrl =
 """
+
+TChiChipmSlepStau050.figure = "Fig. 16a"
+TChiChipmSlepStau050.figureUrl =  "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12022/exclusion_TChiSlepSnu_2a_0_5.pdf"
+
 
 #+++++++ next mass plane block ++++++++++++++
 TChiChipmSlepStau005 = TChiChipmSlepStau.addMassPlane(motherMass = x, interMass0 = x*0.05 + (1. - 0.05)*y, lspMass = y)
