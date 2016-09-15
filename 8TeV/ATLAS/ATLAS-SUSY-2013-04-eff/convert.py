@@ -58,7 +58,7 @@ T1tttt.on.condition ="None"
 
 #+++++++ next mass plane block ++++++++++++++
 T1tttt = T1tttt.addMassPlane(motherMass = x, lspMass = y)
-
+T1tttt.obsExclusion.setSource( "orig/exclusion_T1tttt.txt", "txt", objectName = None, index = None )
 #----figure----
 T1tttt.figure = 'Fig (aux). 11a'
 T1tttt.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-04/figaux_11a.png'
@@ -200,6 +200,7 @@ T5WW_1.obsExclusionP1.setSource( 'orig/T5WW_Minus.txt', 'txt', objectName = None
 #T5WW_1.expExclusion.setSource( path, type, objectName = None, index = None )
 #T5WW_1.expExclusionM1.setSource( path, type, objectName = None, index = None )
 #T5WW_1.expExclusionP1.setSource( path, type, objectName = None, index = None )
+
 #----limit source----
 T5WW_1.efficiencyMap.setSource( 'orig/T5WW_x05/MA5_EM_T5WW_x05_7j80,0bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_7ej80_0bjet" )
 T5WW_1.efficiencyMap.setStatistics( observedN=12, expectedBG=11, bgError=2.2 )
@@ -242,8 +243,9 @@ T5WW_1.efficiencyMap.setSource( 'orig/T5WW_x05/MA5_EM_T5WW_x05_9j50,1bjet.dat','
 T5WW_1.efficiencyMap.setStatistics( observedN=8, expectedBG=6.1, bgError=1.7 )
 databaseCreator.create(True)
 
+
 #---- new efficiency map -----
-T5WW_1.efficiencyMap.setSource( 'orig/T5WW_x05/MA5_EM_T5WW_x05_9j50,1bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_9ej50_1bjet" )
+T5WW_1.efficiencyMap.setSource( 'orig/T5WW_x05/MA5_EM_T5WW_x05_9j50,>=2bjets.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_9ej50_2ibjet" )
 T5WW_1.efficiencyMap.setStatistics( observedN=7, expectedBG=8, bgError=2.7 )
 databaseCreator.create(True)
 
@@ -274,12 +276,13 @@ T5WW_2 = T5WW.addMassPlane(motherMass = x, interMass0 = 0.05*x + 0.95*y, lspMass
 #T5WW_1.setBranch_2(motherMass = , interMass0 = , lspMass = )
 #---- new efficiency map -----
 #----exclusion source----
-T5WW_2.obsExclusion.setSource( 'orig/Exclusion_T5WW_x05.txt', 'txt', objectName = None, index = None )
-T5WW_2.obsExclusionM1.setSource( 'orig/T5WW_Plus.txt', 'txt', objectName = None, index = None )
-T5WW_2.obsExclusionP1.setSource( 'orig/T5WW_Minus.txt', 'txt', objectName = None, index = None )
+T5WW_2.obsExclusion.setSource( 'orig/Null_Line.txt', 'txt', objectName = None, index = None )
+#T5WW_2.obsExclusionM1.setSource( 'orig/T5WW_Plus.txt', 'txt', objectName = None, index = None )
+#T5WW_2.obsExclusionP1.setSource( 'orig/T5WW_Minus.txt', 'txt', objectName = None, index = None )
 #T5WW_1.expExclusion.setSource( path, type, objectName = None, index = None )
 #T5WW_1.expExclusionM1.setSource( path, type, objectName = None, index = None )
 #T5WW_1.expExclusionP1.setSource( path, type, objectName = None, index = None )
+
 #----limit source----
 T5WW_2.efficiencyMap.setSource( 'orig/T5WW_x005/MA5_EM_T5WW_Glu005Neu095_7j80,0bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_7ej80_0bjet" )
 T5WW_2.efficiencyMap.setStatistics( observedN=12, expectedBG=11, bgError=2.2 )
@@ -322,7 +325,7 @@ T5WW_2.efficiencyMap.setStatistics( observedN=8, expectedBG=6.1, bgError=1.7 )
 databaseCreator.create(True)
 
 #---- new efficiency map -----
-T5WW_2.efficiencyMap.setSource( 'orig/T5WW_x005/MA5_EM_T5WW_Glu005Neu095_9j50,1bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_9ej50_1bjet" )
+T5WW_2.efficiencyMap.setSource( 'orig/T5WW_x005/MA5_EM_T5WW_Glu005Neu095_9j50,>=2bjets.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_9ej50_2ibjet" )
 T5WW_2.efficiencyMap.setStatistics( observedN=7, expectedBG=8, bgError=2.7 )
 databaseCreator.create(True)
 
@@ -351,12 +354,13 @@ T5WW_3 = T5WW.addMassPlane(motherMass = x, interMass0 = 0.95*x + 0.05*y, lspMass
 #T5WW_1.setBranch_2(motherMass = , interMass0 = , lspMass = )
 #---- new efficiency map -----
 #----exclusion source----
-T5WW_3.obsExclusion.setSource( 'orig/Exclusion_T5WW_x05.txt', 'txt', objectName = None, index = None )
-T5WW_3.obsExclusionM1.setSource( 'orig/T5WW_Plus.txt', 'txt', objectName = None, index = None )
-T5WW_3.obsExclusionP1.setSource( 'orig/T5WW_Minus.txt', 'txt', objectName = None, index = None )
+T5WW_3.obsExclusion.setSource( 'orig/Null_Line.txt', 'txt', objectName = None, index = None )
+#T5WW_3.obsExclusionM1.setSource( 'orig/T5WW_Plus.txt', 'txt', objectName = None, index = None )
+#T5WW_3.obsExclusionP1.setSource( 'orig/T5WW_Minus.txt', 'txt', objectName = None, index = None )
 #T5WW_1.expExclusion.setSource( path, type, objectName = None, index = None )
 #T5WW_1.expExclusionM1.setSource( path, type, objectName = None, index = None )
 #T5WW_1.expExclusionP1.setSource( path, type, objectName = None, index = None )
+
 #----limit source----
 T5WW_3.efficiencyMap.setSource( 'orig/T5WW_x095/MA5_EM_T5WW_Glu095Neu005_7j80,0bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_7ej80_0bjet" )
 T5WW_3.efficiencyMap.setStatistics( observedN=12, expectedBG=11, bgError=2.2 )
@@ -394,13 +398,14 @@ T5WW_3.efficiencyMap.setSource( 'orig/T5WW_x095/MA5_EM_T5WW_Glu095Neu005_9j50,0b
 T5WW_3.efficiencyMap.setStatistics( observedN=5, expectedBG=3.3, bgError=0.7 )
 databaseCreator.create(True)
 
+
 #---- new efficiency map -----
 T5WW_3.efficiencyMap.setSource( 'orig/T5WW_x095/MA5_EM_T5WW_Glu095Neu005_9j50,1bjet.dat','txt', objectName = None, index = None, dataset="GtGrid_SR_9ej50_1bjet" )
 T5WW_3.efficiencyMap.setStatistics( observedN=8, expectedBG=6.1, bgError=1.7 )
 databaseCreator.create(True)
 
 #---- new efficiency map -----
-T5WW_3.efficiencyMap.setSource( 'orig/T5WW_x095/MA5_EM_T5WW_Glu095Neu005_9j50,1bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_9ej50_1bjet" )
+T5WW_3.efficiencyMap.setSource( 'orig/T5WW_x095/MA5_EM_T5WW_Glu095Neu005_9j50,>=2bjets.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_9ej50_2ibjet" )
 T5WW_3.efficiencyMap.setStatistics( observedN=7, expectedBG=8, bgError=2.7 )
 databaseCreator.create(True)
 
@@ -430,12 +435,12 @@ databaseCreator.create(True)
 T5ZZ = TxNameInput('T5ZZ')
 T5ZZ.on.checked =''
 T5ZZ.off.checked =''
-T5ZZ.on.constraint ="[[['jet','jet'],['W']],[['jet','jet'],['W']]]"
+T5ZZ.on.constraint ="[[['jet','jet'],['Z']],[['jet','jet'],['Z']]]"
 T5ZZ.off.constraint ="2.1*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
 T5ZZ.on.conditionDescription =None
-T5ZZ.off.conditionDescription =''
+T5ZZ.off.conditionDescription =None
 T5ZZ.on.condition =None
-T5ZZ.off.condition =''
+T5ZZ.off.condition =None
 #T5ZZ.branchingRatio =
 
 #+++++++ next mass plane block ++++++++++++++
@@ -446,13 +451,14 @@ T5ZZ_1 = T5ZZ.addMassPlane(motherMass = x, interMass0 = 0.5*(x+y), lspMass = y )
 T5ZZ_1.figure =''
 T5ZZ_1.figureUrl =''
 #----exclusion source----
-T5ZZ_1.obsExclusion.setSource( 'orig/Exclusion_T5WW_x05.txt', 'txt', objectName = None, index = None )
-T5ZZ_1.obsExclusionM1.setSource( 'orig/T5WW_Plus.txt', 'txt', objectName = None, index = None )
-T5ZZ_1.obsExclusionP1.setSource( 'orig/T5WW_Minus.txt', 'txt', objectName = None, index = None )
+T5ZZ_1.obsExclusion.setSource( 'orig/Null_Line.txt', 'txt', objectName = None, index = None )
+#T5ZZ_1.obsExclusionM1.setSource( 'orig/T5WW_Plus.txt', 'txt', objectName = None, index = None )
+#T5ZZ_1.obsExclusionP1.setSource( 'orig/T5WW_Minus.txt', 'txt', objectName = None, index = None )
 #T5ZZ_1.expExclusion.setSource( path, type, objectName = None, index = None )
 #T5ZZ_1.expExclusionM1.setSource( path, type, objectName = None, index = None )
 #T5ZZ_1.expExclusionP1.setSource( path, type, objectName = None, index = None )
 #----limit source----
+
 T5ZZ_1.efficiencyMap.setSource( 'orig/T5ZZ_x05/MA5_EM_T5ZZ_x05_7j80,0bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_7ej80_0bjet" )
 T5ZZ_1.efficiencyMap.setStatistics( observedN=12, expectedBG=11, bgError=2.2 )
 databaseCreator.create(True)
@@ -496,7 +502,7 @@ T5ZZ_1.efficiencyMap.setStatistics( observedN=8, expectedBG=6.1, bgError=1.7 )
 databaseCreator.create(True)
 
 #---- new efficiency map -----
-T5ZZ_1.efficiencyMap.setSource( 'orig/T5ZZ_x05/MA5_EM_T5ZZ_x05_9j50,1bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_9ej50_1bjet" )
+T5ZZ_1.efficiencyMap.setSource( 'orig/T5ZZ_x05/MA5_EM_T5ZZ_x05_9j50,>=2bjets.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_9ej50_2ibjet" )
 T5ZZ_1.efficiencyMap.setStatistics( observedN=7, expectedBG=8, bgError=2.7 )
 databaseCreator.create(True)
 
@@ -520,18 +526,18 @@ T5ZZ_1.efficiencyMap.setSource( 'orig/T5ZZ_x05/MA5_EM_T5ZZ_x05_>=10j50.dat', 'tx
 T5ZZ_1.efficiencyMap.setStatistics( observedN=3, expectedBG=1.37, bgError=0.35)
 databaseCreator.create(True)
 
-
 #+++++++ next mass plane block ++++++++++++++
 T5ZZ_2 = T5ZZ.addMassPlane(motherMass = x, interMass0 = 0.05*x + 0.95*y, lspMass = y )
 #T5ZZ_1.setBranch_2(motherMass = , interMass0 = , lspMass = )
 #---- new efficiency map -----
 #----exclusion source----
-T5ZZ_2.obsExclusion.setSource( 'orig/Exclusion_T5WW_x05.txt', 'txt', objectName = None, index = None )
-T5ZZ_2.obsExclusionM1.setSource( 'orig/T5WW_Plus.txt', 'txt', objectName = None, index = None )
-T5ZZ_2.obsExclusionP1.setSource( 'orig/T5WW_Minus.txt', 'txt', objectName = None, index = None )
+T5ZZ_2.obsExclusion.setSource( 'orig/Null_Line.txt', 'txt', objectName = None, index = None )
+#T5ZZ_2.obsExclusionM1.setSource( 'orig/T5WW_Plus.txt', 'txt', objectName = None, index = None )
+#T5ZZ_2.obsExclusionP1.setSource( 'orig/T5WW_Minus.txt', 'txt', objectName = None, index = None )
 #T5ZZ_1.expExclusion.setSource( path, type, objectName = None, index = None )
 #T5ZZ_1.expExclusionM1.setSource( path, type, objectName = None, index = None )
 #T5ZZ_1.expExclusionP1.setSource( path, type, objectName = None, index = None )
+
 #----limit source----
 T5ZZ_2.efficiencyMap.setSource( 'orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_7j80,0bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_7ej80_0bjet" )
 T5ZZ_2.efficiencyMap.setStatistics( observedN=12, expectedBG=11, bgError=2.2 )
@@ -574,7 +580,7 @@ T5ZZ_2.efficiencyMap.setStatistics( observedN=8, expectedBG=6.1, bgError=1.7 )
 databaseCreator.create(True)
 
 #---- new efficiency map -----
-T5ZZ_2.efficiencyMap.setSource( 'orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_9j50,1bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_9ej50_1bjet" )
+T5ZZ_2.efficiencyMap.setSource( 'orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_9j50,>=2bjets.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_9ej50_2ibjet" )
 T5ZZ_2.efficiencyMap.setStatistics( observedN=7, expectedBG=8, bgError=2.7 )
 databaseCreator.create(True)
 
@@ -600,18 +606,18 @@ databaseCreator.create(True)
 
 
 
-
 #+++++++ next mass plane block ++++++++++++++
 T5ZZ_3 = T5ZZ.addMassPlane(motherMass = x, interMass0 = 0.95*x + 0.05*y, lspMass = y )
 #T5ZZ_1.setBranch_2(motherMass = , interMass0 = , lspMass = )
 #---- new efficiency map -----
 #----exclusion source----
-T5ZZ_3.obsExclusion.setSource( 'orig/Exclusion_T5WW_x05.txt', 'txt', objectName = None, index = None )
-T5ZZ_3.obsExclusionM1.setSource( 'orig/T5WW_Plus.txt', 'txt', objectName = None, index = None )
-T5ZZ_3.obsExclusionP1.setSource( 'orig/T5WW_Minus.txt', 'txt', objectName = None, index = None )
+T5ZZ_3.obsExclusion.setSource( 'orig/Null_Line.txt', 'txt', objectName = None, index = None )
+#T5ZZ_3.obsExclusionM1.setSource( 'orig/T5WW_Plus.txt', 'txt', objectName = None, index = None )
+#T5ZZ_3.obsExclusionP1.setSource( 'orig/T5WW_Minus.txt', 'txt', objectName = None, index = None )
 #T5ZZ_1.expExclusion.setSource( path, type, objectName = None, index = None )
 #T5ZZ_1.expExclusionM1.setSource( path, type, objectName = None, index = None )
 #T5ZZ_1.expExclusionP1.setSource( path, type, objectName = None, index = None )
+
 #----limit source----
 T5ZZ_3.efficiencyMap.setSource( 'orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_7j80,0bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_7ej80_0bjet" )
 T5ZZ_3.efficiencyMap.setStatistics( observedN=12, expectedBG=11, bgError=2.2 )
@@ -655,7 +661,7 @@ T5ZZ_3.efficiencyMap.setStatistics( observedN=8, expectedBG=6.1, bgError=1.7 )
 databaseCreator.create(True)
 
 #---- new efficiency map -----
-T5ZZ_3.efficiencyMap.setSource( 'orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_9j50,1bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_9ej50_1bjet" )
+T5ZZ_3.efficiencyMap.setSource( 'orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_9j50,>=2bjets.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_9ej50_2ibjet" )
 T5ZZ_3.efficiencyMap.setStatistics( observedN=7, expectedBG=8, bgError=2.7 )
 databaseCreator.create(True)
 
@@ -678,4 +684,5 @@ databaseCreator.create(True)
 T5ZZ_3.efficiencyMap.setSource( 'orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_>=10j50.dat', 'txt',objectName = None, index = None, dataset="GtGrid_SR_10ij50_bjetblind" )
 T5ZZ_3.efficiencyMap.setStatistics( observedN=3, expectedBG=1.37, bgError=0.35)
 databaseCreator.create(True)
+
 
