@@ -6,5 +6,6 @@ url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2015-09/
 arxiv: http://arxiv.org/abs/1602.09058
 supersedes: None
 private: False
-implementedBy: Federico A 
-lastUpdate: 2016/5/12
+implementedBy: Federico A
+lastUpdate: 2016/9/29
+
