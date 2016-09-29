@@ -1,123 +1,536 @@
 #CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
-# Mother  Daughter  Eff. 
-180.0   120.0   0.00001
-600.0   60.0   0.03950
-660.0   90.0   0.03813
-420.0   180.0   0.02435
-540.0   330.0   0.02517
-480.0   330.0   0.00891
-540.0   120.0   0.03772
-480.0   300.0   0.01591
-360.0   270.0   0.00027
+1020.0   120.0   0.03275
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+1020.0   150.0   0.03278
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+1020.0   180.0   0.03348
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+1020.0   1   0.03264
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+1020.0   210.0   0.03411
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+1020.0   240.0   0.03379
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+1020.0   270.0   0.03478
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+1020.0   30.0   0.03365
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+1020.0   705.0   0.04085
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+1080.0   705.0   0.04382
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+1140.0   705.0   0.04202
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+120.0   115.0   0.00000
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
 120.0   1   0.00001
-60.0   30.0   0.00000
-360.0   1   0.02715
-600.0   30.0   0.03835
-660.0   210.0   0.03885
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
 120.0   30.0   0.00000
-420.0   1   0.03342
-360.0   180.0   0.01212
-540.0   210.0   0.03571
-720.0   1   0.03983
-600.0   300.0   0.03547
-420.0   360.0   0.00009
-720.0   30.0   0.04103
-360.0   60.0   0.02659
-480.0   90.0   0.03691
-420.0   120.0   0.02978
-240.0   120.0   0.00091
-600.0   1   0.03879
-540.0   180.0   0.03614
-300.0   120.0   0.00941
-420.0   300.0   0.00269
-720.0   210.0   0.03967
-180.0   90.0   0.00009
-660.0   240.0   0.03997
-420.0   240.0   0.01438
-600.0   120.0   0.04103
-720.0   120.0   0.03719
-360.0   30.0   0.02692
-600.0   240.0   0.03862
-480.0   270.0   0.02181
-660.0   60.0   0.03918
-420.0   90.0   0.03194
-300.0   270.0   0.00000
-240.0   180.0   0.00002
-360.0   210.0   0.00686
-180.0   1   0.00093
-660.0   150.0   0.03988
-720.0   90.0   0.03903
-30.0   1   0.00000
-480.0   1   0.03699
-480.0   210.0   0.03037
-660.0   1   0.03938
-540.0   240.0   0.03563
-600.0   360.0   0.02865
-360.0   120.0   0.02149
-480.0   30.0   0.03777
-420.0   270.0   0.00826
-360.0   330.0   0.00000
-480.0   180.0   0.03382
-420.0   330.0   0.00028
-480.0   60.0   0.03632
-660.0   120.0   0.04115
-300.0   1   0.01796
-360.0   90.0   0.02455
-720.0   360.0   0.03926
-540.0   60.0   0.03934
-660.0   180.0   0.04125
-480.0   240.0   0.02824
-660.0   270.0   0.03925
-240.0   150.0   0.00016
-600.0   210.0   0.03966
-720.0   270.0   0.04078
-660.0   300.0   0.04035
-240.0   90.0   0.00305
-420.0   150.0   0.02788
-540.0   360.0   0.01655
-360.0   240.0   0.00202
-720.0   300.0   0.04055
-600.0   270.0   0.03683
-720.0   150.0   0.04034
-600.0   150.0   0.03871
-180.0   30.0   0.00067
-420.0   60.0   0.03278
-240.0   60.0   0.00537
-360.0   300.0   0.00005
-720.0   240.0   0.04044
-540.0   270.0   0.03194
-300.0   210.0   0.00020
-360.0   150.0   0.01745
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
 120.0   60.0   0.00001
-240.0   210.0   0.00002
-540.0   90.0   0.03893
-540.0   150.0   0.03715
-600.0   330.0   0.03315
-600.0   180.0   0.03996
-480.0   120.0   0.03628
-720.0   330.0   0.04014
-300.0   150.0   0.00526
-300.0   240.0   0.00003
-600.0   90.0   0.03893
-540.0   30.0   0.03787
-180.0   60.0   0.00029
-300.0   90.0   0.01287
-540.0   300.0   0.02753
-660.0   360.0   0.03513
-60.0   1   0.00000
-300.0   60.0   0.01708
-720.0   60.0   0.03978
-480.0   150.0   0.03526
-300.0   180.0   0.00175
-420.0   210.0   0.01952
-720.0   180.0   0.03922
-240.0   30.0   0.00732
-300.0   30.0   0.01674
-240.0   1   0.00767
-480.0   360.0   0.00324
-420.0   30.0   0.03262
-660.0   30.0   0.03968
-540.0   1   0.03825
-660.0   330.0   0.03853
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
 120.0   90.0   0.00000
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+1200.0   700.0   0.04219
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+180.0   120.0   0.00001
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
 180.0   150.0   0.00000
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+180.0   175.0   0.00000
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+180.0   1   0.00093
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+180.0   30.0   0.00067
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+180.0   60.0   0.00029
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+180.0   90.0   0.00009
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+240.0   120.0   0.00091
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+240.0   150.0   0.00016
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+240.0   180.0   0.00002
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+240.0   1   0.00767
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+240.0   210.0   0.00002
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+240.0   235.0   0.00002
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+240.0   30.0   0.00732
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+240.0   60.0   0.00537
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+240.0   90.0   0.00305
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+30.0   1   0.00000
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+300.0   120.0   0.00941
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+300.0   150.0   0.00526
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+300.0   180.0   0.00175
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+300.0   1   0.01796
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+300.0   210.0   0.00020
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+300.0   240.0   0.00003
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+300.0   270.0   0.00000
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+300.0   295.0   0.00003
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+300.0   30.0   0.01674
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+300.0   60.0   0.01708
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+300.0   90.0   0.01287
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+360.0   120.0   0.02149
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+360.0   150.0   0.01745
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+360.0   180.0   0.01212
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+360.0   1   0.02715
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+360.0   210.0   0.00686
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+360.0   240.0   0.00202
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+360.0   270.0   0.00027
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+360.0   30.0   0.02692
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+360.0   300.0   0.00005
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+360.0   330.0   0.00000
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+360.0   355.0   0.00002
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+360.0   60.0   0.02659
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+360.0   90.0   0.02455
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+420.0   120.0   0.02978
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+420.0   150.0   0.02788
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+420.0   180.0   0.02435
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+420.0   1   0.03342
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+420.0   210.0   0.01952
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+420.0   240.0   0.01438
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+420.0   270.0   0.00826
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+420.0   30.0   0.03262
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+420.0   300.0   0.00269
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+420.0   330.0   0.00028
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+420.0   360.0   0.00009
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+420.0   390.0   0.00002
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+420.0   415.0   0.00005
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+420.0   60.0   0.03278
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+420.0   90.0   0.03194
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+480.0   120.0   0.03628
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+480.0   150.0   0.03526
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+480.0   180.0   0.03382
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+480.0   1   0.03699
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+480.0   210.0   0.03037
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+480.0   240.0   0.02824
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+480.0   270.0   0.02181
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+480.0   30.0   0.03777
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+480.0   300.0   0.01591
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+480.0   330.0   0.00891
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+480.0   360.0   0.00324
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+480.0   390.0   0.00031
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+480.0   420.0   0.00007
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+480.0   450.0   0.00002
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+480.0   475.0   0.00002
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+480.0   60.0   0.03632
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+480.0   90.0   0.03691
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+540.0   120.0   0.03772
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+540.0   150.0   0.03715
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+540.0   180.0   0.03614
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+540.0   1   0.03825
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+540.0   210.0   0.03571
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+540.0   240.0   0.03563
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+540.0   270.0   0.03194
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+540.0   30.0   0.03787
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+540.0   300.0   0.02753
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+540.0   330.0   0.02517
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+540.0   360.0   0.01655
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+540.0   390.0   0.00966
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+540.0   420.0   0.00351
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+540.0   450.0   0.00051
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+540.0   480.0   0.00011
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+540.0   510.0   0.00005
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+540.0   535.0   0.00002
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+540.0   60.0   0.03934
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+540.0   90.0   0.03893
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+60.0   1   0.00000
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+60.0   30.0   0.00000
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+60.0   55.0   0.00000
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+600.0   120.0   0.04103
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+600.0   150.0   0.03871
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+600.0   180.0   0.03996
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+600.0   1   0.03879
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+600.0   210.0   0.03966
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+600.0   240.0   0.03862
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+600.0   270.0   0.03683
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+600.0   30.0   0.03835
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+600.0   300.0   0.03547
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+600.0   330.0   0.03315
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+600.0   360.0   0.02865
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+600.0   390.0   0.02479
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+600.0   420.0   0.01751
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+600.0   450.0   0.01074
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+600.0   480.0   0.00416
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+600.0   510.0   0.00051
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+600.0   540.0   0.00017
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+600.0   570.0   0.00006
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+600.0   595.0   0.00005
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+600.0   60.0   0.03950
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+600.0   90.0   0.03893
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+660.0   120.0   0.04115
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+660.0   150.0   0.03988
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+660.0   180.0   0.04125
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+660.0   1   0.03938
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+660.0   210.0   0.03885
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+660.0   240.0   0.03997
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+660.0   270.0   0.03925
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+660.0   30.0   0.03968
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+660.0   300.0   0.04035
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+660.0   330.0   0.03853
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+660.0   360.0   0.03513
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+660.0   390.0   0.03353
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+660.0   420.0   0.03115
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+660.0   450.0   0.02591
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+660.0   480.0   0.01975
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+660.0   510.0   0.01129
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+660.0   540.0   0.00320
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+660.0   570.0   0.00059
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+660.0   60.0   0.03918
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+660.0   600.0   0.00007
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+660.0   630.0   0.00004
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+660.0   655.0   0.00000
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+660.0   90.0   0.03813
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+720.0   120.0   0.03719
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+720.0   150.0   0.04034
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+720.0   180.0   0.03922
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+720.0   1   0.03983
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+720.0   210.0   0.03967
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+720.0   240.0   0.04044
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+720.0   270.0   0.04078
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+720.0   30.0   0.04103
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+720.0   300.0   0.04055
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+720.0   330.0   0.04014
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+720.0   360.0   0.03926
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+720.0   390.0   0.03723
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+720.0   420.0   0.03772
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+720.0   450.0   0.03548
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+720.0   480.0   0.03183
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+720.0   510.0   0.02690
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+720.0   540.0   0.01932
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+720.0   570.0   0.01169
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+720.0   60.0   0.03978
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+720.0   600.0   0.00375
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+720.0   630.0   0.00059
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+720.0   660.0   0.00019
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+720.0   690.0   0.00007
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+720.0   705.0   0.00006
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+720.0   90.0   0.03903
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+780.0   120.0   0.03866
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+780.0   150.0   0.03911
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+780.0   180.0   0.03758
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+780.0   1   0.03716
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+780.0   210.0   0.03738
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+780.0   240.0   0.04094
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+780.0   270.0   0.03875
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+780.0   30.0   0.03681
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+780.0   300.0   0.04068
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+780.0   330.0   0.04082
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+780.0   360.0   0.04087
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+780.0   390.0   0.04015
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+780.0   420.0   0.03835
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+780.0   450.0   0.03859
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+780.0   480.0   0.03850
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+780.0   510.0   0.03669
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+780.0   540.0   0.03222
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+780.0   570.0   0.02657
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+780.0   60.0   0.03758
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+780.0   600.0   0.02040
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+780.0   630.0   0.01146
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+780.0   660.0   0.00439
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+780.0   690.0   0.00050
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+780.0   705.0   0.00030
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+780.0   90.0   0.03857
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+840.0   120.0   0.03707
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+840.0   150.0   0.03891
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+840.0   180.0   0.03836
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+840.0   1   0.03667
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+840.0   210.0   0.03856
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+840.0   240.0   0.03860
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+840.0   270.0   0.03905
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+840.0   30.0   0.03608
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+840.0   300.0   0.03997
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+840.0   330.0   0.03973
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+840.0   360.0   0.03993
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+840.0   390.0   0.03948
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+840.0   420.0   0.03977
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+840.0   450.0   0.04019
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+840.0   480.0   0.04000
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+840.0   510.0   0.03998
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+840.0   540.0   0.04075
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+840.0   570.0   0.03652
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+840.0   60.0   0.03783
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+840.0   600.0   0.03094
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+840.0   630.0   0.02661
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+840.0   660.0   0.02078
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+840.0   690.0   0.01248
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+840.0   705.0   0.00829
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+840.0   90.0   0.03573
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+900.0   120.0   0.03415
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+900.0   150.0   0.03507
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+900.0   180.0   0.03653
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+900.0   1   0.03565
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+900.0   210.0   0.03754
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+900.0   240.0   0.03742
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+900.0   270.0   0.03855
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+900.0   30.0   0.03555
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+900.0   300.0   0.03787
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+900.0   330.0   0.03967
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+900.0   360.0   0.03948
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+900.0   390.0   0.03949
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+900.0   420.0   0.04162
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+900.0   450.0   0.04247
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+900.0   480.0   0.04309
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+900.0   510.0   0.04167
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+900.0   540.0   0.04386
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+900.0   570.0   0.04026
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+900.0   60.0   0.03576
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+900.0   600.0   0.03856
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+900.0   630.0   0.03664
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+900.0   660.0   0.03342
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+900.0   690.0   0.02735
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+900.0   705.0   0.02440
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+900.0   90.0   0.03504
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+960.0   120.0   0.03384
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+960.0   150.0   0.03441
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+960.0   180.0   0.03672
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+960.0   1   0.03323
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+960.0   210.0   0.03649
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+960.0   240.0   0.03608
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+960.0   270.0   0.03662
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+960.0   30.0   0.03411
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+960.0   300.0   0.03594
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+960.0   60.0   0.03425
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+960.0   705.0   0.03614
+#CM EffMap for txName: T2bb , Analysis: atlas_1308_2631 , SR: SRA-mCT150
+960.0   90.0   0.03380
