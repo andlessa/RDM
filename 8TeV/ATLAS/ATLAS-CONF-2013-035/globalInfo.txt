@@ -5,5 +5,6 @@ prettyName: ATLAS trilepton weakinos
 url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-035/
 supersededBy: ATLAS-SUSY-2013-12
 private: False
-implementedBy: Wolfgang Waltenberger
-lastUpdate: 2015/5/6
+implementedBy: Federico A
+lastUpdate: 2016/9/29
+

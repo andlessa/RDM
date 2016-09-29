@@ -5,7 +5,7 @@ constraint: 2.*([[['L'],['L']],[['L'],['nu']]] + [[['L'],['L']],[['nu'],['L']]])
 checked: VM
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-035/figaux_01a.png
 dataUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-035/figaux_01a_PRELIMINARY.data
-validated: True
+validated: None
 axes: 2*Eq(mother,x)_Eq(inter0,0.5*x+0.5*y)_Eq(lsp,y)
 publishedData: True
 upperLimits: [[[[112.5*GeV, 62.5*GeV, 12.5*GeV], [112.5*GeV, 62.5*GeV, 12.5*GeV]], 0.11776*pb],
