@@ -7,5 +7,6 @@ contact: Sophio Pataria <Sophio.Pataraia@cern.ch>, Tobias Golling <tobias.gollin
 supersededBy: ATLAS-SUSY-2013-15
 supersedes: ATLAS-CONF-2012-166
 private: False
-implementedBy: Wolfgang Waltenberger
-lastUpdate: 2016/5/12
+implementedBy: Federico A
+lastUpdate: 2016/9/29
+

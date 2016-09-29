@@ -3,8 +3,8 @@ conditionDescription: None
 condition: None
 constraint: [[['t','t']],[['t','t']]]
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-18/figaux_14b.png
-dataUrl: http://hepdata.cedar.ac.uk/view/ins1304457/all
-validated: True
+dataUrl: http://hepdata.cedar.ac.uk/view/ins1304457/all;http://hepdata.cedar.ac.uk/view/ins1304457/d43/input http://hepdata.cedar.ac.uk/view/ins1304457/d44/input
+validated: None
 axes: 2*Eq(mother,x)_Eq(lsp,y)
 publishedData: True
 efficiencyMap: [[[[600.0*GeV, 1.0*GeV], [600.0*GeV, 1.0*GeV]], 0.0025],

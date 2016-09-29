@@ -5,5 +5,6 @@ url: https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS14010
 arxiv: http://arxiv.org/abs/arXiv:1412.4109
 publication: Phys. Lett. B 745 (2015) 5
 private: False
-implementedBy: Federico A 
-lastUpdate: 2016/2/29
+implementedBy: Federico A
+lastUpdate: 2016/9/29
+

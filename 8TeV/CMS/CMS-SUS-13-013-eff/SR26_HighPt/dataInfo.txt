@@ -3,5 +3,5 @@ dataId: SR26_HighPt
 observedN: 1
 expectedBG: 0.81
 bgError: 0.54
-upperLimit: 0.2188*fb
-expectedUpperLimit: 0.1547*fb
+upperLimit: 0.218186123131*fb
+expectedUpperLimit: 0.153371810514*fb

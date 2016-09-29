@@ -1,0 +1,178 @@
+[databaseCreation:0.0s] start
+
+*** starting creation of database entry for CMS-SUS-12-028*** 
+
+[databaseCreation:0.0s] cleaned up in /scratch/federico/SModelS_Hamburg/smodels-database/8TeV/CMS/CMS-SUS-12-028/ 
+[databaseCreation:0.0s] writing ./globalInfo.txt
+[databaseCreation:0.0s] creating validation folder /scratch/federico/SModelS_Hamburg/smodels-utils/smodels_utils/dataPreparation/databaseCreation.py
+[databaseCreation:0.0s] before going through txnames
+[databaseCreation:0.0s] reading T1tttt
+[databaseCreation:0.0s] Reading mass plane: T1tttt, 2*Eq(mother,x)_Eq(lsp,y) [orig/T1tttt.root]
+[databaseCreation:0.0s] extended efficiencyMap to 0 entries 
+[databaseCreation:0.0s] extended efficiencyMap3D to 0 entries 
+[databaseCreation:24.7s] extended upperLimits to 2211 entries >>> [[[350.0*GeV, 0.0*GeV], [350.0*GeV, 0.0*GeV]], 6.31955493307*pb] ... 
+[databaseCreation:48.6s] extended expectedUpperLimits to 2211 entries >>> [[[350.0*GeV, 0.0*GeV], [350.0*GeV, 0.0*GeV]], 7.16347677962*pb] ... 
+[databaseCreation:48.6s] Found region: onShell 1
+[databaseCreation:48.6s] Found region: offShell 1
+[databaseCreation:48.6s] extend exclusionLines for T1tttt to 1 entries
+[databaseCreation:48.6s] extend exclusionLines for T1ttttoff to 1 entries
+[databaseCreation:48.6s] Now checking mass plane <smodels_utils.dataPreparation.inputObjects.MassPlane object at 0x7fec53429f10>
+[databaseCreation:48.6s] we have 2 kin regions
+[databaseCreation:52.2s] writing ./data/T1tttt.txt
+[databaseCreation:52.3s] reading T2tt
+[databaseCreation:52.3s] Reading mass plane: T2tt, 2*Eq(mother,x)_Eq(lsp,y) [orig/T2tt.root]
+[databaseCreation:52.3s] extended efficiencyMap to 0 entries 
+[databaseCreation:52.3s] extended efficiencyMap3D to 0 entries 
+[databaseCreation:73.2s] extended upperLimits to 1935 entries >>> [[[300.0*GeV, 0.0*GeV], [300.0*GeV, 0.0*GeV]], 2.68141523995*pb] ... 
+[databaseCreation:94.1s] extended expectedUpperLimits to 1935 entries >>> [[[300.0*GeV, 0.0*GeV], [300.0*GeV, 0.0*GeV]], 1.71277221671*pb] ... 
+[databaseCreation:94.1s] Found region: onShell 1
+[databaseCreation:94.1s] Found region: offShell 1
+[databaseCreation:94.1s] extend exclusionLines for T2tt to 1 entries
+[databaseCreation:94.1s] extend exclusionLines for T2ttoff to 1 entries
+[databaseCreation:94.1s] Now checking mass plane <smodels_utils.dataPreparation.inputObjects.MassPlane object at 0x7fec534483d0>
+[databaseCreation:94.1s] we have 2 kin regions
+[databaseCreation:97.2s] writing ./data/T2tt.txt
+[databaseCreation:97.2s] reading T1bbbb
+[databaseCreation:97.2s] Reading mass plane: T1bbbb, 2*Eq(mother,x)_Eq(lsp,y) [orig/T1bbbb.root]
+[databaseCreation:97.2s] extended efficiencyMap to 0 entries 
+[databaseCreation:97.2s] extended efficiencyMap3D to 0 entries 
+[databaseCreation:125.8s] extended upperLimits to 2685 entries >>> [[[300.0*GeV, 0.0*GeV], [300.0*GeV, 0.0*GeV]], 0.2967211236*pb] ... 
+[databaseCreation:154.3s] extended expectedUpperLimits to 2685 entries >>> [[[300.0*GeV, 0.0*GeV], [300.0*GeV, 0.0*GeV]], 0.262424729393*pb] ... 
+[databaseCreation:154.3s] Found region: onShell 1
+[databaseCreation:154.3s] Found region: offShell 1
+[databaseCreation:154.3s] extend exclusionLines for T1bbbb to 1 entries
+[databaseCreation:154.3s] extend exclusionLines for T1bbbboff to 1 entries
+[databaseCreation:154.3s] Now checking mass plane <smodels_utils.dataPreparation.inputObjects.MassPlane object at 0x7fec534488d0>
+[databaseCreation:154.3s] we have 2 kin regions
+[databaseCreation:158.6s] writing ./data/T1bbbb.txt
+[databaseCreation:158.6s] reading T2
+[databaseCreation:158.6s] Reading mass plane: T2, 2*Eq(mother,x)_Eq(lsp,y) [orig/T2.root]
+[databaseCreation:158.6s] extended efficiencyMap to 0 entries 
+[databaseCreation:158.6s] extended efficiencyMap3D to 0 entries 
+[databaseCreation:168.0s] extended upperLimits to 888 entries >>> [[[300.0*GeV, 0.0*GeV], [300.0*GeV, 0.0*GeV]], 0.928286226871*pb] ... 
+[databaseCreation:177.5s] extended expectedUpperLimits to 888 entries >>> [[[300.0*GeV, 0.0*GeV], [300.0*GeV, 0.0*GeV]], 0.902207941256*pb] ... 
+[databaseCreation:177.5s] Found region: onShell 1
+[databaseCreation:177.5s] Found region: offShell 1
+[databaseCreation:177.5s] extend exclusionLines for T2 to 1 entries
+[databaseCreation:177.5s] extend exclusionLines for T2off to 1 entries
+[databaseCreation:177.5s] Now checking mass plane <smodels_utils.dataPreparation.inputObjects.MassPlane object at 0x7fec53448dd0>
+[databaseCreation:177.5s] we have 2 kin regions
+[databaseCreation:178.9s] writing ./data/T2.txt
+[databaseCreation:178.9s] reading T1
+[databaseCreation:178.9s] Reading mass plane: T1, 2*Eq(mother,x)_Eq(lsp,y) [orig/T1.root]
+[databaseCreation:178.9s] extended efficiencyMap to 0 entries 
+[databaseCreation:178.9s] extended efficiencyMap3D to 0 entries 
+[databaseCreation:208.2s] extended upperLimits to 2686 entries >>> [[[300.0*GeV, 0.0*GeV], [300.0*GeV, 0.0*GeV]], 1.77080495777*pb] ... 
+[databaseCreation:237.7s] extended expectedUpperLimits to 2686 entries >>> [[[300.0*GeV, 0.0*GeV], [300.0*GeV, 0.0*GeV]], 1.14429798276*pb] ... 
+[databaseCreation:237.7s] Found region: onShell 1
+[databaseCreation:237.7s] Found region: offShell 1
+[databaseCreation:237.7s] extend exclusionLines for T1 to 1 entries
+[databaseCreation:237.7s] extend exclusionLines for T1off to 1 entries
+[databaseCreation:237.7s] Now checking mass plane <smodels_utils.dataPreparation.inputObjects.MassPlane object at 0x7fec5344e310>
+[databaseCreation:237.7s] we have 2 kin regions
+[databaseCreation:242.7s] writing ./data/T1.txt
+[databaseCreation:242.7s] reading T2bb
+[databaseCreation:242.7s] Reading mass plane: T2bb, 2*Eq(mother,x)_Eq(lsp,y) [orig/T2bb.root]
+[databaseCreation:242.7s] extended efficiencyMap to 0 entries 
+[databaseCreation:242.7s] extended efficiencyMap3D to 0 entries 
+[databaseCreation:252.2s] extended upperLimits to 888 entries >>> [[[300.0*GeV, 0.0*GeV], [300.0*GeV, 0.0*GeV]], 0.287003881599*pb] ... 
+[databaseCreation:261.7s] extended expectedUpperLimits to 888 entries >>> [[[300.0*GeV, 0.0*GeV], [300.0*GeV, 0.0*GeV]], 0.179923617703*pb] ... 
+[databaseCreation:261.7s] Found region: onShell 1
+[databaseCreation:261.7s] Found region: offShell 1
+[databaseCreation:261.7s] extend exclusionLines for T2bb to 1 entries
+[databaseCreation:261.7s] extend exclusionLines for T2bboff to 1 entries
+[databaseCreation:261.7s] Now checking mass plane <smodels_utils.dataPreparation.inputObjects.MassPlane object at 0x7fec5344e810>
+[databaseCreation:261.7s] we have 2 kin regions
+[databaseCreation:263.4s] writing ./data/T2bb.txt
+[databaseCreation:263.4s] after going through txnames
+[databaseCreation:263.4s] writing ./data/dataInfo.txt
+[databaseCreation:263.4s] done
+[databaseCreation:0.0s] start
+
+*** starting creation of database entry for CMS-SUS-12-028*** 
+
+[databaseCreation:0.0s] cleaned up in /scratch/federico/SModelS_Hamburg/smodels-database/8TeV/CMS/CMS-SUS-12-028/ 
+[databaseCreation:0.0s] writing ./globalInfo.txt
+[databaseCreation:0.0s] creating validation folder /scratch/federico/SModelS_Hamburg/smodels-utils/smodels_utils/dataPreparation/databaseCreation.py
+[databaseCreation:0.0s] before going through txnames
+[databaseCreation:0.0s] reading T1tttt
+[databaseCreation:0.0s] Reading mass plane: T1tttt, 2*Eq(mother,x)_Eq(lsp,y) [orig/T1tttt.root]
+[databaseCreation:0.0s] extended efficiencyMap to 0 entries 
+[databaseCreation:0.0s] extended efficiencyMap3D to 0 entries 
+[databaseCreation:24.0s] extended upperLimits to 2211 entries >>> [[[350.0*GeV, 0.0*GeV], [350.0*GeV, 0.0*GeV]], 6.31955493307*pb] ... 
+[databaseCreation:48.1s] extended expectedUpperLimits to 2211 entries >>> [[[350.0*GeV, 0.0*GeV], [350.0*GeV, 0.0*GeV]], 7.16347677962*pb] ... 
+[databaseCreation:48.1s] Found region: onShell 1
+[databaseCreation:48.1s] Found region: offShell 1
+[databaseCreation:48.1s] extend exclusionLines for T1tttt to 1 entries
+[databaseCreation:48.1s] extend exclusionLines for T1ttttoff to 1 entries
+[databaseCreation:48.1s] Now checking mass plane <smodels_utils.dataPreparation.inputObjects.MassPlane object at 0x7f47b1e8ef10>
+[databaseCreation:48.1s] we have 2 kin regions
+[databaseCreation:51.7s] writing ./data/T1tttt.txt
+[databaseCreation:51.7s] reading T2tt
+[databaseCreation:51.7s] Reading mass plane: T2tt, 2*Eq(mother,x)_Eq(lsp,y) [orig/T2tt.root]
+[databaseCreation:51.7s] extended efficiencyMap to 0 entries 
+[databaseCreation:51.7s] extended efficiencyMap3D to 0 entries 
+[databaseCreation:72.6s] extended upperLimits to 1935 entries >>> [[[300.0*GeV, 0.0*GeV], [300.0*GeV, 0.0*GeV]], 2.68141523995*pb] ... 
+[databaseCreation:93.6s] extended expectedUpperLimits to 1935 entries >>> [[[300.0*GeV, 0.0*GeV], [300.0*GeV, 0.0*GeV]], 1.71277221671*pb] ... 
+[databaseCreation:93.6s] Found region: onShell 1
+[databaseCreation:93.6s] Found region: offShell 1
+[databaseCreation:93.6s] extend exclusionLines for T2tt to 1 entries
+[databaseCreation:93.6s] extend exclusionLines for T2ttoff to 1 entries
+[databaseCreation:93.6s] Now checking mass plane <smodels_utils.dataPreparation.inputObjects.MassPlane object at 0x7f47b1eae3d0>
+[databaseCreation:93.6s] we have 2 kin regions
+[databaseCreation:96.7s] writing ./data/T2tt.txt
+[databaseCreation:96.7s] reading T1bbbb
+[databaseCreation:96.7s] Reading mass plane: T1bbbb, 2*Eq(mother,x)_Eq(lsp,y) [orig/T1bbbb.root]
+[databaseCreation:96.7s] extended efficiencyMap to 0 entries 
+[databaseCreation:96.7s] extended efficiencyMap3D to 0 entries 
+[databaseCreation:125.7s] extended upperLimits to 2685 entries >>> [[[300.0*GeV, 0.0*GeV], [300.0*GeV, 0.0*GeV]], 0.2967211236*pb] ... 
+[databaseCreation:153.9s] extended expectedUpperLimits to 2685 entries >>> [[[300.0*GeV, 0.0*GeV], [300.0*GeV, 0.0*GeV]], 0.262424729393*pb] ... 
+[databaseCreation:153.9s] Found region: onShell 1
+[databaseCreation:153.9s] Found region: offShell 1
+[databaseCreation:153.9s] extend exclusionLines for T1bbbb to 1 entries
+[databaseCreation:153.9s] extend exclusionLines for T1bbbboff to 1 entries
+[databaseCreation:153.9s] Now checking mass plane <smodels_utils.dataPreparation.inputObjects.MassPlane object at 0x7f47b1eae8d0>
+[databaseCreation:153.9s] we have 2 kin regions
+[databaseCreation:158.1s] writing ./data/T1bbbb.txt
+[databaseCreation:158.1s] reading T2
+[databaseCreation:158.1s] Reading mass plane: T2, 2*Eq(mother,x)_Eq(lsp,y) [orig/T2.root]
+[databaseCreation:158.1s] extended efficiencyMap to 0 entries 
+[databaseCreation:158.1s] extended efficiencyMap3D to 0 entries 
+[databaseCreation:167.2s] extended upperLimits to 888 entries >>> [[[300.0*GeV, 0.0*GeV], [300.0*GeV, 0.0*GeV]], 0.928286226871*pb] ... 
+[databaseCreation:176.1s] extended expectedUpperLimits to 888 entries >>> [[[300.0*GeV, 0.0*GeV], [300.0*GeV, 0.0*GeV]], 0.902207941256*pb] ... 
+[databaseCreation:176.1s] Found region: onShell 1
+[databaseCreation:176.1s] Found region: offShell 1
+[databaseCreation:176.1s] extend exclusionLines for T2 to 1 entries
+[databaseCreation:176.1s] extend exclusionLines for T2off to 1 entries
+[databaseCreation:176.1s] Now checking mass plane <smodels_utils.dataPreparation.inputObjects.MassPlane object at 0x7f47b1eaedd0>
+[databaseCreation:176.1s] we have 2 kin regions
+[databaseCreation:177.5s] writing ./data/T2.txt
+[databaseCreation:177.5s] reading T1
+[databaseCreation:177.5s] Reading mass plane: T1, 2*Eq(mother,x)_Eq(lsp,y) [orig/T1.root]
+[databaseCreation:177.5s] extended efficiencyMap to 0 entries 
+[databaseCreation:177.5s] extended efficiencyMap3D to 0 entries 
+[databaseCreation:204.6s] extended upperLimits to 2686 entries >>> [[[300.0*GeV, 0.0*GeV], [300.0*GeV, 0.0*GeV]], 1.77080495777*pb] ... 
+[databaseCreation:231.7s] extended expectedUpperLimits to 2686 entries >>> [[[300.0*GeV, 0.0*GeV], [300.0*GeV, 0.0*GeV]], 1.14429798276*pb] ... 
+[databaseCreation:231.7s] Found region: onShell 1
+[databaseCreation:231.7s] Found region: offShell 1
+[databaseCreation:231.7s] extend exclusionLines for T1 to 1 entries
+[databaseCreation:231.7s] extend exclusionLines for T1off to 1 entries
+[databaseCreation:231.7s] Now checking mass plane <smodels_utils.dataPreparation.inputObjects.MassPlane object at 0x7f47b1eb4310>
+[databaseCreation:231.7s] we have 2 kin regions
+[databaseCreation:235.9s] writing ./data/T1.txt
+[databaseCreation:235.9s] reading T2bb
+[databaseCreation:235.9s] Reading mass plane: T2bb, 2*Eq(mother,x)_Eq(lsp,y) [orig/T2bb.root]
+[databaseCreation:235.9s] extended efficiencyMap to 0 entries 
+[databaseCreation:235.9s] extended efficiencyMap3D to 0 entries 
+[databaseCreation:244.8s] extended upperLimits to 888 entries >>> [[[300.0*GeV, 0.0*GeV], [300.0*GeV, 0.0*GeV]], 0.287003881599*pb] ... 
+[databaseCreation:253.6s] extended expectedUpperLimits to 888 entries >>> [[[300.0*GeV, 0.0*GeV], [300.0*GeV, 0.0*GeV]], 0.179923617703*pb] ... 
+[databaseCreation:253.6s] Found region: onShell 1
+[databaseCreation:253.6s] Found region: offShell 1
+[databaseCreation:253.6s] extend exclusionLines for T2bb to 1 entries
+[databaseCreation:253.6s] extend exclusionLines for T2bboff to 1 entries
+[databaseCreation:253.6s] Now checking mass plane <smodels_utils.dataPreparation.inputObjects.MassPlane object at 0x7f47b1eb4810>
+[databaseCreation:253.6s] we have 2 kin regions
+[databaseCreation:255.0s] writing ./data/T2bb.txt
+[databaseCreation:255.0s] after going through txnames
+[databaseCreation:255.0s] writing ./data/dataInfo.txt
+[databaseCreation:255.0s] done

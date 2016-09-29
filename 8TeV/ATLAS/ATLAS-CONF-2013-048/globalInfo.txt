@@ -6,5 +6,6 @@ url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-04
 supersededBy: ATLAS-SUSY-2013-19
 comment: T6bbWWM1300 can also be found in ATLAS-CONF-2013-065 as combination
 private: False
-implementedBy: Wolfgang Waltenberger
-lastUpdate: 2015/5/6
+implementedBy: Federico A
+lastUpdate: 2016/9/29
+

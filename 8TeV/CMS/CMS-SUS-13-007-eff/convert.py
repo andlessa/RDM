@@ -85,7 +85,7 @@ T1tttt_1.figure ='DPhi_Method_T1tttt_Muons_250_Nb3.pdf'
 T1tttt_1.figureUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13007/DPhi_Method_T1tttt_Muons_250_Nb3.pdf'
 #----limit source----
 T1tttt_1.efficiencyMap.setSource(  'orig/EffxAcc_Smoothed_DPhi_Paper_Dec2013.root', 'root', objectName = 'EffxAcc-ISR-T1tttt-EffxAcc-ISR-MG_mu-250-sig-Nb3', index = None, dataset="mu250Nb3" )
-T1tttt_1.efficiencyMap.setStatistics( observedN=0, expectedBG=1.9, bgError=0.89 )
+T1tttt_1.efficiencyMap.setStatistics( observedN=0.00001, expectedBG=1.9, bgError=0.89 )
 #----global url settings ----
 T1tttt_1.dataUrl = 'https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS13007'
 #----efficiency map url settings ----

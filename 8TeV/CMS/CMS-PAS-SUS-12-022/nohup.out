@@ -1,0 +1,129 @@
+[databaseCreation:0.0s] start
+
+*** starting creation of database entry for CMS-PAS-SUS-12-022*** 
+
+[databaseCreation:0.0s] cleaned up in /scratch/federico/SModelS_Hamburg/smodels-database/8TeV/CMS/CMS-PAS-SUS-12-022/ 
+[databaseCreation:0.0s] writing ./globalInfo.txt
+[databaseCreation:0.0s] creating validation folder /scratch/federico/SModelS_Hamburg/smodels-utils/smodels_utils/dataPreparation/databaseCreation.py
+[databaseCreation:0.0s] before going through txnames
+[databaseCreation:0.0s] reading TChiWZ
+[databaseCreation:0.0s] Reading mass plane: TChiWZ, 2*Eq(mother,x)_Eq(lsp,y) [orig/exclusion_TChiWZ.root]
+[databaseCreation:0.0s] extended efficiencyMap to 0 entries 
+[databaseCreation:0.0s] extended efficiencyMap3D to 0 entries 
+[databaseCreation:5.6s] extended upperLimits to 496 entries >>> [[[100.0*GeV, 0.0*GeV], [100.0*GeV, 0.0*GeV]], 1.86500229574*pb] ... 
+[databaseCreation:5.6s] extended expectedUpperLimits to 0 entries 
+[databaseCreation:5.6s] Found region: onShell 1
+[databaseCreation:5.7s] Found region: offShell 1
+[databaseCreation:5.7s] extend exclusionLines for TChiWZ to 1 entries
+[databaseCreation:5.7s] extend exclusionLines for TChiWZoff to 1 entries
+[databaseCreation:5.7s] Now checking mass plane <smodels_utils.dataPreparation.inputObjects.MassPlane object at 0x7f3a41c52f90>
+[databaseCreation:5.7s] we have 2 kin regions
+[databaseCreation:6.0s] writing ./data/TChiWZ.txt
+[databaseCreation:6.0s] reading TChiChipmStauStau
+[databaseCreation:6.1s] Reading mass plane: TChiChipmStauStau, 2*Eq(mother,x)_Eq(inter0,0.5*x+0.5*y)_Eq(lsp,y) [exclusion_TChiStauSnu_0_5.root]
+[databaseCreation:6.1s] extended efficiencyMap to 0 entries 
+[databaseCreation:6.1s] extended efficiencyMap3D to 0 entries 
+[databaseCreation:19.7s] extended upperLimits to 170 entries >>> [[[100.0*GeV, 50.0*GeV, 0.0*GeV], [100.0*GeV, 50.0*GeV, 0.0*GeV]], 2845.3151116*pb] ... 
+[databaseCreation:19.7s] extended expectedUpperLimits to 0 entries 
+[databaseCreation:19.7s] Found region: onShell 1
+[databaseCreation:19.8s] Found region: offShell 1
+[databaseCreation:19.8s] extend exclusionLines for TChiChipmStauStau to 1 entries
+[databaseCreation:19.8s] extend exclusionLines for TChiChipmStauStauoff to 1 entries
+[databaseCreation:19.8s] Now checking mass plane <smodels_utils.dataPreparation.inputObjects.MassPlane object at 0x7f3a41bf5550>
+[databaseCreation:19.8s] we have 2 kin regions
+[databaseCreation:20.0s] writing ./data/TChiChipmStauStau.txt
+[databaseCreation:20.0s] reading TSlepSlep
+[databaseCreation:20.0s] Reading mass plane: TSlepSlep, 2*Eq(mother,x)_Eq(lsp,y) [orig/exclusion_TSlepSlep.root]
+[databaseCreation:20.0s] extended efficiencyMap to 0 entries 
+[databaseCreation:20.0s] extended efficiencyMap3D to 0 entries 
+[databaseCreation:20.7s] extended upperLimits to 53 entries >>> [[[100.0*GeV, 0.0*GeV], [100.0*GeV, 0.0*GeV]], 1.76214643146*pb] ... 
+[databaseCreation:20.7s] extended expectedUpperLimits to 0 entries 
+[databaseCreation:20.8s] Found region: onShell 1
+[databaseCreation:20.9s] Found region: offShell 1
+[databaseCreation:20.9s] extend exclusionLines for TSlepSlep to 1 entries
+[databaseCreation:20.9s] extend exclusionLines for TSlepSlepoff to 1 entries
+[databaseCreation:20.9s] Now checking mass plane <smodels_utils.dataPreparation.inputObjects.MassPlane object at 0x7f3a41bf5c50>
+[databaseCreation:20.9s] we have 2 kin regions
+[databaseCreation:21.0s] writing ./data/TSlepSlep.txt
+[databaseCreation:21.0s] reading TChiChipmSlepStau
+[databaseCreation:21.0s] Reading mass plane: TChiChipmSlepStau, 2*Eq(mother,x)_Eq(inter0,0.95*x+0.05*y)_Eq(lsp,y) [usion_TChiSlepSnu_2a_0_95.root]
+[databaseCreation:21.0s] extended efficiencyMap to 0 entries 
+[databaseCreation:21.0s] extended efficiencyMap3D to 0 entries 
+[databaseCreation:92.0s] extended upperLimits to 740 entries >>> [[[100.0*GeV, 95.0*GeV, 0.0*GeV], [100.0*GeV, 95.0*GeV, 0.0*GeV]], 533.569292227*pb] ... 
+[databaseCreation:92.0s] extended expectedUpperLimits to 0 entries 
+[databaseCreation:92.1s] Found region: onShell 1
+[databaseCreation:92.2s] Found region: offShell 1
+[databaseCreation:92.2s] extend exclusionLines for TChiChipmSlepStau to 1 entries
+[databaseCreation:92.2s] extend exclusionLines for TChiChipmSlepStauoff to 1 entries
+[databaseCreation:92.2s] Now checking mass plane <smodels_utils.dataPreparation.inputObjects.MassPlane object at 0x7f3a41c01190>
+[databaseCreation:92.3s] Reading mass plane: TChiChipmSlepStau, 2*Eq(mother,x)_Eq(inter0,0.5*x+0.5*y)_Eq(lsp,y) [lusion_TChiSlepSnu_2a_0_5.root]
+[databaseCreation:92.3s] extended efficiencyMap to 0 entries 
+[databaseCreation:92.3s] extended efficiencyMap3D to 0 entries 
+[databaseCreation:155.5s] extended upperLimits to 1480 entries >>> [[[100.0*GeV, 95.0*GeV, 0.0*GeV], [100.0*GeV, 95.0*GeV, 0.0*GeV]], 533.569292227*pb] ... 
+[databaseCreation:155.5s] extended expectedUpperLimits to 0 entries 
+[databaseCreation:155.6s] Found region: onShell 1
+[databaseCreation:155.7s] Found region: offShell 1
+[databaseCreation:155.7s] extend exclusionLines for TChiChipmSlepStau to 2 entries
+[databaseCreation:155.7s] extend exclusionLines for TChiChipmSlepStauoff to 2 entries
+[databaseCreation:155.7s] Now checking mass plane <smodels_utils.dataPreparation.inputObjects.MassPlane object at 0x7f3a41c01890>
+[databaseCreation:155.7s] Reading mass plane: TChiChipmSlepStau, 2*Eq(mother,x)_Eq(inter0,0.05*x+0.95*y)_Eq(lsp,y) [usion_TChiSlepSnu_2a_0_05.root]
+[databaseCreation:155.7s] extended efficiencyMap to 0 entries 
+[databaseCreation:155.7s] extended efficiencyMap3D to 0 entries 
+[databaseCreation:229.3s] extended upperLimits to 2220 entries >>> [[[100.0*GeV, 95.0*GeV, 0.0*GeV], [100.0*GeV, 95.0*GeV, 0.0*GeV]], 533.569292227*pb] ... 
+[databaseCreation:229.3s] extended expectedUpperLimits to 0 entries 
+[databaseCreation:229.4s] Found region: onShell 1
+[databaseCreation:229.5s] Found region: offShell 1
+[databaseCreation:229.5s] extend exclusionLines for TChiChipmSlepStau to 3 entries
+[databaseCreation:229.5s] extend exclusionLines for TChiChipmSlepStauoff to 3 entries
+[databaseCreation:229.5s] Now checking mass plane <smodels_utils.dataPreparation.inputObjects.MassPlane object at 0x7f3a41c01990>
+[databaseCreation:229.5s] we have 2 kin regions
+[databaseCreation:232.1s] writing ./data/TChiChipmSlepStau.txt
+[databaseCreation:232.1s] reading TChiChipmSlepL
+[databaseCreation:232.1s] Reading mass plane: TChiChipmSlepL, 2*Eq(mother,x)_Eq(inter0,0.05*x+0.95*y)_Eq(lsp,y) [usion_TChiSlepSnu_2i_0_05.root]
+[databaseCreation:232.1s] extended efficiencyMap to 0 entries 
+[databaseCreation:232.1s] extended efficiencyMap3D to 0 entries 
+[databaseCreation:304.7s] extended upperLimits to 740 entries >>> [[[100.0*GeV, 5.0*GeV, 0.0*GeV], [100.0*GeV, 5.0*GeV, 0.0*GeV]], 185.92972719*pb] ... 
+[databaseCreation:304.7s] extended expectedUpperLimits to 0 entries 
+[databaseCreation:304.7s] Found region: onShell 1
+[databaseCreation:304.8s] Found region: offShell 1
+[databaseCreation:304.8s] extend exclusionLines for TChiChipmSlepL to 1 entries
+[databaseCreation:304.8s] extend exclusionLines for TChiChipmSlepLoff to 1 entries
+[databaseCreation:304.8s] Now checking mass plane <smodels_utils.dataPreparation.inputObjects.MassPlane object at 0x7f3a41bfa110>
+[databaseCreation:304.8s] Reading mass plane: TChiChipmSlepL, 2*Eq(mother,x)_Eq(inter0,0.95*x+0.05*y)_Eq(lsp,y) [usion_TChiSlepSnu_2i_0_95.root]
+[databaseCreation:304.8s] extended efficiencyMap to 0 entries 
+[databaseCreation:304.8s] extended efficiencyMap3D to 0 entries 
+[databaseCreation:378.5s] extended upperLimits to 1480 entries >>> [[[100.0*GeV, 5.0*GeV, 0.0*GeV], [100.0*GeV, 5.0*GeV, 0.0*GeV]], 185.92972719*pb] ... 
+[databaseCreation:378.5s] extended expectedUpperLimits to 0 entries 
+[databaseCreation:378.6s] Found region: onShell 1
+[databaseCreation:378.6s] Found region: offShell 1
+[databaseCreation:378.6s] extend exclusionLines for TChiChipmSlepL to 2 entries
+[databaseCreation:378.6s] extend exclusionLines for TChiChipmSlepLoff to 2 entries
+[databaseCreation:378.6s] Now checking mass plane <smodels_utils.dataPreparation.inputObjects.MassPlane object at 0x7f3a41bfa690>
+[databaseCreation:378.6s] Reading mass plane: TChiChipmSlepL, 2*Eq(mother,x)_Eq(inter0,0.5*x+0.5*y)_Eq(lsp,y) [lusion_TChiSlepSnu_2i_0_5.root]
+[databaseCreation:378.6s] extended efficiencyMap to 0 entries 
+[databaseCreation:378.6s] extended efficiencyMap3D to 0 entries 
+[databaseCreation:442.9s] extended upperLimits to 2257 entries >>> [[[100.0*GeV, 5.0*GeV, 0.0*GeV], [100.0*GeV, 5.0*GeV, 0.0*GeV]], 185.92972719*pb] ... 
+[databaseCreation:442.9s] extended expectedUpperLimits to 0 entries 
+[databaseCreation:442.9s] Found region: onShell 1
+[databaseCreation:443.0s] Found region: offShell 1
+[databaseCreation:443.0s] extend exclusionLines for TChiChipmSlepL to 3 entries
+[databaseCreation:443.0s] extend exclusionLines for TChiChipmSlepLoff to 3 entries
+[databaseCreation:443.0s] Now checking mass plane <smodels_utils.dataPreparation.inputObjects.MassPlane object at 0x7f3a41bfac10>
+[databaseCreation:443.0s] we have 2 kin regions
+[databaseCreation:445.6s] writing ./data/TChiChipmSlepL.txt
+[databaseCreation:445.6s] reading TChipChimSlepSnu
+[databaseCreation:445.6s] Reading mass plane: TChipChimSlepSnu, 2*Eq(mother,x)_Eq(inter0,0.5*x+0.5*y)_Eq(lsp,y) [g/exclusion_TChipmSlepSnu.root]
+[databaseCreation:445.6s] extended efficiencyMap to 0 entries 
+[databaseCreation:445.6s] extended efficiencyMap3D to 0 entries 
+[databaseCreation:448.0s] extended upperLimits to 28 entries >>> [[[150.0*GeV, 75.0*GeV, 0.0*GeV], [150.0*GeV, 75.0*GeV, 0.0*GeV]], 314.688911249*pb] ... 
+[databaseCreation:448.0s] extended expectedUpperLimits to 0 entries 
+[databaseCreation:448.1s] Found region: onShell 1
+[databaseCreation:448.2s] Found region: offShell 1
+[databaseCreation:448.2s] extend exclusionLines for TChipChimSlepSnu to 1 entries
+[databaseCreation:448.2s] extend exclusionLines for TChipChimSlepSnuoff to 1 entries
+[databaseCreation:448.2s] Now checking mass plane <smodels_utils.dataPreparation.inputObjects.MassPlane object at 0x7f3a41c12190>
+[databaseCreation:448.2s] we have 2 kin regions
+[databaseCreation:448.2s] writing ./data/TChipChimSlepSnu.txt
+[databaseCreation:448.2s] after going through txnames
+[databaseCreation:448.2s] writing ./data/dataInfo.txt
+[databaseCreation:448.2s] done

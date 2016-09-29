@@ -6,6 +6,6 @@ url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-00
 supersededBy: ATLAS-SUSY-2013-09
 comment: A technical problem has been found in the pseudo-experiments used to make Table 4 in the conference note of March 1.; There is something wrong with T5WW (fig. 13), values leads to interMass > motherMass
 private: False
-implementedBy: Andre Lessa
-lastUpdate: 2016/9/7
+implementedBy: Federico A
+lastUpdate: 2016/9/29
 

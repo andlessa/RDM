@@ -3,5 +3,5 @@ dataId: SR23_HighPt
 observedN: 3
 expectedBG: 3.78
 bgError: 1.44
-upperLimit: 0.2873*fb
-expectedUpperLimit: 0.2871*fb
+upperLimit: 0.288013447034*fb
+expectedUpperLimit: 0.286876901574*fb

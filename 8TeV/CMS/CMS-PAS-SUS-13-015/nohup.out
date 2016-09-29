@@ -1,0 +1,25 @@
+[databaseCreation:0.0s] start
+
+*** starting creation of database entry for CMS-PAS-SUS-13-015*** 
+
+[databaseCreation:0.0s] cleaned up in /scratch/federico/SModelS_Hamburg/smodels-database/8TeV/CMS/CMS-PAS-SUS-13-015/ 
+[databaseCreation:0.0s] writing ./globalInfo.txt
+[databaseCreation:0.1s] creating validation folder /scratch/federico/SModelS_Hamburg/smodels-utils/smodels_utils/dataPreparation/databaseCreation.py
+[databaseCreation:0.1s] before going through txnames
+[databaseCreation:0.1s] reading T2tt
+[databaseCreation:0.1s] Reading mass plane: T2tt, 2*Eq(mother,x)_Eq(lsp,y) [MS-SUS-13-015_from_cMacro.root]
+[databaseCreation:0.1s] extended efficiencyMap to 0 entries 
+[databaseCreation:0.1s] extended efficiencyMap3D to 0 entries 
+[databaseCreation:3.6s] extended upperLimits to 337 entries >>> [[[200.0*GeV, 25.0*GeV], [200.0*GeV, 25.0*GeV]], 91.5087966919*pb] ... 
+[databaseCreation:3.6s] extended expectedUpperLimits to 0 entries 
+[databaseCreation:3.6s] Found region: onShell 1
+[databaseCreation:3.6s] Found region: offShell 1
+[databaseCreation:3.6s] extend exclusionLines for T2tt to 6 entries
+[databaseCreation:3.6s] extend exclusionLines for T2ttoff to 6 entries
+[databaseCreation:3.6s] Now checking mass plane <smodels_utils.dataPreparation.inputObjects.MassPlane object at 0x7fa51a00de10>
+[databaseCreation:3.6s] we have 2 kin regions
+[databaseCreation:3.9s] writing ./data/T2tt.txt
+[databaseCreation:3.9s] writing ./data/T2ttoff.txt
+[databaseCreation:3.9s] after going through txnames
+[databaseCreation:3.9s] writing ./data/dataInfo.txt
+[databaseCreation:3.9s] done

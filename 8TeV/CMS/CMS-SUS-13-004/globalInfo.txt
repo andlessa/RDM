@@ -8,5 +8,5 @@ publication: http://dx.doi.org/10.1103/PhysRevD.91.052018
 comment: Other topologies have a compressed mass spectrum (decays with intermediate charginos, <= 5 GeV mass difference)
 private: False
 implementedBy: Federico A
-lastUpdate: 2016/9/14
+lastUpdate: 2016/9/29
 

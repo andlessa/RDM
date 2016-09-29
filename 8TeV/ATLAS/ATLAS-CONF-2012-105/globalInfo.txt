@@ -3,6 +3,8 @@ lumi: 5.8/fb
 id: ATLAS-CONF-2012-105
 prettyName: ATLAS SS
 url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2012-105/
+supersededBy: ATLAS-SUSY-2013-09
 private: False
-implementedBy: Wolfgang Waltenberger
-lastUpdate: 2016/5/12
+implementedBy: Federico A
+lastUpdate: 2016/9/29
+

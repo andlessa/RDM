@@ -5,5 +5,6 @@ prettyName: ATLAS OS e/\mu
 url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-049/ https://cds.cern.ch/record/1547565
 supersededBy: ATLAS-SUSY-2013-11
 private: False
-implementedBy: Wolfgang Waltenberger
-lastUpdate: 2016/5/12
+implementedBy: Federico A
+lastUpdate: 2016/9/29
+

@@ -3,5 +3,5 @@ dataId: C2
 observedN: 71
 expectedBG: 75
 bgError: 11
-upperLimit: 1.255*fb
-expectedUpperLimit: 1.408*fb
+upperLimit: 1.26122240511*fb
+expectedUpperLimit: 1.40705348977*fb

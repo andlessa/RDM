@@ -2,7 +2,6 @@ txName: T5bbbb
 conditionDescription: None
 condition: None
 constraint: [[['b'],['b']],[['b'],['b']]]
-figureUrl: None
 validated: None
 axes: 2*Eq(mother,x)_Eq(inter0,y)_Eq(lsp,z)
 publishedData: False

@@ -3,5 +3,5 @@ dataId: mT2-120-DF
 observedN: 5
 expectedBG: 3.6
 bgError: 1.2
-upperLimit: 0.3799*fb
-expectedUpperLimit: 0.2724*fb
+upperLimit: 0.37640772969*fb
+expectedUpperLimit: 0.271630112624*fb

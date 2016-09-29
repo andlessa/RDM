@@ -4,7 +4,7 @@ condition: None
 constraint: [[['W+']],[['W-']]]
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-11/figaux_18.png
 dataUrl: http://hepdata.cedar.ac.uk/view/ins1286761/d62
-validated: False
+validated: None
 axes: 2*Eq(mother,x)_Eq(lsp,y)
 publishedData: True
 upperLimits: [[[[100.0*GeV, 0.0*GeV], [100.0*GeV, 0.0*GeV]], 4.6069*pb],

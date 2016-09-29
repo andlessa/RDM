@@ -9,5 +9,6 @@ contact: Edward Laird <edward.laird@cern.ch>, Rob Bainbridge <robert.bainbridge@
 supersedes: CMS-PAS-SUS-12-016
 comment: Only the expected upper limit exclusion line is present - no observed one
 private: False
-implementedBy: Federico A 
-lastUpdate: 2016/2/29
+implementedBy: Federico A
+lastUpdate: 2016/9/29
+

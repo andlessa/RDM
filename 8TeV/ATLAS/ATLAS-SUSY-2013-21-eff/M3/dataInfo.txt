@@ -3,5 +3,5 @@ dataId: M3
 observedN: 1776
 expectedBG: 1770
 bgError: 81
-upperLimit: 9.004*fb
-expectedUpperLimit: 8.817*fb
+upperLimit: 9.08648646193*fb
+expectedUpperLimit: 8.83293383624*fb

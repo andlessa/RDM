@@ -9,5 +9,6 @@ contact: ATLAS collaboration
 supersedes: ATLAS-CONF-2012-103
 comment: there are exclusion lines for T5WWLSP060 and TWZWZ050050 also. Erratum:JHEP01(2014)109
 private: False
-implementedBy: Wolfgang Waltenberger
-lastUpdate: 2015/5/6
+implementedBy: Federico A
+lastUpdate: 2016/9/29
+

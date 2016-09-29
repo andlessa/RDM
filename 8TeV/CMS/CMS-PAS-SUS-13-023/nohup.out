@@ -1,0 +1,59 @@
+[databaseCreation:0.0s] start
+
+*** starting creation of database entry for CMS-PAS-SUS-13-023*** 
+
+[databaseCreation:0.0s] cleaned up in /scratch/federico/SModelS_Hamburg/smodels-database/8TeV/CMS/CMS-PAS-SUS-13-023/ 
+[databaseCreation:0.0s] writing ./globalInfo.txt
+[databaseCreation:0.1s] creating validation folder /scratch/federico/SModelS_Hamburg/smodels-utils/smodels_utils/dataPreparation/databaseCreation.py
+[databaseCreation:0.1s] before going through txnames
+[databaseCreation:0.1s] reading T2tt
+[databaseCreation:0.1s] Reading mass plane: T2tt, 2*Eq(mother,x)_Eq(lsp,y) [orig/T2tt_Obs.txt]
+[databaseCreation:0.1s] extended efficiencyMap to 0 entries 
+[databaseCreation:0.1s] extended efficiencyMap3D to 0 entries 
+[databaseCreation:5.2s] extended upperLimits to 481 entries >>> [[[200.0*GeV, 0.0*GeV], [200.0*GeV, 0.0*GeV]], 32.0446014404*pb] ... 
+[databaseCreation:5.2s] extended expectedUpperLimits to 0 entries 
+[databaseCreation:5.2s] Found region: onShell 1
+[databaseCreation:5.2s] Found region: offShell 1
+[databaseCreation:5.2s] extend exclusionLines for T2tt to 3 entries
+[databaseCreation:5.2s] extend exclusionLines for T2ttoff to 3 entries
+[databaseCreation:5.2s] Now checking mass plane <smodels_utils.dataPreparation.inputObjects.MassPlane object at 0x7f23325a4f90>
+[databaseCreation:5.2s] we have 2 kin regions
+[databaseCreation:5.6s] writing ./data/T2tt.txt
+[databaseCreation:5.6s] writing ./data/T2ttoff.txt
+[databaseCreation:5.6s] reading T6bbWW
+[databaseCreation:5.6s] Reading mass plane: T6bbWW, 2*Eq(mother,x)_Eq(inter0,0.75*x+0.25*y)_Eq(lsp,y) [orig/T2bbWW_x025_Obs.txt]
+[databaseCreation:5.6s] extended efficiencyMap to 0 entries 
+[databaseCreation:5.6s] extended efficiencyMap3D to 0 entries 
+[databaseCreation:36.1s] extended upperLimits to 346 entries >>> [[[200.0*GeV, 150.0*GeV, 0.0*GeV], [200.0*GeV, 150.0*GeV, 0.0*GeV]], 23.8180370331*pb] ... 
+[databaseCreation:36.1s] extended expectedUpperLimits to 0 entries 
+[databaseCreation:36.1s] Found region: onShell 1
+[databaseCreation:36.1s] Found region: offShell 1
+[databaseCreation:36.1s] extend exclusionLines for T6bbWW to 1 entries
+[databaseCreation:36.1s] extend exclusionLines for T6bbWWoff to 1 entries
+[databaseCreation:36.1s] Now checking mass plane <smodels_utils.dataPreparation.inputObjects.MassPlane object at 0x7f23325454d0>
+[databaseCreation:36.1s] Reading mass plane: T6bbWW, 2*Eq(mother,x)_Eq(inter0,0.25*x+0.75*y)_Eq(lsp,y) [orig/T2bbWW_x075_Obs.txt]
+[databaseCreation:36.1s] extended efficiencyMap to 0 entries 
+[databaseCreation:36.1s] extended efficiencyMap3D to 0 entries 
+[databaseCreation:67.0s] extended upperLimits to 686 entries >>> [[[200.0*GeV, 150.0*GeV, 0.0*GeV], [200.0*GeV, 150.0*GeV, 0.0*GeV]], 23.8180370331*pb] ... 
+[databaseCreation:67.0s] extended expectedUpperLimits to 0 entries 
+[databaseCreation:67.0s] Found region: onShell 1
+[databaseCreation:67.0s] Found region: offShell 1
+[databaseCreation:67.0s] extend exclusionLines for T6bbWW to 2 entries
+[databaseCreation:67.0s] extend exclusionLines for T6bbWWoff to 2 entries
+[databaseCreation:67.0s] Now checking mass plane <smodels_utils.dataPreparation.inputObjects.MassPlane object at 0x7f2332545b90>
+[databaseCreation:67.0s] Reading mass plane: T6bbWW, 2*Eq(mother,x)_Eq(inter0,0.5*x+0.5*y)_Eq(lsp,y) [orig/T2bbWW_x050_Obs.txt]
+[databaseCreation:67.0s] extended efficiencyMap to 0 entries 
+[databaseCreation:67.0s] extended efficiencyMap3D to 0 entries 
+[databaseCreation:93.3s] extended upperLimits to 1031 entries >>> [[[200.0*GeV, 150.0*GeV, 0.0*GeV], [200.0*GeV, 150.0*GeV, 0.0*GeV]], 23.8180370331*pb] ... 
+[databaseCreation:93.3s] extended expectedUpperLimits to 0 entries 
+[databaseCreation:93.3s] Found region: onShell 1
+[databaseCreation:93.3s] Found region: offShell 1
+[databaseCreation:93.3s] extend exclusionLines for T6bbWW to 3 entries
+[databaseCreation:93.3s] extend exclusionLines for T6bbWWoff to 3 entries
+[databaseCreation:93.3s] Now checking mass plane <smodels_utils.dataPreparation.inputObjects.MassPlane object at 0x7f2332559150>
+[databaseCreation:93.3s] we have 2 kin regions
+[databaseCreation:94.5s] writing ./data/T6bbWW.txt
+[databaseCreation:94.8s] writing ./data/T6bbWWoff.txt
+[databaseCreation:94.8s] after going through txnames
+[databaseCreation:94.8s] writing ./data/dataInfo.txt
+[databaseCreation:94.8s] done

@@ -5,5 +5,6 @@ prettyName: ATLAS hadronic stau
 url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-028/
 supersededBy: ATLAS-SUSY-2013-14
 private: False
-implementedBy: Wolfgang Waltenberger
-lastUpdate: 2016/5/12
+implementedBy: Federico A
+lastUpdate: 2016/9/29
+

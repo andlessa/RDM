@@ -3,5 +3,5 @@ dataId: mu350Nb2
 observedN: 2
 expectedBG: 1.4
 bgError: 1.17
-upperLimit: 0.2749*fb
-expectedUpperLimit: 0.2182*fb
+upperLimit: 0.276087980136*fb
+expectedUpperLimit: 0.212832385033*fb

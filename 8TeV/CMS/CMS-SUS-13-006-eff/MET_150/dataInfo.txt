@@ -3,5 +3,5 @@ dataId: MET_150
 observedN: 3
 expectedBG: 3.8
 bgError: 1.0
-upperLimit: 0.2694*fb
-expectedUpperLimit: 0.2715*fb
+upperLimit: 0.275198212105*fb
+expectedUpperLimit: 0.269808156651*fb

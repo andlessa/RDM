@@ -9,5 +9,6 @@ contact: ?
 supersedes: ATLAS-CONF-2013-049
 comment: TChiWW being investigated
 private: False
-implementedBy: Wolfgang Waltenberger
-lastUpdate: 2015/5/6
+implementedBy: Federico A
+lastUpdate: 2016/9/29
+

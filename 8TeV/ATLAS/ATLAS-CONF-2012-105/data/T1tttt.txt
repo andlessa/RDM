@@ -4,7 +4,7 @@ condition: None
 constraint: [[['t+','t-']],[['t+','t-']]]
 checked: AL
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2012-105/fig_03.png
-validated: True
+validated: None
 axes: 2*Eq(mother,x)_Eq(lsp,y)
 publishedData: False
 upperLimits: [[[[450.0*GeV, 0.0*GeV], [450.0*GeV, 0.0*GeV]], 0.302*pb],

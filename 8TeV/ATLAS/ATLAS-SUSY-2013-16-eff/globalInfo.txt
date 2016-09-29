@@ -6,5 +6,6 @@ arxiv: http://arxiv.org/abs/1406.1122
 publication: http://link.springer.com/article/10.1007%2FJHEP09%282014%29015
 comment: EM given for All SRs for one topo, only for 3 for the other. Only these 3 are implemented.
 private: False
-implementedBy: Federico Ambrogi 
-lastUpdate: 2015/9/11
+implementedBy: Federico A
+lastUpdate: 2016/9/29
+

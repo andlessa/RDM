@@ -1,0 +1,99 @@
+[databaseCreation:0.0s] start
+
+*** starting creation of database entry for CMS-PAS-SUS-13-015*** 
+
+[databaseCreation:0.0s] cleaned up in /scratch/federico/SModelS_Hamburg/smodels-database/8TeV/CMS/CMS-PAS-SUS-13-015-eff/ 
+[databaseCreation:0.0s] writing ./globalInfo.txt
+[databaseCreation:0.0s] creating validation folder /scratch/federico/SModelS_Hamburg/smodels-utils/smodels_utils/dataPreparation/databaseCreation.py
+[databaseCreation:0.0s] before going through txnames
+[databaseCreation:0.0s] reading T2tt
+[databaseCreation:0.0s] computing upper limit for 254/254.3/35.0
+[databaseCreation:8.0s] done computing upper limit.
+[databaseCreation:8.0s] Reading mass plane: T2tt, 2*Eq(mother,x)_Eq(lsp,y) [MS-SUS-13-015_from_cMacro.root]
+[databaseCreation:11.4s] extended efficiencyMap to 322 entries >>> [[[200.0*GeV, 25.0*GeV], [200.0*GeV, 25.0*GeV]], 4.451988e-05] ... 
+[databaseCreation:14.5s] extended efficiencyMap3D to 322 entries >>> [[[200.0*GeV, 25.0*GeV], [200.0*GeV, 25.0*GeV]], 4.451988e-05] ... 
+[databaseCreation:14.5s] extended upperLimits to 0 entries 
+[databaseCreation:14.5s] extended expectedUpperLimits to 0 entries 
+[databaseCreation:14.5s] Found region: onShell 1
+[databaseCreation:14.5s] Found region: offShell 1
+[databaseCreation:14.5s] extend exclusionLines for T2tt to 6 entries
+[databaseCreation:14.5s] extend exclusionLines for T2ttoff to 6 entries
+[databaseCreation:14.5s] Now checking mass plane <smodels_utils.dataPreparation.inputObjects.MassPlane object at 0x7f70f61c6f10>
+[databaseCreation:14.5s] we have 2 kin regions
+[databaseCreation:14.8s] writing pTmiss200_Nb1/T2tt.txt
+[databaseCreation:14.8s] writing pTmiss200_Nb1/T2ttoff.txt
+[databaseCreation:14.8s] after going through txnames
+[databaseCreation:14.8s] writing pTmiss200_Nb1/dataInfo.txt
+[databaseCreation:14.8s] done
+[databaseCreation:14.8s] start
+
+*** starting creation of database entry for CMS-PAS-SUS-13-015*** 
+
+[databaseCreation:14.8s] before going through txnames
+[databaseCreation:14.8s] reading T2tt
+[databaseCreation:14.8s] computing upper limit for 45/40.9/9.6
+[databaseCreation:20.7s] done computing upper limit.
+[databaseCreation:20.7s] Reading mass plane: T2tt, 2*Eq(mother,x)_Eq(lsp,y) [MS-SUS-13-015_from_cMacro.root]
+[databaseCreation:23.8s] extended efficiencyMap to 322 entries >>> [[[200.0*GeV, 25.0*GeV], [200.0*GeV, 25.0*GeV]], 1.089485e-05] ... 
+[databaseCreation:26.8s] extended efficiencyMap3D to 322 entries >>> [[[200.0*GeV, 25.0*GeV], [200.0*GeV, 25.0*GeV]], 1.089485e-05] ... 
+[databaseCreation:26.8s] extended upperLimits to 0 entries 
+[databaseCreation:26.8s] extended expectedUpperLimits to 0 entries 
+[databaseCreation:26.9s] Found region: onShell 1
+[databaseCreation:26.9s] Found region: offShell 1
+[databaseCreation:26.9s] extend exclusionLines for T2tt to 6 entries
+[databaseCreation:26.9s] extend exclusionLines for T2ttoff to 6 entries
+[databaseCreation:26.9s] Now checking mass plane <smodels_utils.dataPreparation.inputObjects.MassPlane object at 0x7f70f61c6f10>
+[databaseCreation:26.9s] we have 2 kin regions
+[databaseCreation:27.1s] writing pTmiss350_Nb1/T2tt.txt
+[databaseCreation:27.1s] writing pTmiss350_Nb1/T2ttoff.txt
+[databaseCreation:27.1s] after going through txnames
+[databaseCreation:27.1s] writing pTmiss350_Nb1/dataInfo.txt
+[databaseCreation:27.1s] done
+[databaseCreation:27.1s] start
+
+*** starting creation of database entry for CMS-PAS-SUS-13-015*** 
+
+[databaseCreation:27.1s] before going through txnames
+[databaseCreation:27.1s] reading T2tt
+[databaseCreation:27.1s] computing upper limit for 83/88.4/19.8
+[databaseCreation:32.4s] done computing upper limit.
+[databaseCreation:32.4s] Reading mass plane: T2tt, 2*Eq(mother,x)_Eq(lsp,y) [MS-SUS-13-015_from_cMacro.root]
+[databaseCreation:35.5s] extended efficiencyMap to 322 entries >>> [[[200.0*GeV, 25.0*GeV], [200.0*GeV, 25.0*GeV]], 1.139339e-05] ... 
+[databaseCreation:38.5s] extended efficiencyMap3D to 322 entries >>> [[[200.0*GeV, 25.0*GeV], [200.0*GeV, 25.0*GeV]], 1.139339e-05] ... 
+[databaseCreation:38.5s] extended upperLimits to 0 entries 
+[databaseCreation:38.5s] extended expectedUpperLimits to 0 entries 
+[databaseCreation:38.6s] Found region: onShell 1
+[databaseCreation:38.6s] Found region: offShell 1
+[databaseCreation:38.6s] extend exclusionLines for T2tt to 6 entries
+[databaseCreation:38.6s] extend exclusionLines for T2ttoff to 6 entries
+[databaseCreation:38.6s] Now checking mass plane <smodels_utils.dataPreparation.inputObjects.MassPlane object at 0x7f70f61c6f10>
+[databaseCreation:38.6s] we have 2 kin regions
+[databaseCreation:38.8s] writing pTmiss200_Nb2/T2tt.txt
+[databaseCreation:38.8s] writing pTmiss200_Nb2/T2ttoff.txt
+[databaseCreation:38.8s] after going through txnames
+[databaseCreation:38.8s] writing pTmiss200_Nb2/dataInfo.txt
+[databaseCreation:38.8s] done
+[databaseCreation:38.8s] start
+
+*** starting creation of database entry for CMS-PAS-SUS-13-015*** 
+
+[databaseCreation:38.8s] before going through txnames
+[databaseCreation:38.8s] reading T2tt
+[databaseCreation:38.8s] computing upper limit for 15/8.6/7.1
+[databaseCreation:45.1s] done computing upper limit.
+[databaseCreation:45.1s] Reading mass plane: T2tt, 2*Eq(mother,x)_Eq(lsp,y) [MS-SUS-13-015_from_cMacro.root]
+[databaseCreation:48.2s] extended efficiencyMap to 322 entries >>> [[[200.0*GeV, 25.0*GeV], [200.0*GeV, 25.0*GeV]], 1e-05] ... 
+[databaseCreation:51.3s] extended efficiencyMap3D to 322 entries >>> [[[200.0*GeV, 25.0*GeV], [200.0*GeV, 25.0*GeV]], 1e-05] ... 
+[databaseCreation:51.3s] extended upperLimits to 0 entries 
+[databaseCreation:51.3s] extended expectedUpperLimits to 0 entries 
+[databaseCreation:51.3s] Found region: onShell 1
+[databaseCreation:51.3s] Found region: offShell 1
+[databaseCreation:51.3s] extend exclusionLines for T2tt to 6 entries
+[databaseCreation:51.3s] extend exclusionLines for T2ttoff to 6 entries
+[databaseCreation:51.3s] Now checking mass plane <smodels_utils.dataPreparation.inputObjects.MassPlane object at 0x7f70f61c6f10>
+[databaseCreation:51.3s] we have 2 kin regions
+[databaseCreation:51.5s] writing pTmiss350_Nb2/T2tt.txt
+[databaseCreation:51.6s] writing pTmiss350_Nb2/T2ttoff.txt
+[databaseCreation:51.6s] after going through txnames
+[databaseCreation:51.6s] writing pTmiss350_Nb2/dataInfo.txt
+[databaseCreation:51.6s] done
