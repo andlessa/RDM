@@ -12,6 +12,8 @@ import os
 import argparse
 import types
 
+sys.path.append('/home/lessa/smodels')
+
 argparser = argparse.ArgumentParser(description = \
 'create info.txt, txname.txt, twiki.txt and sms.py')
 argparser.add_argument ('-utilsPath', '--utilsPath', \
@@ -51,11 +53,11 @@ TChiWZ = TxNameInput('TChiWZ')
 TChiWZ.on.checked ="VM"
 TChiWZ.off.checked ="VM"
 TChiWZ.on.constraint ="[[['W']],[['Z']]]"
-TChiWZ.off.constraint ="30.3*([[['L','nu']],[['e+','e-']]]+[[['L','nu']],[['mu+','mu-']]]+[[['L','nu']],[['tau+','tau-']]]"
+TChiWZ.off.constraint ="30.3*([[['L','nu']],[['e+','e-']]]+[[['L','nu']],[['mu+','mu-']]]+[[['L','nu']],[['ta+','ta-']]])"
 TChiWZ.on.conditionDescription ="None"
-TChiWZ.off.conditionDescription ="[[['mu','nu']],[['e+','e-']]]>[[['e','nu']],[['e+','e-']]],[[['e','nu']],[['e+','e-']]]>[[['tau','nu']],[['e+','e-']]],[[['mu','nu']],[['mu+','mu-']]]>[[['e','nu']],[['mu+','mu-']]],[[['e','nu']],[['mu+','mu-']]]>[[['tau','nu']],[['mu+','mu-']]],[[['mu','nu']],[['tau+','tau-']]]>[[['e','nu']],[['tau+','tau-']]],[[['e','nu']],[['tau+','tau-']]]>[[['tau','nu']],[['tau+','tau-']]],[[['L','nu']],[['mu+','mu-']]]>[[['L','nu']],[['e+','e-']]],[[['L','nu']],[['e+','e-']]]>[[['L','nu']],[['tau+','tau-']]]"
+TChiWZ.off.conditionDescription ="[[['mu','nu']],[['e+','e-']]]>[[['e','nu']],[['e+','e-']]],[[['e','nu']],[['e+','e-']]]>[[['ta','nu']],[['e+','e-']]],[[['mu','nu']],[['mu+','mu-']]]>[[['e','nu']],[['mu+','mu-']]],[[['e','nu']],[['mu+','mu-']]]>[[['ta','nu']],[['mu+','mu-']]],[[['mu','nu']],[['ta+','ta-']]]>[[['e','nu']],[['ta+','ta-']]],[[['e','nu']],[['ta+','ta-']]]>[[['ta','nu']],[['ta+','ta-']]],[[['L','nu']],[['mu+','mu-']]]>[[['L','nu']],[['e+','e-']]],[[['L','nu']],[['e+','e-']]]>[[['L','nu']],[['ta+','ta-']]]"
 TChiWZ.on.condition ="None"
-TChiWZ.off.condition ="Cgtr([[['mu','nu']],[['e+','e-']]],[[['e','nu']],[['e+','e-']]]),Cgtr([[['e','nu']],[['e+','e-']]],[[['tau','nu']],[['e+','e-']]]),Cgtr([[['mu','nu']],[['mu+','mu-']]],[[['e','nu']],[['mu+','mu-']]]),Cgtr([[['e','nu']],[['mu+','mu-']]],[[['tau','nu']],[['mu+','mu-']]]),Cgtr([[['mu','nu']],[['tau+','tau-']]],[[['e','nu']],[['tau+','tau-']]]),Cgtr([[['e','nu']],[['tau+','tau-']]],[[['tau','nu']],[['tau+','tau-']]]),Cgtr([[['L','nu']],[['mu+','mu-']]],[[['L','nu']],[['e+','e-']]]),Cgtr([[['L','nu']],[['e+','e-']]],[[['L','nu']],[['tau+','tau-']]])"
+TChiWZ.off.condition ="Cgtr([[['mu','nu']],[['e+','e-']]],[[['e','nu']],[['e+','e-']]]);Cgtr([[['e','nu']],[['e+','e-']]],[[['ta','nu']],[['e+','e-']]]);Cgtr([[['mu','nu']],[['mu+','mu-']]],[[['e','nu']],[['mu+','mu-']]]);Cgtr([[['e','nu']],[['mu+','mu-']]],[[['ta','nu']],[['mu+','mu-']]]);Cgtr([[['mu','nu']],[['ta+','ta-']]],[[['e','nu']],[['ta+','ta-']]]);Cgtr([[['e','nu']],[['ta+','ta-']]],[[['ta','nu']],[['ta+','ta-']]]);Cgtr([[['L','nu']],[['mu+','mu-']]],[[['L','nu']],[['e+','e-']]]);Cgtr([[['L','nu']],[['e+','e-']]],[[['L','nu']],[['ta+','ta-']]])"
 
 #+++++++ next mass plane block ++++++++++++++
 TChiWZ = TChiWZ.addMassPlane(motherMass = x, lspMass = y)
