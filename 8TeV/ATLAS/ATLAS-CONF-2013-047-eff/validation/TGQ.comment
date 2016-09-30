@@ -1,6 +1,0 @@
-comment_by: AL
-date: Fri 05 Aug 2016 12:40:03 PM BRT 
-comment: "The Fastlim grid assumes msquark = mgluino. Hence, for msq=0.96*mg, all points extrapolate
-the grid. If we require the default 5% agreement in the extrapolation, all points above mLSP = 400 GeV
-get None efficiencies. Relaxing this agreement requirement to 25%, the official exclusion curve can be
-well reproduced."

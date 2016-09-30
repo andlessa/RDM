@@ -1,8 +1,0 @@
-comment_by: AL
-date: 2015/3/23
-comment: "The data grid has a very large value at (500,100),\
-which results in large UL around mgluino ~500 GeV. Consequently,\
-there is a region of allowed points due to the interpolation for\
-low values of the LSP mass and mgluino ~500 GeV.\
-A similar thing happens on the upper left corner of the exclusion curve.\
-Except for that the results seem consistent."
