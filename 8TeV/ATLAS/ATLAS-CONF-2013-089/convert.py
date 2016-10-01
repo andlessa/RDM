@@ -15,6 +15,10 @@ argparser = argparse.ArgumentParser(description =
 argparser.add_argument ('-utilsPath', '--utilsPath', 
 help = 'path to the package smodels_utils',\
 type = types.StringType)
+argparser.add_argument ('-smodelsPath', '--smodelsPath', 
+help = 'path to the package smodels_utils',\
+type = types.StringType)
+
 args = argparser.parse_args()
 
 if args.utilsPath:
@@ -24,6 +28,8 @@ else:
     sys.path.append(os.path.abspath(databaseRoot))
     from utilsPath import utilsPath
     utilsPath = databaseRoot + utilsPath
+if args.smodelsPath:
+    sys.path.append(os.path.abspath(args.smodelsPath))
 
 sys.path.append(os.path.abspath(utilsPath))
 from smodels_utils.dataPreparation.inputObjects import TxNameInput, MetaInfoInput
@@ -124,9 +130,9 @@ T5WW.on.checked ="VM"
 T5WW.on.constraint ="[[['jet','jet'],['W']],[['jet','jet'],['W']]]"
 T5WW.off.constraint ="20.2*[[['jet','jet'],['l','nu']],[['jet','jet'],['l','nu']]]"
 T5WW.on.conditionDescription ="None"
-T5WW.off.conditionDescription = "[[['jet','jet'],['l','nu']],[['jet','jet'],['l','nu']]] > 2 * [[['jet','jet'],['e','nu']],[['jet','jet'],['l','nu']]]"
+T5WW.off.conditionDescription = "[[['jet','jet'],['mu','nu']],[['jet','jet'],['mu','nu']]] > [[['jet','jet'],['e','nu']],[['jet','jet'],['e','nu']]], [[['jet','jet'],['e','nu']],[['jet','jet'],['mu','nu']]] > 2.* [[['jet','jet'],['e','nu']],[['jet','jet'],['e','nu']]]"
 T5WW.on.condition ="None"
-T5WW.off.condition = "Cgtr([[['jet','jet'],['l','nu']],[['jet','jet'],['l','nu']]],2*[[['jet','jet'], ['e','nu']],[['jet','jet'],['l','nu']]])"
+T5WW.off.condition = "Cgtr([[['jet','jet'],['mu','nu']],[['jet','jet'],['mu','nu']]],[[['jet','jet'], ['e','nu']],[['jet','jet'],['e','nu']]]);Cgtr([[['jet','jet'],['e','nu']],[['jet','jet'],['mu','nu']]],2.*[[['jet','jet'], ['e','nu']],[['jet','jet'],['e','nu']]])"
 
 #+++++++ next mass plane block ++++++++++++++
 T5WWLSP060 = T5WW.addMassPlane(motherMass = x, interMass0 = y, lspMass = 60.0)

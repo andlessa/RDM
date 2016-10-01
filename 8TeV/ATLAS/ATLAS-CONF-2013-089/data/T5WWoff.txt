@@ -1,6 +1,6 @@
 txName: T5WWoff
-conditionDescription: [[['jet','jet'],['l','nu']],[['jet','jet'],['l','nu']]] > 2 * [[['jet','jet'],['e','nu']],[['jet','jet'],['l','nu']]]
-condition: Cgtr([[['jet','jet'],['l','nu']],[['jet','jet'],['l','nu']]],2*[[['jet','jet'], ['e','nu']],[['jet','jet'],['l','nu']]])
+conditionDescription: [[['jet','jet'],['mu','nu']],[['jet','jet'],['mu','nu']]] > [[['jet','jet'],['e','nu']],[['jet','jet'],['e','nu']]], [[['jet','jet'],['e','nu']],[['jet','jet'],['mu','nu']]] > 2.* [[['jet','jet'],['e','nu']],[['jet','jet'],['e','nu']]]
+condition: Cgtr([[['jet','jet'],['mu','nu']],[['jet','jet'],['mu','nu']]],[[['jet','jet'], ['e','nu']],[['jet','jet'],['e','nu']]]);Cgtr([[['jet','jet'],['e','nu']],[['jet','jet'],['mu','nu']]],2.*[[['jet','jet'], ['e','nu']],[['jet','jet'],['e','nu']]])
 constraint: 20.2*[[['jet','jet'],['l','nu']],[['jet','jet'],['l','nu']]]
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-089/fig_22b.png;https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-089/fig_22a.png
 dataUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-089/fig_22b_PRELIMINARY.data;https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-089/fig_22a_PRELIMINARY.data
