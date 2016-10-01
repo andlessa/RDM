@@ -15,6 +15,10 @@ argparser = argparse.ArgumentParser(description =
 argparser.add_argument ('-utilsPath', '--utilsPath', 
 help = 'path to the package smodels_utils',\
 type = types.StringType)
+argparser.add_argument ('-smodelsPath', '--smodelsPath', 
+help = 'path to the package smodels_utils',\
+type = types.StringType)
+
 args = argparser.parse_args()
 
 if args.utilsPath:
@@ -24,6 +28,8 @@ else:
     sys.path.append(os.path.abspath(databaseRoot))
     from utilsPath import utilsPath
     utilsPath = databaseRoot + utilsPath
+if args.smodelsPath:
+    sys.path.append(os.path.abspath(args.smodelsPath))
 
 sys.path.append(os.path.abspath(utilsPath))
 from smodels_utils.dataPreparation.inputObjects import TxNameInput, MetaInfoInput
@@ -310,30 +316,9 @@ TChiChipmSlepL005.obsUpperLimit.setSource( "orig/exclusion_TChiSlepSnu_2i_0_05.r
 # TChiChipmSlepL005.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
 #----exclusion source----
 TChiChipmSlepL005.obsExclusion.setSource( "orig/exclusion_TChiSlepSnu_2i_0_05.root", "canvas", objectName = "interpret", index = 8 )
-"""
-TChiChipmSlepL005.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
-TChiChipmSlepL005.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
-TChiChipmSlepL005.expExclusion.setSource( path, filetype, objectName = None, index = None )
-TChiChipmSlepL005.expExclusionM1.setSource( path, filetype, objectName = None, index = None )
-TChiChipmSlepL005.expExclusionP1.setSource( path, filetype, objectName = None, index = None )
-#----global url settings ----
-TChiChipmSlepL005.dataUrl =
-TChiChipmSlepL005.histoDataUrl =
-TChiChipmSlepL005.exclusionDataUrl =
 #----figure----
-TChiChipmSlepL005.figure =
-TChiChipmSlepL005.figureUrl =
-#----limit url settings ----
-TChiChipmSlepL005.obsUpperLimit.dataUrl =
-TChiChipmSlepL005.expUpperLimit.dataUrl =
-#----exclusion url settings ----
-TChiChipmSlepL005.obsExclusion.dataUrl =
-TChiChipmSlepL005.obsExclusionM1.dataUrl =
-TChiChipmSlepL005.obsExclusionP1.dataUrl =
-TChiChipmSlepL005.expExclusion.dataUrl =
-TChiChipmSlepL005.expExclusionM1.dataUrl =
-TChiChipmSlepL005.expExclusionP1.dataUrl =
-"""
+TChiChipmSlepL005.figure = "Fig. 15a" 
+TChiChipmSlepL005.figureUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12022/exclusion_TChiSlepSnu_2i_0_05.pdf"
 
 #+++++++ next mass plane block ++++++++++++++
 TChiChipmSlepL095 = TChiChipmSlepL.addMassPlane(motherMass = x, interMass0 = x*0.95 + (1. - 0.95)*y, lspMass = y)

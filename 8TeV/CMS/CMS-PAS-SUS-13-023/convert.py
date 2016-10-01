@@ -10,11 +10,15 @@ import os
 import argparse
 import types
 
-argparser = argparse.ArgumentParser(description = \
+argparser = argparse.ArgumentParser(description =  
 'create info.txt, txname.txt, twiki.txt and sms.py')
 argparser.add_argument ('-utilsPath', '--utilsPath', 
 help = 'path to the package smodels_utils',\
 type = types.StringType)
+argparser.add_argument ('-smodelsPath', '--smodelsPath', 
+help = 'path to the package smodels_utils',\
+type = types.StringType)
+
 args = argparser.parse_args()
 
 if args.utilsPath:
@@ -24,6 +28,8 @@ else:
     sys.path.append(os.path.abspath(databaseRoot))
     from utilsPath import utilsPath
     utilsPath = databaseRoot + utilsPath
+if args.smodelsPath:
+    sys.path.append(os.path.abspath(args.smodelsPath))
 
 sys.path.append(os.path.abspath(utilsPath))
 from smodels_utils.dataPreparation.inputObjects import TxNameInput, MetaInfoInput
@@ -167,7 +173,7 @@ T6bbWW_3 = T6bbWW.addMassPlane(motherMass = x , interMass0 = (0.5*x + 0.5*y)  , 
 #T6bbWW_3.setBranch_2(motherMass = , interMass0 = , lspMass = )
 #----figure----
 T6bbWW_3.figure = 'Figure 13'
-T6bbWW_3.figureUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13023//T2bw_0p75_observed_xsection_UL.pdf'
+T6bbWW_3.figureUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13023//T2bw_0p50_observed_xsection_UL.pdf'
 #----limit source----
 T6bbWW_3.obsUpperLimit.setSource('orig/T2bw_0p50_observed_xsection_UL.root', 'canvas', objectName = 'T2bw_0p50_observed_xsection_UL', index = 2  )
 #T6bbWW_3.expUpperLimit.setSource( path, type, objectName = None, index = None )

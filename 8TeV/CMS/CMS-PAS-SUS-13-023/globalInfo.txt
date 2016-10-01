@@ -5,6 +5,6 @@ prettyName: Fully hadronic Stop
 url: https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS13023
 comment: PAS:http://inspirehep.net/record/1387812/files/SUS-13-023-pas.pdf
 private: False
-implementedBy: Federico A
-lastUpdate: 2016/9/29
+implementedBy: Andre Lessa
+lastUpdate: 2016/10/1
 
