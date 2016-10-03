@@ -3,5 +3,5 @@ dataId: el350Nb3
 observedN: 0
 expectedBG: 0.9
 bgError: 0.8
-upperLimit: 0.159*fb
-expectedUpperLimit: 0.1548*fb
+upperLimit: 0.154687571833*fb
+expectedUpperLimit: 0.155155563326*fb

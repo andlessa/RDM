@@ -3,5 +3,5 @@ dataId: el450Nb2
 observedN: 0
 expectedBG: 0
 bgError: 0.44
-upperLimit: 0.1552*fb
-expectedUpperLimit: 0.1552*fb
+upperLimit: 0.15496927535*fb
+expectedUpperLimit: 0.15496927535*fb
