@@ -15,6 +15,9 @@ argparser = argparse.ArgumentParser(description =
 argparser.add_argument ('-utilsPath', '--utilsPath', 
 help = 'path to the package smodels_utils',\
 type = types.StringType)
+argparser.add_argument ('-smodelsPath', '--smodelsPath', 
+help = 'path to the package smodels_utils',\
+type = types.StringType)
 args = argparser.parse_args()
 
 if args.utilsPath:
@@ -24,6 +27,8 @@ else:
     sys.path.append(os.path.abspath(databaseRoot))
     from utilsPath import utilsPath
     utilsPath = databaseRoot + utilsPath
+if args.smodelsPath:
+    sys.path.append(os.path.abspath(args.smodelsPath))
 
 sys.path.append(os.path.abspath(utilsPath))
 from smodels_utils.dataPreparation.inputObjects import TxNameInput, MetaInfoInput
@@ -99,7 +104,7 @@ T6bbWW.off.constraint ="22*([[['b'],['l+','nu']],[['b'],['l-','nu']]])"
 T6bbWW.on.conditionDescription ="None"
 T6bbWW.off.conditionDescription="[[['b'],['l+','nu']],[['b'],['l-','nu']]] > 2*[[['b'],['e+','nu']],[['b'],['e-','nu']]]"
 T6bbWW.on.condition ="None"
-T6bbWW.off.condition="Cgtr([[['b'],['l+','nu']],[['b'],['l-','nu']]],2*[[['b'],['e+','nu']],[['b'],['e-','nu']]]"
+T6bbWW.off.condition="Cgtr([[['b'],['l+','nu']],[['b'],['l-','nu']]],2*[[['b'],['e+','nu']],[['b'],['e-','nu']]])"
 
 
 #+++++++ next mass plane block ++++++++++++++
