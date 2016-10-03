@@ -32,7 +32,7 @@ from smodels_utils.dataPreparation.origPlotObjects import x, y
 
 #+++++++ global info block ++++++++++++++
 info = MetaInfoInput('ATLAS-SUSY-2013-15')
-info.comment = 'so far no data available -> no axes entry'
+#info.comment = ''
 info.sqrts = '8.0'
 info.private = False
 info.lumi = '20.3'
