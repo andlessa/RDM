@@ -8,6 +8,6 @@ publication: http://www.sciencedirect.com/science/article/pii/S037026931400255X
 contact: Loukas Gouskos <loukas.gouskos@cern.ch>, Markus Stoye <Markus.Stoye@cern.ch>
 comment: Only two mass planes for T5tttt; implemented Delta Phi method
 private: False
-implementedBy: Federico A
-lastUpdate: 2016/9/29
+implementedBy: Andre Lessa
+lastUpdate: 2016/10/11
 

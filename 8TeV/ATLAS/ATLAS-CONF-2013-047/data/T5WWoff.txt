@@ -4,8 +4,8 @@ condition: None
 constraint: 2.23 * [[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-047/fig_21a.png;https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-047/fig_21b.png
 dataUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-047/fig_21b_PRELIMINARY.data;https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-047/fig_21a_PRELIMINARY.data
-validated: None
-axes: 2*Eq(mother,x)_Eq(inter0,y)_Eq(lsp,60.0);2*Eq(mother,x)_Eq(inter0,0.5*x+0.5*y)_Eq(lsp,y)
+validated: True
+axes: 2*Eq(mother,x)_Eq(inter0,y)_Eq(lsp,60.);2*Eq(mother,x)_Eq(inter0,0.5*x+0.5*y)_Eq(lsp,y)
 publishedData: True
 upperLimits: [[[[700.0*GeV, 110.0*GeV, 60.0*GeV], [700.0*GeV, 110.0*GeV, 60.0*GeV]], 0.13811*pb],
 [[[900.0*GeV, 70.0*GeV, 60.0*GeV], [900.0*GeV, 70.0*GeV, 60.0*GeV]], 0.020883*pb],

@@ -2,10 +2,9 @@ txName: T6ttWWoff
 conditionDescription: [[['t'],['L','nu']],[['t'],['jet','jet']]] > 2.7* [[['t'],['ta','nu']],[['t'],['jet','jet']]],[[['t'],['L','nu']],[['t'],['jet','jet']]] > 2.7* [[['t'],['e','nu']],[['t'],['jet','jet']]]
 condition: Cgtr([[['t'],['L','nu']],[['t'],['jet','jet']]],3.*[[['t'],['ta','nu']],[['t'],['jet','jet']]]);Cgtr([[['t'],['L','nu']],[['t'],['jet','jet']]],3.*[[['t'],['e','nu']],[['t'],['jet','jet']]])
 constraint: 2.3*([[['t'],['L','nu']],[['t'],['jet','jet']]])
-figureUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13013/Figure6_B1a.pdf
-dataUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13013/ModelB1.root;https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS13013;https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13013/ModelB1_x0p5.root;https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13013/ModelB1_x0p8.root
+dataUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13013/ModelB1_x0p5.root;https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS13013;https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13013/ModelB1_x0p8.root
 validated: None
-axes: 2*Eq(mother,x)_Eq(inter0,y)_Eq(lsp,50);2*Eq(mother,x)_Eq(inter0,2.0*y)_Eq(lsp,y);2*Eq(mother,x)_Eq(inter0,1.3*y)_Eq(lsp,y)
+axes: 2*Eq(mother,x)_Eq(inter0,2.0*y)_Eq(lsp,y);2*Eq(mother,x)_Eq(inter0,1.25*y)_Eq(lsp,y)
 publishedData: True
 upperLimits: [[[[300.0*GeV, 50.0*GeV, 25.0*GeV], [300.0*GeV, 50.0*GeV, 25.0*GeV]], 0.34581*pb],
 [[[300.0*GeV, 100.0*GeV, 50.0*GeV], [300.0*GeV, 100.0*GeV, 50.0*GeV]], 0.3439*pb],

@@ -9,5 +9,5 @@ supersedes: ATLAS-CONF-2013-048
 comment: T2tt UL are from DF channel only, no combined UL map available
 private: False
 implementedBy: Andre Lessa
-lastUpdate: 2016/10/3
+lastUpdate: 2016/10/11
 
