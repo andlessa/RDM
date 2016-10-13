@@ -53,7 +53,7 @@ info.prettyName = 'ATLAS hadronic TGQ'
 TGQ = TxNameInput('TGQ')
 TGQ.on.checked ="VM"
 #TGQ.off.checked =
-TGQ.on.constraint ="[[['jet','jet']],[['jet']]]"
+TGQ.on.constraint ="[[['jet']],[['jet','jet']]]"
 #TGQ.off.constraint =
 TGQ.on.conditionDescription ="None"
 #TGQ.off.conditionDescription =
@@ -62,8 +62,8 @@ TGQ.on.condition ="None"
 
 #+++++++ next mass plane block ++++++++++++++
 TGQ0 = TGQ.addMassPlane(motherMass = x, lspMass = y)
-TGQ0.setBranch_1 ( motherMass = x, lspMass = y )  
-TGQ0.setBranch_2 ( motherMass = 0.96 * x, lspMass = y )                                                                         
+TGQ0.setBranch_1 ( motherMass = 0.96 * x, lspMass = y )                                                                         
+TGQ0.setBranch_2 ( motherMass = x, lspMass = y )  
 #----limit source----
 TGQ0.obsUpperLimit.setSource( "orig/TGQ.dat", "txt", objectName = None, index = None )
 TGQ0.obsUpperLimit.unit = 'fb'
