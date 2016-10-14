@@ -10,9 +10,12 @@ import os
 import argparse
 import types
 
-argparser = argparse.ArgumentParser(description =
+argparser = argparse.ArgumentParser(description =  
 'create info.txt, txname.txt, twiki.txt and sms.py')
-argparser.add_argument ('-utilsPath', '--utilsPath',
+argparser.add_argument ('-utilsPath', '--utilsPath', 
+help = 'path to the package smodels_utils',\
+type = types.StringType)
+argparser.add_argument ('-smodelsPath', '--smodelsPath', 
 help = 'path to the package smodels_utils',\
 type = types.StringType)
 args = argparser.parse_args()
@@ -24,6 +27,8 @@ else:
     sys.path.append(os.path.abspath(databaseRoot))
     from utilsPath import utilsPath
     utilsPath = databaseRoot + utilsPath
+if args.smodelsPath:
+    sys.path.append(os.path.abspath(args.smodelsPath))
 
 sys.path.append(os.path.abspath(utilsPath))
 from smodels_utils.dataPreparation.inputObjects import TxNameInput, MetaInfoInput
@@ -248,6 +253,7 @@ T1.dataUrl = "http://hepdata.cedar.ac.uk/view/ins1298722/d152"
 
 T1.efficiencyMap.setSource("orig/T1_SR2jl.dat","txt", objectName = "T1_SR2jl.dat", index = None , dataset = "SR2jl")
 T1.efficiencyMap.setStatistics( observedN = 12315, expectedBG = 13000 , bgError = 1000)
+T1.obsExclusion.setSource("orig/exclusion_T1.txt", "txt", objectName=None, index=None )
 
 databaseCreator.create(True)
 
