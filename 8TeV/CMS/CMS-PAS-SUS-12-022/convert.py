@@ -109,6 +109,7 @@ TChiChipmStauStau.on.condition ="None"
 TChiChipmStauStau050 = TChiChipmStauStau.addMassPlane(motherMass = x, interMass0 = x*0.5 + (1. - 0.5)*y, lspMass = y)
 #----limit source----
 TChiChipmStauStau050.obsUpperLimit.setSource( "orig/exclusion_TChiStauSnu_0_5.root", "canvas", objectName = "interpret", index = 2 )
+TChiChipmStauStau050.obsUpperLimit.unit = 'fb'
 # TChiChipmStauStau050.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
 #----exclusion source----
 TChiChipmStauStau050.obsExclusion.setSource( "orig/exclusion_TChiStauSnu_0_5.root", "canvas", objectName = "interpret", index = 8 )
@@ -198,6 +199,7 @@ TChiChipmSlepStau095 = TChiChipmSlepStau.addMassPlane(motherMass = x, interMass0
 #----limit source----
 TChiChipmSlepStau095.obsUpperLimit.setSource( "orig/exclusion_TChiSlepSnu_2a_0_95.root", "canvas", objectName = 
         "interpret", index = 2 )
+TChiChipmSlepStau095.obsUpperLimit.unit = 'fb'
 # TChiChipmSlepStau095.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
 #----exclusion source----
 TChiChipmSlepStau095.obsExclusion.setSource( "orig/exclusion_TChiSlepSnu_2a_0_95.root", "canvas", objectName = "interpret", index = 8 )
@@ -232,6 +234,7 @@ TChiChipmSlepStau095.expExclusionP1.dataUrl =
 TChiChipmSlepStau050 = TChiChipmSlepStau.addMassPlane(motherMass = x, interMass0 = x*0.5 + (1. - 0.5)*y, lspMass = y)
 #----limit source----
 TChiChipmSlepStau050.obsUpperLimit.setSource( "orig/exclusion_TChiSlepSnu_2a_0_5.root", "canvas", objectName = "interpret", index = 2 )
+TChiChipmSlepStau050.obsUpperLimit.unit = 'fb'
 # TChiChipmSlepStau050.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
 #----exclusion source----
 TChiChipmSlepStau050.obsExclusion.setSource( "orig/exclusion_TChiSlepSnu_2a_0_5.root", "canvas", objectName = "interpret", index = 8 )
@@ -268,6 +271,7 @@ TChiChipmSlepStau050.figureUrl =  "https://twiki.cern.ch/twiki/pub/CMSPublic/Phy
 TChiChipmSlepStau005 = TChiChipmSlepStau.addMassPlane(motherMass = x, interMass0 = x*0.05 + (1. - 0.05)*y, lspMass = y)
 #----limit source----
 TChiChipmSlepStau005.obsUpperLimit.setSource( "orig/exclusion_TChiSlepSnu_2a_0_05.root", "canvas", objectName = "interpret", index = 2 )
+TChiChipmSlepStau005.obsUpperLimit.unit = 'fb'
 #TChiChipmSlepStau005.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
 #----exclusion source----
 TChiChipmSlepStau005.obsExclusion.setSource( "orig/exclusion_TChiSlepSnu_2a_0_05.root", "canvas", objectName = "interpret", index = 8 )
@@ -313,6 +317,7 @@ TChiChipmSlepL.on.condition ="Csim([[['L'],['L']],[['L'],['nu']]],[[['L'],['L']]
 TChiChipmSlepL005 = TChiChipmSlepL.addMassPlane(motherMass = x, interMass0 = x*0.05 + (1. - 0.05)*y, lspMass = y)
 #----limit source----
 TChiChipmSlepL005.obsUpperLimit.setSource( "orig/exclusion_TChiSlepSnu_2i_0_05.root", "canvas", objectName = "interpret", index = 2 )
+TChiChipmSlepL005.obsUpperLimit.unit = 'fb'
 # TChiChipmSlepL005.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
 #----exclusion source----
 TChiChipmSlepL005.obsExclusion.setSource( "orig/exclusion_TChiSlepSnu_2i_0_05.root", "canvas", objectName = "interpret", index = 8 )
@@ -324,6 +329,7 @@ TChiChipmSlepL005.figureUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/Physics
 TChiChipmSlepL095 = TChiChipmSlepL.addMassPlane(motherMass = x, interMass0 = x*0.95 + (1. - 0.95)*y, lspMass = y)
 #----limit source----
 TChiChipmSlepL095.obsUpperLimit.setSource( "orig/exclusion_TChiSlepSnu_2i_0_95.root", "canvas", objectName = "interpret", index = 2 )
+TChiChipmSlepL095.obsUpperLimit.unit = 'fb'
 # TChiChipmSlepL095.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
 #----exclusion source----
 TChiChipmSlepL095.obsExclusion.setSource( "orig/exclusion_TChiSlepSnu_2i_0_95.root", "canvas", objectName = "interpret", index = 8 )
@@ -350,6 +356,7 @@ TChiChipmSlepL095.figureUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/Physics
 TChiChipmSlepL050 = TChiChipmSlepL.addMassPlane(motherMass = x, interMass0 = x*0.5 + (1. - 0.5)*y, lspMass = y)
 #----limit source----
 TChiChipmSlepL050.obsUpperLimit.setSource( "orig/exclusion_TChiSlepSnu_2i_0_5.root", "canvas", objectName = "interpret", index = 2 )
+TChiChipmSlepL050.obsUpperLimit.unit = 'fb'
 # TChiChipmSlepL050.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
 #----exclusion source----
 TChiChipmSlepL050.obsExclusion.setSource( "orig/exclusion_TChiSlepSnu_2i_0_5.root", "canvas", objectName = "interpret", index = 8 )
@@ -391,6 +398,7 @@ TChipChimSlepSnu.on.condition ="Csim([[['L-'],['nu']],[['nu'],['L+']]],[[['L+'],
 TChipChimSlepSnu050 = TChipChimSlepSnu.addMassPlane(motherMass = x, interMass0 = x*0.5 + (1. - 0.5)*y, lspMass = y)
 #----limit source----
 TChipChimSlepSnu050.obsUpperLimit.setSource( "orig/exclusion_TChipmSlepSnu.root", "canvas", objectName = "interpret", index = 2 )
+TChipChimSlepSnu050.obsUpperLimit.unit = 'fb'
 # TChipChimSlepSnu050.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
 #----exclusion source----
 TChipChimSlepSnu050.obsExclusion.setSource( "orig/exclusion_TChipmSlepSnu.root", "canvas", objectName = "interpret", index = 8 )
