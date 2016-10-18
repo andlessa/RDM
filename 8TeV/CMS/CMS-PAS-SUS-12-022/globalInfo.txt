@@ -6,6 +6,6 @@ url: https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS12022
 contact: Benjamin Hooberman <hooberman@gmail.com>, Lesya Shchutska <lesya.shchutska@cern.ch>
 supersededBy: CMS-SUS-13-006 (more data)
 private: False
-implementedBy: Andre Lessa
-lastUpdate: 2016/10/1
+implementedBy: SuchitaKulkarni
+lastUpdate: 2016/10/18
 
