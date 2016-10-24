@@ -215,7 +215,7 @@ T6bbWWoffD20 = T6bbWW.addMassPlane(motherMass = x, interMass0 = y+20, lspMass = 
 T6bbWWoffD20.obsUpperLimit.setSource( "orig/limit_T6bbWWoffD020.txt", "txt", objectName = None, index = None )
 #T6bbWWoffD20.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
 #----exclusion source----
-T6bbWWoffD20.obsExclusion.setSource( "orig/exclusion_T6bbWWoffD20.txt", "txt", objectName = None, index = None )
+T6bbWWoffD20.obsExclusion.setSource( "orig/exclusion_T6bbWWoffD020.txt", "txt", objectName = None, index = None )
 #T6bbWWoffD20.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
 #T6bbWWoffD20.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
 #T6bbWWoffD20.expExclusion.setSource( path, filetype, objectName = None, index = None )
