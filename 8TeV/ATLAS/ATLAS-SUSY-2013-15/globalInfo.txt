@@ -8,6 +8,6 @@ publication: link.springer.com/article/10.1007/JHEP11(2014)118
 contact: ATLAS collaboration
 supersedes: ATLAS-CONF-2013-037; CONF-2012-166
 private: False
-implementedBy: Wolfang W
-lastUpdate: 2016/9/29
+implementedBy: Andre Lessa
+lastUpdate: 2016/10/24
 
