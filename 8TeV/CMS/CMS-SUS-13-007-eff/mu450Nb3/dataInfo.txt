@@ -3,5 +3,5 @@ dataId: mu450Nb3
 observedN: 0
 expectedBG: 0
 bgError: 0.22
-upperLimit: 0.1547*fb
-expectedUpperLimit: 0.1547*fb
+upperLimit: 0.154891358932*fb
+expectedUpperLimit: 0.154891358932*fb

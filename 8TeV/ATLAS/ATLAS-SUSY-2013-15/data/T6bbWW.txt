@@ -2,9 +2,9 @@ txName: T6bbWW
 conditionDescription: None
 condition: None
 constraint: [[['b'],['W']],[['b'],['W']]]
-figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-15/figaux_021.png;https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-15/figaux_019.png;https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-15/figaux_020.png;https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-15/figaux_022.png;https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-15/figaux_016.png;https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-15/figaux_018.png;https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-15/figaux_017.png
+figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-15/figaux_021.png;https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-15/figaux_022.png;https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-15/figaux_016.png;https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-15/figaux_018.png;https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-15/figaux_017.png
 validated: None
-axes: 2*Eq(mother,x)_Eq(inter0,x-10.0)_Eq(lsp,y);2*Eq(mother,x)_Eq(inter0,y+5.0)_Eq(lsp,y);2*Eq(mother,x)_Eq(inter0,y+20.0)_Eq(lsp,y);2*Eq(mother,300)_Eq(inter0,x)_Eq(lsp,y);2*Eq(mother,x)_Eq(inter0,2.0*y)_Eq(lsp,y);2*Eq(mother,x)_Eq(inter0,1.1e+2)_Eq(lsp,y);2*Eq(mother,x)_Eq(inter0,1.5e+2)_Eq(lsp,y)
+axes: 2*Eq(mother,x)_Eq(inter0,x-10.0)_Eq(lsp,y);2*Eq(mother,300)_Eq(inter0,x)_Eq(lsp,y);2*Eq(mother,x)_Eq(inter0,2.0*y)_Eq(lsp,y);2*Eq(mother,x)_Eq(inter0,106.00)_Eq(lsp,y);2*Eq(mother,x)_Eq(inter0,150.00)_Eq(lsp,y)
 publishedData: False
 upperLimits: [[[[150.0*GeV, 140.0*GeV, 1.0*GeV], [150.0*GeV, 140.0*GeV, 1.0*GeV]], 22.0*pb],
 [[[150.0*GeV, 140.0*GeV, 25.0*GeV], [150.0*GeV, 140.0*GeV, 25.0*GeV]], 24.0*pb],

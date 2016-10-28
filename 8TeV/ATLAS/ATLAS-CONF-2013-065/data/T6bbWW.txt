@@ -6,7 +6,7 @@ checked: VM
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-065/fig_11.png
 dataUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-065/fig_11_PRELIMINARY.data
 validated: None
-axes: 2*Eq(mother,300.0)_Eq(inter0,x)_Eq(lsp,y)
+axes: 2*Eq(mother,300.000000000000)_Eq(inter0,x)_Eq(lsp,y)
 publishedData: True
 upperLimits: [[[[300.0*GeV, 100.0*GeV, 1.0*GeV], [300.0*GeV, 100.0*GeV, 1.0*GeV]], 0.5*pb],
 [[[300.0*GeV, 100.0*GeV, 50.0*GeV], [300.0*GeV, 100.0*GeV, 50.0*GeV]], 0.8*pb],

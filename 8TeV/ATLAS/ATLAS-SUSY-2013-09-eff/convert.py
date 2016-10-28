@@ -63,12 +63,12 @@ T1tttt_1 = T1tttt.addMassPlane(motherMass = x , lspMass = y)
 T1tttt_1.figure ="No Figure"
 T1tttt_1.figureUrl ="No Figure"
 #----exclusion source----
-T1tttt_1.obsExclusion.setSource( "orig/GluinoStop_observed.C", "cMacro", objectName = "GluinoStop_observed", index = None )
-T1tttt_1.obsExclusionM1.setSource( "orig/GluinoStop_observedDown.C", "cMacro", objectName = "GluinoStop_observedDown", index = None )
-T1tttt_1.obsExclusionP1.setSource( "orig/GluinoStop_observedUp.C", "cMacro", objectName = "GluinoStop_observedUp", index = None )
-T1tttt_1.expExclusion.setSource( "orig/GluinoStop_expected.C", "cMacro", objectName = "GluinoStop_expected", index = None )
-T1tttt_1.expExclusionM1.setSource( "orig/GluinoStop_expectedDown.C", "cMacro", objectName = "GluinoStop_expectedDown", index = None )
-T1tttt_1.expExclusionP1.setSource( "orig/GluinoStop_expectedUp.C", "cMacro", objectName = "GluinoStop_expectedUp", index = None )
+T1tttt_1.obsExclusion.setSource( "orig/exclusion_T1tttt.txt", "txt", objectName = None, index = None )
+#T1tttt_1.obsExclusionM1.setSource( "orig/GluinoStop_observedDown.C", "cMacro", objectName = "GluinoStop_observedDown", index = None )
+#T1tttt_1.obsExclusionP1.setSource( "orig/GluinoStop_observedUp.C", "cMacro", objectName = "GluinoStop_observedUp", index = None )
+#T1tttt_1.expExclusion.setSource( "orig/GluinoStop_expected.C", "cMacro", objectName = "GluinoStop_expected", index = None )
+#T1tttt_1.expExclusionM1.setSource( "orig/GluinoStop_expectedDown.C", "cMacro", objectName = "GluinoStop_expectedDown", index = None )
+#T1tttt_1.expExclusionP1.setSource( "orig/GluinoStop_expectedUp.C", "cMacro", objectName = "GluinoStop_expectedUp", index = None )
 #----limit source----
 T1tttt_1.efficiencyMap.setSource( "orig/EffMap_T1tttt_SR3b.txt", "txt", objectName = None, index = None, dataset="SR3b" )
 T1tttt_1.efficiencyMap.setStatistics( observedN=1, expectedBG=2.2, bgError=0.8 )

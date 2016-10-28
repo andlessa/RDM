@@ -6,6 +6,6 @@ url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-06
 supersededBy: ATLAS-SUSY-2013-19
 comment: T6bbWWM1300 combines the T6bbWW result from ATLAS-CONF-2013-065 and from ATLAS-CONF-2013-048
 private: False
-implementedBy: Federico A
-lastUpdate: 2016/9/29
+implementedBy: Andre Lessa
+lastUpdate: 2016/10/3
 

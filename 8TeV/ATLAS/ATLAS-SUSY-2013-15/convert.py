@@ -15,6 +15,9 @@ argparser = argparse.ArgumentParser(description =
 argparser.add_argument ('-utilsPath', '--utilsPath', 
 help = 'path to the package smodels_utils',\
 type = types.StringType)
+argparser.add_argument ('-smodelsPath', '--smodelsPath', 
+help = 'path to the package smodels_utils',\
+type = types.StringType)
 args = argparser.parse_args()
 
 if args.utilsPath:
@@ -24,6 +27,8 @@ else:
     sys.path.append(os.path.abspath(databaseRoot))
     from utilsPath import utilsPath
     utilsPath = databaseRoot + utilsPath
+if args.smodelsPath:
+    sys.path.append(os.path.abspath(args.smodelsPath))
 
 sys.path.append(os.path.abspath(utilsPath))
 from smodels_utils.dataPreparation.inputObjects import TxNameInput, MetaInfoInput
@@ -32,7 +37,7 @@ from smodels_utils.dataPreparation.origPlotObjects import x, y
 
 #+++++++ global info block ++++++++++++++
 info = MetaInfoInput('ATLAS-SUSY-2013-15')
-info.comment = 'so far no data available -> no axes entry'
+#info.comment = ''
 info.sqrts = '8.0'
 info.private = False
 info.lumi = '20.3'
@@ -149,7 +154,7 @@ T6bbWWoffD10.obsUpperLimit.setSource( "orig/limit_T6bbWWoffD010.txt", "txt", obj
 T6bbWWoffD10.obsExclusion.setSource( "orig/exclusion_T6bbWWoffD010.txt", "txt", objectName = None, index = None )
 #T6bbWWoffD10.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
 #T6bbWWoffD10.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
-#T6bbWWoffD10.expExclusion.setSource( path, filetype, objectName = None, index = None )
+T6bbWWoffD10.expExclusion.setSource( "orig/exclusion_exp_T6bbWWoffD010.txt", "txt", objectName = None, index = None )
 #T6bbWWoffD10.expExclusionM1.setSource( path, filetype, objectName = None, index = None )
 #T6bbWWoffD10.expExclusionP1.setSource( path, filetype, objectName = None, index = None )
 #----global url settings ----
@@ -181,7 +186,7 @@ T6bbWWoffD5.obsUpperLimit.setSource( "orig/limit_T6bbWWoffD005.txt", "txt", obje
 T6bbWWoffD5.obsExclusion.setSource( "orig/exclusion_T6bbWWoffD005.txt", "txt", objectName = None, index = None )
 #T6bbWWoffD5.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
 #T6bbWWoffD5.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )#
-#T6bbWWoffD5.expExclusion.setSource( path, filetype, objectName = None, index = None )
+T6bbWWoffD5.expExclusion.setSource(  "orig/exclusion_exp_T6bbWWoffD005.txt", "txt", objectName = None, index = None )
 #T6bbWWoffD5.expExclusionM1.setSource( path, filetype, objectName = None, index = None )
 #T6bbWWoffD5.expExclusionP1.setSource( path, filetype, objectName = None, index = None )
 #----global url settings ----
@@ -210,10 +215,10 @@ T6bbWWoffD20 = T6bbWW.addMassPlane(motherMass = x, interMass0 = y+20, lspMass = 
 T6bbWWoffD20.obsUpperLimit.setSource( "orig/limit_T6bbWWoffD020.txt", "txt", objectName = None, index = None )
 #T6bbWWoffD20.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
 #----exclusion source----
-T6bbWWoffD20.obsExclusion.setSource( "orig/exclusion_T6bbWWoffD20.txt", "txt", objectName = None, index = None )
+T6bbWWoffD20.obsExclusion.setSource( "orig/exclusion_T6bbWWoffD020.txt", "txt", objectName = None, index = None )
 #T6bbWWoffD20.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
 #T6bbWWoffD20.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
-#T6bbWWoffD20.expExclusion.setSource( path, filetype, objectName = None, index = None )
+T6bbWWoffD20.expExclusion.setSource( "orig/exclusion_exp_T6bbWWoffD020.txt", "txt", objectName = None, index = None )
 #T6bbWWoffD20.expExclusionM1.setSource( path, filetype, objectName = None, index = None )
 #T6bbWWoffD20.expExclusionP1.setSource( path, filetype, objectName = None, index = None )
 #----global url settings ----
@@ -243,6 +248,7 @@ T6bbWWoffM1300.obsUpperLimit.setSource( "orig/limit_T6bbWWoffM1300.txt", "txt", 
 #T6bbWWoffM1300.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
 #----exclusion source----
 T6bbWWoffM1300.obsExclusion.setSource( "orig/exclusion_T6bbWWoffM1300.txt", "txt", objectName = None, index = None )
+T6bbWWoffM1300.expExclusion.setSource( "orig/exclusion_exp_T6bbWWoffM1300.txt", "txt", objectName = None, index = None )
 """
 T6bbWWoffM1300.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
 T6bbWWoffM1300.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
@@ -311,6 +317,7 @@ T6bbWWoffC106.obsUpperLimit.setSource( "orig/limit_T6bbWWoffC106.txt" , "txt", o
 #T6bbWWoffC106.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
 #----exclusion source----
 T6bbWWoffC106.obsExclusion.setSource( "orig/exclusion_T6bbWWoffC106.txt", "txt", objectName = None, index = None )
+T6bbWWoffC106.expExclusion.setSource( "orig/exclusion_exp_T6bbWWoffC106.txt", "txt", objectName = None, index = None )
 """
 T6bbWWoffC106.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
 T6bbWWoffC106.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
@@ -347,7 +354,7 @@ T6bbWWoffC150.obsUpperLimit.setSource( "orig/limit_T6bbWWoffC150.txt", "txt", ob
 T6bbWWoffC150.obsExclusion.setSource( "orig/exclusion_T6bbWWoffC150.txt", "txt", objectName = None, index = None )
 #T6bbWWoffC150.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
 #T6bbWWoffC150.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
-#T6bbWWoffC150.expExclusion.setSource( path, filetype, objectName = None, index = None )
+T6bbWWoffC150.expExclusion.setSource( "orig/exclusion_exp_T6bbWWoffC150.txt", "txt", objectName = None, index = None )
 #T6bbWWoffC150.expExclusionM1.setSource( path, filetype, objectName = None, index = None )
 #T6bbWWoffC150.expExclusionP1.setSource( path, filetype, objectName = None, index = None )
 #----global url settings ----

@@ -10,9 +10,12 @@ import os
 import argparse
 import types
 
-argparser = argparse.ArgumentParser(description = \
+argparser = argparse.ArgumentParser(description =  
 'create info.txt, txname.txt, twiki.txt and sms.py')
 argparser.add_argument ('-utilsPath', '--utilsPath', 
+help = 'path to the package smodels_utils',\
+type = types.StringType)
+argparser.add_argument ('-smodelsPath', '--smodelsPath', 
 help = 'path to the package smodels_utils',\
 type = types.StringType)
 args = argparser.parse_args()
@@ -24,6 +27,8 @@ else:
     sys.path.append(os.path.abspath(databaseRoot))
     from utilsPath import utilsPath
     utilsPath = databaseRoot + utilsPath
+if args.smodelsPath:
+    sys.path.append(os.path.abspath(args.smodelsPath))
 
 sys.path.append(os.path.abspath(utilsPath))
 from smodels_utils.dataPreparation.inputObjects import TxNameInput, MetaInfoInput
@@ -49,7 +54,7 @@ T2bbWW = TxNameInput('T2bbWW')
 T2bbWW.on.checked = ''
 T2bbWW.off.checked = ''
 T2bbWW.on.constraint = "[[['b','W']],[['b','W']]]"
-T2bbWW.off.constraint = "6.94*[[['b','l','mu']],[['b','q','q']]]"
+T2bbWW.off.constraint = "6.94*[[['b','l','nu']],[['b','jet','jet']]]"
 T2bbWW.on.conditionDescription = None
 T2bbWW.off.conditionDescription ="None"
 T2bbWW.on.condition =None

@@ -8,6 +8,6 @@ publication: http://link.springer.com/article/10.1007/JHEP10%282013%29189
 supersedes: ATLAS_CONF_2013_001;ATLAS_CONF_2013_053
 comment: upper limits for T6bbWWC150 are not public
 private: False
-implementedBy: Federico A
-lastUpdate: 2016/9/29
+implementedBy: Andre Lessa
+lastUpdate: 2016/10/13
 

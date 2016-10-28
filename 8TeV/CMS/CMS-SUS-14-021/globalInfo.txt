@@ -6,6 +6,6 @@ url: https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS14021
 arxiv: http://arxiv.org/abs/1512.08002
 comment: ISR jet. Only single lepton analysis data available and implemented.
 private: False
-implementedBy: Federico A
-lastUpdate: 2016/9/29
+implementedBy: Andre Lessa
+lastUpdate: 2016/10/11
 

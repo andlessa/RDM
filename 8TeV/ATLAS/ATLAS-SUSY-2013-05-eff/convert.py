@@ -42,7 +42,7 @@ info.comment = 'First Home Made Eff Map'
 info.supersedes = 'ATLAS_CONF_2013_001;ATLAS_CONF_2013_053'
 info.implementedBy = 'Federico A'
 info.comment = 'upper limits for T6bbWWC150 are not public'
-
+info.contact = 'SModelS'
 #+++++++ next txName block ++++++++++++++
 T2bb = TxNameInput('T2bb')
 T2bb.on.checked =''

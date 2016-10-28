@@ -40,7 +40,7 @@ info.publication = 'http://link.springer.com/article/10.1007/JHEP10%282013%29130
 info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-04/'
 # info.supersededBy =
 info.arxiv = 'http://arxiv.org/abs/1308.1841'
-info.contact = "ATLAS collaboration"
+info.contact = "ATLAS collaboration for T1tttt models;SModelS for T5WW and T5ZZ models"
 info.prettyName = 'ATLAS \ge 7 jets'
 info.supersedes = 'ATLAS-CONF-2012-103'
 

@@ -3,5 +3,5 @@ dataId: SR3Llow
 observedN: 6
 expectedBG: 4.3
 bgError: 2.1
-upperLimit: 0.432311807202*fb
-expectedUpperLimit: 0.329779707963*fb
+upperLimit: 0.432399791232*fb
+expectedUpperLimit: 0.329916874074*fb
