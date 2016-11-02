@@ -2,7 +2,7 @@ txName: T2ttoff
 conditionDescription: None
 condition: None
 constraint: [[['b','W']],[['b','W']]]
-figureUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13004/T2ttHybridNew0Lp1Lp2LXSEC.png
+figureUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13004/T2ttCOMBINED.pdf
 dataUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13004/razor_8TeV_sms_results.root
 validated: None
 axes: 2*Eq(mother,x)_Eq(lsp,y)

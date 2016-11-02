@@ -10,9 +10,12 @@ import os
 import argparse
 import types
 
-argparser = argparse.ArgumentParser(description = \
+argparser = argparse.ArgumentParser(description =  
 'create info.txt, txname.txt, twiki.txt and sms.py')
 argparser.add_argument ('-utilsPath', '--utilsPath', 
+help = 'path to the package smodels_utils',\
+type = types.StringType)
+argparser.add_argument ('-smodelsPath', '--smodelsPath', 
 help = 'path to the package smodels_utils',\
 type = types.StringType)
 args = argparser.parse_args()
@@ -24,6 +27,8 @@ else:
     sys.path.append(os.path.abspath(databaseRoot))
     from utilsPath import utilsPath
     utilsPath = databaseRoot + utilsPath
+if args.smodelsPath:
+    sys.path.append(os.path.abspath(args.smodelsPath))
 
 sys.path.append(os.path.abspath(utilsPath))
 from smodels_utils.dataPreparation.inputObjects import TxNameInput, MetaInfoInput
@@ -107,7 +112,7 @@ T2tt_1.figureUrl ="https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12
 T2tt_1.obsUpperLimit.setSource( 'orig/T2tt.root', 'root', objectName = "UpperLimit", index = None )
 T2tt_1.expUpperLimit.setSource( 'orig/T2tt.root', 'root', objectName = "ExpectedUpperLimit", index = None )
 #----exclusion source----
-T2tt_1.obsExclusion.setSource('orig/T2tt.root', 'root', objectName = "ExpectedUpperLimit_graph", index = None )
+T2tt_1.obsExclusion.setSource('orig/T2tt_exc.dat', 'txt', objectName = None, index = None )
 #T2tt_1.obsExclusionM1.setSource( path, type, objectName = None, index = None )
 #T2tt_1.obsExclusionP1.setSource( path, type, objectName = None, index = None )
 #T2tt_1.expExclusion.setSource( 'orig/T2tt.root', 'root', objectName = "ExpectedUpperLimit_graph", index = None )

@@ -10,9 +10,12 @@ import os
 import argparse
 import types
 
-argparser = argparse.ArgumentParser(description = \
+argparser = argparse.ArgumentParser(description =  
 'create info.txt, txname.txt, twiki.txt and sms.py')
 argparser.add_argument ('-utilsPath', '--utilsPath', 
+help = 'path to the package smodels_utils',\
+type = types.StringType)
+argparser.add_argument ('-smodelsPath', '--smodelsPath', 
 help = 'path to the package smodels_utils',\
 type = types.StringType)
 args = argparser.parse_args()
@@ -24,6 +27,8 @@ else:
     sys.path.append(os.path.abspath(databaseRoot))
     from utilsPath import utilsPath
     utilsPath = databaseRoot + utilsPath
+if args.smodelsPath:
+    sys.path.append(os.path.abspath(args.smodelsPath))
 
 sys.path.append(os.path.abspath(utilsPath))
 from smodels_utils.dataPreparation.inputObjects import TxNameInput, MetaInfoInput
@@ -60,7 +65,7 @@ T1tttt.off.condition ='None'
 T1tttt_1 = T1tttt.addMassPlane(motherMass = x, lspMass = y )
 #----figure----
 T1tttt_1.figure = 'Fig. 13c'
-T1tttt_1.figureUrl ='https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13019/T2tt-SUS13019-final_XSEC.png'
+T1tttt_1.figureUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13019/T1tttt-SUS13019-final_XSEC.png'		     
 #----limit source----
 T1tttt_1.obsUpperLimit.setSource( 'orig/Extracted_T1tttt-SUS13019-final_XSEC.root', 'root', objectName = 'XSec_limit_combined', index = None )
 #T1tttt_1.expUpperLimit.setSource( path, type, objectName = None, index = None )
