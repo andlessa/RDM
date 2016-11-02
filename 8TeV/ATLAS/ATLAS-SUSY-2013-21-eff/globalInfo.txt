@@ -8,4 +8,3 @@ publication: http://journals.aps.org/prd/abstract/10.1103/PhysRevD.90.052008
 private: False
 implementedBy: Federico A
 lastUpdate: 2016/9/29
-
