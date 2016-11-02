@@ -7,5 +7,5 @@ arxiv: http://arxiv.org/abs/1512.08002
 comment: ISR jet. Only single lepton analysis data available and implemented.
 private: False
 implementedBy: Andre Lessa
-lastUpdate: 2016/10/11
+lastUpdate: 2016/11/2
 
