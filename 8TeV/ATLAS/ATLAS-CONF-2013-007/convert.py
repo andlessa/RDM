@@ -53,11 +53,11 @@ T6ttWW = TxNameInput('T6ttWW')
 T6ttWW.on.checked ='VM'
 #T6ttWW.off.checked =
 T6ttWW.on.constraint ="[[['t+'],['W-']],[['t+'],['W-']]]+[[['t-'],['W+']],[['t-'],['W+']]]+[[['t+'],['W-']],[['t-'],['W+']]]"
-T6ttWW.off.constraint = 'not yet assigned'
+T6ttWW.off.constraint = "4.56*([[['t'],['L','nu']],[['t'],['L','nu']]]+[[['t'],['L','nu']],[['t'],['jet','jet']]])"
 T6ttWW.on.conditionDescription ="None"
-T6ttWW.off.conditionDescription = 'not yet assigned'
+T6ttWW.off.conditionDescription = "[[['t'],['L','nu']],[['t'],['jet','jet']]] > 2.7* [[['t'],['ta','nu']],[['t'],['jet','jet']]], [[['t'],['L','nu']],[['t'],['jet','jet']]] > 2.7* [[['t'],['e','nu']],[['t'],['jet','jet']]], 3.2* ['t'],['L','nu']],[['t'],['L','nu']]] > [[['t'],['L','nu']],[['t'],['jet','jet']]]"
 T6ttWW.on.condition ="None"
-T6ttWW.off.condition = 'not yet assigned'
+T6ttWW.off.condition = "Cgter([[['t'],['L','nu']],[['t'],['jet','jet']]],3.*[[['t'],['ta','nu']],[['t'],['jet','jet']]]);Cgter([[['t'],['L','nu']],[['t'],['jet','jet']]],3.* [[['t'],['e','nu']],[['t'],['jet','jet']]]);Cgter(4.* ['t'],['L','nu']],[['t'],['L','nu']]],[[['t'],['L','nu']],[['t'],['jet','jet']]])"
 
 #+++++++ next mass plane block ++++++++++++++
 T6ttWWLSP060 = T6ttWW.addMassPlane(motherMass = x, interMass0 = y, lspMass = 60.0)
