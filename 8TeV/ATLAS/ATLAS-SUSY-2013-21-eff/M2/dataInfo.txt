@@ -3,5 +3,5 @@ dataId: M2
 observedN: 8606
 expectedBG: 8620
 bgError: 270
-upperLimit: 27.110118089*fb
-expectedUpperLimit: 27.5360861567*fb
+upperLimit: 27.1925446417*fb
+expectedUpperLimit: 27.5680292037*fb
