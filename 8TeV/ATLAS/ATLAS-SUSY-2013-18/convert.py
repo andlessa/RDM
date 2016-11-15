@@ -41,7 +41,7 @@ info.arxiv = 'http://arxiv.org/abs/1407.0600'
 info.contact =''
 info.publication ='http://link.springer.com/article/10.1007/JHEP10(2014)024'
 info.comment ='Used 1lep+3b UL result, since they give the two analyses UL separately and no combination'
-info.supersedes =''
+info.supersedes ='ATLAS-CONF-2013-061'
 info.supersededBy =''
 
 #+++++++ next txName block ++++++++++++++

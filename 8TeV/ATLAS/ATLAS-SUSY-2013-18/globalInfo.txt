@@ -7,6 +7,7 @@ arxiv: http://arxiv.org/abs/1407.0600
 publication: http://link.springer.com/article/10.1007/JHEP10(2014)024
 comment: Used 1lep+3b UL result, since they give the two analyses UL separately and no combination
 private: False
+supersedes: ATLAS-CONF-2013-061
 implementedBy: Federico A
 lastUpdate: 2016/9/29
 
