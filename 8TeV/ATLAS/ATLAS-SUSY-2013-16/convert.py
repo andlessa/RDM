@@ -40,6 +40,7 @@ info.private = False
 info.arxiv = 'http://arxiv.org/abs/1406.1122'
 info.contact = ''
 info.publication = 'http://link.springer.com/article/10.1007%2FJHEP09%282014%29015'
+info.supersedes = 'ATLAS-CONF-2013-024'
 info.comment =''
 
 
