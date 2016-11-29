@@ -1,7 +1,7 @@
 txName: T1tttt
 conditionDescription: None
 condition: None
-constraint: [[['t+','t-']],[['t+','t-']]]
+constraint: [[['t+','t-']],[['t-','t+']]]
 checked: VM
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-007/fig_08a.png
 validated: None

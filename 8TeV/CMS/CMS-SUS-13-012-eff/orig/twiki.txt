@@ -1,0 +1,1 @@
+||[[https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS13012|CMS-SUS-13-012]]||[[SmsDictionary#T2|T2]]||2*Eq(mother,x)_Eq(lsp,y)||[[https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13012/Fig_7a.pdf|Fig_7a]]||None||None||None||

@@ -1,9 +1,0 @@
-sqrts: 8*TeV
-lumi: 19.4/fb
-id: CMS-SUS-13-015
-url: https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS13015
-publication: http://cds.cern.ch/record/1635353/files/SUS-13-015-pas.pdf
-comment: PAS so no arxiv publication - only cds.cern. SuperseedeBy CMS-SUS-14-001 which has no public data.
-private: False
-implementedBy: Federico A
-lastUpdate: 2016/5/4

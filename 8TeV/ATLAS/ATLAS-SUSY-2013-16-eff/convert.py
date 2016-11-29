@@ -41,7 +41,7 @@ info.arxiv = 'http://arxiv.org/abs/1406.1122'
 info.contact = ''
 info.publication = 'http://link.springer.com/article/10.1007%2FJHEP09%282014%29015'
 info.comment ='EM given for All SRs for one topo, only for 3 for the other. Only these 3 are implemented.'
-#info.supersedes =
+info.supersedes ='ATLAS-CONF-2013-024'
 #info.supersededBy =
 
 #+++++++ next txName block ++++++++++++++

@@ -4,8 +4,7 @@ id: ATLAS-CONF-2013-007
 prettyName: ATLAS SS+b
 url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-007/
 supersededBy: ATLAS-SUSY-2013-09
-comment: A technical problem has been found in the pseudo-experiments used to make Table 4 in the conference note of March 1.; There is something wrong with T5WW (fig. 13), values leads to interMass > motherMass
+comment: A technical problem has been found in the pseudo-experiments used to make Table 4 in the conference note of March 1.
 private: False
 implementedBy: Federico A
 lastUpdate: 2016/9/29
-

@@ -35,7 +35,7 @@ from smodels_utils.dataPreparation.origPlotObjects import x, y
 
 #+++++++ global info block ++++++++++++++
 info = MetaInfoInput('ATLAS-CONF-2013-007')
-info.comment = 'A technical problem has been found in the pseudo-experiments used to make Table 4 in the conference note of March 1.; There is something wrong with T5WW (fig. 13), values leads to interMass > motherMass'
+info.comment = 'A technical problem has been found in the pseudo-experiments used to make Table 4 in the conference note of March 1.'
 info.sqrts = '8.0'
 info.private = False
 info.lumi = '20.7'
@@ -52,12 +52,12 @@ info.implementedBy = 'MT'
 T6ttWW = TxNameInput('T6ttWW')
 T6ttWW.on.checked ='VM'
 #T6ttWW.off.checked =
-T6ttWW.on.constraint ="[[['t+'],['W-']],[['t+'],['W-']]]+[[['t-'],['W+']],[['t-'],['W+']]]+[[['t+'],['W-']],[['t-'],['W+']]]"
-T6ttWW.off.constraint = 'not yet assigned'
+T6ttWW.on.constraint ="[[['t+'],['W-']],[['t-'],['W+']]]"
+T6ttWW.off.constraint = "3.5*([[['t+'],['l-','nu']],[['t-'],['jet','jet']]] + [[['t-'],['l+','nu']],[['t+'],['jet','jet']]])"
 T6ttWW.on.conditionDescription ="None"
-T6ttWW.off.conditionDescription = 'not yet assigned'
+T6ttWW.off.conditionDescription = "[[['t'],['mu','nu']],[['t'],['jet','jet']]]>[[['t'],['e','nu']],[['t'],['jet','jet']]]"
 T6ttWW.on.condition ="None"
-T6ttWW.off.condition = 'not yet assigned'
+T6ttWW.off.condition = "Cgtr([[['t'],['mu','nu']],[['t'],['jet','jet']]],[[['t'],['e','nu']],[['t'],['jet','jet']]])"
 
 #+++++++ next mass plane block ++++++++++++++
 T6ttWWLSP060 = T6ttWW.addMassPlane(motherMass = x, interMass0 = y, lspMass = 60.0)
@@ -125,7 +125,7 @@ T6ttWWx200.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES
 T1tttt = TxNameInput('T1tttt')
 T1tttt.on.checked ="VM"
 #T1tttt.off.checked =
-T1tttt.on.constraint ="[[['t+','t-']],[['t+','t-']]]"
+T1tttt.on.constraint ="[[['t+','t-']],[['t-','t+']]]"
 #T1tttt.off.constraint =
 T1tttt.on.conditionDescription ="None"
 #T1tttt.off.conditionDescription =
@@ -167,7 +167,7 @@ T1tttt.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATL
 T5tttt = TxNameInput('T5tttt')
 T5tttt.on.checked ="VM"
 #T5tttt.off.checked =
-T5tttt.on.constraint ="[[['t+'],['t-']],[['t+'],['t-']]]+[[['t-'],['t+']],[['t-'],['t+']]]+[[['t+'],['t-']],[['t-'],['t+']]]"
+T5tttt.on.constraint ="[[['t+'],['t-']],[['t-'],['t+']]]+[[['t-'],['t+']],[['t-'],['t+']]]+[[['t+'],['t-']],[['t+'],['t-']]]"
 #T5tttt.off.constraint =
 T5tttt.on.conditionDescription ="None"
 #T5tttt.off.conditionDescription =
@@ -209,7 +209,7 @@ T5ttttLSP060.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOT
 T1btbt = TxNameInput('T1btbt')
 T1btbt.on.checked ="VM"
 #T1tbtb.off.checked =
-T1btbt.on.constraint ="[[['t','b']],[['t','b']]]"
+T1btbt.on.constraint ="2*([[['t+','b']],[['t+','b']]]+[[['t-','b']],[['t-','b']]])"
 #T1tbtb.off.constraint =
 T1btbt.on.conditionDescription ="None"
 #T1tbtb.off.conditionDescription =
@@ -247,6 +247,7 @@ T1btbt.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATL
 #T1tbtb.expExclusionM1.dataUrl =
 #T1tbtb.expExclusionP1.dataUrl =
 
+'''
 #+++++++ next txName block ++++++++++++++
 T5WW = TxNameInput('T5WW')
 T5WW.on.checked ="VM"
@@ -289,7 +290,7 @@ T5WW.off.condition = 'not yet assigned'
 #T5WWx200.expExclusionM1.dataUrl =
 #T5WWx200.expExclusionP1.dataUrl =
 
-'''
+
 #+++++++ next txName block ++++++++++++++
 T8ChiSlep = TxNameInput('T8ChiSlep')
 T8ChiSlep.on.checked ='VM'
