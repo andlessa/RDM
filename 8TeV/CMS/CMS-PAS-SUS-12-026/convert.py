@@ -65,6 +65,7 @@ T1tttt_1.figureUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSU
 T1tttt_1.obsUpperLimit.setSource( 'orig/Limit_T1tttt.root', 'root', objectName = 'LimitObs', index = None )
 T1tttt_1.expUpperLimit.setSource( 'orig/Limit_T1tttt.root', 'root', objectName = 'LimitExp', index = None )
 T1tttt_1.obsUpperLimit.unit = 'fb'
+T1tttt_1.expUpperLimit.unit = 'fb'
 #----exclusion source----
 T1tttt_1.obsExclusion.setSource( 'orig/T1tttt_Excl.txt', 'txt', objectName = None, index = None )
 #T1tttt_1.obsExclusionM1.setSource( path, type, objectName = None, index = None )
