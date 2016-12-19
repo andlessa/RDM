@@ -4,7 +4,7 @@ condition: cGtr([[['L'],['L']],[['nu'],['ta']]],3.*[[['ta'],['ta']],[['nu'],['ta
 constraint: [[['L'],['L']],[['nu'],['ta']]]
 figureUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13006/Fig14_exclusion_TChiSlepSnu_2a_0_05.pdf;https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13006/Fig14_exclusion_TChiSlepSnu_2a_0_5.pdf;https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13006/Fig14_exclusion_TChiSlepSnu_2a_0_95.pdf
 dataUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13006/exclusion_TChiSlepSnu_2a_0_05.root;https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS13006;https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13006/exclusion_TChiSlepSnu_2a_0_5.root;https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13006/exclusion_TChiSlepSnu_2a_0_95.root
-validated: None
+validated: True
 axes: 2*Eq(mother,x)_Eq(inter0,0.05*x+0.95*y)_Eq(lsp,y);2*Eq(mother,x)_Eq(inter0,0.5*x+0.5*y)_Eq(lsp,y);2*Eq(mother,x)_Eq(inter0,0.95*x+0.05*y)_Eq(lsp,y)
 publishedData: True
 upperLimits: [[[[100.0*GeV, 5.0*GeV, 0.0*GeV], [100.0*GeV, 5.0*GeV, 0.0*GeV]], 0.27265*pb],

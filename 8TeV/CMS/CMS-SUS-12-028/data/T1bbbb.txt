@@ -4,7 +4,7 @@ condition: None
 constraint: [[['b','b']],[['b','b']]]
 figureUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/t1bbbb.pdf
 dataUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/T1bbbb.root
-validated: None
+validated: True
 axes: 2*Eq(mother,x)_Eq(lsp,y)
 publishedData: True
 upperLimits: [[[[300.0*GeV, 0.0*GeV], [300.0*GeV, 0.0*GeV]], 0.29672*pb],

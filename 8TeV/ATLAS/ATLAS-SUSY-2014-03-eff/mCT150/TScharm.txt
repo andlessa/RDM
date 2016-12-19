@@ -5,7 +5,7 @@ constraint: [[['c']],[['c']]]
 checked: NO
 figureUrl: http://hepdata.cedar.ac.uk/resource/1337472/thumb_figFigure2.png
 dataUrl: http://hepdata.cedar.ac.uk/view/ins1337472/first
-validated: None
+validated: True
 axes: 2*Eq(mother,x)_Eq(lsp,y)
 publishedData: True
 efficiencyMap: [[[[100.0*GeV, 1.0*GeV], [100.0*GeV, 1.0*GeV]], 2.25e-06],

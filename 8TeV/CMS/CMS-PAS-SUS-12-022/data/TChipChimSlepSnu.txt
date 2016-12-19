@@ -4,7 +4,7 @@ condition: Csim([[['L-'],['nu']],[['nu'],['L+']]],[[['L+'],['nu']],[['nu'],['L-'
 constraint: [[['L-'],['nu']],[['nu'],['L+']]] + [[['L+'],['nu']],[['nu'],['L-']]] + [[['L+'],['nu']],[['L-'],['nu']]] + [[['nu'],['L+']],[['nu'],['L-']]]
 checked: A
 figureUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12022/exclusion_TChipmSlepSnu.pdf
-validated: None
+validated: True
 axes: 2*Eq(mother,x)_Eq(inter0,0.5*x+0.5*y)_Eq(lsp,y)
 publishedData: False
 upperLimits: [[[[150.0*GeV, 75.0*GeV, 0.0*GeV], [150.0*GeV, 75.0*GeV, 0.0*GeV]], 0.31469*pb],

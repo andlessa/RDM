@@ -4,7 +4,7 @@ condition: None
 constraint: [[['W']],[['Z']]]
 figureUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13006/Fig16_exclusion_TChiWZ.png
 dataUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13006/exclusion_TChiWZ.root;https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS13006
-validated: None
+validated: True
 axes: 2*Eq(mother,x)_Eq(lsp,y)
 publishedData: True
 upperLimits: [[[[100.0*GeV, 0.0*GeV], [100.0*GeV, 0.0*GeV]], 0.034963*pb],

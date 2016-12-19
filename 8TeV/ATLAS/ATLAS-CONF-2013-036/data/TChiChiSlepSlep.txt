@@ -4,7 +4,7 @@ condition: Csim([[['mu+'],['mu-']],[['e+'],['e-']]],2.*[[['mu+'],['mu-']],[['mu+
 constraint: [[['e+'],['e-']],[['e+'],['e-']]]+[[['e-'],['e+']],[['e-'],['e+']]]+[[['e+'],['e-']],[['e-'],['e+']]] + [[['mu+'],['mu-']],[['mu+'],['mu-']]]+[[['mu-'],['mu+']],[['mu-'],['mu+']]]+[[['mu+'],['mu-']],[['mu-'],['mu+']]] + [[['e+'],['e-']],[['mu+'],['mu-']]]+[[['e-'],['e+']],[['mu-'],['mu+']]]+[[['e+'],['e-']],[['mu-'],['mu+']]]
 checked: VM
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-036/figaux_01a.png;https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-036/fig_07b.png
-validated: None
+validated: False
 axes: Eq(mother,x+80.0)_Eq(inter0,x-y+80.0)_Eq(lsp,x)+Eq(mother,x+75.0)_Eq(inter0,x-y+80.0)_Eq(lsp,x);2*Eq(mother,x+y)_Eq(inter0,1.0*x+0.5*y)_Eq(lsp,x)
 publishedData: False
 upperLimits: [[[[180.0*GeV, 165.0*GeV, 100.0*GeV], [175.0*GeV, 165.0*GeV, 100.0*GeV]], 0.0079*pb],

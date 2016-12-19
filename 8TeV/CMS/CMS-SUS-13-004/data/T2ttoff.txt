@@ -4,7 +4,7 @@ condition: None
 constraint: [[['b','W']],[['b','W']]]
 figureUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13004/T2ttCOMBINED.pdf
 dataUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13004/razor_8TeV_sms_results.root
-validated: None
+validated: True
 axes: 2*Eq(mother,x)_Eq(lsp,y)
 publishedData: True
 upperLimits: [[[[150.0*GeV, 0.0*GeV], [150.0*GeV, 0.0*GeV]], 20.428*pb],

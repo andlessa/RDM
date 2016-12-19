@@ -3,7 +3,7 @@ conditionDescription: None
 condition: None
 constraint: [[['b'],['W']],[['b'],['W']]]
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-15/figaux_021.png;https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-15/figaux_022.png;https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-15/figaux_016.png;https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-15/figaux_018.png;https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-15/figaux_017.png
-validated: None
+validated: False
 axes: 2*Eq(mother,x)_Eq(inter0,x-10.0)_Eq(lsp,y);2*Eq(mother,300)_Eq(inter0,x)_Eq(lsp,y);2*Eq(mother,x)_Eq(inter0,2.0*y)_Eq(lsp,y);2*Eq(mother,x)_Eq(inter0,106.00)_Eq(lsp,y);2*Eq(mother,x)_Eq(inter0,150.00)_Eq(lsp,y)
 publishedData: False
 upperLimits: [[[[150.0*GeV, 140.0*GeV, 1.0*GeV], [150.0*GeV, 140.0*GeV, 1.0*GeV]], 22.0*pb],

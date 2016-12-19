@@ -4,7 +4,7 @@ condition: None
 constraint: [[['b','W']],[['b','W']]]
 figureUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13019/T2tt-SUS13019-final_XSEC.png
 dataUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13019/T2tt-SUS13019-final_XSEC.root;https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS13019
-validated: None
+validated: True
 axes: 2*Eq(mother,x)_Eq(lsp,y)
 publishedData: True
 upperLimits: [[[[150.0*GeV, 0.0*GeV], [150.0*GeV, 0.0*GeV]], 19.425*pb],

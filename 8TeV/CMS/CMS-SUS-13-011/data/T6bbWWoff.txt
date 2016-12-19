@@ -4,7 +4,7 @@ condition: None
 constraint: 2.3*([[['b'],['L','nu']],[['b'],['jet','jet']]])
 figureUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13011/fig10c.pdf;https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13011/fig10b.pdf;https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13011/fig10d.pdf
 dataUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13011/
-validated: None
+validated: True
 axes: 2*Eq(mother,x)_Eq(inter0,0.5*x+0.5*y)_Eq(lsp,y);2*Eq(mother,x)_Eq(inter0,0.25*x+0.75*y)_Eq(lsp,y);2*Eq(mother,x)_Eq(inter0,0.75*x+0.25*y)_Eq(lsp,y)
 publishedData: True
 upperLimits: [[[[225.0*GeV, 150.0*GeV, 75.0*GeV], [225.0*GeV, 150.0*GeV, 75.0*GeV]], 5.212*pb],

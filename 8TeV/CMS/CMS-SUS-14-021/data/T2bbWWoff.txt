@@ -4,7 +4,7 @@ condition: None
 constraint: 3.47*[[['b','l','nu']],[['b','jet','jet']]]
 figureUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS14021/singleLeptonLimits.pdf
 dataUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS14021/singleLeptonLimitHistograms.root;https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS14021
-validated: None
+validated: True
 axes: 2*Eq(mother,x)_Eq(lsp,y)
 publishedData: True
 upperLimits: [[[[100.0*GeV, 25.0*GeV], [100.0*GeV, 25.0*GeV]], 336.19*pb],

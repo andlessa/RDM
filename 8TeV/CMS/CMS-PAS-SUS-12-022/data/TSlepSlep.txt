@@ -4,7 +4,7 @@ condition: Cgtr([[['mu+']],[['mu-']]],[[['e+']],[['e-']]])
 constraint: [[['e+']],[['e-']]]+[[['mu+']],[['mu-']]]
 checked: A
 figureUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12022/exclusion_TSlepSlep.pdf
-validated: None
+validated: True
 axes: 2*Eq(mother,x)_Eq(lsp,y)
 publishedData: False
 upperLimits: [[[[100.0*GeV, 0.0*GeV], [100.0*GeV, 0.0*GeV]], 1.7621*pb],

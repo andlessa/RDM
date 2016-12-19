@@ -4,7 +4,7 @@ condition: None
 constraint: [[['b','W','b','W']],[['b','W','b','W']]]
 figureUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS14011/T1ttttHybridNew0Lp1Lp2LXSEC.pdf
 dataUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS14011/GluinoLimitsRazor2014.root;https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS14011
-validated: None
+validated: True
 axes: 2*Eq(mother,x)_Eq(lsp,y)
 publishedData: True
 upperLimits: [[[[400.0*GeV, 75.0*GeV], [400.0*GeV, 75.0*GeV]], 0.50612*pb],

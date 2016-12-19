@@ -4,7 +4,7 @@ condition: None
 constraint: [[['t']],[['t']]]
 figureUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS14011/T2ttHybridNew0Lp1Lp2LXSEC.pdf
 dataUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS14011/StopLimitsRazor2014.root;https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS14011
-validated: None
+validated: True
 axes: 2*Eq(mother,x)_Eq(lsp,y)
 publishedData: True
 upperLimits: [[[[150.0*GeV, 0.0*GeV], [150.0*GeV, 0.0*GeV]], 89.313*pb],

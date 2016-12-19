@@ -4,7 +4,7 @@ condition: Cgtr([[['jet','jet'],['mu','nu']],[['jet','jet'],['mu','nu']]],[[['je
 constraint: 20.2*[[['jet','jet'],['l','nu']],[['jet','jet'],['l','nu']]]
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-089/fig_22b.png;https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-089/fig_22a.png
 dataUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-089/fig_22b_PRELIMINARY.data;https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-089/fig_22a_PRELIMINARY.data
-validated: None
+validated: False
 axes: 2*Eq(mother,x)_Eq(inter0,y)_Eq(lsp,60.0);2*Eq(mother,x)_Eq(inter0,0.5*x+0.5*y)_Eq(lsp,y)
 publishedData: True
 upperLimits: [[[[1100.0*GeV, 110.0*GeV, 60.0*GeV], [1100.0*GeV, 110.0*GeV, 60.0*GeV]], 6.6084*pb],

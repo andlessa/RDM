@@ -4,7 +4,7 @@ condition: Csim([[['nu'],['ta']],[['ta+'],['ta-']]],[[['ta'],['nu']],[['ta+'],['
 constraint: 2.*([[['nu'],['ta']],[['ta+'],['ta-']]] + [[['ta'],['nu']],[['ta+'],['ta-']]]+[[['nu'],['ta']],[['ta-'],['ta+']]] + [[['ta'],['nu']],[['ta-'],['ta+']]])
 checked: AL
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-028/figaux_08a.png
-validated: None
+validated: False
 axes: 2*Eq(mother,x)_Eq(inter0,0.5*x+0.5*y)_Eq(lsp,y)
 publishedData: False
 upperLimits: [[[[100.0*GeV, 50.0*GeV, 0.0*GeV], [100.0*GeV, 50.0*GeV, 0.0*GeV]], 0.67*pb],

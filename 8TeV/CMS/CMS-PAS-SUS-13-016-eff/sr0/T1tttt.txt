@@ -4,7 +4,7 @@ condition: None
 constraint: [[['t','t']],[['t','t']]]
 checked: VM
 dataUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13016/Results_SUS13016.root
-validated: None
+validated: True
 axes: 2*Eq(mother,x)_Eq(lsp,y)
 publishedData: True
 efficiencyMap: [[[[400.0*GeV, 0.0*GeV], [400.0*GeV, 0.0*GeV]], 0.00056306],

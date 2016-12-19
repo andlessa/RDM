@@ -4,7 +4,7 @@ condition: None
 constraint: [[['b','W+']],[['b','W-']]]
 checked: VM
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-048/fig_13f.png
-validated: None
+validated: True
 axes: 2*Eq(mother,x)_Eq(lsp,y)
 publishedData: False
 upperLimits: [[[[110.0*GeV, 1.0*GeV], [110.0*GeV, 1.0*GeV]], 24.851*pb],

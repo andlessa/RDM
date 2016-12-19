@@ -4,7 +4,7 @@ condition: None
 constraint: [[['higgs']],[['W']]]
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-23/.thumb_fig_08d.png
 dataUrl: http://hepdata.cedar.ac.uk/view/ins1341609/d34/input
-validated: None
+validated: True
 axes: 2*Eq(mother,x)_Eq(lsp,y)
 publishedData: True
 upperLimits: [[[[140.0*GeV, 10.0*GeV], [140.0*GeV, 10.0*GeV]], 1.41*pb],

@@ -4,7 +4,7 @@ condition: None
 constraint: [[['b','W']],[['b','W']]]
 figureUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13023/T2tt__observed_xsection_UL.png
 dataUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13023/T2tt__observed_xsection_UL.root;https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS13023
-validated: None
+validated: True
 axes: 2*Eq(mother,x)_Eq(lsp,y)
 publishedData: True
 upperLimits: [[[[200.0*GeV, 50.0*GeV], [200.0*GeV, 50.0*GeV]], 59.178*pb],
