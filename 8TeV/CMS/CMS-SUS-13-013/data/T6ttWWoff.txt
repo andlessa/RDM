@@ -3,7 +3,7 @@ conditionDescription: [[['t'],['L','nu']],[['t'],['jet','jet']]] > 2.7* [[['t'],
 condition: Cgtr([[['t'],['L','nu']],[['t'],['jet','jet']]],3.*[[['t'],['ta','nu']],[['t'],['jet','jet']]]);Cgtr([[['t'],['L','nu']],[['t'],['jet','jet']]],3.*[[['t'],['e','nu']],[['t'],['jet','jet']]])
 constraint: 2.3*([[['t'],['L','nu']],[['t'],['jet','jet']]])
 dataUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13013/ModelB1_x0p5.root;https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS13013;https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13013/ModelB1_x0p8.root
-validated: False
+validated: True
 axes: 2*Eq(mother,x)_Eq(inter0,2.0*y)_Eq(lsp,y);2*Eq(mother,x)_Eq(inter0,1.25*y)_Eq(lsp,y)
 publishedData: True
 upperLimits: [[[[300.0*GeV, 50.0*GeV, 25.0*GeV], [300.0*GeV, 50.0*GeV, 25.0*GeV]], 0.34581*pb],

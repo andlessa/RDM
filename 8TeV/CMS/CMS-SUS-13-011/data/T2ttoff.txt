@@ -4,7 +4,7 @@ condition: None
 constraint: [[['W','b']],[['W','b']]]
 figureUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13011/fig20a.pdf
 dataUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13011/topneutralino_cutbased.root;https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS13011
-validated: None
+validated: True
 axes: 2*Eq(mother,x)_Eq(lsp,y)
 publishedData: True
 upperLimits: [[[[100.0*GeV, 0.0*GeV], [100.0*GeV, 0.0*GeV]], 1142.5*pb],
