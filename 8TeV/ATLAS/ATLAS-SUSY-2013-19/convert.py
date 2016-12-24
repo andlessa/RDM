@@ -66,7 +66,7 @@ T2tt = T2tt.addMassPlane(motherMass = x, lspMass = y)
 T2tt.obsUpperLimit.setSource( "orig/T2tt.txt", "txt", objectName = None, index = None )
 #T2tt.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
 #----exclusion source----
-T2tt.obsExclusion.setSource( "orig/exclusionline_T2tt.txt", "txt", objectName = None, index = None )
+T2tt.obsExclusion.setSource( "orig/exclusionline_T2tt_DF.txt", "txt", objectName = None, index = None )
 #T2tt.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
 #T2tt.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
 #T2tt.expExclusion.setSource( path, filetype, objectName = None, index = None )
@@ -77,8 +77,8 @@ T2tt.obsExclusion.setSource( "orig/exclusionline_T2tt.txt", "txt", objectName = 
 T2tt.histoDataUrl = "https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-19/figaux_10a.png"
 #T2tt.exclusionDataUrl =
 #----figure----
-T2tt.figure = "fig 18"
-T2tt.figureUrl = "https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-19/fig_18.png"
+T2tt.figure = "fig 10a"
+T2tt.figureUrl = "https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-19/figaux_10a.png"
 #----limit url settings ----
 #T2tt.obsUpperLimit.dataUrl = 
 #T2tt.expUpperLimit.dataUrl =
