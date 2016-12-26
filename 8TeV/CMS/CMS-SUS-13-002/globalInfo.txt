@@ -6,6 +6,6 @@ arxiv: http://arxiv.org/abs/1404.5801v2
 publication: http://journals.aps.org/prd/abstract/10.1103/PhysRevD.90.032006
 supersedes: CMS-PAS-SUS-12-026
 private: False
-implementedBy: Federico A
-lastUpdate: 2016/9/29
+implementedBy: Andre Lessa
+lastUpdate: 2016/12/24
 

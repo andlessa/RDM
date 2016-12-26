@@ -10,9 +10,12 @@ import os
 import argparse
 import types
 
-argparser = argparse.ArgumentParser(description =
+argparser = argparse.ArgumentParser(description =  
 'create info.txt, txname.txt, twiki.txt and sms.py')
-argparser.add_argument ('-utilsPath', '--utilsPath',
+argparser.add_argument ('-utilsPath', '--utilsPath', 
+help = 'path to the package smodels_utils',\
+type = types.StringType)
+argparser.add_argument ('-smodelsPath', '--smodelsPath', 
 help = 'path to the package smodels_utils',\
 type = types.StringType)
 args = argparser.parse_args()
@@ -24,6 +27,9 @@ else:
     sys.path.append(os.path.abspath(databaseRoot))
     from utilsPath import utilsPath
     utilsPath = databaseRoot + utilsPath
+if args.smodelsPath:
+    sys.path.append(os.path.abspath(args.smodelsPath))
+
 
 sys.path.append(os.path.abspath(utilsPath))
 from smodels_utils.dataPreparation.inputObjects import TxNameInput, MetaInfoInput
@@ -32,7 +38,6 @@ from smodels_utils.dataPreparation.origPlotObjects import x, y
 
 #+++++++ global info block ++++++++++++++
 info = MetaInfoInput('ATLAS-SUSY-2013-02')
-info.comment = 'T5WWLSP060 and T6WWLSP060 originally have xvalue on y-axes, changed by us to M2'
 info.sqrts = '8.0'
 info.private = False
 info.lumi = '20.3'
@@ -101,13 +106,13 @@ T6WW.on.condition = "None"
 T6WW.off.condition ="None"
 
 #+++++++ next mass plane block ++++++++++++++
-T6WWLSP060 = T6WW.addMassPlane(motherMass = x, interMass0 = y, lspMass = 60.0)
+T6WWLSP060 = T6WW.addMassPlane(motherMass = x, interMass0 = y*(x-60.0) + 60.0, lspMass = 60.0)
 #----limit source----
-T6WWLSP060.obsUpperLimit.setSource( "orig/limit_T6WWLSP060.corr.txt", "txt", objectName = None, index = None )
+T6WWLSP060.obsUpperLimit.setSource( "orig/limit_T6WWLSP060.txt", "txt", objectName = None, index = None )
 T6WWLSP060.obsUpperLimit.unit = 'fb'
 #T6WWLSP060.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
 #----exclusion source----
-T6WWLSP060.obsExclusion.setSource( "orig/exclusion_T6WWLSP060.corr.txt", "txt", objectName = None, index = None )
+T6WWLSP060.obsExclusion.setSource( "orig/exclusion_T6WWLSP060.txt", "txt", objectName = None, index = None )
 
 """
 T6WWLSP060.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
@@ -267,13 +272,13 @@ T5WW.on.condition ="None"
 T5WW.off.condition = "None"
 
 #+++++++ next mass plane block ++++++++++++++
-T5WWLSP060 = T5WW.addMassPlane(motherMass = x, interMass0 = y, lspMass = 60.0)
+T5WWLSP060 = T5WW.addMassPlane(motherMass = x, interMass0 = y*(x-60.) + 60.0, lspMass = 60.0)
 #----limit source----
-T5WWLSP060.obsUpperLimit.setSource( "orig/limit_T5WWLSP060.corr.txt", "txt", objectName = None, index = None )
+T5WWLSP060.obsUpperLimit.setSource( "orig/limit_T5WWLSP060.txt", "txt", objectName = None, index = None )
 T5WWLSP060.obsUpperLimit.unit = 'fb'
 #T5WWLSP060.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
 #----exclusion source----
-T5WWLSP060.obsExclusion.setSource( "orig/exclusion_T5WWLSP060.corr.txt", "txt", objectName = None, index = None )
+T5WWLSP060.obsExclusion.setSource( "orig/exclusion_T5WWLSP060.txt", "txt", objectName = None, index = None )
 #T5WWLSP060.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
 #T5WWLSP060.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
 #T5WWLSP060.expExclusion.setSource( path, filetype, objectName = None, index = None )

@@ -5,7 +5,7 @@ constraint: 20.2*[[['jet','jet'],['l','nu']],[['jet','jet'],['l','nu']]]
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-089/fig_22b.png;https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-089/fig_22a.png
 dataUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-089/fig_22b_PRELIMINARY.data;https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-089/fig_22a_PRELIMINARY.data
 validated: False
-axes: 2*Eq(mother,x)_Eq(inter0,y)_Eq(lsp,60.0);2*Eq(mother,x)_Eq(inter0,0.5*x+0.5*y)_Eq(lsp,y)
+axes: 2*Eq(mother,x)_Eq(inter0,x*y-60.0*y+60.0)_Eq(lsp,60.0);2*Eq(mother,x)_Eq(inter0,0.5*x+0.5*y)_Eq(lsp,y)
 publishedData: True
 upperLimits: [[[[1100.0*GeV, 110.0*GeV, 60.0*GeV], [1100.0*GeV, 110.0*GeV, 60.0*GeV]], 6.6084*pb],
 [[[800.0*GeV, 70.0*GeV, 60.0*GeV], [800.0*GeV, 70.0*GeV, 60.0*GeV]], 104.1*pb],
@@ -36,7 +36,7 @@ upperLimits: [[[[1100.0*GeV, 110.0*GeV, 60.0*GeV], [1100.0*GeV, 110.0*GeV, 60.0*
 [[[1100.0*GeV, 85.0*GeV, 60.0*GeV], [1100.0*GeV, 85.0*GeV, 60.0*GeV]], 11.925*pb],
 [[[800.0*GeV, 85.0*GeV, 60.0*GeV], [800.0*GeV, 85.0*GeV, 60.0*GeV]], 1.909*pb],
 [[[900.0*GeV, 110.0*GeV, 60.0*GeV], [900.0*GeV, 110.0*GeV, 60.0*GeV]], 1.6878*pb],
-[[[600.0*GeV, 85.0*GeV, 60.0*GeV], [600.0*GeV, 85.0*GeV, 60.0*GeV]], 0.57842*pb],
+[[[600.0*GeV, 85.0*GeV, 60.0*GeV], [600.0*GeV, 85.0*GeV, 60.0*GeV]], 0.57841*pb],
 [[[800.0*GeV, 110.0*GeV, 60.0*GeV], [800.0*GeV, 110.0*GeV, 60.0*GeV]], 0.84749*pb],
 [[[1500.0*GeV, 85.0*GeV, 60.0*GeV], [1500.0*GeV, 85.0*GeV, 60.0*GeV]], 100.51*pb],
 [[[1200.0*GeV, 110.0*GeV, 60.0*GeV], [1200.0*GeV, 110.0*GeV, 60.0*GeV]], 14.498*pb],

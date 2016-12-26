@@ -1,10 +1,5 @@
-comment_by: Suchita Kulkarni
-date: Tue Dec 20 17:20:04 CET 2016
-comment: "Comment by Wolfgang Waltenberger brought forward
-comment_by: WW
-date: Mon 30 Mar 2015 07:21:42 PM CEST 
-comment: in their slha files, they only had the left handed squarks non-decoupled, 
-so one has to compare with half the signal cross section. Also, in the official 
-exclusion plot for LSP=60 GeV, there is a non-excluded island at around msquark=420 x=.16, 
-which hasnt been digitised and thus doesnt appear in our plots, 
-see https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-02/figaux_11c.png"
+comment_by: Andre Lessa
+date: Sab Dez 24 00:29:45 BRST 2016
+comment: "The exclusion curve only considers left handed squarks. Therefore the plot has to be validated
+with T6WWoff_left. However, even using only left-handed squarks the plane lsp=60 still has large
+jumps (at low msquark) from bin to bin. Therefore interpolation is unreliable and we do not use this result."

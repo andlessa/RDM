@@ -38,7 +38,7 @@ from smodels_utils.dataPreparation.origPlotObjects import x, y
 
 #+++++++ global info block ++++++++++++++
 info = MetaInfoInput('ATLAS-CONF-2013-089')
-info.comment = 'T5WWLSP060 and T6WWLSP060 originally have xvalue on y-axes, changed by us to M2 - there are more topologies (with more then three masses). Will be superseeded by ATLAS-SUSY-2013-20'
+info.comment = 'There are more topologies (with more then three masses). Will be superseeded by ATLAS-SUSY-2013-20'
 info.sqrts = '8.0'
 info.private = False
 info.lumi = '20.3'
@@ -92,12 +92,12 @@ T6WW050.obsUpperLimit.dataUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/
 #T6WW050.expExclusionP1.dataUrl =
 
 #+++++++ next mass plane block ++++++++++++++
-T6WWLSP060 = T6WW.addMassPlane(motherMass = x, interMass0 = y, lspMass = 60.0)
+T6WWLSP060 = T6WW.addMassPlane(motherMass = x, interMass0 = y*(x - 60.0) + 60.0, lspMass = 60.0)
 #----limit source----
-T6WWLSP060.obsUpperLimit.setSource( "orig/T6WWLSP060corr.data", "txt", objectName = None, index = None )
+T6WWLSP060.obsUpperLimit.setSource( "orig/T6WWLSP060.data", "txt", objectName = None, index = None )
 # T6WWLSP060.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
 #----exclusion source----
-T6WWLSP060.obsExclusion.setSource( "orig/exclusion_T6WWLSP060.corr.txt", "txt", objectName = None, index = None )
+T6WWLSP060.obsExclusion.setSource( "orig/exclusion_T6WWLSP060.txt", "txt", objectName = None, index = None )
 # T6WWLSP060.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
 # T6WWLSP060.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
 # T6WWLSP060.expExclusion.setSource( path, filetype, objectName = None, index = None )
@@ -135,12 +135,12 @@ T5WW.on.condition ="None"
 T5WW.off.condition = "Cgtr([[['jet','jet'],['mu','nu']],[['jet','jet'],['mu','nu']]],[[['jet','jet'], ['e','nu']],[['jet','jet'],['e','nu']]]);Cgtr([[['jet','jet'],['e','nu']],[['jet','jet'],['mu','nu']]],2.*[[['jet','jet'], ['e','nu']],[['jet','jet'],['e','nu']]])"
 
 #+++++++ next mass plane block ++++++++++++++
-T5WWLSP060 = T5WW.addMassPlane(motherMass = x, interMass0 = y, lspMass = 60.0)
+T5WWLSP060 = T5WW.addMassPlane(motherMass = x, interMass0 = y*x-y*60.0+60.0, lspMass = 60.0)
 #----limit source----
-T5WWLSP060.obsUpperLimit.setSource( "orig/T5WWLSP060corr.data", "txt", objectName = None, index = None )
+T5WWLSP060.obsUpperLimit.setSource( "orig/T5WWLSP060.data", "txt", objectName = None, index = None )
 #T5WWLSP060.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
 #----exclusion source----
-T5WWLSP060.obsExclusion.setSource( "orig/exclusion_T5WWLSP060.corr.txt", "txt", objectName = None, index = None )
+T5WWLSP060.obsExclusion.setSource( "orig/exclusion_T5WWLSP060.txt", "txt", objectName = None, index = None )
 """
 T5WWLSP060.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
 T5WWLSP060.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )

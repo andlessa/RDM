@@ -6,8 +6,7 @@ figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2
 validated: False
 axes: 2*Eq(mother,x)_Eq(inter0,1.5e+2)_Eq(lsp,y);2*Eq(mother,x)_Eq(inter0,2.0*y)_Eq(lsp,y)
 publishedData: False
-upperLimits: [[[[150.0*GeV, 150.0*GeV, 25.0*GeV], [150.0*GeV, 150.0*GeV, 25.0*GeV]], 47.7*pb],
-[[[150.0*GeV, 150.0*GeV, 100.0*GeV], [150.0*GeV, 150.0*GeV, 100.0*GeV]], 216.6*pb],
+upperLimits: [[[[150.0*GeV, 150.0*GeV, 100.0*GeV], [150.0*GeV, 150.0*GeV, 100.0*GeV]], 216.6*pb],
 [[[175.0*GeV, 150.0*GeV, 75.0*GeV], [175.0*GeV, 150.0*GeV, 75.0*GeV]], 32.2*pb],
 [[[200.0*GeV, 150.0*GeV, 75.0*GeV], [200.0*GeV, 150.0*GeV, 75.0*GeV]], 18.4*pb],
 [[[200.0*GeV, 150.0*GeV, 100.0*GeV], [200.0*GeV, 150.0*GeV, 100.0*GeV]], 34.2*pb],
@@ -22,7 +21,6 @@ upperLimits: [[[[150.0*GeV, 150.0*GeV, 25.0*GeV], [150.0*GeV, 150.0*GeV, 25.0*Ge
 [[[150.0*GeV, 140.0*GeV, 70.0*GeV], [150.0*GeV, 140.0*GeV, 70.0*GeV]], 203.0*pb],
 [[[175.0*GeV, 140.0*GeV, 70.0*GeV], [175.0*GeV, 140.0*GeV, 70.0*GeV]], 31.9*pb],
 [[[200.0*GeV, 140.0*GeV, 70.0*GeV], [200.0*GeV, 140.0*GeV, 70.0*GeV]], 18.4*pb],
-[[[200.0*GeV, 200.0*GeV, 100.0*GeV], [200.0*GeV, 200.0*GeV, 100.0*GeV]], 26.9*pb],
 [[[225.0*GeV, 100.0*GeV, 50.0*GeV], [225.0*GeV, 100.0*GeV, 50.0*GeV]], 18.0*pb],
 [[[225.0*GeV, 140.0*GeV, 70.0*GeV], [225.0*GeV, 140.0*GeV, 70.0*GeV]], 9.7*pb],
 [[[250.0*GeV, 100.0*GeV, 50.0*GeV], [250.0*GeV, 100.0*GeV, 50.0*GeV]], 10.1*pb],
@@ -30,6 +28,5 @@ upperLimits: [[[[150.0*GeV, 150.0*GeV, 25.0*GeV], [150.0*GeV, 150.0*GeV, 25.0*Ge
 [[[275.0*GeV, 100.0*GeV, 50.0*GeV], [275.0*GeV, 100.0*GeV, 50.0*GeV]], 6.9*pb],
 [[[275.0*GeV, 140.0*GeV, 70.0*GeV], [275.0*GeV, 140.0*GeV, 70.0*GeV]], 3.4*pb],
 [[[300.0*GeV, 100.0*GeV, 50.0*GeV], [300.0*GeV, 100.0*GeV, 50.0*GeV]], 4.9*pb],
-[[[300.0*GeV, 300.0*GeV, 150.0*GeV], [300.0*GeV, 300.0*GeV, 150.0*GeV]], 4.5*pb],
 [[[350.0*GeV, 100.0*GeV, 50.0*GeV], [350.0*GeV, 100.0*GeV, 50.0*GeV]], 2.6*pb],
 [[[400.0*GeV, 100.0*GeV, 50.0*GeV], [400.0*GeV, 100.0*GeV, 50.0*GeV]], 2.0*pb]]

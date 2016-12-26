@@ -8,3 +8,7 @@ comment: probably the reference cross section is again for only
 left handed quarks, but since it does not state this explicitly 
 in the text, I cannot know. So not validated, since even taking 
 a factor 0f 0.5 into account, I cannot reproduce the exclusion lines."
+comment_by: Andre Lessa
+date:
+comment: "Using only left-handed squarks the results improve, but the
+data is still too sparse for reliable interpolation".

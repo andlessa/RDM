@@ -1,6 +1,7 @@
-comment_by: Suchita Kulkarni
-date: Mon Dec 19 19:25:21 CET 2016
-comment: "OK, only three points in the upper limit plane for 
-the off shell topology. Not enough for validation. Also for 
-this topology, the mother mass is fixed and only one upper 
-limit plane is available. Verdict, do not use this result."
+comment_by: Andre Lessa
+date: Sab Dez 24 19:31:00 BRST 2016
+comment: "The original data has bin at (100,100) which is has a much higher UL than the other
+ones. As a result the interpolation overshoots the UL whenever the simplex with this point is used.
+This results in a few non-excluded points at x ~ 150 GeV."
+
+
