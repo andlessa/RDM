@@ -4,7 +4,7 @@ condition: None
 constraint: [[['t','t']],[['t','t']]]
 figureUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13007/DPhi_Method_T1tttt_Muons_250_Nb2.pdf
 dataUrl: https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS13007;https://twiki.cern.ch/twiki/bin/edit/CMSPublic/EffxAcc?topicparent=CMSPublic.PhysicsResultsSUS13007;nowysiwyg=1
-validated: None
+validated: True
 axes: 2*Eq(mother,x)_Eq(lsp,y)
 publishedData: True
 efficiencyMap: [[[[400.0*GeV, 0.0*GeV], [400.0*GeV, 0.0*GeV]], 0.0004358],
