@@ -4,7 +4,7 @@ condition: None
 constraint: [[['W']],[['higgs']]]
 figureUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13006/Fig16_exclusion_TChiWH.png
 dataUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13006/ss_eff_map.root
-validated: None
+validated: False
 axes: 2*Eq(mother,x)_Eq(lsp,y)
 publishedData: True
 efficiencyMap: [[[[125.0*GeV, 0.0*GeV], [125.0*GeV, 0.0*GeV]], 0.00039645],
