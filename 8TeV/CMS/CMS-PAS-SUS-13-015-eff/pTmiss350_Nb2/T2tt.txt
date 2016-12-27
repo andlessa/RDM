@@ -4,7 +4,7 @@ condition: None
 constraint: [[['t']],[['t']]]
 figureUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13015/picked_eff_T2tt_highMET_2b.png
 dataUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13015;https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13015/picked_eff_T2tt_highMET_2b.C
-validated: None
+validated: True
 axes: 2*Eq(mother,x)_Eq(lsp,y)
 publishedData: True
 efficiencyMap: [[[[200.0*GeV, 25.0*GeV], [200.0*GeV, 25.0*GeV]], 1e-05],

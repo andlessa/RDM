@@ -3,7 +3,7 @@ conditionDescription: None
 condition: None
 constraint: [[['t']],[['t']]]
 dataUrl: http://hepdata.cedar.ac.uk/view/ins1304456;http://hepdata.cedar.ac.uk/view/ins1304456/d65/input http://hepdata.cedar.ac.uk/view/ins1304456/d51/input
-validated: None
+validated: True
 axes: 2*Eq(mother,x)_Eq(lsp,y)
 publishedData: True
 efficiencyMap: [[[[200.0*GeV, 1.0*GeV], [200.0*GeV, 1.0*GeV]], 7.488e-05],
