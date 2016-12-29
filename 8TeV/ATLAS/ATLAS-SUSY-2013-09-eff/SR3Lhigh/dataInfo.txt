@@ -3,5 +3,5 @@ dataId: SR3Lhigh
 observedN: 2
 expectedBG: 2.5
 bgError: 0.9
-upperLimit: 0.239215542025*fb
-expectedUpperLimit: 0.239636850066*fb
+upperLimit: 0.238814159453*fb
+expectedUpperLimit: 0.239511620693*fb
