@@ -32,7 +32,7 @@ from smodels_utils.dataPreparation.origPlotObjects import x, y
 
 #+++++++ global info block ++++++++++++++
 info = MetaInfoInput('CMS-SUS-13-012')
-#info.comment =
+info.comment = 'T1,T2,T1tttt official efficiency maps from the CMS collaboration; T5WW and T5ZZ created by the SModelS collaboration using MadAnalysis5' 
 info.sqrts = '8.0'
 info.private = False
 info.lumi = '19.5'
@@ -40,7 +40,7 @@ info.publication = 'JHEP06(2014)055'
 info.url = 'https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS13012'
 #info.superseded_by =
 info.arxiv = 'http://arxiv.org/abs/1402.4770'
-info.contact = 'cms-pag-conveners-sus@NOSPAMcernSPAMNOT.ch'
+info.contact = 'cms-pag-conveners-sus@NOSPAMcernSPAMNOT.ch, SModelS collaboration'
 info.prettyName = ''
 info.implementedBy = 'Federico A.'
 # info.supersedes =
