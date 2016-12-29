@@ -276,7 +276,7 @@ T5WW_2 = T5WW.addMassPlane(motherMass = x, interMass0 = 0.05*x + 0.95*y, lspMass
 #T5WW_1.setBranch_2(motherMass = , interMass0 = , lspMass = )
 #---- new efficiency map -----
 #----exclusion source----
-T5WW_2.obsExclusion.setSource( 'orig/Null_Line.txt', 'txt', objectName = None, index = None )
+#T5WW_2.obsExclusion.setSource( 'orig/Null_Line.txt', 'txt', objectName = None, index = None )
 #T5WW_2.obsExclusionM1.setSource( 'orig/T5WW_Plus.txt', 'txt', objectName = None, index = None )
 #T5WW_2.obsExclusionP1.setSource( 'orig/T5WW_Minus.txt', 'txt', objectName = None, index = None )
 #T5WW_1.expExclusion.setSource( path, type, objectName = None, index = None )
@@ -451,7 +451,7 @@ T5ZZ_1 = T5ZZ.addMassPlane(motherMass = x, interMass0 = 0.5*(x+y), lspMass = y )
 T5ZZ_1.figure =''
 T5ZZ_1.figureUrl =''
 #----exclusion source----
-T5ZZ_1.obsExclusion.setSource( 'orig/Null_Line.txt', 'txt', objectName = None, index = None )
+#T5ZZ_1.obsExclusion.setSource( 'orig/Null_Line.txt', 'txt', objectName = None, index = None )
 #T5ZZ_1.obsExclusionM1.setSource( 'orig/T5WW_Plus.txt', 'txt', objectName = None, index = None )
 #T5ZZ_1.obsExclusionP1.setSource( 'orig/T5WW_Minus.txt', 'txt', objectName = None, index = None )
 #T5ZZ_1.expExclusion.setSource( path, type, objectName = None, index = None )
@@ -531,7 +531,7 @@ T5ZZ_2 = T5ZZ.addMassPlane(motherMass = x, interMass0 = 0.05*x + 0.95*y, lspMass
 #T5ZZ_1.setBranch_2(motherMass = , interMass0 = , lspMass = )
 #---- new efficiency map -----
 #----exclusion source----
-T5ZZ_2.obsExclusion.setSource( 'orig/Null_Line.txt', 'txt', objectName = None, index = None )
+#T5ZZ_2.obsExclusion.setSource( 'orig/Null_Line.txt', 'txt', objectName = None, index = None )
 #T5ZZ_2.obsExclusionM1.setSource( 'orig/T5WW_Plus.txt', 'txt', objectName = None, index = None )
 #T5ZZ_2.obsExclusionP1.setSource( 'orig/T5WW_Minus.txt', 'txt', objectName = None, index = None )
 #T5ZZ_1.expExclusion.setSource( path, type, objectName = None, index = None )
@@ -611,7 +611,7 @@ T5ZZ_3 = T5ZZ.addMassPlane(motherMass = x, interMass0 = 0.95*x + 0.05*y, lspMass
 #T5ZZ_1.setBranch_2(motherMass = , interMass0 = , lspMass = )
 #---- new efficiency map -----
 #----exclusion source----
-T5ZZ_3.obsExclusion.setSource( 'orig/Null_Line.txt', 'txt', objectName = None, index = None )
+#T5ZZ_3.obsExclusion.setSource( 'orig/Null_Line.txt', 'txt', objectName = None, index = None )
 #T5ZZ_3.obsExclusionM1.setSource( 'orig/T5WW_Plus.txt', 'txt', objectName = None, index = None )
 #T5ZZ_3.obsExclusionP1.setSource( 'orig/T5WW_Minus.txt', 'txt', objectName = None, index = None )
 #T5ZZ_1.expExclusion.setSource( path, type, objectName = None, index = None )
