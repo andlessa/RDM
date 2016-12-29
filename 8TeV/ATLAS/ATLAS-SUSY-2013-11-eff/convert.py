@@ -32,7 +32,7 @@ from smodels_utils.dataPreparation.origPlotObjects import x, y
 
 #+++++++ global info block ++++++++++++++
 info = MetaInfoInput('ATLAS-SUSY-2013-11')
-info.comment = 'EM Home Produced'
+info.comment = 'TSlepSlep efficiency maps created by the SModelS collaboration using MadAnalysis5'
 info.sqrts = '8.0'
 info.private = False
 info.lumi = '20.3'
