@@ -452,7 +452,6 @@ databaseCreator.create(True)
 
 
 
-
 #+++++++ next txName block ++++++++++++++
 T5ZZ = TxNameInput('T5ZZ')
 T5ZZ.on.checked =" "
@@ -586,7 +585,7 @@ T5ZZ_2 = T5ZZ.addMassPlane(motherMass = x, interMass0 = 0.05*x + 0.95*y, lspMass
 #---- new efficiency map -----
 #----figure----
 #----exclusion source----
-T5ZZ_2 .obsExclusion.setSource( "orig/Null_Line.txt", "txt", objectName = None, index = None )
+#T5ZZ_2 .obsExclusion.setSource( "orig/Null_Line.txt", "txt", objectName = None, index = None )
 #----limit source----
 T5ZZ_2 .efficiencyMap.setSource( "orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_3NJet6_500HT800_200MHT300.dat", "txt", objectName = None, index = None, dataset="3NJet6_500HT800_200MHT300" )
 T5ZZ_2.efficiencyMap.setStatistics ( observedN=6159, expectedBG=6088, bgError=665 )
@@ -705,7 +704,7 @@ T5ZZ_3 = T5ZZ.addMassPlane(motherMass = x, interMass0 = 0.95*x + 0.05*y, lspMass
 #---- new efficiency map -----
 #----figure----
 #----exclusion source----
-T5ZZ_3 .obsExclusion.setSource( "orig/Null_Line.txt", "txt", objectName = None, index = None )
+#T5ZZ_3 .obsExclusion.setSource( "orig/Null_Line.txt", "txt", objectName = None, index = None )
 #----limit source----
 T5ZZ_3 .efficiencyMap.setSource( "orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_3NJet6_500HT800_200MHT300.dat", "txt", objectName = None, index = None, dataset="3NJet6_500HT800_200MHT300" )
 T5ZZ_3.efficiencyMap.setStatistics ( observedN=6159, expectedBG=6088, bgError=665 )
@@ -839,7 +838,7 @@ T5WW_1 .obsExclusion.setSource( "orig/CMS_T5VV_x05.dat", "txt", objectName = Non
 #----limit source----
 T5WW_1 .efficiencyMap.setSource( "orig/T5WW_x05/MA5_EM_T5WW_x05_3NJet6_500HT800_200MHT300.dat", "txt", objectName = None, index = None, dataset="3NJet6_500HT800_200MHT300" )
 T5WW_1.efficiencyMap.setStatistics ( observedN=6159, expectedBG=6088, bgError=665 )
-databaseCreator.create(True)
+databaseCreator.create()
 
 T5WW_1.efficiencyMap.setSource( "orig/T5WW_x05/MA5_EM_T5WW_x05_3NJet6_500HT800_300MHT450.dat", "txt", objectName = None, index = None, dataset="3NJet6_500HT800_300MHT450" )
 T5WW_1.efficiencyMap.setStatistics ( observedN=2305, expectedBG=2278, bgError=266 )
@@ -896,7 +895,7 @@ T5WW_1.efficiencyMap.setSource( "orig/T5WW_x05/MA5_EM_T5WW_x05_6NJet8_500HT800_3
 T5WW_1.efficiencyMap.setStatistics ( observedN=62, expectedBG=52, bgError=12 )
 databaseCreator.create(True)
 T5WW_1.efficiencyMap.setSource( "orig/T5WW_x05/MA5_EM_T5WW_x05_6NJet8_500HT800_450MHTinf.dat", "txt", objectName = None, index = None, dataset="6NJet8_500HT800_450MHTinf" )
-T5WW_1.efficiencyMap.setStatistics ( observedN=9, expectedBG=0.8, bgError=3.3  ) ### check error
+T5WW_1.efficiencyMap.setStatistics ( observedN=9, expectedBG=0.8, bgError=3.3  ) ### check error 0.6
 databaseCreator.create(True)
 T5WW_1.efficiencyMap.setSource( "orig/T5WW_x05/MA5_EM_T5WW_x05_6NJet8_800HT1000_200MHT300.dat", "txt", objectName = None, index = None, dataset="6NJet8_800HT1000_200MHT300" )
 T5WW_1.efficiencyMap.setStatistics ( observedN=111, expectedBG=124, bgError=29 )
@@ -914,7 +913,7 @@ T5WW_1.efficiencyMap.setSource( "orig/T5WW_x05/MA5_EM_T5WW_x05_6NJet8_1000HT1250
 T5WW_1.efficiencyMap.setStatistics ( observedN=20, expectedBG=21.6, bgError=5.8 )
 databaseCreator.create(True)
 T5WW_1.efficiencyMap.setSource( "orig/T5WW_x05/MA5_EM_T5WW_x05_6NJet8_1000HT1250_450MHTinf.dat", "txt", objectName = "", index = None, dataset="6NJet8_1000HT1250_450MHTinf" )
-T5WW_1.efficiencyMap.setStatistics ( observedN=4, expectedBG=2.2, bgError=3.8 ) ### check error
+T5WW_1.efficiencyMap.setStatistics ( observedN=4, expectedBG=2.2, bgError=3.8 ) ### check error 1.1
 databaseCreator.create(True)
 T5WW_1.efficiencyMap.setSource( "orig/T5WW_x05/MA5_EM_T5WW_x05_6NJet8_1250HT1500_200MHT300.dat", "txt", objectName = None, index = None, dataset="6NJet8_1250HT1500_200MHT300" )
 T5WW_1.efficiencyMap.setStatistics ( observedN=24, expectedBG=28.0, bgError=8.2 )
@@ -923,7 +922,7 @@ T5WW_1.efficiencyMap.setSource( "orig/T5WW_x05/MA5_EM_T5WW_x05_6NJet8_1250HT1500
 T5WW_1.efficiencyMap.setStatistics ( observedN=5, expectedBG=9.4, bgError=3.6 )
 databaseCreator.create(True)
 T5WW_1.efficiencyMap.setSource( "orig/T5WW_x05/MA5_EM_T5WW_x05_6NJet8_1250HT1500_450MHTinf.dat", "txt", objectName = None, index = None, dataset="6NJet8_1250HT1500_450MHTinf" )
-T5WW_1.efficiencyMap.setStatistics ( observedN=2, expectedBG=0.5, bgError=2.6 ) #check error
+T5WW_1.efficiencyMap.setStatistics ( observedN=2, expectedBG=0.5, bgError=2.6 ) #check error 0.4
 databaseCreator.create(True)
 T5WW_1.efficiencyMap.setSource( "orig/T5WW_x05/MA5_EM_T5WW_x05_6NJet8_1500HTinf_200MHT300.dat", "txt", objectName = None, index = None, dataset="6NJet8_1500HTinf_200MHT300" )
 T5WW_1.efficiencyMap.setStatistics ( observedN=18, expectedBG=21.1, bgError=8.1 )
@@ -932,19 +931,19 @@ T5WW_1.efficiencyMap.setSource( "orig/T5WW_x05/MA5_EM_T5WW_x05_6NJet8_1500HTinf_
 T5WW_1.efficiencyMap.setStatistics ( observedN=3, expectedBG=7.9, bgError=3.6 )
 databaseCreator.create(True)
 T5WW_1.efficiencyMap.setSource( "orig/T5WW_x05/MA5_EM_T5WW_x05_8NJetinf_500HT800_200MHTinf.dat", "txt", objectName = None, index = None, dataset="8NJetinf_500HT800_200MHTinf" )
-T5WW_1.efficiencyMap.setStatistics ( observedN=8, expectedBG=4.8, bgError=2.3 )#### check error
+T5WW_1.efficiencyMap.setStatistics ( observedN=8, expectedBG=4.8, bgError=2.3 )#### check error 2.1
 databaseCreator.create(True)
 T5WW_1.efficiencyMap.setSource( "orig/T5WW_x05/MA5_EM_T5WW_x05_8NJetinf_800HT1000_200MHTinf.dat", "txt", objectName = None, index = None, dataset="8NJetinf_800HT1000_200MHTinf" )
-T5WW_1.efficiencyMap.setStatistics ( observedN=9, expectedBG=8.3, bgError=3.4 )#### check error
+T5WW_1.efficiencyMap.setStatistics ( observedN=9, expectedBG=8.3, bgError=3.4 )#### check error 3.3
 databaseCreator.create(True)
 T5WW_1.efficiencyMap.setSource( "orig/T5WW_x05/MA5_EM_T5WW_x05_8NJetinf_1000HT1250_200MHTinf.dat", "txt", objectName = None, index = None, dataset="8NJetinf_1000HT1250_200MHTinf" )
-T5WW_1.efficiencyMap.setStatistics ( observedN=8, expectedBG=5.6, bgError=2.3 )#### check error
+T5WW_1.efficiencyMap.setStatistics ( observedN=8, expectedBG=5.6, bgError=2.3 )#### check error 2.1
 databaseCreator.create(True)
 T5WW_1.efficiencyMap.setSource( "orig/T5WW_x05/MA5_EM_T5WW_x05_8NJetinf_1250HT1500_200MHTinf.dat", "txt", objectName = None , index = None, dataset="8NJetinf_1250HT1500_200MHTinf" )
-T5WW_1.efficiencyMap.setStatistics ( observedN=5, expectedBG=7.1, bgError=3.8  )#### check error
+T5WW_1.efficiencyMap.setStatistics ( observedN=5, expectedBG=7.1, bgError=3.8  )#### check error 3.6
 databaseCreator.create(True)
 T5WW_1.efficiencyMap.setSource( "orig/T5WW_x05/MA5_EM_T5WW_x05_8NJetinf_1500HTinf_200MHTinf.dat", "txt", objectName = None, index = None, dataset="8NJetinf_1500HTinf_200MHTinf" )
-T5WW_1.efficiencyMap.setStatistics ( observedN=2, expectedBG=3.3, bgError=4.7 )#### check error
+T5WW_1.efficiencyMap.setStatistics ( observedN=2, expectedBG=3.3, bgError=4.7 )#### check error 1.7
 databaseCreator.create(True)
 
 
@@ -953,7 +952,7 @@ T5WW_2 = T5WW.addMassPlane(motherMass = x, interMass0 = 0.05*x + 0.95*y, lspMass
 #---- new efficiency map -----
 #----figure----
 #----exclusion source----
-T5WW_2 .obsExclusion.setSource( "orig/Null_Line.txt", "txt", objectName = None, index = None )
+#T5WW_2 .obsExclusion.setSource( "orig/Null_Line.txt", "txt", objectName = None, index = None )
 #----limit source----
 T5WW_2 .efficiencyMap.setSource( "orig/T5WW_x005/MA5_EM_T5WW_Glu005Neu095_3NJet6_500HT800_200MHT300.dat", "txt", objectName = None, index = None, dataset="3NJet6_500HT800_200MHT300" )
 T5WW_2.efficiencyMap.setStatistics ( observedN=6159, expectedBG=6088, bgError=665 )
@@ -1072,7 +1071,7 @@ T5WW_3 = T5WW.addMassPlane(motherMass = x, interMass0 = 0.95*x + 0.05*y, lspMass
 #---- new efficiency map -----
 #----figure----
 #----exclusion source----
-T5WW_3.obsExclusion.setSource( "orig/Null_Line.txt", "txt", objectName = None, index = None )
+#T5WW_3.obsExclusion.setSource( "orig/Null_Line.txt", "txt", objectName = None, index = None )
 #----limit source----
 T5WW_3.efficiencyMap.setSource( "orig/T5WW_x095/MA5_EM_T5WW_Glu095Neu005_3NJet6_500HT800_200MHT300.dat", "txt", objectName = None, index = None, dataset="3NJet6_500HT800_200MHT300" )
 T5WW_3.efficiencyMap.setStatistics ( observedN=6159, expectedBG=6088, bgError=665 )
@@ -1183,4 +1182,3 @@ databaseCreator.create(True)
 T5WW_3.efficiencyMap.setSource( "orig/T5WW_x095/MA5_EM_T5WW_Glu095Neu005_8NJetinf_1500HTinf_200MHTinf.dat", "txt", objectName = None, index = None, dataset="8NJetinf_1500HTinf_200MHTinf" )
 T5WW_3.efficiencyMap.setStatistics ( observedN=2, expectedBG=3.3, bgError=4.7 )#### check error
 databaseCreator.create(True)
-
