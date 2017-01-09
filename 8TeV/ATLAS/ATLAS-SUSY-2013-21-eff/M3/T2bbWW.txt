@@ -2,7 +2,7 @@ txName: T2bbWW
 conditionDescription: None
 condition: None
 constraint: [[['b','W']],[['b','W']]]
-validated: None
+validated: True
 axes: 2*Eq(mother,x)_Eq(lsp,y)
 publishedData: False
 efficiencyMap: [[[[110.0*GeV, 100.0*GeV], [110.0*GeV, 100.0*GeV]], 9e-05],
