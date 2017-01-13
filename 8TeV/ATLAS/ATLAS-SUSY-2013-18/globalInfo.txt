@@ -5,7 +5,7 @@ prettyName: Atlas Three b
 url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-18/
 arxiv: http://arxiv.org/abs/1407.0600
 publication: http://link.springer.com/article/10.1007/JHEP10(2014)024
-comment: Used 1lep+3b UL result, since they give the two analyses UL separately and no combination
+comment: Used 1lep+3b UL result, since they give the two analyses UL separately and no combination.T1btbt result lost wrt ATLAS-CONF-2013-061
 private: False
 supersedes: ATLAS-CONF-2013-061
 implementedBy: Federico A
