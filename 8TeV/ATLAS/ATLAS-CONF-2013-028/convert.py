@@ -41,10 +41,11 @@ info.private = False
 info.lumi = '20.7'
 #info.publication = 
 info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-028/'
-info.supersededBy = 'ATLAS-SUSY-2013-14'
+#info.supersededBy = 'ATLAS-SUSY-2013-14'
 #info.arxiv = 
 #info.contact = 
 info.prettyName = 'ATLAS hadronic stau'
+info.comment = 'Will be supersededBy ATLAS-SUSY-2013-14 (at the moment cannto be implemented -Jan2017)'
 #info.supersedes = 
 
 #+++++++ next txName block ++++++++++++++
