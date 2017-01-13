@@ -5,11 +5,10 @@ prettyName: ATLAS \ge 7 jets
 url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-04/
 arxiv: http://arxiv.org/abs/1308.1841
 publication: http://link.springer.com/article/10.1007/JHEP10%282013%29130
-contact: ATLAS collaboration for T1tttt model;SModelS for T5WW and T5ZZ models
+contact: ATLAS collaboration for T1tttt models;SModelS for T5WW and T5ZZ models
 supersedes: ATLAS-CONF-2012-103
-comment: Erratum: JHEP01(2014)109. T1tttt official efficiency maps from ATLAS collaboration; T5WW and T5ZZ efficiency maps created by the SModelS collaboration using MadAnal\
-ysis5
+comment: Erratum: JHEP01(2014)109. T1tttt official efficiency maps from ATLAS collaboration; T5WW and T5ZZ efficiency maps created by the SModelS collaboration using MadAnalysis5
 private: False
 implementedBy: Federico A
-lastUpdate: 2016/9/29
+lastUpdate: 2017/1/10
 

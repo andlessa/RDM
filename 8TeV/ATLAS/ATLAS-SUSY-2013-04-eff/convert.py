@@ -64,112 +64,6 @@ T1tttt.figure = 'Fig (aux). 11a'
 T1tttt.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-04/figaux_11a.png'
 #----limit url settings ----
 
-## EFFICIENCIES
-
-T1tttt.efficiencyMap.setSource( "./orig/GtGrid_SR_10ij50_bjetblind.txt", "txt" , objectName =  "GtGrid_SR_10ij50_bjetblind.txt", index = None , dataset = "GtGrid_SR_10ij50_bjetblind" )
-T1tttt.dataUrl="http://hepdata.cedar.ac.uk/resource/6095/bjetstream/GtGrid_SR_10ij50_bjetblind.txt"
-T1tttt.efficiencyMap.setStatistics( observedN= 3 ,  expectedBG= 1.37   , bgError=  0.35 )
-databaseCreator.create()
-
-
-T1tttt.efficiencyMap.setSource( "./orig/GtGrid_SR_7ej80_0bjet.txt", "txt" , objectName =  "GtGrid_SR_7ej80_0bjet.txt", index = None , dataset = "GtGrid_SR_7ej80_0bjet" )
-T1tttt.dataUrl = "http://hepdata.cedar.ac.uk/resource/6095/bjetstream/GtGrid_SR_7ej80_0bjet.txt"
-T1tttt.efficiencyMap.setStatistics( observedN=  12 ,  expectedBG= 11.0  , bgError= 2.2  )
-databaseCreator.create(True)
-
-
-T1tttt.efficiencyMap.setSource( "./orig/GtGrid_SR_7ej80_1bjet.txt", "txt" , objectName =  "GtGrid_SR_7ej80_1bjet.txt", index = None , dataset = "GtGrid_SR_7ej80_1bjet" )
-T1tttt.dataUrl = "http://hepdata.cedar.ac.uk/resource/6095/bjetstream/GtGrid_SR_7ej80_1bjet.txt"
-T1tttt.efficiencyMap.setStatistics( observedN=  17,  expectedBG= 17  , bgError=  6 )
-databaseCreator.create(True)
-
-T1tttt.efficiencyMap.setSource( "./orig/GtGrid_SR_7ej80_2ibjet.txt", "txt" , objectName =  "GtGrid_SR_7ej80_2ibjet.txt", index = None , dataset = "GtGrid_SR_7ej80_2ibjet" )
-T1tttt.dataUrl = "http://hepdata.cedar.ac.uk/resource/6095/bjetstream/GtGrid_SR_7ej80_2ibjet.txt"
-T1tttt.efficiencyMap.setStatistics( observedN= 13 ,  expectedBG=  25 , bgError=  10 )
-databaseCreator.create(True)
-
-T1tttt.efficiencyMap.setSource( "./orig/GtGrid_SR_8ej50_0bjet.txt", "txt" , objectName =  "GtGrid_SR_8ej50_0bjet.txt", index = None , dataset = "GtGrid_SR_8ej50_0bjet" )
-T1tttt.dataUrl = "http://hepdata.cedar.ac.uk/resource/6095/bjetstream/GtGrid_SR_8ej50_0bjet.txt"
-T1tttt.efficiencyMap.setStatistics( observedN= 40 ,  expectedBG= 35  , bgError= 4  )
-databaseCreator.create(True)
-
-T1tttt.efficiencyMap.setSource( "./orig/GtGrid_SR_8ej50_1bjet.txt", "txt" , objectName =  "GtGrid_SR_8ej50_1bjet.txt", index = None , dataset = "GtGrid_SR_8ej50_1bjet" )
-T1tttt.dataUrl = "http://hepdata.cedar.ac.uk/resource/6095/bjetstream/GtGrid_SR_8ej50_1bjet.txt"
-T1tttt.efficiencyMap.setStatistics( observedN= 44 ,  expectedBG=  40 , bgError= 10  )
-databaseCreator.create(True)
-
-T1tttt.efficiencyMap.setSource( "./orig/GtGrid_SR_8ej50_2ibjet.txt", "txt" , objectName =  "GtGrid_SR_8ej50_2ibjet.txt", index = None , dataset = "GtGrid_SR_8ej50_2ibjet" )
-T1tttt.dataUrl = "http://hepdata.cedar.ac.uk/resource/6095/bjetstream/GtGrid_SR_8ej50_2ibjet.txt"
-T1tttt.efficiencyMap.setStatistics( observedN= 44 ,  expectedBG= 50  , bgError= 10  )
-databaseCreator.create(True)
-
-T1tttt.efficiencyMap.setSource( "./orig/GtGrid_SR_8ij80_0bjet.txt", "txt" , objectName =  "GtGrid_SR_8ij80_0bjet.txt", index = None , dataset = "GtGrid_SR_8ij80_0bjet" )
-T1tttt.dataUrl = "http://hepdata.cedar.ac.uk/resource/6095/bjetstream/GtGrid_SR_8ij80_0bjet.txt"
-T1tttt.efficiencyMap.setStatistics( observedN= 2 ,  expectedBG= 0.9  , bgError=  0.6 )
-databaseCreator.create(True)
-
-T1tttt.efficiencyMap.setSource( "./orig/GtGrid_SR_8ij80_1bjet.txt", "txt" , objectName =  "GtGrid_SR_8ij80_1bjet.txt", index = None , dataset = "GtGrid_SR_8ij80_1bjet" )
-T1tttt.dataUrl = "http://hepdata.cedar.ac.uk/resource/6095/bjetstream/GtGrid_SR_8ij80_1bjet.txt"
-T1tttt.efficiencyMap.setStatistics( observedN= 1 ,  expectedBG=  1.5 , bgError=  0.9 )
-databaseCreator.create(True)
-
-T1tttt.efficiencyMap.setSource( "./orig/GtGrid_SR_8ij80_2ibjet.txt", "txt" , objectName =  "GtGrid_SR_8ij80_2ibjet.txt", index = None , dataset = "GtGrid_SR_8ij80_2ibjet" )
-T1tttt.dataUrl = "http://hepdata.cedar.ac.uk/resource/6095/bjetstream/GtGrid_SR_8ij80_2ibjet.txt"
-T1tttt.efficiencyMap.setStatistics( observedN= 3 ,  expectedBG= 3.3  , bgError= 2.2  )
-databaseCreator.create(True)
-
-T1tttt.efficiencyMap.setSource( "./orig/GtGrid_SR_9ej50_0bjet.txt", "txt" , objectName =  "GtGrid_SR_9ej50_0bjet.txt", index = None , dataset = "GtGrid_SR_9ej50_0bjet" )
-T1tttt.dataUrl = "http://hepdata.cedar.ac.uk/resource/6095/bjetstream/GtGrid_SR_9ej50_0bjet.txt"
-T1tttt.efficiencyMap.setStatistics( observedN= 5 ,  expectedBG= 3.3  , bgError=  0.7 )
-databaseCreator.create(True)
-
-T1tttt.efficiencyMap.setSource( "./orig/GtGrid_SR_9ej50_1bjet.txt", "txt" , objectName =  "GtGrid_SR_9ej50_1bjet.txt", index = None , dataset = "GtGrid_SR_9ej50_1bjet" )
-T1tttt.dataUrl = "http://hepdata.cedar.ac.uk/resource/6095/bjetstream/GtGrid_SR_9ej50_1bjet.txt"
-T1tttt.efficiencyMap.setStatistics( observedN= 8 ,  expectedBG= 6.1  , bgError= 1.7  )
-databaseCreator.create(True)
-
-T1tttt.efficiencyMap.setSource( "./orig/GtGrid_SR_9ej50_2ibjet.txt", "txt" , objectName =  "GtGrid_SR_9ej50_2ibjet.txt", index = None , dataset = "GtGrid_SR_9ej50_2ibjet" )
-T1tttt.dataUrl = "http://hepdata.cedar.ac.uk/resource/6095/bjetstream/GtGrid_SR_9ej50_2ibjet.txt"
-T1tttt.efficiencyMap.setStatistics( observedN= 7 ,  expectedBG= 8.0  , bgError= 2.7  )
-databaseCreator.create(True)
-
-
-
-'''
-These maps refer to the other type of analysis - JETSTREAM
-T1tttt.efficiencyMap.setSource( "./orig/HEPdata.MJ340.10ij50.GttOffShell.txt", "txt" , objectName =  "HEPdata.MJ340.10ij50.GttOffShell.txt", index = None , dataset = "MJ340_10ij50_GttOffShell" )
-T1tttt.dataUrl = "http://hepdata.cedar.ac.uk/resource/6095/mjstream/HEPdata.MJ340.10ij50.GttOffShell.txt"
-T1tttt.efficiencyMap.setStatistics( observedN= 1 ,  expectedBG=  3.2 , bgError=  3.2 )
-databaseCreator.create(True)
-
-T1tttt.efficiencyMap.setSource( "./orig/HEPdata.MJ340.8ij50.GttOffShell.txt", "txt" , objectName =  "HEPdata.MJ340.8ij50.GttOffShell.txt", index = None , dataset = "MJ340_8ij50_GttOffShell" )
-T1tttt.dataUrl = "http://hepdata.cedar.ac.uk/resource/6095/mjstream/HEPdata.MJ340.8ij50.GttOffShell.txt"
-T1tttt.efficiencyMap.setStatistics( observedN= 69 ,  expectedBG= 75  , bgError= 19 )
-databaseCreator.create(True)
-
-T1tttt.efficiencyMap.setSource( "./orig/HEPdata.MJ340.9ij50.GttOffShell.txt", "txt" , objectName =  "HEPdata.MJ340.9ij50.GttOffShell.txt", index = None , dataset = "MJ340_9ij50_GttOffShell" )
-T1tttt.dataUrl = "http://hepdata.cedar.ac.uk/resource/6095/mjstream/HEPdata.MJ340.9ij50.GttOffShell.txt"
-T1tttt.efficiencyMap.setStatistics( observedN= 13 ,  expectedBG= 17  , bgError= 7  )
-databaseCreator.create(True)
-
-T1tttt.efficiencyMap.setSource( "./orig/HEPdata.MJ420.10ij50.GttOffShell.txt", "txt" , objectName =  "HEPdata.MJ420.10ij50.GttOffShell.txt", index = None , dataset = "MJ420_10ij50_GttOffShell" )
-T1tttt.dataUrl = "http://hepdata.cedar.ac.uk/resource/6095/mjstream/HEPdata.MJ420.10ij50.GttOffShell.txt"
-T1tttt.efficiencyMap.setStatistics( observedN=  1,  expectedBG= 2.2   , bgError=  2.0 )
-databaseCreator.create(True)
-
-T1tttt.efficiencyMap.setSource( "./orig/HEPdata.MJ420.8ij50.GttOffShell.txt", "txt" , objectName =  "HEPdata.MJ420.8ij50.GttOffShell.txt", index = None , dataset = "MJ420_8ij50_GttOffShell" )
-T1tttt.dataUrl = "http://hepdata.cedar.ac.uk/resource/6095/mjstream/HEPdata.MJ420.8ij50.GttOffShell.txt"
-T1tttt.efficiencyMap.setStatistics( observedN= 37 ,  expectedBG=  45 , bgError= 14  )
-databaseCreator.create(True)
-
-T1tttt.efficiencyMap.setSource( "./orig/HEPdata.MJ420.9ij50.GttOffShell.txt", "txt" , objectName =  "HEPdata.MJ420.9ij50.GttOffShell.txt", index = None , dataset = "MJ420_9ij50_GttOffShell" )
-T1tttt.dataUrl = "http://hepdata.cedar.ac.uk/resource/6095/mjstream/HEPdata.MJ420.9ij50.GttOffShell.txt"
-T1tttt.efficiencyMap.setStatistics( observedN= 9 ,  expectedBG=  11 , bgError=  5 )
-databaseCreator.create(True)
-'''
-
-
-# MA5 Home Made Maps ++++++++++++++++++++++++
 
 
 
@@ -184,8 +78,6 @@ T5WW.off.conditionDescription =None
 T5WW.on.condition =None
 T5WW.off.condition =None
 #T5WW.branchingRatio =
-
-
 #+++++++ next mass plane block ++++++++++++++
 T5WW_1 = T5WW.addMassPlane(motherMass = x, interMass0 = 0.5*(x+y), lspMass = y )
 #T5WW_1.setBranch_2(motherMass = , interMass0 = , lspMass = )
@@ -200,77 +92,6 @@ T5WW_1.obsExclusionP1.setSource( 'orig/T5WW_Minus.txt', 'txt', objectName = None
 #T5WW_1.expExclusion.setSource( path, type, objectName = None, index = None )
 #T5WW_1.expExclusionM1.setSource( path, type, objectName = None, index = None )
 #T5WW_1.expExclusionP1.setSource( path, type, objectName = None, index = None )
-
-#----limit source----
-T5WW_1.efficiencyMap.setSource( 'orig/T5WW_x05/MA5_EM_T5WW_x05_7j80,0bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_7ej80_0bjet" )
-T5WW_1.efficiencyMap.setStatistics( observedN=12, expectedBG=11, bgError=2.2 )
-databaseCreator.create(True)
-
-
-#---- new efficiency map -----
-T5WW_1.efficiencyMap.setSource( 'orig/T5WW_x05/MA5_EM_T5WW_x05_7j80,1bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_7ej80_1bjet" )
-T5WW_1.efficiencyMap.setStatistics( observedN=17, expectedBG=17, bgError=6 )
-databaseCreator.create(True)
-
-
-#---- new efficiency map -----
-T5WW_1.efficiencyMap.setSource( 'orig/T5WW_x05/MA5_EM_T5WW_x05_7j80,>=2bjets.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_7ej80_2ibjet" )
-T5WW_1.efficiencyMap.setStatistics( observedN=13, expectedBG=25, bgError=10 )
-databaseCreator.create(True)
-
-#---- new efficiency map -----
-T5WW_1.efficiencyMap.setSource( 'orig/T5WW_x05/MA5_EM_T5WW_x05_8j50,0bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_8ej50_0bjet" )
-T5WW_1.efficiencyMap.setStatistics( observedN=40, expectedBG=35, bgError= 4)
-databaseCreator.create(True)
-
-#---- new efficiency map -----
-T5WW_1.efficiencyMap.setSource( 'orig/T5WW_x05/MA5_EM_T5WW_x05_8j50,1bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_8ej50_1bjet" )
-T5WW_1.efficiencyMap.setStatistics( observedN=44, expectedBG=40, bgError=10 )
-databaseCreator.create(True)
-
-#---- new efficiency map -----
-T5WW_1.efficiencyMap.setSource( 'orig/T5WW_x05/MA5_EM_T5WW_x05_8j50,>=2bjets.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_8ej50_2ibjet" )
-T5WW_1.efficiencyMap.setStatistics( observedN=44, expectedBG=50, bgError=10 )
-databaseCreator.create(True)
-
-#---- new efficiency map -----
-T5WW_1.efficiencyMap.setSource( 'orig/T5WW_x05/MA5_EM_T5WW_x05_9j50,0bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_9ej50_0bjet" )
-T5WW_1.efficiencyMap.setStatistics( observedN=5, expectedBG=3.3, bgError=0.7 )
-databaseCreator.create(True)
-
-#---- new efficiency map -----
-T5WW_1.efficiencyMap.setSource( 'orig/T5WW_x05/MA5_EM_T5WW_x05_9j50,1bjet.dat','txt', objectName = None, index = None, dataset="GtGrid_SR_9ej50_1bjet" )
-T5WW_1.efficiencyMap.setStatistics( observedN=8, expectedBG=6.1, bgError=1.7 )
-databaseCreator.create(True)
-
-
-#---- new efficiency map -----
-T5WW_1.efficiencyMap.setSource( 'orig/T5WW_x05/MA5_EM_T5WW_x05_9j50,>=2bjets.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_9ej50_2ibjet" )
-T5WW_1.efficiencyMap.setStatistics( observedN=7, expectedBG=8, bgError=2.7 )
-databaseCreator.create(True)
-
-#---- new efficiency map -----
-T5WW_1.efficiencyMap.setSource( 'orig/T5WW_x05/MA5_EM_T5WW_x05_>=8j80,0bjet.dat','txt',  objectName = None, index = None, dataset="GtGrid_SR_8ij80_0bjet" )
-T5WW_1.efficiencyMap.setStatistics( observedN=2, expectedBG=0.9, bgError=0.6 )
-databaseCreator.create(True)
-
-#---- new efficiency map -----
-T5WW_1.efficiencyMap.setSource( 'orig/T5WW_x05/MA5_EM_T5WW_x05_>=8j80,1bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_8ij80_1bjet" )
-T5WW_1.efficiencyMap.setStatistics( observedN=1, expectedBG=1.5, bgError=0.9 )
-databaseCreator.create(True)
-
-#---- new efficiency map -----
-T5WW_1.efficiencyMap.setSource( 'orig/T5WW_x05/MA5_EM_T5WW_x05_>=8j80,>=2bjets.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_8ij80_2ibjet" )
-T5WW_1.efficiencyMap.setStatistics( observedN=3, expectedBG=3.3, bgError=2.2 )
-databaseCreator.create(True)
-
-#---- new efficiency map -----
-T5WW_1.efficiencyMap.setSource( 'orig/T5WW_x05/MA5_EM_T5WW_x05_>=10j50.dat', 'txt',objectName = None, index = None, dataset="GtGrid_SR_10ij50_bjetblind" )
-T5WW_1.efficiencyMap.setStatistics( observedN=3, expectedBG=1.37, bgError=0.35)
-databaseCreator.create(True)
-
-
-
 #+++++++ next mass plane block ++++++++++++++
 T5WW_2 = T5WW.addMassPlane(motherMass = x, interMass0 = 0.05*x + 0.95*y, lspMass = y )
 #T5WW_1.setBranch_2(motherMass = , interMass0 = , lspMass = )
@@ -282,73 +103,6 @@ T5WW_2 = T5WW.addMassPlane(motherMass = x, interMass0 = 0.05*x + 0.95*y, lspMass
 #T5WW_1.expExclusion.setSource( path, type, objectName = None, index = None )
 #T5WW_1.expExclusionM1.setSource( path, type, objectName = None, index = None )
 #T5WW_1.expExclusionP1.setSource( path, type, objectName = None, index = None )
-
-#----limit source----
-T5WW_2.efficiencyMap.setSource( 'orig/T5WW_x005/MA5_EM_T5WW_Glu005Neu095_7j80,0bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_7ej80_0bjet" )
-T5WW_2.efficiencyMap.setStatistics( observedN=12, expectedBG=11, bgError=2.2 )
-databaseCreator.create(True)
-
-#---- new efficiency map -----
-T5WW_2.efficiencyMap.setSource( 'orig/T5WW_x005/MA5_EM_T5WW_Glu005Neu095_7j80,1bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_7ej80_1bjet" )
-T5WW_2.efficiencyMap.setStatistics( observedN=17, expectedBG=17, bgError=6 )
-databaseCreator.create(True)
-
-
-#---- new efficiency map -----
-T5WW_2.efficiencyMap.setSource( 'orig/T5WW_x005/MA5_EM_T5WW_Glu005Neu095_7j80,>=2bjets.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_7ej80_2ibjet" )
-T5WW_2.efficiencyMap.setStatistics( observedN=13, expectedBG=25, bgError=10 )
-databaseCreator.create(True)
-
-#---- new efficiency map -----
-T5WW_2.efficiencyMap.setSource( 'orig/T5WW_x005/MA5_EM_T5WW_Glu005Neu095_8j50,0bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_8ej50_0bjet" )
-T5WW_2.efficiencyMap.setStatistics( observedN=40, expectedBG=35, bgError= 4)
-databaseCreator.create(True)
-
-#---- new efficiency map -----
-T5WW_2.efficiencyMap.setSource( 'orig/T5WW_x005/MA5_EM_T5WW_Glu005Neu095_8j50,1bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_8ej50_1bjet" )
-T5WW_2.efficiencyMap.setStatistics( observedN=44, expectedBG=40, bgError=10 )
-databaseCreator.create(True)
-
-#---- new efficiency map -----
-T5WW_2.efficiencyMap.setSource( 'orig/T5WW_x005/MA5_EM_T5WW_Glu005Neu095_8j50,>=2bjets.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_8ej50_2ibjet" )
-T5WW_2.efficiencyMap.setStatistics( observedN=44, expectedBG=50, bgError=10 )
-databaseCreator.create(True)
-
-#---- new efficiency map -----
-T5WW_2.efficiencyMap.setSource( 'orig/T5WW_x005/MA5_EM_T5WW_Glu005Neu095_9j50,0bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_9ej50_0bjet" )
-T5WW_2.efficiencyMap.setStatistics( observedN=5, expectedBG=3.3, bgError=0.7 )
-databaseCreator.create(True)
-
-#---- new efficiency map -----
-T5WW_2.efficiencyMap.setSource( 'orig/T5WW_x005/MA5_EM_T5WW_Glu005Neu095_9j50,1bjet.dat','txt', objectName = None, index = None, dataset="GtGrid_SR_9ej50_1bjet" )
-T5WW_2.efficiencyMap.setStatistics( observedN=8, expectedBG=6.1, bgError=1.7 )
-databaseCreator.create(True)
-
-#---- new efficiency map -----
-T5WW_2.efficiencyMap.setSource( 'orig/T5WW_x005/MA5_EM_T5WW_Glu005Neu095_9j50,>=2bjets.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_9ej50_2ibjet" )
-T5WW_2.efficiencyMap.setStatistics( observedN=7, expectedBG=8, bgError=2.7 )
-databaseCreator.create(True)
-
-#---- new efficiency map -----
-T5WW_2.efficiencyMap.setSource( 'orig/T5WW_x005/MA5_EM_T5WW_Glu005Neu095_>=8j80,0bjet.dat','txt',  objectName = None, index = None, dataset="GtGrid_SR_8ij80_0bjet" )
-T5WW_2.efficiencyMap.setStatistics( observedN=2, expectedBG=0.9, bgError=0.6 )
-databaseCreator.create(True)
-
-#---- new efficiency map -----
-T5WW_2.efficiencyMap.setSource( 'orig/T5WW_x005/MA5_EM_T5WW_Glu005Neu095_>=8j80,1bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_8ij80_1bjet" )
-T5WW_2.efficiencyMap.setStatistics( observedN=1, expectedBG=1.5, bgError=0.9 )
-databaseCreator.create(True)
-
-#---- new efficiency map -----
-T5WW_2.efficiencyMap.setSource( 'orig/T5WW_x005/MA5_EM_T5WW_Glu005Neu095_>=8j80,>=2bjets.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_8ij80_2ibjet" )
-T5WW_2.efficiencyMap.setStatistics( observedN=3, expectedBG=3.3, bgError=2.2 )
-databaseCreator.create(True)
-
-#---- new efficiency map -----
-T5WW_2.efficiencyMap.setSource( 'orig/T5WW_x005/MA5_EM_T5WW_Glu005Neu095_>=10j50.dat', 'txt',objectName = None, index = None, dataset="GtGrid_SR_10ij50_bjetblind" )
-T5WW_2.efficiencyMap.setStatistics( observedN=3, expectedBG=1.37, bgError=0.35)
-databaseCreator.create(True)
-
 #+++++++ next mass plane block ++++++++++++++
 T5WW_3 = T5WW.addMassPlane(motherMass = x, interMass0 = 0.95*x + 0.05*y, lspMass = y )
 #T5WW_1.setBranch_2(motherMass = , interMass0 = , lspMass = )
@@ -360,74 +114,6 @@ T5WW_3.obsExclusion.setSource( 'orig/Null_Line.txt', 'txt', objectName = None, i
 #T5WW_1.expExclusion.setSource( path, type, objectName = None, index = None )
 #T5WW_1.expExclusionM1.setSource( path, type, objectName = None, index = None )
 #T5WW_1.expExclusionP1.setSource( path, type, objectName = None, index = None )
-
-#----limit source----
-T5WW_3.efficiencyMap.setSource( 'orig/T5WW_x095/MA5_EM_T5WW_Glu095Neu005_7j80,0bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_7ej80_0bjet" )
-T5WW_3.efficiencyMap.setStatistics( observedN=12, expectedBG=11, bgError=2.2 )
-databaseCreator.create(True)
-
-
-#---- new efficiency map -----
-T5WW_3.efficiencyMap.setSource( 'orig/T5WW_x095/MA5_EM_T5WW_Glu095Neu005_7j80,1bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_7ej80_1bjet" )
-T5WW_3.efficiencyMap.setStatistics( observedN=17, expectedBG=17, bgError=6 )
-databaseCreator.create(True)
-
-
-#---- new efficiency map -----
-T5WW_3.efficiencyMap.setSource( 'orig/T5WW_x095/MA5_EM_T5WW_Glu095Neu005_7j80,>=2bjets.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_7ej80_2ibjet" )
-T5WW_3.efficiencyMap.setStatistics( observedN=13, expectedBG=25, bgError=10 )
-databaseCreator.create(True)
-
-#---- new efficiency map -----
-T5WW_3.efficiencyMap.setSource( 'orig/T5WW_x095/MA5_EM_T5WW_Glu095Neu005_8j50,0bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_8ej50_0bjet" )
-T5WW_3.efficiencyMap.setStatistics( observedN=40, expectedBG=35, bgError= 4)
-databaseCreator.create(True)
-
-#---- new efficiency map -----
-T5WW_3.efficiencyMap.setSource( 'orig/T5WW_x095/MA5_EM_T5WW_Glu095Neu005_8j50,1bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_8ej50_1bjet" )
-T5WW_3.efficiencyMap.setStatistics( observedN=44, expectedBG=40, bgError=10 )
-databaseCreator.create(True)
-
-#---- new efficiency map -----
-T5WW_3.efficiencyMap.setSource( 'orig/T5WW_x095/MA5_EM_T5WW_Glu095Neu005_8j50,>=2bjets.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_8ej50_2ibjet" )
-T5WW_3.efficiencyMap.setStatistics( observedN=44, expectedBG=50, bgError=10 )
-databaseCreator.create(True)
-
-#---- new efficiency map -----
-T5WW_3.efficiencyMap.setSource( 'orig/T5WW_x095/MA5_EM_T5WW_Glu095Neu005_9j50,0bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_9ej50_0bjet" )
-T5WW_3.efficiencyMap.setStatistics( observedN=5, expectedBG=3.3, bgError=0.7 )
-databaseCreator.create(True)
-
-
-#---- new efficiency map -----
-T5WW_3.efficiencyMap.setSource( 'orig/T5WW_x095/MA5_EM_T5WW_Glu095Neu005_9j50,1bjet.dat','txt', objectName = None, index = None, dataset="GtGrid_SR_9ej50_1bjet" )
-T5WW_3.efficiencyMap.setStatistics( observedN=8, expectedBG=6.1, bgError=1.7 )
-databaseCreator.create(True)
-
-#---- new efficiency map -----
-T5WW_3.efficiencyMap.setSource( 'orig/T5WW_x095/MA5_EM_T5WW_Glu095Neu005_9j50,>=2bjets.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_9ej50_2ibjet" )
-T5WW_3.efficiencyMap.setStatistics( observedN=7, expectedBG=8, bgError=2.7 )
-databaseCreator.create(True)
-
-#---- new efficiency map -----
-T5WW_3.efficiencyMap.setSource( 'orig/T5WW_x095/MA5_EM_T5WW_Glu095Neu005_>=8j80,0bjet.dat','txt',  objectName = None, index = None, dataset="GtGrid_SR_8ij80_0bjet" )
-T5WW_3.efficiencyMap.setStatistics( observedN=2, expectedBG=0.9, bgError=0.6 )
-databaseCreator.create(True)
-
-#---- new efficiency map -----
-T5WW_3.efficiencyMap.setSource( 'orig/T5WW_x095/MA5_EM_T5WW_Glu095Neu005_>=8j80,1bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_8ij80_1bjet" )
-T5WW_3.efficiencyMap.setStatistics( observedN=1, expectedBG=1.5, bgError=0.9 )
-databaseCreator.create(True)
-
-#---- new efficiency map -----
-T5WW_3.efficiencyMap.setSource( 'orig/T5WW_x095/MA5_EM_T5WW_Glu095Neu005_>=8j80,>=2bjets.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_8ij80_2ibjet" )
-T5WW_3.efficiencyMap.setStatistics( observedN=3, expectedBG=3.3, bgError=2.2 )
-databaseCreator.create(True)
-
-#---- new efficiency map -----
-T5WW_3.efficiencyMap.setSource( 'orig/T5WW_x095/MA5_EM_T5WW_Glu095Neu005_>=10j50.dat', 'txt',objectName = None, index = None, dataset="GtGrid_SR_10ij50_bjetblind" )
-T5WW_3.efficiencyMap.setStatistics( observedN=3, expectedBG=1.37, bgError=0.35)
-databaseCreator.create(True)
 
 
 
@@ -442,7 +128,6 @@ T5ZZ.off.conditionDescription =None
 T5ZZ.on.condition =None
 T5ZZ.off.condition =None
 #T5ZZ.branchingRatio =
-
 #+++++++ next mass plane block ++++++++++++++
 T5ZZ_1 = T5ZZ.addMassPlane(motherMass = x, interMass0 = 0.5*(x+y), lspMass = y )
 #T5ZZ_1.setBranch_2(motherMass = , interMass0 = , lspMass = )
@@ -457,75 +142,6 @@ T5ZZ_1.figureUrl =''
 #T5ZZ_1.expExclusion.setSource( path, type, objectName = None, index = None )
 #T5ZZ_1.expExclusionM1.setSource( path, type, objectName = None, index = None )
 #T5ZZ_1.expExclusionP1.setSource( path, type, objectName = None, index = None )
-#----limit source----
-
-T5ZZ_1.efficiencyMap.setSource( 'orig/T5ZZ_x05/MA5_EM_T5ZZ_x05_7j80,0bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_7ej80_0bjet" )
-T5ZZ_1.efficiencyMap.setStatistics( observedN=12, expectedBG=11, bgError=2.2 )
-databaseCreator.create(True)
-
-
-
-#---- new efficiency map -----
-T5ZZ_1.efficiencyMap.setSource( 'orig/T5ZZ_x05/MA5_EM_T5ZZ_x05_7j80,1bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_7ej80_1bjet" )
-T5ZZ_1.efficiencyMap.setStatistics( observedN=17, expectedBG=17, bgError=6 )
-databaseCreator.create(True)
-
-
-#---- new efficiency map -----
-T5ZZ_1.efficiencyMap.setSource( 'orig/T5ZZ_x05/MA5_EM_T5ZZ_x05_7j80,>=2bjets.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_7ej80_2ibjet" )
-T5ZZ_1.efficiencyMap.setStatistics( observedN=13, expectedBG=25, bgError=10 )
-databaseCreator.create(True)
-
-#---- new efficiency map -----
-T5ZZ_1.efficiencyMap.setSource( 'orig/T5ZZ_x05/MA5_EM_T5ZZ_x05_8j50,0bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_8ej50_0bjet" )
-T5ZZ_1.efficiencyMap.setStatistics( observedN=40, expectedBG=35, bgError= 4)
-databaseCreator.create(True)
-
-#---- new efficiency map -----
-T5ZZ_1.efficiencyMap.setSource( 'orig/T5ZZ_x05/MA5_EM_T5ZZ_x05_8j50,1bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_8ej50_1bjet" )
-T5ZZ_1.efficiencyMap.setStatistics( observedN=44, expectedBG=40, bgError=10 )
-databaseCreator.create(True)
-
-#---- new efficiency map -----
-T5ZZ_1.efficiencyMap.setSource( 'orig/T5ZZ_x05/MA5_EM_T5ZZ_x05_8j50,>=2bjets.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_8ej50_2ibjet" )
-T5ZZ_1.efficiencyMap.setStatistics( observedN=44, expectedBG=50, bgError=10 )
-databaseCreator.create(True)
-
-#---- new efficiency map -----
-T5ZZ_1.efficiencyMap.setSource( 'orig/T5ZZ_x05/MA5_EM_T5ZZ_x05_9j50,0bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_9ej50_0bjet" )
-T5ZZ_1.efficiencyMap.setStatistics( observedN=5, expectedBG=3.3, bgError=0.7 )
-databaseCreator.create(True)
-
-#---- new efficiency map -----
-T5ZZ_1.efficiencyMap.setSource( 'orig/T5ZZ_x05/MA5_EM_T5ZZ_x05_9j50,1bjet.dat','txt', objectName = None, index = None, dataset="GtGrid_SR_9ej50_1bjet" )
-T5ZZ_1.efficiencyMap.setStatistics( observedN=8, expectedBG=6.1, bgError=1.7 )
-databaseCreator.create(True)
-
-#---- new efficiency map -----
-T5ZZ_1.efficiencyMap.setSource( 'orig/T5ZZ_x05/MA5_EM_T5ZZ_x05_9j50,>=2bjets.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_9ej50_2ibjet" )
-T5ZZ_1.efficiencyMap.setStatistics( observedN=7, expectedBG=8, bgError=2.7 )
-databaseCreator.create(True)
-
-#---- new efficiency map -----
-T5ZZ_1.efficiencyMap.setSource( 'orig/T5ZZ_x05/MA5_EM_T5ZZ_x05_>=8j80,0bjet.dat','txt',  objectName = None, index = None, dataset="GtGrid_SR_8ij80_0bjet" )
-T5ZZ_1.efficiencyMap.setStatistics( observedN=2, expectedBG=0.9, bgError=0.6 )
-databaseCreator.create(True)
-
-#---- new efficiency map -----
-T5ZZ_1.efficiencyMap.setSource( 'orig/T5ZZ_x05/MA5_EM_T5ZZ_x05_>=8j80,1bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_8ij80_1bjet" )
-T5ZZ_1.efficiencyMap.setStatistics( observedN=1, expectedBG=1.5, bgError=0.9 )
-databaseCreator.create(True)
-
-#---- new efficiency map -----
-T5ZZ_1.efficiencyMap.setSource( 'orig/T5ZZ_x05/MA5_EM_T5ZZ_x05_>=8j80,>=2bjets.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_8ij80_2ibjet" )
-T5ZZ_1.efficiencyMap.setStatistics( observedN=3, expectedBG=3.3, bgError=2.2 )
-databaseCreator.create(True)
-
-#---- new efficiency map -----
-T5ZZ_1.efficiencyMap.setSource( 'orig/T5ZZ_x05/MA5_EM_T5ZZ_x05_>=10j50.dat', 'txt',objectName = None, index = None, dataset="GtGrid_SR_10ij50_bjetblind" )
-T5ZZ_1.efficiencyMap.setStatistics( observedN=3, expectedBG=1.37, bgError=0.35)
-databaseCreator.create(True)
-
 #+++++++ next mass plane block ++++++++++++++
 T5ZZ_2 = T5ZZ.addMassPlane(motherMass = x, interMass0 = 0.05*x + 0.95*y, lspMass = y )
 #T5ZZ_1.setBranch_2(motherMass = , interMass0 = , lspMass = )
@@ -537,75 +153,6 @@ T5ZZ_2 = T5ZZ.addMassPlane(motherMass = x, interMass0 = 0.05*x + 0.95*y, lspMass
 #T5ZZ_1.expExclusion.setSource( path, type, objectName = None, index = None )
 #T5ZZ_1.expExclusionM1.setSource( path, type, objectName = None, index = None )
 #T5ZZ_1.expExclusionP1.setSource( path, type, objectName = None, index = None )
-
-#----limit source----
-T5ZZ_2.efficiencyMap.setSource( 'orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_7j80,0bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_7ej80_0bjet" )
-T5ZZ_2.efficiencyMap.setStatistics( observedN=12, expectedBG=11, bgError=2.2 )
-databaseCreator.create(True)
-
-#---- new efficiency map -----
-T5ZZ_2.efficiencyMap.setSource( 'orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_7j80,1bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_7ej80_1bjet" )
-T5ZZ_2.efficiencyMap.setStatistics( observedN=17, expectedBG=17, bgError=6 )
-databaseCreator.create(True)
-
-
-#---- new efficiency map -----
-T5ZZ_2.efficiencyMap.setSource( 'orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_7j80,>=2bjets.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_7ej80_2ibjet" )
-T5ZZ_2.efficiencyMap.setStatistics( observedN=13, expectedBG=25, bgError=10 )
-databaseCreator.create(True)
-
-#---- new efficiency map -----
-T5ZZ_2.efficiencyMap.setSource( 'orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_8j50,0bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_8ej50_0bjet" )
-T5ZZ_2.efficiencyMap.setStatistics( observedN=40, expectedBG=35, bgError= 4)
-databaseCreator.create(True)
-
-#---- new efficiency map -----
-T5ZZ_2.efficiencyMap.setSource( 'orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_8j50,1bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_8ej50_1bjet" )
-T5ZZ_2.efficiencyMap.setStatistics( observedN=44, expectedBG=40, bgError=10 )
-databaseCreator.create(True)
-
-#---- new efficiency map -----
-T5ZZ_2.efficiencyMap.setSource( 'orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_8j50,>=2bjets.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_8ej50_2ibjet" )
-T5ZZ_2.efficiencyMap.setStatistics( observedN=44, expectedBG=50, bgError=10 )
-databaseCreator.create(True)
-
-#---- new efficiency map -----
-T5ZZ_2.efficiencyMap.setSource( 'orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_9j50,0bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_9ej50_0bjet" )
-T5ZZ_2.efficiencyMap.setStatistics( observedN=5, expectedBG=3.3, bgError=0.7 )
-databaseCreator.create(True)
-
-#---- new efficiency map -----
-T5ZZ_2.efficiencyMap.setSource( 'orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_9j50,1bjet.dat','txt', objectName = None, index = None, dataset="GtGrid_SR_9ej50_1bjet" )
-T5ZZ_2.efficiencyMap.setStatistics( observedN=8, expectedBG=6.1, bgError=1.7 )
-databaseCreator.create(True)
-
-#---- new efficiency map -----
-T5ZZ_2.efficiencyMap.setSource( 'orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_9j50,>=2bjets.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_9ej50_2ibjet" )
-T5ZZ_2.efficiencyMap.setStatistics( observedN=7, expectedBG=8, bgError=2.7 )
-databaseCreator.create(True)
-
-#---- new efficiency map -----
-T5ZZ_2.efficiencyMap.setSource( 'orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_>=8j80,0bjet.dat','txt',  objectName = None, index = None, dataset="GtGrid_SR_8ij80_0bjet" )
-T5ZZ_2.efficiencyMap.setStatistics( observedN=2, expectedBG=0.9, bgError=0.6 )
-databaseCreator.create(True)
-
-#---- new efficiency map -----
-T5ZZ_2.efficiencyMap.setSource( 'orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_>=8j80,1bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_8ij80_1bjet" )
-T5ZZ_2.efficiencyMap.setStatistics( observedN=1, expectedBG=1.5, bgError=0.9 )
-databaseCreator.create(True)
-
-#---- new efficiency map -----
-T5ZZ_2.efficiencyMap.setSource( 'orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_>=8j80,>=2bjets.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_8ij80_2ibjet" )
-T5ZZ_2.efficiencyMap.setStatistics( observedN=3, expectedBG=3.3, bgError=2.2 )
-databaseCreator.create(True)
-
-#---- new efficiency map -----
-T5ZZ_2.efficiencyMap.setSource( 'orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_>=10j50.dat', 'txt',objectName = None, index = None, dataset="GtGrid_SR_10ij50_bjetblind" )
-T5ZZ_2.efficiencyMap.setStatistics( observedN=3, expectedBG=1.37, bgError=0.35)
-databaseCreator.create(True)
-
-
-
 #+++++++ next mass plane block ++++++++++++++
 T5ZZ_3 = T5ZZ.addMassPlane(motherMass = x, interMass0 = 0.95*x + 0.05*y, lspMass = y )
 #T5ZZ_1.setBranch_2(motherMass = , interMass0 = , lspMass = )
@@ -618,71 +165,465 @@ T5ZZ_3 = T5ZZ.addMassPlane(motherMass = x, interMass0 = 0.95*x + 0.05*y, lspMass
 #T5ZZ_1.expExclusionM1.setSource( path, type, objectName = None, index = None )
 #T5ZZ_1.expExclusionP1.setSource( path, type, objectName = None, index = None )
 
-#----limit source----
-T5ZZ_3.efficiencyMap.setSource( 'orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_7j80,0bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_7ej80_0bjet" )
-T5ZZ_3.efficiencyMap.setStatistics( observedN=12, expectedBG=11, bgError=2.2 )
-databaseCreator.create(True)
+
+
+
+## EFFICIENCIES
+
+T1tttt.efficiencyMap.setSource( "./orig/GtGrid_SR_10ij50_bjetblind.txt", "txt" , objectName =  "GtGrid_SR_10ij50_bjetblind.txt", index = None , dataset = "GtGrid_SR_10ij50_bjetblind" )
+T1tttt.dataUrl="http://hepdata.cedar.ac.uk/resource/6095/bjetstream/GtGrid_SR_10ij50_bjetblind.txt"
+T1tttt.efficiencyMap.setStatistics( observedN= 3 ,  expectedBG= 1.37   , bgError=  0.35 )
+
+#---- new efficiency map -----
+T5WW_1.efficiencyMap.setSource( 'orig/T5WW_x05/MA5_EM_T5WW_x05_>=10j50.dat', 'txt',objectName = None, index = None, dataset="GtGrid_SR_10ij50_bjetblind" )
+T5WW_1.efficiencyMap.setStatistics( observedN=3, expectedBG=1.37, bgError=0.35)
+
+#---- new efficiency map -----
+T5WW_2.efficiencyMap.setSource( 'orig/T5WW_x005/MA5_EM_T5WW_Glu005Neu095_>=10j50.dat', 'txt',objectName = None, index = None, dataset="GtGrid_SR_10ij50_bjetblind" )
+T5WW_2.efficiencyMap.setStatistics( observedN=3, expectedBG=1.37, bgError=0.35)
 
 
 #---- new efficiency map -----
-T5ZZ_3.efficiencyMap.setSource( 'orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_7j80,1bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_7ej80_1bjet" )
-T5ZZ_3.efficiencyMap.setStatistics( observedN=17, expectedBG=17, bgError=6 )
-databaseCreator.create(True)
+T5WW_3.efficiencyMap.setSource( 'orig/T5WW_x095/MA5_EM_T5WW_Glu095Neu005_>=10j50.dat', 'txt',objectName = None, index = None, dataset="GtGrid_SR_10ij50_bjetblind" )
+T5WW_3.efficiencyMap.setStatistics( observedN=3, expectedBG=1.37, bgError=0.35)
+
+#---- new efficiency map -----
+T5ZZ_1.efficiencyMap.setSource( 'orig/T5ZZ_x05/MA5_EM_T5ZZ_x05_>=10j50.dat', 'txt',objectName = None, index = None, dataset="GtGrid_SR_10ij50_bjetblind" )
+T5ZZ_1.efficiencyMap.setStatistics( observedN=3, expectedBG=1.37, bgError=0.35)
 
 
 #---- new efficiency map -----
-T5ZZ_3.efficiencyMap.setSource( 'orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_7j80,>=2bjets.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_7ej80_2ibjet" )
-T5ZZ_3.efficiencyMap.setStatistics( observedN=13, expectedBG=25, bgError=10 )
-databaseCreator.create(True)
+T5ZZ_2.efficiencyMap.setSource( 'orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_>=10j50.dat', 'txt',objectName = None, index = None, dataset="GtGrid_SR_10ij50_bjetblind" )
+T5ZZ_2.efficiencyMap.setStatistics( observedN=3, expectedBG=1.37, bgError=0.35)
 
-#---- new efficiency map -----
-T5ZZ_3.efficiencyMap.setSource( 'orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_8j50,0bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_8ej50_0bjet" )
-T5ZZ_3.efficiencyMap.setStatistics( observedN=40, expectedBG=35, bgError= 4)
-databaseCreator.create(True)
-
-#---- new efficiency map -----
-T5ZZ_3.efficiencyMap.setSource( 'orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_8j50,1bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_8ej50_1bjet" )
-T5ZZ_3.efficiencyMap.setStatistics( observedN=44, expectedBG=40, bgError=10 )
-databaseCreator.create(True)
-
-#---- new efficiency map -----
-T5ZZ_3.efficiencyMap.setSource( 'orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_8j50,>=2bjets.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_8ej50_2ibjet" )
-T5ZZ_3.efficiencyMap.setStatistics( observedN=44, expectedBG=50, bgError=10 )
-databaseCreator.create(True)
-
-#---- new efficiency map -----
-T5ZZ_3.efficiencyMap.setSource( 'orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_9j50,0bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_9ej50_0bjet" )
-T5ZZ_3.efficiencyMap.setStatistics( observedN=5, expectedBG=3.3, bgError=0.7 )
-databaseCreator.create(True)
-
-#---- new efficiency map -----
-T5ZZ_3.efficiencyMap.setSource( 'orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_9j50,1bjet.dat','txt', objectName = None, index = None, dataset="GtGrid_SR_9ej50_1bjet" )
-T5ZZ_3.efficiencyMap.setStatistics( observedN=8, expectedBG=6.1, bgError=1.7 )
-databaseCreator.create(True)
-
-#---- new efficiency map -----
-T5ZZ_3.efficiencyMap.setSource( 'orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_9j50,>=2bjets.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_9ej50_2ibjet" )
-T5ZZ_3.efficiencyMap.setStatistics( observedN=7, expectedBG=8, bgError=2.7 )
-databaseCreator.create(True)
-
-#---- new efficiency map -----
-T5ZZ_3.efficiencyMap.setSource( 'orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_>=8j80,0bjet.dat','txt',  objectName = None, index = None, dataset="GtGrid_SR_8ij80_0bjet" )
-T5ZZ_3.efficiencyMap.setStatistics( observedN=2, expectedBG=0.9, bgError=0.6 )
-databaseCreator.create(True)
-
-#---- new efficiency map -----
-T5ZZ_3.efficiencyMap.setSource( 'orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_>=8j80,1bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_8ij80_1bjet" )
-T5ZZ_3.efficiencyMap.setStatistics( observedN=1, expectedBG=1.5, bgError=0.9 )
-databaseCreator.create(True)
-
-#---- new efficiency map -----
-T5ZZ_3.efficiencyMap.setSource( 'orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_>=8j80,>=2bjets.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_8ij80_2ibjet" )
-T5ZZ_3.efficiencyMap.setStatistics( observedN=3, expectedBG=3.3, bgError=2.2 )
-databaseCreator.create(True)
 
 #---- new efficiency map -----
 T5ZZ_3.efficiencyMap.setSource( 'orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_>=10j50.dat', 'txt',objectName = None, index = None, dataset="GtGrid_SR_10ij50_bjetblind" )
 T5ZZ_3.efficiencyMap.setStatistics( observedN=3, expectedBG=1.37, bgError=0.35)
+databaseCreator.create()
+
+
+
+# NewDataset
+T1tttt.efficiencyMap.setSource( "./orig/GtGrid_SR_7ej80_0bjet.txt", "txt" , objectName =  "GtGrid_SR_7ej80_0bjet.txt", index = None , dataset = "GtGrid_SR_7ej80_0bjet" )
+T1tttt.dataUrl = "http://hepdata.cedar.ac.uk/resource/6095/bjetstream/GtGrid_SR_7ej80_0bjet.txt"
+T1tttt.efficiencyMap.setStatistics( observedN=  12 ,  expectedBG= 11.0  , bgError= 2.2  )
 databaseCreator.create(True)
 
+#----limit source----
+T5WW_1.efficiencyMap.setSource( 'orig/T5WW_x05/MA5_EM_T5WW_x05_7j80,0bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_7ej80_0bjet" )
+T5WW_1.efficiencyMap.setStatistics( observedN=12, expectedBG=11, bgError=2.2 )
 
+#----limit source----
+T5WW_2.efficiencyMap.setSource( 'orig/T5WW_x005/MA5_EM_T5WW_Glu005Neu095_7j80,0bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_7ej80_0bjet" )
+T5WW_2.efficiencyMap.setStatistics( observedN=12, expectedBG=11, bgError=2.2 )
+
+#----limit source----
+T5WW_3.efficiencyMap.setSource( 'orig/T5WW_x095/MA5_EM_T5WW_Glu095Neu005_7j80,0bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_7ej80_0bjet" )
+T5WW_3.efficiencyMap.setStatistics( observedN=12, expectedBG=11, bgError=2.2 )
+
+#----limit source----
+
+T5ZZ_1.efficiencyMap.setSource( 'orig/T5ZZ_x05/MA5_EM_T5ZZ_x05_7j80,0bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_7ej80_0bjet" )
+T5ZZ_1.efficiencyMap.setStatistics( observedN=12, expectedBG=11, bgError=2.2 )
+
+#----limit source----
+T5ZZ_2.efficiencyMap.setSource( 'orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_7j80,0bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_7ej80_0bjet" )
+T5ZZ_2.efficiencyMap.setStatistics( observedN=12, expectedBG=11, bgError=2.2 )
+
+#----limit source----
+T5ZZ_3.efficiencyMap.setSource( 'orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_7j80,0bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_7ej80_0bjet" )
+T5ZZ_3.efficiencyMap.setStatistics( observedN=12, expectedBG=11, bgError=2.2 )
+databaseCreator.create()
+
+
+# NewDataset
+
+T1tttt.efficiencyMap.setSource( "./orig/GtGrid_SR_7ej80_1bjet.txt", "txt" , objectName =  "GtGrid_SR_7ej80_1bjet.txt", index = None , dataset = "GtGrid_SR_7ej80_1bjet" )
+T1tttt.dataUrl = "http://hepdata.cedar.ac.uk/resource/6095/bjetstream/GtGrid_SR_7ej80_1bjet.txt"
+T1tttt.efficiencyMap.setStatistics( observedN=  17,  expectedBG= 17  , bgError=  6 )
+
+#---- new efficiency map -----
+T5WW_1.efficiencyMap.setSource( 'orig/T5WW_x05/MA5_EM_T5WW_x05_7j80,1bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_7ej80_1bjet" )
+T5WW_1.efficiencyMap.setStatistics( observedN=17, expectedBG=17, bgError=6 )
+
+#---- new efficiency map -----
+T5WW_2.efficiencyMap.setSource( 'orig/T5WW_x005/MA5_EM_T5WW_Glu005Neu095_7j80,1bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_7ej80_1bjet" )
+T5WW_2.efficiencyMap.setStatistics( observedN=17, expectedBG=17, bgError=6 )
+
+#---- new efficiency map -----
+T5WW_3.efficiencyMap.setSource( 'orig/T5WW_x095/MA5_EM_T5WW_Glu095Neu005_7j80,1bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_7ej80_1bjet" )
+T5WW_3.efficiencyMap.setStatistics( observedN=17, expectedBG=17, bgError=6 )
+
+#---- new efficiency map -----
+T5ZZ_1.efficiencyMap.setSource( 'orig/T5ZZ_x05/MA5_EM_T5ZZ_x05_7j80,1bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_7ej80_1bjet" )
+T5ZZ_1.efficiencyMap.setStatistics( observedN=17, expectedBG=17, bgError=6 )
+
+#---- new efficiency map -----
+T5ZZ_2.efficiencyMap.setSource( 'orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_7j80,1bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_7ej80_1bjet" )
+T5ZZ_2.efficiencyMap.setStatistics( observedN=17, expectedBG=17, bgError=6 )
+
+#---- new efficiency map -----
+T5ZZ_3.efficiencyMap.setSource( 'orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_7j80,1bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_7ej80_1bjet" )
+T5ZZ_3.efficiencyMap.setStatistics( observedN=17, expectedBG=17, bgError=6 )
+databaseCreator.create()
+
+# New Dataset
+
+T1tttt.efficiencyMap.setSource( "./orig/GtGrid_SR_7ej80_2ibjet.txt", "txt" , objectName =  "GtGrid_SR_7ej80_2ibjet.txt", index = None , dataset = "GtGrid_SR_7ej80_2ibjet" )
+T1tttt.dataUrl = "http://hepdata.cedar.ac.uk/resource/6095/bjetstream/GtGrid_SR_7ej80_2ibjet.txt"
+T1tttt.efficiencyMap.setStatistics( observedN= 13 ,  expectedBG=  25 , bgError=  10 )
+
+#---- new efficiency map -----
+T5WW_1.efficiencyMap.setSource( 'orig/T5WW_x05/MA5_EM_T5WW_x05_7j80,>=2bjets.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_7ej80_2ibjet" )
+T5WW_1.efficiencyMap.setStatistics( observedN=13, expectedBG=25, bgError=10 )
+
+#---- new efficiency map -----
+T5WW_2.efficiencyMap.setSource( 'orig/T5WW_x005/MA5_EM_T5WW_Glu005Neu095_7j80,>=2bjets.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_7ej80_2ibjet" )
+T5WW_2.efficiencyMap.setStatistics( observedN=13, expectedBG=25, bgError=10 )
+
+#---- new efficiency map -----
+T5WW_3.efficiencyMap.setSource( 'orig/T5WW_x095/MA5_EM_T5WW_Glu095Neu005_7j80,>=2bjets.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_7ej80_2ibjet" )
+T5WW_3.efficiencyMap.setStatistics( observedN=13, expectedBG=25, bgError=10 )
+
+#---- new efficiency map -----
+T5ZZ_1.efficiencyMap.setSource( 'orig/T5ZZ_x05/MA5_EM_T5ZZ_x05_7j80,>=2bjets.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_7ej80_2ibjet" )
+T5ZZ_1.efficiencyMap.setStatistics( observedN=13, expectedBG=25, bgError=10 )
+
+#---- new efficiency map -----
+T5ZZ_2.efficiencyMap.setSource( 'orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_7j80,>=2bjets.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_7ej80_2ibjet" )
+T5ZZ_2.efficiencyMap.setStatistics( observedN=13, expectedBG=25, bgError=10 )
+
+#---- new efficiency map -----
+T5ZZ_3.efficiencyMap.setSource( 'orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_7j80,>=2bjets.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_7ej80_2ibjet" )
+T5ZZ_3.efficiencyMap.setStatistics( observedN=13, expectedBG=25, bgError=10 )
+databaseCreator.create()
+
+
+# New Dataset
+
+T1tttt.efficiencyMap.setSource( "./orig/GtGrid_SR_8ej50_0bjet.txt", "txt" , objectName =  "GtGrid_SR_8ej50_0bjet.txt", index = None , dataset = "GtGrid_SR_8ej50_0bjet" )
+T1tttt.dataUrl = "http://hepdata.cedar.ac.uk/resource/6095/bjetstream/GtGrid_SR_8ej50_0bjet.txt"
+T1tttt.efficiencyMap.setStatistics( observedN= 40 ,  expectedBG= 35  , bgError= 4  )
+
+#---- new efficiency map -----
+T5WW_1.efficiencyMap.setSource( 'orig/T5WW_x05/MA5_EM_T5WW_x05_8j50,0bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_8ej50_0bjet" )
+T5WW_1.efficiencyMap.setStatistics( observedN=40, expectedBG=35, bgError= 4)
+
+#---- new efficiency map -----
+T5WW_2.efficiencyMap.setSource( 'orig/T5WW_x005/MA5_EM_T5WW_Glu005Neu095_8j50,0bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_8ej50_0bjet" )
+T5WW_2.efficiencyMap.setStatistics( observedN=40, expectedBG=35, bgError= 4)
+
+#---- new efficiency map -----
+T5WW_3.efficiencyMap.setSource( 'orig/T5WW_x095/MA5_EM_T5WW_Glu095Neu005_8j50,0bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_8ej50_0bjet" )
+T5WW_3.efficiencyMap.setStatistics( observedN=40, expectedBG=35, bgError= 4)
+
+#---- new efficiency map -----
+T5ZZ_1.efficiencyMap.setSource( 'orig/T5ZZ_x05/MA5_EM_T5ZZ_x05_8j50,0bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_8ej50_0bjet" )
+T5ZZ_1.efficiencyMap.setStatistics( observedN=40, expectedBG=35, bgError= 4)
+
+#---- new efficiency map -----
+T5ZZ_2.efficiencyMap.setSource( 'orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_8j50,0bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_8ej50_0bjet" )
+T5ZZ_2.efficiencyMap.setStatistics( observedN=40, expectedBG=35, bgError= 4)
+
+#---- new efficiency map -----
+T5ZZ_3.efficiencyMap.setSource( 'orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_8j50,0bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_8ej50_0bjet" )
+T5ZZ_3.efficiencyMap.setStatistics( observedN=40, expectedBG=35, bgError= 4)
+databaseCreator.create()
+
+
+
+# New Dataset
+
+T1tttt.efficiencyMap.setSource( "./orig/GtGrid_SR_8ej50_1bjet.txt", "txt" , objectName =  "GtGrid_SR_8ej50_1bjet.txt", index = None , dataset = "GtGrid_SR_8ej50_1bjet" )
+T1tttt.dataUrl = "http://hepdata.cedar.ac.uk/resource/6095/bjetstream/GtGrid_SR_8ej50_1bjet.txt"
+T1tttt.efficiencyMap.setStatistics( observedN= 44 ,  expectedBG=  40 , bgError= 10  )
+
+#---- new efficiency map -----
+T5WW_1.efficiencyMap.setSource( 'orig/T5WW_x05/MA5_EM_T5WW_x05_8j50,1bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_8ej50_1bjet" )
+T5WW_1.efficiencyMap.setStatistics( observedN=44, expectedBG=40, bgError=10 )
+
+#---- new efficiency map -----
+T5WW_2.efficiencyMap.setSource( 'orig/T5WW_x005/MA5_EM_T5WW_Glu005Neu095_8j50,1bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_8ej50_1bjet" )
+T5WW_2.efficiencyMap.setStatistics( observedN=44, expectedBG=40, bgError=10 )
+
+#---- new efficiency map -----
+T5WW_3.efficiencyMap.setSource( 'orig/T5WW_x095/MA5_EM_T5WW_Glu095Neu005_8j50,1bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_8ej50_1bjet" )
+T5WW_3.efficiencyMap.setStatistics( observedN=44, expectedBG=40, bgError=10 )
+
+#---- new efficiency map -----
+T5ZZ_1.efficiencyMap.setSource( 'orig/T5ZZ_x05/MA5_EM_T5ZZ_x05_8j50,1bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_8ej50_1bjet" )
+T5ZZ_1.efficiencyMap.setStatistics( observedN=44, expectedBG=40, bgError=10 )
+
+#---- new efficiency map -----
+T5ZZ_2.efficiencyMap.setSource( 'orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_8j50,1bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_8ej50_1bjet" )
+T5ZZ_2.efficiencyMap.setStatistics( observedN=44, expectedBG=40, bgError=10 )
+
+#---- new efficiency map -----
+T5ZZ_3.efficiencyMap.setSource( 'orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_8j50,1bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_8ej50_1bjet" )
+T5ZZ_3.efficiencyMap.setStatistics( observedN=44, expectedBG=40, bgError=10 )
+databaseCreator.create()
+
+
+# New Dataset
+
+T1tttt.efficiencyMap.setSource( "./orig/GtGrid_SR_8ej50_2ibjet.txt", "txt" , objectName =  "GtGrid_SR_8ej50_2ibjet.txt", index = None , dataset = "GtGrid_SR_8ej50_2ibjet" )
+T1tttt.dataUrl = "http://hepdata.cedar.ac.uk/resource/6095/bjetstream/GtGrid_SR_8ej50_2ibjet.txt"
+T1tttt.efficiencyMap.setStatistics( observedN= 44 ,  expectedBG= 50  , bgError= 10  )
+
+#---- new efficiency map -----
+T5WW_1.efficiencyMap.setSource( 'orig/T5WW_x05/MA5_EM_T5WW_x05_8j50,>=2bjets.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_8ej50_2ibjet" )
+T5WW_1.efficiencyMap.setStatistics( observedN=44, expectedBG=50, bgError=10 )
+
+#---- new efficiency map -----
+T5WW_2.efficiencyMap.setSource( 'orig/T5WW_x005/MA5_EM_T5WW_Glu005Neu095_8j50,>=2bjets.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_8ej50_2ibjet" )
+T5WW_2.efficiencyMap.setStatistics( observedN=44, expectedBG=50, bgError=10 )
+
+#---- new efficiency map -----
+T5WW_3.efficiencyMap.setSource( 'orig/T5WW_x095/MA5_EM_T5WW_Glu095Neu005_8j50,>=2bjets.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_8ej50_2ibjet" )
+T5WW_3.efficiencyMap.setStatistics( observedN=44, expectedBG=50, bgError=10 )
+
+#---- new efficiency map -----
+T5ZZ_1.efficiencyMap.setSource( 'orig/T5ZZ_x05/MA5_EM_T5ZZ_x05_8j50,>=2bjets.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_8ej50_2ibjet" )
+T5ZZ_1.efficiencyMap.setStatistics( observedN=44, expectedBG=50, bgError=10 )
+
+#---- new efficiency map -----
+T5ZZ_2.efficiencyMap.setSource( 'orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_8j50,>=2bjets.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_8ej50_2ibjet" )
+T5ZZ_2.efficiencyMap.setStatistics( observedN=44, expectedBG=50, bgError=10 )
+
+#---- new efficiency map -----
+T5ZZ_3.efficiencyMap.setSource( 'orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_8j50,>=2bjets.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_8ej50_2ibjet" )
+T5ZZ_3.efficiencyMap.setStatistics( observedN=44, expectedBG=50, bgError=10 )
+databaseCreator.create()
+
+
+
+
+
+# New Dataset
+
+T1tttt.efficiencyMap.setSource( "./orig/GtGrid_SR_9ej50_0bjet.txt", "txt" , objectName =  "GtGrid_SR_9ej50_0bjet.txt", index = None , dataset = "GtGrid_SR_9ej50_0bjet" )
+T1tttt.dataUrl = "http://hepdata.cedar.ac.uk/resource/6095/bjetstream/GtGrid_SR_9ej50_0bjet.txt"
+T1tttt.efficiencyMap.setStatistics( observedN= 5 ,  expectedBG= 3.3  , bgError=  0.7 )
+
+#---- new efficiency map -----
+T5WW_1.efficiencyMap.setSource( 'orig/T5WW_x05/MA5_EM_T5WW_x05_9j50,0bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_9ej50_0bjet" )
+T5WW_1.efficiencyMap.setStatistics( observedN=5, expectedBG=3.3, bgError=0.7 )
+
+#---- new efficiency map -----
+T5WW_2.efficiencyMap.setSource( 'orig/T5WW_x005/MA5_EM_T5WW_Glu005Neu095_9j50,0bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_9ej50_0bjet" )
+T5WW_2.efficiencyMap.setStatistics( observedN=5, expectedBG=3.3, bgError=0.7 )
+
+#---- new efficiency map -----
+T5WW_3.efficiencyMap.setSource( 'orig/T5WW_x095/MA5_EM_T5WW_Glu095Neu005_9j50,0bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_9ej50_0bjet" )
+T5WW_3.efficiencyMap.setStatistics( observedN=5, expectedBG=3.3, bgError=0.7 )
+
+
+#---- new efficiency map -----
+T5ZZ_1.efficiencyMap.setSource( 'orig/T5ZZ_x05/MA5_EM_T5ZZ_x05_9j50,0bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_9ej50_0bjet" )
+T5ZZ_1.efficiencyMap.setStatistics( observedN=5, expectedBG=3.3, bgError=0.7 )
+
+#---- new efficiency map -----
+T5ZZ_2.efficiencyMap.setSource( 'orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_9j50,0bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_9ej50_0bjet" )
+T5ZZ_2.efficiencyMap.setStatistics( observedN=5, expectedBG=3.3, bgError=0.7 )
+
+#---- new efficiency map -----
+T5ZZ_3.efficiencyMap.setSource( 'orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_9j50,0bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_9ej50_0bjet" )
+T5ZZ_3.efficiencyMap.setStatistics( observedN=5, expectedBG=3.3, bgError=0.7 )
+databaseCreator.create()
+
+
+
+
+# New Dataset
+
+T1tttt.efficiencyMap.setSource( "./orig/GtGrid_SR_8ij80_1bjet.txt", "txt" , objectName =  "GtGrid_SR_8ij80_1bjet.txt", index = None , dataset = "GtGrid_SR_8ij80_1bjet" )
+T1tttt.dataUrl = "http://hepdata.cedar.ac.uk/resource/6095/bjetstream/GtGrid_SR_8ij80_1bjet.txt"
+T1tttt.efficiencyMap.setStatistics( observedN= 1 ,  expectedBG=  1.5 , bgError=  0.9 )
+
+#---- new efficiency map -----
+T5WW_1.efficiencyMap.setSource( 'orig/T5WW_x05/MA5_EM_T5WW_x05_>=8j80,1bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_8ij80_1bjet" )
+T5WW_1.efficiencyMap.setStatistics( observedN=1, expectedBG=1.5, bgError=0.9 )
+
+#---- new efficiency map -----
+T5WW_2.efficiencyMap.setSource( 'orig/T5WW_x005/MA5_EM_T5WW_Glu005Neu095_>=8j80,1bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_8ij80_1bjet" )
+T5WW_2.efficiencyMap.setStatistics( observedN=1, expectedBG=1.5, bgError=0.9 )
+
+#---- new efficiency map -----
+T5WW_3.efficiencyMap.setSource( 'orig/T5WW_x095/MA5_EM_T5WW_Glu095Neu005_>=8j80,1bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_8ij80_1bjet" )
+T5WW_3.efficiencyMap.setStatistics( observedN=1, expectedBG=1.5, bgError=0.9 )
+
+#---- new efficiency map -----
+T5ZZ_1.efficiencyMap.setSource( 'orig/T5ZZ_x05/MA5_EM_T5ZZ_x05_>=8j80,1bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_8ij80_1bjet" )
+T5ZZ_1.efficiencyMap.setStatistics( observedN=1, expectedBG=1.5, bgError=0.9 )
+
+#---- new efficiency map -----
+T5ZZ_2.efficiencyMap.setSource( 'orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_>=8j80,1bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_8ij80_1bjet" )
+T5ZZ_2.efficiencyMap.setStatistics( observedN=1, expectedBG=1.5, bgError=0.9 )
+
+#---- new efficiency map -----
+T5ZZ_3.efficiencyMap.setSource( 'orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_>=8j80,1bjet.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_8ij80_1bjet" )
+T5ZZ_3.efficiencyMap.setStatistics( observedN=1, expectedBG=1.5, bgError=0.9 )
+databaseCreator.create()
+
+# New Dataset
+
+T1tttt.efficiencyMap.setSource( "./orig/GtGrid_SR_8ij80_0bjet.txt", "txt" , objectName =  "GtGrid_SR_8ij80_0bjet.txt", index = None , dataset = "GtGrid_SR_8ij80_0bjet" )
+T1tttt.dataUrl = "http://hepdata.cedar.ac.uk/resource/6095/bjetstream/GtGrid_SR_8ij80_0bjet.txt"
+T1tttt.efficiencyMap.setStatistics( observedN= 2 ,  expectedBG= 0.9  , bgError=  0.6 )
+
+#---- new efficiency map -----
+T5WW_1.efficiencyMap.setSource( 'orig/T5WW_x05/MA5_EM_T5WW_x05_>=8j80,0bjet.dat','txt',  objectName = None, index = None, dataset="GtGrid_SR_8ij80_0bjet" )
+T5WW_1.efficiencyMap.setStatistics( observedN=2, expectedBG=0.9, bgError=0.6 )
+
+#---- new efficiency map -----
+T5WW_2.efficiencyMap.setSource( 'orig/T5WW_x005/MA5_EM_T5WW_Glu005Neu095_>=8j80,0bjet.dat','txt',  objectName = None, index = None, dataset="GtGrid_SR_8ij80_0bjet" )
+T5WW_2.efficiencyMap.setStatistics( observedN=2, expectedBG=0.9, bgError=0.6 )
+
+#---- new efficiency map -----
+T5WW_3.efficiencyMap.setSource( 'orig/T5WW_x095/MA5_EM_T5WW_Glu095Neu005_>=8j80,0bjet.dat','txt',  objectName = None, index = None, dataset="GtGrid_SR_8ij80_0bjet" )
+T5WW_3.efficiencyMap.setStatistics( observedN=2, expectedBG=0.9, bgError=0.6 )
+
+#---- new efficiency map -----
+T5ZZ_1.efficiencyMap.setSource( 'orig/T5ZZ_x05/MA5_EM_T5ZZ_x05_>=8j80,0bjet.dat','txt',  objectName = None, index = None, dataset="GtGrid_SR_8ij80_0bjet" )
+T5ZZ_1.efficiencyMap.setStatistics( observedN=2, expectedBG=0.9, bgError=0.6 )
+
+
+#---- new efficiency map -----
+T5ZZ_2.efficiencyMap.setSource( 'orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_>=8j80,0bjet.dat','txt',  objectName = None, index = None, dataset="GtGrid_SR_8ij80_0bjet" )
+T5ZZ_2.efficiencyMap.setStatistics( observedN=2, expectedBG=0.9, bgError=0.6 )
+
+#---- new efficiency map -----
+T5ZZ_3.efficiencyMap.setSource( 'orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_>=8j80,0bjet.dat','txt',  objectName = None, index = None, dataset="GtGrid_SR_8ij80_0bjet" )
+T5ZZ_3.efficiencyMap.setStatistics( observedN=2, expectedBG=0.9, bgError=0.6 )
+databaseCreator.create()
+
+
+# New Dataset
+
+T1tttt.efficiencyMap.setSource( "./orig/GtGrid_SR_8ij80_2ibjet.txt", "txt" , objectName =  "GtGrid_SR_8ij80_2ibjet.txt", index = None , dataset = "GtGrid_SR_8ij80_2ibjet" )
+T1tttt.dataUrl = "http://hepdata.cedar.ac.uk/resource/6095/bjetstream/GtGrid_SR_8ij80_2ibjet.txt"
+T1tttt.efficiencyMap.setStatistics( observedN= 3 ,  expectedBG= 3.3  , bgError= 2.2  )
+
+#---- new efficiency map -----
+T5WW_1.efficiencyMap.setSource( 'orig/T5WW_x05/MA5_EM_T5WW_x05_>=8j80,>=2bjets.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_8ij80_2ibjet" )
+T5WW_1.efficiencyMap.setStatistics( observedN=3, expectedBG=3.3, bgError=2.2 )
+
+#---- new efficiency map -----
+T5WW_2.efficiencyMap.setSource( 'orig/T5WW_x005/MA5_EM_T5WW_Glu005Neu095_>=8j80,>=2bjets.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_8ij80_2ibjet" )
+T5WW_2.efficiencyMap.setStatistics( observedN=3, expectedBG=3.3, bgError=2.2 )
+
+#---- new efficiency map -----
+T5WW_3.efficiencyMap.setSource( 'orig/T5WW_x095/MA5_EM_T5WW_Glu095Neu005_>=8j80,>=2bjets.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_8ij80_2ibjet" )
+T5WW_3.efficiencyMap.setStatistics( observedN=3, expectedBG=3.3, bgError=2.2 )
+
+#---- new efficiency map -----
+T5ZZ_1.efficiencyMap.setSource( 'orig/T5ZZ_x05/MA5_EM_T5ZZ_x05_>=8j80,>=2bjets.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_8ij80_2ibjet" )
+T5ZZ_1.efficiencyMap.setStatistics( observedN=3, expectedBG=3.3, bgError=2.2 )
+
+#---- new efficiency map -----
+T5ZZ_2.efficiencyMap.setSource( 'orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_>=8j80,>=2bjets.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_8ij80_2ibjet" )
+T5ZZ_2.efficiencyMap.setStatistics( observedN=3, expectedBG=3.3, bgError=2.2 )
+
+#---- new efficiency map -----
+T5ZZ_3.efficiencyMap.setSource( 'orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_>=8j80,>=2bjets.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_8ij80_2ibjet" )
+T5ZZ_3.efficiencyMap.setStatistics( observedN=3, expectedBG=3.3, bgError=2.2 )
+databaseCreator.create()
+
+# New Dataset
+
+T1tttt.efficiencyMap.setSource( "./orig/GtGrid_SR_9ej50_1bjet.txt", "txt" , objectName =  "GtGrid_SR_9ej50_1bjet.txt", index = None , dataset = "GtGrid_SR_9ej50_1bjet" )
+T1tttt.dataUrl = "http://hepdata.cedar.ac.uk/resource/6095/bjetstream/GtGrid_SR_9ej50_1bjet.txt"
+T1tttt.efficiencyMap.setStatistics( observedN= 8 ,  expectedBG= 6.1  , bgError= 1.7  )
+
+#---- new efficiency map -----
+T5WW_1.efficiencyMap.setSource( 'orig/T5WW_x05/MA5_EM_T5WW_x05_9j50,1bjet.dat','txt', objectName = None, index = None, dataset="GtGrid_SR_9ej50_1bjet" )
+T5WW_1.efficiencyMap.setStatistics( observedN=8, expectedBG=6.1, bgError=1.7 )
+
+#---- new efficiency map -----
+T5WW_2.efficiencyMap.setSource( 'orig/T5WW_x005/MA5_EM_T5WW_Glu005Neu095_9j50,1bjet.dat','txt', objectName = None, index = None, dataset="GtGrid_SR_9ej50_1bjet" )
+T5WW_2.efficiencyMap.setStatistics( observedN=8, expectedBG=6.1, bgError=1.7 )
+
+#---- new efficiency map -----
+T5WW_3.efficiencyMap.setSource( 'orig/T5WW_x095/MA5_EM_T5WW_Glu095Neu005_9j50,1bjet.dat','txt', objectName = None, index = None, dataset="GtGrid_SR_9ej50_1bjet" )
+T5WW_3.efficiencyMap.setStatistics( observedN=8, expectedBG=6.1, bgError=1.7 )
+
+#---- new efficiency map -----
+T5ZZ_1.efficiencyMap.setSource( 'orig/T5ZZ_x05/MA5_EM_T5ZZ_x05_9j50,1bjet.dat','txt', objectName = None, index = None, dataset="GtGrid_SR_9ej50_1bjet" )
+T5ZZ_1.efficiencyMap.setStatistics( observedN=8, expectedBG=6.1, bgError=1.7 )
+
+#---- new efficiency map -----
+T5ZZ_2.efficiencyMap.setSource( 'orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_9j50,1bjet.dat','txt', objectName = None, index = None, dataset="GtGrid_SR_9ej50_1bjet" )
+T5ZZ_2.efficiencyMap.setStatistics( observedN=8, expectedBG=6.1, bgError=1.7 )
+
+#---- new efficiency map -----
+T5ZZ_3.efficiencyMap.setSource( 'orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_9j50,1bjet.dat','txt', objectName = None, index = None, dataset="GtGrid_SR_9ej50_1bjet" )
+T5ZZ_3.efficiencyMap.setStatistics( observedN=8, expectedBG=6.1, bgError=1.7 )
+databaseCreator.create()
+
+# New Dataset
+
+T1tttt.efficiencyMap.setSource( "./orig/GtGrid_SR_9ej50_2ibjet.txt", "txt" , objectName =  "GtGrid_SR_9ej50_2ibjet.txt", index = None , dataset = "GtGrid_SR_9ej50_2ibjet" )
+T1tttt.dataUrl = "http://hepdata.cedar.ac.uk/resource/6095/bjetstream/GtGrid_SR_9ej50_2ibjet.txt"
+T1tttt.efficiencyMap.setStatistics( observedN= 7 ,  expectedBG= 8.0  , bgError= 2.7  )
+
+
+#---- new efficiency map -----
+T5WW_1.efficiencyMap.setSource( 'orig/T5WW_x05/MA5_EM_T5WW_x05_9j50,>=2bjets.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_9ej50_2ibjet" )
+T5WW_1.efficiencyMap.setStatistics( observedN=7, expectedBG=8, bgError=2.7 )
+
+#---- new efficiency map -----
+T5WW_2.efficiencyMap.setSource( 'orig/T5WW_x005/MA5_EM_T5WW_Glu005Neu095_9j50,>=2bjets.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_9ej50_2ibjet" )
+T5WW_2.efficiencyMap.setStatistics( observedN=7, expectedBG=8, bgError=2.7 )
+
+
+#---- new efficiency map -----
+T5WW_3.efficiencyMap.setSource( 'orig/T5WW_x095/MA5_EM_T5WW_Glu095Neu005_9j50,>=2bjets.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_9ej50_2ibjet" )
+T5WW_3.efficiencyMap.setStatistics( observedN=7, expectedBG=8, bgError=2.7 )
+
+#---- new efficiency map -----
+T5ZZ_1.efficiencyMap.setSource( 'orig/T5ZZ_x05/MA5_EM_T5ZZ_x05_9j50,>=2bjets.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_9ej50_2ibjet" )
+T5ZZ_1.efficiencyMap.setStatistics( observedN=7, expectedBG=8, bgError=2.7 )
+
+#---- new efficiency map -----
+T5ZZ_2.efficiencyMap.setSource( 'orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_9j50,>=2bjets.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_9ej50_2ibjet" )
+T5ZZ_2.efficiencyMap.setStatistics( observedN=7, expectedBG=8, bgError=2.7 )
+
+#---- new efficiency map -----
+T5ZZ_3.efficiencyMap.setSource( 'orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_9j50,>=2bjets.dat', 'txt', objectName = None, index = None, dataset="GtGrid_SR_9ej50_2ibjet" )
+T5ZZ_3.efficiencyMap.setStatistics( observedN=7, expectedBG=8, bgError=2.7 )
+databaseCreator.create()
+
+
+'''
+    These maps refer to the other type of analysis - JETSTREAM
+    T1tttt.efficiencyMap.setSource( "./orig/HEPdata.MJ340.10ij50.GttOffShell.txt", "txt" , objectName =  "HEPdata.MJ340.10ij50.GttOffShell.txt", index = None , dataset = "MJ340_10ij50_GttOffShell" )
+    T1tttt.dataUrl = "http://hepdata.cedar.ac.uk/resource/6095/mjstream/HEPdata.MJ340.10ij50.GttOffShell.txt"
+    T1tttt.efficiencyMap.setStatistics( observedN= 1 ,  expectedBG=  3.2 , bgError=  3.2 )
+    databaseCreator.create(True)
+    
+    T1tttt.efficiencyMap.setSource( "./orig/HEPdata.MJ340.8ij50.GttOffShell.txt", "txt" , objectName =  "HEPdata.MJ340.8ij50.GttOffShell.txt", index = None , dataset = "MJ340_8ij50_GttOffShell" )
+    T1tttt.dataUrl = "http://hepdata.cedar.ac.uk/resource/6095/mjstream/HEPdata.MJ340.8ij50.GttOffShell.txt"
+    T1tttt.efficiencyMap.setStatistics( observedN= 69 ,  expectedBG= 75  , bgError= 19 )
+    databaseCreator.create(True)
+    
+    T1tttt.efficiencyMap.setSource( "./orig/HEPdata.MJ340.9ij50.GttOffShell.txt", "txt" , objectName =  "HEPdata.MJ340.9ij50.GttOffShell.txt", index = None , dataset = "MJ340_9ij50_GttOffShell" )
+    T1tttt.dataUrl = "http://hepdata.cedar.ac.uk/resource/6095/mjstream/HEPdata.MJ340.9ij50.GttOffShell.txt"
+    T1tttt.efficiencyMap.setStatistics( observedN= 13 ,  expectedBG= 17  , bgError= 7  )
+    databaseCreator.create(True)
+    
+    T1tttt.efficiencyMap.setSource( "./orig/HEPdata.MJ420.10ij50.GttOffShell.txt", "txt" , objectName =  "HEPdata.MJ420.10ij50.GttOffShell.txt", index = None , dataset = "MJ420_10ij50_GttOffShell" )
+    T1tttt.dataUrl = "http://hepdata.cedar.ac.uk/resource/6095/mjstream/HEPdata.MJ420.10ij50.GttOffShell.txt"
+    T1tttt.efficiencyMap.setStatistics( observedN=  1,  expectedBG= 2.2   , bgError=  2.0 )
+    databaseCreator.create(True)
+    
+    T1tttt.efficiencyMap.setSource( "./orig/HEPdata.MJ420.8ij50.GttOffShell.txt", "txt" , objectName =  "HEPdata.MJ420.8ij50.GttOffShell.txt", index = None , dataset = "MJ420_8ij50_GttOffShell" )
+    T1tttt.dataUrl = "http://hepdata.cedar.ac.uk/resource/6095/mjstream/HEPdata.MJ420.8ij50.GttOffShell.txt"
+    T1tttt.efficiencyMap.setStatistics( observedN= 37 ,  expectedBG=  45 , bgError= 14  )
+    databaseCreator.create(True)
+    
+    T1tttt.efficiencyMap.setSource( "./orig/HEPdata.MJ420.9ij50.GttOffShell.txt", "txt" , objectName =  "HEPdata.MJ420.9ij50.GttOffShell.txt", index = None , dataset = "MJ420_9ij50_GttOffShell" )
+    T1tttt.dataUrl = "http://hepdata.cedar.ac.uk/resource/6095/mjstream/HEPdata.MJ420.9ij50.GttOffShell.txt"
+    T1tttt.efficiencyMap.setStatistics( observedN= 9 ,  expectedBG=  11 , bgError=  5 )
+    databaseCreator.create(True)
+'''
