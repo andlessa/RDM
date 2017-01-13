@@ -34,13 +34,13 @@ from smodels_utils.dataPreparation.origPlotObjects import x, y
 
 #+++++++ global info block ++++++++++++++
 info = MetaInfoInput('ATLAS-CONF-2013-061')
-#info.comment =
+info.comment = 'Superseeded by ATLAS-SUSY-2013-18 but publication has fewer topologies, e.g. T1btbt result will be lost'
 info.sqrts = '8.0'
 info.private = False
 info.lumi = '20.1'
 info.publication = 'http://cds.cern.ch/record/1557778'
 info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-061/'
-info.supersededBy = 'ATLAS-SUSY-2013-18'
+#info.supersededBy = 'ATLAS-SUSY-2013-18'
 #info.arxiv =
 #info.contact =
 info.prettyName = 'ATLAS three b-jets'
