@@ -32,7 +32,7 @@ from smodels_utils.dataPreparation.origPlotObjects import x, y
 
 #+++++++ global info block ++++++++++++++
 info = MetaInfoInput('ATLAS-CONF-2013-053')
-info.comment = 'ATLAS recommends not to use this'
+info.comment = 'More data in ATLAS-SUSY-2013-05'
 info.sqrts = '8.0'
 info.private = False
 info.lumi = '20.1'
