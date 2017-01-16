@@ -41,8 +41,7 @@ info.arxiv = ""
 info.contact = ""
 info.publication = ""
 info.comment = 'Only PAS document https://cms-physics.web.cern.ch/cms-physics/public/SUS-14-011-pas.pdf'
-info.supersedes = 'CMS-SUS-13-004'
-info.supersededBy = ''
+info.supersededBy = 'CMS-SUS-13-004'
 
 #+++++++ next txName block ++++++++++++++
 T1bbbb = TxNameInput('T1bbbb')
