@@ -34,13 +34,13 @@ from smodels_utils.dataPreparation.origPlotObjects import x, y
 
 #+++++++ global info block ++++++++++++++
 info = MetaInfoInput('ATLAS-CONF-2013-024')
-info.comment = 'will be superseded by SUSY_2013_16'
+#info.comment = 
 info.sqrts = '8.0'
 info.private = False
 info.lumi = '20.5'
 #info.publication = 
 info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-024/'
-#info.supersededBy = 
+info.supersededBy = 'ATLAS-SUSY-2013-16'
 #info.arxiv = 
 #info.contact = 
 info.prettyName = 'ATLAS hadronic stop'
