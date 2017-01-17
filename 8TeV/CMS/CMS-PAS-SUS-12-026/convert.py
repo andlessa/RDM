@@ -41,7 +41,7 @@ info.arxiv = ''
 info.contact =''
 info.publication = ''
 info.comment = 'Only CDS entry http://cdsweb.cern.ch/record/1496879/files/SUS-12-026-pas.pdf'
-info.supersedes = 'None'
+# info.supersedes = None
 info.supersededBy = 'CMS-SUS-13-002'
 
 #+++++++ next txName block ++++++++++++++

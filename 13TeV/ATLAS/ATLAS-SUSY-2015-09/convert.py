@@ -41,7 +41,7 @@ info.arxiv = 'http://arxiv.org/abs/1602.09058'
 info.contact = ''
 info.publication = ''
 info.comment =''
-info.supersedes ='None'
+# info.supersedes ='None'
 info.supersededBy =''
 
 #+++++++ next txName block ++++++++++++++
