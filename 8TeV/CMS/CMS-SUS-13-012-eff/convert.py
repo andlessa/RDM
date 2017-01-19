@@ -80,7 +80,13 @@ T1tttt = T1tttt.addMassPlane(motherMass = x, lspMass = y)
 #----figure----
 T1tttt.figure = "Fig_7c"
 T1tttt.figureUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13012/Fig_7c.pdf"
-
+#----exclusion source----
+T1tttt.obsExclusion.setSource( "orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName = "combined_obsExclOneTimesProspino", index = None )
+T1tttt.obsExclusionM1.setSource( "orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName = "combined_obsExclMinusSysErrProspino", index = None )
+T1tttt.obsExclusionP1.setSource( "orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName = "combined_obsExclPlusSysErrProspino", index = None )
+T1tttt.expExclusion.setSource( "orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName = "combined_expExclOneTimesProspino", index = None )
+T1tttt.expExclusionM1.setSource( "orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName = "combined_expExclMinusOneSigmaProspino", index = None )
+T1tttt.expExclusionP1.setSource( "orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName = "combined_expExclPlusOneSigmaProspino", index = None )
 #+++++++ next txName block ++++++++++++++
 T1 = TxNameInput('T1')
 #T1.on.checked =" "
