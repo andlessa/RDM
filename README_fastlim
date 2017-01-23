@@ -7,7 +7,7 @@ Adding FastLim database
 =======================
 
 The Fastlim database (converted to the SModelS format) can be added to the
-SModelS database with following steps:
+SModelS database with the following steps:
 
  mv smodels-v1.1-fastlim-1.0.tgz <smodels-database folder>
  cd <smodels-database folder>
