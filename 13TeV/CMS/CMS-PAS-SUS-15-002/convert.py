@@ -31,7 +31,7 @@ from smodels_utils.dataPreparation.databaseCreation import databaseCreator
 from smodels_utils.dataPreparation.origPlotObjects import x, y
 
 #+++++++ global info block ++++++++++++++
-info = MetaInfoInput('CMS-SUS-PAS-15-002')
+info = MetaInfoInput('CMS-PAS-SUS-15-002')
 info.url = 'http://cms-results.web.cern.ch/cms-results/public-results/superseded/SUS-15-002/index.html'
 info.sqrts = 13
 info.lumi = 2.2
