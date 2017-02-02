@@ -47,7 +47,6 @@ info.supersededBy = 'ATLAS-SUSY-2013-09'
 info.prettyName = 'ATLAS SS'
 #info.supersedes = 
 info.implementedBy = 'MT'
-info.contact = 'ATLAS'
 
 #+++++++ next txName block ++++++++++++++
 T1tttt = TxNameInput('T1tttt')
