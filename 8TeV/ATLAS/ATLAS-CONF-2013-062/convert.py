@@ -36,7 +36,6 @@ info.comment = ' T5WWLSP060 and T6WWLSP060 originally have xvalue on y-axes, cha
 info.sqrts = '8.0'
 info.private = False
 info.lumi = '20.3'
-info.comment = 'Superseeded by the publication ATLAS-SUSY-2013-20 which has no public data hence not in the Database'  
 info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-062/ http://cds.cern.ch/record/1557779'
 #info.supersededBy =
 #info.arxiv = 
