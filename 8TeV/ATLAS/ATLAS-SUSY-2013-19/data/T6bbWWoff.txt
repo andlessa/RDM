@@ -6,7 +6,7 @@ figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-19/fi
 dataUrl: http://hepdata.cedar.ac.uk/view/ins1286444/d36;http://hepdata.cedar.ac.uk/view/ins1286444/d68;http://hepdata.cedar.ac.uk/view/ins1286444/d39
 validated: False
 axes: 2*Eq(mother,x)_Eq(inter0,x-10.0)_Eq(lsp,y);2*Eq(mother,300.0)_Eq(inter0,x)_Eq(lsp,y);2*Eq(mother,x)_Eq(inter0,106.0)_Eq(lsp,y);2*Eq(mother,x)_Eq(inter0,2.0*y)_Eq(lsp,y)
-publishedData: False
+publishedData: True
 upperLimits: [[[[150.0*GeV, 140.0*GeV, 115.0*GeV], [150.0*GeV, 140.0*GeV, 115.0*GeV]], 5934.0*pb],
 [[[200.0*GeV, 190.0*GeV, 125.0*GeV], [200.0*GeV, 190.0*GeV, 125.0*GeV]], 170.2*pb],
 [[[200.0*GeV, 190.0*GeV, 180.0*GeV], [200.0*GeV, 190.0*GeV, 180.0*GeV]], 1172.0*pb],

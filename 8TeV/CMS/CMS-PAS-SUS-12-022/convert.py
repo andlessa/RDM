@@ -197,8 +197,7 @@ TChiChipmSlepStau.on.condition ="Cgtr([[['L'],['L']],[['nu'],['ta']]],3.*[[['ta'
 #+++++++ next mass plane block ++++++++++++++
 TChiChipmSlepStau095 = TChiChipmSlepStau.addMassPlane(motherMass = x, interMass0 = x*0.95 + (1. - 0.95)*y, lspMass = y)
 #----limit source----
-TChiChipmSlepStau095.obsUpperLimit.setSource( "orig/exclusion_TChiSlepSnu_2a_0_95.root", "canvas", objectName = 
-        "interpret", index = 2 )
+TChiChipmSlepStau095.obsUpperLimit.setSource( "orig/exclusion_TChiSlepSnu_2a_0_95.root", "canvas", objectName = "interpret", index = 2 )
 TChiChipmSlepStau095.obsUpperLimit.unit = 'fb'
 # TChiChipmSlepStau095.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
 #----exclusion source----

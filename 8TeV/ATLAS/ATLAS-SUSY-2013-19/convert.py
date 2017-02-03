@@ -73,7 +73,7 @@ T2tt.obsExclusion.setSource( "orig/exclusionline_T2tt_DF.txt", "txt", objectName
 #T2tt.expExclusionM1.setSource( path, filetype, objectName = None, index = None )
 #T2tt.expExclusionP1.setSource( path, filetype, objectName = None, index = None )
 ##----global url settings ----
-# T2tt.dataUrl = "https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-19/figaux_10a.png"
+T2tt.dataUrl = "http://hepdata.cedar.ac.uk/view/ins1286444/d72"
 T2tt.histoDataUrl = "https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-19/figaux_10a.png"
 #T2tt.exclusionDataUrl =
 #----figure----
