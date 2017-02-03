@@ -149,8 +149,8 @@ T6ttWW_1.expExclusionP1.dataUrl ='https://twiki.cern.ch/twiki/pub/CMSPublic/Phys
 T6ttWW_2 = T6ttWW.addMassPlane(motherMass = x, interMass0 = y/(0.5), lspMass = y)
 #T6ttWW_2.setBranch_2(motherMass = , interMass0 = , lspMass = )
 #----figure----
-T6ttWW_2.figure = 'No Fig'
-T6ttWW_2.figureUrl =''
+#T6ttWW_2.figure = 'No Fig'
+#T6ttWW_2.figureUrl =''
 #----limit source----
 T6ttWW_2.obsUpperLimit.setSource( 'orig/ModelB1_x0p5.root', 'root', objectName = 'observedUL', index = None)
 T6ttWW_2.expUpperLimit.setSource( 'orig/ModelB1_x0p5.root', 'root', objectName = 'expectedUL', index = None  )
@@ -182,8 +182,8 @@ T6ttWW_2.expExclusionP1.dataUrl ='https://twiki.cern.ch/twiki/pub/CMSPublic/Phys
 T6ttWW_3 = T6ttWW.addMassPlane(motherMass = x, interMass0 = y/(0.8), lspMass = y)
 #T6ttWW_3.setBranch_2(motherMass = , interMass0 = , lspMass = )
 #----figure----
-T6ttWW_3.figure = 'No Fig'
-T6ttWW_3.figureUrl =''
+#T6ttWW_3.figure = 'No Fig'
+#T6ttWW_3.figureUrl =''
 #----limit source----
 T6ttWW_3.obsUpperLimit.setSource( 'orig/ModelB1_x0p8.root', 'root', objectName = 'observedUL', index = None)
 T6ttWW_3.expUpperLimit.setSource( 'orig/ModelB1_x0p8.root', 'root', objectName = 'expectedUL', index = None  )

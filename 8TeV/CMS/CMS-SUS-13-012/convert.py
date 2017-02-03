@@ -81,6 +81,7 @@ T2.expExclusionP1.setSource( "orig/SUS13012_XsecLimits_T2qq.root", "root", objec
 #----figure----
 T2.figure = "Fig_7a"
 T2.figureUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13012/Fig_7a.pdf"
+T2.dataUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13012/SUS13012_XsecLimits_T2qq.root"
 #----limit url settings ----
 T2.efficiencyMap.dataUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13012/c_AccEffMap_T2qq.tar"
 T2.expUpperLimit.dataUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13012/SUS13012_XsecLimits_T2qq.root"
@@ -165,6 +166,7 @@ T1tttt.expExclusionP1.setSource( "orig/SUS13012_XsecLimits_T1tttt.root", "root",
 #----figure----
 T1tttt.figure = "Fig_7c"
 T1tttt.figureUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13012/Fig_7c.pdf"
+T1tttt.dataUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13012/SUS13012_XsecLimits_T1tttt.root"
 #----limit url settings ----
 T1tttt.efficiencyMap.dataUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13012/c_AccEffMap_T1tttt.tar"
 T1tttt.expUpperLimit.dataUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13012/SUS13012_XsecLimits_T1tttt.root"
@@ -211,6 +213,7 @@ T1.expExclusionP1.setSource( "orig/SUS13012_XsecLimits_T1qqqq.root", "root", obj
 #----figure----
 T1.figure = "Fig_7b"
 T1.figureUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13012/Fig_7b.pdf"
+T1.dataUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13012/SUS13012_XsecLimits_T1qqqq.root"
 #----limit url settings ----
 T1.efficiencyMap.dataUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13012/c_AccEffMap_T1qqqq.tar"
 T1.expUpperLimit.dataUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13012/SUS13012_XsecLimits_T1qqqq.root"

@@ -46,8 +46,7 @@ info.arxiv = 'http://arxiv.org/abs/1502.00300v2'
 #info.contact =
 info.publication = 'http://dx.doi.org/10.1103/PhysRevD.91.052018'
 info.comment ='Other topologies have a compressed mass spectrum (decays with intermediate charginos, <= 5 GeV mass difference)'
-#info.supersedes =
-#info.supersededBy = 'CMS-SUS-PAS-14-011'
+info.supersedes = 'CMS-PAS-SUS-14-011'
 
 #+++++++ next txName block ++++++++++++++
 T2tt = TxNameInput('T2tt')
