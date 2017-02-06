@@ -7,7 +7,6 @@ validated: False
 axes: 2*Eq(mother,x)_Eq(inter0,1.5e+2)_Eq(lsp,y);2*Eq(mother,x)_Eq(inter0,2.0*y)_Eq(lsp,y)
 publishedData: False
 upperLimits: [[[[160.0*GeV, 150.0*GeV, 100.0*GeV], [160.0*GeV, 150.0*GeV, 100.0*GeV]], 169.0*pb],
-[[[160.0*GeV, 150.0*GeV, 75.0*GeV], [160.0*GeV, 150.0*GeV, 75.0*GeV]], 70.0*pb],
 [[[225.0*GeV, 150.0*GeV, 75.0*GeV], [225.0*GeV, 150.0*GeV, 75.0*GeV]], 7.7*pb],
 [[[300.0*GeV, 150.0*GeV, 100.0*GeV], [300.0*GeV, 150.0*GeV, 100.0*GeV]], 4.6*pb],
 [[[250.0*GeV, 150.0*GeV, 75.0*GeV], [250.0*GeV, 150.0*GeV, 75.0*GeV]], 5.2*pb],
@@ -21,6 +20,7 @@ upperLimits: [[[[160.0*GeV, 150.0*GeV, 100.0*GeV], [160.0*GeV, 150.0*GeV, 100.0*
 [[[275.0*GeV, 150.0*GeV, 75.0*GeV], [275.0*GeV, 150.0*GeV, 75.0*GeV]], 3.0*pb],
 [[[500.0*GeV, 150.0*GeV, 100.0*GeV], [500.0*GeV, 150.0*GeV, 100.0*GeV]], 0.17*pb],
 [[[125.0*GeV, 100.0*GeV, 50.0*GeV], [125.0*GeV, 100.0*GeV, 50.0*GeV]], 132.0*pb],
+[[[160*GeV,150*GeV,75*GeV],[160*GeV,150*GeV,75*GeV]],71*pb],
 [[[150.0*GeV, 100.0*GeV, 50.0*GeV], [150.0*GeV, 100.0*GeV, 50.0*GeV]], 70.0*pb],
 [[[180.0*GeV, 100.0*GeV, 50.0*GeV], [180.0*GeV, 100.0*GeV, 50.0*GeV]], 36.0*pb],
 [[[200.0*GeV, 100.0*GeV, 50.0*GeV], [200.0*GeV, 100.0*GeV, 50.0*GeV]], 19.0*pb],
