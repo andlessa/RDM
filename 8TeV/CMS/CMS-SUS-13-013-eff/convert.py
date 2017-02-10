@@ -10,9 +10,12 @@ import os
 import argparse
 import types
 
-argparser = argparse.ArgumentParser(description = \
+argparser = argparse.ArgumentParser(description =  
 'create info.txt, txname.txt, twiki.txt and sms.py')
 argparser.add_argument ('-utilsPath', '--utilsPath', 
+help = 'path to the package smodels_utils',\
+type = types.StringType)
+argparser.add_argument ('-smodelsPath', '--smodelsPath', 
 help = 'path to the package smodels_utils',\
 type = types.StringType)
 args = argparser.parse_args()
@@ -24,6 +27,9 @@ else:
     sys.path.append(os.path.abspath(databaseRoot))
     from utilsPath import utilsPath
     utilsPath = databaseRoot + utilsPath
+if args.smodelsPath:
+    sys.path.append(os.path.abspath(args.smodelsPath))
+
 
 sys.path.append(os.path.abspath(utilsPath))
 from smodels_utils.dataPreparation.inputObjects import TxNameInput, MetaInfoInput
@@ -80,8 +86,8 @@ databaseCreator.create()
 
 #---- new efficiency map -----
 #----figure----
-T1tttt_1.figure =''
-T1tttt_1.figureUrl=''
+T1tttt_1.figure ='Figure 5'
+T1tttt_1.figureUrl ='https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13013/Figure5_A1.pdf'
 #----limit source----
 T1tttt_1.efficiencyMap.setSource( 'orig/SR22_HighPt.txt', 'txt', objectName = None, index = None, dataset="SR22_HighPt" )
 T1tttt_1.efficiencyMap.setStatistics( observedN=1, expectedBG=0.96, bgError=0.55 )
@@ -93,8 +99,8 @@ databaseCreator.create(True)
 
 #---- new efficiency map -----
 #----figure----
-T1tttt_1.figure =''
-T1tttt_1.figureUrl =''
+T1tttt_1.figure ='Figure 5'
+T1tttt_1.figureUrl ='https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13013/Figure5_A1.pdf'
 #----limit source----
 T1tttt_1.efficiencyMap.setSource('orig/SR23_HighPt.txt', 'txt', objectName = None, index = None, dataset="SR23_HighPt" )
 T1tttt_1.efficiencyMap.setStatistics(observedN=3, expectedBG=3.78, bgError=1.44  )
@@ -106,8 +112,8 @@ databaseCreator.create(True)
 
 #---- new efficiency map -----
 #----figure----
-T1tttt_1.figure =''
-T1tttt_1.figureUrl =''
+T1tttt_1.figure ='Figure 5'
+T1tttt_1.figureUrl ='https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13013/Figure5_A1.pdf'
 #----limit source----
 T1tttt_1.efficiencyMap.setSource( 'orig/SR24_HighPt.txt', 'txt', objectName = None, index = None, dataset="SR24_HighPt" )
 T1tttt_1.efficiencyMap.setStatistics( observedN=7, expectedBG=2.75, bgError=1.18 )
@@ -119,8 +125,8 @@ databaseCreator.create(True)
 
 #---- new efficiency map -----
 #----figure----
-T1tttt_1.figure =''
-T1tttt_1.figureUrl =''
+T1tttt_1.figure ='Figure 5'
+T1tttt_1.figureUrl ='https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13013/Figure5_A1.pdf'
 #----limit source----
 T1tttt_1.efficiencyMap.setSource( 'orig/SR25_HighPt.txt', 'txt', objectName = None, index = None, dataset="SR25_HighPt" )
 T1tttt_1.efficiencyMap.setStatistics( observedN=4, expectedBG=2.86, bgError=1.14 )
@@ -132,8 +138,8 @@ databaseCreator.create(True)
 
 #---- new efficiency map -----
 #----figure----
-T1tttt_1.figure =''
-T1tttt_1.figureUrl =''
+T1tttt_1.figure ='Figure 5'
+T1tttt_1.figureUrl ='https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13013/Figure5_A1.pdf'
 #----limit source----
 T1tttt_1.efficiencyMap.setSource( 'orig/SR26_HighPt.txt', 'txt', objectName = None, index = None, dataset="SR26_HighPt" )
 T1tttt_1.efficiencyMap.setStatistics( observedN=1, expectedBG=0.81, bgError=0.54 )
@@ -145,8 +151,8 @@ databaseCreator.create(True)
 
 #---- new efficiency map -----
 #----figure----
-T1tttt_1.figure =''
-T1tttt_1.figureUrl =''
+T1tttt_1.figure ='Figure 5'
+T1tttt_1.figureUrl ='https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13013/Figure5_A1.pdf'
 #----limit source----
 T1tttt_1.efficiencyMap.setSource( 'orig/SR27_HighPt.txt', 'txt', objectName = None, index = None, dataset="SR27_HighPt" )
 T1tttt_1.efficiencyMap.setStatistics( observedN=0, expectedBG=1.22, bgError=0.62 )
