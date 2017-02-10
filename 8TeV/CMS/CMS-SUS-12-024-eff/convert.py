@@ -15,6 +15,9 @@ argparser = argparse.ArgumentParser(description =
 argparser.add_argument ('-utilsPath', '--utilsPath', 
 help = 'path to the package smodels_utils',\
 type = types.StringType)
+argparser.add_argument ('-smodelsPath', '--smodelsPath', 
+help = 'path to the package smodels_utils',\
+type = types.StringType)
 args = argparser.parse_args()
 
 if args.utilsPath:
@@ -24,6 +27,9 @@ else:
     sys.path.append(os.path.abspath(databaseRoot))
     from utilsPath import utilsPath
     utilsPath = databaseRoot + utilsPath
+if args.smodelsPath:
+    sys.path.append(os.path.abspath(args.smodelsPath))
+
 
 sys.path.append(os.path.abspath(utilsPath))
 from smodels_utils.dataPreparation.inputObjects import TxNameInput, MetaInfoInput
@@ -62,7 +68,7 @@ T1bbbb.efficiencyMap.setSource( "orig/efficiency_T1bbbb_multi.root", "root", obj
 T1bbbb.efficiencyMap.setStatistics ( observedN=161, expectedBG=157, bgError=13 )
 ## T1bbbb.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
 #----exclusion source----
-T1bbbb.obsExclusion.setSource( "orig/T1bbbb_exclusion_corrected.C", "cMacro", objectName = "graph_smoothed_Obs_T1bbbb", index = None )
+T1bbbb.obsExclusion.setSource( "orig/graph_smoothed_Obs_T1bbbb.root", "root", objectName = "graph_smoothed_Obs_T1bbbb", index = None )
 #T1bbbb.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
 #T1bbbb.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
 #T1bbbb.expExclusion.setSource( path, filetype, objectName = None, index = None )
@@ -105,7 +111,7 @@ T1tttt.efficiencyMap.setSource( "orig/efficiency_T1tttt_multi.root", "root", obj
 T1tttt.efficiencyMap.setStatistics ( observedN=161, expectedBG=157, bgError=13 )
 # T1tttt.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
 #----exclusion source----
-T1tttt.obsExclusion.setSource( "orig/T1tttt_exclusion_corrected.C", "cMacro", objectName = "graph_smoothed_Obs_T1tttt", index = None )
+T1tttt.obsExclusion.setSource( "orig/graph_smoothed_Obs_T1tttt.root", "root", objectName = "graph_smoothed_Obs_T1tttt", index = None )
 #T1tttt.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
 #T1tttt.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
 #T1tttt.expExclusion.setSource( path, filetype, objectName = None, index = None )
@@ -265,7 +271,7 @@ databaseCreator.create( True )
 
 T1bbbb.efficiencyMap.setSource( "orig/efficiency_T1bbbb_multi.root", "root", objectName = "heff_MET4_HT3_nb3", index = None, dataset="MET4_HT3_nb3" )
 T1bbbb.efficiencyMap.setStatistics ( observedN=2, expectedBG=2.0, bgError=1.0 )
-T1tttt.efficiencyMap.setSource( "orig/efficiency_T1tttt_multi.root", "root", objectName = "heff_MET4_HT2_nb3", index = None, dataset="MET4_HT2_nb3" )
+T1tttt.efficiencyMap.setSource( "orig/efficiency_T1tttt_multi.root", "root", objectName = "heff_MET4_HT3_nb3", index = None, dataset="MET4_HT3_nb3" )
 T1tttt.efficiencyMap.setStatistics ( observedN=2, expectedBG=2.0, bgError=1.0 )
 
 databaseCreator.create( True )

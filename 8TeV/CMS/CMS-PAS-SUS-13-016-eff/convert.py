@@ -60,7 +60,7 @@ T1tttt.off.conditionDescription ="None"
 T1tttt = T1tttt.addMassPlane(motherMass = x, lspMass = y)
 #----limit source----
 T1tttt.efficiencyMap.setSource( "orig/Acceptance_OS_T1tttt.root", "root", objectName = "AccANN", index = None, dataset="sr0" )
-T1tttt.efficiencyMap.setStatistics ( observedN = 1, expectedBG=1.2, bgError = math.sqrt ( 0.86**2 + 0.60**2 ) )
+T1tttt.efficiencyMap.setStatistics ( observedN = 1, expectedBG=1.2, bgError = 1.04862 )
 # T1tttt.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
 #----exclusion source----
 T1tttt.obsExclusion.setSource( "orig/Results_SUS13016.root", "root", objectName = "GR_ns", index = None )

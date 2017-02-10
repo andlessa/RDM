@@ -5,7 +5,7 @@ constraint: [[['t','t']],[['t','t']]]
 checked: AL
 figureUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12024/T1tttt_exclusions_corrected.pdf
 dataUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12024/T1tttt_exclusion_corrected.C
-validated: True
+validated: None
 axes: 2*Eq(mother,x)_Eq(lsp,y)
 publishedData: True
 efficiencyMap: [[[[600.0*GeV, 0.0*GeV], [600.0*GeV, 0.0*GeV]], 0.0014804],
