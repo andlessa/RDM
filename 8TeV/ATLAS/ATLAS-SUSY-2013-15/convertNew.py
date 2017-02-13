@@ -59,14 +59,14 @@ T2bbWW = dataset.addTxName('T2bbWW')
 T2bbWW.constraint ="[[['b','W']],[['b','W']]]"
 T2bbWW.conditionDescription ="None"
 T2bbWW.condition ="None"
+T2bbWW.source = "ATLAS"
 T2bbWW.massConstraint = None
-T2bbWW.source = 'ATLAS'
 T2bbWWoff = dataset.addTxName('T2bbWWoff')
 T2bbWWoff.constraint ="2.3*([[['b','L','nu']],[['b','jet','jet']]])"
 T2bbWWoff.conditionDescription ="[[['b','L','nu']],[['b','jet','jet']]] > 2.7* [[['b','ta','nu']],[['b','jet','jet']]], [[['b','L','nu']],[['b','jet','jet']]] > 2.7* [[['b','e','nu']],[['b','jet','jet']]]"
 T2bbWWoff.condition ="Cgtr([[['b','L','nu']],[['b','jet','jet']]],3.*[[['b','ta','nu']],[['b','jet','jet']]]);Cgtr([[['b','L','nu']],[['b','jet','jet']]],3.*[[['b','e','nu']],[['b','jet','jet']]])"
 T2bbWWoff.massConstraint = [['dm <= 76.0'], ['dm <= 76.0']]
-T2bbWWoff.source = 'ATLAS'
+T2bbWWoff.source = "ATLAS"
 #+++++++ next mass plane block ++++++++++++++
 T2bbWW = T2bbWW.addMassPlane(2*[[x, y]])
 T2bbWW.figure = 'Fig.(aux) 14'
@@ -82,7 +82,7 @@ T2tt = dataset.addTxName('T2tt')
 T2tt.constraint ="[[['t']],[['t']]]"
 T2tt.conditionDescription ="None"
 T2tt.condition ="None"
-T2tt.source = 'ATLAS'
+T2tt.source = "ATLAS"
 #+++++++ next mass plane block ++++++++++++++
 T2tt = T2tt.addMassPlane(2*[[x, y]])
 T2tt.figure = 'Fig.(aux) 13'
@@ -97,14 +97,14 @@ T6bbWW = dataset.addTxName('T6bbWW')
 T6bbWW.constraint ="[[['b'],['W']],[['b'],['W']]]"
 T6bbWW.conditionDescription = "None"
 T6bbWW.condition = "None"
+T6bbWW.source = "ATLAS"
 T6bbWW.massConstraint = None
-T6bbWW.source = 'ATLAS'
 T6bbWWoff = dataset.addTxName('T6bbWWoff')
 T6bbWWoff.constraint ="2.3*([[['b'],['L','nu']],[['b'],['jet','jet']]])"
 T6bbWWoff.conditionDescription ="[[['b'],['L','nu']],[['b'],['jet','jet']]] > 2.7* [[['b'],['ta','nu']],[['b'],['jet','jet']]],[[['b'],['L','nu']],[['b'],['jet','jet']]] > 2.7* [[['b'],['e','nu']],[['b'],['jet','jet']]]"
 T6bbWWoff.condition ="Cgtr([[['b'],['L','nu']],[['b'],['jet','jet']]],3.*[[['b'],['ta','nu']],[['b'],['jet','jet']]]);Cgtr([[['b'],['L','nu']],[['b'],['jet','jet']]],3.*[[['b'],['e','nu']],[['b'],['jet','jet']]])"
 T6bbWWoff.massConstraint = [['dm >= 0.0', 'dm <= 76.0'], ['dm >= 0.0', 'dm <= 76.0']]
-T6bbWWoff.source = 'ATLAS'
+T6bbWWoff.source = "ATLAS"
 #+++++++ next mass plane block ++++++++++++++
 T6bbWWoffD10 = T6bbWW.addMassPlane(2*[[x, x-10., y]])
 T6bbWWoffD10.figure = "fig(aux) 21"

@@ -1,32 +1,33 @@
 txName: T5WWoff
-conditionDescription: [[['jet','jet'],['L','nu']],[['jet','jet'],['jet','jet']]] > 2.7* [[['jet','jet'],['ta','nu']],[['jet','jet'],['jet','jet']]], [[['jet','jet'],['L','nu']],[['jet','jet'],['jet','jet']]] > 2.7* [[['jet','jet'],['e','nu']],[['jet','jet'],['jet','jet']]]
-condition: Cgtr([[['jet','jet'],['L','nu']],[['jet','jet'],['jet','jet']]],3.*[[['jet','jet'],['ta','nu']],[['jet','jet'],['jet','jet']]]);Cgtr([[['jet','jet'],['L','nu']],[['jet','jet'],['jet','jet']]],3.*[[['jet','jet'],['e','nu']],[['jet','jet'],['jet','jet']]])
 constraint: 2.3 * [[['jet','jet'],['L','nu']],[['jet','jet'],['jet','jet']]]
+condition: Cgtr([[['jet','jet'],['L','nu']],[['jet','jet'],['jet','jet']]],3.*[[['jet','jet'],['ta','nu']],[['jet','jet'],['jet','jet']]]);Cgtr([[['jet','jet'],['L','nu']],[['jet','jet'],['jet','jet']]],3.*[[['jet','jet'],['e','nu']],[['jet','jet'],['jet','jet']]])
+conditionDescription: [[['jet','jet'],['L','nu']],[['jet','jet'],['jet','jet']]] > 2.7* [[['jet','jet'],['ta','nu']],[['jet','jet'],['jet','jet']]], [[['jet','jet'],['L','nu']],[['jet','jet'],['jet','jet']]] > 2.7* [[['jet','jet'],['e','nu']],[['jet','jet'],['jet','jet']]]
+susyProcess: pp --> gluino gluino, gluino  --> quark antiquark chargino^pm_1, chargino^pm_1 --> W^* lsp
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-062/fig_13a.png
 dataUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-062/fig_13a_PRELIMINARY.data
+source: ATLAS
 validated: False
-axes: 2*Eq(mother,x)_Eq(inter0,0.5*x+0.5*y)_Eq(lsp,y)
-publishedData: True
-upperLimits: [[[[225.0*GeV, 185.0*GeV, 145.0*GeV], [225.0*GeV, 185.0*GeV, 145.0*GeV]], 24.73*pb],
-[[[240.0*GeV, 215.0*GeV, 190.0*GeV], [240.0*GeV, 215.0*GeV, 190.0*GeV]], 344.56*pb],
-[[[255.0*GeV, 215.0*GeV, 175.0*GeV], [255.0*GeV, 215.0*GeV, 175.0*GeV]], 7.41*pb],
-[[[285.0*GeV, 245.0*GeV, 205.0*GeV], [285.0*GeV, 245.0*GeV, 205.0*GeV]], 13.14*pb],
-[[[300.0*GeV, 275.0*GeV, 250.0*GeV], [300.0*GeV, 275.0*GeV, 250.0*GeV]], 247.19*pb],
-[[[315.0*GeV, 275.0*GeV, 235.0*GeV], [315.0*GeV, 275.0*GeV, 235.0*GeV]], 2.85*pb],
-[[[330.0*GeV, 305.0*GeV, 280.0*GeV], [330.0*GeV, 305.0*GeV, 280.0*GeV]], 3.46*pb],
-[[[345.0*GeV, 305.0*GeV, 265.0*GeV], [345.0*GeV, 305.0*GeV, 265.0*GeV]], 4.09*pb],
-[[[410.0*GeV, 385.0*GeV, 360.0*GeV], [410.0*GeV, 385.0*GeV, 360.0*GeV]], 1.95*pb],
-[[[425.0*GeV, 385.0*GeV, 345.0*GeV], [425.0*GeV, 385.0*GeV, 345.0*GeV]], 1.84*pb],
-[[[490.0*GeV, 465.0*GeV, 440.0*GeV], [490.0*GeV, 465.0*GeV, 440.0*GeV]], 0.72*pb],
-[[[505.0*GeV, 465.0*GeV, 425.0*GeV], [505.0*GeV, 465.0*GeV, 425.0*GeV]], 1.75*pb],
-[[[570.0*GeV, 545.0*GeV, 520.0*GeV], [570.0*GeV, 545.0*GeV, 520.0*GeV]], 0.69*pb],
-[[[585.0*GeV, 545.0*GeV, 505.0*GeV], [585.0*GeV, 545.0*GeV, 505.0*GeV]], 1.44*pb],
-[[[637.0*GeV, 624.5*GeV, 612.0*GeV], [637.0*GeV, 624.5*GeV, 612.0*GeV]], 2.88*pb],
-[[[717.0*GeV, 704.5*GeV, 692.0*GeV], [717.0*GeV, 704.5*GeV, 692.0*GeV]], 4.56*pb],
-[[[730.0*GeV, 705.0*GeV, 680.0*GeV], [730.0*GeV, 705.0*GeV, 680.0*GeV]], 0.51*pb],
-[[[745.0*GeV, 705.0*GeV, 665.0*GeV], [745.0*GeV, 705.0*GeV, 665.0*GeV]], 1.66*pb],
-[[[810.0*GeV, 785.0*GeV, 760.0*GeV], [810.0*GeV, 785.0*GeV, 760.0*GeV]], 0.43*pb],
-[[[825.0*GeV, 785.0*GeV, 745.0*GeV], [825.0*GeV, 785.0*GeV, 745.0*GeV]], 1.21*pb],
-[[[877.0*GeV, 864.5*GeV, 852.0*GeV], [877.0*GeV, 864.5*GeV, 852.0*GeV]], 2.42*pb],
-[[[890.0*GeV, 865.0*GeV, 840.0*GeV], [890.0*GeV, 865.0*GeV, 840.0*GeV]], 0.43*pb],
-[[[905.0*GeV, 865.0*GeV, 825.0*GeV], [905.0*GeV, 865.0*GeV, 825.0*GeV]], 1.85*pb]]
+axes: [[x, 0.5*x + 0.5*y, y], [x, 0.5*x + 0.5*y, y]]
+upperLimits: [[[[225*GeV,185*GeV,145*GeV],[225*GeV,185*GeV,145*GeV]],24.73*pb],
+[[[240*GeV,215*GeV,190*GeV],[240*GeV,215*GeV,190*GeV]],344.56*pb],
+[[[255*GeV,215*GeV,175*GeV],[255*GeV,215*GeV,175*GeV]],7.41*pb],
+[[[285*GeV,245*GeV,205*GeV],[285*GeV,245*GeV,205*GeV]],13.14*pb],
+[[[300*GeV,275*GeV,250*GeV],[300*GeV,275*GeV,250*GeV]],247.19*pb],
+[[[315*GeV,275*GeV,235*GeV],[315*GeV,275*GeV,235*GeV]],2.85*pb],
+[[[330*GeV,305*GeV,280*GeV],[330*GeV,305*GeV,280*GeV]],3.46*pb],
+[[[345*GeV,305*GeV,265*GeV],[345*GeV,305*GeV,265*GeV]],4.09*pb],
+[[[410*GeV,385*GeV,360*GeV],[410*GeV,385*GeV,360*GeV]],1.95*pb],
+[[[425*GeV,385*GeV,345*GeV],[425*GeV,385*GeV,345*GeV]],1.84*pb],
+[[[490*GeV,465*GeV,440*GeV],[490*GeV,465*GeV,440*GeV]],0.72*pb],
+[[[505*GeV,465*GeV,425*GeV],[505*GeV,465*GeV,425*GeV]],1.75*pb],
+[[[570*GeV,545*GeV,520*GeV],[570*GeV,545*GeV,520*GeV]],0.69*pb],
+[[[585*GeV,545*GeV,505*GeV],[585*GeV,545*GeV,505*GeV]],1.44*pb],
+[[[637*GeV,624.5*GeV,612*GeV],[637*GeV,624.5*GeV,612*GeV]],2.88*pb],
+[[[717*GeV,704.5*GeV,692*GeV],[717*GeV,704.5*GeV,692*GeV]],4.56*pb],
+[[[730*GeV,705*GeV,680*GeV],[730*GeV,705*GeV,680*GeV]],0.51*pb],
+[[[745*GeV,705*GeV,665*GeV],[745*GeV,705*GeV,665*GeV]],1.66*pb],
+[[[810*GeV,785*GeV,760*GeV],[810*GeV,785*GeV,760*GeV]],0.43*pb],
+[[[825*GeV,785*GeV,745*GeV],[825*GeV,785*GeV,745*GeV]],1.21*pb],
+[[[877*GeV,864.5*GeV,852*GeV],[877*GeV,864.5*GeV,852*GeV]],2.42*pb],
+[[[890*GeV,865*GeV,840*GeV],[890*GeV,865*GeV,840*GeV]],0.43*pb],
+[[[905*GeV,865*GeV,825*GeV],[905*GeV,865*GeV,825*GeV]],1.85*pb]]

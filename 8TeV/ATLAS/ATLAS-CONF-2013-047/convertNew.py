@@ -86,16 +86,16 @@ T6WWoff.source = 'ATLAS'
 T6WWLSP060 = T6WW.addMassPlane(2*[[x, y, 60.0]])
 T6WWLSP060.figure = 'Fig. 21c'
 T6WWLSP060.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-047/fig_21c.png'
-T6WWLSP060.dataUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-047/fig_21d_PRELIMINARY.data'
+T6WWLSP060.dataUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-047/fig_21c_PRELIMINARY.data'
 T6WWLSP060.setSources(dataLabels= ['obsExclusion', 'upperLimits'],
                  dataFiles= ['orig/T6WWLSP060_exc.dat', 'orig/T6WWLSP060.dat'],
                  dataFormats= ['txt', 'txt'],units= [None, 'fb'])
 T6WWoff.addMassPlane(T6WWLSP060)
 #+++++++ next mass plane block ++++++++++++++
 T6WW050 = T6WW.addMassPlane(2*[[x, x*0.5+(1.-0.5)*y, y]])
-T6WW050.figure = 'Fig. 21c'
-T6WW050.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-047/fig_21c.png'
-T6WW050.dataUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-047/fig_21c_PRELIMINARY.data'
+T6WW050.figure = 'Fig. 21d'
+T6WW050.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-047/fig_21d.png'
+T6WW050.dataUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-047/fig_21d_PRELIMINARY.data'
 T6WW050.setSources(dataLabels= ['obsExclusion', 'upperLimits'],
                  dataFiles= ['orig/T6WW050_exc.dat', 'orig/T6WW050.dat'],
                  dataFormats= ['txt', 'txt'],units= [None, 'fb'])
