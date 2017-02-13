@@ -125,7 +125,7 @@ T6WWLSP060.obsExclusion.setSource( "orig/T6WWLSP060_exc.dat", "txt", objectName 
 T6WWLSP060.figure = 'Fig. 21c'
 T6WWLSP060.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-047/fig_21c.png'
 #----limit url settings ----
-T6WWLSP060.obsUpperLimit.dataUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-047/fig_21d_PRELIMINARY.data'
+T6WWLSP060.obsUpperLimit.dataUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-047/fig_21c_PRELIMINARY.data'
 #T6WWLSP060.expUpperLimit.dataUrl =
 #----exclusion url settings ----
 #T6WWLSP060.obsExclusion.dataUrl =
@@ -152,10 +152,10 @@ T6WW050.obsExclusion.setSource( "orig/T6WW050_exc.dat", "txt", objectName = None
 #T6WW050.histoDataUrl =
 #T6WW050.exclusionDataUrl =
 #----figure----
-T6WW050.figure = 'Fig. 21c'
-T6WW050.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-047/fig_21c.png'
+T6WW050.figure = 'Fig. 21d'
+T6WW050.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-047/fig_21d.png'
 #----limit url settings ----
-T6WW050.obsUpperLimit.dataUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-047/fig_21c_PRELIMINARY.data'
+T6WW050.obsUpperLimit.dataUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-047/fig_21d_PRELIMINARY.data'
 #T6WW050.expUpperLimit.dataUrl =
 #----exclusion url settings ----
 #T6WW050.obsExclusion.dataUrl =
