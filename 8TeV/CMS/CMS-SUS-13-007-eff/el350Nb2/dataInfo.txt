@@ -1,7 +1,7 @@
-dataType: efficiencyMap
 dataId: el350Nb2
+dataType: efficiencyMap
 observedN: 2
 expectedBG: 2.7
 bgError: 2.06
-upperLimit: 0.263664512313*fb
-expectedUpperLimit: 0.263908679947*fb
+upperLimit: 0.264*fb
+expectedUpperLimit: 0.263*fb

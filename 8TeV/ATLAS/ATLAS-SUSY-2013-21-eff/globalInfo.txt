@@ -1,6 +1,6 @@
+id: ATLAS-SUSY-2013-21
 sqrts: 8*TeV
 lumi: 20.3/fb
-id: ATLAS-SUSY-2013-21
 prettyName: stop  to charm
 url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-21/
 arxiv: http://arxiv.org/pdf/1407.0608v2.pdf

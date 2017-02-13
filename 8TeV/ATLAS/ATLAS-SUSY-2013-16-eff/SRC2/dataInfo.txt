@@ -1,7 +1,7 @@
-dataType: efficiencyMap
 dataId: SRC2
+dataType: efficiencyMap
 observedN: 30
 expectedBG: 34
 bgError: 5
-upperLimit: 0.671142770834*fb
-expectedUpperLimit: 0.812047871688*fb
+upperLimit: 0.675*fb
+expectedUpperLimit: 0.821*fb

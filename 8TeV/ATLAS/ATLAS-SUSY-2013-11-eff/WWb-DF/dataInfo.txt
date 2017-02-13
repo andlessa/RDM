@@ -1,7 +1,7 @@
-dataType: efficiencyMap
 dataId: WWb-DF
+dataType: efficiencyMap
 observedN: 17
 expectedBG: 18.1
 bgError: 2.6
-upperLimit: 0.516533389841*fb
-expectedUpperLimit: 0.555456701824*fb
+upperLimit: 0.516*fb
+expectedUpperLimit: 0.557*fb

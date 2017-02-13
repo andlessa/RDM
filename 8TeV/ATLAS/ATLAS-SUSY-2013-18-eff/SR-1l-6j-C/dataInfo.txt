@@ -1,5 +1,5 @@
-dataType: efficiencyMap
 dataId: SR-1l-6j-C
+dataType: efficiencyMap
 observedN: 0
 expectedBG: 2.3
 bgError: 0.7

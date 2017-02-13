@@ -1,7 +1,7 @@
-dataType: efficiencyMap
 dataId: mu250Nb2
+dataType: efficiencyMap
 observedN: 9
 expectedBG: 6
 bgError: 2.37
-upperLimit: 0.574849474825*fb
-expectedUpperLimit: 0.41636341534*fb
+upperLimit: 0.574*fb
+expectedUpperLimit: 0.416*fb

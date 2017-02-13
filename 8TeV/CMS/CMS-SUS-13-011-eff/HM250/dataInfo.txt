@@ -1,5 +1,5 @@
-dataType: efficiencyMap
 dataId: HM250
+dataType: efficiencyMap
 observedN: 3
 expectedBG: 9.5
 bgError: 2.8

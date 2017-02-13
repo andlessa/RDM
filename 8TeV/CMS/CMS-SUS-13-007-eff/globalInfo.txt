@@ -1,6 +1,6 @@
+id: CMS-SUS-13-007
 sqrts: 8*TeV
 lumi: 19.3/fb
-id: CMS-SUS-13-007
 prettyName: e/\mu DP
 url: https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS13007
 arxiv: http://arxiv.org/abs/arXiv:1311.4937
@@ -10,4 +10,3 @@ comment: Only two mass planes for T5tttt; implemented Delta Phi method
 private: False
 implementedBy: Federico A
 lastUpdate: 2016/10/3
-
