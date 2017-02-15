@@ -6,7 +6,7 @@ susyProcess: pp --> neutralino_2 chargino^pm_1, neutralino_2 chargino^pm_1 --> H
 figureUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13006/Fig16_exclusion_TChiWH.png
 dataUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13006/exclusion_TChiWH.root
 source: CMS
-validated: Not done yet
+validated: True
 axes: [[x, y], [x, y]]
 upperLimits: [[[[125*GeV,0*GeV],[125*GeV,0*GeV]],2797.9*fb],
 [[[150*GeV,0*GeV],[150*GeV,0*GeV]],1875.5*fb],

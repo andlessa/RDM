@@ -6,7 +6,7 @@ susyProcess: pp --> neutralino_2 chargino^pm_1, neutralino_2 chargino^pm_1  --> 
 figureUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13006/Fig14_exclusion_TChiSlepSnu_2a_0_05.pdf;https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13006/Fig14_exclusion_TChiSlepSnu_2a_0_5.pdf;https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13006/Fig14_exclusion_TChiSlepSnu_2a_0_95.pdf
 dataUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13006/exclusion_TChiSlepSnu_2a_0_05.root;https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13006/exclusion_TChiSlepSnu_2a_0_5.root;https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13006/exclusion_TChiSlepSnu_2a_0_95.root
 source: CMS
-validated: Not done yet
+validated: True
 axes: [[x, 0.05*x + 0.95*y, y], [x, 0.05*x + 0.95*y, y]];[[x, 0.5*x + 0.5*y, y], [x, 0.5*x + 0.5*y, y]];[[x, 0.95*x + 0.05*y, y], [x, 0.95*x + 0.05*y, y]]
 upperLimits: [[[[100*GeV,5*GeV,0*GeV],[100*GeV,5*GeV,0*GeV]],272.65*fb],
 [[[100*GeV,24*GeV,20*GeV],[100*GeV,24*GeV,20*GeV]],1511*fb],

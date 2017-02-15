@@ -6,7 +6,7 @@ susyProcess: pp --> slepton slepton, slepton  --> lepton lsp
 figureUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13006/Fig18_exclusion_TSlepSlepL.png
 dataUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13006/exclusion_TSlepSlepL.root
 source: CMS
-validated: Not done yet
+validated: True
 axes: [[x, y], [x, y]]
 upperLimits: [[[[100*GeV,0*GeV],[100*GeV,0*GeV]],1297.3*fb],
 [[[100*GeV,25*GeV],[100*GeV,25*GeV]],1191.6*fb],
