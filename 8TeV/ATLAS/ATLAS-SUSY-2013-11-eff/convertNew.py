@@ -54,7 +54,7 @@ info.supersedes = 'ATLAS-CONF-2013-049'
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("WWb-SF")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "WWb-SF", observedN = 26, expectedBG = 30.2 , bgError = 3.5, upperLimit = '5.59E-01*fb', expectedUpperLimit = '6.94E-01*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "WWb-SF", observedN = 26, expectedBG = 30.2 , bgError = 3.5, upperLimit = '5.592E-01*fb', expectedUpperLimit = '6.944E-01*fb')
 #+++++++ next txName block ++++++++++++++
 #+++++++ next txName block ++++++++++++++
 TSlepSlep = dataset.addTxName('TSlepSlep')
@@ -71,7 +71,7 @@ TSlepSlep_1.dataUrl = None
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("WWa-SF")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "WWa-SF", observedN = 73, expectedBG = 86.5 , bgError = 7.4, upperLimit = '8.19E-01*fb', expectedUpperLimit = '1.20E+00*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "WWa-SF", observedN = 73, expectedBG = 86.5 , bgError = 7.4, upperLimit = '8.188E-01*fb', expectedUpperLimit = '1.199E+00*fb')
 #+++++++ next txName block ++++++++++++++
 #+++++++ next txName block ++++++++++++++
 TSlepSlep = dataset.addTxName('TSlepSlep')
@@ -88,7 +88,7 @@ TSlepSlep_1.dataUrl = None
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("WWb-DF")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "WWb-DF", observedN = 17, expectedBG = 18.1 , bgError = 2.6, upperLimit = '5.16E-01*fb', expectedUpperLimit = '5.55E-01*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "WWb-DF", observedN = 17, expectedBG = 18.1 , bgError = 2.6, upperLimit = '5.165E-01*fb', expectedUpperLimit = '5.555E-01*fb')
 #+++++++ next txName block ++++++++++++++
 #+++++++ next txName block ++++++++++++++
 TSlepSlep = dataset.addTxName('TSlepSlep')
@@ -105,7 +105,7 @@ TSlepSlep_1.dataUrl = None
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("mT2-90-DF")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "mT2-90-DF", observedN = 21, expectedBG = 23.3 , bgError = 3.7, upperLimit = '5.74E-01*fb', expectedUpperLimit = '6.48E-01*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "mT2-90-DF", observedN = 21, expectedBG = 23.3 , bgError = 3.7, upperLimit = '5.743E-01*fb', expectedUpperLimit = '6.481E-01*fb')
 #+++++++ next txName block ++++++++++++++
 #+++++++ next txName block ++++++++++++++
 TSlepSlep = dataset.addTxName('TSlepSlep')
@@ -122,7 +122,7 @@ TSlepSlep_1.dataUrl = None
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("mT2-120-SF")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "mT2-120-SF", observedN = 5, expectedBG = 8.9 , bgError = 2.1, upperLimit = '2.79E-01*fb', expectedUpperLimit = '3.92E-01*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "mT2-120-SF", observedN = 5, expectedBG = 8.9 , bgError = 2.1, upperLimit = '2.794E-01*fb', expectedUpperLimit = '3.920E-01*fb')
 #+++++++ next txName block ++++++++++++++
 #+++++++ next txName block ++++++++++++++
 TSlepSlep = dataset.addTxName('TSlepSlep')
@@ -139,7 +139,7 @@ TSlepSlep_1.dataUrl = None
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("WWc-SF")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "WWc-SF", observedN = 10, expectedBG = 20.1 , bgError = 3.5, upperLimit = '3.16E-01*fb', expectedUpperLimit = '6.20E-01*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "WWc-SF", observedN = 10, expectedBG = 20.1 , bgError = 3.5, upperLimit = '3.159E-01*fb', expectedUpperLimit = '6.196E-01*fb')
 #+++++++ next txName block ++++++++++++++
 #+++++++ next txName block ++++++++++++++
 TSlepSlep = dataset.addTxName('TSlepSlep')
@@ -156,7 +156,7 @@ TSlepSlep_1.dataUrl = None
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("WWa-DF")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "WWa-DF", observedN = 70, expectedBG = 73.6 , bgError = 7.9, upperLimit = '1.07E+00*fb', expectedUpperLimit = '1.17E+00*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "WWa-DF", observedN = 70, expectedBG = 73.6 , bgError = 7.9, upperLimit = '1.067E+00*fb', expectedUpperLimit = '1.174E+00*fb')
 #+++++++ next txName block ++++++++++++++
 #+++++++ next txName block ++++++++++++++
 TSlepSlep = dataset.addTxName('TSlepSlep')
@@ -173,7 +173,7 @@ TSlepSlep_1.dataUrl = None
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("mT2-90-SF")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "mT2-90-SF", observedN = 33, expectedBG = 38.2 , bgError = 5.1, upperLimit = '6.62E-01*fb', expectedUpperLimit = '8.34E-01*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "mT2-90-SF", observedN = 33, expectedBG = 38.2 , bgError = 5.1, upperLimit = '6.617E-01*fb', expectedUpperLimit = '8.341E-01*fb')
 #+++++++ next txName block ++++++++++++++
 #+++++++ next txName block ++++++++++++++
 TSlepSlep = dataset.addTxName('TSlepSlep')
@@ -190,7 +190,7 @@ TSlepSlep_1.dataUrl = None
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("WWc-DF")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "WWc-DF", observedN = 11, expectedBG = 9.0 , bgError = 2.2, upperLimit = '5.30E-01*fb', expectedUpperLimit = '4.36E-01*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "WWc-DF", observedN = 11, expectedBG = 9.0 , bgError = 2.2, upperLimit = '5.303E-01*fb', expectedUpperLimit = '4.365E-01*fb')
 #+++++++ next txName block ++++++++++++++
 #+++++++ next txName block ++++++++++++++
 TSlepSlep = dataset.addTxName('TSlepSlep')
@@ -207,7 +207,7 @@ TSlepSlep_1.dataUrl = None
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("mT2-120-DF")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "mT2-120-DF", observedN = 5, expectedBG = 3.6 , bgError = 1.2, upperLimit = '3.76E-01*fb', expectedUpperLimit = '2.73E-01*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "mT2-120-DF", observedN = 5, expectedBG = 3.6 , bgError = 1.2, upperLimit = '3.755E-01*fb', expectedUpperLimit = '2.733E-01*fb')
 #+++++++ next txName block ++++++++++++++
 #+++++++ next txName block ++++++++++++++
 TSlepSlep = dataset.addTxName('TSlepSlep')
@@ -224,7 +224,7 @@ TSlepSlep_1.dataUrl = None
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("Zjets")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "Zjets", observedN = 1, expectedBG = 1.4 , bgError = 0.6, upperLimit = '2.01E-01*fb', expectedUpperLimit = '2.02E-01*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "Zjets", observedN = 1, expectedBG = 1.4 , bgError = 0.6, upperLimit = '2.011E-01*fb', expectedUpperLimit = '2.015E-01*fb')
 #+++++++ next txName block ++++++++++++++
 #+++++++ next txName block ++++++++++++++
 TSlepSlep = dataset.addTxName('TSlepSlep')
@@ -241,7 +241,7 @@ TSlepSlep_1.dataUrl = None
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("mT2-150-SF")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "mT2-150-SF", observedN = 3, expectedBG = 3.2 , bgError = 0.7, upperLimit = '2.68E-01*fb', expectedUpperLimit = '2.70E-01*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "mT2-150-SF", observedN = 3, expectedBG = 3.2 , bgError = 0.7, upperLimit = '2.678E-01*fb', expectedUpperLimit = '2.695E-01*fb')
 #+++++++ next txName block ++++++++++++++
 #+++++++ next txName block ++++++++++++++
 TSlepSlep = dataset.addTxName('TSlepSlep')
@@ -258,7 +258,7 @@ TSlepSlep_1.dataUrl = None
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("mT2-150-DF")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "mT2-150-DF", observedN = 2, expectedBG = 1.0 , bgError = 0.5, upperLimit = '2.70E-01*fb', expectedUpperLimit = '2.06E-01*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "mT2-150-DF", observedN = 2, expectedBG = 1.0 , bgError = 0.5, upperLimit = '2.695E-01*fb', expectedUpperLimit = '2.061E-01*fb')
 #+++++++ next txName block ++++++++++++++
 #+++++++ next txName block ++++++++++++++
 TSlepSlep = dataset.addTxName('TSlepSlep')

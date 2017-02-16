@@ -55,7 +55,7 @@ info.contact = 'SModelS'
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("SRA-mCT300")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "SRA-mCT300", observedN = 7, expectedBG = 5.9 , bgError = 1.1, upperLimit = '4.06E-01*fb', expectedUpperLimit = '3.07E-01*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "SRA-mCT300", observedN = 7, expectedBG = 5.9 , bgError = 1.1, upperLimit = '4.060E-01*fb', expectedUpperLimit = '3.070E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T2bb = dataset.addTxName('T2bb')
 T2bb.checked =''
@@ -74,7 +74,7 @@ T2bb_1.dataUrl = None
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("SRB")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "SRB", observedN = 65, expectedBG = 64 , bgError = 10, upperLimit = '1.35E+00*fb', expectedUpperLimit = '1.30E+00*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "SRB", observedN = 65, expectedBG = 64 , bgError = 10, upperLimit = '1.347E+00*fb', expectedUpperLimit = '1.303E+00*fb')
 #+++++++ next txName block ++++++++++++++
 T2bb = dataset.addTxName('T2bb')
 T2bb.checked =''
@@ -93,7 +93,7 @@ T2bb_1.dataUrl = None
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("SRA-mCT350")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "SRA-mCT350", observedN = 3, expectedBG = 2.5 , bgError = 0.6, upperLimit = '2.88E-01*fb', expectedUpperLimit = '2.35E-01*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "SRA-mCT350", observedN = 3, expectedBG = 2.5 , bgError = 0.6, upperLimit = '2.883E-01*fb', expectedUpperLimit = '2.349E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T2bb = dataset.addTxName('T2bb')
 T2bb.checked =''
@@ -112,7 +112,7 @@ T2bb_1.dataUrl = None
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("SRA-mCT150")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "SRA-mCT150", observedN = 102, expectedBG = 94 , bgError = 13, upperLimit = '1.95E+00*fb', expectedUpperLimit = '1.63E+00*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "SRA-mCT150", observedN = 102, expectedBG = 94 , bgError = 13, upperLimit = '1.945E+00*fb', expectedUpperLimit = '1.632E+00*fb')
 #+++++++ next txName block ++++++++++++++
 T2bb = dataset.addTxName('T2bb')
 T2bb.checked =''
@@ -131,7 +131,7 @@ T2bb_1.dataUrl = None
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("SRA-mCT250")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "SRA-mCT250", observedN = 14, expectedBG = 15.8 , bgError = 2.8, upperLimit = '4.81E-01*fb', expectedUpperLimit = '5.18E-01*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "SRA-mCT250", observedN = 14, expectedBG = 15.8 , bgError = 2.8, upperLimit = '4.813E-01*fb', expectedUpperLimit = '5.184E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T2bb = dataset.addTxName('T2bb')
 T2bb.checked =''
@@ -150,7 +150,7 @@ T2bb_1.dataUrl = None
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("SRA-mCT200")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "SRA-mCT200", observedN = 48, expectedBG = 39 , bgError = 6, upperLimit = '1.30E+00*fb', expectedUpperLimit = '9.14E-01*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "SRA-mCT200", observedN = 48, expectedBG = 39 , bgError = 6, upperLimit = '1.300E+00*fb', expectedUpperLimit = '9.137E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T2bb = dataset.addTxName('T2bb')
 T2bb.checked =''

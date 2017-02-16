@@ -52,7 +52,7 @@ info.comment ='stop 4 body decay'
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("SRSL1c")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "SRSL1c", observedN = 12, expectedBG = 12.3 , bgError = 4.0, upperLimit = '5.79E-01*fb', expectedUpperLimit = '5.78E-01*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "SRSL1c", observedN = 12, expectedBG = 12.3 , bgError = 4.0, upperLimit = '5.787E-01*fb', expectedUpperLimit = '5.777E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T2bbWW =  dataset.addTxName('T2bbWW')
 T2bbWW.constraint = "[[['b','W']],[['b','W']]]"
@@ -86,7 +86,7 @@ T2bbWWoff.addMassPlane(T2bbWW_1)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("SRSL1b")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "SRSL1b", observedN = 59, expectedBG = 81.3 , bgError = 19.1, upperLimit = '1.47E+00*fb', expectedUpperLimit = '2.15E+00*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "SRSL1b", observedN = 59, expectedBG = 81.3 , bgError = 19.1, upperLimit = '1.473E+00*fb', expectedUpperLimit = '2.148E+00*fb')
 #+++++++ next txName block ++++++++++++++
 T2bbWW =  dataset.addTxName('T2bbWW')
 T2bbWW.constraint = "[[['b','W']],[['b','W']]]"
@@ -120,7 +120,7 @@ T2bbWWoff.addMassPlane(T2bbWW_1)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("SRSL1a")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "SRSL1a", observedN = 121, expectedBG = 134.5 , bgError = 19.8, upperLimit = '1.88E+00*fb', expectedUpperLimit = '2.32E+00*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "SRSL1a", observedN = 121, expectedBG = 134.5 , bgError = 19.8, upperLimit = '1.880E+00*fb', expectedUpperLimit = '2.318E+00*fb')
 #+++++++ next txName block ++++++++++++++
 T2bbWW =  dataset.addTxName('T2bbWW')
 T2bbWW.constraint = "[[['b','W']],[['b','W']]]"
@@ -154,7 +154,7 @@ T2bbWWoff.addMassPlane(T2bbWW_1)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("SRSL2")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "SRSL2", observedN = 41, expectedBG = 32.1 , bgError = 7.7, upperLimit = '1.40E+00*fb', expectedUpperLimit = '1.01E+00*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "SRSL2", observedN = 41, expectedBG = 32.1 , bgError = 7.7, upperLimit = '1.400E+00*fb', expectedUpperLimit = '1.010E+00*fb')
 #+++++++ next txName block ++++++++++++++
 T2bbWW =  dataset.addTxName('T2bbWW')
 T2bbWW.constraint = "[[['b','W']],[['b','W']]]"

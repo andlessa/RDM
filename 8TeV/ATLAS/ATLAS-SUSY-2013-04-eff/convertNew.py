@@ -53,7 +53,7 @@ info.supersedes = 'ATLAS-CONF-2012-103'
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("GtGrid_SR_8ij80_0bjet")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "GtGrid_SR_8ij80_0bjet", observedN = 2, expectedBG = 0.9 , bgError = 0.6, upperLimit = '2.74E-01*fb', expectedUpperLimit = '1.48E-01*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "GtGrid_SR_8ij80_0bjet", observedN = 2, expectedBG = 0.9 , bgError = 0.6, upperLimit = '2.736E-01*fb', expectedUpperLimit = '1.477E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T1tttt = dataset.addTxName('T1tttt')
 T1tttt.checked ="None"
@@ -134,7 +134,7 @@ T5ZZoff.addMassPlane(T5ZZ_3)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("GtGrid_SR_9ej50_0bjet")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "GtGrid_SR_9ej50_0bjet", observedN = 5, expectedBG = 3.3 , bgError = 0.7, upperLimit = '3.73E-01*fb', expectedUpperLimit = '2.67E-01*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "GtGrid_SR_9ej50_0bjet", observedN = 5, expectedBG = 3.3 , bgError = 0.7, upperLimit = '3.734E-01*fb', expectedUpperLimit = '2.666E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T1tttt = dataset.addTxName('T1tttt')
 T1tttt.checked ="None"
@@ -215,7 +215,7 @@ T5ZZoff.addMassPlane(T5ZZ_3)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("GtGrid_SR_8ej50_0bjet")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "GtGrid_SR_8ej50_0bjet", observedN = 40, expectedBG = 35 , bgError = 4, upperLimit = '9.75E-01*fb', expectedUpperLimit = '7.64E-01*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "GtGrid_SR_8ej50_0bjet", observedN = 40, expectedBG = 35 , bgError = 4, upperLimit = '9.750E-01*fb', expectedUpperLimit = '7.643E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T1tttt = dataset.addTxName('T1tttt')
 T1tttt.checked ="None"
@@ -296,7 +296,7 @@ T5ZZoff.addMassPlane(T5ZZ_3)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("GtGrid_SR_8ij80_2ibjet")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "GtGrid_SR_8ij80_2ibjet", observedN = 3, expectedBG = 3.3 , bgError = 2.2, upperLimit = '2.98E-01*fb', expectedUpperLimit = '2.97E-01*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "GtGrid_SR_8ij80_2ibjet", observedN = 3, expectedBG = 3.3 , bgError = 2.2, upperLimit = '2.976E-01*fb', expectedUpperLimit = '2.970E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T1tttt = dataset.addTxName('T1tttt')
 T1tttt.checked ="None"
@@ -377,7 +377,7 @@ T5ZZoff.addMassPlane(T5ZZ_3)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("GtGrid_SR_8ej50_2ibjet")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "GtGrid_SR_8ej50_2ibjet", observedN = 44, expectedBG = 50 , bgError = 10, upperLimit = '1.03E+00*fb', expectedUpperLimit = '1.24E+00*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "GtGrid_SR_8ej50_2ibjet", observedN = 44, expectedBG = 50 , bgError = 10, upperLimit = '1.030E+00*fb', expectedUpperLimit = '1.238E+00*fb')
 #+++++++ next txName block ++++++++++++++
 T1tttt = dataset.addTxName('T1tttt')
 T1tttt.checked ="None"
@@ -458,7 +458,7 @@ T5ZZoff.addMassPlane(T5ZZ_3)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("GtGrid_SR_7ej80_0bjet")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "GtGrid_SR_7ej80_0bjet", observedN = 12, expectedBG = 11.0 , bgError = 2.2, upperLimit = '5.08E-01*fb', expectedUpperLimit = '4.62E-01*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "GtGrid_SR_7ej80_0bjet", observedN = 12, expectedBG = 11.0 , bgError = 2.2, upperLimit = '5.076E-01*fb', expectedUpperLimit = '4.618E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T1tttt = dataset.addTxName('T1tttt')
 T1tttt.checked ="None"
@@ -539,7 +539,7 @@ T5ZZoff.addMassPlane(T5ZZ_3)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("GtGrid_SR_7ej80_1bjet")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "GtGrid_SR_7ej80_1bjet", observedN = 17, expectedBG = 17 , bgError = 6, upperLimit = '7.49E-01*fb', expectedUpperLimit = '7.49E-01*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "GtGrid_SR_7ej80_1bjet", observedN = 17, expectedBG = 17 , bgError = 6, upperLimit = '7.487E-01*fb', expectedUpperLimit = '7.487E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T1tttt = dataset.addTxName('T1tttt')
 T1tttt.checked ="None"
@@ -620,7 +620,7 @@ T5ZZoff.addMassPlane(T5ZZ_3)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("GtGrid_SR_9ej50_2ibjet")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "GtGrid_SR_9ej50_2ibjet", observedN = 7, expectedBG = 8.0 , bgError = 2.7, upperLimit = '4.02E-01*fb', expectedUpperLimit = '4.46E-01*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "GtGrid_SR_9ej50_2ibjet", observedN = 7, expectedBG = 8.0 , bgError = 2.7, upperLimit = '4.019E-01*fb', expectedUpperLimit = '4.457E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T1tttt = dataset.addTxName('T1tttt')
 T1tttt.checked ="None"
@@ -701,7 +701,7 @@ T5ZZoff.addMassPlane(T5ZZ_3)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("GtGrid_SR_7ej80_2ibjet")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "GtGrid_SR_7ej80_2ibjet", observedN = 13, expectedBG = 25 , bgError = 10, upperLimit = '6.48E-01*fb', expectedUpperLimit = '1.08E+00*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "GtGrid_SR_7ej80_2ibjet", observedN = 13, expectedBG = 25 , bgError = 10, upperLimit = '6.480E-01*fb', expectedUpperLimit = '1.083E+00*fb')
 #+++++++ next txName block ++++++++++++++
 T1tttt = dataset.addTxName('T1tttt')
 T1tttt.checked ="None"
@@ -782,7 +782,7 @@ T5ZZoff.addMassPlane(T5ZZ_3)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("GtGrid_SR_8ej50_1bjet")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "GtGrid_SR_8ej50_1bjet", observedN = 44, expectedBG = 40 , bgError = 10, upperLimit = '1.35E+00*fb', expectedUpperLimit = '1.19E+00*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "GtGrid_SR_8ej50_1bjet", observedN = 44, expectedBG = 40 , bgError = 10, upperLimit = '1.348E+00*fb', expectedUpperLimit = '1.193E+00*fb')
 #+++++++ next txName block ++++++++++++++
 T1tttt = dataset.addTxName('T1tttt')
 T1tttt.checked ="None"
@@ -863,7 +863,7 @@ T5ZZoff.addMassPlane(T5ZZ_3)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("GtGrid_SR_8ij80_1bjet")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "GtGrid_SR_8ij80_1bjet", observedN = 1, expectedBG = 1.5 , bgError = 0.9, upperLimit = '2.02E-01*fb', expectedUpperLimit = '2.02E-01*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "GtGrid_SR_8ij80_1bjet", observedN = 1, expectedBG = 1.5 , bgError = 0.9, upperLimit = '2.020E-01*fb', expectedUpperLimit = '2.023E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T1tttt = dataset.addTxName('T1tttt')
 T1tttt.checked ="None"
@@ -944,7 +944,7 @@ T5ZZoff.addMassPlane(T5ZZ_3)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("GtGrid_SR_9ej50_1bjet")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "GtGrid_SR_9ej50_1bjet", observedN = 8, expectedBG = 6.1 , bgError = 1.7, upperLimit = '4.64E-01*fb', expectedUpperLimit = '3.66E-01*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "GtGrid_SR_9ej50_1bjet", observedN = 8, expectedBG = 6.1 , bgError = 1.7, upperLimit = '4.640E-01*fb', expectedUpperLimit = '3.662E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T1tttt = dataset.addTxName('T1tttt')
 T1tttt.checked ="None"
@@ -1025,7 +1025,7 @@ T5ZZoff.addMassPlane(T5ZZ_3)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("GtGrid_SR_10ij50_bjetblind")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "GtGrid_SR_10ij50_bjetblind", observedN = 3, expectedBG = 1.37 , bgError = 0.35, upperLimit = '3.21E-01*fb', expectedUpperLimit = '1.98E-01*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "GtGrid_SR_10ij50_bjetblind", observedN = 3, expectedBG = 1.37 , bgError = 0.35, upperLimit = '3.214E-01*fb', expectedUpperLimit = '1.981E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T1tttt = dataset.addTxName('T1tttt')
 T1tttt.checked ="None"

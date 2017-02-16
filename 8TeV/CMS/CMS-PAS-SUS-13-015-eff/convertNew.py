@@ -51,7 +51,7 @@ info.comment ='PAS so no arxiv publication - only cds.cern; whenever the error o
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("pTmiss200_Nb2")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "pTmiss200_Nb2", observedN = 83, expectedBG = 88.4 , bgError = 19.8, upperLimit = '2.07E+00*fb', expectedUpperLimit = '2.24E+00*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "pTmiss200_Nb2", observedN = 83, expectedBG = 88.4 , bgError = 19.8, upperLimit = '2.068E+00*fb', expectedUpperLimit = '2.244E+00*fb')
 #+++++++ next txName block ++++++++++++++
 T2tt = dataset.addTxName('T2tt')
 T2tt.constraint = "[[['t']],[['t']]]"
@@ -83,7 +83,7 @@ T2ttoff.addMassPlane(T2tt_1)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("pTmiss350_Nb1")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "pTmiss350_Nb1", observedN = 45, expectedBG = 40.9 , bgError = 9.6, upperLimit = '1.38E+00*fb', expectedUpperLimit = '1.19E+00*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "pTmiss350_Nb1", observedN = 45, expectedBG = 40.9 , bgError = 9.6, upperLimit = '1.383E+00*fb', expectedUpperLimit = '1.189E+00*fb')
 #+++++++ next txName block ++++++++++++++
 T2tt = dataset.addTxName('T2tt')
 T2tt.constraint = "[[['t']],[['t']]]"
@@ -115,7 +115,7 @@ T2ttoff.addMassPlane(T2tt_1)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("pTmiss350_Nb2")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "pTmiss350_Nb2", observedN = 15, expectedBG = 8.6 , bgError = 7.1, upperLimit = '9.12E-01*fb', expectedUpperLimit = '5.57E-01*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "pTmiss350_Nb2", observedN = 15, expectedBG = 8.6 , bgError = 7.1, upperLimit = '9.121E-01*fb', expectedUpperLimit = '5.572E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T2tt = dataset.addTxName('T2tt')
 T2tt.constraint = "[[['t']],[['t']]]"
@@ -147,7 +147,7 @@ T2ttoff.addMassPlane(T2tt_1)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("pTmiss200_Nb1")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "pTmiss200_Nb1", observedN = 254, expectedBG = 254.3 , bgError = 35, upperLimit = '3.89E+00*fb', expectedUpperLimit = '3.89E+00*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "pTmiss200_Nb1", observedN = 254, expectedBG = 254.3 , bgError = 35, upperLimit = '3.892E+00*fb', expectedUpperLimit = '3.892E+00*fb')
 #+++++++ next txName block ++++++++++++++
 T2tt = dataset.addTxName('T2tt')
 T2tt.constraint = "[[['t']],[['t']]]"

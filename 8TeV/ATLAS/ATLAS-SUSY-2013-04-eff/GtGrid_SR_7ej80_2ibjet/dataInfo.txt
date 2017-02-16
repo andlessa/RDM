@@ -3,5 +3,5 @@ dataType: efficiencyMap
 observedN: 13
 expectedBG: 25
 bgError: 10
-upperLimit: 6.48E-01*fb
-expectedUpperLimit: 1.08E+00*fb
+upperLimit: 6.480E-01*fb
+expectedUpperLimit: 1.083E+00*fb

@@ -54,7 +54,7 @@ info.supersedes = 'ATLAS-CONF-2013-037; CONF-2012-166'
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("tNboost")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "tNboost", observedN = 5, expectedBG = 3.3 , bgError = 0.7, upperLimit = '3.73E-01*fb', expectedUpperLimit = '2.68E-01*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "tNboost", observedN = 5, expectedBG = 3.3 , bgError = 0.7, upperLimit = '3.726E-01*fb', expectedUpperLimit = '2.678E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T2tt = dataset.addTxName('T2tt')
 T2tt.constraint = "[[['t']],[['t']]]"
@@ -70,7 +70,7 @@ T2tt_1.dataUrl  = "http://hepdata.cedar.ac.uk/view/ins1304456"
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("tNdiag")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "tNdiag", observedN = 217, expectedBG = 236 , bgError = 29, upperLimit = '2.64E+00*fb', expectedUpperLimit = '3.22E+00*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "tNdiag", observedN = 217, expectedBG = 236 , bgError = 29, upperLimit = '2.636E+00*fb', expectedUpperLimit = '3.223E+00*fb')
 #+++++++ next txName block ++++++++++++++
 T2tt = dataset.addTxName('T2tt')
 T2tt.constraint = "[[['t']],[['t']]]"
@@ -86,7 +86,7 @@ T2tt_1.dataUrl  = "http://hepdata.cedar.ac.uk/view/ins1304456"
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("tNmed")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "tNmed", observedN = 12, expectedBG = 13 , bgError = 2.2, upperLimit = '4.46E-01*fb', expectedUpperLimit = '4.84E-01*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "tNmed", observedN = 12, expectedBG = 13 , bgError = 2.2, upperLimit = '4.463E-01*fb', expectedUpperLimit = '4.844E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T2tt = dataset.addTxName('T2tt')
 T2tt.constraint = "[[['t']],[['t']]]"

@@ -51,7 +51,7 @@ info.publication = 'Eur. Phys. J. C 73 (2013) 2677'
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("HM250")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "HM250", observedN = 3, expectedBG = 9.5 , bgError = 2.8, upperLimit = '2.47E-01*fb', expectedUpperLimit = '4.70E-01*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "HM250", observedN = 3, expectedBG = 9.5 , bgError = 2.8, upperLimit = '2.4696E-01*fb', expectedUpperLimit = '4.7010E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T2tt = dataset.addTxName('T2tt')
 T2tt.constraint =  "[[['t']],[['t']]]"
@@ -78,7 +78,7 @@ T2ttoff.addMassPlane(T2tt_1)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("HM150")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "HM150", observedN = 23, expectedBG = 29 , bgError = 7, upperLimit = '7.34E-01*fb', expectedUpperLimit = '9.41E-01*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "HM150", observedN = 23, expectedBG = 29 , bgError = 7, upperLimit = '7.3407E-01*fb', expectedUpperLimit = '9.4090E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T2tt = dataset.addTxName('T2tt')
 T2tt.constraint =  "[[['t']],[['t']]]"
@@ -105,7 +105,7 @@ T2ttoff.addMassPlane(T2tt_1)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("HM300")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "HM300", observedN = 2, expectedBG = 4.7 , bgError = 1.4, upperLimit = '2.26E-01*fb', expectedUpperLimit = '3.13E-01*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "HM300", observedN = 2, expectedBG = 4.7 , bgError = 1.4, upperLimit = '2.2546E-01*fb', expectedUpperLimit = '3.1259E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T2tt = dataset.addTxName('T2tt')
 T2tt.constraint =  "[[['t']],[['t']]]"
@@ -132,7 +132,7 @@ T2ttoff.addMassPlane(T2tt_1)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("LM300")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "LM300", observedN = 9, expectedBG = 11.5 , bgError = 3.6, upperLimit = '4.60E-01*fb', expectedUpperLimit = '5.42E-01*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "LM300", observedN = 9, expectedBG = 11.5 , bgError = 3.6, upperLimit = '4.6036E-01*fb', expectedUpperLimit = '5.4228E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T2tt = dataset.addTxName('T2tt')
 T2tt.constraint =  "[[['t']],[['t']]]"
@@ -159,7 +159,7 @@ T2ttoff.addMassPlane(T2tt_1)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("HM200")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "HM200", observedN = 11, expectedBG = 17 , bgError = 5, upperLimit = '4.91E-01*fb', expectedUpperLimit = '7.12E-01*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "HM200", observedN = 11, expectedBG = 17 , bgError = 5, upperLimit = '4.9064E-01*fb', expectedUpperLimit = '7.1149E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T2tt = dataset.addTxName('T2tt')
 T2tt.constraint =  "[[['t']],[['t']]]"
@@ -186,7 +186,7 @@ T2ttoff.addMassPlane(T2tt_1)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("LM200")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "LM200", observedN = 69, expectedBG = 83 , bgError = 21, upperLimit = '1.88E+00*fb', expectedUpperLimit = '2.35E+00*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "LM200", observedN = 69, expectedBG = 83 , bgError = 21, upperLimit = '1.8797E+00*fb', expectedUpperLimit = '2.3503E+00*fb')
 #+++++++ next txName block ++++++++++++++
 T2tt = dataset.addTxName('T2tt')
 T2tt.constraint =  "[[['t']],[['t']]]"
@@ -213,7 +213,7 @@ T2ttoff.addMassPlane(T2tt_1)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("LM150")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "LM150", observedN = 227, expectedBG = 251 , bgError = 50, upperLimit = '4.54E+00*fb', expectedUpperLimit = '5.30E+00*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "LM150", observedN = 227, expectedBG = 251 , bgError = 50, upperLimit = '4.5368E+00*fb', expectedUpperLimit = '5.2995E+00*fb')
 #+++++++ next txName block ++++++++++++++
 T2tt = dataset.addTxName('T2tt')
 T2tt.constraint =  "[[['t']],[['t']]]"
@@ -240,7 +240,7 @@ T2ttoff.addMassPlane(T2tt_1)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("LM250")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "LM250", observedN = 21, expectedBG = 31 , bgError = 8, upperLimit = '7.06E-01*fb', expectedUpperLimit = '1.04E+00*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "LM250", observedN = 21, expectedBG = 31 , bgError = 8, upperLimit = '7.0631E-01*fb', expectedUpperLimit = '1.0425E+00*fb')
 #+++++++ next txName block ++++++++++++++
 T2tt = dataset.addTxName('T2tt')
 T2tt.constraint =  "[[['t']],[['t']]]"
