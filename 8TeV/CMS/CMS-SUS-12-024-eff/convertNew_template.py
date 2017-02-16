@@ -86,7 +86,7 @@ T1ttttoff.source = 'CMS'
 #+++++++ next mass plane block ++++++++++++++
 T1tttt = T1tttt.addMassPlane([[x,y]]*2)
 T1tttt.addSource('efficiencyMap',"orig/efficiency_T1tttt_multi.root", "root", objectName = "heff_$datasetStr$")
-T1tttt.addSource('obsExclusionM1',"orig/graph_smoothed_Obs_T1tttt.root", "root", objectName = "graph_smoothed_Obs_T1tttt")
+T1tttt.addSource('obsExclusion',"orig/graph_smoothed_Obs_T1tttt.root", "root", objectName = "graph_smoothed_Obs_T1tttt")
 T1tttt.figure = "Fig 7 (right)"
 T1tttt.figureUrl =  "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12024/T1tttt_exclusions_corrected.pdf"
 T1tttt.dataUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12024"
