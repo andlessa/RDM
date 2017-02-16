@@ -52,7 +52,7 @@ info.supersedes = 'ATLAS-CONF-2013-007; ATLAS-CONF-2012-151'
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("SR3b")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "SR3b", observedN = 1, expectedBG = 2.2 , bgError = 0.8)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "SR3b", observedN = 1, expectedBG = 2.2 , bgError = 0.8, upperLimit = '1.93E-01*fb', expectedUpperLimit = '2.44E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T1tttt = dataset.addTxName('T1tttt')
 T1tttt.constraint = "[[['t','t']],[['t','t']]]"
@@ -70,7 +70,7 @@ T1tttt_1.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1289225'
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("SR3Lhigh")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "SR3Lhigh", observedN = 2, expectedBG = 2.5 , bgError = 0.9)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "SR3Lhigh", observedN = 2, expectedBG = 2.5 , bgError = 0.9, upperLimit = '2.39E-01*fb', expectedUpperLimit = '2.39E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T1tttt = dataset.addTxName('T1tttt')
 T1tttt.constraint = "[[['t','t']],[['t','t']]]"
@@ -88,7 +88,7 @@ T1tttt_1.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1289225'
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("SR3Llow")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "SR3Llow", observedN = 6, expectedBG = 4.3 , bgError = 2.1)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "SR3Llow", observedN = 6, expectedBG = 4.3 , bgError = 2.1, upperLimit = '4.31E-01*fb', expectedUpperLimit = '3.31E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T1tttt = dataset.addTxName('T1tttt')
 T1tttt.constraint = "[[['t','t']],[['t','t']]]"
@@ -106,7 +106,7 @@ T1tttt_1.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1289225'
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("SR0b")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "SR0b", observedN = 14, expectedBG = 6.5 , bgError = 2.3)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "SR0b", observedN = 14, expectedBG = 6.5 , bgError = 2.3, upperLimit = '8.01E-01*fb', expectedUpperLimit = '3.79E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T1tttt = dataset.addTxName('T1tttt')
 T1tttt.constraint = "[[['t','t']],[['t','t']]]"
@@ -124,7 +124,7 @@ T1tttt_1.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1289225'
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("SR1b")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "SR1b", observedN = 10, expectedBG = 4.7 , bgError = 2.1)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "SR1b", observedN = 10, expectedBG = 4.7 , bgError = 2.1, upperLimit = '6.43E-01*fb', expectedUpperLimit = '3.22E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T1tttt = dataset.addTxName('T1tttt')
 T1tttt.constraint = "[[['t','t']],[['t','t']]]"

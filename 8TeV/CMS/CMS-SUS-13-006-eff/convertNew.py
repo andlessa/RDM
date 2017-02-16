@@ -55,7 +55,7 @@ info.supersedes ='CMS-PAS-SUS-12-022'
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("MET_150")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "MET_150", observedN = 3, expectedBG = 3.8 , bgError = 1.0)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "MET_150", observedN = 3, expectedBG = 3.8 , bgError = 1.0, upperLimit = '2.75E-01*fb', expectedUpperLimit = '2.70E-01*fb')
 #+++++++ next txName block ++++++++++++++
 TChiWH = dataset.addTxName('TChiWH')
 TChiWH.constraint = "[[['W']],[['higgs']]]"
@@ -78,7 +78,7 @@ TChiWH_1.dataUrl  = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("MET_175")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "MET_175", observedN = 3, expectedBG = 2.3 , bgError = 0.6)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "MET_175", observedN = 3, expectedBG = 2.3 , bgError = 0.6, upperLimit = '3.04E-01*fb', expectedUpperLimit = '2.47E-01*fb')
 #+++++++ next txName block ++++++++++++++
 TChiWH = dataset.addTxName('TChiWH')
 TChiWH.constraint = "[[['W']],[['higgs']]]"
@@ -101,7 +101,7 @@ TChiWH_1.dataUrl  = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("MET_100")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "MET_100", observedN = 7, expectedBG = 7.7 , bgError = 1.9)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "MET_100", observedN = 7, expectedBG = 7.7 , bgError = 1.9, upperLimit = '3.87E-01*fb', expectedUpperLimit = '3.88E-01*fb')
 #+++++++ next txName block ++++++++++++++
 TChiWH = dataset.addTxName('TChiWH')
 TChiWH.constraint = "[[['W']],[['higgs']]]"
@@ -124,7 +124,7 @@ TChiWH_1.dataUrl  = "https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResul
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("MET_125")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "MET_125", observedN = 6, expectedBG = 5.4 , bgError = 1.3)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "MET_125", observedN = 6, expectedBG = 5.4 , bgError = 1.3, upperLimit = '3.89E-01*fb', expectedUpperLimit = '3.36E-01*fb')
 #+++++++ next txName block ++++++++++++++
 TChiWH = dataset.addTxName('TChiWH')
 TChiWH.constraint = "[[['W']],[['higgs']]]"

@@ -49,7 +49,7 @@ info.publication = 'http://journals.aps.org/prl/abstract/10.1103/PhysRevLett.114
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("mCT200")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "mCT200", observedN = 11, expectedBG = 16 , bgError = 3)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "mCT200", observedN = 11, expectedBG = 16 , bgError = 3, upperLimit = '3.76E-01*fb', expectedUpperLimit = '5.57E-01*fb')
 #+++++++ next txName block ++++++++++++++
 TScharm = dataset.addTxName('TScharm')
 TScharm.checked = 'NO'
@@ -68,7 +68,7 @@ TScharm_1.dataUrl  = "http://hepdata.cedar.ac.uk/view/ins1337472/first"
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("mCT150")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "mCT150", observedN = 19, expectedBG = 30 , bgError = 6)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "mCT150", observedN = 19, expectedBG = 30 , bgError = 6, upperLimit = '5.02E-01*fb', expectedUpperLimit = '8.40E-01*fb')
 #+++++++ next txName block ++++++++++++++
 TScharm = dataset.addTxName('TScharm')
 TScharm.checked = 'NO'
@@ -87,7 +87,7 @@ TScharm_1.dataUrl  = "http://hepdata.cedar.ac.uk/view/ins1337472/first"
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("mCT250")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "mCT250", observedN = 4, expectedBG = 8.2 , bgError = 1.9)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "mCT250", observedN = 4, expectedBG = 8.2 , bgError = 1.9, upperLimit = '2.54E-01*fb', expectedUpperLimit = '4.03E-01*fb')
 #+++++++ next txName block ++++++++++++++
 TScharm = dataset.addTxName('TScharm')
 TScharm.checked = 'NO'

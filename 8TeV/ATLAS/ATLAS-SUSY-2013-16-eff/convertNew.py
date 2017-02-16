@@ -54,7 +54,7 @@ info.supersedes ='ATLAS-CONF-2013-024'
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("SRA4")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "SRA4", observedN = 4, expectedBG = 2.4 , bgError = 0.7)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "SRA4", observedN = 4, expectedBG = 2.4 , bgError = 0.7, upperLimit = '3.51E-01*fb', expectedUpperLimit = '2.39E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T2tt = dataset.addTxName('T2tt')
 T2tt.constraint = "[[['t']],[['t']]]"
@@ -70,7 +70,7 @@ T2tt_1.dataUrl  = "http://hepdata.cedar.ac.uk/view/ins1299143/d27/input http://h
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("SRC2")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "SRC2", observedN = 30, expectedBG = 34 , bgError = 5)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "SRC2", observedN = 30, expectedBG = 34 , bgError = 5, upperLimit = '6.71E-01*fb', expectedUpperLimit = '8.12E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T2tt = dataset.addTxName('T2tt')
 T2tt.constraint = "[[['t']],[['t']]]"
@@ -106,7 +106,7 @@ T6bbWWoff.addMassPlane(T6bbWW_1)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("SRC3")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "SRC3", observedN = 15, expectedBG = 20.3 , bgError = 3.0)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "SRC3", observedN = 15, expectedBG = 20.3 , bgError = 3.0, upperLimit = '4.21E-01*fb', expectedUpperLimit = '5.88E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T2tt = dataset.addTxName('T2tt')
 T2tt.constraint = "[[['t']],[['t']]]"
@@ -142,7 +142,7 @@ T6bbWWoff.addMassPlane(T6bbWW_1)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("SRC1")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "SRC1", observedN = 59, expectedBG = 68 , bgError = 7)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "SRC1", observedN = 59, expectedBG = 68 , bgError = 7, upperLimit = '8.35E-01*fb', expectedUpperLimit = '1.12E+00*fb')
 #+++++++ next txName block ++++++++++++++
 T2tt = dataset.addTxName('T2tt')
 T2tt.constraint = "[[['t']],[['t']]]"
@@ -178,7 +178,7 @@ T6bbWWoff.addMassPlane(T6bbWW_1)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("SRA1")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "SRA1", observedN = 11, expectedBG = 15.8 , bgError = 1.9)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "SRA1", observedN = 11, expectedBG = 15.8 , bgError = 1.9, upperLimit = '3.42E-01*fb', expectedUpperLimit = '4.78E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T2tt = dataset.addTxName('T2tt')
 T2tt.constraint = "[[['t']],[['t']]]"
@@ -194,7 +194,7 @@ T2tt_1.dataUrl  = "http://hepdata.cedar.ac.uk/view/ins1299143/d27/input http://h
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("SRA2")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "SRA2", observedN = 4, expectedBG = 4.1 , bgError = 0.8)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "SRA2", observedN = 4, expectedBG = 4.1 , bgError = 0.8, upperLimit = '3.00E-01*fb', expectedUpperLimit = '2.99E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T2tt = dataset.addTxName('T2tt')
 T2tt.constraint = "[[['t']],[['t']]]"
@@ -210,7 +210,7 @@ T2tt_1.dataUrl  = "http://hepdata.cedar.ac.uk/view/ins1299143/d27/input http://h
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("SRA3")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "SRA3", observedN = 5, expectedBG = 4.1 , bgError = 0.9)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "SRA3", observedN = 5, expectedBG = 4.1 , bgError = 0.9, upperLimit = '3.55E-01*fb', expectedUpperLimit = '3.02E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T2tt = dataset.addTxName('T2tt')
 T2tt.constraint = "[[['t']],[['t']]]"

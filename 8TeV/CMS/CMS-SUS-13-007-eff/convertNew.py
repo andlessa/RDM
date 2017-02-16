@@ -55,7 +55,7 @@ info.implementedBy = 'Federico Ambrogi'
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("mu350Nb2")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "mu350Nb2", observedN = 2, expectedBG = 1.4 , bgError = 1.17)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "mu350Nb2", observedN = 2, expectedBG = 1.4 , bgError = 1.17, upperLimit = '2.76E-01*fb', expectedUpperLimit = '2.14E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T1tttt = dataset.addTxName('T1tttt')
 T1tttt.constraint = "[[['t','t']],[['t','t']]]"
@@ -82,7 +82,7 @@ T1ttttoff.addMassPlane(T1tttt_1)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("mu350Nb3")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "mu350Nb3", observedN = 0, expectedBG = 0.6 , bgError = 0.58)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "mu350Nb3", observedN = 0, expectedBG = 0.6 , bgError = 0.58, upperLimit = '1.55E-01*fb', expectedUpperLimit = '1.55E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T1tttt = dataset.addTxName('T1tttt')
 T1tttt.constraint = "[[['t','t']],[['t','t']]]"
@@ -109,7 +109,7 @@ T1ttttoff.addMassPlane(T1tttt_1)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("mu250Nb3")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "mu250Nb3", observedN = 1e-05, expectedBG = 1.9 , bgError = 0.89)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "mu250Nb3", observedN = 1e-05, expectedBG = 1.9 , bgError = 0.89, upperLimit = '1.56E-01*fb', expectedUpperLimit = '2.08E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T1tttt = dataset.addTxName('T1tttt')
 T1tttt.constraint = "[[['t','t']],[['t','t']]]"
@@ -136,7 +136,7 @@ T1ttttoff.addMassPlane(T1tttt_1)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("mu250Nb2")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "mu250Nb2", observedN = 9, expectedBG = 6 , bgError = 2.37)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "mu250Nb2", observedN = 9, expectedBG = 6 , bgError = 2.37, upperLimit = '5.75E-01*fb', expectedUpperLimit = '4.16E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T1tttt = dataset.addTxName('T1tttt')
 T1tttt.constraint = "[[['t','t']],[['t','t']]]"
@@ -163,7 +163,7 @@ T1ttttoff.addMassPlane(T1tttt_1)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("el450Nb2")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "el450Nb2", observedN = 0, expectedBG = 0 , bgError = 0.44)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "el450Nb2", observedN = 0, expectedBG = 0 , bgError = 0.44, upperLimit = '1.55E-01*fb', expectedUpperLimit = '1.55E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T1tttt = dataset.addTxName('T1tttt')
 T1tttt.constraint = "[[['t','t']],[['t','t']]]"
@@ -190,7 +190,7 @@ T1ttttoff.addMassPlane(T1tttt_1)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("el450Nb3")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "el450Nb3", observedN = 0, expectedBG = 0 , bgError = 0.1)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "el450Nb3", observedN = 0, expectedBG = 0 , bgError = 0.1, upperLimit = '1.55E-01*fb', expectedUpperLimit = '1.55E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T1tttt = dataset.addTxName('T1tttt')
 T1tttt.constraint = "[[['t','t']],[['t','t']]]"
@@ -217,7 +217,7 @@ T1ttttoff.addMassPlane(T1tttt_1)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("mu450Nb3")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "mu450Nb3", observedN = 0, expectedBG = 0 , bgError = 0.22)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "mu450Nb3", observedN = 0, expectedBG = 0 , bgError = 0.22, upperLimit = '1.55E-01*fb', expectedUpperLimit = '1.55E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T1tttt = dataset.addTxName('T1tttt')
 T1tttt.constraint = "[[['t','t']],[['t','t']]]"
@@ -244,7 +244,7 @@ T1ttttoff.addMassPlane(T1tttt_1)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("mu450Nb2")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "mu450Nb2", observedN = 0, expectedBG = 0 , bgError = 0.72)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "mu450Nb2", observedN = 0, expectedBG = 0 , bgError = 0.72, upperLimit = '1.55E-01*fb', expectedUpperLimit = '1.55E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T1tttt = dataset.addTxName('T1tttt')
 T1tttt.constraint = "[[['t','t']],[['t','t']]]"
@@ -271,7 +271,7 @@ T1ttttoff.addMassPlane(T1tttt_1)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("el350Nb3")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "el350Nb3", observedN = 0, expectedBG = 0.9 , bgError = 0.8)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "el350Nb3", observedN = 0, expectedBG = 0.9 , bgError = 0.8, upperLimit = '1.55E-01*fb', expectedUpperLimit = '1.55E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T1tttt = dataset.addTxName('T1tttt')
 T1tttt.constraint = "[[['t','t']],[['t','t']]]"
@@ -298,7 +298,7 @@ T1ttttoff.addMassPlane(T1tttt_1)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("el350Nb2")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "el350Nb2", observedN = 2, expectedBG = 2.7 , bgError = 2.06)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "el350Nb2", observedN = 2, expectedBG = 2.7 , bgError = 2.06, upperLimit = '2.64E-01*fb', expectedUpperLimit = '2.64E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T1tttt = dataset.addTxName('T1tttt')
 T1tttt.constraint = "[[['t','t']],[['t','t']]]"
@@ -325,7 +325,7 @@ T1ttttoff.addMassPlane(T1tttt_1)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("el250Nb2")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "el250Nb2", observedN = 9, expectedBG = 3.8 , bgError = 1.89)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "el250Nb2", observedN = 9, expectedBG = 3.8 , bgError = 1.89, upperLimit = '6.48E-01*fb', expectedUpperLimit = '3.01E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T1tttt = dataset.addTxName('T1tttt')
 T1tttt.constraint = "[[['t','t']],[['t','t']]]"
@@ -352,7 +352,7 @@ T1ttttoff.addMassPlane(T1tttt_1)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("el250Nb3")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "el250Nb3", observedN = 4, expectedBG = 1.9 , bgError = 0.98)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "el250Nb3", observedN = 4, expectedBG = 1.9 , bgError = 0.98, upperLimit = '3.92E-01*fb', expectedUpperLimit = '2.08E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T1tttt = dataset.addTxName('T1tttt')
 T1tttt.constraint = "[[['t','t']],[['t','t']]]"

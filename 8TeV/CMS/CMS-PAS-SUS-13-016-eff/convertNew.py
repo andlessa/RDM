@@ -50,7 +50,7 @@ info.prettyName = 'OS + b'
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("sr0")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "sr0", observedN = 1, expectedBG = 1.2 , bgError = 1.04862)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "sr0", observedN = 1, expectedBG = 1.2 , bgError = 1.04862, upperLimit = '2.11E-01*fb', expectedUpperLimit = '2.12E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T1tttt = dataset.addTxName('T1tttt')
 T1tttt.checked ="VM"

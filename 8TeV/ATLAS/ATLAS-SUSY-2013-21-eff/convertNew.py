@@ -51,7 +51,7 @@ info.publication = 'http://journals.aps.org/prd/abstract/10.1103/PhysRevD.90.052
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("C2")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "C2", observedN = 71, expectedBG = 75 , bgError = 11)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "C2", observedN = 71, expectedBG = 75 , bgError = 11, upperLimit = '1.27E+00*fb', expectedUpperLimit = '1.41E+00*fb')
 #+++++++ next txName block ++++++++++++++
 T2cc = dataset.addTxName('T2cc')
 T2cc.constraint = "[[['c']],[['c']]]"
@@ -69,7 +69,7 @@ T2cc_1.dataUrl = None
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("C1")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "C1", observedN = 208, expectedBG = 210 , bgError = 21)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "C1", observedN = 208, expectedBG = 210 , bgError = 21, upperLimit = '2.44E+00*fb', expectedUpperLimit = '2.50E+00*fb')
 #+++++++ next txName block ++++++++++++++
 T2cc = dataset.addTxName('T2cc')
 T2cc.constraint = "[[['c']],[['c']]]"
@@ -87,7 +87,7 @@ T2cc_1.dataUrl = None
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("M1")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "M1", observedN = 33054, expectedBG = 33450 , bgError = 960)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "M1", observedN = 33054, expectedBG = 33450 , bgError = 960, upperLimit = '8.22E+01*fb', expectedUpperLimit = '9.49E+01*fb')
 #+++++++ next txName block ++++++++++++++
 T2bbWW =  dataset.addTxName('T2bbWW')
 T2bbWW.constraint = "[[['b','W']],[['b','W']]]"
@@ -127,7 +127,7 @@ T2bb_1.dataUrl = None
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("M3")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "M3", observedN = 1776, expectedBG = 1770 , bgError = 81)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "M3", observedN = 1776, expectedBG = 1770 , bgError = 81, upperLimit = '9.06E+00*fb', expectedUpperLimit = '8.85E+00*fb')
 #+++++++ next txName block ++++++++++++++
 T2bbWW =  dataset.addTxName('T2bbWW')
 T2bbWW.constraint = "[[['b','W']],[['b','W']]]"
@@ -167,7 +167,7 @@ T2bb_1.dataUrl = None
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("M2")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "M2", observedN = 8606, expectedBG = 8620 , bgError = 270)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "M2", observedN = 8606, expectedBG = 8620 , bgError = 270, upperLimit = '2.72E+01*fb', expectedUpperLimit = '2.76E+01*fb')
 #+++++++ next txName block ++++++++++++++
 T2bbWW =  dataset.addTxName('T2bbWW')
 T2bbWW.constraint = "[[['b','W']],[['b','W']]]"

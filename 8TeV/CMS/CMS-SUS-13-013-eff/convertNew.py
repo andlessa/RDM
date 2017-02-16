@@ -52,7 +52,7 @@ info.supersedes ='CMS-SUS-12-017'
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("SR27_HighPt")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "SR27_HighPt", observedN = 0, expectedBG = 1.22 , bgError = 0.62)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "SR27_HighPt", observedN = 0, expectedBG = 1.22 , bgError = 0.62, upperLimit = '1.54E-01*fb', expectedUpperLimit = '2.13E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T1tttt = dataset.addTxName('T1tttt')
 T1tttt.constraint ="[[['t','t']],[['t','t']]]"
@@ -85,7 +85,7 @@ T1ttttoff.addMassPlane(T1tttt_1)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("SR25_HighPt")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "SR25_HighPt", observedN = 4, expectedBG = 2.86 , bgError = 1.14)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "SR25_HighPt", observedN = 4, expectedBG = 2.86 , bgError = 1.14, upperLimit = '3.58E-01*fb', expectedUpperLimit = '2.48E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T1tttt = dataset.addTxName('T1tttt')
 T1tttt.constraint ="[[['t','t']],[['t','t']]]"
@@ -118,7 +118,7 @@ T1ttttoff.addMassPlane(T1tttt_1)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("SR26_HighPt")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "SR26_HighPt", observedN = 1, expectedBG = 0.81 , bgError = 0.54)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "SR26_HighPt", observedN = 1, expectedBG = 0.81 , bgError = 0.54, upperLimit = '2.19E-01*fb', expectedUpperLimit = '1.54E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T1tttt = dataset.addTxName('T1tttt')
 T1tttt.constraint ="[[['t','t']],[['t','t']]]"
@@ -151,7 +151,7 @@ T1ttttoff.addMassPlane(T1tttt_1)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("SR23_HighPt")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "SR23_HighPt", observedN = 3, expectedBG = 3.78 , bgError = 1.44)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "SR23_HighPt", observedN = 3, expectedBG = 3.78 , bgError = 1.44, upperLimit = '2.86E-01*fb', expectedUpperLimit = '2.86E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T1tttt = dataset.addTxName('T1tttt')
 T1tttt.constraint ="[[['t','t']],[['t','t']]]"
@@ -184,7 +184,7 @@ T1ttttoff.addMassPlane(T1tttt_1)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("SR24_HighPt")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "SR24_HighPt", observedN = 7, expectedBG = 2.75 , bgError = 1.18)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "SR24_HighPt", observedN = 7, expectedBG = 2.75 , bgError = 1.18, upperLimit = '5.48E-01*fb', expectedUpperLimit = '2.51E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T1tttt = dataset.addTxName('T1tttt')
 T1tttt.constraint ="[[['t','t']],[['t','t']]]"
@@ -217,7 +217,7 @@ T1ttttoff.addMassPlane(T1tttt_1)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("SR28_HighPt")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "SR28_HighPt", observedN = 2, expectedBG = 2.15 , bgError = 0.98)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "SR28_HighPt", observedN = 2, expectedBG = 2.15 , bgError = 0.98, upperLimit = '2.58E-01*fb', expectedUpperLimit = '2.59E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T1tttt = dataset.addTxName('T1tttt')
 T1tttt.constraint ="[[['t','t']],[['t','t']]]"
@@ -250,7 +250,7 @@ T1ttttoff.addMassPlane(T1tttt_1)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("SR21_HighPt")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "SR21_HighPt", observedN = 12, expectedBG = 7.06 , bgError = 2.5)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "SR21_HighPt", observedN = 12, expectedBG = 7.06 , bgError = 2.5, upperLimit = '7.02E-01*fb', expectedUpperLimit = '4.33E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T1tttt = dataset.addTxName('T1tttt')
 T1tttt.constraint ="[[['t','t']],[['t','t']]]"
@@ -283,7 +283,7 @@ T1ttttoff.addMassPlane(T1tttt_1)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("SR22_HighPt")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "SR22_HighPt", observedN = 1, expectedBG = 0.96 , bgError = 0.55)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "SR22_HighPt", observedN = 1, expectedBG = 0.96 , bgError = 0.55, upperLimit = '2.15E-01*fb', expectedUpperLimit = '1.55E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T1tttt = dataset.addTxName('T1tttt')
 T1tttt.constraint ="[[['t','t']],[['t','t']]]"
