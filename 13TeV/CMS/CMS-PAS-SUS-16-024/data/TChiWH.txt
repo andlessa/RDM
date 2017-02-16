@@ -1,0 +1,54 @@
+txName: TChiWH
+conditionDescription: None
+condition: None
+constraint: [[['W']],[['higgs']]]
+figureUrl: http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-024/CMS-PAS-SUS-16-024_Figure_010-b.png
+dataUrl: http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-024/CMS-PAS-SUS-16-024_Figure_010-b.root
+validated: None
+axes: 2*Eq(mother,x)_Eq(lsp,y)
+publishedData: True
+upperLimits: [[[[125.0*GeV, 0.0*GeV], [125.0*GeV, 0.0*GeV]], 0.55247*pb],
+[[[150.0*GeV, 0.0*GeV], [150.0*GeV, 0.0*GeV]], 0.97507*pb],
+[[[150.0*GeV, 25.0*GeV], [150.0*GeV, 25.0*GeV]], 1.0561*pb],
+[[[175.0*GeV, 0.0*GeV], [175.0*GeV, 0.0*GeV]], 1.6113*pb],
+[[[175.0*GeV, 25.0*GeV], [175.0*GeV, 25.0*GeV]], 1.4847*pb],
+[[[175.0*GeV, 50.0*GeV], [175.0*GeV, 50.0*GeV]], 1.589*pb],
+[[[200.0*GeV, 0.0*GeV], [200.0*GeV, 0.0*GeV]], 1.5592*pb],
+[[[200.0*GeV, 25.0*GeV], [200.0*GeV, 25.0*GeV]], 1.9353*pb],
+[[[200.0*GeV, 50.0*GeV], [200.0*GeV, 50.0*GeV]], 1.8195*pb],
+[[[200.0*GeV, 75.0*GeV], [200.0*GeV, 75.0*GeV]], 2.3774*pb],
+[[[225.0*GeV, 0.0*GeV], [225.0*GeV, 0.0*GeV]], 1.9144*pb],
+[[[225.0*GeV, 25.0*GeV], [225.0*GeV, 25.0*GeV]], 2.0555*pb],
+[[[225.0*GeV, 50.0*GeV], [225.0*GeV, 50.0*GeV]], 2.0482*pb],
+[[[225.0*GeV, 75.0*GeV], [225.0*GeV, 75.0*GeV]], 2.7855*pb],
+[[[225.0*GeV, 100.0*GeV], [225.0*GeV, 100.0*GeV]], 3.8214*pb],
+[[[250.0*GeV, 0.0*GeV], [250.0*GeV, 0.0*GeV]], 1.9927*pb],
+[[[250.0*GeV, 25.0*GeV], [250.0*GeV, 25.0*GeV]], 2.1769*pb],
+[[[250.0*GeV, 50.0*GeV], [250.0*GeV, 50.0*GeV]], 2.0878*pb],
+[[[250.0*GeV, 75.0*GeV], [250.0*GeV, 75.0*GeV]], 2.677*pb],
+[[[250.0*GeV, 100.0*GeV], [250.0*GeV, 100.0*GeV]], 3.34*pb],
+[[[250.0*GeV, 125.0*GeV], [250.0*GeV, 125.0*GeV]], 4.2059*pb],
+[[[275.0*GeV, 0.0*GeV], [275.0*GeV, 0.0*GeV]], 2.361*pb],
+[[[275.0*GeV, 25.0*GeV], [275.0*GeV, 25.0*GeV]], 2.6676*pb],
+[[[275.0*GeV, 50.0*GeV], [275.0*GeV, 50.0*GeV]], 2.7481*pb],
+[[[275.0*GeV, 75.0*GeV], [275.0*GeV, 75.0*GeV]], 2.7808*pb],
+[[[275.0*GeV, 100.0*GeV], [275.0*GeV, 100.0*GeV]], 3.6363*pb],
+[[[275.0*GeV, 125.0*GeV], [275.0*GeV, 125.0*GeV]], 4.4787*pb],
+[[[275.0*GeV, 150.0*GeV], [275.0*GeV, 150.0*GeV]], 8.3109*pb],
+[[[300.0*GeV, 0.0*GeV], [300.0*GeV, 0.0*GeV]], 2.7839*pb],
+[[[300.0*GeV, 25.0*GeV], [300.0*GeV, 25.0*GeV]], 3.1192*pb],
+[[[300.0*GeV, 50.0*GeV], [300.0*GeV, 50.0*GeV]], 3.0835*pb],
+[[[300.0*GeV, 75.0*GeV], [300.0*GeV, 75.0*GeV]], 3.2763*pb],
+[[[300.0*GeV, 100.0*GeV], [300.0*GeV, 100.0*GeV]], 3.795*pb],
+[[[300.0*GeV, 125.0*GeV], [300.0*GeV, 125.0*GeV]], 4.8312*pb],
+[[[300.0*GeV, 150.0*GeV], [300.0*GeV, 150.0*GeV]], 5.136*pb],
+[[[300.0*GeV, 175.0*GeV], [300.0*GeV, 175.0*GeV]], 7.1023*pb],
+[[[325.0*GeV, 0.0*GeV], [325.0*GeV, 0.0*GeV]], 3.3495*pb],
+[[[325.0*GeV, 25.0*GeV], [325.0*GeV, 25.0*GeV]], 3.1662*pb],
+[[[325.0*GeV, 50.0*GeV], [325.0*GeV, 50.0*GeV]], 3.3841*pb],
+[[[325.0*GeV, 75.0*GeV], [325.0*GeV, 75.0*GeV]], 3.6907*pb],
+[[[325.0*GeV, 100.0*GeV], [325.0*GeV, 100.0*GeV]], 3.8686*pb],
+[[[325.0*GeV, 125.0*GeV], [325.0*GeV, 125.0*GeV]], 5.2536*pb],
+[[[325.0*GeV, 150.0*GeV], [325.0*GeV, 150.0*GeV]], 5.1901*pb],
+[[[325.0*GeV, 175.0*GeV], [325.0*GeV, 175.0*GeV]], 7.7083*pb],
+[[[325.0*GeV, 200.0*GeV], [325.0*GeV, 200.0*GeV]], 11.422*pb]]
