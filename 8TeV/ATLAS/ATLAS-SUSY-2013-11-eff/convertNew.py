@@ -139,7 +139,7 @@ TSlepSlep_1.dataUrl = None
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("WWc-SF")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "WWc-SF", observedN = 10, expectedBG = 20.1 , bgError = 3.5)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "WWc-SF", observedN = 10, expectedBG = 20.1 , bgError = 3.5, upperLimit =  '0.316*fb', expectedUpperLimit = '0.619*fb')
 #+++++++ next txName block ++++++++++++++
 #+++++++ next txName block ++++++++++++++
 TSlepSlep = dataset.addTxName('TSlepSlep')
