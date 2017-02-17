@@ -11,4 +11,3 @@ comment: TSlepSlep efficiency maps created by the SModelS collaboration using Ma
 private: False
 implementedBy: Federico Ambrogi 
 lastUpdate: 2017/2/17
-

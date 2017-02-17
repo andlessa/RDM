@@ -69,7 +69,7 @@ TSlepSlep_1.obsExclusion.setSource( "orig/exclusion_TSlepSlep.txt", "txt", objec
 #TSlepSlep_1.expExclusionM1.setSource( path, type, objectName = None, index = None )
 #TSlepSlep_1.expExclusionP1.setSource( path, type, objectName = None, index = None )
 #----limit source----
-TSlepSlep_1.efficiencyMap.setSource( 'orig/MA5_EM_mT2-90-DF.dat', 'txt', objectName = None, index = None, dataset="mT2-90-SF" )
+TSlepSlep_1.efficiencyMap.setSource( 'orig/MA5_EM_mT2-90-SF.dat', 'txt', objectName = None, index = None, dataset="mT2-90-SF" )
 TSlepSlep_1.efficiencyMap.setStatistics( observedN=21, expectedBG=23.3, bgError=3.7 )
 #----global url settings ----
 TSlepSlep_1.dataUrl =''
@@ -82,7 +82,7 @@ databaseCreator.create()
 TSlepSlep_1.figure =''
 TSlepSlep_1.figureUrl =''
 #----limit source----
-TSlepSlep_1.efficiencyMap.setSource( 'orig/MA5_EM_mT2-90-SF.dat', 'txt', objectName = None, index = None, dataset="mT2-90-DF" )
+TSlepSlep_1.efficiencyMap.setSource( 'orig/MA5_EM_mT2-90-DF.dat', 'txt', objectName = None, index = None, dataset="mT2-90-DF" )
 TSlepSlep_1.efficiencyMap.setStatistics( observedN=33, expectedBG=38.2, bgError=5.1 )
 #----global url settings ----
 TSlepSlep_1.dataUrl =''
