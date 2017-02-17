@@ -9,6 +9,6 @@ contact: SModelS
 supersedes: ATLAS-CONF-2013-049
 comment: TSlepSlep efficiency maps created by the SModelS collaboration using MadAnalysis5
 private: False
-implementedBy: Federico A
-lastUpdate: 2016/9/29
+implementedBy: Federico Ambrogi 
+lastUpdate: 2017/2/17
 
