@@ -3,5 +3,5 @@ dataId: SRA-mCT300
 observedN: 7
 expectedBG: 5.9
 bgError: 1.1
-upperLimit: 0.405960565913*fb
-expectedUpperLimit: 0.307014198052*fb
+upperLimit: 0.402666078853*fb
+expectedUpperLimit: 0.308302693643*fb
