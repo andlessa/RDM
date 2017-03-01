@@ -3,5 +3,5 @@ dataId: mT2-150-DF
 observedN: 2
 expectedBG: 1.0
 bgError: 0.5
-upperLimit: 0.270799751495*fb
-expectedUpperLimit: 0.206341548037*fb
+upperLimit: 0.270226155627*fb
+expectedUpperLimit: 0.207498928932*fb

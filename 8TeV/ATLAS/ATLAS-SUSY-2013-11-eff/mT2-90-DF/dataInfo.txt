@@ -1,7 +1,7 @@
 dataType: efficiencyMap
 dataId: mT2-90-DF
-observedN: 33
-expectedBG: 38.2
-bgError: 5.1
-upperLimit: 0.664287618312*fb
-expectedUpperLimit: 0.835360924426*fb
+observedN: 21
+expectedBG: 23.3
+bgError: 3.7
+upperLimit: 0.574797082311*fb
+expectedUpperLimit: 0.645694270374*fb

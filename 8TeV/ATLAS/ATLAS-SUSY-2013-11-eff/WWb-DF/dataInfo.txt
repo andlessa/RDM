@@ -3,5 +3,5 @@ dataId: WWb-DF
 observedN: 17
 expectedBG: 18.1
 bgError: 2.6
-upperLimit: 0.517065163321*fb
-expectedUpperLimit: 0.556011825696*fb
+upperLimit: 0.514992053868*fb
+expectedUpperLimit: 0.554678022267*fb
