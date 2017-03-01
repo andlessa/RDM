@@ -63,8 +63,8 @@ TChiChipmStauL_1 = TChiChipmStauL.addMassPlane(motherMass = x, interMass0 = .5*(
 TChiChipmStauL_1.figure = 'Figure 9'
 TChiChipmStauL_1.figureUrl = 'http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-024/CMS-PAS-SUS-16-024_Figure_009.png'
 #----limit source----
-TChiChipmStauL_1.obsUpperLimit.setSource( 'orig/CMS-PAS-SUS-16-024_Figure_009.root', 'root', objectName = 'obs_mu0', index = None )
-TChiChipmStauL_1.expUpperLimit.setSource( 'orig/CMS-PAS-SUS-16-024_Figure_009.root', 'root', objectName = 'exp_mu0', index = None )
+TChiChipmStauL_1.obsUpperLimit.setSource( 'orig/CMS-PAS-SUS-16-024_Figure_009.root', 'root', objectName = 'obs_xs', index = None )
+TChiChipmStauL_1.expUpperLimit.setSource( 'orig/CMS-PAS-SUS-16-024_Figure_009.root', 'root', objectName = 'exp_xs', index = None )
 #----exclusion source----
 TChiChipmStauL_1.obsExclusion.setSource( 'orig/CMS-PAS-SUS-16-024_Figure_009.root', 'root', objectName = 'gr_obs_smoothed', index = None )
 TChiChipmStauL_1.obsExclusionM1.setSource( 'orig/CMS-PAS-SUS-16-024_Figure_009.root', 'root', objectName = 'gr_om1s_smoothed', index = None )
@@ -105,8 +105,8 @@ TChiWH_1 = TChiWH.addMassPlane(motherMass = x, lspMass = y)
 TChiWH_1.figure = 'Figure 10-b'
 TChiWH_1.figureUrl = 'http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-024/CMS-PAS-SUS-16-024_Figure_010-b.png'
 #----limit source----
-TChiWH_1.obsUpperLimit.setSource( 'orig/CMS-PAS-SUS-16-024_Figure_010-b.root', 'root', objectName = 'obs_mu0', index = None )
-TChiWH_1.expUpperLimit.setSource( 'orig/CMS-PAS-SUS-16-024_Figure_010-b.root', 'root', objectName = 'exp_mu0', index = None )
+TChiWH_1.obsUpperLimit.setSource( 'orig/CMS-PAS-SUS-16-024_Figure_010-b.root', 'root', objectName = 'obs_xs', index = None )
+TChiWH_1.expUpperLimit.setSource( 'orig/CMS-PAS-SUS-16-024_Figure_010-b.root', 'root', objectName = 'exp_xs', index = None )
 #----exclusion source----
 TChiWH_1.obsExclusion.setSource( 'orig/CMS-PAS-SUS-16-024_Figure_010-b.root', 'root', objectName = 'gr_obs', index = None )
 TChiWH_1.obsExclusionM1.setSource( 'orig/CMS-PAS-SUS-16-024_Figure_010-b.root', 'root', objectName = 'gr_om1s', index = None )
@@ -191,8 +191,8 @@ TChiWZ_1 = TChiWZ.addMassPlane(motherMass = x, lspMass = y)
 TChiWZ_1.figure = 'Figure 10-a'
 TChiWZ_1.figureUrl = 'http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-024/CMS-PAS-SUS-16-024_Figure_010-a.png'
 #----limit source----
-TChiWZ_1.obsUpperLimit.setSource( 'orig/CMS-PAS-SUS-16-024_Figure_010-a.root', 'root', objectName = 'obs_mu0', index = None )
-TChiWZ_1.expUpperLimit.setSource( 'orig/CMS-PAS-SUS-16-024_Figure_010-a.root', 'root', objectName = 'exp_mu0', index = None )
+TChiWZ_1.obsUpperLimit.setSource( 'orig/CMS-PAS-SUS-16-024_Figure_010-a.root', 'root', objectName = 'obs_xs', index = None )
+TChiWZ_1.expUpperLimit.setSource( 'orig/CMS-PAS-SUS-16-024_Figure_010-a.root', 'root', objectName = 'exp_xs', index = None )
 #----exclusion source----
 TChiWZ_1.obsExclusion.setSource( 'orig/CMS-PAS-SUS-16-024_Figure_010-a.root', 'root', objectName = 'gr_obs_smoothed', index = None )
 TChiWZ_1.obsExclusionM1.setSource( 'orig/CMS-PAS-SUS-16-024_Figure_010-a.root', 'root', objectName = 'gr_om1s_smoothed', index = None )
