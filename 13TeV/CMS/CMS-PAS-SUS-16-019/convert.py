@@ -49,7 +49,7 @@ T1tttt = TxNameInput('T1tttt')
 T1tttt.on.checked =''
 T1tttt.off.checked =''
 T1tttt.on.constraint = "[[['t','t']],[['t','t']]]"
-T1tttt.off.constraint =None	
+T1tttt.off.constraint = "[[['b','W','b','W']],[['b','W','b','W']]]"	
 T1tttt.on.conditionDescription =None
 T1tttt.off.conditionDescription =None
 T1tttt.on.condition =None
@@ -62,7 +62,7 @@ T1tttt_1 = T1tttt.addMassPlane(motherMass = x, lspMass = y)
 T1tttt_1.figure = 'Figure 6-a'
 T1tttt_1.figureUrl = 'cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-019/CMS-PAS-SUS-16-019_Figure_006-a.png'
 #----limit source----
-#T1tttt_1.obsUpperLimit.setSource( path, 'root', objectName = None, index = None )
+T1tttt_1.obsUpperLimit.setSource( 'orig/CMS-PAS-SUS-16-019_Figure_006-a.root', 'canvas', objectName = 'cCONT_XSEC', index = 2 )
 T1tttt_1.expUpperLimit.setSource( 'orig/CMS-PAS-SUS-16-019_Figure_006-a.root', 'root', objectName = 'hXsec_exp_corr', index = None )
 #----exclusion source----
 T1tttt_1.obsExclusion.setSource( 'orig/CMS-PAS-SUS-16-019_Figure_006-a.root', 'root', objectName = 'graph_smoothed_Obs', index = None )
@@ -86,6 +86,7 @@ T1tttt_1.expExclusion.dataUrl = 'http://cms-results.web.cern.ch/cms-results/publ
 T1tttt_1.expExclusionM1.dataUrl = 'http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-019/CMS-PAS-SUS-16-019_Figure_006-a.root'
 T1tttt_1.expExclusionP1.dataUrl = 'http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-019/CMS-PAS-SUS-16-019_Figure_006-a.root'
 
+'''
 #+++++++ next txName block ++++++++++++++
 T5WW = TxNameInput('T5WW')
 T5WW.on.checked =''
@@ -105,7 +106,7 @@ T5WW_1 = T5WW.addMassPlane(motherMass = x, interMass0 = .5*(x+y), lspMass = y)
 T5WW_1.figure = 'Figure 6-b'
 T5WW_1.figureUrl = 'http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-019/CMS-PAS-SUS-16-019_Figure_006-b.png'
 #----limit source----
-#T5WW_1.obsUpperLimit.setSource( path, 'root', objectName = None, index = None )
+T5WW_1.obsUpperLimit.setSource(  'orig/CMS-PAS-SUS-16-019_Figure_006-b.root', 'canvas', objectName = 'cCONT_XSEC', index = 2 )
 T5WW_1.expUpperLimit.setSource( 'orig/CMS-PAS-SUS-16-019_Figure_006-b.root', 'root', objectName = 'hXsec_exp_corr', index = None )
 #----exclusion source----
 T5WW_1.obsExclusion.setSource( 'orig/CMS-PAS-SUS-16-019_Figure_006-b.root', 'root', objectName = 'graph_smoothed_Obs', index = None )
@@ -128,5 +129,5 @@ T5WW_1.obsExclusionP1.dataUrl = 'http://cms-results.web.cern.ch/cms-results/publ
 T5WW_1.expExclusion.dataUrl = 'http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-019/CMS-PAS-SUS-16-019_Figure_006-b.root'
 T5WW_1.expExclusionM1.dataUrl = 'http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-019/CMS-PAS-SUS-16-019_Figure_006-b.root'
 T5WW_1.expExclusionP1.dataUrl = 'http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-019/CMS-PAS-SUS-16-019_Figure_006-b.root'
-
+'''
 databaseCreator.create()
