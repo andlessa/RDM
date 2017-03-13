@@ -1,5 +1,5 @@
-dataType: efficiencyMap
 dataId: 7j80 flavor 0 b-jets
+dataType: efficiencyMap
 observedN: 12
 expectedBG: 11.0
 bgError: 2.2

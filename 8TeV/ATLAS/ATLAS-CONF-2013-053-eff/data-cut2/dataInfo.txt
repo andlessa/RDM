@@ -1,5 +1,5 @@
-dataType: efficiencyMap
 dataId: SRA mCT250
+dataType: efficiencyMap
 observedN: 14
 expectedBG: 15.8
 bgError: 2.8

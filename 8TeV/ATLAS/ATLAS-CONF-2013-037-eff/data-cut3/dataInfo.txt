@@ -1,5 +1,5 @@
-dataType: efficiencyMap
 dataId: SRbC2
+dataType: efficiencyMap
 observedN: 25
 expectedBG: 25.0
 bgError: 18.0

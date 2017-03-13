@@ -1,5 +1,5 @@
-dataType: efficiencyMap
 dataId: SR M90
+dataType: efficiencyMap
 observedN: 260
 expectedBG: 300.0
 bgError: 40.0

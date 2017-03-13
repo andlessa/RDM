@@ -1,5 +1,5 @@
-dataType: efficiencyMap
 dataId: incHL5j_e
+dataType: efficiencyMap
 observedN: 4
 expectedBG: 3.6
 bgError: 1.0

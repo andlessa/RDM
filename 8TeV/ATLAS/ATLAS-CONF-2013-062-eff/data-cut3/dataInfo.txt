@@ -1,5 +1,5 @@
-dataType: efficiencyMap
 dataId: SL2b_high
+dataType: efficiencyMap
 observedN: 3
 expectedBG: 3.6
 bgError: 1.4
