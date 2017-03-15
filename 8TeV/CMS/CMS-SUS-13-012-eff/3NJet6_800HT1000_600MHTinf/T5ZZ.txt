@@ -6,7 +6,7 @@ susyProcess: pp --> gluino gluino, gluino  --> quark antiquark neutralino_2, neu
 checked:  
 dataUrl: None;None;None
 source: SModelS
-validated: Not done yet
+validated: TBD
 axes: [[x, 0.5*x + 0.5*y, y], [x, 0.5*x + 0.5*y, y]];[[x, 0.05*x + 0.95*y, y], [x, 0.05*x + 0.95*y, y]];[[x, 0.95*x + 0.05*y, y], [x, 0.95*x + 0.05*y, y]]
 efficiencyMap: [[[[7.0000E+02*GeV,4.9000E+02*GeV,2.8000E+02*GeV],[7.0000E+02*GeV,4.9000E+02*GeV,2.8000E+02*GeV]],0.0006037],
 [[[7.5000E+02*GeV,5.3500E+02*GeV,3.2000E+02*GeV],[7.5000E+02*GeV,5.3500E+02*GeV,3.2000E+02*GeV]],0.0009727],
@@ -1494,3 +1494,4 @@ efficiencyMap: [[[[7.0000E+02*GeV,4.9000E+02*GeV,2.8000E+02*GeV],[7.0000E+02*GeV
 [[[1.6500E+03*GeV,1.6015E+03*GeV,6.8000E+02*GeV],[1.6500E+03*GeV,1.6015E+03*GeV,6.8000E+02*GeV]],0.032443],
 [[[1.4000E+03*GeV,1.3540E+03*GeV,4.8000E+02*GeV],[1.4000E+03*GeV,1.3540E+03*GeV,4.8000E+02*GeV]],0.037548],
 [[[5.5000E+02*GeV,5.2650E+02*GeV,8.0000E+01*GeV],[5.5000E+02*GeV,5.2650E+02*GeV,8.0000E+01*GeV]],0.0036147]]
+

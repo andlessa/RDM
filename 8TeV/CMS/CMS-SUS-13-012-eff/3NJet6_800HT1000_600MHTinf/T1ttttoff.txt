@@ -6,7 +6,7 @@ susyProcess: pp --> gluino gluino, gluino  --> top^* antitop^* lsp
 figureUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13012/Fig_7c.pdf
 dataUrl: None
 source: CMS
-validated: Not done yet
+validated: TBD
 axes: [[x, y], [x, y]]
 efficiencyMap: [[[[4.6250E+02*GeV,2.3750E+02*GeV],[4.6250E+02*GeV,2.3750E+02*GeV]],7.2084e-06],
 [[[5.1250E+02*GeV,2.8750E+02*GeV],[5.1250E+02*GeV,2.8750E+02*GeV]],7.2851e-06],
@@ -96,3 +96,4 @@ efficiencyMap: [[[[4.6250E+02*GeV,2.3750E+02*GeV],[4.6250E+02*GeV,2.3750E+02*GeV
 [[[1.4125E+03*GeV,1.0875E+03*GeV],[1.4125E+03*GeV,1.0875E+03*GeV]],0.00025322],
 [[[1.4125E+03*GeV,1.1375E+03*GeV],[1.4125E+03*GeV,1.1375E+03*GeV]],0.00025261],
 [[[1.4125E+03*GeV,1.1875E+03*GeV],[1.4125E+03*GeV,1.1875E+03*GeV]],0.00060922]]
+
