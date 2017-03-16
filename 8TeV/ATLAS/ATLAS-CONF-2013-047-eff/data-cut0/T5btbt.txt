@@ -5,7 +5,7 @@ conditionDescription: None
 susyProcess: pp --> gluino gluino, gluino --> bottom sbottom, sbottom --> top lsp
 dataUrl: None
 source: Fastlim-v1.0
-validated: None
+validated: N/A
 axes: [[x, y, z], [x, y, z]]
 efficiencyMap: [[[[3.0000E+02*GeV,1.8500E+02*GeV,5.0000E+00*GeV],[3.0000E+02*GeV,1.8500E+02*GeV,5.0000E+00*GeV]],0.0],
 [[[3.0000E+02*GeV,1.8500E+02*GeV,1.0000E+00*GeV],[3.0000E+02*GeV,1.8500E+02*GeV,1.0000E+00*GeV]],0.00072852],
