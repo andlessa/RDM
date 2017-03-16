@@ -6,7 +6,7 @@ susyProcess: pp --> gluino gluino, gluino  --> top antitop  lsp
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-18/figaux_14c.png
 dataUrl: http://hepdata.cedar.ac.uk/view/ins1304457/all
 source: ATLAS
-validated: None
+validated: True
 axes: [[x, y], [x, y]]
 efficiencyMap: [[[[6.0000E+02*GeV,1.0000E+00*GeV],[6.0000E+02*GeV,1.0000E+00*GeV]],0.00212],
 [[[6.0000E+02*GeV,5.0000E+01*GeV],[6.0000E+02*GeV,5.0000E+01*GeV]],0.00135],

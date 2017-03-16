@@ -6,7 +6,7 @@ susyProcess: pp --> gluino gluino, gluino  --> top antitop  lsp
 figureUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13013/Figure5_A1.pdf
 dataUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13013/ModelA1.root
 source: CMS
-validated: None
+validated: True
 axes: [[x, y], [x, y]]
 efficiencyMap: [[[[2.5000E+01*GeV,0.0000E+00*GeV],[2.5000E+01*GeV,0.0000E+00*GeV]],0.0],
 [[[5.0000E+01*GeV,0.0000E+00*GeV],[5.0000E+01*GeV,0.0000E+00*GeV]],0.0],
