@@ -169,7 +169,7 @@ T5WW_x095 = T5WW.addMassPlane(motherMass = x, interMass0 = 0.95*x + 0.05*y, lspM
 
 # Maps
 
-'''
+
 T1qqqq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName ="h_EffAcc_3NJet6_500HT800_200MHT300", index = None, dataset="3NJet6_500HT800_200MHT300")
 T1qqqq.efficiencyMap.setStatistics(observedN=6159, expectedBG=6088, bgError=665)
 T1tttt.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName ="h_EffAcc_3NJet6_500HT800_200MHT300", index = None, dataset="3NJet6_500HT800_200MHT300")
@@ -740,7 +740,7 @@ T5ZZ_x05.efficiencyMap.setStatistics(observedN=335, expectedBG=305, bgError=41)
 T5ZZ_x095.efficiencyMap.setSource("orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_3NJet6_1000HT1250_200MHT300.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1000HT1250_200MHT300")
 T5ZZ_x095.efficiencyMap.setStatistics(observedN=335, expectedBG=305, bgError=41)
 databaseCreator.create()
-'''
+
 T1qqqq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName ="h_EffAcc_3NJet6_800HT1000_600MHTinf", index = None, dataset="3NJet6_800HT1000_600MHTinf")
 T1qqqq.efficiencyMap.setStatistics(observedN=52, expectedBG=54.8, bgError=9.7)
 T1tttt.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName ="h_EffAcc_3NJet6_800HT1000_600MHTinf", index = None, dataset="3NJet6_800HT1000_600MHTinf")
@@ -782,7 +782,7 @@ T5ZZ_x095.efficiencyMap.setSource("orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_3NJet
 T5ZZ_x095.efficiencyMap.setStatistics(observedN=124, expectedBG=108, bgError=15)
 databaseCreator.create()
 
-'''
+
 T1qqqq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName ="h_EffAcc_3NJet6_800HT1000_300MHT450", index = None, dataset="3NJet6_800HT1000_300MHT450")
 T1qqqq.efficiencyMap.setStatistics(observedN=305, expectedBG=330, bgError=40)
 T1tttt.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName ="h_EffAcc_3NJet6_800HT1000_300MHT450", index = None, dataset="3NJet6_800HT1000_300MHT450")
@@ -859,5 +859,5 @@ T5ZZ_x05.efficiencyMap.setStatistics(observedN=454, expectedBG=418, bgError=66)
 T5ZZ_x095.efficiencyMap.setSource("orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_3NJet6_500HT800_450MHT600.dat", "txt", objectName ="None", index = None, dataset="3NJet6_500HT800_450MHT600")
 T5ZZ_x095.efficiencyMap.setStatistics(observedN=454, expectedBG=418, bgError=66)
 databaseCreator.create()
-'''
+
 
