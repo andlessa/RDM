@@ -54,7 +54,7 @@ info.implementedBy = 'Federico A.'
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("3NJet6_500HT800_450MHT600")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "3NJet6_500HT800_450MHT600", observedN = 454, expectedBG = 418 , bgError = 66)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "3NJet6_500HT800_450MHT600", observedN = 454, expectedBG = 418 , bgError = 66, upperLimit = '8.3195E+00*fb', expectedUpperLimit = '6.9961E+00*fb')
 #+++++++ next txName block ++++++++++++++
 T2 = dataset.addTxName('T2')
 T2.checked =''
@@ -185,7 +185,7 @@ T5WWoff.addMassPlane(T5WW_x095)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("3NJet6_1250HT1500_450MHTinf")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "3NJet6_1250HT1500_450MHTinf", observedN = 23, expectedBG = 17.6 , bgError = 4.1)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "3NJet6_1250HT1500_450MHTinf", observedN = 23, expectedBG = 17.6 , bgError = 4.1, upperLimit = '9.1415E-01*fb', expectedUpperLimit = '6.3381E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T2 = dataset.addTxName('T2')
 T2.checked =''
@@ -316,7 +316,7 @@ T5WWoff.addMassPlane(T5WW_x095)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("3NJet6_1250HT1500_300MHT450")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "3NJet6_1250HT1500_300MHT450", observedN = 38, expectedBG = 42.8 , bgError = 9.5)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "3NJet6_1250HT1500_300MHT450", observedN = 38, expectedBG = 42.8 , bgError = 9.5, upperLimit = '1.0395E+00*fb', expectedUpperLimit = '1.1851E+00*fb')
 #+++++++ next txName block ++++++++++++++
 T2 = dataset.addTxName('T2')
 T2.checked =''
@@ -447,7 +447,7 @@ T5WWoff.addMassPlane(T5WW_x095)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("6NJet8_1000HT1250_200MHT300")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "6NJet8_1000HT1250_200MHT300", observedN = 67, expectedBG = 70 , bgError = 16)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "6NJet8_1000HT1250_200MHT300", observedN = 67, expectedBG = 70 , bgError = 16, upperLimit = '1.7587E+00*fb', expectedUpperLimit = '1.8644E+00*fb')
 #+++++++ next txName block ++++++++++++++
 T2 = dataset.addTxName('T2')
 T2.checked =''
@@ -578,7 +578,7 @@ T5WWoff.addMassPlane(T5WW_x095)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("6NJet8_800HT1000_300MHT450")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "6NJet8_800HT1000_300MHT450", observedN = 35, expectedBG = 28.6 , bgError = 6.9)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "6NJet8_800HT1000_300MHT450", observedN = 35, expectedBG = 28.6 , bgError = 6.9, upperLimit = '1.2170E+00*fb', expectedUpperLimit = '9.1321E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T2 = dataset.addTxName('T2')
 T2.checked =''
@@ -709,7 +709,7 @@ T5WWoff.addMassPlane(T5WW_x095)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("6NJet8_500HT800_300MHT450")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "6NJet8_500HT800_300MHT450", observedN = 62, expectedBG = 52 , bgError = 12)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "6NJet8_500HT800_300MHT450", observedN = 62, expectedBG = 52 , bgError = 12, upperLimit = '1.8786E+00*fb', expectedUpperLimit = '1.4600E+00*fb')
 #+++++++ next txName block ++++++++++++++
 T2 = dataset.addTxName('T2')
 T2.checked =''
@@ -840,7 +840,7 @@ T5WWoff.addMassPlane(T5WW_x095)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("3NJet6_800HT1000_200MHT300")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "3NJet6_800HT1000_200MHT300", observedN = 808, expectedBG = 777 , bgError = 107)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "3NJet6_800HT1000_200MHT300", observedN = 808, expectedBG = 777 , bgError = 107, upperLimit = '1.2289E+01*fb', expectedUpperLimit = '1.1137E+01*fb')
 #+++++++ next txName block ++++++++++++++
 T2 = dataset.addTxName('T2')
 T2.checked =''
@@ -971,7 +971,7 @@ T5WWoff.addMassPlane(T5WW_x095)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("3NJet6_500HT800_200MHT300")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "3NJet6_500HT800_200MHT300", observedN = 6159, expectedBG = 6088 , bgError = 665)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "3NJet6_500HT800_200MHT300", observedN = 6159, expectedBG = 6088 , bgError = 665, upperLimit = '6.9386E+01*fb', expectedUpperLimit = '6.7422E+01*fb')
 #+++++++ next txName block ++++++++++++++
 T2 = dataset.addTxName('T2')
 T2.checked =''
@@ -1102,7 +1102,7 @@ T5WWoff.addMassPlane(T5WW_x095)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("6NJet8_1250HT1500_450MHTinf")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "6NJet8_1250HT1500_450MHTinf", observedN = 2, expectedBG = 0.5 , bgError = 2.6)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "6NJet8_1250HT1500_450MHTinf", observedN = 2, expectedBG = 0.5 , bgError = 2.6, upperLimit = '2.7389E-01*fb', expectedUpperLimit = '1.5287E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T2 = dataset.addTxName('T2')
 T2.checked =''
@@ -1233,7 +1233,7 @@ T5WWoff.addMassPlane(T5WW_x095)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("3NJet6_1000HT1250_300MHT450")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "3NJet6_1000HT1250_300MHT450", observedN = 129, expectedBG = 137 , bgError = 20)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "3NJet6_1000HT1250_300MHT450", observedN = 129, expectedBG = 137 , bgError = 20, upperLimit = '2.1095E+00*fb', expectedUpperLimit = '2.3783E+00*fb')
 #+++++++ next txName block ++++++++++++++
 T2 = dataset.addTxName('T2')
 T2.checked =''
@@ -1364,7 +1364,7 @@ T5WWoff.addMassPlane(T5WW_x095)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("8NJetinf_1250HT1500_200MHTinf")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "8NJetinf_1250HT1500_200MHTinf", observedN = 5, expectedBG = 7.1 , bgError = 3.8)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "8NJetinf_1250HT1500_200MHTinf", observedN = 5, expectedBG = 7.1 , bgError = 3.8, upperLimit = '3.8355E-01*fb', expectedUpperLimit = '4.7986E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T2 = dataset.addTxName('T2')
 T2.checked =''
@@ -1495,7 +1495,7 @@ T5WWoff.addMassPlane(T5WW_x095)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("8NJetinf_1000HT1250_200MHTinf")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "8NJetinf_1000HT1250_200MHTinf", observedN = 8, expectedBG = 5.6 , bgError = 2.3)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "8NJetinf_1000HT1250_200MHTinf", observedN = 8, expectedBG = 5.6 , bgError = 2.3, upperLimit = '5.2395E-01*fb', expectedUpperLimit = '3.7070E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T2 = dataset.addTxName('T2')
 T2.checked =''
@@ -1626,7 +1626,7 @@ T5WWoff.addMassPlane(T5WW_x095)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("3NJet6_800HT1000_300MHT450")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "3NJet6_800HT1000_300MHT450", observedN = 305, expectedBG = 330 , bgError = 40)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "3NJet6_800HT1000_300MHT450", observedN = 305, expectedBG = 330 , bgError = 40, upperLimit = '3.6747E+00*fb', expectedUpperLimit = '4.4536E+00*fb')
 #+++++++ next txName block ++++++++++++++
 T2 = dataset.addTxName('T2')
 T2.checked =''
@@ -1757,7 +1757,7 @@ T5WWoff.addMassPlane(T5WW_x095)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("8NJetinf_800HT1000_200MHTinf")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "8NJetinf_800HT1000_200MHTinf", observedN = 9, expectedBG = 8.3 , bgError = 3.4)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "8NJetinf_800HT1000_200MHTinf", observedN = 9, expectedBG = 8.3 , bgError = 3.4, upperLimit = '5.3338E-01*fb', expectedUpperLimit = '4.8846E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T2 = dataset.addTxName('T2')
 T2.checked =''
@@ -1888,7 +1888,7 @@ T5WWoff.addMassPlane(T5WW_x095)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("6NJet8_1500HTinf_300MHTinf")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "6NJet8_1500HTinf_300MHTinf", observedN = 3, expectedBG = 7.9 , bgError = 3.6)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "6NJet8_1500HTinf_300MHTinf", observedN = 3, expectedBG = 7.9 , bgError = 3.6, upperLimit = '2.8550E-01*fb', expectedUpperLimit = '4.5840E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T2 = dataset.addTxName('T2')
 T2.checked =''
@@ -2019,7 +2019,7 @@ T5WWoff.addMassPlane(T5WW_x095)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("3NJet6_800HT1000_600MHTinf")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "3NJet6_800HT1000_600MHTinf", observedN = 52, expectedBG = 54.8 , bgError = 9.7)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "3NJet6_800HT1000_600MHTinf", observedN = 52, expectedBG = 54.8 , bgError = 9.7, upperLimit = '1.1815E+00*fb', expectedUpperLimit = '1.2535E+00*fb')
 #+++++++ next txName block ++++++++++++++
 T2 = dataset.addTxName('T2')
 T2.checked =''
@@ -2150,7 +2150,7 @@ T5WWoff.addMassPlane(T5WW_x095)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("6NJet8_500HT800_450MHTinf")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "6NJet8_500HT800_450MHTinf", observedN = 9, expectedBG = 0.8 , bgError = 3.3)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "6NJet8_500HT800_450MHTinf", observedN = 9, expectedBG = 0.8 , bgError = 3.3, upperLimit = '6.9632E-01*fb', expectedUpperLimit = '1.5430E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T2 = dataset.addTxName('T2')
 T2.checked =''
@@ -2281,7 +2281,7 @@ T5WWoff.addMassPlane(T5WW_x095)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("6NJet8_1000HT1250_300MHT450")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "6NJet8_1000HT1250_300MHT450", observedN = 20, expectedBG = 21.6 , bgError = 5.8)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "6NJet8_1000HT1250_300MHT450", observedN = 20, expectedBG = 21.6 , bgError = 5.8, upperLimit = '7.4701E-01*fb', expectedUpperLimit = '7.8204E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T2 = dataset.addTxName('T2')
 T2.checked =''
@@ -2412,7 +2412,7 @@ T5WWoff.addMassPlane(T5WW_x095)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("6NJet8_800HT1000_450MHTinf")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "6NJet8_800HT1000_450MHTinf", observedN = 4, expectedBG = 6.0 , bgError = 2.8)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "6NJet8_800HT1000_450MHTinf", observedN = 4, expectedBG = 6.0 , bgError = 2.8, upperLimit = '3.3043E-01*fb', expectedUpperLimit = '4.2604E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T2 = dataset.addTxName('T2')
 T2.checked =''
@@ -2543,7 +2543,7 @@ T5WWoff.addMassPlane(T5WW_x095)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("3NJet6_1500HTinf_200MHT300")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "3NJet6_1500HTinf_200MHT300", observedN = 94, expectedBG = 86 , bgError = 17)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "3NJet6_1500HTinf_200MHT300", observedN = 94, expectedBG = 86 , bgError = 17, upperLimit = '2.3090E+00*fb', expectedUpperLimit = '1.9885E+00*fb')
 #+++++++ next txName block ++++++++++++++
 T2 = dataset.addTxName('T2')
 T2.checked =''
@@ -2674,7 +2674,7 @@ T5WWoff.addMassPlane(T5WW_x095)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("3NJet6_500HT800_600MHTinf")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "3NJet6_500HT800_600MHTinf", observedN = 62, expectedBG = 57.4 , bgError = 11.2)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "3NJet6_500HT800_600MHTinf", observedN = 62, expectedBG = 57.4 , bgError = 11.2, upperLimit = '1.6004E+00*fb', expectedUpperLimit = '1.3970E+00*fb')
 #+++++++ next txName block ++++++++++++++
 T2 = dataset.addTxName('T2')
 T2.checked =''
@@ -2805,7 +2805,7 @@ T5WWoff.addMassPlane(T5WW_x095)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("3NJet6_1250HT1500_200MHT300")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "3NJet6_1250HT1500_200MHT300", observedN = 98, expectedBG = 109 , bgError = 18)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "3NJet6_1250HT1500_200MHT300", observedN = 98, expectedBG = 109 , bgError = 18, upperLimit = '1.7759E+00*fb', expectedUpperLimit = '2.1452E+00*fb')
 #+++++++ next txName block ++++++++++++++
 T2 = dataset.addTxName('T2')
 T2.checked =''
@@ -2936,7 +2936,7 @@ T5WWoff.addMassPlane(T5WW_x095)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("3NJet6_1000HT1250_600MHTinf")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "3NJet6_1000HT1250_600MHTinf", observedN = 32, expectedBG = 22.8 , bgError = 5.2)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "3NJet6_1000HT1250_600MHTinf", observedN = 32, expectedBG = 22.8 , bgError = 5.2, upperLimit = '1.2115E+00*fb', expectedUpperLimit = '7.4478E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T2 = dataset.addTxName('T2')
 T2.checked =''
@@ -3067,7 +3067,7 @@ T5WWoff.addMassPlane(T5WW_x095)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("3NJet6_1000HT1250_200MHT300")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "3NJet6_1000HT1250_200MHT300", observedN = 335, expectedBG = 305 , bgError = 41)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "3NJet6_1000HT1250_200MHT300", observedN = 335, expectedBG = 305 , bgError = 41, upperLimit = '5.6926E+00*fb', expectedUpperLimit = '4.5209E+00*fb')
 #+++++++ next txName block ++++++++++++++
 T2 = dataset.addTxName('T2')
 T2.checked =''
@@ -3198,7 +3198,7 @@ T5WWoff.addMassPlane(T5WW_x095)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("8NJetinf_1500HTinf_200MHTinf")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "8NJetinf_1500HTinf_200MHTinf", observedN = 2, expectedBG = 3.3 , bgError = 4.7)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "8NJetinf_1500HTinf_200MHTinf", observedN = 2, expectedBG = 3.3 , bgError = 4.7, upperLimit = '2.6361E-01*fb', expectedUpperLimit = '3.1761E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T2 = dataset.addTxName('T2')
 T2.checked =''
@@ -3329,7 +3329,7 @@ T5WWoff.addMassPlane(T5WW_x095)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("6NJet8_1500HTinf_200MHT300")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "6NJet8_1500HTinf_200MHT300", observedN = 18, expectedBG = 21.1 , bgError = 8.1)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "6NJet8_1500HTinf_200MHT300", observedN = 18, expectedBG = 21.1 , bgError = 8.1, upperLimit = '8.3304E-01*fb', expectedUpperLimit = '9.5391E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T2 = dataset.addTxName('T2')
 T2.checked =''
@@ -3460,7 +3460,7 @@ T5WWoff.addMassPlane(T5WW_x095)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("6NJet8_1250HT1500_200MHT300")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "6NJet8_1250HT1500_200MHT300", observedN = 24, expectedBG = 28.0 , bgError = 8.2)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "6NJet8_1250HT1500_200MHT300", observedN = 24, expectedBG = 28.0 , bgError = 8.2, upperLimit = '8.8344E-01*fb', expectedUpperLimit = '1.0405E+00*fb')
 #+++++++ next txName block ++++++++++++++
 T2 = dataset.addTxName('T2')
 T2.checked =''
@@ -3591,7 +3591,7 @@ T5WWoff.addMassPlane(T5WW_x095)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("3NJet6_800HT1000_450MHT600")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "3NJet6_800HT1000_450MHT600", observedN = 124, expectedBG = 108 , bgError = 15)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "3NJet6_800HT1000_450MHT600", observedN = 124, expectedBG = 108 , bgError = 15, upperLimit = '2.5547E+00*fb', expectedUpperLimit = '1.8813E+00*fb')
 #+++++++ next txName block ++++++++++++++
 T2 = dataset.addTxName('T2')
 T2.checked =''
@@ -3722,7 +3722,7 @@ T5WWoff.addMassPlane(T5WW_x095)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("6NJet8_800HT1000_200MHT300")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "6NJet8_800HT1000_200MHT300", observedN = 111, expectedBG = 124 , bgError = 29)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "6NJet8_800HT1000_200MHT300", observedN = 111, expectedBG = 124 , bgError = 29, upperLimit = '2.7296E+00*fb', expectedUpperLimit = '3.1697E+00*fb')
 #+++++++ next txName block ++++++++++++++
 T2 = dataset.addTxName('T2')
 T2.checked =''
@@ -3853,7 +3853,7 @@ T5WWoff.addMassPlane(T5WW_x095)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("6NJet8_500HT800_200MHT300")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "6NJet8_500HT800_200MHT300", observedN = 266, expectedBG = 290 , bgError = 65)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "6NJet8_500HT800_200MHT300", observedN = 266, expectedBG = 290 , bgError = 65, upperLimit = '6.0169E+00*fb', expectedUpperLimit = '6.8027E+00*fb')
 #+++++++ next txName block ++++++++++++++
 T2 = dataset.addTxName('T2')
 T2.checked =''
@@ -3984,7 +3984,7 @@ T5WWoff.addMassPlane(T5WW_x095)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("3NJet6_500HT800_300MHT450")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "3NJet6_500HT800_300MHT450", observedN = 2305, expectedBG = 2278 , bgError = 266)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "3NJet6_500HT800_300MHT450", observedN = 2305, expectedBG = 2278 , bgError = 266, upperLimit = '2.8170E+01*fb', expectedUpperLimit = '2.7122E+01*fb')
 #+++++++ next txName block ++++++++++++++
 T2 = dataset.addTxName('T2')
 T2.checked =''
@@ -4115,7 +4115,7 @@ T5WWoff.addMassPlane(T5WW_x095)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("8NJetinf_500HT800_200MHTinf")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "8NJetinf_500HT800_200MHTinf", observedN = 8, expectedBG = 4.8 , bgError = 2.3)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "8NJetinf_500HT800_200MHTinf", observedN = 8, expectedBG = 4.8 , bgError = 2.3, upperLimit = '5.5345E-01*fb', expectedUpperLimit = '3.3786E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T2 = dataset.addTxName('T2')
 T2.checked =''
@@ -4246,7 +4246,7 @@ T5WWoff.addMassPlane(T5WW_x095)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("3NJet6_1000HT1250_450MHT600")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "3NJet6_1000HT1250_450MHT600", observedN = 34, expectedBG = 32.3 , bgError = 6.1)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "3NJet6_1000HT1250_450MHT600", observedN = 34, expectedBG = 32.3 , bgError = 6.1, upperLimit = '9.7480E-01*fb', expectedUpperLimit = '8.9066E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T2 = dataset.addTxName('T2')
 T2.checked =''
@@ -4377,7 +4377,7 @@ T5WWoff.addMassPlane(T5WW_x095)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("6NJet8_1000HT1250_450MHTinf")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "6NJet8_1000HT1250_450MHTinf", observedN = 4, expectedBG = 2.2 , bgError = 3.8)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "6NJet8_1000HT1250_450MHTinf", observedN = 4, expectedBG = 2.2 , bgError = 3.8, upperLimit = '3.7719E-01*fb', expectedUpperLimit = '2.6601E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T2 = dataset.addTxName('T2')
 T2.checked =''
@@ -4508,7 +4508,7 @@ T5WWoff.addMassPlane(T5WW_x095)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("6NJet8_1250HT1500_300MHT450")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "6NJet8_1250HT1500_300MHT450", observedN = 5, expectedBG = 9.4 , bgError = 3.6)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "6NJet8_1250HT1500_300MHT450", observedN = 5, expectedBG = 9.4 , bgError = 3.6, upperLimit = '3.4639E-01*fb', expectedUpperLimit = '5.1295E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T2 = dataset.addTxName('T2')
 T2.checked =''
@@ -4639,7 +4639,7 @@ T5WWoff.addMassPlane(T5WW_x095)
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("3NJet6_1500HTinf_300MHTinf")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "3NJet6_1500HTinf_300MHTinf", observedN = 39, expectedBG = 29.7 , bgError = 5.8)
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "3NJet6_1500HTinf_300MHTinf", observedN = 39, expectedBG = 29.7 , bgError = 5.8, upperLimit = '1.2956E+00*fb', expectedUpperLimit = '8.3769E-01*fb')
 #+++++++ next txName block ++++++++++++++
 T2 = dataset.addTxName('T2')
 T2.checked =''
