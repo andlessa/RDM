@@ -3,7 +3,7 @@ conditionDescription: None
 condition: None
 constraint: [[['jet','jet'],['W']],[['jet','jet'],['W']]]
 checked:  
-validated: None
+validated: N/A
 axes: 2*Eq(mother,x)_Eq(inter0,0.5*x+0.5*y)_Eq(lsp,y);2*Eq(mother,x)_Eq(inter0,0.05*x+0.95*y)_Eq(lsp,y);2*Eq(mother,x)_Eq(inter0,0.95*x+0.05*y)_Eq(lsp,y)
 publishedData: False
 efficiencyMap: [[[[1160.0*GeV, 895.0*GeV, 630.0*GeV], [1160.0*GeV, 895.0*GeV, 630.0*GeV]], 0.0024422],
