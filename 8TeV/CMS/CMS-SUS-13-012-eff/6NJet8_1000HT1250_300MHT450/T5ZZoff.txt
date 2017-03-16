@@ -5,7 +5,7 @@ conditionDescription: None
 susyProcess: pp --> gluino gluino, gluino  --> quark antiquark neutralino_2, neutralino_2 --> Z^* lsp
 dataUrl: None;None;None
 source: SModelS
-validated: None
+validated: N/A
 axes: [[x, 0.5*x + 0.5*y, y], [x, 0.5*x + 0.5*y, y]];[[x, 0.05*x + 0.95*y, y], [x, 0.05*x + 0.95*y, y]];[[x, 0.95*x + 0.05*y, y], [x, 0.95*x + 0.05*y, y]]
 efficiencyMap: [[[[2.5000E+02*GeV,1.6500E+02*GeV,8.0000E+01*GeV],[2.5000E+02*GeV,1.6500E+02*GeV,8.0000E+01*GeV]],3.25e-05],
 [[[5.5000E+02*GeV,5.1500E+02*GeV,4.8000E+02*GeV],[5.5000E+02*GeV,5.1500E+02*GeV,4.8000E+02*GeV]],3.65e-05],
