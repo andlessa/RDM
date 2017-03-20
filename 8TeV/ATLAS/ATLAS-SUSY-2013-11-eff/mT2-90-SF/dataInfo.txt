@@ -3,5 +3,5 @@ dataId: mT2-90-SF
 observedN: 33
 expectedBG: 38.2
 bgError: 5.1
-upperLimit: 0.660718815803*fb
-expectedUpperLimit: 0.834974984166*fb
+upperLimit: 0.664901330809*fb
+expectedUpperLimit: 0.834382631989*fb

@@ -32,7 +32,7 @@ from smodels_utils.dataPreparation.origPlotObjects import x, y
 
 #+++++++ global info block ++++++++++++++
 info = MetaInfoInput('ATLAS-SUSY-2013-11')
-info.comment = 'TSlepSlep efficiency maps created by the SModelS collaboration using MadAnalysis5'
+info.comment = 'TSlepSlep,TChiWW and TChipChimSlepSnu efficiency maps created by the SModelS collaboration using MadAnalysis5'
 info.sqrts = '8.0'
 info.private = False
 info.lumi = '20.3'
@@ -76,7 +76,6 @@ TChipChimSlepSnu_x05.obsExclusionM1.setSource( "orig/TChipChimSlepSnu_Obs-1_x05.
 TChipChimSlepSnu_x05.obsExclusionP1.setSource( "orig/TChipChimSlepSnu_Obs+1_x05.txt", "txt", objectName = None, index = None )
 TChipChimSlepSnu_x075= TChipChimSlepSnu.addMassPlane(motherMass = x, interMass0 = 0.75*x + 0.25*y, lspMass = y)
 TChipChimSlepSnu_x095= TChipChimSlepSnu.addMassPlane(motherMass = x, interMass0 = 0.95*x + 0.05*y, lspMass = y)
-TChipChimSlepSnu_DELTASleptonNeutralino5 = TChipChimSlepSnu.addMassPlane(motherMass = x, interMass0 = x-5.0, lspMass = y)
 TChipChimSlepSnu_DELTASleptonNeutralino5 = TChipChimSlepSnu.addMassPlane(motherMass = x, interMass0 = y+5.0, lspMass = y)
 TChipChimSlepSnu_DELTASleptonNeutralino10 = TChipChimSlepSnu.addMassPlane(motherMass = x, interMass0 = y+10.0, lspMass = y)
 TChipChimSlepSnu_DELTASleptonNeutralino15 = TChipChimSlepSnu.addMassPlane(motherMass = x, interMass0 = y+15.0, lspMass = y )
@@ -88,7 +87,7 @@ TChiWW = TxNameInput('TChiWW')
 #TChiWW.on.checked =                                                                                                                                                                                       
 #TChiWW.off.checked =                                                                                                                                                                                      
 TChiWW.on.constraint ="[[['W+']],[['W-']]]"
-TChiWW.off.constraint = "[[['l+','nu']],[['l-','nu']]]"                                                                                                               
+TChiWW.off.constraint = "22.2*[[['l+','nu']],[['l-','nu']]]"                                                                                                               
 TChiWW.on.conditionDescription ="None"
 TChiWW.off.conditionDescription = "[[['l+','nu']],[['l-','nu']]] > 2* [[['mu+','nu']],[['l-','nu']]]"
 TChiWW.on.condition ="None"

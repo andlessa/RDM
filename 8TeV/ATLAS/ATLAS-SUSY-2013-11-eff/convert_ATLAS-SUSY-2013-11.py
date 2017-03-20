@@ -3,14 +3,13 @@ import os,sys
 '''
 This scripts allows to write automatically the convert.py info for the implementation of the EM implementation
 i.e. copy and paste the lines given as output by this script under the general information in convert.py
-(see convert.py attached as reference).
 F.A.
 '''
 
 
 Dataset = ['mT2-150-DF', 'WWc-DF', 'mT2-120-DF', 'WWa-SF','mT2-150-SF', 'WWa-DF','WWb-SF','WWb-DF','mT2-90-SF','mT2-120-SF','WWc-SF','Zjets','mT2-90-DF']
 
-Topo = [ {'Topo' :  'TSlepSlep',             'P' :'NO',                           'T':'txt'},
+Topo = [ {'Topo' :  'TSlepSlep',             'P' :'1',                            'T':'txt'},
          {'Topo' :  'TChipChimSlepSnu',      'P':'x005',                          'T':'txt'},
          {'Topo' :  'TChipChimSlepSnu',      'P':'x025',                          'T':'txt'},
          {'Topo' :  'TChipChimSlepSnu',      'P':'x05',                           'T':'txt'},
