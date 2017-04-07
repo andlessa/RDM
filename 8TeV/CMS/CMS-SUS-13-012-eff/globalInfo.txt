@@ -5,7 +5,7 @@ url: https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS13012
 arxiv: http://arxiv.org/abs/1402.4770
 publication: JHEP06(2014)055
 contact: cms-pag-conveners-sus@NOSPAMcernSPAMNOT.ch, SModelS collaboration
-comment: T1,T2,T1tttt official efficiency maps from the CMS collaboration; T5WW and T5ZZ created by the SModelS collaboration using MadAnalysis5
+comment: T1,T2,T1tttt official efficiency maps from the CMS collaboration; TChiWZ,TChiWW,TChiZZ,T1btbt,T2tt,T2bb,T1bbbb,T5,T5WW,T5ZZ,T6bbWW created by the SModelS collaboration using MadAnalysis5
 private: False
 implementedBy: Federico A
 lastUpdate: 2017/1/12
