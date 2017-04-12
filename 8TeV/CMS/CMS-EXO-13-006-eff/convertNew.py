@@ -65,7 +65,7 @@ for i,name in enumerate(datasetNames):
 
     #+++++++ txnames ++++++++++++++++++++
     #+++++++ next txName block ++++++++++++++
-    HSCPM1 = dataset.addTxName('HSCPM1')
+    HSCPM1 = dataset.addTxName('THSCPM1')
     HSCPM1.checked =''
     HSCPM1.constraint = "[[],[]]"
     HSCPM1.condition =None
@@ -77,7 +77,7 @@ for i,name in enumerate(datasetNames):
     plane = HSCPM1.addMassPlane([[x],[x]])
     plane.setSources(dataLabels= ['efficiencyMap'],dataFiles=['orig/eff_HSCPM1_'+name+'.txt'], dataFormats=['txt'])
     #+++++++ next txName block ++++++++++++++
-    HSCPM3 = dataset.addTxName('HSCPM3')
+    HSCPM3 = dataset.addTxName('THSCPM3')
     HSCPM3.checked =''
     HSCPM3.constraint = "[[['ALL']],[['ALL']]]"
     HSCPM3.condition =None
@@ -90,7 +90,7 @@ for i,name in enumerate(datasetNames):
     plane = HSCPM3.addMassPlane([[x,y],[x,y]])
     plane.setSources(dataLabels= ['efficiencyMap'],dataFiles=['orig/eff_HSCPM3_'+name+'.txt'], dataFormats=['txt'])
     #+++++++ next txName block ++++++++++++++
-    HSCPM5 = dataset.addTxName('HSCPM5')
+    HSCPM5 = dataset.addTxName('THSCPM5')
     HSCPM5.checked =''
     HSCPM5.constraint = "[[['ALL'],['ALL']],[['ALL'],['ALL']]]"
     HSCPM5.condition =None
@@ -103,7 +103,7 @@ for i,name in enumerate(datasetNames):
     plane = HSCPM5.addMassPlane([[x,y,z]]*2)
     plane.setSources(dataLabels= ['efficiencyMap'],dataFiles=['orig/eff_HSCPM5_'+name+'.txt'], dataFormats=['txt'])
     #+++++++ next txName block ++++++++++++++
-    HSCPM7 = dataset.addTxName('HSCPM7')
+    HSCPM7 = dataset.addTxName('THSCPM7')
     HSCPM7.checked =''
     HSCPM7.constraint = "[[['ALL']],[['ALL'],['ALL']]]"
     HSCPM7.condition =None
@@ -116,7 +116,7 @@ for i,name in enumerate(datasetNames):
     plane = HSCPM7.addMassPlane([[x,z],[x,y,z]])
     plane.setSources(dataLabels= ['efficiencyMap'],dataFiles=['orig/eff_HSCPM7_'+name+'.txt'], dataFormats=['txt'])
     #+++++++ next txName block ++++++++++++++
-    HSCPM8 = dataset.addTxName('HSCPM8')
+    HSCPM8 = dataset.addTxName('THSCPM8')
     HSCPM8.checked =''
     HSCPM8.constraint = "[[['ALL','ALL']],[['ALL','ALL']]]"
     HSCPM8.condition =None
@@ -129,7 +129,7 @@ for i,name in enumerate(datasetNames):
     plane = HSCPM8.addMassPlane([[x,y],[x,y]])
     plane.setSources(dataLabels= ['efficiencyMap'],dataFiles=['orig/eff_HSCPM8_'+name+'.txt'], dataFormats=['txt'])
     #+++++++ next txName block ++++++++++++++
-    HSCPM2 = dataset.addTxName('HSCPM2')
+    HSCPM2 = dataset.addTxName('THSCPM2')
     HSCPM2.checked =''
     HSCPM2.constraint = "[[],[]]"
     HSCPM2.condition =None
@@ -142,7 +142,7 @@ for i,name in enumerate(datasetNames):
     plane = HSCPM2.addMassPlane([[x]]*2)
     plane.setSources(dataLabels= ['efficiencyMap'],dataFiles=['orig/eff_HSCPM2_'+name+'.txt'], dataFormats=['txt'])
     #+++++++ next txName block ++++++++++++++
-    HSCPM4 = dataset.addTxName('HSCPM4')
+    HSCPM4 = dataset.addTxName('THSCPM4')
     HSCPM4.checked =''
     HSCPM4.constraint = "[[['ALL']],[['ALL']]]"
     HSCPM4.condition =None
@@ -155,7 +155,7 @@ for i,name in enumerate(datasetNames):
     plane = HSCPM4.addMassPlane([[x,y]]*2)
     plane.setSources(dataLabels= ['efficiencyMap'],dataFiles=['orig/eff_HSCPM4_'+name+'.txt'], dataFormats=['txt'])
     #+++++++ next txName block ++++++++++++++
-    HSCPM6 = dataset.addTxName('HSCPM6')
+    HSCPM6 = dataset.addTxName('THSCPM6')
     HSCPM6.checked =''
     HSCPM6.constraint = "[[['ALL']],[['ALL'],[ 'ALL']]]"
     HSCPM6.condition =None
