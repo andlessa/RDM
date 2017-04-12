@@ -1,14 +1,13 @@
 txName: HSCPM7
 constraint: [[['ALL']],[['ALL'],['ALL']]]
+finalState: ['HSCP', 'HSCP']
 condition: None
 conditionDescription: None
-finalState: ['HSCP', 'HSCP']
 susyProcess: pp --> lsp chargino^pm_2, lsp chargino^pm_2 --> tau stau_1 chargino^pm_1, chargino^pm_1 --> nu stau_1
 dataUrl: None
 source: SModelS
 validated: Not done yet
 axes: [[x, z], [x, y, z]]
-finalState: ['HSCP', 'HSCP']
 efficiencyMap: [[[[1.0000E+02*GeV,5.0000E+01*GeV],[1.0000E+02*GeV,9.5000E+01*GeV,5.0000E+01*GeV]],4.28e-08],
 [[[1.0000E+02*GeV,8.0000E+01*GeV],[1.0000E+02*GeV,9.5000E+01*GeV,8.0000E+01*GeV]],0.0539],
 [[[1.0000E+02*GeV,9.0000E+01*GeV],[1.0000E+02*GeV,9.5000E+01*GeV,9.0000E+01*GeV]],0.121],
