@@ -1,5 +1,6 @@
 txName: T2
 constraint: [[['jet']],[['jet']]]
+finalState: ['MET', 'MET']
 condition: None
 conditionDescription: None
 susyProcess: pp --> squark squark, squark  --> quark lsp

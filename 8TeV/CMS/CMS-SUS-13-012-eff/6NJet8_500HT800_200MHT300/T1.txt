@@ -1,5 +1,6 @@
 txName: T1
 constraint: [[['jet','jet']],[['jet','jet']]]
+finalState: ['MET', 'MET']
 condition: None
 conditionDescription: None
 susyProcess: pp --> gluino gluino, gluino  --> quark antiquark  lsp

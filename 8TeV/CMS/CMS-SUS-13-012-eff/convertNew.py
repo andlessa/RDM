@@ -127,13 +127,6 @@ T5ZZ.conditionDescription ="None"
 T5ZZ.condition ="None"
 T5ZZ.massConstraint = None
 T5ZZ.source = 'SModelS'
-#+++++++ next txName block ++++++++++++++
-T5ZZoff = dataset.addTxName('T5ZZoff')
-T5ZZoff.constraint ="2.23*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
-T5ZZoff.conditionDescription ="None"
-T5ZZoff.condition =None
-T5ZZoff.massConstraint = [['dm >= 0.0','dm <= 86.']]*2
-T5ZZoff.source = 'SModelS'
 #+++++++ next mass plane block ++++++++++++++
 T5ZZ_x05 = T5ZZ.addMassPlane([[x,0.5*(x+y),y]]*2)
 T5ZZ_x05.dataUrl = None
@@ -147,9 +140,6 @@ T5ZZ_x005.addSource('efficiencyMap',"orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_3NJ
 T5ZZ_x095 = T5ZZ.addMassPlane([[x,0.95*x + 0.05*y,y]]*2)
 T5ZZ_x095.dataUrl = None
 T5ZZ_x095.addSource('efficiencyMap',"orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_3NJet6_500HT800_450MHT600.dat", "txt")
-T5ZZoff.addMassPlane(T5ZZ_x05)
-T5ZZoff.addMassPlane(T5ZZ_x005)
-T5ZZoff.addMassPlane(T5ZZ_x095)
 #+++++++ next txName block ++++++++++++++
 T5WW = dataset.addTxName('T5WW')
 T5WW.checked = ' '
@@ -258,13 +248,6 @@ T5ZZ.conditionDescription ="None"
 T5ZZ.condition ="None"
 T5ZZ.massConstraint = None
 T5ZZ.source = 'SModelS'
-#+++++++ next txName block ++++++++++++++
-T5ZZoff = dataset.addTxName('T5ZZoff')
-T5ZZoff.constraint ="2.23*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
-T5ZZoff.conditionDescription ="None"
-T5ZZoff.condition =None
-T5ZZoff.massConstraint = [['dm >= 0.0','dm <= 86.']]*2
-T5ZZoff.source = 'SModelS'
 #+++++++ next mass plane block ++++++++++++++
 T5ZZ_x05 = T5ZZ.addMassPlane([[x,0.5*(x+y),y]]*2)
 T5ZZ_x05.dataUrl = None
@@ -278,9 +261,6 @@ T5ZZ_x005.addSource('efficiencyMap',"orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_3NJ
 T5ZZ_x095 = T5ZZ.addMassPlane([[x,0.95*x + 0.05*y,y]]*2)
 T5ZZ_x095.dataUrl = None
 T5ZZ_x095.addSource('efficiencyMap',"orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_3NJet6_1250HT1500_450MHTinf.dat", "txt")
-T5ZZoff.addMassPlane(T5ZZ_x05)
-T5ZZoff.addMassPlane(T5ZZ_x005)
-T5ZZoff.addMassPlane(T5ZZ_x095)
 #+++++++ next txName block ++++++++++++++
 T5WW = dataset.addTxName('T5WW')
 T5WW.checked = ' '
@@ -389,13 +369,6 @@ T5ZZ.conditionDescription ="None"
 T5ZZ.condition ="None"
 T5ZZ.massConstraint = None
 T5ZZ.source = 'SModelS'
-#+++++++ next txName block ++++++++++++++
-T5ZZoff = dataset.addTxName('T5ZZoff')
-T5ZZoff.constraint ="2.23*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
-T5ZZoff.conditionDescription ="None"
-T5ZZoff.condition =None
-T5ZZoff.massConstraint = [['dm >= 0.0','dm <= 86.']]*2
-T5ZZoff.source = 'SModelS'
 #+++++++ next mass plane block ++++++++++++++
 T5ZZ_x05 = T5ZZ.addMassPlane([[x,0.5*(x+y),y]]*2)
 T5ZZ_x05.dataUrl = None
@@ -409,9 +382,6 @@ T5ZZ_x005.addSource('efficiencyMap',"orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_3NJ
 T5ZZ_x095 = T5ZZ.addMassPlane([[x,0.95*x + 0.05*y,y]]*2)
 T5ZZ_x095.dataUrl = None
 T5ZZ_x095.addSource('efficiencyMap',"orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_3NJet6_1250HT1500_300MHT450.dat", "txt")
-T5ZZoff.addMassPlane(T5ZZ_x05)
-T5ZZoff.addMassPlane(T5ZZ_x005)
-T5ZZoff.addMassPlane(T5ZZ_x095)
 #+++++++ next txName block ++++++++++++++
 T5WW = dataset.addTxName('T5WW')
 T5WW.checked = ' '
@@ -520,13 +490,6 @@ T5ZZ.conditionDescription ="None"
 T5ZZ.condition ="None"
 T5ZZ.massConstraint = None
 T5ZZ.source = 'SModelS'
-#+++++++ next txName block ++++++++++++++
-T5ZZoff = dataset.addTxName('T5ZZoff')
-T5ZZoff.constraint ="2.23*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
-T5ZZoff.conditionDescription ="None"
-T5ZZoff.condition =None
-T5ZZoff.massConstraint = [['dm >= 0.0','dm <= 86.']]*2
-T5ZZoff.source = 'SModelS'
 #+++++++ next mass plane block ++++++++++++++
 T5ZZ_x05 = T5ZZ.addMassPlane([[x,0.5*(x+y),y]]*2)
 T5ZZ_x05.dataUrl = None
@@ -540,9 +503,6 @@ T5ZZ_x005.addSource('efficiencyMap',"orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_6NJ
 T5ZZ_x095 = T5ZZ.addMassPlane([[x,0.95*x + 0.05*y,y]]*2)
 T5ZZ_x095.dataUrl = None
 T5ZZ_x095.addSource('efficiencyMap',"orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_6NJet8_1000HT1250_200MHT300.dat", "txt")
-T5ZZoff.addMassPlane(T5ZZ_x05)
-T5ZZoff.addMassPlane(T5ZZ_x005)
-T5ZZoff.addMassPlane(T5ZZ_x095)
 #+++++++ next txName block ++++++++++++++
 T5WW = dataset.addTxName('T5WW')
 T5WW.checked = ' '
@@ -651,13 +611,6 @@ T5ZZ.conditionDescription ="None"
 T5ZZ.condition ="None"
 T5ZZ.massConstraint = None
 T5ZZ.source = 'SModelS'
-#+++++++ next txName block ++++++++++++++
-T5ZZoff = dataset.addTxName('T5ZZoff')
-T5ZZoff.constraint ="2.23*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
-T5ZZoff.conditionDescription ="None"
-T5ZZoff.condition =None
-T5ZZoff.massConstraint = [['dm >= 0.0','dm <= 86.']]*2
-T5ZZoff.source = 'SModelS'
 #+++++++ next mass plane block ++++++++++++++
 T5ZZ_x05 = T5ZZ.addMassPlane([[x,0.5*(x+y),y]]*2)
 T5ZZ_x05.dataUrl = None
@@ -671,9 +624,6 @@ T5ZZ_x005.addSource('efficiencyMap',"orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_6NJ
 T5ZZ_x095 = T5ZZ.addMassPlane([[x,0.95*x + 0.05*y,y]]*2)
 T5ZZ_x095.dataUrl = None
 T5ZZ_x095.addSource('efficiencyMap',"orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_6NJet8_800HT1000_300MHT450.dat", "txt")
-T5ZZoff.addMassPlane(T5ZZ_x05)
-T5ZZoff.addMassPlane(T5ZZ_x005)
-T5ZZoff.addMassPlane(T5ZZ_x095)
 #+++++++ next txName block ++++++++++++++
 T5WW = dataset.addTxName('T5WW')
 T5WW.checked = ' '
@@ -782,13 +732,6 @@ T5ZZ.conditionDescription ="None"
 T5ZZ.condition ="None"
 T5ZZ.massConstraint = None
 T5ZZ.source = 'SModelS'
-#+++++++ next txName block ++++++++++++++
-T5ZZoff = dataset.addTxName('T5ZZoff')
-T5ZZoff.constraint ="2.23*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
-T5ZZoff.conditionDescription ="None"
-T5ZZoff.condition =None
-T5ZZoff.massConstraint = [['dm >= 0.0','dm <= 86.']]*2
-T5ZZoff.source = 'SModelS'
 #+++++++ next mass plane block ++++++++++++++
 T5ZZ_x05 = T5ZZ.addMassPlane([[x,0.5*(x+y),y]]*2)
 T5ZZ_x05.dataUrl = None
@@ -802,9 +745,6 @@ T5ZZ_x005.addSource('efficiencyMap',"orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_6NJ
 T5ZZ_x095 = T5ZZ.addMassPlane([[x,0.95*x + 0.05*y,y]]*2)
 T5ZZ_x095.dataUrl = None
 T5ZZ_x095.addSource('efficiencyMap',"orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_6NJet8_500HT800_300MHT450.dat", "txt")
-T5ZZoff.addMassPlane(T5ZZ_x05)
-T5ZZoff.addMassPlane(T5ZZ_x005)
-T5ZZoff.addMassPlane(T5ZZ_x095)
 #+++++++ next txName block ++++++++++++++
 T5WW = dataset.addTxName('T5WW')
 T5WW.checked = ' '
@@ -913,13 +853,6 @@ T5ZZ.conditionDescription ="None"
 T5ZZ.condition ="None"
 T5ZZ.massConstraint = None
 T5ZZ.source = 'SModelS'
-#+++++++ next txName block ++++++++++++++
-T5ZZoff = dataset.addTxName('T5ZZoff')
-T5ZZoff.constraint ="2.23*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
-T5ZZoff.conditionDescription ="None"
-T5ZZoff.condition =None
-T5ZZoff.massConstraint = [['dm >= 0.0','dm <= 86.']]*2
-T5ZZoff.source = 'SModelS'
 #+++++++ next mass plane block ++++++++++++++
 T5ZZ_x05 = T5ZZ.addMassPlane([[x,0.5*(x+y),y]]*2)
 T5ZZ_x05.dataUrl = None
@@ -933,9 +866,6 @@ T5ZZ_x005.addSource('efficiencyMap',"orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_3NJ
 T5ZZ_x095 = T5ZZ.addMassPlane([[x,0.95*x + 0.05*y,y]]*2)
 T5ZZ_x095.dataUrl = None
 T5ZZ_x095.addSource('efficiencyMap',"orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_3NJet6_800HT1000_200MHT300.dat", "txt")
-T5ZZoff.addMassPlane(T5ZZ_x05)
-T5ZZoff.addMassPlane(T5ZZ_x005)
-T5ZZoff.addMassPlane(T5ZZ_x095)
 #+++++++ next txName block ++++++++++++++
 T5WW = dataset.addTxName('T5WW')
 T5WW.checked = ' '
@@ -1045,12 +975,6 @@ T5ZZ.condition ="None"
 T5ZZ.massConstraint = None
 T5ZZ.source = 'SModelS'
 #+++++++ next txName block ++++++++++++++
-T5ZZoff = dataset.addTxName('T5ZZoff')
-T5ZZoff.constraint ="2.23*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
-T5ZZoff.conditionDescription ="None"
-T5ZZoff.condition =None
-T5ZZoff.massConstraint = [['dm >= 0.0','dm <= 86.']]*2
-T5ZZoff.source = 'SModelS'
 #+++++++ next mass plane block ++++++++++++++
 T5ZZ_x05 = T5ZZ.addMassPlane([[x,0.5*(x+y),y]]*2)
 T5ZZ_x05.dataUrl = None
@@ -1064,9 +988,6 @@ T5ZZ_x005.addSource('efficiencyMap',"orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_3NJ
 T5ZZ_x095 = T5ZZ.addMassPlane([[x,0.95*x + 0.05*y,y]]*2)
 T5ZZ_x095.dataUrl = None
 T5ZZ_x095.addSource('efficiencyMap',"orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_3NJet6_500HT800_200MHT300.dat", "txt")
-T5ZZoff.addMassPlane(T5ZZ_x05)
-T5ZZoff.addMassPlane(T5ZZ_x005)
-T5ZZoff.addMassPlane(T5ZZ_x095)
 #+++++++ next txName block ++++++++++++++
 T5WW = dataset.addTxName('T5WW')
 T5WW.checked = ' '
@@ -1176,12 +1097,6 @@ T5ZZ.condition ="None"
 T5ZZ.massConstraint = None
 T5ZZ.source = 'SModelS'
 #+++++++ next txName block ++++++++++++++
-T5ZZoff = dataset.addTxName('T5ZZoff')
-T5ZZoff.constraint ="2.23*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
-T5ZZoff.conditionDescription ="None"
-T5ZZoff.condition =None
-T5ZZoff.massConstraint = [['dm >= 0.0','dm <= 86.']]*2
-T5ZZoff.source = 'SModelS'
 #+++++++ next mass plane block ++++++++++++++
 T5ZZ_x05 = T5ZZ.addMassPlane([[x,0.5*(x+y),y]]*2)
 T5ZZ_x05.dataUrl = None
@@ -1195,9 +1110,6 @@ T5ZZ_x005.addSource('efficiencyMap',"orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_6NJ
 T5ZZ_x095 = T5ZZ.addMassPlane([[x,0.95*x + 0.05*y,y]]*2)
 T5ZZ_x095.dataUrl = None
 T5ZZ_x095.addSource('efficiencyMap',"orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_6NJet8_1250HT1500_450MHTinf.dat", "txt")
-T5ZZoff.addMassPlane(T5ZZ_x05)
-T5ZZoff.addMassPlane(T5ZZ_x005)
-T5ZZoff.addMassPlane(T5ZZ_x095)
 #+++++++ next txName block ++++++++++++++
 T5WW = dataset.addTxName('T5WW')
 T5WW.checked = ' '
@@ -1307,12 +1219,6 @@ T5ZZ.condition ="None"
 T5ZZ.massConstraint = None
 T5ZZ.source = 'SModelS'
 #+++++++ next txName block ++++++++++++++
-T5ZZoff = dataset.addTxName('T5ZZoff')
-T5ZZoff.constraint ="2.23*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
-T5ZZoff.conditionDescription ="None"
-T5ZZoff.condition =None
-T5ZZoff.massConstraint = [['dm >= 0.0','dm <= 86.']]*2
-T5ZZoff.source = 'SModelS'
 #+++++++ next mass plane block ++++++++++++++
 T5ZZ_x05 = T5ZZ.addMassPlane([[x,0.5*(x+y),y]]*2)
 T5ZZ_x05.dataUrl = None
@@ -1326,9 +1232,6 @@ T5ZZ_x005.addSource('efficiencyMap',"orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_3NJ
 T5ZZ_x095 = T5ZZ.addMassPlane([[x,0.95*x + 0.05*y,y]]*2)
 T5ZZ_x095.dataUrl = None
 T5ZZ_x095.addSource('efficiencyMap',"orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_3NJet6_1000HT1250_300MHT450.dat", "txt")
-T5ZZoff.addMassPlane(T5ZZ_x05)
-T5ZZoff.addMassPlane(T5ZZ_x005)
-T5ZZoff.addMassPlane(T5ZZ_x095)
 #+++++++ next txName block ++++++++++++++
 T5WW = dataset.addTxName('T5WW')
 T5WW.checked = ' '
@@ -1438,12 +1341,6 @@ T5ZZ.condition ="None"
 T5ZZ.massConstraint = None
 T5ZZ.source = 'SModelS'
 #+++++++ next txName block ++++++++++++++
-T5ZZoff = dataset.addTxName('T5ZZoff')
-T5ZZoff.constraint ="2.23*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
-T5ZZoff.conditionDescription ="None"
-T5ZZoff.condition =None
-T5ZZoff.massConstraint = [['dm >= 0.0','dm <= 86.']]*2
-T5ZZoff.source = 'SModelS'
 #+++++++ next mass plane block ++++++++++++++
 T5ZZ_x05 = T5ZZ.addMassPlane([[x,0.5*(x+y),y]]*2)
 T5ZZ_x05.dataUrl = None
@@ -1457,9 +1354,6 @@ T5ZZ_x005.addSource('efficiencyMap',"orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_8NJ
 T5ZZ_x095 = T5ZZ.addMassPlane([[x,0.95*x + 0.05*y,y]]*2)
 T5ZZ_x095.dataUrl = None
 T5ZZ_x095.addSource('efficiencyMap',"orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_8NJetinf_1250HT1500_200MHTinf.dat", "txt")
-T5ZZoff.addMassPlane(T5ZZ_x05)
-T5ZZoff.addMassPlane(T5ZZ_x005)
-T5ZZoff.addMassPlane(T5ZZ_x095)
 #+++++++ next txName block ++++++++++++++
 T5WW = dataset.addTxName('T5WW')
 T5WW.checked = ' '
@@ -1569,12 +1463,6 @@ T5ZZ.condition ="None"
 T5ZZ.massConstraint = None
 T5ZZ.source = 'SModelS'
 #+++++++ next txName block ++++++++++++++
-T5ZZoff = dataset.addTxName('T5ZZoff')
-T5ZZoff.constraint ="2.23*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
-T5ZZoff.conditionDescription ="None"
-T5ZZoff.condition =None
-T5ZZoff.massConstraint = [['dm >= 0.0','dm <= 86.']]*2
-T5ZZoff.source = 'SModelS'
 #+++++++ next mass plane block ++++++++++++++
 T5ZZ_x05 = T5ZZ.addMassPlane([[x,0.5*(x+y),y]]*2)
 T5ZZ_x05.dataUrl = None
@@ -1588,9 +1476,6 @@ T5ZZ_x005.addSource('efficiencyMap',"orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_8NJ
 T5ZZ_x095 = T5ZZ.addMassPlane([[x,0.95*x + 0.05*y,y]]*2)
 T5ZZ_x095.dataUrl = None
 T5ZZ_x095.addSource('efficiencyMap',"orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_8NJetinf_1000HT1250_200MHTinf.dat", "txt")
-T5ZZoff.addMassPlane(T5ZZ_x05)
-T5ZZoff.addMassPlane(T5ZZ_x005)
-T5ZZoff.addMassPlane(T5ZZ_x095)
 #+++++++ next txName block ++++++++++++++
 T5WW = dataset.addTxName('T5WW')
 T5WW.checked = ' '
@@ -1700,12 +1585,6 @@ T5ZZ.condition ="None"
 T5ZZ.massConstraint = None
 T5ZZ.source = 'SModelS'
 #+++++++ next txName block ++++++++++++++
-T5ZZoff = dataset.addTxName('T5ZZoff')
-T5ZZoff.constraint ="2.23*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
-T5ZZoff.conditionDescription ="None"
-T5ZZoff.condition =None
-T5ZZoff.massConstraint = [['dm >= 0.0','dm <= 86.']]*2
-T5ZZoff.source = 'SModelS'
 #+++++++ next mass plane block ++++++++++++++
 T5ZZ_x05 = T5ZZ.addMassPlane([[x,0.5*(x+y),y]]*2)
 T5ZZ_x05.dataUrl = None
@@ -1719,9 +1598,6 @@ T5ZZ_x005.addSource('efficiencyMap',"orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_3NJ
 T5ZZ_x095 = T5ZZ.addMassPlane([[x,0.95*x + 0.05*y,y]]*2)
 T5ZZ_x095.dataUrl = None
 T5ZZ_x095.addSource('efficiencyMap',"orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_3NJet6_800HT1000_300MHT450.dat", "txt")
-T5ZZoff.addMassPlane(T5ZZ_x05)
-T5ZZoff.addMassPlane(T5ZZ_x005)
-T5ZZoff.addMassPlane(T5ZZ_x095)
 #+++++++ next txName block ++++++++++++++
 T5WW = dataset.addTxName('T5WW')
 T5WW.checked = ' '
@@ -1831,12 +1707,6 @@ T5ZZ.condition ="None"
 T5ZZ.massConstraint = None
 T5ZZ.source = 'SModelS'
 #+++++++ next txName block ++++++++++++++
-T5ZZoff = dataset.addTxName('T5ZZoff')
-T5ZZoff.constraint ="2.23*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
-T5ZZoff.conditionDescription ="None"
-T5ZZoff.condition =None
-T5ZZoff.massConstraint = [['dm >= 0.0','dm <= 86.']]*2
-T5ZZoff.source = 'SModelS'
 #+++++++ next mass plane block ++++++++++++++
 T5ZZ_x05 = T5ZZ.addMassPlane([[x,0.5*(x+y),y]]*2)
 T5ZZ_x05.dataUrl = None
@@ -1850,9 +1720,6 @@ T5ZZ_x005.addSource('efficiencyMap',"orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_8NJ
 T5ZZ_x095 = T5ZZ.addMassPlane([[x,0.95*x + 0.05*y,y]]*2)
 T5ZZ_x095.dataUrl = None
 T5ZZ_x095.addSource('efficiencyMap',"orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_8NJetinf_800HT1000_200MHTinf.dat", "txt")
-T5ZZoff.addMassPlane(T5ZZ_x05)
-T5ZZoff.addMassPlane(T5ZZ_x005)
-T5ZZoff.addMassPlane(T5ZZ_x095)
 #+++++++ next txName block ++++++++++++++
 T5WW = dataset.addTxName('T5WW')
 T5WW.checked = ' '
@@ -1962,12 +1829,6 @@ T5ZZ.condition ="None"
 T5ZZ.massConstraint = None
 T5ZZ.source = 'SModelS'
 #+++++++ next txName block ++++++++++++++
-T5ZZoff = dataset.addTxName('T5ZZoff')
-T5ZZoff.constraint ="2.23*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
-T5ZZoff.conditionDescription ="None"
-T5ZZoff.condition =None
-T5ZZoff.massConstraint = [['dm >= 0.0','dm <= 86.']]*2
-T5ZZoff.source = 'SModelS'
 #+++++++ next mass plane block ++++++++++++++
 T5ZZ_x05 = T5ZZ.addMassPlane([[x,0.5*(x+y),y]]*2)
 T5ZZ_x05.dataUrl = None
@@ -1981,9 +1842,6 @@ T5ZZ_x005.addSource('efficiencyMap',"orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_6NJ
 T5ZZ_x095 = T5ZZ.addMassPlane([[x,0.95*x + 0.05*y,y]]*2)
 T5ZZ_x095.dataUrl = None
 T5ZZ_x095.addSource('efficiencyMap',"orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_6NJet8_1500HTinf_300MHTinf.dat", "txt")
-T5ZZoff.addMassPlane(T5ZZ_x05)
-T5ZZoff.addMassPlane(T5ZZ_x005)
-T5ZZoff.addMassPlane(T5ZZ_x095)
 #+++++++ next txName block ++++++++++++++
 T5WW = dataset.addTxName('T5WW')
 T5WW.checked = ' '
@@ -2093,12 +1951,6 @@ T5ZZ.condition ="None"
 T5ZZ.massConstraint = None
 T5ZZ.source = 'SModelS'
 #+++++++ next txName block ++++++++++++++
-T5ZZoff = dataset.addTxName('T5ZZoff')
-T5ZZoff.constraint ="2.23*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
-T5ZZoff.conditionDescription ="None"
-T5ZZoff.condition =None
-T5ZZoff.massConstraint = [['dm >= 0.0','dm <= 86.']]*2
-T5ZZoff.source = 'SModelS'
 #+++++++ next mass plane block ++++++++++++++
 T5ZZ_x05 = T5ZZ.addMassPlane([[x,0.5*(x+y),y]]*2)
 T5ZZ_x05.dataUrl = None
@@ -2112,9 +1964,6 @@ T5ZZ_x005.addSource('efficiencyMap',"orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_3NJ
 T5ZZ_x095 = T5ZZ.addMassPlane([[x,0.95*x + 0.05*y,y]]*2)
 T5ZZ_x095.dataUrl = None
 T5ZZ_x095.addSource('efficiencyMap',"orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_3NJet6_800HT1000_600MHTinf.dat", "txt")
-T5ZZoff.addMassPlane(T5ZZ_x05)
-T5ZZoff.addMassPlane(T5ZZ_x005)
-T5ZZoff.addMassPlane(T5ZZ_x095)
 #+++++++ next txName block ++++++++++++++
 T5WW = dataset.addTxName('T5WW')
 T5WW.checked = ' '
@@ -2224,12 +2073,6 @@ T5ZZ.condition ="None"
 T5ZZ.massConstraint = None
 T5ZZ.source = 'SModelS'
 #+++++++ next txName block ++++++++++++++
-T5ZZoff = dataset.addTxName('T5ZZoff')
-T5ZZoff.constraint ="2.23*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
-T5ZZoff.conditionDescription ="None"
-T5ZZoff.condition =None
-T5ZZoff.massConstraint = [['dm >= 0.0','dm <= 86.']]*2
-T5ZZoff.source = 'SModelS'
 #+++++++ next mass plane block ++++++++++++++
 T5ZZ_x05 = T5ZZ.addMassPlane([[x,0.5*(x+y),y]]*2)
 T5ZZ_x05.dataUrl = None
@@ -2243,9 +2086,6 @@ T5ZZ_x005.addSource('efficiencyMap',"orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_6NJ
 T5ZZ_x095 = T5ZZ.addMassPlane([[x,0.95*x + 0.05*y,y]]*2)
 T5ZZ_x095.dataUrl = None
 T5ZZ_x095.addSource('efficiencyMap',"orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_6NJet8_500HT800_450MHTinf.dat", "txt")
-T5ZZoff.addMassPlane(T5ZZ_x05)
-T5ZZoff.addMassPlane(T5ZZ_x005)
-T5ZZoff.addMassPlane(T5ZZ_x095)
 #+++++++ next txName block ++++++++++++++
 T5WW = dataset.addTxName('T5WW')
 T5WW.checked = ' '
@@ -2355,12 +2195,6 @@ T5ZZ.condition ="None"
 T5ZZ.massConstraint = None
 T5ZZ.source = 'SModelS'
 #+++++++ next txName block ++++++++++++++
-T5ZZoff = dataset.addTxName('T5ZZoff')
-T5ZZoff.constraint ="2.23*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
-T5ZZoff.conditionDescription ="None"
-T5ZZoff.condition =None
-T5ZZoff.massConstraint = [['dm >= 0.0','dm <= 86.']]*2
-T5ZZoff.source = 'SModelS'
 #+++++++ next mass plane block ++++++++++++++
 T5ZZ_x05 = T5ZZ.addMassPlane([[x,0.5*(x+y),y]]*2)
 T5ZZ_x05.dataUrl = None
@@ -2374,9 +2208,6 @@ T5ZZ_x005.addSource('efficiencyMap',"orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_6NJ
 T5ZZ_x095 = T5ZZ.addMassPlane([[x,0.95*x + 0.05*y,y]]*2)
 T5ZZ_x095.dataUrl = None
 T5ZZ_x095.addSource('efficiencyMap',"orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_6NJet8_1000HT1250_300MHT450.dat", "txt")
-T5ZZoff.addMassPlane(T5ZZ_x05)
-T5ZZoff.addMassPlane(T5ZZ_x005)
-T5ZZoff.addMassPlane(T5ZZ_x095)
 #+++++++ next txName block ++++++++++++++
 T5WW = dataset.addTxName('T5WW')
 T5WW.checked = ' '
@@ -2486,12 +2317,6 @@ T5ZZ.condition ="None"
 T5ZZ.massConstraint = None
 T5ZZ.source = 'SModelS'
 #+++++++ next txName block ++++++++++++++
-T5ZZoff = dataset.addTxName('T5ZZoff')
-T5ZZoff.constraint ="2.23*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
-T5ZZoff.conditionDescription ="None"
-T5ZZoff.condition =None
-T5ZZoff.massConstraint = [['dm >= 0.0','dm <= 86.']]*2
-T5ZZoff.source = 'SModelS'
 #+++++++ next mass plane block ++++++++++++++
 T5ZZ_x05 = T5ZZ.addMassPlane([[x,0.5*(x+y),y]]*2)
 T5ZZ_x05.dataUrl = None
@@ -2505,9 +2330,6 @@ T5ZZ_x005.addSource('efficiencyMap',"orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_6NJ
 T5ZZ_x095 = T5ZZ.addMassPlane([[x,0.95*x + 0.05*y,y]]*2)
 T5ZZ_x095.dataUrl = None
 T5ZZ_x095.addSource('efficiencyMap',"orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_6NJet8_800HT1000_450MHTinf.dat", "txt")
-T5ZZoff.addMassPlane(T5ZZ_x05)
-T5ZZoff.addMassPlane(T5ZZ_x005)
-T5ZZoff.addMassPlane(T5ZZ_x095)
 #+++++++ next txName block ++++++++++++++
 T5WW = dataset.addTxName('T5WW')
 T5WW.checked = ' '
@@ -2617,12 +2439,6 @@ T5ZZ.condition ="None"
 T5ZZ.massConstraint = None
 T5ZZ.source = 'SModelS'
 #+++++++ next txName block ++++++++++++++
-T5ZZoff = dataset.addTxName('T5ZZoff')
-T5ZZoff.constraint ="2.23*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
-T5ZZoff.conditionDescription ="None"
-T5ZZoff.condition =None
-T5ZZoff.massConstraint = [['dm >= 0.0','dm <= 86.']]*2
-T5ZZoff.source = 'SModelS'
 #+++++++ next mass plane block ++++++++++++++
 T5ZZ_x05 = T5ZZ.addMassPlane([[x,0.5*(x+y),y]]*2)
 T5ZZ_x05.dataUrl = None
@@ -2636,9 +2452,6 @@ T5ZZ_x005.addSource('efficiencyMap',"orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_3NJ
 T5ZZ_x095 = T5ZZ.addMassPlane([[x,0.95*x + 0.05*y,y]]*2)
 T5ZZ_x095.dataUrl = None
 T5ZZ_x095.addSource('efficiencyMap',"orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_3NJet6_1500HTinf_200MHT300.dat", "txt")
-T5ZZoff.addMassPlane(T5ZZ_x05)
-T5ZZoff.addMassPlane(T5ZZ_x005)
-T5ZZoff.addMassPlane(T5ZZ_x095)
 #+++++++ next txName block ++++++++++++++
 T5WW = dataset.addTxName('T5WW')
 T5WW.checked = ' '
@@ -2748,12 +2561,6 @@ T5ZZ.condition ="None"
 T5ZZ.massConstraint = None
 T5ZZ.source = 'SModelS'
 #+++++++ next txName block ++++++++++++++
-T5ZZoff = dataset.addTxName('T5ZZoff')
-T5ZZoff.constraint ="2.23*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
-T5ZZoff.conditionDescription ="None"
-T5ZZoff.condition =None
-T5ZZoff.massConstraint = [['dm >= 0.0','dm <= 86.']]*2
-T5ZZoff.source = 'SModelS'
 #+++++++ next mass plane block ++++++++++++++
 T5ZZ_x05 = T5ZZ.addMassPlane([[x,0.5*(x+y),y]]*2)
 T5ZZ_x05.dataUrl = None
@@ -2767,9 +2574,6 @@ T5ZZ_x005.addSource('efficiencyMap',"orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_3NJ
 T5ZZ_x095 = T5ZZ.addMassPlane([[x,0.95*x + 0.05*y,y]]*2)
 T5ZZ_x095.dataUrl = None
 T5ZZ_x095.addSource('efficiencyMap',"orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_3NJet6_500HT800_600MHTinf.dat", "txt")
-T5ZZoff.addMassPlane(T5ZZ_x05)
-T5ZZoff.addMassPlane(T5ZZ_x005)
-T5ZZoff.addMassPlane(T5ZZ_x095)
 #+++++++ next txName block ++++++++++++++
 T5WW = dataset.addTxName('T5WW')
 T5WW.checked = ' '
@@ -2879,12 +2683,6 @@ T5ZZ.condition ="None"
 T5ZZ.massConstraint = None
 T5ZZ.source = 'SModelS'
 #+++++++ next txName block ++++++++++++++
-T5ZZoff = dataset.addTxName('T5ZZoff')
-T5ZZoff.constraint ="2.23*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
-T5ZZoff.conditionDescription ="None"
-T5ZZoff.condition =None
-T5ZZoff.massConstraint = [['dm >= 0.0','dm <= 86.']]*2
-T5ZZoff.source = 'SModelS'
 #+++++++ next mass plane block ++++++++++++++
 T5ZZ_x05 = T5ZZ.addMassPlane([[x,0.5*(x+y),y]]*2)
 T5ZZ_x05.dataUrl = None
@@ -2898,9 +2696,6 @@ T5ZZ_x005.addSource('efficiencyMap',"orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_3NJ
 T5ZZ_x095 = T5ZZ.addMassPlane([[x,0.95*x + 0.05*y,y]]*2)
 T5ZZ_x095.dataUrl = None
 T5ZZ_x095.addSource('efficiencyMap',"orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_3NJet6_1250HT1500_200MHT300.dat", "txt")
-T5ZZoff.addMassPlane(T5ZZ_x05)
-T5ZZoff.addMassPlane(T5ZZ_x005)
-T5ZZoff.addMassPlane(T5ZZ_x095)
 #+++++++ next txName block ++++++++++++++
 T5WW = dataset.addTxName('T5WW')
 T5WW.checked = ' '
@@ -3010,12 +2805,6 @@ T5ZZ.condition ="None"
 T5ZZ.massConstraint = None
 T5ZZ.source = 'SModelS'
 #+++++++ next txName block ++++++++++++++
-T5ZZoff = dataset.addTxName('T5ZZoff')
-T5ZZoff.constraint ="2.23*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
-T5ZZoff.conditionDescription ="None"
-T5ZZoff.condition =None
-T5ZZoff.massConstraint = [['dm >= 0.0','dm <= 86.']]*2
-T5ZZoff.source = 'SModelS'
 #+++++++ next mass plane block ++++++++++++++
 T5ZZ_x05 = T5ZZ.addMassPlane([[x,0.5*(x+y),y]]*2)
 T5ZZ_x05.dataUrl = None
@@ -3029,9 +2818,6 @@ T5ZZ_x005.addSource('efficiencyMap',"orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_3NJ
 T5ZZ_x095 = T5ZZ.addMassPlane([[x,0.95*x + 0.05*y,y]]*2)
 T5ZZ_x095.dataUrl = None
 T5ZZ_x095.addSource('efficiencyMap',"orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_3NJet6_1000HT1250_600MHTinf.dat", "txt")
-T5ZZoff.addMassPlane(T5ZZ_x05)
-T5ZZoff.addMassPlane(T5ZZ_x005)
-T5ZZoff.addMassPlane(T5ZZ_x095)
 #+++++++ next txName block ++++++++++++++
 T5WW = dataset.addTxName('T5WW')
 T5WW.checked = ' '
@@ -3141,12 +2927,6 @@ T5ZZ.condition ="None"
 T5ZZ.massConstraint = None
 T5ZZ.source = 'SModelS'
 #+++++++ next txName block ++++++++++++++
-T5ZZoff = dataset.addTxName('T5ZZoff')
-T5ZZoff.constraint ="2.23*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
-T5ZZoff.conditionDescription ="None"
-T5ZZoff.condition =None
-T5ZZoff.massConstraint = [['dm >= 0.0','dm <= 86.']]*2
-T5ZZoff.source = 'SModelS'
 #+++++++ next mass plane block ++++++++++++++
 T5ZZ_x05 = T5ZZ.addMassPlane([[x,0.5*(x+y),y]]*2)
 T5ZZ_x05.dataUrl = None
@@ -3160,9 +2940,6 @@ T5ZZ_x005.addSource('efficiencyMap',"orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_3NJ
 T5ZZ_x095 = T5ZZ.addMassPlane([[x,0.95*x + 0.05*y,y]]*2)
 T5ZZ_x095.dataUrl = None
 T5ZZ_x095.addSource('efficiencyMap',"orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_3NJet6_1000HT1250_200MHT300.dat", "txt")
-T5ZZoff.addMassPlane(T5ZZ_x05)
-T5ZZoff.addMassPlane(T5ZZ_x005)
-T5ZZoff.addMassPlane(T5ZZ_x095)
 #+++++++ next txName block ++++++++++++++
 T5WW = dataset.addTxName('T5WW')
 T5WW.checked = ' '
@@ -3272,12 +3049,6 @@ T5ZZ.condition ="None"
 T5ZZ.massConstraint = None
 T5ZZ.source = 'SModelS'
 #+++++++ next txName block ++++++++++++++
-T5ZZoff = dataset.addTxName('T5ZZoff')
-T5ZZoff.constraint ="2.23*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
-T5ZZoff.conditionDescription ="None"
-T5ZZoff.condition =None
-T5ZZoff.massConstraint = [['dm >= 0.0','dm <= 86.']]*2
-T5ZZoff.source = 'SModelS'
 #+++++++ next mass plane block ++++++++++++++
 T5ZZ_x05 = T5ZZ.addMassPlane([[x,0.5*(x+y),y]]*2)
 T5ZZ_x05.dataUrl = None
@@ -3291,9 +3062,6 @@ T5ZZ_x005.addSource('efficiencyMap',"orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_8NJ
 T5ZZ_x095 = T5ZZ.addMassPlane([[x,0.95*x + 0.05*y,y]]*2)
 T5ZZ_x095.dataUrl = None
 T5ZZ_x095.addSource('efficiencyMap',"orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_8NJetinf_1500HTinf_200MHTinf.dat", "txt")
-T5ZZoff.addMassPlane(T5ZZ_x05)
-T5ZZoff.addMassPlane(T5ZZ_x005)
-T5ZZoff.addMassPlane(T5ZZ_x095)
 #+++++++ next txName block ++++++++++++++
 T5WW = dataset.addTxName('T5WW')
 T5WW.checked = ' '
@@ -3403,12 +3171,6 @@ T5ZZ.condition ="None"
 T5ZZ.massConstraint = None
 T5ZZ.source = 'SModelS'
 #+++++++ next txName block ++++++++++++++
-T5ZZoff = dataset.addTxName('T5ZZoff')
-T5ZZoff.constraint ="2.23*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
-T5ZZoff.conditionDescription ="None"
-T5ZZoff.condition =None
-T5ZZoff.massConstraint = [['dm >= 0.0','dm <= 86.']]*2
-T5ZZoff.source = 'SModelS'
 #+++++++ next mass plane block ++++++++++++++
 T5ZZ_x05 = T5ZZ.addMassPlane([[x,0.5*(x+y),y]]*2)
 T5ZZ_x05.dataUrl = None
@@ -3422,9 +3184,6 @@ T5ZZ_x005.addSource('efficiencyMap',"orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_6NJ
 T5ZZ_x095 = T5ZZ.addMassPlane([[x,0.95*x + 0.05*y,y]]*2)
 T5ZZ_x095.dataUrl = None
 T5ZZ_x095.addSource('efficiencyMap',"orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_6NJet8_1500HTinf_200MHT300.dat", "txt")
-T5ZZoff.addMassPlane(T5ZZ_x05)
-T5ZZoff.addMassPlane(T5ZZ_x005)
-T5ZZoff.addMassPlane(T5ZZ_x095)
 #+++++++ next txName block ++++++++++++++
 T5WW = dataset.addTxName('T5WW')
 T5WW.checked = ' '
@@ -3534,12 +3293,6 @@ T5ZZ.condition ="None"
 T5ZZ.massConstraint = None
 T5ZZ.source = 'SModelS'
 #+++++++ next txName block ++++++++++++++
-T5ZZoff = dataset.addTxName('T5ZZoff')
-T5ZZoff.constraint ="2.23*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
-T5ZZoff.conditionDescription ="None"
-T5ZZoff.condition =None
-T5ZZoff.massConstraint = [['dm >= 0.0','dm <= 86.']]*2
-T5ZZoff.source = 'SModelS'
 #+++++++ next mass plane block ++++++++++++++
 T5ZZ_x05 = T5ZZ.addMassPlane([[x,0.5*(x+y),y]]*2)
 T5ZZ_x05.dataUrl = None
@@ -3553,9 +3306,6 @@ T5ZZ_x005.addSource('efficiencyMap',"orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_6NJ
 T5ZZ_x095 = T5ZZ.addMassPlane([[x,0.95*x + 0.05*y,y]]*2)
 T5ZZ_x095.dataUrl = None
 T5ZZ_x095.addSource('efficiencyMap',"orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_6NJet8_1250HT1500_200MHT300.dat", "txt")
-T5ZZoff.addMassPlane(T5ZZ_x05)
-T5ZZoff.addMassPlane(T5ZZ_x005)
-T5ZZoff.addMassPlane(T5ZZ_x095)
 #+++++++ next txName block ++++++++++++++
 T5WW = dataset.addTxName('T5WW')
 T5WW.checked = ' '
@@ -3665,12 +3415,6 @@ T5ZZ.condition ="None"
 T5ZZ.massConstraint = None
 T5ZZ.source = 'SModelS'
 #+++++++ next txName block ++++++++++++++
-T5ZZoff = dataset.addTxName('T5ZZoff')
-T5ZZoff.constraint ="2.23*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
-T5ZZoff.conditionDescription ="None"
-T5ZZoff.condition =None
-T5ZZoff.massConstraint = [['dm >= 0.0','dm <= 86.']]*2
-T5ZZoff.source = 'SModelS'
 #+++++++ next mass plane block ++++++++++++++
 T5ZZ_x05 = T5ZZ.addMassPlane([[x,0.5*(x+y),y]]*2)
 T5ZZ_x05.dataUrl = None
@@ -3684,9 +3428,6 @@ T5ZZ_x005.addSource('efficiencyMap',"orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_3NJ
 T5ZZ_x095 = T5ZZ.addMassPlane([[x,0.95*x + 0.05*y,y]]*2)
 T5ZZ_x095.dataUrl = None
 T5ZZ_x095.addSource('efficiencyMap',"orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_3NJet6_800HT1000_450MHT600.dat", "txt")
-T5ZZoff.addMassPlane(T5ZZ_x05)
-T5ZZoff.addMassPlane(T5ZZ_x005)
-T5ZZoff.addMassPlane(T5ZZ_x095)
 #+++++++ next txName block ++++++++++++++
 T5WW = dataset.addTxName('T5WW')
 T5WW.checked = ' '
@@ -3796,12 +3537,6 @@ T5ZZ.condition ="None"
 T5ZZ.massConstraint = None
 T5ZZ.source = 'SModelS'
 #+++++++ next txName block ++++++++++++++
-T5ZZoff = dataset.addTxName('T5ZZoff')
-T5ZZoff.constraint ="2.23*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
-T5ZZoff.conditionDescription ="None"
-T5ZZoff.condition =None
-T5ZZoff.massConstraint = [['dm >= 0.0','dm <= 86.']]*2
-T5ZZoff.source = 'SModelS'
 #+++++++ next mass plane block ++++++++++++++
 T5ZZ_x05 = T5ZZ.addMassPlane([[x,0.5*(x+y),y]]*2)
 T5ZZ_x05.dataUrl = None
@@ -3815,9 +3550,6 @@ T5ZZ_x005.addSource('efficiencyMap',"orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_6NJ
 T5ZZ_x095 = T5ZZ.addMassPlane([[x,0.95*x + 0.05*y,y]]*2)
 T5ZZ_x095.dataUrl = None
 T5ZZ_x095.addSource('efficiencyMap',"orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_6NJet8_800HT1000_200MHT300.dat", "txt")
-T5ZZoff.addMassPlane(T5ZZ_x05)
-T5ZZoff.addMassPlane(T5ZZ_x005)
-T5ZZoff.addMassPlane(T5ZZ_x095)
 #+++++++ next txName block ++++++++++++++
 T5WW = dataset.addTxName('T5WW')
 T5WW.checked = ' '
@@ -3927,12 +3659,6 @@ T5ZZ.condition ="None"
 T5ZZ.massConstraint = None
 T5ZZ.source = 'SModelS'
 #+++++++ next txName block ++++++++++++++
-T5ZZoff = dataset.addTxName('T5ZZoff')
-T5ZZoff.constraint ="2.23*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
-T5ZZoff.conditionDescription ="None"
-T5ZZoff.condition =None
-T5ZZoff.massConstraint = [['dm >= 0.0','dm <= 86.']]*2
-T5ZZoff.source = 'SModelS'
 #+++++++ next mass plane block ++++++++++++++
 T5ZZ_x05 = T5ZZ.addMassPlane([[x,0.5*(x+y),y]]*2)
 T5ZZ_x05.dataUrl = None
@@ -3946,9 +3672,6 @@ T5ZZ_x005.addSource('efficiencyMap',"orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_6NJ
 T5ZZ_x095 = T5ZZ.addMassPlane([[x,0.95*x + 0.05*y,y]]*2)
 T5ZZ_x095.dataUrl = None
 T5ZZ_x095.addSource('efficiencyMap',"orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_6NJet8_500HT800_200MHT300.dat", "txt")
-T5ZZoff.addMassPlane(T5ZZ_x05)
-T5ZZoff.addMassPlane(T5ZZ_x005)
-T5ZZoff.addMassPlane(T5ZZ_x095)
 #+++++++ next txName block ++++++++++++++
 T5WW = dataset.addTxName('T5WW')
 T5WW.checked = ' '
@@ -4058,12 +3781,6 @@ T5ZZ.condition ="None"
 T5ZZ.massConstraint = None
 T5ZZ.source = 'SModelS'
 #+++++++ next txName block ++++++++++++++
-T5ZZoff = dataset.addTxName('T5ZZoff')
-T5ZZoff.constraint ="2.23*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
-T5ZZoff.conditionDescription ="None"
-T5ZZoff.condition =None
-T5ZZoff.massConstraint = [['dm >= 0.0','dm <= 86.']]*2
-T5ZZoff.source = 'SModelS'
 #+++++++ next mass plane block ++++++++++++++
 T5ZZ_x05 = T5ZZ.addMassPlane([[x,0.5*(x+y),y]]*2)
 T5ZZ_x05.dataUrl = None
@@ -4077,9 +3794,6 @@ T5ZZ_x005.addSource('efficiencyMap',"orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_3NJ
 T5ZZ_x095 = T5ZZ.addMassPlane([[x,0.95*x + 0.05*y,y]]*2)
 T5ZZ_x095.dataUrl = None
 T5ZZ_x095.addSource('efficiencyMap',"orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_3NJet6_500HT800_300MHT450.dat", "txt")
-T5ZZoff.addMassPlane(T5ZZ_x05)
-T5ZZoff.addMassPlane(T5ZZ_x005)
-T5ZZoff.addMassPlane(T5ZZ_x095)
 #+++++++ next txName block ++++++++++++++
 T5WW = dataset.addTxName('T5WW')
 T5WW.checked = ' '
@@ -4189,12 +3903,6 @@ T5ZZ.condition ="None"
 T5ZZ.massConstraint = None
 T5ZZ.source = 'SModelS'
 #+++++++ next txName block ++++++++++++++
-T5ZZoff = dataset.addTxName('T5ZZoff')
-T5ZZoff.constraint ="2.23*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
-T5ZZoff.conditionDescription ="None"
-T5ZZoff.condition =None
-T5ZZoff.massConstraint = [['dm >= 0.0','dm <= 86.']]*2
-T5ZZoff.source = 'SModelS'
 #+++++++ next mass plane block ++++++++++++++
 T5ZZ_x05 = T5ZZ.addMassPlane([[x,0.5*(x+y),y]]*2)
 T5ZZ_x05.dataUrl = None
@@ -4208,9 +3916,6 @@ T5ZZ_x005.addSource('efficiencyMap',"orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_8NJ
 T5ZZ_x095 = T5ZZ.addMassPlane([[x,0.95*x + 0.05*y,y]]*2)
 T5ZZ_x095.dataUrl = None
 T5ZZ_x095.addSource('efficiencyMap',"orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_8NJetinf_500HT800_200MHTinf.dat", "txt")
-T5ZZoff.addMassPlane(T5ZZ_x05)
-T5ZZoff.addMassPlane(T5ZZ_x005)
-T5ZZoff.addMassPlane(T5ZZ_x095)
 #+++++++ next txName block ++++++++++++++
 T5WW = dataset.addTxName('T5WW')
 T5WW.checked = ' '
@@ -4320,12 +4025,6 @@ T5ZZ.condition ="None"
 T5ZZ.massConstraint = None
 T5ZZ.source = 'SModelS'
 #+++++++ next txName block ++++++++++++++
-T5ZZoff = dataset.addTxName('T5ZZoff')
-T5ZZoff.constraint ="2.23*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
-T5ZZoff.conditionDescription ="None"
-T5ZZoff.condition =None
-T5ZZoff.massConstraint = [['dm >= 0.0','dm <= 86.']]*2
-T5ZZoff.source = 'SModelS'
 #+++++++ next mass plane block ++++++++++++++
 T5ZZ_x05 = T5ZZ.addMassPlane([[x,0.5*(x+y),y]]*2)
 T5ZZ_x05.dataUrl = None
@@ -4339,9 +4038,6 @@ T5ZZ_x005.addSource('efficiencyMap',"orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_3NJ
 T5ZZ_x095 = T5ZZ.addMassPlane([[x,0.95*x + 0.05*y,y]]*2)
 T5ZZ_x095.dataUrl = None
 T5ZZ_x095.addSource('efficiencyMap',"orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_3NJet6_1000HT1250_450MHT600.dat", "txt")
-T5ZZoff.addMassPlane(T5ZZ_x05)
-T5ZZoff.addMassPlane(T5ZZ_x005)
-T5ZZoff.addMassPlane(T5ZZ_x095)
 #+++++++ next txName block ++++++++++++++
 T5WW = dataset.addTxName('T5WW')
 T5WW.checked = ' '
@@ -4451,12 +4147,6 @@ T5ZZ.condition ="None"
 T5ZZ.massConstraint = None
 T5ZZ.source = 'SModelS'
 #+++++++ next txName block ++++++++++++++
-T5ZZoff = dataset.addTxName('T5ZZoff')
-T5ZZoff.constraint ="2.23*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
-T5ZZoff.conditionDescription ="None"
-T5ZZoff.condition =None
-T5ZZoff.massConstraint = [['dm >= 0.0','dm <= 86.']]*2
-T5ZZoff.source = 'SModelS'
 #+++++++ next mass plane block ++++++++++++++
 T5ZZ_x05 = T5ZZ.addMassPlane([[x,0.5*(x+y),y]]*2)
 T5ZZ_x05.dataUrl = None
@@ -4470,9 +4160,6 @@ T5ZZ_x005.addSource('efficiencyMap',"orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_6NJ
 T5ZZ_x095 = T5ZZ.addMassPlane([[x,0.95*x + 0.05*y,y]]*2)
 T5ZZ_x095.dataUrl = None
 T5ZZ_x095.addSource('efficiencyMap',"orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_6NJet8_1000HT1250_450MHTinf.dat", "txt")
-T5ZZoff.addMassPlane(T5ZZ_x05)
-T5ZZoff.addMassPlane(T5ZZ_x005)
-T5ZZoff.addMassPlane(T5ZZ_x095)
 #+++++++ next txName block ++++++++++++++
 T5WW = dataset.addTxName('T5WW')
 T5WW.checked = ' '
@@ -4582,12 +4269,6 @@ T5ZZ.condition ="None"
 T5ZZ.massConstraint = None
 T5ZZ.source = 'SModelS'
 #+++++++ next txName block ++++++++++++++
-T5ZZoff = dataset.addTxName('T5ZZoff')
-T5ZZoff.constraint ="2.23*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
-T5ZZoff.conditionDescription ="None"
-T5ZZoff.condition =None
-T5ZZoff.massConstraint = [['dm >= 0.0','dm <= 86.']]*2
-T5ZZoff.source = 'SModelS'
 #+++++++ next mass plane block ++++++++++++++
 T5ZZ_x05 = T5ZZ.addMassPlane([[x,0.5*(x+y),y]]*2)
 T5ZZ_x05.dataUrl = None
@@ -4601,9 +4282,6 @@ T5ZZ_x005.addSource('efficiencyMap',"orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_6NJ
 T5ZZ_x095 = T5ZZ.addMassPlane([[x,0.95*x + 0.05*y,y]]*2)
 T5ZZ_x095.dataUrl = None
 T5ZZ_x095.addSource('efficiencyMap',"orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_6NJet8_1250HT1500_300MHT450.dat", "txt")
-T5ZZoff.addMassPlane(T5ZZ_x05)
-T5ZZoff.addMassPlane(T5ZZ_x005)
-T5ZZoff.addMassPlane(T5ZZ_x095)
 #+++++++ next txName block ++++++++++++++
 T5WW = dataset.addTxName('T5WW')
 T5WW.checked = ' '
@@ -4713,12 +4391,6 @@ T5ZZ.condition ="None"
 T5ZZ.massConstraint = None
 T5ZZ.source = 'SModelS'
 #+++++++ next txName block ++++++++++++++
-T5ZZoff = dataset.addTxName('T5ZZoff')
-T5ZZoff.constraint ="2.23*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
-T5ZZoff.conditionDescription ="None"
-T5ZZoff.condition =None
-T5ZZoff.massConstraint = [['dm >= 0.0','dm <= 86.']]*2
-T5ZZoff.source = 'SModelS'
 #+++++++ next mass plane block ++++++++++++++
 T5ZZ_x05 = T5ZZ.addMassPlane([[x,0.5*(x+y),y]]*2)
 T5ZZ_x05.dataUrl = None
@@ -4732,9 +4404,6 @@ T5ZZ_x005.addSource('efficiencyMap',"orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_3NJ
 T5ZZ_x095 = T5ZZ.addMassPlane([[x,0.95*x + 0.05*y,y]]*2)
 T5ZZ_x095.dataUrl = None
 T5ZZ_x095.addSource('efficiencyMap',"orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_3NJet6_1500HTinf_300MHTinf.dat", "txt")
-T5ZZoff.addMassPlane(T5ZZ_x05)
-T5ZZoff.addMassPlane(T5ZZ_x005)
-T5ZZoff.addMassPlane(T5ZZ_x095)
 #+++++++ next txName block ++++++++++++++
 T5WW = dataset.addTxName('T5WW')
 T5WW.checked = ' '

@@ -1,5 +1,6 @@
 txName: T1ttttoff
 constraint: [[['b','W','b','W']],[['b','W','b','W']]]
+finalState: ['MET', 'MET']
 condition: None
 conditionDescription: None
 susyProcess: pp --> gluino gluino, gluino  --> top^* antitop^* lsp

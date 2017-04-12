@@ -7,5 +7,5 @@ publication: JHEP06(2014)055
 contact: cms-pag-conveners-sus@NOSPAMcernSPAMNOT.ch, SModelS collaboration
 comment: T1,T2,T1tttt official efficiency maps from the CMS collaboration; T5WW and T5ZZ created by the SModelS collaboration using MadAnalysis5
 private: False
-implementedBy: Federico A
-lastUpdate: 2017/1/12
+implementedBy: Andre Lessa
+lastUpdate: 2017/4/12
