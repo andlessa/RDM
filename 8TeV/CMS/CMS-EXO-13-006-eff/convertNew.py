@@ -46,7 +46,7 @@ info.private = False
 info.arxiv = 'https://arxiv.org/abs/1502.02522'
 info.contact ='Andre Lessa <lessa.a.p@gmail.com>; Jan Heisig <heisig@physik.rwth-aachen.de>; SModelS'
 info.publication ='https://cds.cern.ch/record/1987723/files/arXiv:1502.02522.pdf'
-info.comment ='Search for long-lived charged particles implemented in arXiv:1509.00473'
+info.comment ='Search for long-lived charged particles implemented in arXiv:1509.00473. For the topologies with mixed MET-HSCP branches, the MET branch is irrelevant and wildcards are used.'
 info.supersedes =''
 
 #++Define list of datasets++
@@ -79,7 +79,7 @@ for i,name in enumerate(datasetNames):
     #+++++++ next txName block ++++++++++++++
     HSCPM3 = dataset.addTxName('THSCPM3')
     HSCPM3.checked =''
-    HSCPM3.constraint = "[[['ALL']],[['ALL']]]"
+    HSCPM3.constraint = "[[['*']],[['*']]]"
     HSCPM3.condition =None
     HSCPM3.conditionDescription =None
     HSCPM3.finalState = ['HSCP','HSCP']
@@ -92,7 +92,7 @@ for i,name in enumerate(datasetNames):
     #+++++++ next txName block ++++++++++++++
     HSCPM5 = dataset.addTxName('THSCPM5')
     HSCPM5.checked =''
-    HSCPM5.constraint = "[[['ALL'],['ALL']],[['ALL'],['ALL']]]"
+    HSCPM5.constraint = "[[['*'],['*']],[['*'],['*']]]"
     HSCPM5.condition =None
     HSCPM5.conditionDescription =None
     HSCPM5.finalState = ['HSCP','HSCP']
@@ -105,7 +105,7 @@ for i,name in enumerate(datasetNames):
     #+++++++ next txName block ++++++++++++++
     HSCPM7 = dataset.addTxName('THSCPM7')
     HSCPM7.checked =''
-    HSCPM7.constraint = "[[['ALL']],[['ALL'],['ALL']]]"
+    HSCPM7.constraint = "[[['*']],[['*'],['*']]]"
     HSCPM7.condition =None
     HSCPM7.conditionDescription =None
     HSCPM7.finalState = ['HSCP','HSCP']
@@ -118,7 +118,7 @@ for i,name in enumerate(datasetNames):
     #+++++++ next txName block ++++++++++++++
     HSCPM8 = dataset.addTxName('THSCPM8')
     HSCPM8.checked =''
-    HSCPM8.constraint = "[[['ALL','ALL']],[['ALL','ALL']]]"
+    HSCPM8.constraint = "[[['*','*']],[['*','*']]]"
     HSCPM8.condition =None
     HSCPM8.conditionDescription =None
     HSCPM8.finalState = ['HSCP','HSCP']
@@ -131,7 +131,7 @@ for i,name in enumerate(datasetNames):
     #+++++++ next txName block ++++++++++++++
     HSCPM2 = dataset.addTxName('THSCPM2')
     HSCPM2.checked =''
-    HSCPM2.constraint = "[[],[]]"
+    HSCPM2.constraint = "[[*],[]]"
     HSCPM2.condition =None
     HSCPM2.conditionDescription =None
     HSCPM2.finalState = ['MET','HSCP']
@@ -139,12 +139,12 @@ for i,name in enumerate(datasetNames):
     HSCPM2.dataUrl = None
     HSCPM2.source = 'SModelS'
     #+++++++ next mass plane block ++++++++++++++
-    plane = HSCPM2.addMassPlane([[x]]*2)
+    plane = HSCPM2.addMassPlane([[],[x]])
     plane.setSources(dataLabels= ['efficiencyMap'],dataFiles=['orig/eff_HSCPM2_'+name+'.txt'], dataFormats=['txt'])
     #+++++++ next txName block ++++++++++++++
     HSCPM4 = dataset.addTxName('THSCPM4')
     HSCPM4.checked =''
-    HSCPM4.constraint = "[[['ALL']],[['ALL']]]"
+    HSCPM4.constraint = "[[*],[['*']]]"
     HSCPM4.condition =None
     HSCPM4.conditionDescription =None
     HSCPM4.finalState = ['MET','HSCP']
@@ -152,12 +152,12 @@ for i,name in enumerate(datasetNames):
     HSCPM4.dataUrl = None
     HSCPM4.source = 'SModelS'
     #+++++++ next mass plane block ++++++++++++++
-    plane = HSCPM4.addMassPlane([[x,y]]*2)
+    plane = HSCPM4.addMassPlane([[],[x,y]])
     plane.setSources(dataLabels= ['efficiencyMap'],dataFiles=['orig/eff_HSCPM4_'+name+'.txt'], dataFormats=['txt'])
     #+++++++ next txName block ++++++++++++++
     HSCPM6 = dataset.addTxName('THSCPM6')
     HSCPM6.checked =''
-    HSCPM6.constraint = "[[['ALL']],[['ALL'],[ 'ALL']]]"
+    HSCPM6.constraint = "[[*],[['*'],[ '*']]]"
     HSCPM6.condition =None
     HSCPM6.conditionDescription =None
     HSCPM6.finalState = ['MET','HSCP']
@@ -165,7 +165,7 @@ for i,name in enumerate(datasetNames):
     HSCPM6.dataUrl = None
     HSCPM6.source = 'SModelS'
     #+++++++ next mass plane block ++++++++++++++
-    plane = HSCPM6.addMassPlane([[x,z],[x,y,z]])
+    plane = HSCPM6.addMassPlane([[],[x,y,z]])
     plane.setSources(dataLabels= ['efficiencyMap'],dataFiles=['orig/eff_HSCPM6_'+name+'.txt'], dataFormats=['txt'])
 
 

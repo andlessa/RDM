@@ -1,5 +1,5 @@
 txName: THSCPM8
-constraint: [[['ALL','ALL']],[['ALL','ALL']]]
+constraint: [[['*','*']],[['*','*']]]
 finalState: ['HSCP', 'HSCP']
 condition: None
 conditionDescription: None

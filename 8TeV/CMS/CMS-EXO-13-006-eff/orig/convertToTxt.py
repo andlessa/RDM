@@ -24,26 +24,26 @@ for ifile,mfile in enumerate(maps):
         ypts = None
         zpts = None
         if newtx == 'HSCPM1' or newtx == 'HSCPM2':
-            xpts = [pt[0][0][0] for pt in data]
+            xpts = [pt[0][0][0] for pt in data if pt[1] > 0.]
         elif newtx == 'HSCPM3' or newtx == 'HSCPM4':
-            xpts = [pt[0][0][0] for pt in data]
-            ypts = [pt[0][0][1] for pt in data]
+            xpts = [pt[0][0][0] for pt in data if pt[1] > 0.]
+            ypts = [pt[0][0][1] for pt in data if pt[1] > 0.]
         elif newtx == 'HSCPM5':
-            xpts = [pt[0][0][0] for pt in data]
-            ypts = [pt[0][0][1] for pt in data]
-            zpts = [pt[0][0][2] for pt in data]
+            xpts = [pt[0][0][0] for pt in data if pt[1] > 0.]
+            ypts = [pt[0][0][1] for pt in data if pt[1] > 0.]
+            zpts = [pt[0][0][2] for pt in data if pt[1] > 0.]
         elif newtx == 'HSCPM7' or newtx == 'HSCPM6':
-            xpts = [pt[0][1][0] for pt in data]
-            ypts = [pt[0][1][1] for pt in data]
-            zpts = [pt[0][1][2] for pt in data]
+            xpts = [pt[0][1][0] for pt in data if pt[1] > 0.]
+            ypts = [pt[0][1][1] for pt in data if pt[1] > 0.]
+            zpts = [pt[0][1][2] for pt in data if pt[1] > 0.]
         elif newtx == 'HSCPM8':
-            xpts = [pt[0][0][0] for pt in data]
-            ypts = [pt[0][0][1] for pt in data]
+            xpts = [pt[0][0][0] for pt in data if pt[1] > 0.]
+            ypts = [pt[0][0][1] for pt in data if pt[1] > 0.]
         elif newtx == 'HSCPM2':
-            xpts = [pt[0][0] for pt in data]
-            ypts = [pt[0][1] for pt in data]
-            zpts = [pt[0][2] for pt in data]
-        effpts = [pt[1] for pt in data]
+            xpts = [pt[0][0] for pt in data if pt[1] > 0.]
+            ypts = [pt[0][1] for pt in data if pt[1] > 0.]
+            zpts = [pt[0][2] for pt in data if pt[1] > 0.]
+        effpts = [pt[1] for pt in data if pt[1] > 0.]
             
         newMap = open('eff_%s_c%i00.txt'%(newtx,ifile),'w')
         newMap.write('## %s efficiencies\n' %newtx)
