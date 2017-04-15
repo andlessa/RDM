@@ -139,7 +139,7 @@ for i,name in enumerate(datasetNames):
     HSCPM2.dataUrl = None
     HSCPM2.source = 'SModelS'
     #+++++++ next mass plane block ++++++++++++++
-    plane = HSCPM2.addMassPlane([[],[x]])
+    plane = HSCPM2.addMassPlane([['*'],[x]])
     plane.setSources(dataLabels= ['efficiencyMap'],dataFiles=['orig/eff_HSCPM2_'+name+'.txt'], dataFormats=['txt'])
     #+++++++ next txName block ++++++++++++++
     HSCPM4 = dataset.addTxName('THSCPM4')
@@ -152,7 +152,7 @@ for i,name in enumerate(datasetNames):
     HSCPM4.dataUrl = None
     HSCPM4.source = 'SModelS'
     #+++++++ next mass plane block ++++++++++++++
-    plane = HSCPM4.addMassPlane([[],[x,y]])
+    plane = HSCPM4.addMassPlane([['*'],[x,y]])
     plane.setSources(dataLabels= ['efficiencyMap'],dataFiles=['orig/eff_HSCPM4_'+name+'.txt'], dataFormats=['txt'])
     #+++++++ next txName block ++++++++++++++
     HSCPM6 = dataset.addTxName('THSCPM6')
@@ -165,7 +165,7 @@ for i,name in enumerate(datasetNames):
     HSCPM6.dataUrl = None
     HSCPM6.source = 'SModelS'
     #+++++++ next mass plane block ++++++++++++++
-    plane = HSCPM6.addMassPlane([[],[x,y,z]])
+    plane = HSCPM6.addMassPlane([['*'],[x,y,z]])
     plane.setSources(dataLabels= ['efficiencyMap'],dataFiles=['orig/eff_HSCPM6_'+name+'.txt'], dataFormats=['txt'])
 
 

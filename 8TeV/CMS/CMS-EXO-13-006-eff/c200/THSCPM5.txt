@@ -6,7 +6,7 @@ conditionDescription: None
 susyProcess: pp --> squark squark, squark --> quark lsp, lsp --> tau stau_1
 dataUrl: None
 source: SModelS
-validated: N/A
+validated: Not done yet
 axes: [[x, y, z], [x, y, z]]
 efficiencyMap: [[[[4.0500E+02*GeV,3.5000E+02*GeV,3.2000E+02*GeV],[4.0500E+02*GeV,3.5000E+02*GeV,3.2000E+02*GeV]],0.55],
 [[[4.0500E+02*GeV,3.5000E+02*GeV,3.4000E+02*GeV],[4.0500E+02*GeV,3.5000E+02*GeV,3.4000E+02*GeV]],0.549],
