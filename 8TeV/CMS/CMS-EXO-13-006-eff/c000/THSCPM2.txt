@@ -6,7 +6,7 @@ conditionDescription: None
 susyProcess: pp --> lsp chargino^pm_1, chargino^pm_1 lsp --> chargino^pm_1 lsp
 dataUrl: None
 source: SModelS
-validated: Not done yet
+validated: N/A
 axes: [['*'], [x]]
 efficiencyMap: [[['*',[5.0000E+01*GeV]],2.14e-08],
 [['*',[6.0000E+01*GeV]],0.000219],

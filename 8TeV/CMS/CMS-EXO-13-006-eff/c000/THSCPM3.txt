@@ -6,7 +6,7 @@ conditionDescription: None
 susyProcess: pp --> squark squark, squark --> quark chargino_1
 dataUrl: None
 source: SModelS
-validated: Not done yet
+validated: N/A
 axes: [[x, y], [x, y]]
 efficiencyMap: [[[[5.5000E+01*GeV,5.0000E+01*GeV],[5.5000E+01*GeV,5.0000E+01*GeV]],5.27e-06],
 [[[1.5500E+02*GeV,5.0000E+01*GeV],[1.5500E+02*GeV,5.0000E+01*GeV]],1.74e-07],
