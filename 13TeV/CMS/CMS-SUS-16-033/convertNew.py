@@ -160,7 +160,7 @@ T2bb.conditionDescription = None
 T2bb.condition = None
 T2bb.source = "CMS"
 #+++++++ next mass plane block ++++++++++++++
-T2bb_1 = T1bbbb.addMassPlane(2*[[x, y]])
+T2bb_1 = T2bb.addMassPlane(2*[[x, y]])
 T2bb_1.figure = 'Fig.12-b'
 T2bb_1.figureUrl = 'http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-033/CMS-SUS-16-033_Figure_013-b.png'
 T2bb_1.dataUrl = 'http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-033/index.html'
@@ -180,7 +180,7 @@ T2.conditionDescription = None
 T2.condition = None
 T2.source = "CMS"
 #+++++++ next mass plane block ++++++++++++++
-T2_1 = T1bbbb.addMassPlane(2*[[x, y]])
+T2_1 = T2.addMassPlane(2*[[x, y]])
 T2_1.figure = 'Fig.12-b'
 T2_1.figureUrl = 'http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-033/CMS-SUS-16-033_Figure_013-c.png'
 T2_1.dataUrl = 'http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-033/index.html'
