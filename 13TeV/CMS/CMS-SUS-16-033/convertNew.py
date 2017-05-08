@@ -69,9 +69,9 @@ T1bbbb_1.dataUrl = 'http://cms-results.web.cern.ch/cms-results/public-results/pu
 T1bbbb_1.histoDataUrl = 'http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-033/CMS-SUS-16-033_Figure_012-a.root'
 T1bbbb_1.dataUrl = 'http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-033/CMS-SUS-16-033_Figure_012-a.root'
 T1bbbb_1.exclusionDataUrl = 'http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-033/CMS-SUS-16-033_Figure_012-a.root'
-T1bbbb_1.setSources(dataLabels= ['expExclusion', 'expExclusionM1', 'expExclusionP1', 'obsExclusion', 'obsExclusionM1', 'obsExclusionP1', 'upperLimits'],
-                 dataFiles= ['orig/T1bbbb.root', 'orig/T1bbbb.root','orig/T1bbbb.root','orig/T1bbbb.root','orig/T1bbbb.root','orig/T1bbbb.root','orig/T1bbbb.root', ],
-                 dataFormats= ['root', 'root', 'root', 'root', 'root', 'root', 'root'],objectNames= ['ExpLim', 'ExpLimSdn', 'ExpLimSup', 'ObsLim', 'ObsLimSdn', 'ObsLimSup', 'MassScan2D'])
+T1bbbb_1.setSources(dataLabels= ['expExclusion', 'expExclusionM1', 'expExclusionP1', 'obsExclusion', 'obsExclusionM1', 'obsExclusionP1', 'upperLimits','expectedUpperLimits'],
+                 dataFiles= ['orig/T1bbbb.root', 'orig/T1bbbb.root','orig/T1bbbb.root','orig/T1bbbb.root','orig/T1bbbb.root','orig/T1bbbb.root','orig/T1bbbb.root','orig/T1bbbb.root' ],
+                 dataFormats= ['root', 'root', 'root', 'root', 'root', 'root', 'root','root'],objectNames= ['ExpLim', 'ExpLimSdn', 'ExpLimSup', 'ObsLim', 'ObsLimSdn', 'ObsLimSup', 'MassScan2D','MassScan2DExp'])
 
 
 #+++++++ next txName block ++++++++++++++
@@ -97,9 +97,9 @@ T1tttt_1.dataUrl = 'http://cms-results.web.cern.ch/cms-results/public-results/pu
 T1tttt_1.histoDataUrl = 'http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-033/CMS-SUS-16-033_Figure_012-a.root'
 T1tttt_1.dataUrl = 'http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-033/CMS-SUS-16-033_Figure_012-a.root'
 T1tttt_1.exclusionDataUrl =  'http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-033/CMS-SUS-16-033_Figure_012-a.root'
-T1tttt_1.setSources(dataLabels= ['expExclusion', 'expExclusionM1', 'expExclusionP1', 'obsExclusion', 'obsExclusionM1', 'obsExclusionP1', 'upperLimits'],
-                 dataFiles= ['orig/T1tttt.root', 'orig/T1tttt.root', 'orig/T1tttt.root', 'orig/T1tttt.root', 'orig/T1tttt.root', 'orig/T1tttt.root', 'orig/T1tttt.root', ],
-                 dataFormats= ['root', 'root', 'root', 'root', 'root', 'root', 'root'],objectNames= ['ExpLim', 'ExpLimSdn', 'ExpLimSup', 'ObsLim', 'ObsLimSdn', 'ObsLimSup', 'MassScan2D'])
+T1tttt_1.setSources(dataLabels= ['expExclusion', 'expExclusionM1', 'expExclusionP1', 'obsExclusion', 'obsExclusionM1', 'obsExclusionP1', 'upperLimits','expectedUpperLimits'],
+                 dataFiles= ['orig/T1tttt.root', 'orig/T1tttt.root', 'orig/T1tttt.root', 'orig/T1tttt.root', 'orig/T1tttt.root', 'orig/T1tttt.root', 'orig/T1tttt.root','orig/T1tttt.root' ],
+                 dataFormats= ['root','root', 'root', 'root', 'root', 'root', 'root', 'root'],objectNames= ['ExpLim', 'ExpLimSdn', 'ExpLimSup', 'ObsLim', 'ObsLimSdn', 'ObsLimSup', 'MassScan2D','MassScan2DExp'])
 T1ttttoff.addMassPlane(T1tttt_1)
 
 #+++++++ next txName block ++++++++++++++
@@ -117,16 +117,16 @@ T1_1.dataUrl = 'http://cms-results.web.cern.ch/cms-results/public-results/public
 T1_1.histoDataUrl = 'http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-033/CMS-SUS-16-033_Figure_012-c.root'
 T1_1.dataUrl = 'http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-033/CMS-SUS-16-033_Figure_012-c.root'
 T1_1.exclusionDataUrl = 'http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-033/CMS-SUS-16-033_Figure_012-c.root'
-T1_1.setSources(dataLabels= ['expExclusion', 'expExclusionM1', 'expExclusionP1', 'obsExclusion', 'obsExclusionM1', 'obsExclusionP1', 'upperLimits'],
-                 dataFiles= ['orig/T1.root', 'orig/T1.root','orig/T1.root','orig/T1.root','orig/T1.root','orig/T1.root','orig/T1.root',],
-                 dataFormats= ['root', 'root', 'root', 'root', 'root', 'root', 'root'],objectNames= ['ExpLim', 'ExpLimSdn', 'ExpLimSup', 'ObsLim', 'ObsLimSdn', 'ObsLimSup', 'MassScan2D'])
+T1_1.setSources(dataLabels= ['expExclusion', 'expExclusionM1', 'expExclusionP1', 'obsExclusion', 'obsExclusionM1', 'obsExclusionP1', 'upperLimits','expectedUpperLimits'],
+                 dataFiles= ['orig/T1.root', 'orig/T1.root','orig/T1.root','orig/T1.root','orig/T1.root','orig/T1.root','orig/T1.root','orig/T1.root'],
+                 dataFormats= ['root','root', 'root', 'root', 'root', 'root', 'root', 'root'],objectNames= ['ExpLim', 'ExpLimSdn', 'ExpLimSup', 'ObsLim', 'ObsLimSdn', 'ObsLimSup', 'MassScan2D','MassScan2DExp'])
 
 
 
 #+++++++ next txName block ++++++++++++++
 T2tt = dataset.addTxName('T2tt')
 T2tt.checked = ''
-T2tt.constraint =  "[[['t'],[['t']]"
+T2tt.constraint =  "[[['t']],[['t']]]"
 T2tt.conditionDescription = None
 T2tt.condition = None
 T2tt.source = "CMS"
@@ -146,10 +146,11 @@ T2tt_1.dataUrl = 'http://cms-results.web.cern.ch/cms-results/public-results/publ
 T2tt_1.histoDataUrl = 'http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-033/CMS-SUS-16-033_Figure_013-a.root'
 T2tt_1.dataUrl = 'http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-033/CMS-SUS-16-033_Figure_013-a.root'
 T2tt_1.exclusionDataUrl =  'http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-033/CMS-SUS-16-033_Figure_013-a.root'
-T2tt_1.setSources(dataLabels= ['expExclusion', 'expExclusionM1', 'expExclusionP1', 'obsExclusion', 'obsExclusionM1', 'obsExclusionP1', 'upperLimits'],
-                    dataFiles= ['orig/T2tt.root', 'orig/T2tt.root','orig/T2tt.root','orig/T2tt.root','orig/T2tt.root','orig/T2tt.root','orig/T2tt.root',],
-                    dataFormats= ['root', 'root', 'root', 'root', 'root', 'root', 'root'],objectNames= ['ExpLim', 'ExpLimSdn', 'ExpLimSup', 'ObsLim', 'ObsLimSdn', 'ObsLimSup', 'MassScan2D'])
+T2tt_1.setSources(dataLabels= ['expExclusion', 'expExclusionM1', 'expExclusionP1', 'obsExclusion', 'obsExclusionM1', 'obsExclusionP1', 'upperLimits','expectedUpperLimits'],
+                    dataFiles= ['orig/T2tt.root', 'orig/T2tt.root','orig/T2tt.root','orig/T2tt.root','orig/T2tt.root','orig/T2tt.root','orig/T2tt.root','orig/T2tt.root'],
+                    dataFormats= ['root','root', 'root', 'root', 'root', 'root', 'root', 'root'],objectNames= ['ExpLim', 'ExpLimSdn', 'ExpLimSup', 'ObsLim', 'ObsLimSdn', 'ObsLimSup', 'MassScan2D','MassScan2DExp'])
 T2ttoff.addMassPlane(T2tt_1)
+
 
 #+++++++ next txName block ++++++++++++++
 T2bb = dataset.addTxName('T2bb')
@@ -166,9 +167,10 @@ T2bb_1.dataUrl = 'http://cms-results.web.cern.ch/cms-results/public-results/publ
 T2bb_1.histoDataUrl = 'http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-033/CMS-SUS-16-033_Figure_013-b.root'
 T2bb_1.dataUrl = 'http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-033/CMS-SUS-16-033_Figure_013-b.root'
 T2bb_1.exclusionDataUrl = 'http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-033/CMS-SUS-16-033_Figure_013-b.root'
-T2bb_1.setSources(dataLabels= ['expExclusion', 'expExclusionM1', 'expExclusionP1', 'obsExclusion', 'obsExclusionM1', 'obsExclusionP1', 'upperLimits'],
-                    dataFiles= ['orig/T2bb.root', 'orig/T2bb.root','orig/T2bb.root','orig/T2bb.root','orig/T2bb.root','orig/T2bb.root','orig/T2bb.root',],
-                    dataFormats= ['root', 'root', 'root', 'root', 'root', 'root', 'root'],objectNames= ['ExpLim', 'ExpLimSdn', 'ExpLimSup', 'ObsLim', 'ObsLimSdn', 'ObsLimSup', 'MassScan2D'])
+T2bb_1.setSources(dataLabels= ['expExclusion', 'expExclusionM1', 'expExclusionP1', 'obsExclusion', 'obsExclusionM1', 'obsExclusionP1', 'upperLimits','expectedUpperLimits'],
+                    dataFiles= ['orig/T2bb.root', 'orig/T2bb.root','orig/T2bb.root','orig/T2bb.root','orig/T2bb.root','orig/T2bb.root','orig/T2bb.root','orig/T2bb.root'],
+                    dataFormats= ['root','root', 'root', 'root', 'root', 'root', 'root', 'root'],objectNames= ['ExpLim', 'ExpLimSdn', 'ExpLimSup', 'ObsLim', 'ObsLimSdn', 'ObsLimSup', 'MassScan2D','MassScan2DExp'])
+
 
 #+++++++ next txName block ++++++++++++++
 T2 = dataset.addTxName('T2')
@@ -185,9 +187,9 @@ T2_1.dataUrl = 'http://cms-results.web.cern.ch/cms-results/public-results/public
 T2_1.histoDataUrl = 'http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-033/CMS-SUS-16-033_Figure_013-c.root'
 T2_1.dataUrl = 'http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-033/CMS-SUS-16-033_Figure_013-c.root'
 T2_1.exclusionDataUrl = 'http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-033/CMS-SUS-16-033_Figure_013-c.root'
-T2_1.setSources(dataLabels= ['expExclusion', 'expExclusionM1', 'expExclusionP1', 'obsExclusion', 'obsExclusionM1', 'obsExclusionP1', 'upperLimits'],
-                  dataFiles= ['orig/T2.root', 'orig/T2.root','orig/T2.root','orig/T2.root','orig/T2.root','orig/T2.root','orig/T2.root',],
-                  dataFormats= ['root', 'root', 'root', 'root', 'root', 'root', 'root'],objectNames= ['ExpLim', 'ExpLimSdn', 'ExpLimSup', 'ObsLim', 'ObsLimSdn', 'ObsLimSup', 'MassScan2D'])
+T2_1.setSources(dataLabels= ['expExclusion', 'expExclusionM1', 'expExclusionP1', 'obsExclusion', 'obsExclusionM1', 'obsExclusionP1', 'upperLimits','expectedUpperLimits'],
+                  dataFiles= ['orig/T2.root', 'orig/T2.root','orig/T2.root','orig/T2.root','orig/T2.root','orig/T2.root','orig/T2.root','orig/T2.root'],
+                  dataFormats= ['root', 'root', 'root', 'root', 'root', 'root', 'root','root'],objectNames= ['ExpLim', 'ExpLimSdn', 'ExpLimSup', 'ObsLim', 'ObsLimSdn', 'ObsLimSup', 'MassScan2D','MassScan2DExp'])
 
 
 
