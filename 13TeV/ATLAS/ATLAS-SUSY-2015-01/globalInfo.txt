@@ -7,6 +7,6 @@ arxiv: https://arxiv.org/abs/1606.08772v2
 publication: http://link.springer.com/article/10.1140/epjc/s10052-016-4382-4
 contact: ATLAS collaboration
 private: False
-implementedBy: Federico Ambrogi
-lastUpdate: 2017/2/7
+implementedBy: Andre Lessa
+lastUpdate: 2017/5/11
 
