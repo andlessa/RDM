@@ -32,7 +32,8 @@ from smodels_utils.dataPreparation.origPlotObjects import x, y
 
 #+++++++ global info block ++++++++++++++
 info = MetaInfoInput('CMS-SUS-13-012')
-info.comment = 'T1,T2,T1tttt official efficiency maps from the CMS collaboration; T5WW and T5ZZ created by the SModelS collaboration using MadAnalysis5' 
+#info.comment = 'T1,T2,T1tttt official efficiency maps from the CMS collaboration; T5WW and T5ZZ created by the SModelS collaboration using MadAnalysis5' 
+info.comment = 'T1,T2,T1tttt official efficiency maps from the CMS collaboration; TChiWZ,TChiWW,TChiZZ,T1btbt,T2tt,T2bb,T1bbbb,T5,T5WW,T5ZZ,T6bbWW,T6bbWWoff,T5bbbb,T5tttt created by the SModelS collaboration using MadAnalysis5'
 info.sqrts = '8.0'
 info.private = False
 info.lumi = '19.5'
