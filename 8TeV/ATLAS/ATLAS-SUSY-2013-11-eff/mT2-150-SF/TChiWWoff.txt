@@ -2,7 +2,7 @@ txName: TChiWWoff
 conditionDescription: [[['l+','nu']],[['l-','nu']]] > 2* [[['mu+','nu']],[['l-','nu']]]
 condition: Cgtr([[['l+','nu']],[['l-','nu']]],2.*[[['mu+','nu']],[['l-','nu']]]); Cgtr([[['l+','nu']],[['l-','nu']]],2.*[[['l+','nu']],[['mu-','nu']]])
 constraint: 22.2*[[['l+','nu']],[['l-','nu']]]
-validated: None
+validated: N/A
 axes: 2*Eq(mother,x)_Eq(lsp,y)
 publishedData: False
 efficiencyMap: [[[[440.0*GeV, 380.0*GeV], [440.0*GeV, 380.0*GeV]], 0.0],

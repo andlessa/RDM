@@ -2,7 +2,7 @@ txName: TChiWW
 conditionDescription: None
 condition: None
 constraint: [[['W']],[['W']]]
-validated: True
+validated: N/A
 axes: 2*Eq(mother,x)_Eq(lsp,y)
 publishedData: False
 efficiencyMap: [[[[520.0*GeV, 100.0*GeV], [520.0*GeV, 100.0*GeV]], 0.0014479],

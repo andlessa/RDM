@@ -2,7 +2,7 @@ txName: TSlepSlep
 conditionDescription: [[['mu+']],[['mu-']]] > [[['e+']],[['e-']]]
 condition: Cgtr([[['mu+']],[['mu-']]],[[['e+']],[['e-']]])
 constraint: [[['e+']],[['e-']]]+[[['mu+']],[['mu-']]]
-validated: None
+validated: True
 axes: 2*Eq(mother,x)_Eq(lsp,y)
 publishedData: False
 efficiencyMap: [[[[720.0*GeV, 390.0*GeV], [720.0*GeV, 390.0*GeV]], 0.10509],
