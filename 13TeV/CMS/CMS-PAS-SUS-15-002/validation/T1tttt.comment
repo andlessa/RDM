@@ -1,0 +1,6 @@
+comment_by: Andre Lessa
+date: Thu May 18 15:01:22 CEST 2017
+comment: "We under-exclude for m_gluino < 1.5 TeV. I've checked the official UL and the official xsecs
+and the region with m_lsp >~ 800 GeV should not be excluded (the official gluino xsecs are below the official
+ULs). Since we do not know what is wrong, we do not use this result."
+
