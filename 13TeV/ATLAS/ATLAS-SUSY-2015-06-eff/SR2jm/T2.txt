@@ -4,7 +4,7 @@ condition: None
 constraint: [[['jet']],[['jet']]]
 figureUrl: http://hepdata.cedar.ac.uk/resource/1458270/figAuxiliaryFigure20b.png
 dataUrl: http://hepdata.cedar.ac.uk/view/ins1458270/d67/input
-validated: None
+validated: True
 axes: 2*Eq(mother,x)_Eq(lsp,y)
 publishedData: True
 efficiencyMap: [[[[400.0*GeV, 0.0*GeV], [400.0*GeV, 0.0*GeV]], 0.005387],

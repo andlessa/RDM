@@ -4,7 +4,7 @@ condition: None
 constraint: [[['e+','e-']],[['l','nu']]]+[[['mu+','mu-']],[['l','nu']]]
 figureUrl: http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-024/CMS-PAS-SUS-16-024_Figure_010-a.png
 dataUrl: http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-024/CMS-PAS-SUS-16-024_Figure_010-a.root
-validated: None
+validated: False
 axes: 2*Eq(mother,x)_Eq(lsp,y)
 publishedData: True
 upperLimits: [[[[102.5*GeV, 22.5*GeV], [102.5*GeV, 22.5*GeV]], 0.35327*pb],

@@ -4,7 +4,7 @@ condition: None
 constraint: [[['jet','jet']],[['jet','jet']]]
 figureUrl: http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-014/CMS-PAS-SUS-16-014_Figure_010-c.png
 dataUrl: http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-014/CMS-PAS-SUS-16-014_Figure_010-c.root
-validated: None
+validated: True
 axes: 2*Eq(mother,x)_Eq(lsp,y)
 publishedData: True
 upperLimits: [[[[606.64*GeV, 5.9969*GeV], [606.64*GeV, 5.9969*GeV]], 0.2488*pb],

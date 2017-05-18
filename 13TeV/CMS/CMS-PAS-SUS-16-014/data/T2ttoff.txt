@@ -4,7 +4,7 @@ condition: None
 constraint: [[['b','W']],[['b','W']]]
 figureUrl: http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-014/CMS-PAS-SUS-16-014_Figure_009-a.png
 dataUrl: http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-014/CMS-PAS-SUS-16-014_Figure_009-a.root;http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-014/index.html
-validated: None
+validated: True
 axes: 2*Eq(mother,x)_Eq(lsp,y)
 publishedData: True
 upperLimits: [[[[154.1*GeV, 3.0281*GeV], [154.1*GeV, 3.0281*GeV]], 468.06*pb],

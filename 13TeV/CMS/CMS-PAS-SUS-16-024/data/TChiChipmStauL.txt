@@ -4,7 +4,7 @@ condition: None
 constraint: [[['ta'],['ta']],[['nu'],['L']]]
 figureUrl: http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-024/CMS-PAS-SUS-16-024_Figure_009.png
 dataUrl: http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-024/CMS-PAS-SUS-16-024_Figure_009.root
-validated: None
+validated: False
 axes: 2*Eq(mother,x)_Eq(inter0,0.5*x+0.5*y)_Eq(lsp,y)
 publishedData: True
 upperLimits: [[[[103.13*GeV, 53.125*GeV, 3.125*GeV], [103.13*GeV, 53.125*GeV, 3.125*GeV]], 6.2645*pb],

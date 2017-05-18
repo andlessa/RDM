@@ -4,7 +4,7 @@ condition: None
 constraint: [[['t']],[['t']]]
 figureUrl: http://hepdata.cedar.ac.uk/resource/1469069/thumb_figAuxiliaryFigure5b.png
 dataUrl: http://hepdata.cedar.ac.uk/view/ins1469069/d24/input;http://hepdata.cedar.ac.uk/view/ins1469069/all
-validated: None
+validated: True
 axes: 2*Eq(mother,x)_Eq(lsp,y)
 publishedData: True
 upperLimits: [[[[500.0*GeV, 50.0*GeV], [500.0*GeV, 50.0*GeV]], 0.35*pb],
