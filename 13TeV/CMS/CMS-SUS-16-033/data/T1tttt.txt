@@ -1,13 +1,12 @@
 txName: T1tttt
 constraint: [[['t','t']],[['t','t']]]
-finalState: ['MET', 'MET']
 condition: None
 conditionDescription: None
 susyProcess: pp --> gluino gluino, gluino  --> top antitop  lsp
 figureUrl: http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-033/CMS-SUS-16-033_Figure_012-a.png
 dataUrl: http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-033/CMS-SUS-16-033_Figure_012-a.root
 source: CMS
-validated: Not done yet
+validated: TBD
 axes: [[x, y], [x, y]]
 upperLimits: [[[[6.0664E+02*GeV,5.9969E+00*GeV],[6.0664E+02*GeV,5.9969E+00*GeV]],4.2214E-02*pb],
 [[[6.0664E+02*GeV,1.5991E+01*GeV],[6.0664E+02*GeV,1.5991E+01*GeV]],4.3167E-02*pb],

@@ -1,13 +1,12 @@
 txName: T2bb
 constraint: [[['b']],[['b']]]
-finalState: ['MET', 'MET']
 condition: None
 conditionDescription: None
 susyProcess: pp --> sbottom sbottom, sbottom  --> bottom lsp
 figureUrl: http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-033/CMS-SUS-16-033_Figure_013-b.png
 dataUrl: http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-033/CMS-SUS-16-033_Figure_013-b.root
 source: CMS
-validated: Not done yet
+validated: TBD
 axes: [[x, y], [x, y]]
 upperLimits: [[[[3.0508E+02*GeV,4.4344E+00*GeV],[3.0508E+02*GeV,4.4344E+00*GeV]],4.4575E-01*pb],
 [[[3.0508E+02*GeV,1.1303E+01*GeV],[3.0508E+02*GeV,1.1303E+01*GeV]],4.6181E-01*pb],
