@@ -352,6 +352,21 @@ T5tttt_m177.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5tttt_DiffStopNeu
 T5tttt_m177.figureUrl = "FIXME" 
 T5tttt_m177.dataUrl = "FIXME" 
 
+"""
+T6bbWW = dataset.addTxName('T6bbWW')
+T6bbWW.checked = ''
+T6bbWW.constraint ="[[['t'],['t']],[['t'],['t']]]"
+T6bbWW.conditionDescription ="None"
+T6bbWW.condition ="None"
+T6bbWW.massConstraint = None
+T6bbWW.source = 'SModelS'
+
+T6bbWW_x05 = T6bbWW.addMassPlane( [[x,0.5*x + 0.5*y,y]]*2 )
+T6bbWW_x05.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T6bbWW_x05_EM_MAPS/MA5_EM_T6bbWW_x05_$datasetStr$.dat", "txt", objectName ="None", index = None )
+T6bbWW_x05.figureUrl = "FIXME" 
+T6bbWW_x05.dataUrl = "FIXME" 
+"""
+
 END_BLOCK_TO_FILL
 
 databaseCreator.create()
