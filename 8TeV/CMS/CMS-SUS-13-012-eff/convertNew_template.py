@@ -8,16 +8,15 @@
 import sys
 import os
 import argparse
-import types
 
 argparser = argparse.ArgumentParser(description =  
 'create info.txt, txname.txt, twiki.txt and sms.py')
 argparser.add_argument ('-utilsPath', '--utilsPath', 
 help = 'path to the package smodels_utils',\
-type = types.StringType)
+type = str )
 argparser.add_argument ('-smodelsPath', '--smodelsPath', 
 help = 'path to the package smodels_utils',\
-type = types.StringType)
+type = str )
 args = argparser.parse_args()
 
 if args.utilsPath:
@@ -35,7 +34,7 @@ from smodels_utils.dataPreparation.inputObjects import MetaInfoInput,DataSetInpu
 from smodels_utils.dataPreparation.databaseCreation import databaseCreator
 from smodels_utils.dataPreparation.massPlaneObjects import x, y, z
 
-
+DataSetInput.ntoys = 10
 
 #+++++++ global info block ++++++++++++++
 info = MetaInfoInput('CMS-SUS-13-012')
@@ -55,6 +54,7 @@ BEGIN_BLOCK_TO_FILL
 dataset = DataSetInput($datasetFolder$)
 dataset.setInfo(dataType = 'efficiencyMap', dataId = $dataset$, observedN = $observedN$, expectedBG = $expectedBG$ , bgError = $bgError$)
 #+++++++ next txName block ++++++++++++++
+
 T2 = dataset.addTxName('T2')
 T2.checked =''
 T2.constraint ="[[['jet']],[['jet']]]"
@@ -88,6 +88,41 @@ T1ttttoff.condition = "None"
 T1ttttoff.massConstraint = [['dm <= 338.']]*2
 T1ttttoff.source = 'CMS'
 #+++++++ next mass plane block ++++++++++++++
+T1bbbb = dataset.addTxName('T1bbbb')
+T1bbbb.constraint ="[[['b','b']],[['b','b']]]"
+T1bbbb.conditionDescription ="None"
+T1bbbb.condition ="None"
+T1bbbb.massConstraint = None
+T1bbbb.source = 'SModelS'
+
+T1btbt = dataset.addTxName('T1btbt')
+T1btbt.constraint ="[[['b','t']],[['b','t']]]"
+T1btbt.conditionDescription ="None"
+T1btbt.condition ="None"
+T1btbt.massConstraint = None
+T1btbt.source = 'SModelS'
+
+T2bb = dataset.addTxName('T2bb')
+T2bb.constraint ="[[['b']],[['b']]]"
+T2bb.conditionDescription ="None"
+T2bb.condition ="None"
+T2bb.massConstraint = None
+T2bb.source = 'SModelS'
+
+T2tt = dataset.addTxName('T2tt')
+T2tt.constraint ="[[['t']],[['t']]]"
+T2tt.conditionDescription ="None"
+T2tt.condition ="None"
+T2tt.massConstraint = None
+T2tt.source = 'SModelS'
+
+T2ttoff = dataset.addTxName('T2ttoff')
+T2ttoff.constraint ="[[['W','b']],[['W','b']]]"
+T2ttoff.conditionDescription ="None"
+T2ttoff.condition ="None"
+T2ttoff.massConstraint = None
+T2ttoff.source = 'SModelS'
+
 T1tttt = T1tttt.addMassPlane([[x,y]]*2)
 T1tttt.figure = "Fig_7c"
 T1tttt.figureUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13012/Fig_7c.pdf"
@@ -99,6 +134,37 @@ T1tttt.addSource('expExclusion', "orig/SUS13012_XsecLimits_T1tttt.root", "root",
 T1tttt.addSource('expExclusionM1', "orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName = "combined_expExclMinusOneSigmaProspino")
 T1tttt.addSource('expExclusionP1', "orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName = "combined_expExclPlusOneSigmaProspino")
 T1tttt.addSource('efficiencyMap',"orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName ="h_EffAcc_$datasetStr$")
+
+T1bbbb = T1bbbb.addMassPlane([[x,y]]*2)
+T1bbbb.figure = "Fig_7c"
+T1bbbb.figureUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13012/Fig_7c.pdf"
+T1bbbb.dataUrl = None
+T1bbbb.addSource('efficiencyMap',"orig/cms_sus_13_012_T1bbbb_1_EM_MAPS/MA5_EM_T1bbbb_1_$datasetStr$.dat", "txt", objectName ="None", index = None )
+
+T1btbt = T1btbt.addMassPlane([[x,y]]*2)
+T1btbt.figure = "Fig_7c"
+T1btbt.figureUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13012/Fig_7c.pdf"
+T1btbt.dataUrl = None
+T1btbt.addSource('efficiencyMap',"orig/cms_sus_13_012_T1btbt_1_EM_MAPS/MA5_EM_T1btbt_1_$datasetStr$.dat", "txt", objectName ="None", index = None )
+
+T2bb_1 = T2bb.addMassPlane([[x,y]]*2)
+T2bb_1.figure = "FIXME"
+T2bb_1.figureUrl = "FIXME"
+T2bb_1.dataUrl = None
+T2bb_1.addSource('efficiencyMap',"orig/cms_sus_13_012_T2bb_1_EM_MAPS/MA5_EM_T2bb_1_$datasetStr$.dat", "txt", objectName ="None", index = None )
+
+T2tt_1 = T2tt.addMassPlane([[x,y]]*2)
+T2tt_1.figure = "FIXME"
+T2tt_1.figureUrl = "FIXME"
+T2tt_1.dataUrl = None
+T2tt_1.addSource('efficiencyMap',"orig/cms_sus_13_012_T2tt_1_EM_MAPS/MA5_EM_T2tt_1_$datasetStr$.dat", "txt", objectName ="None", index = None )
+
+T2ttoff_1 = T2ttoff.addMassPlane([[x,y]]*2)
+T2ttoff_1.figure = "FIXME"
+T2ttoff_1.figureUrl = "FIXME"
+T2ttoff_1.dataUrl = None
+T2ttoff_1.addSource('efficiencyMap',"orig/cms_sus_13_012_T2tt_1_EM_MAPS/MA5_EM_T2tt_1_$datasetStr$.dat", "txt", objectName ="None", index = None )
+
 T1ttttoff.addMassPlane(T1tttt)
 #+++++++ next txName block ++++++++++++++
 T1 = dataset.addTxName('T1')
@@ -127,12 +193,14 @@ T5ZZ.condition ="None"
 T5ZZ.massConstraint = None
 T5ZZ.source = 'SModelS'
 #+++++++ next txName block ++++++++++++++
+"""
 T5ZZoff = dataset.addTxName('T5ZZoff')
 T5ZZoff.constraint ="2.23*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
 T5ZZoff.conditionDescription ="None"
 T5ZZoff.condition =None
 T5ZZoff.massConstraint = [['dm >= 0.0','dm <= 86.']]*2
 T5ZZoff.source = 'SModelS'
+"""
 #+++++++ next mass plane block ++++++++++++++
 T5ZZ_x05 = T5ZZ.addMassPlane([[x,0.5*(x+y),y]]*2)
 T5ZZ_x05.dataUrl = None
@@ -146,9 +214,11 @@ T5ZZ_x005.addSource('efficiencyMap',"orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_$da
 T5ZZ_x095 = T5ZZ.addMassPlane([[x,0.95*x + 0.05*y,y]]*2)
 T5ZZ_x095.dataUrl = None
 T5ZZ_x095.addSource('efficiencyMap',"orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_$datasetStr$.dat", "txt")
+"""
 T5ZZoff.addMassPlane(T5ZZ_x05)
 T5ZZoff.addMassPlane(T5ZZ_x005)
 T5ZZoff.addMassPlane(T5ZZ_x095)
+"""
 #+++++++ next txName block ++++++++++++++
 T5WW = dataset.addTxName('T5WW')
 T5WW.checked = ' '
@@ -180,6 +250,107 @@ T5WW_x095.addSource('efficiencyMap',"orig/T5WW_x095/MA5_EM_T5WW_Glu095Neu005_$da
 T5WWoff.addMassPlane(T5WW_x05)
 T5WWoff.addMassPlane(T5WW_x005)
 T5WWoff.addMassPlane(T5WW_x095)
+
+TChiZZ = dataset.addTxName('TChiZZ')
+TChiZZ.checked = ''
+TChiZZ.dataUrl = None
+TChiZZ.constraint = "[[['Z']],[['Z']]]"
+TChiZZ.conditionDescription ="None"
+TChiZZ.condition ="None"
+## TChiZZ.massConstraint = None
+TChiZZ.source = 'SModelS'
+
+TChiZZ_1 = TChiZZ.addMassPlane( [[x,y]]*2 )
+TChiZZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_$datasetStr$.dat", "txt", objectName ="None", index = None )
+TChiZZ_1.dataUrl = None
+
+TChiWZ = dataset.addTxName('TChiWZ')
+TChiWZ.checked = ''
+TChiWZ.constraint = "[[['W']],[['Z']]]"
+TChiWZ.conditionDescription ="None"
+TChiWZ.condition ="None"
+TChiWZ.source = 'SModelS'
+
+TChiWZ_1 = TChiWZ.addMassPlane( [[x,y]]*2 )
+TChiWZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_$datasetStr$.dat", "txt", objectName ="None", index = None )
+TChiWZ_1.dataUrl = None
+
+TChiWW = dataset.addTxName('TChiWW')
+TChiWW.checked = ''
+TChiWW.constraint = "[[['W']],[['W']]]"
+TChiWW.conditionDescription ="None"
+TChiWW.condition ="None"
+TChiWW.source = 'SModelS'
+
+TChiWW_1 = TChiWW.addMassPlane( [[x,y]]*2 )
+TChiWW_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiWW_1_EM_MAPS/MA5_EM_TChiWW_1_$datasetStr$.dat", "txt", objectName ="None", index = None )
+TChiWW_1.figureUrl = "FIXME"
+TChiWW_1.dataUrl = None
+
+T5 = dataset.addTxName('T5')
+T5.checked = ''
+T5.constraint ="[[['jet'],['jet']],[['jet'],['jet']]]"
+T5.conditionDescription ="None"
+T5.condition ="None"
+T5.massConstraint = None
+T5.source = 'SModelS'
+
+T5_x005 = T5.addMassPlane( [[x,0.05*x + 0.95*y,y]]*2 )
+T5_x005.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM_T5_x005_$datasetStr$.dat", "txt", objectName ="None", index = None )
+T5_x005.figureUrl = "FIXME" 
+T5_x005.dataUrl = "FIXME" 
+T5_x05 = T5.addMassPlane( [[x,0.5*x + 0.5*y,y]]*2 )
+T5_x05.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x05_EM_MAPS/MA5_EM_T5_x05_$datasetStr$.dat", "txt", objectName ="None", index = None )
+T5_x05.figureUrl = "FIXME" 
+T5_x05.dataUrl = "FIXME" 
+T5_x095 = T5.addMassPlane( [[x,0.95*x + 0.05*y,y]]*2 )
+T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM_T5_x005_$datasetStr$.dat", "txt", objectName ="None", index = None )
+T5_x095.figureUrl = "FIXME" 
+T5_x095.dataUrl = "FIXME" 
+
+T5bbbb = dataset.addTxName('T5bbbb')
+T5bbbb.checked = ''
+T5bbbb.constraint ="[[['b'],['b']],[['b'],['b']]]"
+T5bbbb.conditionDescription ="None"
+T5bbbb.condition ="None"
+T5bbbb.massConstraint = None
+T5bbbb.source = 'SModelS'
+
+T5bbbb_x005 = T5bbbb.addMassPlane( [[x,0.05*x + 0.95*y,y]]*2 )
+T5bbbb_x005.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5bbbb_x005_EM_MAPS/MA5_EM_T5bbbb_x005_$datasetStr$.dat", "txt", objectName ="None", index = None )
+T5bbbb_x005.figureUrl = "FIXME" 
+T5bbbb_x005.dataUrl = "FIXME" 
+T5bbbb_x05 = T5bbbb.addMassPlane( [[x,0.5*x + 0.5*y,y]]*2 )
+T5bbbb_x05.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5bbbb_x05_EM_MAPS/MA5_EM_T5bbbb_x05_$datasetStr$.dat", "txt", objectName ="None", index = None )
+T5bbbb_x05.figureUrl = "FIXME" 
+T5bbbb_x05.dataUrl = "FIXME" 
+T5bbbb_x095 = T5bbbb.addMassPlane( [[x,0.95*x + 0.05*y,y]]*2 )
+T5bbbb_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5bbbb_x005_EM_MAPS/MA5_EM_T5bbbb_x005_$datasetStr$.dat", "txt", objectName ="None", index = None )
+T5bbbb_x095.figureUrl = "FIXME" 
+T5bbbb_x095.dataUrl = "FIXME" 
+
+T5tttt = dataset.addTxName('T5tttt')
+T5tttt.checked = ''
+T5tttt.constraint ="[[['t'],['t']],[['t'],['t']]]"
+T5tttt.conditionDescription ="None"
+T5tttt.condition ="None"
+T5tttt.massConstraint = None
+T5tttt.source = 'SModelS'
+
+T5tttt_x05 = T5tttt.addMassPlane( [[x,0.5*x + 0.5*y,y]]*2 )
+T5tttt_x05.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5tttt_x05_EM_MAPS/MA5_EM_T5tttt_x05_$datasetStr$.dat", "txt", objectName ="None", index = None )
+T5tttt_x05.figureUrl = "FIXME" 
+T5tttt_x05.dataUrl = "FIXME" 
+
+T5tttt_p177 = T5tttt.addMassPlane( [[x, x-177.,y]]*2 )
+T5tttt_p177.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5tttt_DiffGluStop177_EM_MAPS/MA5_EM_T5tttt_DiffGluStop177_$datasetStr$.dat", "txt", objectName ="None", index = None )
+T5tttt_p177.figureUrl = "FIXME" 
+T5tttt_p177.dataUrl = "FIXME" 
+
+T5tttt_m177 = T5tttt.addMassPlane( [[x, y+177.,y]]*2 )
+T5tttt_m177.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5tttt_DiffStopNeu177_EM_MAPS/MA5_EM_T5tttt_DiffStopNeu177_$datasetStr$.dat", "txt", objectName ="None", index = None )
+T5tttt_m177.figureUrl = "FIXME" 
+T5tttt_m177.dataUrl = "FIXME" 
 
 END_BLOCK_TO_FILL
 
