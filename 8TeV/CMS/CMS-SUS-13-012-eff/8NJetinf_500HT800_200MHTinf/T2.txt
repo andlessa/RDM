@@ -6,7 +6,7 @@ susyProcess: pp --> squark squark, squark  --> quark lsp
 figureUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13012/Fig_7a.pdf
 dataUrl: None
 source: CMS
-validated: True
+validated: TBD
 axes: [[x, y], [x, y]]
 efficiencyMap: [[[[3.6250E+02*GeV,2.6250E+02*GeV],[3.6250E+02*GeV,2.6250E+02*GeV]],2.8014e-05],
 [[[4.1250E+02*GeV,2.1250E+02*GeV],[4.1250E+02*GeV,2.1250E+02*GeV]],2.5976e-05],
