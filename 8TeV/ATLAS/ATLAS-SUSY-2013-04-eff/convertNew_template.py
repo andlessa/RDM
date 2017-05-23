@@ -205,20 +205,18 @@ T5.conditionDescription =None
 T5.condition =None
 T5.massConstraint = None
 T5.source = "SModelS"
-T5.massConstraint = [['dm >= 0.0','dm > 76.']]*2
+## T5.massConstraint = [['dm >= 0.0','dm > 76.']]*2
+T5.dataUrl = None
 #+++++++ next txName block ++++++++++++++
 #+++++++ next mass plane block ++++++++++++++
 T5_1 = T5.addMassPlane([[x,0.5*(x+y),y]]*2)
 T5_1.addSource('efficiencyMap','orig/atlas_susy_2013_04_T5_x05_EM_MAPS/MA5_EM_T5_x05_$datasetStr$.dat', 'txt')
-T5_1.dataUrl = None
 #+++++++ next mass plane block ++++++++++++++
 T5_2 = T5.addMassPlane([[x,0.05*x + 0.95*y,y]]*2)
 T5_2.addSource('efficiencyMap','orig/atlas_susy_2013_04_T5_x005_EM_MAPS/MA5_EM_T5_x005_$datasetStr$.dat', 'txt')
-T5_2.dataUrl = None
 #+++++++ next mass plane block ++++++++++++++
 T5_3 = T5.addMassPlane([[x, 0.95*x + 0.05*y, y]]*2)
 T5_3.addSource('efficiencyMap','orig/atlas_susy_2013_04_T5_x095_EM_MAPS/MA5_EM_T5_x095_$datasetStr$.dat', 'txt')
-T5_3.dataUrl = None
 
 T6bbWW = dataset.addTxName('T6bbWW')
 T6bbWW.constraint = "[[['b'],['W']],[['b'],['W']]]"

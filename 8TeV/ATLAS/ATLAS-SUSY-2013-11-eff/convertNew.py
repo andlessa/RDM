@@ -34,7 +34,7 @@ from smodels_utils.dataPreparation.inputObjects import MetaInfoInput,DataSetInpu
 from smodels_utils.dataPreparation.databaseCreation import databaseCreator
 from smodels_utils.dataPreparation.massPlaneObjects import x, y, z
 
-DataSetInput.ntoys=10
+## DataSetInput.ntoys=10
 
 #+++++++ global info block ++++++++++++++
 info = MetaInfoInput('ATLAS-SUSY-2013-11')
