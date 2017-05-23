@@ -34,8 +34,8 @@ from smodels_utils.dataPreparation.inputObjects import MetaInfoInput,DataSetInpu
 from smodels_utils.dataPreparation.databaseCreation import databaseCreator
 from smodels_utils.dataPreparation.massPlaneObjects import x, y, z
 
-##databaseCreator.ncpus = 2
-##DataSetInput.ntoys = 10
+#databaseCreator.ncpus = 2
+#DataSetInput.ntoys = 10
 
 #+++++++ global info block ++++++++++++++
 info = MetaInfoInput('CMS-SUS-13-012')
@@ -290,7 +290,7 @@ T5_x005.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM
 T5_x05 = T5.addMassPlane( [[x,0.5*x + 0.5*y,y]]*2 )
 T5_x05.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x05_EM_MAPS/MA5_EM_T5_x05_3NJet6_500HT800_450MHT600.dat", "txt", objectName ="None", index = None )
 T5_x095 = T5.addMassPlane( [[x,0.95*x + 0.05*y,y]]*2 )
-T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM_T5_x005_3NJet6_500HT800_450MHT600.dat", "txt", objectName ="None", index = None )
+T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x095_EM_MAPS/MA5_EM_T5_x095_3NJet6_500HT800_450MHT600.dat", "txt", objectName ="None", index = None )
 T5bbbb = dataset.addTxName('T5bbbb')
 T5bbbb.checked = ''
 T5bbbb.constraint ="[[['b'],['b']],[['b'],['b']]]"
@@ -596,7 +596,7 @@ T5_x005.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM
 T5_x05 = T5.addMassPlane( [[x,0.5*x + 0.5*y,y]]*2 )
 T5_x05.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x05_EM_MAPS/MA5_EM_T5_x05_3NJet6_1250HT1500_450MHTinf.dat", "txt", objectName ="None", index = None )
 T5_x095 = T5.addMassPlane( [[x,0.95*x + 0.05*y,y]]*2 )
-T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM_T5_x005_3NJet6_1250HT1500_450MHTinf.dat", "txt", objectName ="None", index = None )
+T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x095_EM_MAPS/MA5_EM_T5_x095_3NJet6_1250HT1500_450MHTinf.dat", "txt", objectName ="None", index = None )
 T5bbbb = dataset.addTxName('T5bbbb')
 T5bbbb.checked = ''
 T5bbbb.constraint ="[[['b'],['b']],[['b'],['b']]]"
@@ -902,7 +902,7 @@ T5_x005.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM
 T5_x05 = T5.addMassPlane( [[x,0.5*x + 0.5*y,y]]*2 )
 T5_x05.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x05_EM_MAPS/MA5_EM_T5_x05_3NJet6_1250HT1500_300MHT450.dat", "txt", objectName ="None", index = None )
 T5_x095 = T5.addMassPlane( [[x,0.95*x + 0.05*y,y]]*2 )
-T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM_T5_x005_3NJet6_1250HT1500_300MHT450.dat", "txt", objectName ="None", index = None )
+T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x095_EM_MAPS/MA5_EM_T5_x095_3NJet6_1250HT1500_300MHT450.dat", "txt", objectName ="None", index = None )
 T5bbbb = dataset.addTxName('T5bbbb')
 T5bbbb.checked = ''
 T5bbbb.constraint ="[[['b'],['b']],[['b'],['b']]]"
@@ -1208,7 +1208,7 @@ T5_x005.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM
 T5_x05 = T5.addMassPlane( [[x,0.5*x + 0.5*y,y]]*2 )
 T5_x05.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x05_EM_MAPS/MA5_EM_T5_x05_6NJet8_1000HT1250_200MHT300.dat", "txt", objectName ="None", index = None )
 T5_x095 = T5.addMassPlane( [[x,0.95*x + 0.05*y,y]]*2 )
-T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM_T5_x005_6NJet8_1000HT1250_200MHT300.dat", "txt", objectName ="None", index = None )
+T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x095_EM_MAPS/MA5_EM_T5_x095_6NJet8_1000HT1250_200MHT300.dat", "txt", objectName ="None", index = None )
 T5bbbb = dataset.addTxName('T5bbbb')
 T5bbbb.checked = ''
 T5bbbb.constraint ="[[['b'],['b']],[['b'],['b']]]"
@@ -1514,7 +1514,7 @@ T5_x005.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM
 T5_x05 = T5.addMassPlane( [[x,0.5*x + 0.5*y,y]]*2 )
 T5_x05.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x05_EM_MAPS/MA5_EM_T5_x05_6NJet8_800HT1000_300MHT450.dat", "txt", objectName ="None", index = None )
 T5_x095 = T5.addMassPlane( [[x,0.95*x + 0.05*y,y]]*2 )
-T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM_T5_x005_6NJet8_800HT1000_300MHT450.dat", "txt", objectName ="None", index = None )
+T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x095_EM_MAPS/MA5_EM_T5_x095_6NJet8_800HT1000_300MHT450.dat", "txt", objectName ="None", index = None )
 T5bbbb = dataset.addTxName('T5bbbb')
 T5bbbb.checked = ''
 T5bbbb.constraint ="[[['b'],['b']],[['b'],['b']]]"
@@ -1820,7 +1820,7 @@ T5_x005.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM
 T5_x05 = T5.addMassPlane( [[x,0.5*x + 0.5*y,y]]*2 )
 T5_x05.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x05_EM_MAPS/MA5_EM_T5_x05_6NJet8_500HT800_300MHT450.dat", "txt", objectName ="None", index = None )
 T5_x095 = T5.addMassPlane( [[x,0.95*x + 0.05*y,y]]*2 )
-T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM_T5_x005_6NJet8_500HT800_300MHT450.dat", "txt", objectName ="None", index = None )
+T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x095_EM_MAPS/MA5_EM_T5_x095_6NJet8_500HT800_300MHT450.dat", "txt", objectName ="None", index = None )
 T5bbbb = dataset.addTxName('T5bbbb')
 T5bbbb.checked = ''
 T5bbbb.constraint ="[[['b'],['b']],[['b'],['b']]]"
@@ -2126,7 +2126,7 @@ T5_x005.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM
 T5_x05 = T5.addMassPlane( [[x,0.5*x + 0.5*y,y]]*2 )
 T5_x05.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x05_EM_MAPS/MA5_EM_T5_x05_3NJet6_800HT1000_200MHT300.dat", "txt", objectName ="None", index = None )
 T5_x095 = T5.addMassPlane( [[x,0.95*x + 0.05*y,y]]*2 )
-T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM_T5_x005_3NJet6_800HT1000_200MHT300.dat", "txt", objectName ="None", index = None )
+T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x095_EM_MAPS/MA5_EM_T5_x095_3NJet6_800HT1000_200MHT300.dat", "txt", objectName ="None", index = None )
 T5bbbb = dataset.addTxName('T5bbbb')
 T5bbbb.checked = ''
 T5bbbb.constraint ="[[['b'],['b']],[['b'],['b']]]"
@@ -2432,7 +2432,7 @@ T5_x005.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM
 T5_x05 = T5.addMassPlane( [[x,0.5*x + 0.5*y,y]]*2 )
 T5_x05.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x05_EM_MAPS/MA5_EM_T5_x05_3NJet6_500HT800_200MHT300.dat", "txt", objectName ="None", index = None )
 T5_x095 = T5.addMassPlane( [[x,0.95*x + 0.05*y,y]]*2 )
-T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM_T5_x005_3NJet6_500HT800_200MHT300.dat", "txt", objectName ="None", index = None )
+T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x095_EM_MAPS/MA5_EM_T5_x095_3NJet6_500HT800_200MHT300.dat", "txt", objectName ="None", index = None )
 T5bbbb = dataset.addTxName('T5bbbb')
 T5bbbb.checked = ''
 T5bbbb.constraint ="[[['b'],['b']],[['b'],['b']]]"
@@ -2738,7 +2738,7 @@ T5_x005.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM
 T5_x05 = T5.addMassPlane( [[x,0.5*x + 0.5*y,y]]*2 )
 T5_x05.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x05_EM_MAPS/MA5_EM_T5_x05_6NJet8_1250HT1500_450MHTinf.dat", "txt", objectName ="None", index = None )
 T5_x095 = T5.addMassPlane( [[x,0.95*x + 0.05*y,y]]*2 )
-T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM_T5_x005_6NJet8_1250HT1500_450MHTinf.dat", "txt", objectName ="None", index = None )
+T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x095_EM_MAPS/MA5_EM_T5_x095_6NJet8_1250HT1500_450MHTinf.dat", "txt", objectName ="None", index = None )
 T5bbbb = dataset.addTxName('T5bbbb')
 T5bbbb.checked = ''
 T5bbbb.constraint ="[[['b'],['b']],[['b'],['b']]]"
@@ -3044,7 +3044,7 @@ T5_x005.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM
 T5_x05 = T5.addMassPlane( [[x,0.5*x + 0.5*y,y]]*2 )
 T5_x05.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x05_EM_MAPS/MA5_EM_T5_x05_3NJet6_1000HT1250_300MHT450.dat", "txt", objectName ="None", index = None )
 T5_x095 = T5.addMassPlane( [[x,0.95*x + 0.05*y,y]]*2 )
-T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM_T5_x005_3NJet6_1000HT1250_300MHT450.dat", "txt", objectName ="None", index = None )
+T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x095_EM_MAPS/MA5_EM_T5_x095_3NJet6_1000HT1250_300MHT450.dat", "txt", objectName ="None", index = None )
 T5bbbb = dataset.addTxName('T5bbbb')
 T5bbbb.checked = ''
 T5bbbb.constraint ="[[['b'],['b']],[['b'],['b']]]"
@@ -3350,7 +3350,7 @@ T5_x005.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM
 T5_x05 = T5.addMassPlane( [[x,0.5*x + 0.5*y,y]]*2 )
 T5_x05.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x05_EM_MAPS/MA5_EM_T5_x05_8NJetinf_1250HT1500_200MHTinf.dat", "txt", objectName ="None", index = None )
 T5_x095 = T5.addMassPlane( [[x,0.95*x + 0.05*y,y]]*2 )
-T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM_T5_x005_8NJetinf_1250HT1500_200MHTinf.dat", "txt", objectName ="None", index = None )
+T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x095_EM_MAPS/MA5_EM_T5_x095_8NJetinf_1250HT1500_200MHTinf.dat", "txt", objectName ="None", index = None )
 T5bbbb = dataset.addTxName('T5bbbb')
 T5bbbb.checked = ''
 T5bbbb.constraint ="[[['b'],['b']],[['b'],['b']]]"
@@ -3656,7 +3656,7 @@ T5_x005.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM
 T5_x05 = T5.addMassPlane( [[x,0.5*x + 0.5*y,y]]*2 )
 T5_x05.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x05_EM_MAPS/MA5_EM_T5_x05_8NJetinf_1000HT1250_200MHTinf.dat", "txt", objectName ="None", index = None )
 T5_x095 = T5.addMassPlane( [[x,0.95*x + 0.05*y,y]]*2 )
-T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM_T5_x005_8NJetinf_1000HT1250_200MHTinf.dat", "txt", objectName ="None", index = None )
+T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x095_EM_MAPS/MA5_EM_T5_x095_8NJetinf_1000HT1250_200MHTinf.dat", "txt", objectName ="None", index = None )
 T5bbbb = dataset.addTxName('T5bbbb')
 T5bbbb.checked = ''
 T5bbbb.constraint ="[[['b'],['b']],[['b'],['b']]]"
@@ -3962,7 +3962,7 @@ T5_x005.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM
 T5_x05 = T5.addMassPlane( [[x,0.5*x + 0.5*y,y]]*2 )
 T5_x05.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x05_EM_MAPS/MA5_EM_T5_x05_3NJet6_800HT1000_300MHT450.dat", "txt", objectName ="None", index = None )
 T5_x095 = T5.addMassPlane( [[x,0.95*x + 0.05*y,y]]*2 )
-T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM_T5_x005_3NJet6_800HT1000_300MHT450.dat", "txt", objectName ="None", index = None )
+T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x095_EM_MAPS/MA5_EM_T5_x095_3NJet6_800HT1000_300MHT450.dat", "txt", objectName ="None", index = None )
 T5bbbb = dataset.addTxName('T5bbbb')
 T5bbbb.checked = ''
 T5bbbb.constraint ="[[['b'],['b']],[['b'],['b']]]"
@@ -4268,7 +4268,7 @@ T5_x005.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM
 T5_x05 = T5.addMassPlane( [[x,0.5*x + 0.5*y,y]]*2 )
 T5_x05.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x05_EM_MAPS/MA5_EM_T5_x05_8NJetinf_800HT1000_200MHTinf.dat", "txt", objectName ="None", index = None )
 T5_x095 = T5.addMassPlane( [[x,0.95*x + 0.05*y,y]]*2 )
-T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM_T5_x005_8NJetinf_800HT1000_200MHTinf.dat", "txt", objectName ="None", index = None )
+T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x095_EM_MAPS/MA5_EM_T5_x095_8NJetinf_800HT1000_200MHTinf.dat", "txt", objectName ="None", index = None )
 T5bbbb = dataset.addTxName('T5bbbb')
 T5bbbb.checked = ''
 T5bbbb.constraint ="[[['b'],['b']],[['b'],['b']]]"
@@ -4574,7 +4574,7 @@ T5_x005.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM
 T5_x05 = T5.addMassPlane( [[x,0.5*x + 0.5*y,y]]*2 )
 T5_x05.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x05_EM_MAPS/MA5_EM_T5_x05_6NJet8_1500HTinf_300MHTinf.dat", "txt", objectName ="None", index = None )
 T5_x095 = T5.addMassPlane( [[x,0.95*x + 0.05*y,y]]*2 )
-T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM_T5_x005_6NJet8_1500HTinf_300MHTinf.dat", "txt", objectName ="None", index = None )
+T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x095_EM_MAPS/MA5_EM_T5_x095_6NJet8_1500HTinf_300MHTinf.dat", "txt", objectName ="None", index = None )
 T5bbbb = dataset.addTxName('T5bbbb')
 T5bbbb.checked = ''
 T5bbbb.constraint ="[[['b'],['b']],[['b'],['b']]]"
@@ -4880,7 +4880,7 @@ T5_x005.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM
 T5_x05 = T5.addMassPlane( [[x,0.5*x + 0.5*y,y]]*2 )
 T5_x05.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x05_EM_MAPS/MA5_EM_T5_x05_3NJet6_800HT1000_600MHTinf.dat", "txt", objectName ="None", index = None )
 T5_x095 = T5.addMassPlane( [[x,0.95*x + 0.05*y,y]]*2 )
-T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM_T5_x005_3NJet6_800HT1000_600MHTinf.dat", "txt", objectName ="None", index = None )
+T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x095_EM_MAPS/MA5_EM_T5_x095_3NJet6_800HT1000_600MHTinf.dat", "txt", objectName ="None", index = None )
 T5bbbb = dataset.addTxName('T5bbbb')
 T5bbbb.checked = ''
 T5bbbb.constraint ="[[['b'],['b']],[['b'],['b']]]"
@@ -5186,7 +5186,7 @@ T5_x005.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM
 T5_x05 = T5.addMassPlane( [[x,0.5*x + 0.5*y,y]]*2 )
 T5_x05.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x05_EM_MAPS/MA5_EM_T5_x05_6NJet8_500HT800_450MHTinf.dat", "txt", objectName ="None", index = None )
 T5_x095 = T5.addMassPlane( [[x,0.95*x + 0.05*y,y]]*2 )
-T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM_T5_x005_6NJet8_500HT800_450MHTinf.dat", "txt", objectName ="None", index = None )
+T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x095_EM_MAPS/MA5_EM_T5_x095_6NJet8_500HT800_450MHTinf.dat", "txt", objectName ="None", index = None )
 T5bbbb = dataset.addTxName('T5bbbb')
 T5bbbb.checked = ''
 T5bbbb.constraint ="[[['b'],['b']],[['b'],['b']]]"
@@ -5492,7 +5492,7 @@ T5_x005.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM
 T5_x05 = T5.addMassPlane( [[x,0.5*x + 0.5*y,y]]*2 )
 T5_x05.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x05_EM_MAPS/MA5_EM_T5_x05_6NJet8_1000HT1250_300MHT450.dat", "txt", objectName ="None", index = None )
 T5_x095 = T5.addMassPlane( [[x,0.95*x + 0.05*y,y]]*2 )
-T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM_T5_x005_6NJet8_1000HT1250_300MHT450.dat", "txt", objectName ="None", index = None )
+T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x095_EM_MAPS/MA5_EM_T5_x095_6NJet8_1000HT1250_300MHT450.dat", "txt", objectName ="None", index = None )
 T5bbbb = dataset.addTxName('T5bbbb')
 T5bbbb.checked = ''
 T5bbbb.constraint ="[[['b'],['b']],[['b'],['b']]]"
@@ -5798,7 +5798,7 @@ T5_x005.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM
 T5_x05 = T5.addMassPlane( [[x,0.5*x + 0.5*y,y]]*2 )
 T5_x05.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x05_EM_MAPS/MA5_EM_T5_x05_6NJet8_800HT1000_450MHTinf.dat", "txt", objectName ="None", index = None )
 T5_x095 = T5.addMassPlane( [[x,0.95*x + 0.05*y,y]]*2 )
-T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM_T5_x005_6NJet8_800HT1000_450MHTinf.dat", "txt", objectName ="None", index = None )
+T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x095_EM_MAPS/MA5_EM_T5_x095_6NJet8_800HT1000_450MHTinf.dat", "txt", objectName ="None", index = None )
 T5bbbb = dataset.addTxName('T5bbbb')
 T5bbbb.checked = ''
 T5bbbb.constraint ="[[['b'],['b']],[['b'],['b']]]"
@@ -6104,7 +6104,7 @@ T5_x005.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM
 T5_x05 = T5.addMassPlane( [[x,0.5*x + 0.5*y,y]]*2 )
 T5_x05.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x05_EM_MAPS/MA5_EM_T5_x05_3NJet6_1500HTinf_200MHT300.dat", "txt", objectName ="None", index = None )
 T5_x095 = T5.addMassPlane( [[x,0.95*x + 0.05*y,y]]*2 )
-T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM_T5_x005_3NJet6_1500HTinf_200MHT300.dat", "txt", objectName ="None", index = None )
+T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x095_EM_MAPS/MA5_EM_T5_x095_3NJet6_1500HTinf_200MHT300.dat", "txt", objectName ="None", index = None )
 T5bbbb = dataset.addTxName('T5bbbb')
 T5bbbb.checked = ''
 T5bbbb.constraint ="[[['b'],['b']],[['b'],['b']]]"
@@ -6410,7 +6410,7 @@ T5_x005.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM
 T5_x05 = T5.addMassPlane( [[x,0.5*x + 0.5*y,y]]*2 )
 T5_x05.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x05_EM_MAPS/MA5_EM_T5_x05_3NJet6_500HT800_600MHTinf.dat", "txt", objectName ="None", index = None )
 T5_x095 = T5.addMassPlane( [[x,0.95*x + 0.05*y,y]]*2 )
-T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM_T5_x005_3NJet6_500HT800_600MHTinf.dat", "txt", objectName ="None", index = None )
+T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x095_EM_MAPS/MA5_EM_T5_x095_3NJet6_500HT800_600MHTinf.dat", "txt", objectName ="None", index = None )
 T5bbbb = dataset.addTxName('T5bbbb')
 T5bbbb.checked = ''
 T5bbbb.constraint ="[[['b'],['b']],[['b'],['b']]]"
@@ -6716,7 +6716,7 @@ T5_x005.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM
 T5_x05 = T5.addMassPlane( [[x,0.5*x + 0.5*y,y]]*2 )
 T5_x05.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x05_EM_MAPS/MA5_EM_T5_x05_3NJet6_1250HT1500_200MHT300.dat", "txt", objectName ="None", index = None )
 T5_x095 = T5.addMassPlane( [[x,0.95*x + 0.05*y,y]]*2 )
-T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM_T5_x005_3NJet6_1250HT1500_200MHT300.dat", "txt", objectName ="None", index = None )
+T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x095_EM_MAPS/MA5_EM_T5_x095_3NJet6_1250HT1500_200MHT300.dat", "txt", objectName ="None", index = None )
 T5bbbb = dataset.addTxName('T5bbbb')
 T5bbbb.checked = ''
 T5bbbb.constraint ="[[['b'],['b']],[['b'],['b']]]"
@@ -7022,7 +7022,7 @@ T5_x005.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM
 T5_x05 = T5.addMassPlane( [[x,0.5*x + 0.5*y,y]]*2 )
 T5_x05.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x05_EM_MAPS/MA5_EM_T5_x05_3NJet6_1000HT1250_600MHTinf.dat", "txt", objectName ="None", index = None )
 T5_x095 = T5.addMassPlane( [[x,0.95*x + 0.05*y,y]]*2 )
-T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM_T5_x005_3NJet6_1000HT1250_600MHTinf.dat", "txt", objectName ="None", index = None )
+T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x095_EM_MAPS/MA5_EM_T5_x095_3NJet6_1000HT1250_600MHTinf.dat", "txt", objectName ="None", index = None )
 T5bbbb = dataset.addTxName('T5bbbb')
 T5bbbb.checked = ''
 T5bbbb.constraint ="[[['b'],['b']],[['b'],['b']]]"
@@ -7328,7 +7328,7 @@ T5_x005.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM
 T5_x05 = T5.addMassPlane( [[x,0.5*x + 0.5*y,y]]*2 )
 T5_x05.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x05_EM_MAPS/MA5_EM_T5_x05_3NJet6_1000HT1250_200MHT300.dat", "txt", objectName ="None", index = None )
 T5_x095 = T5.addMassPlane( [[x,0.95*x + 0.05*y,y]]*2 )
-T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM_T5_x005_3NJet6_1000HT1250_200MHT300.dat", "txt", objectName ="None", index = None )
+T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x095_EM_MAPS/MA5_EM_T5_x095_3NJet6_1000HT1250_200MHT300.dat", "txt", objectName ="None", index = None )
 T5bbbb = dataset.addTxName('T5bbbb')
 T5bbbb.checked = ''
 T5bbbb.constraint ="[[['b'],['b']],[['b'],['b']]]"
@@ -7634,7 +7634,7 @@ T5_x005.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM
 T5_x05 = T5.addMassPlane( [[x,0.5*x + 0.5*y,y]]*2 )
 T5_x05.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x05_EM_MAPS/MA5_EM_T5_x05_8NJetinf_1500HTinf_200MHTinf.dat", "txt", objectName ="None", index = None )
 T5_x095 = T5.addMassPlane( [[x,0.95*x + 0.05*y,y]]*2 )
-T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM_T5_x005_8NJetinf_1500HTinf_200MHTinf.dat", "txt", objectName ="None", index = None )
+T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x095_EM_MAPS/MA5_EM_T5_x095_8NJetinf_1500HTinf_200MHTinf.dat", "txt", objectName ="None", index = None )
 T5bbbb = dataset.addTxName('T5bbbb')
 T5bbbb.checked = ''
 T5bbbb.constraint ="[[['b'],['b']],[['b'],['b']]]"
@@ -7940,7 +7940,7 @@ T5_x005.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM
 T5_x05 = T5.addMassPlane( [[x,0.5*x + 0.5*y,y]]*2 )
 T5_x05.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x05_EM_MAPS/MA5_EM_T5_x05_6NJet8_1500HTinf_200MHT300.dat", "txt", objectName ="None", index = None )
 T5_x095 = T5.addMassPlane( [[x,0.95*x + 0.05*y,y]]*2 )
-T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM_T5_x005_6NJet8_1500HTinf_200MHT300.dat", "txt", objectName ="None", index = None )
+T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x095_EM_MAPS/MA5_EM_T5_x095_6NJet8_1500HTinf_200MHT300.dat", "txt", objectName ="None", index = None )
 T5bbbb = dataset.addTxName('T5bbbb')
 T5bbbb.checked = ''
 T5bbbb.constraint ="[[['b'],['b']],[['b'],['b']]]"
@@ -8246,7 +8246,7 @@ T5_x005.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM
 T5_x05 = T5.addMassPlane( [[x,0.5*x + 0.5*y,y]]*2 )
 T5_x05.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x05_EM_MAPS/MA5_EM_T5_x05_6NJet8_1250HT1500_200MHT300.dat", "txt", objectName ="None", index = None )
 T5_x095 = T5.addMassPlane( [[x,0.95*x + 0.05*y,y]]*2 )
-T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM_T5_x005_6NJet8_1250HT1500_200MHT300.dat", "txt", objectName ="None", index = None )
+T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x095_EM_MAPS/MA5_EM_T5_x095_6NJet8_1250HT1500_200MHT300.dat", "txt", objectName ="None", index = None )
 T5bbbb = dataset.addTxName('T5bbbb')
 T5bbbb.checked = ''
 T5bbbb.constraint ="[[['b'],['b']],[['b'],['b']]]"
@@ -8552,7 +8552,7 @@ T5_x005.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM
 T5_x05 = T5.addMassPlane( [[x,0.5*x + 0.5*y,y]]*2 )
 T5_x05.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x05_EM_MAPS/MA5_EM_T5_x05_3NJet6_800HT1000_450MHT600.dat", "txt", objectName ="None", index = None )
 T5_x095 = T5.addMassPlane( [[x,0.95*x + 0.05*y,y]]*2 )
-T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM_T5_x005_3NJet6_800HT1000_450MHT600.dat", "txt", objectName ="None", index = None )
+T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x095_EM_MAPS/MA5_EM_T5_x095_3NJet6_800HT1000_450MHT600.dat", "txt", objectName ="None", index = None )
 T5bbbb = dataset.addTxName('T5bbbb')
 T5bbbb.checked = ''
 T5bbbb.constraint ="[[['b'],['b']],[['b'],['b']]]"
@@ -8858,7 +8858,7 @@ T5_x005.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM
 T5_x05 = T5.addMassPlane( [[x,0.5*x + 0.5*y,y]]*2 )
 T5_x05.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x05_EM_MAPS/MA5_EM_T5_x05_6NJet8_800HT1000_200MHT300.dat", "txt", objectName ="None", index = None )
 T5_x095 = T5.addMassPlane( [[x,0.95*x + 0.05*y,y]]*2 )
-T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM_T5_x005_6NJet8_800HT1000_200MHT300.dat", "txt", objectName ="None", index = None )
+T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x095_EM_MAPS/MA5_EM_T5_x095_6NJet8_800HT1000_200MHT300.dat", "txt", objectName ="None", index = None )
 T5bbbb = dataset.addTxName('T5bbbb')
 T5bbbb.checked = ''
 T5bbbb.constraint ="[[['b'],['b']],[['b'],['b']]]"
@@ -9164,7 +9164,7 @@ T5_x005.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM
 T5_x05 = T5.addMassPlane( [[x,0.5*x + 0.5*y,y]]*2 )
 T5_x05.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x05_EM_MAPS/MA5_EM_T5_x05_6NJet8_500HT800_200MHT300.dat", "txt", objectName ="None", index = None )
 T5_x095 = T5.addMassPlane( [[x,0.95*x + 0.05*y,y]]*2 )
-T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM_T5_x005_6NJet8_500HT800_200MHT300.dat", "txt", objectName ="None", index = None )
+T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x095_EM_MAPS/MA5_EM_T5_x095_6NJet8_500HT800_200MHT300.dat", "txt", objectName ="None", index = None )
 T5bbbb = dataset.addTxName('T5bbbb')
 T5bbbb.checked = ''
 T5bbbb.constraint ="[[['b'],['b']],[['b'],['b']]]"
@@ -9470,7 +9470,7 @@ T5_x005.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM
 T5_x05 = T5.addMassPlane( [[x,0.5*x + 0.5*y,y]]*2 )
 T5_x05.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x05_EM_MAPS/MA5_EM_T5_x05_3NJet6_500HT800_300MHT450.dat", "txt", objectName ="None", index = None )
 T5_x095 = T5.addMassPlane( [[x,0.95*x + 0.05*y,y]]*2 )
-T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM_T5_x005_3NJet6_500HT800_300MHT450.dat", "txt", objectName ="None", index = None )
+T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x095_EM_MAPS/MA5_EM_T5_x095_3NJet6_500HT800_300MHT450.dat", "txt", objectName ="None", index = None )
 T5bbbb = dataset.addTxName('T5bbbb')
 T5bbbb.checked = ''
 T5bbbb.constraint ="[[['b'],['b']],[['b'],['b']]]"
@@ -9776,7 +9776,7 @@ T5_x005.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM
 T5_x05 = T5.addMassPlane( [[x,0.5*x + 0.5*y,y]]*2 )
 T5_x05.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x05_EM_MAPS/MA5_EM_T5_x05_8NJetinf_500HT800_200MHTinf.dat", "txt", objectName ="None", index = None )
 T5_x095 = T5.addMassPlane( [[x,0.95*x + 0.05*y,y]]*2 )
-T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM_T5_x005_8NJetinf_500HT800_200MHTinf.dat", "txt", objectName ="None", index = None )
+T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x095_EM_MAPS/MA5_EM_T5_x095_8NJetinf_500HT800_200MHTinf.dat", "txt", objectName ="None", index = None )
 T5bbbb = dataset.addTxName('T5bbbb')
 T5bbbb.checked = ''
 T5bbbb.constraint ="[[['b'],['b']],[['b'],['b']]]"
@@ -10082,7 +10082,7 @@ T5_x005.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM
 T5_x05 = T5.addMassPlane( [[x,0.5*x + 0.5*y,y]]*2 )
 T5_x05.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x05_EM_MAPS/MA5_EM_T5_x05_3NJet6_1000HT1250_450MHT600.dat", "txt", objectName ="None", index = None )
 T5_x095 = T5.addMassPlane( [[x,0.95*x + 0.05*y,y]]*2 )
-T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM_T5_x005_3NJet6_1000HT1250_450MHT600.dat", "txt", objectName ="None", index = None )
+T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x095_EM_MAPS/MA5_EM_T5_x095_3NJet6_1000HT1250_450MHT600.dat", "txt", objectName ="None", index = None )
 T5bbbb = dataset.addTxName('T5bbbb')
 T5bbbb.checked = ''
 T5bbbb.constraint ="[[['b'],['b']],[['b'],['b']]]"
@@ -10388,7 +10388,7 @@ T5_x005.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM
 T5_x05 = T5.addMassPlane( [[x,0.5*x + 0.5*y,y]]*2 )
 T5_x05.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x05_EM_MAPS/MA5_EM_T5_x05_6NJet8_1000HT1250_450MHTinf.dat", "txt", objectName ="None", index = None )
 T5_x095 = T5.addMassPlane( [[x,0.95*x + 0.05*y,y]]*2 )
-T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM_T5_x005_6NJet8_1000HT1250_450MHTinf.dat", "txt", objectName ="None", index = None )
+T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x095_EM_MAPS/MA5_EM_T5_x095_6NJet8_1000HT1250_450MHTinf.dat", "txt", objectName ="None", index = None )
 T5bbbb = dataset.addTxName('T5bbbb')
 T5bbbb.checked = ''
 T5bbbb.constraint ="[[['b'],['b']],[['b'],['b']]]"
@@ -10694,7 +10694,7 @@ T5_x005.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM
 T5_x05 = T5.addMassPlane( [[x,0.5*x + 0.5*y,y]]*2 )
 T5_x05.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x05_EM_MAPS/MA5_EM_T5_x05_6NJet8_1250HT1500_300MHT450.dat", "txt", objectName ="None", index = None )
 T5_x095 = T5.addMassPlane( [[x,0.95*x + 0.05*y,y]]*2 )
-T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM_T5_x005_6NJet8_1250HT1500_300MHT450.dat", "txt", objectName ="None", index = None )
+T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x095_EM_MAPS/MA5_EM_T5_x095_6NJet8_1250HT1500_300MHT450.dat", "txt", objectName ="None", index = None )
 T5bbbb = dataset.addTxName('T5bbbb')
 T5bbbb.checked = ''
 T5bbbb.constraint ="[[['b'],['b']],[['b'],['b']]]"
@@ -11000,7 +11000,7 @@ T5_x005.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM
 T5_x05 = T5.addMassPlane( [[x,0.5*x + 0.5*y,y]]*2 )
 T5_x05.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x05_EM_MAPS/MA5_EM_T5_x05_3NJet6_1500HTinf_300MHTinf.dat", "txt", objectName ="None", index = None )
 T5_x095 = T5.addMassPlane( [[x,0.95*x + 0.05*y,y]]*2 )
-T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM_T5_x005_3NJet6_1500HTinf_300MHTinf.dat", "txt", objectName ="None", index = None )
+T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x095_EM_MAPS/MA5_EM_T5_x095_3NJet6_1500HTinf_300MHTinf.dat", "txt", objectName ="None", index = None )
 T5bbbb = dataset.addTxName('T5bbbb')
 T5bbbb.checked = ''
 T5bbbb.constraint ="[[['b'],['b']],[['b'],['b']]]"

@@ -310,7 +310,7 @@ T5_x005.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM
 T5_x05 = T5.addMassPlane( [[x,0.5*x + 0.5*y,y]]*2 )
 T5_x05.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x05_EM_MAPS/MA5_EM_T5_x05_$datasetStr$.dat", "txt", objectName ="None", index = None )
 T5_x095 = T5.addMassPlane( [[x,0.95*x + 0.05*y,y]]*2 )
-T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM_T5_x005_$datasetStr$.dat", "txt", objectName ="None", index = None )
+T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x095_EM_MAPS/MA5_EM_T5_x095_$datasetStr$.dat", "txt", objectName ="None", index = None )
 
 T5bbbb = dataset.addTxName('T5bbbb')
 T5bbbb.checked = ''
