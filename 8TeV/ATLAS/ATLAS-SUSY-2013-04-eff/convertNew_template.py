@@ -185,7 +185,7 @@ T1bbbb.condition ="None"
 T1bbbb.source = "SModelS"
 #+++++++ next mass plane block ++++++++++++++
 T1bbbb = T1bbbb.addMassPlane([[x,y]]*2)
-T1bbbb.addSource('efficiencyMap',"./orig/$datasetStr$.txt", "txt")
+T1bbbb.addSource('efficiencyMap',"./orig/atlas_susy_2013_04_T1bbbb_1_EM_MAPS/MA5_EM_T1bbbb_1_$datasetShortStr$.dat", "txt")
 T1bbbb.dataUrl= None
 
 T1btbt = dataset.addTxName('T1btbt')

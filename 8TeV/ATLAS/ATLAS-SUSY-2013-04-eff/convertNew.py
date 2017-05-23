@@ -164,7 +164,7 @@ T1bbbb.condition ="None"
 T1bbbb.source = "SModelS"
 #+++++++ next mass plane block ++++++++++++++
 T1bbbb = T1bbbb.addMassPlane([[x,y]]*2)
-T1bbbb.addSource('efficiencyMap',"./orig/GtGrid_SR_8ij80_0bjet.txt", "txt")
+T1bbbb.addSource('efficiencyMap',"./orig/atlas_susy_2013_04_T1bbbb_1_EM_MAPS/MA5_EM_T1bbbb_1_>=8j80,0bjet.dat", "txt")
 T1bbbb.dataUrl= None
 T1btbt = dataset.addTxName('T1btbt')
 T1btbt.checked ="None"
@@ -324,7 +324,7 @@ T1bbbb.condition ="None"
 T1bbbb.source = "SModelS"
 #+++++++ next mass plane block ++++++++++++++
 T1bbbb = T1bbbb.addMassPlane([[x,y]]*2)
-T1bbbb.addSource('efficiencyMap',"./orig/GtGrid_SR_9ej50_0bjet.txt", "txt")
+T1bbbb.addSource('efficiencyMap',"./orig/atlas_susy_2013_04_T1bbbb_1_EM_MAPS/MA5_EM_T1bbbb_1_9j50,0bjet.dat", "txt")
 T1bbbb.dataUrl= None
 T1btbt = dataset.addTxName('T1btbt')
 T1btbt.checked ="None"
@@ -484,7 +484,7 @@ T1bbbb.condition ="None"
 T1bbbb.source = "SModelS"
 #+++++++ next mass plane block ++++++++++++++
 T1bbbb = T1bbbb.addMassPlane([[x,y]]*2)
-T1bbbb.addSource('efficiencyMap',"./orig/GtGrid_SR_8ej50_0bjet.txt", "txt")
+T1bbbb.addSource('efficiencyMap',"./orig/atlas_susy_2013_04_T1bbbb_1_EM_MAPS/MA5_EM_T1bbbb_1_8j50,0bjet.dat", "txt")
 T1bbbb.dataUrl= None
 T1btbt = dataset.addTxName('T1btbt')
 T1btbt.checked ="None"
@@ -644,7 +644,7 @@ T1bbbb.condition ="None"
 T1bbbb.source = "SModelS"
 #+++++++ next mass plane block ++++++++++++++
 T1bbbb = T1bbbb.addMassPlane([[x,y]]*2)
-T1bbbb.addSource('efficiencyMap',"./orig/GtGrid_SR_8ij80_2ibjet.txt", "txt")
+T1bbbb.addSource('efficiencyMap',"./orig/atlas_susy_2013_04_T1bbbb_1_EM_MAPS/MA5_EM_T1bbbb_1_>=8j80,>=2bjets.dat", "txt")
 T1bbbb.dataUrl= None
 T1btbt = dataset.addTxName('T1btbt')
 T1btbt.checked ="None"
@@ -804,7 +804,7 @@ T1bbbb.condition ="None"
 T1bbbb.source = "SModelS"
 #+++++++ next mass plane block ++++++++++++++
 T1bbbb = T1bbbb.addMassPlane([[x,y]]*2)
-T1bbbb.addSource('efficiencyMap',"./orig/GtGrid_SR_8ej50_2ibjet.txt", "txt")
+T1bbbb.addSource('efficiencyMap',"./orig/atlas_susy_2013_04_T1bbbb_1_EM_MAPS/MA5_EM_T1bbbb_1_8j50,>=2bjets.dat", "txt")
 T1bbbb.dataUrl= None
 T1btbt = dataset.addTxName('T1btbt')
 T1btbt.checked ="None"
@@ -964,7 +964,7 @@ T1bbbb.condition ="None"
 T1bbbb.source = "SModelS"
 #+++++++ next mass plane block ++++++++++++++
 T1bbbb = T1bbbb.addMassPlane([[x,y]]*2)
-T1bbbb.addSource('efficiencyMap',"./orig/GtGrid_SR_7ej80_0bjet.txt", "txt")
+T1bbbb.addSource('efficiencyMap',"./orig/atlas_susy_2013_04_T1bbbb_1_EM_MAPS/MA5_EM_T1bbbb_1_7j80,0bjet.dat", "txt")
 T1bbbb.dataUrl= None
 T1btbt = dataset.addTxName('T1btbt')
 T1btbt.checked ="None"
@@ -1124,7 +1124,7 @@ T1bbbb.condition ="None"
 T1bbbb.source = "SModelS"
 #+++++++ next mass plane block ++++++++++++++
 T1bbbb = T1bbbb.addMassPlane([[x,y]]*2)
-T1bbbb.addSource('efficiencyMap',"./orig/GtGrid_SR_7ej80_1bjet.txt", "txt")
+T1bbbb.addSource('efficiencyMap',"./orig/atlas_susy_2013_04_T1bbbb_1_EM_MAPS/MA5_EM_T1bbbb_1_7j80,1bjet.dat", "txt")
 T1bbbb.dataUrl= None
 T1btbt = dataset.addTxName('T1btbt')
 T1btbt.checked ="None"
@@ -1284,7 +1284,7 @@ T1bbbb.condition ="None"
 T1bbbb.source = "SModelS"
 #+++++++ next mass plane block ++++++++++++++
 T1bbbb = T1bbbb.addMassPlane([[x,y]]*2)
-T1bbbb.addSource('efficiencyMap',"./orig/GtGrid_SR_9ej50_2ibjet.txt", "txt")
+T1bbbb.addSource('efficiencyMap',"./orig/atlas_susy_2013_04_T1bbbb_1_EM_MAPS/MA5_EM_T1bbbb_1_9j50,>=2bjets.dat", "txt")
 T1bbbb.dataUrl= None
 T1btbt = dataset.addTxName('T1btbt')
 T1btbt.checked ="None"
@@ -1444,7 +1444,7 @@ T1bbbb.condition ="None"
 T1bbbb.source = "SModelS"
 #+++++++ next mass plane block ++++++++++++++
 T1bbbb = T1bbbb.addMassPlane([[x,y]]*2)
-T1bbbb.addSource('efficiencyMap',"./orig/GtGrid_SR_7ej80_2ibjet.txt", "txt")
+T1bbbb.addSource('efficiencyMap',"./orig/atlas_susy_2013_04_T1bbbb_1_EM_MAPS/MA5_EM_T1bbbb_1_7j80,>=2bjets.dat", "txt")
 T1bbbb.dataUrl= None
 T1btbt = dataset.addTxName('T1btbt')
 T1btbt.checked ="None"
@@ -1604,7 +1604,7 @@ T1bbbb.condition ="None"
 T1bbbb.source = "SModelS"
 #+++++++ next mass plane block ++++++++++++++
 T1bbbb = T1bbbb.addMassPlane([[x,y]]*2)
-T1bbbb.addSource('efficiencyMap',"./orig/GtGrid_SR_8ej50_1bjet.txt", "txt")
+T1bbbb.addSource('efficiencyMap',"./orig/atlas_susy_2013_04_T1bbbb_1_EM_MAPS/MA5_EM_T1bbbb_1_8j50,1bjet.dat", "txt")
 T1bbbb.dataUrl= None
 T1btbt = dataset.addTxName('T1btbt')
 T1btbt.checked ="None"
@@ -1764,7 +1764,7 @@ T1bbbb.condition ="None"
 T1bbbb.source = "SModelS"
 #+++++++ next mass plane block ++++++++++++++
 T1bbbb = T1bbbb.addMassPlane([[x,y]]*2)
-T1bbbb.addSource('efficiencyMap',"./orig/GtGrid_SR_8ij80_1bjet.txt", "txt")
+T1bbbb.addSource('efficiencyMap',"./orig/atlas_susy_2013_04_T1bbbb_1_EM_MAPS/MA5_EM_T1bbbb_1_>=8j80,1bjet.dat", "txt")
 T1bbbb.dataUrl= None
 T1btbt = dataset.addTxName('T1btbt')
 T1btbt.checked ="None"
@@ -1924,7 +1924,7 @@ T1bbbb.condition ="None"
 T1bbbb.source = "SModelS"
 #+++++++ next mass plane block ++++++++++++++
 T1bbbb = T1bbbb.addMassPlane([[x,y]]*2)
-T1bbbb.addSource('efficiencyMap',"./orig/GtGrid_SR_9ej50_1bjet.txt", "txt")
+T1bbbb.addSource('efficiencyMap',"./orig/atlas_susy_2013_04_T1bbbb_1_EM_MAPS/MA5_EM_T1bbbb_1_9j50,1bjet.dat", "txt")
 T1bbbb.dataUrl= None
 T1btbt = dataset.addTxName('T1btbt')
 T1btbt.checked ="None"
@@ -2084,7 +2084,7 @@ T1bbbb.condition ="None"
 T1bbbb.source = "SModelS"
 #+++++++ next mass plane block ++++++++++++++
 T1bbbb = T1bbbb.addMassPlane([[x,y]]*2)
-T1bbbb.addSource('efficiencyMap',"./orig/GtGrid_SR_10ij50_bjetblind.txt", "txt")
+T1bbbb.addSource('efficiencyMap',"./orig/atlas_susy_2013_04_T1bbbb_1_EM_MAPS/MA5_EM_T1bbbb_1_>=10j50.dat", "txt")
 T1bbbb.dataUrl= None
 T1btbt = dataset.addTxName('T1btbt')
 T1btbt.checked ="None"
