@@ -8,16 +8,15 @@
 import sys
 import os
 import argparse
-import types
 
 argparser = argparse.ArgumentParser(description =  
 'create info.txt, txname.txt, twiki.txt and sms.py')
 argparser.add_argument ('-utilsPath', '--utilsPath', 
 help = 'path to the package smodels_utils',\
-type = str)
+type = str )
 argparser.add_argument ('-smodelsPath', '--smodelsPath', 
 help = 'path to the package smodels_utils',\
-type = str)
+type = str )
 args = argparser.parse_args()
 
 if args.utilsPath:
@@ -34,6 +33,9 @@ sys.path.append(os.path.abspath(utilsPath))
 from smodels_utils.dataPreparation.inputObjects import MetaInfoInput,DataSetInput
 from smodels_utils.dataPreparation.databaseCreation import databaseCreator
 from smodels_utils.dataPreparation.massPlaneObjects import x, y, z
+
+DataSetInput.ntoys = 10
+databaseCreator.ncpus = 1
 
 #+++++++ global info block ++++++++++++++
 info = MetaInfoInput('ATLAS-SUSY-2013-04')
@@ -53,7 +55,7 @@ info.supersedes = 'ATLAS-CONF-2012-103'
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("GtGrid_SR_8ij80_0bjet")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "GtGrid_SR_8ij80_0bjet", observedN = 2, expectedBG = 0.9 , bgError = 0.6, upperLimit = '2.736E-01*fb', expectedUpperLimit = '1.477E-01*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "GtGrid_SR_8ij80_0bjet", observedN = 2, expectedBG = 0.9 , bgError = 0.6)
 #+++++++ next txName block ++++++++++++++
 T1tttt = dataset.addTxName('T1tttt')
 T1tttt.checked ="None"
@@ -109,12 +111,6 @@ T5ZZ.condition =None
 T5ZZ.massConstraint = None
 T5ZZ.source = "SModelS"
 #+++++++ next txName block ++++++++++++++
-# T5ZZoff = dataset.addTxName('T5ZZoff')
-# T5ZZoff.constraint ="2.1*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
-# T5ZZoff.conditionDescription =None
-# T5ZZoff.condition =None
-# T5ZZoff.massConstraint = [['dm >= 0.0','dm <= 86.']]*2
-# T5ZZoff.source = "SModelS"
 #+++++++ next mass plane block ++++++++++++++
 T5ZZ_1 = T5ZZ.addMassPlane([[x,0.5*(x+y),y]]*2)
 T5ZZ_1.addSource('efficiencyMap','orig/T5ZZ_x05/MA5_EM_T5ZZ_x05_>=8j80,0bjet.dat', 'txt')
@@ -127,14 +123,99 @@ T5ZZ_2.dataUrl = None
 T5ZZ_3 = T5ZZ.addMassPlane([[x, 0.95*x + 0.05*y, y]]*2)
 T5ZZ_3.addSource('efficiencyMap','orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_>=8j80,0bjet.dat', 'txt')
 T5ZZ_3.dataUrl = None
-# T5ZZoff.addMassPlane(T5ZZ_1)
-# T5ZZoff.addMassPlane(T5ZZ_2)
-# T5ZZoff.addMassPlane(T5ZZ_3)
+"""
+T5ZZoff = dataset.addTxName('T5ZZoff')
+T5ZZoff.constraint ="2.1*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
+T5ZZoff.conditionDescription =None
+T5ZZoff.condition =None
+T5ZZoff.massConstraint = [['dm >= 0.0','dm <= 86.']]*2
+T5ZZoff.source = "SModelS"
+T5ZZoff.addMassPlane(T5ZZ_1)
+T5ZZoff.addMassPlane(T5ZZ_2)
+T5ZZoff.addMassPlane(T5ZZ_3)
+"""
+#+++++++ next mass plane block ++++++++++++++
+fullpath = "./orig/atlas_susy_2013_04_T2tt_1_EM_MAPS/MA5_EM_T2tt_1_>=8j80,0bjet.dat"
+T2tt = dataset.addTxName('T2tt')
+T2tt.checked ="None"
+T2tt.constraint ="[[['t']],[['t']]]"
+T2tt.conditionDescription ="None"
+T2tt.condition ="None"
+T2tt.source = "SModelS"
+T2tt_1 = T2tt.addMassPlane([[x,y]]*2)
+T2tt_1.addSource('efficiencyMap', fullpath , "txt")
+T2tt_1.dataUrl=None
+#+++++++ next mass plane block ++++++++++++++
+T2ttoff = dataset.addTxName('T2ttoff')
+T2ttoff.checked ="None"
+T2ttoff.constraint ="[[['W','b']],[['W','b']]]"
+T2ttoff.conditionDescription ="None"
+T2ttoff.condition ="None"
+T2ttoff.source = "SModelS"
+T2ttoff_1 = T2ttoff.addMassPlane([[x,y]]*2)
+T2ttoff.massConstraint = [['dm <= 169.0']]*2
+T2ttoff_1.addSource('efficiencyMap', fullpath , "txt")
+T2ttoff_1.dataUrl=None
+T1bbbb = dataset.addTxName('T1bbbb')
+T1bbbb.checked ="None"
+T1bbbb.constraint ="[[['b','b']],[['b','b']]]"
+T1bbbb.conditionDescription ="None"
+T1bbbb.condition ="None"
+T1bbbb.source = "SModelS"
+#+++++++ next mass plane block ++++++++++++++
+T1bbbb = T1bbbb.addMassPlane([[x,y]]*2)
+T1bbbb.addSource('efficiencyMap',"./orig/GtGrid_SR_8ij80_0bjet.txt", "txt")
+T1bbbb.dataUrl= None
+T1btbt = dataset.addTxName('T1btbt')
+T1btbt.checked ="None"
+T1btbt.constraint ="[[['b','t']],[['b','t']]]"
+T1btbt.conditionDescription ="None"
+T1btbt.condition ="None"
+T1btbt.source = "SModelS"
+#+++++++ next mass plane block ++++++++++++++
+T1btbt = T1btbt.addMassPlane([[x,y]]*2)
+T1btbt.addSource('efficiencyMap',"./orig/atlas_susy_2013_04_T1btbt_1_EM_MAPS/MA5_EM_T1btbt_1_>=8j80,0bjet.dat", "txt")
+T1btbt.dataUrl= None
+T5 = dataset.addTxName('T5')
+T5.constraint ="[[['jet'],['jet']],[['jet'],['jet']]]"
+T5.conditionDescription =None
+T5.condition =None
+T5.massConstraint = None
+T5.source = "SModelS"
+T5.massConstraint = [['dm >= 0.0','dm > 76.']]*2
+#+++++++ next txName block ++++++++++++++
+#+++++++ next mass plane block ++++++++++++++
+T5_1 = T5.addMassPlane([[x,0.5*(x+y),y]]*2)
+T5_1.addSource('efficiencyMap','orig/atlas_susy_2013_04_T5_x05_EM_MAPS/MA5_EM_T5_x05_GtGrid_SR_8ij80_0bjet.dat', 'txt')
+T5_1.dataUrl = None
+#+++++++ next mass plane block ++++++++++++++
+T5_2 = T5.addMassPlane([[x,0.05*x + 0.95*y,y]]*2)
+T5_2.addSource('efficiencyMap','orig/atlas_susy_2013_04_T5_x005_EM_MAPS/MA5_EM_T5_x005_GtGrid_SR_8ij80_0bjet.dat', 'txt')
+T5_2.dataUrl = None
+#+++++++ next mass plane block ++++++++++++++
+T5_3 = T5.addMassPlane([[x, 0.95*x + 0.05*y, y]]*2)
+T5_3.addSource('efficiencyMap','orig/atlas_susy_2013_04_T5_x095_EM_MAPS/MA5_EM_T5_x095_GtGrid_SR_8ij80_0bjet.dat', 'txt')
+T5_3.dataUrl = None
+T6bbWW = dataset.addTxName('T6bbWW')
+T6bbWW.constraint = "[[['b'],['W']],[['b'],['W']]]"
+T6bbWW.conditionDescription =None
+T6bbWW.condition =None
+T6bbWW.massConstraint = None
+T6bbWW.source = "SModelS"
+T6bbWW.dataUrl = None
+T6bbWW_1 = T6bbWW.addMassPlane([[x, 0.1*y + 0.9*x, y]]*2)
+T6bbWW_1.addSource('efficiencyMap', 'orig/atlas_susy_2013_04_T6bbWW_x01_EM_MAPS/MA5_EM_T6bbWW_x01_GtGrid_SR_8ij80_0bjet.dat', 'txt')
+#+++++++ next mass plane block ++++++++++++++
+T6bbWW_2 = T6bbWW.addMassPlane([[x, 0.5*x + 0.5*y, y]]*2)
+T6bbWW_2.addSource('efficiencyMap','orig/atlas_susy_2013_04_T6bbWW_x05_EM_MAPS/MA5_EM_T6bbWW_x05_GtGrid_SR_8ij80_0bjet.dat','txt')
+#+++++++ next mass plane block ++++++++++++++
+T6bbWW_3 = T6bbWW.addMassPlane([[x, 0.9*y + 0.1*x, y]]*2)
+T6bbWW_3.addSource('efficiencyMap','orig/atlas_susy_2013_04_T6bbWW_x09_EM_MAPS/MA5_EM_T6bbWW_x09_GtGrid_SR_8ij80_0bjet.dat','txt')
 
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("GtGrid_SR_9ej50_0bjet")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "GtGrid_SR_9ej50_0bjet", observedN = 5, expectedBG = 3.3 , bgError = 0.7, upperLimit = '3.734E-01*fb', expectedUpperLimit = '2.666E-01*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "GtGrid_SR_9ej50_0bjet", observedN = 5, expectedBG = 3.3 , bgError = 0.7)
 #+++++++ next txName block ++++++++++++++
 T1tttt = dataset.addTxName('T1tttt')
 T1tttt.checked ="None"
@@ -190,12 +271,6 @@ T5ZZ.condition =None
 T5ZZ.massConstraint = None
 T5ZZ.source = "SModelS"
 #+++++++ next txName block ++++++++++++++
-# T5ZZoff = dataset.addTxName('T5ZZoff')
-# T5ZZoff.constraint ="2.1*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
-# T5ZZoff.conditionDescription =None
-# T5ZZoff.condition =None
-# T5ZZoff.massConstraint = [['dm >= 0.0','dm <= 86.']]*2
-# T5ZZoff.source = "SModelS"
 #+++++++ next mass plane block ++++++++++++++
 T5ZZ_1 = T5ZZ.addMassPlane([[x,0.5*(x+y),y]]*2)
 T5ZZ_1.addSource('efficiencyMap','orig/T5ZZ_x05/MA5_EM_T5ZZ_x05_9j50,0bjet.dat', 'txt')
@@ -208,14 +283,99 @@ T5ZZ_2.dataUrl = None
 T5ZZ_3 = T5ZZ.addMassPlane([[x, 0.95*x + 0.05*y, y]]*2)
 T5ZZ_3.addSource('efficiencyMap','orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_9j50,0bjet.dat', 'txt')
 T5ZZ_3.dataUrl = None
-# T5ZZoff.addMassPlane(T5ZZ_1)
-# T5ZZoff.addMassPlane(T5ZZ_2)
-# T5ZZoff.addMassPlane(T5ZZ_3)
+"""
+T5ZZoff = dataset.addTxName('T5ZZoff')
+T5ZZoff.constraint ="2.1*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
+T5ZZoff.conditionDescription =None
+T5ZZoff.condition =None
+T5ZZoff.massConstraint = [['dm >= 0.0','dm <= 86.']]*2
+T5ZZoff.source = "SModelS"
+T5ZZoff.addMassPlane(T5ZZ_1)
+T5ZZoff.addMassPlane(T5ZZ_2)
+T5ZZoff.addMassPlane(T5ZZ_3)
+"""
+#+++++++ next mass plane block ++++++++++++++
+fullpath = "./orig/atlas_susy_2013_04_T2tt_1_EM_MAPS/MA5_EM_T2tt_1_9j50,0bjet.dat"
+T2tt = dataset.addTxName('T2tt')
+T2tt.checked ="None"
+T2tt.constraint ="[[['t']],[['t']]]"
+T2tt.conditionDescription ="None"
+T2tt.condition ="None"
+T2tt.source = "SModelS"
+T2tt_1 = T2tt.addMassPlane([[x,y]]*2)
+T2tt_1.addSource('efficiencyMap', fullpath , "txt")
+T2tt_1.dataUrl=None
+#+++++++ next mass plane block ++++++++++++++
+T2ttoff = dataset.addTxName('T2ttoff')
+T2ttoff.checked ="None"
+T2ttoff.constraint ="[[['W','b']],[['W','b']]]"
+T2ttoff.conditionDescription ="None"
+T2ttoff.condition ="None"
+T2ttoff.source = "SModelS"
+T2ttoff_1 = T2ttoff.addMassPlane([[x,y]]*2)
+T2ttoff.massConstraint = [['dm <= 169.0']]*2
+T2ttoff_1.addSource('efficiencyMap', fullpath , "txt")
+T2ttoff_1.dataUrl=None
+T1bbbb = dataset.addTxName('T1bbbb')
+T1bbbb.checked ="None"
+T1bbbb.constraint ="[[['b','b']],[['b','b']]]"
+T1bbbb.conditionDescription ="None"
+T1bbbb.condition ="None"
+T1bbbb.source = "SModelS"
+#+++++++ next mass plane block ++++++++++++++
+T1bbbb = T1bbbb.addMassPlane([[x,y]]*2)
+T1bbbb.addSource('efficiencyMap',"./orig/GtGrid_SR_9ej50_0bjet.txt", "txt")
+T1bbbb.dataUrl= None
+T1btbt = dataset.addTxName('T1btbt')
+T1btbt.checked ="None"
+T1btbt.constraint ="[[['b','t']],[['b','t']]]"
+T1btbt.conditionDescription ="None"
+T1btbt.condition ="None"
+T1btbt.source = "SModelS"
+#+++++++ next mass plane block ++++++++++++++
+T1btbt = T1btbt.addMassPlane([[x,y]]*2)
+T1btbt.addSource('efficiencyMap',"./orig/atlas_susy_2013_04_T1btbt_1_EM_MAPS/MA5_EM_T1btbt_1_9j50,0bjet.dat", "txt")
+T1btbt.dataUrl= None
+T5 = dataset.addTxName('T5')
+T5.constraint ="[[['jet'],['jet']],[['jet'],['jet']]]"
+T5.conditionDescription =None
+T5.condition =None
+T5.massConstraint = None
+T5.source = "SModelS"
+T5.massConstraint = [['dm >= 0.0','dm > 76.']]*2
+#+++++++ next txName block ++++++++++++++
+#+++++++ next mass plane block ++++++++++++++
+T5_1 = T5.addMassPlane([[x,0.5*(x+y),y]]*2)
+T5_1.addSource('efficiencyMap','orig/atlas_susy_2013_04_T5_x05_EM_MAPS/MA5_EM_T5_x05_GtGrid_SR_9ej50_0bjet.dat', 'txt')
+T5_1.dataUrl = None
+#+++++++ next mass plane block ++++++++++++++
+T5_2 = T5.addMassPlane([[x,0.05*x + 0.95*y,y]]*2)
+T5_2.addSource('efficiencyMap','orig/atlas_susy_2013_04_T5_x005_EM_MAPS/MA5_EM_T5_x005_GtGrid_SR_9ej50_0bjet.dat', 'txt')
+T5_2.dataUrl = None
+#+++++++ next mass plane block ++++++++++++++
+T5_3 = T5.addMassPlane([[x, 0.95*x + 0.05*y, y]]*2)
+T5_3.addSource('efficiencyMap','orig/atlas_susy_2013_04_T5_x095_EM_MAPS/MA5_EM_T5_x095_GtGrid_SR_9ej50_0bjet.dat', 'txt')
+T5_3.dataUrl = None
+T6bbWW = dataset.addTxName('T6bbWW')
+T6bbWW.constraint = "[[['b'],['W']],[['b'],['W']]]"
+T6bbWW.conditionDescription =None
+T6bbWW.condition =None
+T6bbWW.massConstraint = None
+T6bbWW.source = "SModelS"
+T6bbWW.dataUrl = None
+T6bbWW_1 = T6bbWW.addMassPlane([[x, 0.1*y + 0.9*x, y]]*2)
+T6bbWW_1.addSource('efficiencyMap', 'orig/atlas_susy_2013_04_T6bbWW_x01_EM_MAPS/MA5_EM_T6bbWW_x01_GtGrid_SR_9ej50_0bjet.dat', 'txt')
+#+++++++ next mass plane block ++++++++++++++
+T6bbWW_2 = T6bbWW.addMassPlane([[x, 0.5*x + 0.5*y, y]]*2)
+T6bbWW_2.addSource('efficiencyMap','orig/atlas_susy_2013_04_T6bbWW_x05_EM_MAPS/MA5_EM_T6bbWW_x05_GtGrid_SR_9ej50_0bjet.dat','txt')
+#+++++++ next mass plane block ++++++++++++++
+T6bbWW_3 = T6bbWW.addMassPlane([[x, 0.9*y + 0.1*x, y]]*2)
+T6bbWW_3.addSource('efficiencyMap','orig/atlas_susy_2013_04_T6bbWW_x09_EM_MAPS/MA5_EM_T6bbWW_x09_GtGrid_SR_9ej50_0bjet.dat','txt')
 
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("GtGrid_SR_8ej50_0bjet")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "GtGrid_SR_8ej50_0bjet", observedN = 40, expectedBG = 35 , bgError = 4, upperLimit = '9.750E-01*fb', expectedUpperLimit = '7.643E-01*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "GtGrid_SR_8ej50_0bjet", observedN = 40, expectedBG = 35 , bgError = 4)
 #+++++++ next txName block ++++++++++++++
 T1tttt = dataset.addTxName('T1tttt')
 T1tttt.checked ="None"
@@ -271,12 +431,6 @@ T5ZZ.condition =None
 T5ZZ.massConstraint = None
 T5ZZ.source = "SModelS"
 #+++++++ next txName block ++++++++++++++
-# T5ZZoff = dataset.addTxName('T5ZZoff')
-# T5ZZoff.constraint ="2.1*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
-# T5ZZoff.conditionDescription =None
-# T5ZZoff.condition =None
-# T5ZZoff.massConstraint = [['dm >= 0.0','dm <= 86.']]*2
-# T5ZZoff.source = "SModelS"
 #+++++++ next mass plane block ++++++++++++++
 T5ZZ_1 = T5ZZ.addMassPlane([[x,0.5*(x+y),y]]*2)
 T5ZZ_1.addSource('efficiencyMap','orig/T5ZZ_x05/MA5_EM_T5ZZ_x05_8j50,0bjet.dat', 'txt')
@@ -289,14 +443,99 @@ T5ZZ_2.dataUrl = None
 T5ZZ_3 = T5ZZ.addMassPlane([[x, 0.95*x + 0.05*y, y]]*2)
 T5ZZ_3.addSource('efficiencyMap','orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_8j50,0bjet.dat', 'txt')
 T5ZZ_3.dataUrl = None
-# T5ZZoff.addMassPlane(T5ZZ_1)
-# T5ZZoff.addMassPlane(T5ZZ_2)
-# T5ZZoff.addMassPlane(T5ZZ_3)
+"""
+T5ZZoff = dataset.addTxName('T5ZZoff')
+T5ZZoff.constraint ="2.1*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
+T5ZZoff.conditionDescription =None
+T5ZZoff.condition =None
+T5ZZoff.massConstraint = [['dm >= 0.0','dm <= 86.']]*2
+T5ZZoff.source = "SModelS"
+T5ZZoff.addMassPlane(T5ZZ_1)
+T5ZZoff.addMassPlane(T5ZZ_2)
+T5ZZoff.addMassPlane(T5ZZ_3)
+"""
+#+++++++ next mass plane block ++++++++++++++
+fullpath = "./orig/atlas_susy_2013_04_T2tt_1_EM_MAPS/MA5_EM_T2tt_1_8j50,0bjet.dat"
+T2tt = dataset.addTxName('T2tt')
+T2tt.checked ="None"
+T2tt.constraint ="[[['t']],[['t']]]"
+T2tt.conditionDescription ="None"
+T2tt.condition ="None"
+T2tt.source = "SModelS"
+T2tt_1 = T2tt.addMassPlane([[x,y]]*2)
+T2tt_1.addSource('efficiencyMap', fullpath , "txt")
+T2tt_1.dataUrl=None
+#+++++++ next mass plane block ++++++++++++++
+T2ttoff = dataset.addTxName('T2ttoff')
+T2ttoff.checked ="None"
+T2ttoff.constraint ="[[['W','b']],[['W','b']]]"
+T2ttoff.conditionDescription ="None"
+T2ttoff.condition ="None"
+T2ttoff.source = "SModelS"
+T2ttoff_1 = T2ttoff.addMassPlane([[x,y]]*2)
+T2ttoff.massConstraint = [['dm <= 169.0']]*2
+T2ttoff_1.addSource('efficiencyMap', fullpath , "txt")
+T2ttoff_1.dataUrl=None
+T1bbbb = dataset.addTxName('T1bbbb')
+T1bbbb.checked ="None"
+T1bbbb.constraint ="[[['b','b']],[['b','b']]]"
+T1bbbb.conditionDescription ="None"
+T1bbbb.condition ="None"
+T1bbbb.source = "SModelS"
+#+++++++ next mass plane block ++++++++++++++
+T1bbbb = T1bbbb.addMassPlane([[x,y]]*2)
+T1bbbb.addSource('efficiencyMap',"./orig/GtGrid_SR_8ej50_0bjet.txt", "txt")
+T1bbbb.dataUrl= None
+T1btbt = dataset.addTxName('T1btbt')
+T1btbt.checked ="None"
+T1btbt.constraint ="[[['b','t']],[['b','t']]]"
+T1btbt.conditionDescription ="None"
+T1btbt.condition ="None"
+T1btbt.source = "SModelS"
+#+++++++ next mass plane block ++++++++++++++
+T1btbt = T1btbt.addMassPlane([[x,y]]*2)
+T1btbt.addSource('efficiencyMap',"./orig/atlas_susy_2013_04_T1btbt_1_EM_MAPS/MA5_EM_T1btbt_1_8j50,0bjet.dat", "txt")
+T1btbt.dataUrl= None
+T5 = dataset.addTxName('T5')
+T5.constraint ="[[['jet'],['jet']],[['jet'],['jet']]]"
+T5.conditionDescription =None
+T5.condition =None
+T5.massConstraint = None
+T5.source = "SModelS"
+T5.massConstraint = [['dm >= 0.0','dm > 76.']]*2
+#+++++++ next txName block ++++++++++++++
+#+++++++ next mass plane block ++++++++++++++
+T5_1 = T5.addMassPlane([[x,0.5*(x+y),y]]*2)
+T5_1.addSource('efficiencyMap','orig/atlas_susy_2013_04_T5_x05_EM_MAPS/MA5_EM_T5_x05_GtGrid_SR_8ej50_0bjet.dat', 'txt')
+T5_1.dataUrl = None
+#+++++++ next mass plane block ++++++++++++++
+T5_2 = T5.addMassPlane([[x,0.05*x + 0.95*y,y]]*2)
+T5_2.addSource('efficiencyMap','orig/atlas_susy_2013_04_T5_x005_EM_MAPS/MA5_EM_T5_x005_GtGrid_SR_8ej50_0bjet.dat', 'txt')
+T5_2.dataUrl = None
+#+++++++ next mass plane block ++++++++++++++
+T5_3 = T5.addMassPlane([[x, 0.95*x + 0.05*y, y]]*2)
+T5_3.addSource('efficiencyMap','orig/atlas_susy_2013_04_T5_x095_EM_MAPS/MA5_EM_T5_x095_GtGrid_SR_8ej50_0bjet.dat', 'txt')
+T5_3.dataUrl = None
+T6bbWW = dataset.addTxName('T6bbWW')
+T6bbWW.constraint = "[[['b'],['W']],[['b'],['W']]]"
+T6bbWW.conditionDescription =None
+T6bbWW.condition =None
+T6bbWW.massConstraint = None
+T6bbWW.source = "SModelS"
+T6bbWW.dataUrl = None
+T6bbWW_1 = T6bbWW.addMassPlane([[x, 0.1*y + 0.9*x, y]]*2)
+T6bbWW_1.addSource('efficiencyMap', 'orig/atlas_susy_2013_04_T6bbWW_x01_EM_MAPS/MA5_EM_T6bbWW_x01_GtGrid_SR_8ej50_0bjet.dat', 'txt')
+#+++++++ next mass plane block ++++++++++++++
+T6bbWW_2 = T6bbWW.addMassPlane([[x, 0.5*x + 0.5*y, y]]*2)
+T6bbWW_2.addSource('efficiencyMap','orig/atlas_susy_2013_04_T6bbWW_x05_EM_MAPS/MA5_EM_T6bbWW_x05_GtGrid_SR_8ej50_0bjet.dat','txt')
+#+++++++ next mass plane block ++++++++++++++
+T6bbWW_3 = T6bbWW.addMassPlane([[x, 0.9*y + 0.1*x, y]]*2)
+T6bbWW_3.addSource('efficiencyMap','orig/atlas_susy_2013_04_T6bbWW_x09_EM_MAPS/MA5_EM_T6bbWW_x09_GtGrid_SR_8ej50_0bjet.dat','txt')
 
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("GtGrid_SR_8ij80_2ibjet")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "GtGrid_SR_8ij80_2ibjet", observedN = 3, expectedBG = 3.3 , bgError = 2.2, upperLimit = '2.976E-01*fb', expectedUpperLimit = '2.970E-01*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "GtGrid_SR_8ij80_2ibjet", observedN = 3, expectedBG = 3.3 , bgError = 2.2)
 #+++++++ next txName block ++++++++++++++
 T1tttt = dataset.addTxName('T1tttt')
 T1tttt.checked ="None"
@@ -352,12 +591,6 @@ T5ZZ.condition =None
 T5ZZ.massConstraint = None
 T5ZZ.source = "SModelS"
 #+++++++ next txName block ++++++++++++++
-# T5ZZoff = dataset.addTxName('T5ZZoff')
-# T5ZZoff.constraint ="2.1*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
-# T5ZZoff.conditionDescription =None
-# T5ZZoff.condition =None
-# T5ZZoff.massConstraint = [['dm >= 0.0','dm <= 86.']]*2
-# T5ZZoff.source = "SModelS"
 #+++++++ next mass plane block ++++++++++++++
 T5ZZ_1 = T5ZZ.addMassPlane([[x,0.5*(x+y),y]]*2)
 T5ZZ_1.addSource('efficiencyMap','orig/T5ZZ_x05/MA5_EM_T5ZZ_x05_>=8j80,>=2bjets.dat', 'txt')
@@ -370,14 +603,99 @@ T5ZZ_2.dataUrl = None
 T5ZZ_3 = T5ZZ.addMassPlane([[x, 0.95*x + 0.05*y, y]]*2)
 T5ZZ_3.addSource('efficiencyMap','orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_>=8j80,>=2bjets.dat', 'txt')
 T5ZZ_3.dataUrl = None
-# T5ZZoff.addMassPlane(T5ZZ_1)
-# T5ZZoff.addMassPlane(T5ZZ_2)
-# T5ZZoff.addMassPlane(T5ZZ_3)
+"""
+T5ZZoff = dataset.addTxName('T5ZZoff')
+T5ZZoff.constraint ="2.1*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
+T5ZZoff.conditionDescription =None
+T5ZZoff.condition =None
+T5ZZoff.massConstraint = [['dm >= 0.0','dm <= 86.']]*2
+T5ZZoff.source = "SModelS"
+T5ZZoff.addMassPlane(T5ZZ_1)
+T5ZZoff.addMassPlane(T5ZZ_2)
+T5ZZoff.addMassPlane(T5ZZ_3)
+"""
+#+++++++ next mass plane block ++++++++++++++
+fullpath = "./orig/atlas_susy_2013_04_T2tt_1_EM_MAPS/MA5_EM_T2tt_1_>=8j80,>=2bjets.dat"
+T2tt = dataset.addTxName('T2tt')
+T2tt.checked ="None"
+T2tt.constraint ="[[['t']],[['t']]]"
+T2tt.conditionDescription ="None"
+T2tt.condition ="None"
+T2tt.source = "SModelS"
+T2tt_1 = T2tt.addMassPlane([[x,y]]*2)
+T2tt_1.addSource('efficiencyMap', fullpath , "txt")
+T2tt_1.dataUrl=None
+#+++++++ next mass plane block ++++++++++++++
+T2ttoff = dataset.addTxName('T2ttoff')
+T2ttoff.checked ="None"
+T2ttoff.constraint ="[[['W','b']],[['W','b']]]"
+T2ttoff.conditionDescription ="None"
+T2ttoff.condition ="None"
+T2ttoff.source = "SModelS"
+T2ttoff_1 = T2ttoff.addMassPlane([[x,y]]*2)
+T2ttoff.massConstraint = [['dm <= 169.0']]*2
+T2ttoff_1.addSource('efficiencyMap', fullpath , "txt")
+T2ttoff_1.dataUrl=None
+T1bbbb = dataset.addTxName('T1bbbb')
+T1bbbb.checked ="None"
+T1bbbb.constraint ="[[['b','b']],[['b','b']]]"
+T1bbbb.conditionDescription ="None"
+T1bbbb.condition ="None"
+T1bbbb.source = "SModelS"
+#+++++++ next mass plane block ++++++++++++++
+T1bbbb = T1bbbb.addMassPlane([[x,y]]*2)
+T1bbbb.addSource('efficiencyMap',"./orig/GtGrid_SR_8ij80_2ibjet.txt", "txt")
+T1bbbb.dataUrl= None
+T1btbt = dataset.addTxName('T1btbt')
+T1btbt.checked ="None"
+T1btbt.constraint ="[[['b','t']],[['b','t']]]"
+T1btbt.conditionDescription ="None"
+T1btbt.condition ="None"
+T1btbt.source = "SModelS"
+#+++++++ next mass plane block ++++++++++++++
+T1btbt = T1btbt.addMassPlane([[x,y]]*2)
+T1btbt.addSource('efficiencyMap',"./orig/atlas_susy_2013_04_T1btbt_1_EM_MAPS/MA5_EM_T1btbt_1_>=8j80,>=2bjets.dat", "txt")
+T1btbt.dataUrl= None
+T5 = dataset.addTxName('T5')
+T5.constraint ="[[['jet'],['jet']],[['jet'],['jet']]]"
+T5.conditionDescription =None
+T5.condition =None
+T5.massConstraint = None
+T5.source = "SModelS"
+T5.massConstraint = [['dm >= 0.0','dm > 76.']]*2
+#+++++++ next txName block ++++++++++++++
+#+++++++ next mass plane block ++++++++++++++
+T5_1 = T5.addMassPlane([[x,0.5*(x+y),y]]*2)
+T5_1.addSource('efficiencyMap','orig/atlas_susy_2013_04_T5_x05_EM_MAPS/MA5_EM_T5_x05_GtGrid_SR_8ij80_2ibjet.dat', 'txt')
+T5_1.dataUrl = None
+#+++++++ next mass plane block ++++++++++++++
+T5_2 = T5.addMassPlane([[x,0.05*x + 0.95*y,y]]*2)
+T5_2.addSource('efficiencyMap','orig/atlas_susy_2013_04_T5_x005_EM_MAPS/MA5_EM_T5_x005_GtGrid_SR_8ij80_2ibjet.dat', 'txt')
+T5_2.dataUrl = None
+#+++++++ next mass plane block ++++++++++++++
+T5_3 = T5.addMassPlane([[x, 0.95*x + 0.05*y, y]]*2)
+T5_3.addSource('efficiencyMap','orig/atlas_susy_2013_04_T5_x095_EM_MAPS/MA5_EM_T5_x095_GtGrid_SR_8ij80_2ibjet.dat', 'txt')
+T5_3.dataUrl = None
+T6bbWW = dataset.addTxName('T6bbWW')
+T6bbWW.constraint = "[[['b'],['W']],[['b'],['W']]]"
+T6bbWW.conditionDescription =None
+T6bbWW.condition =None
+T6bbWW.massConstraint = None
+T6bbWW.source = "SModelS"
+T6bbWW.dataUrl = None
+T6bbWW_1 = T6bbWW.addMassPlane([[x, 0.1*y + 0.9*x, y]]*2)
+T6bbWW_1.addSource('efficiencyMap', 'orig/atlas_susy_2013_04_T6bbWW_x01_EM_MAPS/MA5_EM_T6bbWW_x01_GtGrid_SR_8ij80_2ibjet.dat', 'txt')
+#+++++++ next mass plane block ++++++++++++++
+T6bbWW_2 = T6bbWW.addMassPlane([[x, 0.5*x + 0.5*y, y]]*2)
+T6bbWW_2.addSource('efficiencyMap','orig/atlas_susy_2013_04_T6bbWW_x05_EM_MAPS/MA5_EM_T6bbWW_x05_GtGrid_SR_8ij80_2ibjet.dat','txt')
+#+++++++ next mass plane block ++++++++++++++
+T6bbWW_3 = T6bbWW.addMassPlane([[x, 0.9*y + 0.1*x, y]]*2)
+T6bbWW_3.addSource('efficiencyMap','orig/atlas_susy_2013_04_T6bbWW_x09_EM_MAPS/MA5_EM_T6bbWW_x09_GtGrid_SR_8ij80_2ibjet.dat','txt')
 
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("GtGrid_SR_8ej50_2ibjet")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "GtGrid_SR_8ej50_2ibjet", observedN = 44, expectedBG = 50 , bgError = 10, upperLimit = '1.030E+00*fb', expectedUpperLimit = '1.238E+00*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "GtGrid_SR_8ej50_2ibjet", observedN = 44, expectedBG = 50 , bgError = 10)
 #+++++++ next txName block ++++++++++++++
 T1tttt = dataset.addTxName('T1tttt')
 T1tttt.checked ="None"
@@ -433,12 +751,6 @@ T5ZZ.condition =None
 T5ZZ.massConstraint = None
 T5ZZ.source = "SModelS"
 #+++++++ next txName block ++++++++++++++
-# T5ZZoff = dataset.addTxName('T5ZZoff')
-# T5ZZoff.constraint ="2.1*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
-# T5ZZoff.conditionDescription =None
-# T5ZZoff.condition =None
-# T5ZZoff.massConstraint = [['dm >= 0.0','dm <= 86.']]*2
-# T5ZZoff.source = "SModelS"
 #+++++++ next mass plane block ++++++++++++++
 T5ZZ_1 = T5ZZ.addMassPlane([[x,0.5*(x+y),y]]*2)
 T5ZZ_1.addSource('efficiencyMap','orig/T5ZZ_x05/MA5_EM_T5ZZ_x05_8j50,>=2bjets.dat', 'txt')
@@ -451,14 +763,99 @@ T5ZZ_2.dataUrl = None
 T5ZZ_3 = T5ZZ.addMassPlane([[x, 0.95*x + 0.05*y, y]]*2)
 T5ZZ_3.addSource('efficiencyMap','orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_8j50,>=2bjets.dat', 'txt')
 T5ZZ_3.dataUrl = None
-# T5ZZoff.addMassPlane(T5ZZ_1)
-# T5ZZoff.addMassPlane(T5ZZ_2)
-# T5ZZoff.addMassPlane(T5ZZ_3)
+"""
+T5ZZoff = dataset.addTxName('T5ZZoff')
+T5ZZoff.constraint ="2.1*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
+T5ZZoff.conditionDescription =None
+T5ZZoff.condition =None
+T5ZZoff.massConstraint = [['dm >= 0.0','dm <= 86.']]*2
+T5ZZoff.source = "SModelS"
+T5ZZoff.addMassPlane(T5ZZ_1)
+T5ZZoff.addMassPlane(T5ZZ_2)
+T5ZZoff.addMassPlane(T5ZZ_3)
+"""
+#+++++++ next mass plane block ++++++++++++++
+fullpath = "./orig/atlas_susy_2013_04_T2tt_1_EM_MAPS/MA5_EM_T2tt_1_8j50,>=2bjets.dat"
+T2tt = dataset.addTxName('T2tt')
+T2tt.checked ="None"
+T2tt.constraint ="[[['t']],[['t']]]"
+T2tt.conditionDescription ="None"
+T2tt.condition ="None"
+T2tt.source = "SModelS"
+T2tt_1 = T2tt.addMassPlane([[x,y]]*2)
+T2tt_1.addSource('efficiencyMap', fullpath , "txt")
+T2tt_1.dataUrl=None
+#+++++++ next mass plane block ++++++++++++++
+T2ttoff = dataset.addTxName('T2ttoff')
+T2ttoff.checked ="None"
+T2ttoff.constraint ="[[['W','b']],[['W','b']]]"
+T2ttoff.conditionDescription ="None"
+T2ttoff.condition ="None"
+T2ttoff.source = "SModelS"
+T2ttoff_1 = T2ttoff.addMassPlane([[x,y]]*2)
+T2ttoff.massConstraint = [['dm <= 169.0']]*2
+T2ttoff_1.addSource('efficiencyMap', fullpath , "txt")
+T2ttoff_1.dataUrl=None
+T1bbbb = dataset.addTxName('T1bbbb')
+T1bbbb.checked ="None"
+T1bbbb.constraint ="[[['b','b']],[['b','b']]]"
+T1bbbb.conditionDescription ="None"
+T1bbbb.condition ="None"
+T1bbbb.source = "SModelS"
+#+++++++ next mass plane block ++++++++++++++
+T1bbbb = T1bbbb.addMassPlane([[x,y]]*2)
+T1bbbb.addSource('efficiencyMap',"./orig/GtGrid_SR_8ej50_2ibjet.txt", "txt")
+T1bbbb.dataUrl= None
+T1btbt = dataset.addTxName('T1btbt')
+T1btbt.checked ="None"
+T1btbt.constraint ="[[['b','t']],[['b','t']]]"
+T1btbt.conditionDescription ="None"
+T1btbt.condition ="None"
+T1btbt.source = "SModelS"
+#+++++++ next mass plane block ++++++++++++++
+T1btbt = T1btbt.addMassPlane([[x,y]]*2)
+T1btbt.addSource('efficiencyMap',"./orig/atlas_susy_2013_04_T1btbt_1_EM_MAPS/MA5_EM_T1btbt_1_8j50,>=2bjets.dat", "txt")
+T1btbt.dataUrl= None
+T5 = dataset.addTxName('T5')
+T5.constraint ="[[['jet'],['jet']],[['jet'],['jet']]]"
+T5.conditionDescription =None
+T5.condition =None
+T5.massConstraint = None
+T5.source = "SModelS"
+T5.massConstraint = [['dm >= 0.0','dm > 76.']]*2
+#+++++++ next txName block ++++++++++++++
+#+++++++ next mass plane block ++++++++++++++
+T5_1 = T5.addMassPlane([[x,0.5*(x+y),y]]*2)
+T5_1.addSource('efficiencyMap','orig/atlas_susy_2013_04_T5_x05_EM_MAPS/MA5_EM_T5_x05_GtGrid_SR_8ej50_2ibjet.dat', 'txt')
+T5_1.dataUrl = None
+#+++++++ next mass plane block ++++++++++++++
+T5_2 = T5.addMassPlane([[x,0.05*x + 0.95*y,y]]*2)
+T5_2.addSource('efficiencyMap','orig/atlas_susy_2013_04_T5_x005_EM_MAPS/MA5_EM_T5_x005_GtGrid_SR_8ej50_2ibjet.dat', 'txt')
+T5_2.dataUrl = None
+#+++++++ next mass plane block ++++++++++++++
+T5_3 = T5.addMassPlane([[x, 0.95*x + 0.05*y, y]]*2)
+T5_3.addSource('efficiencyMap','orig/atlas_susy_2013_04_T5_x095_EM_MAPS/MA5_EM_T5_x095_GtGrid_SR_8ej50_2ibjet.dat', 'txt')
+T5_3.dataUrl = None
+T6bbWW = dataset.addTxName('T6bbWW')
+T6bbWW.constraint = "[[['b'],['W']],[['b'],['W']]]"
+T6bbWW.conditionDescription =None
+T6bbWW.condition =None
+T6bbWW.massConstraint = None
+T6bbWW.source = "SModelS"
+T6bbWW.dataUrl = None
+T6bbWW_1 = T6bbWW.addMassPlane([[x, 0.1*y + 0.9*x, y]]*2)
+T6bbWW_1.addSource('efficiencyMap', 'orig/atlas_susy_2013_04_T6bbWW_x01_EM_MAPS/MA5_EM_T6bbWW_x01_GtGrid_SR_8ej50_2ibjet.dat', 'txt')
+#+++++++ next mass plane block ++++++++++++++
+T6bbWW_2 = T6bbWW.addMassPlane([[x, 0.5*x + 0.5*y, y]]*2)
+T6bbWW_2.addSource('efficiencyMap','orig/atlas_susy_2013_04_T6bbWW_x05_EM_MAPS/MA5_EM_T6bbWW_x05_GtGrid_SR_8ej50_2ibjet.dat','txt')
+#+++++++ next mass plane block ++++++++++++++
+T6bbWW_3 = T6bbWW.addMassPlane([[x, 0.9*y + 0.1*x, y]]*2)
+T6bbWW_3.addSource('efficiencyMap','orig/atlas_susy_2013_04_T6bbWW_x09_EM_MAPS/MA5_EM_T6bbWW_x09_GtGrid_SR_8ej50_2ibjet.dat','txt')
 
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("GtGrid_SR_7ej80_0bjet")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "GtGrid_SR_7ej80_0bjet", observedN = 12, expectedBG = 11.0 , bgError = 2.2, upperLimit = '5.076E-01*fb', expectedUpperLimit = '4.618E-01*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "GtGrid_SR_7ej80_0bjet", observedN = 12, expectedBG = 11.0 , bgError = 2.2)
 #+++++++ next txName block ++++++++++++++
 T1tttt = dataset.addTxName('T1tttt')
 T1tttt.checked ="None"
@@ -514,12 +911,6 @@ T5ZZ.condition =None
 T5ZZ.massConstraint = None
 T5ZZ.source = "SModelS"
 #+++++++ next txName block ++++++++++++++
-# T5ZZoff = dataset.addTxName('T5ZZoff')
-# T5ZZoff.constraint ="2.1*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
-# T5ZZoff.conditionDescription =None
-# T5ZZoff.condition =None
-# T5ZZoff.massConstraint = [['dm >= 0.0','dm <= 86.']]*2
-# T5ZZoff.source = "SModelS"
 #+++++++ next mass plane block ++++++++++++++
 T5ZZ_1 = T5ZZ.addMassPlane([[x,0.5*(x+y),y]]*2)
 T5ZZ_1.addSource('efficiencyMap','orig/T5ZZ_x05/MA5_EM_T5ZZ_x05_7j80,0bjet.dat', 'txt')
@@ -532,14 +923,99 @@ T5ZZ_2.dataUrl = None
 T5ZZ_3 = T5ZZ.addMassPlane([[x, 0.95*x + 0.05*y, y]]*2)
 T5ZZ_3.addSource('efficiencyMap','orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_7j80,0bjet.dat', 'txt')
 T5ZZ_3.dataUrl = None
-# T5ZZoff.addMassPlane(T5ZZ_1)
-# T5ZZoff.addMassPlane(T5ZZ_2)
-# T5ZZoff.addMassPlane(T5ZZ_3)
+"""
+T5ZZoff = dataset.addTxName('T5ZZoff')
+T5ZZoff.constraint ="2.1*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
+T5ZZoff.conditionDescription =None
+T5ZZoff.condition =None
+T5ZZoff.massConstraint = [['dm >= 0.0','dm <= 86.']]*2
+T5ZZoff.source = "SModelS"
+T5ZZoff.addMassPlane(T5ZZ_1)
+T5ZZoff.addMassPlane(T5ZZ_2)
+T5ZZoff.addMassPlane(T5ZZ_3)
+"""
+#+++++++ next mass plane block ++++++++++++++
+fullpath = "./orig/atlas_susy_2013_04_T2tt_1_EM_MAPS/MA5_EM_T2tt_1_7j80,0bjet.dat"
+T2tt = dataset.addTxName('T2tt')
+T2tt.checked ="None"
+T2tt.constraint ="[[['t']],[['t']]]"
+T2tt.conditionDescription ="None"
+T2tt.condition ="None"
+T2tt.source = "SModelS"
+T2tt_1 = T2tt.addMassPlane([[x,y]]*2)
+T2tt_1.addSource('efficiencyMap', fullpath , "txt")
+T2tt_1.dataUrl=None
+#+++++++ next mass plane block ++++++++++++++
+T2ttoff = dataset.addTxName('T2ttoff')
+T2ttoff.checked ="None"
+T2ttoff.constraint ="[[['W','b']],[['W','b']]]"
+T2ttoff.conditionDescription ="None"
+T2ttoff.condition ="None"
+T2ttoff.source = "SModelS"
+T2ttoff_1 = T2ttoff.addMassPlane([[x,y]]*2)
+T2ttoff.massConstraint = [['dm <= 169.0']]*2
+T2ttoff_1.addSource('efficiencyMap', fullpath , "txt")
+T2ttoff_1.dataUrl=None
+T1bbbb = dataset.addTxName('T1bbbb')
+T1bbbb.checked ="None"
+T1bbbb.constraint ="[[['b','b']],[['b','b']]]"
+T1bbbb.conditionDescription ="None"
+T1bbbb.condition ="None"
+T1bbbb.source = "SModelS"
+#+++++++ next mass plane block ++++++++++++++
+T1bbbb = T1bbbb.addMassPlane([[x,y]]*2)
+T1bbbb.addSource('efficiencyMap',"./orig/GtGrid_SR_7ej80_0bjet.txt", "txt")
+T1bbbb.dataUrl= None
+T1btbt = dataset.addTxName('T1btbt')
+T1btbt.checked ="None"
+T1btbt.constraint ="[[['b','t']],[['b','t']]]"
+T1btbt.conditionDescription ="None"
+T1btbt.condition ="None"
+T1btbt.source = "SModelS"
+#+++++++ next mass plane block ++++++++++++++
+T1btbt = T1btbt.addMassPlane([[x,y]]*2)
+T1btbt.addSource('efficiencyMap',"./orig/atlas_susy_2013_04_T1btbt_1_EM_MAPS/MA5_EM_T1btbt_1_7j80,0bjet.dat", "txt")
+T1btbt.dataUrl= None
+T5 = dataset.addTxName('T5')
+T5.constraint ="[[['jet'],['jet']],[['jet'],['jet']]]"
+T5.conditionDescription =None
+T5.condition =None
+T5.massConstraint = None
+T5.source = "SModelS"
+T5.massConstraint = [['dm >= 0.0','dm > 76.']]*2
+#+++++++ next txName block ++++++++++++++
+#+++++++ next mass plane block ++++++++++++++
+T5_1 = T5.addMassPlane([[x,0.5*(x+y),y]]*2)
+T5_1.addSource('efficiencyMap','orig/atlas_susy_2013_04_T5_x05_EM_MAPS/MA5_EM_T5_x05_GtGrid_SR_7ej80_0bjet.dat', 'txt')
+T5_1.dataUrl = None
+#+++++++ next mass plane block ++++++++++++++
+T5_2 = T5.addMassPlane([[x,0.05*x + 0.95*y,y]]*2)
+T5_2.addSource('efficiencyMap','orig/atlas_susy_2013_04_T5_x005_EM_MAPS/MA5_EM_T5_x005_GtGrid_SR_7ej80_0bjet.dat', 'txt')
+T5_2.dataUrl = None
+#+++++++ next mass plane block ++++++++++++++
+T5_3 = T5.addMassPlane([[x, 0.95*x + 0.05*y, y]]*2)
+T5_3.addSource('efficiencyMap','orig/atlas_susy_2013_04_T5_x095_EM_MAPS/MA5_EM_T5_x095_GtGrid_SR_7ej80_0bjet.dat', 'txt')
+T5_3.dataUrl = None
+T6bbWW = dataset.addTxName('T6bbWW')
+T6bbWW.constraint = "[[['b'],['W']],[['b'],['W']]]"
+T6bbWW.conditionDescription =None
+T6bbWW.condition =None
+T6bbWW.massConstraint = None
+T6bbWW.source = "SModelS"
+T6bbWW.dataUrl = None
+T6bbWW_1 = T6bbWW.addMassPlane([[x, 0.1*y + 0.9*x, y]]*2)
+T6bbWW_1.addSource('efficiencyMap', 'orig/atlas_susy_2013_04_T6bbWW_x01_EM_MAPS/MA5_EM_T6bbWW_x01_GtGrid_SR_7ej80_0bjet.dat', 'txt')
+#+++++++ next mass plane block ++++++++++++++
+T6bbWW_2 = T6bbWW.addMassPlane([[x, 0.5*x + 0.5*y, y]]*2)
+T6bbWW_2.addSource('efficiencyMap','orig/atlas_susy_2013_04_T6bbWW_x05_EM_MAPS/MA5_EM_T6bbWW_x05_GtGrid_SR_7ej80_0bjet.dat','txt')
+#+++++++ next mass plane block ++++++++++++++
+T6bbWW_3 = T6bbWW.addMassPlane([[x, 0.9*y + 0.1*x, y]]*2)
+T6bbWW_3.addSource('efficiencyMap','orig/atlas_susy_2013_04_T6bbWW_x09_EM_MAPS/MA5_EM_T6bbWW_x09_GtGrid_SR_7ej80_0bjet.dat','txt')
 
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("GtGrid_SR_7ej80_1bjet")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "GtGrid_SR_7ej80_1bjet", observedN = 17, expectedBG = 17 , bgError = 6, upperLimit = '7.487E-01*fb', expectedUpperLimit = '7.487E-01*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "GtGrid_SR_7ej80_1bjet", observedN = 17, expectedBG = 17 , bgError = 6)
 #+++++++ next txName block ++++++++++++++
 T1tttt = dataset.addTxName('T1tttt')
 T1tttt.checked ="None"
@@ -595,12 +1071,6 @@ T5ZZ.condition =None
 T5ZZ.massConstraint = None
 T5ZZ.source = "SModelS"
 #+++++++ next txName block ++++++++++++++
-# T5ZZoff = dataset.addTxName('T5ZZoff')
-# T5ZZoff.constraint ="2.1*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
-# T5ZZoff.conditionDescription =None
-# T5ZZoff.condition =None
-# T5ZZoff.massConstraint = [['dm >= 0.0','dm <= 86.']]*2
-# T5ZZoff.source = "SModelS"
 #+++++++ next mass plane block ++++++++++++++
 T5ZZ_1 = T5ZZ.addMassPlane([[x,0.5*(x+y),y]]*2)
 T5ZZ_1.addSource('efficiencyMap','orig/T5ZZ_x05/MA5_EM_T5ZZ_x05_7j80,1bjet.dat', 'txt')
@@ -613,14 +1083,99 @@ T5ZZ_2.dataUrl = None
 T5ZZ_3 = T5ZZ.addMassPlane([[x, 0.95*x + 0.05*y, y]]*2)
 T5ZZ_3.addSource('efficiencyMap','orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_7j80,1bjet.dat', 'txt')
 T5ZZ_3.dataUrl = None
-# T5ZZoff.addMassPlane(T5ZZ_1)
-# T5ZZoff.addMassPlane(T5ZZ_2)
-# T5ZZoff.addMassPlane(T5ZZ_3)
+"""
+T5ZZoff = dataset.addTxName('T5ZZoff')
+T5ZZoff.constraint ="2.1*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
+T5ZZoff.conditionDescription =None
+T5ZZoff.condition =None
+T5ZZoff.massConstraint = [['dm >= 0.0','dm <= 86.']]*2
+T5ZZoff.source = "SModelS"
+T5ZZoff.addMassPlane(T5ZZ_1)
+T5ZZoff.addMassPlane(T5ZZ_2)
+T5ZZoff.addMassPlane(T5ZZ_3)
+"""
+#+++++++ next mass plane block ++++++++++++++
+fullpath = "./orig/atlas_susy_2013_04_T2tt_1_EM_MAPS/MA5_EM_T2tt_1_7j80,1bjet.dat"
+T2tt = dataset.addTxName('T2tt')
+T2tt.checked ="None"
+T2tt.constraint ="[[['t']],[['t']]]"
+T2tt.conditionDescription ="None"
+T2tt.condition ="None"
+T2tt.source = "SModelS"
+T2tt_1 = T2tt.addMassPlane([[x,y]]*2)
+T2tt_1.addSource('efficiencyMap', fullpath , "txt")
+T2tt_1.dataUrl=None
+#+++++++ next mass plane block ++++++++++++++
+T2ttoff = dataset.addTxName('T2ttoff')
+T2ttoff.checked ="None"
+T2ttoff.constraint ="[[['W','b']],[['W','b']]]"
+T2ttoff.conditionDescription ="None"
+T2ttoff.condition ="None"
+T2ttoff.source = "SModelS"
+T2ttoff_1 = T2ttoff.addMassPlane([[x,y]]*2)
+T2ttoff.massConstraint = [['dm <= 169.0']]*2
+T2ttoff_1.addSource('efficiencyMap', fullpath , "txt")
+T2ttoff_1.dataUrl=None
+T1bbbb = dataset.addTxName('T1bbbb')
+T1bbbb.checked ="None"
+T1bbbb.constraint ="[[['b','b']],[['b','b']]]"
+T1bbbb.conditionDescription ="None"
+T1bbbb.condition ="None"
+T1bbbb.source = "SModelS"
+#+++++++ next mass plane block ++++++++++++++
+T1bbbb = T1bbbb.addMassPlane([[x,y]]*2)
+T1bbbb.addSource('efficiencyMap',"./orig/GtGrid_SR_7ej80_1bjet.txt", "txt")
+T1bbbb.dataUrl= None
+T1btbt = dataset.addTxName('T1btbt')
+T1btbt.checked ="None"
+T1btbt.constraint ="[[['b','t']],[['b','t']]]"
+T1btbt.conditionDescription ="None"
+T1btbt.condition ="None"
+T1btbt.source = "SModelS"
+#+++++++ next mass plane block ++++++++++++++
+T1btbt = T1btbt.addMassPlane([[x,y]]*2)
+T1btbt.addSource('efficiencyMap',"./orig/atlas_susy_2013_04_T1btbt_1_EM_MAPS/MA5_EM_T1btbt_1_7j80,1bjet.dat", "txt")
+T1btbt.dataUrl= None
+T5 = dataset.addTxName('T5')
+T5.constraint ="[[['jet'],['jet']],[['jet'],['jet']]]"
+T5.conditionDescription =None
+T5.condition =None
+T5.massConstraint = None
+T5.source = "SModelS"
+T5.massConstraint = [['dm >= 0.0','dm > 76.']]*2
+#+++++++ next txName block ++++++++++++++
+#+++++++ next mass plane block ++++++++++++++
+T5_1 = T5.addMassPlane([[x,0.5*(x+y),y]]*2)
+T5_1.addSource('efficiencyMap','orig/atlas_susy_2013_04_T5_x05_EM_MAPS/MA5_EM_T5_x05_GtGrid_SR_7ej80_1bjet.dat', 'txt')
+T5_1.dataUrl = None
+#+++++++ next mass plane block ++++++++++++++
+T5_2 = T5.addMassPlane([[x,0.05*x + 0.95*y,y]]*2)
+T5_2.addSource('efficiencyMap','orig/atlas_susy_2013_04_T5_x005_EM_MAPS/MA5_EM_T5_x005_GtGrid_SR_7ej80_1bjet.dat', 'txt')
+T5_2.dataUrl = None
+#+++++++ next mass plane block ++++++++++++++
+T5_3 = T5.addMassPlane([[x, 0.95*x + 0.05*y, y]]*2)
+T5_3.addSource('efficiencyMap','orig/atlas_susy_2013_04_T5_x095_EM_MAPS/MA5_EM_T5_x095_GtGrid_SR_7ej80_1bjet.dat', 'txt')
+T5_3.dataUrl = None
+T6bbWW = dataset.addTxName('T6bbWW')
+T6bbWW.constraint = "[[['b'],['W']],[['b'],['W']]]"
+T6bbWW.conditionDescription =None
+T6bbWW.condition =None
+T6bbWW.massConstraint = None
+T6bbWW.source = "SModelS"
+T6bbWW.dataUrl = None
+T6bbWW_1 = T6bbWW.addMassPlane([[x, 0.1*y + 0.9*x, y]]*2)
+T6bbWW_1.addSource('efficiencyMap', 'orig/atlas_susy_2013_04_T6bbWW_x01_EM_MAPS/MA5_EM_T6bbWW_x01_GtGrid_SR_7ej80_1bjet.dat', 'txt')
+#+++++++ next mass plane block ++++++++++++++
+T6bbWW_2 = T6bbWW.addMassPlane([[x, 0.5*x + 0.5*y, y]]*2)
+T6bbWW_2.addSource('efficiencyMap','orig/atlas_susy_2013_04_T6bbWW_x05_EM_MAPS/MA5_EM_T6bbWW_x05_GtGrid_SR_7ej80_1bjet.dat','txt')
+#+++++++ next mass plane block ++++++++++++++
+T6bbWW_3 = T6bbWW.addMassPlane([[x, 0.9*y + 0.1*x, y]]*2)
+T6bbWW_3.addSource('efficiencyMap','orig/atlas_susy_2013_04_T6bbWW_x09_EM_MAPS/MA5_EM_T6bbWW_x09_GtGrid_SR_7ej80_1bjet.dat','txt')
 
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("GtGrid_SR_9ej50_2ibjet")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "GtGrid_SR_9ej50_2ibjet", observedN = 7, expectedBG = 8.0 , bgError = 2.7, upperLimit = '4.019E-01*fb', expectedUpperLimit = '4.457E-01*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "GtGrid_SR_9ej50_2ibjet", observedN = 7, expectedBG = 8.0 , bgError = 2.7)
 #+++++++ next txName block ++++++++++++++
 T1tttt = dataset.addTxName('T1tttt')
 T1tttt.checked ="None"
@@ -676,12 +1231,6 @@ T5ZZ.condition =None
 T5ZZ.massConstraint = None
 T5ZZ.source = "SModelS"
 #+++++++ next txName block ++++++++++++++
-# T5ZZoff = dataset.addTxName('T5ZZoff')
-# T5ZZoff.constraint ="2.1*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
-# T5ZZoff.conditionDescription =None
-# T5ZZoff.condition =None
-# T5ZZoff.massConstraint = [['dm >= 0.0','dm <= 86.']]*2
-# T5ZZoff.source = "SModelS"
 #+++++++ next mass plane block ++++++++++++++
 T5ZZ_1 = T5ZZ.addMassPlane([[x,0.5*(x+y),y]]*2)
 T5ZZ_1.addSource('efficiencyMap','orig/T5ZZ_x05/MA5_EM_T5ZZ_x05_9j50,>=2bjets.dat', 'txt')
@@ -694,14 +1243,99 @@ T5ZZ_2.dataUrl = None
 T5ZZ_3 = T5ZZ.addMassPlane([[x, 0.95*x + 0.05*y, y]]*2)
 T5ZZ_3.addSource('efficiencyMap','orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_9j50,>=2bjets.dat', 'txt')
 T5ZZ_3.dataUrl = None
-# T5ZZoff.addMassPlane(T5ZZ_1)
-# T5ZZoff.addMassPlane(T5ZZ_2)
-# T5ZZoff.addMassPlane(T5ZZ_3)
+"""
+T5ZZoff = dataset.addTxName('T5ZZoff')
+T5ZZoff.constraint ="2.1*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
+T5ZZoff.conditionDescription =None
+T5ZZoff.condition =None
+T5ZZoff.massConstraint = [['dm >= 0.0','dm <= 86.']]*2
+T5ZZoff.source = "SModelS"
+T5ZZoff.addMassPlane(T5ZZ_1)
+T5ZZoff.addMassPlane(T5ZZ_2)
+T5ZZoff.addMassPlane(T5ZZ_3)
+"""
+#+++++++ next mass plane block ++++++++++++++
+fullpath = "./orig/atlas_susy_2013_04_T2tt_1_EM_MAPS/MA5_EM_T2tt_1_9j50,>=2bjets.dat"
+T2tt = dataset.addTxName('T2tt')
+T2tt.checked ="None"
+T2tt.constraint ="[[['t']],[['t']]]"
+T2tt.conditionDescription ="None"
+T2tt.condition ="None"
+T2tt.source = "SModelS"
+T2tt_1 = T2tt.addMassPlane([[x,y]]*2)
+T2tt_1.addSource('efficiencyMap', fullpath , "txt")
+T2tt_1.dataUrl=None
+#+++++++ next mass plane block ++++++++++++++
+T2ttoff = dataset.addTxName('T2ttoff')
+T2ttoff.checked ="None"
+T2ttoff.constraint ="[[['W','b']],[['W','b']]]"
+T2ttoff.conditionDescription ="None"
+T2ttoff.condition ="None"
+T2ttoff.source = "SModelS"
+T2ttoff_1 = T2ttoff.addMassPlane([[x,y]]*2)
+T2ttoff.massConstraint = [['dm <= 169.0']]*2
+T2ttoff_1.addSource('efficiencyMap', fullpath , "txt")
+T2ttoff_1.dataUrl=None
+T1bbbb = dataset.addTxName('T1bbbb')
+T1bbbb.checked ="None"
+T1bbbb.constraint ="[[['b','b']],[['b','b']]]"
+T1bbbb.conditionDescription ="None"
+T1bbbb.condition ="None"
+T1bbbb.source = "SModelS"
+#+++++++ next mass plane block ++++++++++++++
+T1bbbb = T1bbbb.addMassPlane([[x,y]]*2)
+T1bbbb.addSource('efficiencyMap',"./orig/GtGrid_SR_9ej50_2ibjet.txt", "txt")
+T1bbbb.dataUrl= None
+T1btbt = dataset.addTxName('T1btbt')
+T1btbt.checked ="None"
+T1btbt.constraint ="[[['b','t']],[['b','t']]]"
+T1btbt.conditionDescription ="None"
+T1btbt.condition ="None"
+T1btbt.source = "SModelS"
+#+++++++ next mass plane block ++++++++++++++
+T1btbt = T1btbt.addMassPlane([[x,y]]*2)
+T1btbt.addSource('efficiencyMap',"./orig/atlas_susy_2013_04_T1btbt_1_EM_MAPS/MA5_EM_T1btbt_1_9j50,>=2bjets.dat", "txt")
+T1btbt.dataUrl= None
+T5 = dataset.addTxName('T5')
+T5.constraint ="[[['jet'],['jet']],[['jet'],['jet']]]"
+T5.conditionDescription =None
+T5.condition =None
+T5.massConstraint = None
+T5.source = "SModelS"
+T5.massConstraint = [['dm >= 0.0','dm > 76.']]*2
+#+++++++ next txName block ++++++++++++++
+#+++++++ next mass plane block ++++++++++++++
+T5_1 = T5.addMassPlane([[x,0.5*(x+y),y]]*2)
+T5_1.addSource('efficiencyMap','orig/atlas_susy_2013_04_T5_x05_EM_MAPS/MA5_EM_T5_x05_GtGrid_SR_9ej50_2ibjet.dat', 'txt')
+T5_1.dataUrl = None
+#+++++++ next mass plane block ++++++++++++++
+T5_2 = T5.addMassPlane([[x,0.05*x + 0.95*y,y]]*2)
+T5_2.addSource('efficiencyMap','orig/atlas_susy_2013_04_T5_x005_EM_MAPS/MA5_EM_T5_x005_GtGrid_SR_9ej50_2ibjet.dat', 'txt')
+T5_2.dataUrl = None
+#+++++++ next mass plane block ++++++++++++++
+T5_3 = T5.addMassPlane([[x, 0.95*x + 0.05*y, y]]*2)
+T5_3.addSource('efficiencyMap','orig/atlas_susy_2013_04_T5_x095_EM_MAPS/MA5_EM_T5_x095_GtGrid_SR_9ej50_2ibjet.dat', 'txt')
+T5_3.dataUrl = None
+T6bbWW = dataset.addTxName('T6bbWW')
+T6bbWW.constraint = "[[['b'],['W']],[['b'],['W']]]"
+T6bbWW.conditionDescription =None
+T6bbWW.condition =None
+T6bbWW.massConstraint = None
+T6bbWW.source = "SModelS"
+T6bbWW.dataUrl = None
+T6bbWW_1 = T6bbWW.addMassPlane([[x, 0.1*y + 0.9*x, y]]*2)
+T6bbWW_1.addSource('efficiencyMap', 'orig/atlas_susy_2013_04_T6bbWW_x01_EM_MAPS/MA5_EM_T6bbWW_x01_GtGrid_SR_9ej50_2ibjet.dat', 'txt')
+#+++++++ next mass plane block ++++++++++++++
+T6bbWW_2 = T6bbWW.addMassPlane([[x, 0.5*x + 0.5*y, y]]*2)
+T6bbWW_2.addSource('efficiencyMap','orig/atlas_susy_2013_04_T6bbWW_x05_EM_MAPS/MA5_EM_T6bbWW_x05_GtGrid_SR_9ej50_2ibjet.dat','txt')
+#+++++++ next mass plane block ++++++++++++++
+T6bbWW_3 = T6bbWW.addMassPlane([[x, 0.9*y + 0.1*x, y]]*2)
+T6bbWW_3.addSource('efficiencyMap','orig/atlas_susy_2013_04_T6bbWW_x09_EM_MAPS/MA5_EM_T6bbWW_x09_GtGrid_SR_9ej50_2ibjet.dat','txt')
 
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("GtGrid_SR_7ej80_2ibjet")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "GtGrid_SR_7ej80_2ibjet", observedN = 13, expectedBG = 25 , bgError = 10, upperLimit = '6.480E-01*fb', expectedUpperLimit = '1.083E+00*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "GtGrid_SR_7ej80_2ibjet", observedN = 13, expectedBG = 25 , bgError = 10)
 #+++++++ next txName block ++++++++++++++
 T1tttt = dataset.addTxName('T1tttt')
 T1tttt.checked ="None"
@@ -757,12 +1391,6 @@ T5ZZ.condition =None
 T5ZZ.massConstraint = None
 T5ZZ.source = "SModelS"
 #+++++++ next txName block ++++++++++++++
-# T5ZZoff = dataset.addTxName('T5ZZoff')
-# T5ZZoff.constraint ="2.1*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
-# T5ZZoff.conditionDescription =None
-# T5ZZoff.condition =None
-# T5ZZoff.massConstraint = [['dm >= 0.0','dm <= 86.']]*2
-# T5ZZoff.source = "SModelS"
 #+++++++ next mass plane block ++++++++++++++
 T5ZZ_1 = T5ZZ.addMassPlane([[x,0.5*(x+y),y]]*2)
 T5ZZ_1.addSource('efficiencyMap','orig/T5ZZ_x05/MA5_EM_T5ZZ_x05_7j80,>=2bjets.dat', 'txt')
@@ -775,14 +1403,99 @@ T5ZZ_2.dataUrl = None
 T5ZZ_3 = T5ZZ.addMassPlane([[x, 0.95*x + 0.05*y, y]]*2)
 T5ZZ_3.addSource('efficiencyMap','orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_7j80,>=2bjets.dat', 'txt')
 T5ZZ_3.dataUrl = None
-# T5ZZoff.addMassPlane(T5ZZ_1)
-# T5ZZoff.addMassPlane(T5ZZ_2)
-# T5ZZoff.addMassPlane(T5ZZ_3)
+"""
+T5ZZoff = dataset.addTxName('T5ZZoff')
+T5ZZoff.constraint ="2.1*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
+T5ZZoff.conditionDescription =None
+T5ZZoff.condition =None
+T5ZZoff.massConstraint = [['dm >= 0.0','dm <= 86.']]*2
+T5ZZoff.source = "SModelS"
+T5ZZoff.addMassPlane(T5ZZ_1)
+T5ZZoff.addMassPlane(T5ZZ_2)
+T5ZZoff.addMassPlane(T5ZZ_3)
+"""
+#+++++++ next mass plane block ++++++++++++++
+fullpath = "./orig/atlas_susy_2013_04_T2tt_1_EM_MAPS/MA5_EM_T2tt_1_7j80,>=2bjets.dat"
+T2tt = dataset.addTxName('T2tt')
+T2tt.checked ="None"
+T2tt.constraint ="[[['t']],[['t']]]"
+T2tt.conditionDescription ="None"
+T2tt.condition ="None"
+T2tt.source = "SModelS"
+T2tt_1 = T2tt.addMassPlane([[x,y]]*2)
+T2tt_1.addSource('efficiencyMap', fullpath , "txt")
+T2tt_1.dataUrl=None
+#+++++++ next mass plane block ++++++++++++++
+T2ttoff = dataset.addTxName('T2ttoff')
+T2ttoff.checked ="None"
+T2ttoff.constraint ="[[['W','b']],[['W','b']]]"
+T2ttoff.conditionDescription ="None"
+T2ttoff.condition ="None"
+T2ttoff.source = "SModelS"
+T2ttoff_1 = T2ttoff.addMassPlane([[x,y]]*2)
+T2ttoff.massConstraint = [['dm <= 169.0']]*2
+T2ttoff_1.addSource('efficiencyMap', fullpath , "txt")
+T2ttoff_1.dataUrl=None
+T1bbbb = dataset.addTxName('T1bbbb')
+T1bbbb.checked ="None"
+T1bbbb.constraint ="[[['b','b']],[['b','b']]]"
+T1bbbb.conditionDescription ="None"
+T1bbbb.condition ="None"
+T1bbbb.source = "SModelS"
+#+++++++ next mass plane block ++++++++++++++
+T1bbbb = T1bbbb.addMassPlane([[x,y]]*2)
+T1bbbb.addSource('efficiencyMap',"./orig/GtGrid_SR_7ej80_2ibjet.txt", "txt")
+T1bbbb.dataUrl= None
+T1btbt = dataset.addTxName('T1btbt')
+T1btbt.checked ="None"
+T1btbt.constraint ="[[['b','t']],[['b','t']]]"
+T1btbt.conditionDescription ="None"
+T1btbt.condition ="None"
+T1btbt.source = "SModelS"
+#+++++++ next mass plane block ++++++++++++++
+T1btbt = T1btbt.addMassPlane([[x,y]]*2)
+T1btbt.addSource('efficiencyMap',"./orig/atlas_susy_2013_04_T1btbt_1_EM_MAPS/MA5_EM_T1btbt_1_7j80,>=2bjets.dat", "txt")
+T1btbt.dataUrl= None
+T5 = dataset.addTxName('T5')
+T5.constraint ="[[['jet'],['jet']],[['jet'],['jet']]]"
+T5.conditionDescription =None
+T5.condition =None
+T5.massConstraint = None
+T5.source = "SModelS"
+T5.massConstraint = [['dm >= 0.0','dm > 76.']]*2
+#+++++++ next txName block ++++++++++++++
+#+++++++ next mass plane block ++++++++++++++
+T5_1 = T5.addMassPlane([[x,0.5*(x+y),y]]*2)
+T5_1.addSource('efficiencyMap','orig/atlas_susy_2013_04_T5_x05_EM_MAPS/MA5_EM_T5_x05_GtGrid_SR_7ej80_2ibjet.dat', 'txt')
+T5_1.dataUrl = None
+#+++++++ next mass plane block ++++++++++++++
+T5_2 = T5.addMassPlane([[x,0.05*x + 0.95*y,y]]*2)
+T5_2.addSource('efficiencyMap','orig/atlas_susy_2013_04_T5_x005_EM_MAPS/MA5_EM_T5_x005_GtGrid_SR_7ej80_2ibjet.dat', 'txt')
+T5_2.dataUrl = None
+#+++++++ next mass plane block ++++++++++++++
+T5_3 = T5.addMassPlane([[x, 0.95*x + 0.05*y, y]]*2)
+T5_3.addSource('efficiencyMap','orig/atlas_susy_2013_04_T5_x095_EM_MAPS/MA5_EM_T5_x095_GtGrid_SR_7ej80_2ibjet.dat', 'txt')
+T5_3.dataUrl = None
+T6bbWW = dataset.addTxName('T6bbWW')
+T6bbWW.constraint = "[[['b'],['W']],[['b'],['W']]]"
+T6bbWW.conditionDescription =None
+T6bbWW.condition =None
+T6bbWW.massConstraint = None
+T6bbWW.source = "SModelS"
+T6bbWW.dataUrl = None
+T6bbWW_1 = T6bbWW.addMassPlane([[x, 0.1*y + 0.9*x, y]]*2)
+T6bbWW_1.addSource('efficiencyMap', 'orig/atlas_susy_2013_04_T6bbWW_x01_EM_MAPS/MA5_EM_T6bbWW_x01_GtGrid_SR_7ej80_2ibjet.dat', 'txt')
+#+++++++ next mass plane block ++++++++++++++
+T6bbWW_2 = T6bbWW.addMassPlane([[x, 0.5*x + 0.5*y, y]]*2)
+T6bbWW_2.addSource('efficiencyMap','orig/atlas_susy_2013_04_T6bbWW_x05_EM_MAPS/MA5_EM_T6bbWW_x05_GtGrid_SR_7ej80_2ibjet.dat','txt')
+#+++++++ next mass plane block ++++++++++++++
+T6bbWW_3 = T6bbWW.addMassPlane([[x, 0.9*y + 0.1*x, y]]*2)
+T6bbWW_3.addSource('efficiencyMap','orig/atlas_susy_2013_04_T6bbWW_x09_EM_MAPS/MA5_EM_T6bbWW_x09_GtGrid_SR_7ej80_2ibjet.dat','txt')
 
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("GtGrid_SR_8ej50_1bjet")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "GtGrid_SR_8ej50_1bjet", observedN = 44, expectedBG = 40 , bgError = 10, upperLimit = '1.348E+00*fb', expectedUpperLimit = '1.193E+00*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "GtGrid_SR_8ej50_1bjet", observedN = 44, expectedBG = 40 , bgError = 10)
 #+++++++ next txName block ++++++++++++++
 T1tttt = dataset.addTxName('T1tttt')
 T1tttt.checked ="None"
@@ -838,12 +1551,6 @@ T5ZZ.condition =None
 T5ZZ.massConstraint = None
 T5ZZ.source = "SModelS"
 #+++++++ next txName block ++++++++++++++
-# T5ZZoff = dataset.addTxName('T5ZZoff')
-# T5ZZoff.constraint ="2.1*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
-# T5ZZoff.conditionDescription =None
-# T5ZZoff.condition =None
-# T5ZZoff.massConstraint = [['dm >= 0.0','dm <= 86.']]*2
-# T5ZZoff.source = "SModelS"
 #+++++++ next mass plane block ++++++++++++++
 T5ZZ_1 = T5ZZ.addMassPlane([[x,0.5*(x+y),y]]*2)
 T5ZZ_1.addSource('efficiencyMap','orig/T5ZZ_x05/MA5_EM_T5ZZ_x05_8j50,1bjet.dat', 'txt')
@@ -856,14 +1563,99 @@ T5ZZ_2.dataUrl = None
 T5ZZ_3 = T5ZZ.addMassPlane([[x, 0.95*x + 0.05*y, y]]*2)
 T5ZZ_3.addSource('efficiencyMap','orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_8j50,1bjet.dat', 'txt')
 T5ZZ_3.dataUrl = None
-# T5ZZoff.addMassPlane(T5ZZ_1)
-# T5ZZoff.addMassPlane(T5ZZ_2)
-# T5ZZoff.addMassPlane(T5ZZ_3)
+"""
+T5ZZoff = dataset.addTxName('T5ZZoff')
+T5ZZoff.constraint ="2.1*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
+T5ZZoff.conditionDescription =None
+T5ZZoff.condition =None
+T5ZZoff.massConstraint = [['dm >= 0.0','dm <= 86.']]*2
+T5ZZoff.source = "SModelS"
+T5ZZoff.addMassPlane(T5ZZ_1)
+T5ZZoff.addMassPlane(T5ZZ_2)
+T5ZZoff.addMassPlane(T5ZZ_3)
+"""
+#+++++++ next mass plane block ++++++++++++++
+fullpath = "./orig/atlas_susy_2013_04_T2tt_1_EM_MAPS/MA5_EM_T2tt_1_8j50,1bjet.dat"
+T2tt = dataset.addTxName('T2tt')
+T2tt.checked ="None"
+T2tt.constraint ="[[['t']],[['t']]]"
+T2tt.conditionDescription ="None"
+T2tt.condition ="None"
+T2tt.source = "SModelS"
+T2tt_1 = T2tt.addMassPlane([[x,y]]*2)
+T2tt_1.addSource('efficiencyMap', fullpath , "txt")
+T2tt_1.dataUrl=None
+#+++++++ next mass plane block ++++++++++++++
+T2ttoff = dataset.addTxName('T2ttoff')
+T2ttoff.checked ="None"
+T2ttoff.constraint ="[[['W','b']],[['W','b']]]"
+T2ttoff.conditionDescription ="None"
+T2ttoff.condition ="None"
+T2ttoff.source = "SModelS"
+T2ttoff_1 = T2ttoff.addMassPlane([[x,y]]*2)
+T2ttoff.massConstraint = [['dm <= 169.0']]*2
+T2ttoff_1.addSource('efficiencyMap', fullpath , "txt")
+T2ttoff_1.dataUrl=None
+T1bbbb = dataset.addTxName('T1bbbb')
+T1bbbb.checked ="None"
+T1bbbb.constraint ="[[['b','b']],[['b','b']]]"
+T1bbbb.conditionDescription ="None"
+T1bbbb.condition ="None"
+T1bbbb.source = "SModelS"
+#+++++++ next mass plane block ++++++++++++++
+T1bbbb = T1bbbb.addMassPlane([[x,y]]*2)
+T1bbbb.addSource('efficiencyMap',"./orig/GtGrid_SR_8ej50_1bjet.txt", "txt")
+T1bbbb.dataUrl= None
+T1btbt = dataset.addTxName('T1btbt')
+T1btbt.checked ="None"
+T1btbt.constraint ="[[['b','t']],[['b','t']]]"
+T1btbt.conditionDescription ="None"
+T1btbt.condition ="None"
+T1btbt.source = "SModelS"
+#+++++++ next mass plane block ++++++++++++++
+T1btbt = T1btbt.addMassPlane([[x,y]]*2)
+T1btbt.addSource('efficiencyMap',"./orig/atlas_susy_2013_04_T1btbt_1_EM_MAPS/MA5_EM_T1btbt_1_8j50,1bjet.dat", "txt")
+T1btbt.dataUrl= None
+T5 = dataset.addTxName('T5')
+T5.constraint ="[[['jet'],['jet']],[['jet'],['jet']]]"
+T5.conditionDescription =None
+T5.condition =None
+T5.massConstraint = None
+T5.source = "SModelS"
+T5.massConstraint = [['dm >= 0.0','dm > 76.']]*2
+#+++++++ next txName block ++++++++++++++
+#+++++++ next mass plane block ++++++++++++++
+T5_1 = T5.addMassPlane([[x,0.5*(x+y),y]]*2)
+T5_1.addSource('efficiencyMap','orig/atlas_susy_2013_04_T5_x05_EM_MAPS/MA5_EM_T5_x05_GtGrid_SR_8ej50_1bjet.dat', 'txt')
+T5_1.dataUrl = None
+#+++++++ next mass plane block ++++++++++++++
+T5_2 = T5.addMassPlane([[x,0.05*x + 0.95*y,y]]*2)
+T5_2.addSource('efficiencyMap','orig/atlas_susy_2013_04_T5_x005_EM_MAPS/MA5_EM_T5_x005_GtGrid_SR_8ej50_1bjet.dat', 'txt')
+T5_2.dataUrl = None
+#+++++++ next mass plane block ++++++++++++++
+T5_3 = T5.addMassPlane([[x, 0.95*x + 0.05*y, y]]*2)
+T5_3.addSource('efficiencyMap','orig/atlas_susy_2013_04_T5_x095_EM_MAPS/MA5_EM_T5_x095_GtGrid_SR_8ej50_1bjet.dat', 'txt')
+T5_3.dataUrl = None
+T6bbWW = dataset.addTxName('T6bbWW')
+T6bbWW.constraint = "[[['b'],['W']],[['b'],['W']]]"
+T6bbWW.conditionDescription =None
+T6bbWW.condition =None
+T6bbWW.massConstraint = None
+T6bbWW.source = "SModelS"
+T6bbWW.dataUrl = None
+T6bbWW_1 = T6bbWW.addMassPlane([[x, 0.1*y + 0.9*x, y]]*2)
+T6bbWW_1.addSource('efficiencyMap', 'orig/atlas_susy_2013_04_T6bbWW_x01_EM_MAPS/MA5_EM_T6bbWW_x01_GtGrid_SR_8ej50_1bjet.dat', 'txt')
+#+++++++ next mass plane block ++++++++++++++
+T6bbWW_2 = T6bbWW.addMassPlane([[x, 0.5*x + 0.5*y, y]]*2)
+T6bbWW_2.addSource('efficiencyMap','orig/atlas_susy_2013_04_T6bbWW_x05_EM_MAPS/MA5_EM_T6bbWW_x05_GtGrid_SR_8ej50_1bjet.dat','txt')
+#+++++++ next mass plane block ++++++++++++++
+T6bbWW_3 = T6bbWW.addMassPlane([[x, 0.9*y + 0.1*x, y]]*2)
+T6bbWW_3.addSource('efficiencyMap','orig/atlas_susy_2013_04_T6bbWW_x09_EM_MAPS/MA5_EM_T6bbWW_x09_GtGrid_SR_8ej50_1bjet.dat','txt')
 
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("GtGrid_SR_8ij80_1bjet")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "GtGrid_SR_8ij80_1bjet", observedN = 1, expectedBG = 1.5 , bgError = 0.9, upperLimit = '2.020E-01*fb', expectedUpperLimit = '2.023E-01*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "GtGrid_SR_8ij80_1bjet", observedN = 1, expectedBG = 1.5 , bgError = 0.9)
 #+++++++ next txName block ++++++++++++++
 T1tttt = dataset.addTxName('T1tttt')
 T1tttt.checked ="None"
@@ -919,12 +1711,6 @@ T5ZZ.condition =None
 T5ZZ.massConstraint = None
 T5ZZ.source = "SModelS"
 #+++++++ next txName block ++++++++++++++
-# T5ZZoff = dataset.addTxName('T5ZZoff')
-# T5ZZoff.constraint ="2.1*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
-# T5ZZoff.conditionDescription =None
-# T5ZZoff.condition =None
-# T5ZZoff.massConstraint = [['dm >= 0.0','dm <= 86.']]*2
-# T5ZZoff.source = "SModelS"
 #+++++++ next mass plane block ++++++++++++++
 T5ZZ_1 = T5ZZ.addMassPlane([[x,0.5*(x+y),y]]*2)
 T5ZZ_1.addSource('efficiencyMap','orig/T5ZZ_x05/MA5_EM_T5ZZ_x05_>=8j80,1bjet.dat', 'txt')
@@ -937,14 +1723,99 @@ T5ZZ_2.dataUrl = None
 T5ZZ_3 = T5ZZ.addMassPlane([[x, 0.95*x + 0.05*y, y]]*2)
 T5ZZ_3.addSource('efficiencyMap','orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_>=8j80,1bjet.dat', 'txt')
 T5ZZ_3.dataUrl = None
-# T5ZZoff.addMassPlane(T5ZZ_1)
-# T5ZZoff.addMassPlane(T5ZZ_2)
-# T5ZZoff.addMassPlane(T5ZZ_3)
+"""
+T5ZZoff = dataset.addTxName('T5ZZoff')
+T5ZZoff.constraint ="2.1*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
+T5ZZoff.conditionDescription =None
+T5ZZoff.condition =None
+T5ZZoff.massConstraint = [['dm >= 0.0','dm <= 86.']]*2
+T5ZZoff.source = "SModelS"
+T5ZZoff.addMassPlane(T5ZZ_1)
+T5ZZoff.addMassPlane(T5ZZ_2)
+T5ZZoff.addMassPlane(T5ZZ_3)
+"""
+#+++++++ next mass plane block ++++++++++++++
+fullpath = "./orig/atlas_susy_2013_04_T2tt_1_EM_MAPS/MA5_EM_T2tt_1_>=8j80,1bjet.dat"
+T2tt = dataset.addTxName('T2tt')
+T2tt.checked ="None"
+T2tt.constraint ="[[['t']],[['t']]]"
+T2tt.conditionDescription ="None"
+T2tt.condition ="None"
+T2tt.source = "SModelS"
+T2tt_1 = T2tt.addMassPlane([[x,y]]*2)
+T2tt_1.addSource('efficiencyMap', fullpath , "txt")
+T2tt_1.dataUrl=None
+#+++++++ next mass plane block ++++++++++++++
+T2ttoff = dataset.addTxName('T2ttoff')
+T2ttoff.checked ="None"
+T2ttoff.constraint ="[[['W','b']],[['W','b']]]"
+T2ttoff.conditionDescription ="None"
+T2ttoff.condition ="None"
+T2ttoff.source = "SModelS"
+T2ttoff_1 = T2ttoff.addMassPlane([[x,y]]*2)
+T2ttoff.massConstraint = [['dm <= 169.0']]*2
+T2ttoff_1.addSource('efficiencyMap', fullpath , "txt")
+T2ttoff_1.dataUrl=None
+T1bbbb = dataset.addTxName('T1bbbb')
+T1bbbb.checked ="None"
+T1bbbb.constraint ="[[['b','b']],[['b','b']]]"
+T1bbbb.conditionDescription ="None"
+T1bbbb.condition ="None"
+T1bbbb.source = "SModelS"
+#+++++++ next mass plane block ++++++++++++++
+T1bbbb = T1bbbb.addMassPlane([[x,y]]*2)
+T1bbbb.addSource('efficiencyMap',"./orig/GtGrid_SR_8ij80_1bjet.txt", "txt")
+T1bbbb.dataUrl= None
+T1btbt = dataset.addTxName('T1btbt')
+T1btbt.checked ="None"
+T1btbt.constraint ="[[['b','t']],[['b','t']]]"
+T1btbt.conditionDescription ="None"
+T1btbt.condition ="None"
+T1btbt.source = "SModelS"
+#+++++++ next mass plane block ++++++++++++++
+T1btbt = T1btbt.addMassPlane([[x,y]]*2)
+T1btbt.addSource('efficiencyMap',"./orig/atlas_susy_2013_04_T1btbt_1_EM_MAPS/MA5_EM_T1btbt_1_>=8j80,1bjet.dat", "txt")
+T1btbt.dataUrl= None
+T5 = dataset.addTxName('T5')
+T5.constraint ="[[['jet'],['jet']],[['jet'],['jet']]]"
+T5.conditionDescription =None
+T5.condition =None
+T5.massConstraint = None
+T5.source = "SModelS"
+T5.massConstraint = [['dm >= 0.0','dm > 76.']]*2
+#+++++++ next txName block ++++++++++++++
+#+++++++ next mass plane block ++++++++++++++
+T5_1 = T5.addMassPlane([[x,0.5*(x+y),y]]*2)
+T5_1.addSource('efficiencyMap','orig/atlas_susy_2013_04_T5_x05_EM_MAPS/MA5_EM_T5_x05_GtGrid_SR_8ij80_1bjet.dat', 'txt')
+T5_1.dataUrl = None
+#+++++++ next mass plane block ++++++++++++++
+T5_2 = T5.addMassPlane([[x,0.05*x + 0.95*y,y]]*2)
+T5_2.addSource('efficiencyMap','orig/atlas_susy_2013_04_T5_x005_EM_MAPS/MA5_EM_T5_x005_GtGrid_SR_8ij80_1bjet.dat', 'txt')
+T5_2.dataUrl = None
+#+++++++ next mass plane block ++++++++++++++
+T5_3 = T5.addMassPlane([[x, 0.95*x + 0.05*y, y]]*2)
+T5_3.addSource('efficiencyMap','orig/atlas_susy_2013_04_T5_x095_EM_MAPS/MA5_EM_T5_x095_GtGrid_SR_8ij80_1bjet.dat', 'txt')
+T5_3.dataUrl = None
+T6bbWW = dataset.addTxName('T6bbWW')
+T6bbWW.constraint = "[[['b'],['W']],[['b'],['W']]]"
+T6bbWW.conditionDescription =None
+T6bbWW.condition =None
+T6bbWW.massConstraint = None
+T6bbWW.source = "SModelS"
+T6bbWW.dataUrl = None
+T6bbWW_1 = T6bbWW.addMassPlane([[x, 0.1*y + 0.9*x, y]]*2)
+T6bbWW_1.addSource('efficiencyMap', 'orig/atlas_susy_2013_04_T6bbWW_x01_EM_MAPS/MA5_EM_T6bbWW_x01_GtGrid_SR_8ij80_1bjet.dat', 'txt')
+#+++++++ next mass plane block ++++++++++++++
+T6bbWW_2 = T6bbWW.addMassPlane([[x, 0.5*x + 0.5*y, y]]*2)
+T6bbWW_2.addSource('efficiencyMap','orig/atlas_susy_2013_04_T6bbWW_x05_EM_MAPS/MA5_EM_T6bbWW_x05_GtGrid_SR_8ij80_1bjet.dat','txt')
+#+++++++ next mass plane block ++++++++++++++
+T6bbWW_3 = T6bbWW.addMassPlane([[x, 0.9*y + 0.1*x, y]]*2)
+T6bbWW_3.addSource('efficiencyMap','orig/atlas_susy_2013_04_T6bbWW_x09_EM_MAPS/MA5_EM_T6bbWW_x09_GtGrid_SR_8ij80_1bjet.dat','txt')
 
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("GtGrid_SR_9ej50_1bjet")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "GtGrid_SR_9ej50_1bjet", observedN = 8, expectedBG = 6.1 , bgError = 1.7, upperLimit = '4.640E-01*fb', expectedUpperLimit = '3.662E-01*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "GtGrid_SR_9ej50_1bjet", observedN = 8, expectedBG = 6.1 , bgError = 1.7)
 #+++++++ next txName block ++++++++++++++
 T1tttt = dataset.addTxName('T1tttt')
 T1tttt.checked ="None"
@@ -1000,12 +1871,6 @@ T5ZZ.condition =None
 T5ZZ.massConstraint = None
 T5ZZ.source = "SModelS"
 #+++++++ next txName block ++++++++++++++
-# T5ZZoff = dataset.addTxName('T5ZZoff')
-# T5ZZoff.constraint ="2.1*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
-# T5ZZoff.conditionDescription =None
-# T5ZZoff.condition =None
-# T5ZZoff.massConstraint = [['dm >= 0.0','dm <= 86.']]*2
-# T5ZZoff.source = "SModelS"
 #+++++++ next mass plane block ++++++++++++++
 T5ZZ_1 = T5ZZ.addMassPlane([[x,0.5*(x+y),y]]*2)
 T5ZZ_1.addSource('efficiencyMap','orig/T5ZZ_x05/MA5_EM_T5ZZ_x05_9j50,1bjet.dat', 'txt')
@@ -1018,14 +1883,99 @@ T5ZZ_2.dataUrl = None
 T5ZZ_3 = T5ZZ.addMassPlane([[x, 0.95*x + 0.05*y, y]]*2)
 T5ZZ_3.addSource('efficiencyMap','orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_9j50,1bjet.dat', 'txt')
 T5ZZ_3.dataUrl = None
-# T5ZZoff.addMassPlane(T5ZZ_1)
-# T5ZZoff.addMassPlane(T5ZZ_2)
-# T5ZZoff.addMassPlane(T5ZZ_3)
+"""
+T5ZZoff = dataset.addTxName('T5ZZoff')
+T5ZZoff.constraint ="2.1*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
+T5ZZoff.conditionDescription =None
+T5ZZoff.condition =None
+T5ZZoff.massConstraint = [['dm >= 0.0','dm <= 86.']]*2
+T5ZZoff.source = "SModelS"
+T5ZZoff.addMassPlane(T5ZZ_1)
+T5ZZoff.addMassPlane(T5ZZ_2)
+T5ZZoff.addMassPlane(T5ZZ_3)
+"""
+#+++++++ next mass plane block ++++++++++++++
+fullpath = "./orig/atlas_susy_2013_04_T2tt_1_EM_MAPS/MA5_EM_T2tt_1_9j50,1bjet.dat"
+T2tt = dataset.addTxName('T2tt')
+T2tt.checked ="None"
+T2tt.constraint ="[[['t']],[['t']]]"
+T2tt.conditionDescription ="None"
+T2tt.condition ="None"
+T2tt.source = "SModelS"
+T2tt_1 = T2tt.addMassPlane([[x,y]]*2)
+T2tt_1.addSource('efficiencyMap', fullpath , "txt")
+T2tt_1.dataUrl=None
+#+++++++ next mass plane block ++++++++++++++
+T2ttoff = dataset.addTxName('T2ttoff')
+T2ttoff.checked ="None"
+T2ttoff.constraint ="[[['W','b']],[['W','b']]]"
+T2ttoff.conditionDescription ="None"
+T2ttoff.condition ="None"
+T2ttoff.source = "SModelS"
+T2ttoff_1 = T2ttoff.addMassPlane([[x,y]]*2)
+T2ttoff.massConstraint = [['dm <= 169.0']]*2
+T2ttoff_1.addSource('efficiencyMap', fullpath , "txt")
+T2ttoff_1.dataUrl=None
+T1bbbb = dataset.addTxName('T1bbbb')
+T1bbbb.checked ="None"
+T1bbbb.constraint ="[[['b','b']],[['b','b']]]"
+T1bbbb.conditionDescription ="None"
+T1bbbb.condition ="None"
+T1bbbb.source = "SModelS"
+#+++++++ next mass plane block ++++++++++++++
+T1bbbb = T1bbbb.addMassPlane([[x,y]]*2)
+T1bbbb.addSource('efficiencyMap',"./orig/GtGrid_SR_9ej50_1bjet.txt", "txt")
+T1bbbb.dataUrl= None
+T1btbt = dataset.addTxName('T1btbt')
+T1btbt.checked ="None"
+T1btbt.constraint ="[[['b','t']],[['b','t']]]"
+T1btbt.conditionDescription ="None"
+T1btbt.condition ="None"
+T1btbt.source = "SModelS"
+#+++++++ next mass plane block ++++++++++++++
+T1btbt = T1btbt.addMassPlane([[x,y]]*2)
+T1btbt.addSource('efficiencyMap',"./orig/atlas_susy_2013_04_T1btbt_1_EM_MAPS/MA5_EM_T1btbt_1_9j50,1bjet.dat", "txt")
+T1btbt.dataUrl= None
+T5 = dataset.addTxName('T5')
+T5.constraint ="[[['jet'],['jet']],[['jet'],['jet']]]"
+T5.conditionDescription =None
+T5.condition =None
+T5.massConstraint = None
+T5.source = "SModelS"
+T5.massConstraint = [['dm >= 0.0','dm > 76.']]*2
+#+++++++ next txName block ++++++++++++++
+#+++++++ next mass plane block ++++++++++++++
+T5_1 = T5.addMassPlane([[x,0.5*(x+y),y]]*2)
+T5_1.addSource('efficiencyMap','orig/atlas_susy_2013_04_T5_x05_EM_MAPS/MA5_EM_T5_x05_GtGrid_SR_9ej50_1bjet.dat', 'txt')
+T5_1.dataUrl = None
+#+++++++ next mass plane block ++++++++++++++
+T5_2 = T5.addMassPlane([[x,0.05*x + 0.95*y,y]]*2)
+T5_2.addSource('efficiencyMap','orig/atlas_susy_2013_04_T5_x005_EM_MAPS/MA5_EM_T5_x005_GtGrid_SR_9ej50_1bjet.dat', 'txt')
+T5_2.dataUrl = None
+#+++++++ next mass plane block ++++++++++++++
+T5_3 = T5.addMassPlane([[x, 0.95*x + 0.05*y, y]]*2)
+T5_3.addSource('efficiencyMap','orig/atlas_susy_2013_04_T5_x095_EM_MAPS/MA5_EM_T5_x095_GtGrid_SR_9ej50_1bjet.dat', 'txt')
+T5_3.dataUrl = None
+T6bbWW = dataset.addTxName('T6bbWW')
+T6bbWW.constraint = "[[['b'],['W']],[['b'],['W']]]"
+T6bbWW.conditionDescription =None
+T6bbWW.condition =None
+T6bbWW.massConstraint = None
+T6bbWW.source = "SModelS"
+T6bbWW.dataUrl = None
+T6bbWW_1 = T6bbWW.addMassPlane([[x, 0.1*y + 0.9*x, y]]*2)
+T6bbWW_1.addSource('efficiencyMap', 'orig/atlas_susy_2013_04_T6bbWW_x01_EM_MAPS/MA5_EM_T6bbWW_x01_GtGrid_SR_9ej50_1bjet.dat', 'txt')
+#+++++++ next mass plane block ++++++++++++++
+T6bbWW_2 = T6bbWW.addMassPlane([[x, 0.5*x + 0.5*y, y]]*2)
+T6bbWW_2.addSource('efficiencyMap','orig/atlas_susy_2013_04_T6bbWW_x05_EM_MAPS/MA5_EM_T6bbWW_x05_GtGrid_SR_9ej50_1bjet.dat','txt')
+#+++++++ next mass plane block ++++++++++++++
+T6bbWW_3 = T6bbWW.addMassPlane([[x, 0.9*y + 0.1*x, y]]*2)
+T6bbWW_3.addSource('efficiencyMap','orig/atlas_susy_2013_04_T6bbWW_x09_EM_MAPS/MA5_EM_T6bbWW_x09_GtGrid_SR_9ej50_1bjet.dat','txt')
 
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("GtGrid_SR_10ij50_bjetblind")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "GtGrid_SR_10ij50_bjetblind", observedN = 3, expectedBG = 1.37 , bgError = 0.35, upperLimit = '3.214E-01*fb', expectedUpperLimit = '1.981E-01*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "GtGrid_SR_10ij50_bjetblind", observedN = 3, expectedBG = 1.37 , bgError = 0.35)
 #+++++++ next txName block ++++++++++++++
 T1tttt = dataset.addTxName('T1tttt')
 T1tttt.checked ="None"
@@ -1081,12 +2031,6 @@ T5ZZ.condition =None
 T5ZZ.massConstraint = None
 T5ZZ.source = "SModelS"
 #+++++++ next txName block ++++++++++++++
-# T5ZZoff = dataset.addTxName('T5ZZoff')
-# T5ZZoff.constraint ="2.1*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
-# T5ZZoff.conditionDescription =None
-# T5ZZoff.condition =None
-# T5ZZoff.massConstraint = [['dm >= 0.0','dm <= 86.']]*2
-# T5ZZoff.source = "SModelS"
 #+++++++ next mass plane block ++++++++++++++
 T5ZZ_1 = T5ZZ.addMassPlane([[x,0.5*(x+y),y]]*2)
 T5ZZ_1.addSource('efficiencyMap','orig/T5ZZ_x05/MA5_EM_T5ZZ_x05_>=10j50.dat', 'txt')
@@ -1099,8 +2043,93 @@ T5ZZ_2.dataUrl = None
 T5ZZ_3 = T5ZZ.addMassPlane([[x, 0.95*x + 0.05*y, y]]*2)
 T5ZZ_3.addSource('efficiencyMap','orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_>=10j50.dat', 'txt')
 T5ZZ_3.dataUrl = None
-# T5ZZoff.addMassPlane(T5ZZ_1)
-# T5ZZoff.addMassPlane(T5ZZ_2)
-# T5ZZoff.addMassPlane(T5ZZ_3)
+"""
+T5ZZoff = dataset.addTxName('T5ZZoff')
+T5ZZoff.constraint ="2.1*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
+T5ZZoff.conditionDescription =None
+T5ZZoff.condition =None
+T5ZZoff.massConstraint = [['dm >= 0.0','dm <= 86.']]*2
+T5ZZoff.source = "SModelS"
+T5ZZoff.addMassPlane(T5ZZ_1)
+T5ZZoff.addMassPlane(T5ZZ_2)
+T5ZZoff.addMassPlane(T5ZZ_3)
+"""
+#+++++++ next mass plane block ++++++++++++++
+fullpath = "./orig/atlas_susy_2013_04_T2tt_1_EM_MAPS/MA5_EM_T2tt_1_>=10j50.dat"
+T2tt = dataset.addTxName('T2tt')
+T2tt.checked ="None"
+T2tt.constraint ="[[['t']],[['t']]]"
+T2tt.conditionDescription ="None"
+T2tt.condition ="None"
+T2tt.source = "SModelS"
+T2tt_1 = T2tt.addMassPlane([[x,y]]*2)
+T2tt_1.addSource('efficiencyMap', fullpath , "txt")
+T2tt_1.dataUrl=None
+#+++++++ next mass plane block ++++++++++++++
+T2ttoff = dataset.addTxName('T2ttoff')
+T2ttoff.checked ="None"
+T2ttoff.constraint ="[[['W','b']],[['W','b']]]"
+T2ttoff.conditionDescription ="None"
+T2ttoff.condition ="None"
+T2ttoff.source = "SModelS"
+T2ttoff_1 = T2ttoff.addMassPlane([[x,y]]*2)
+T2ttoff.massConstraint = [['dm <= 169.0']]*2
+T2ttoff_1.addSource('efficiencyMap', fullpath , "txt")
+T2ttoff_1.dataUrl=None
+T1bbbb = dataset.addTxName('T1bbbb')
+T1bbbb.checked ="None"
+T1bbbb.constraint ="[[['b','b']],[['b','b']]]"
+T1bbbb.conditionDescription ="None"
+T1bbbb.condition ="None"
+T1bbbb.source = "SModelS"
+#+++++++ next mass plane block ++++++++++++++
+T1bbbb = T1bbbb.addMassPlane([[x,y]]*2)
+T1bbbb.addSource('efficiencyMap',"./orig/GtGrid_SR_10ij50_bjetblind.txt", "txt")
+T1bbbb.dataUrl= None
+T1btbt = dataset.addTxName('T1btbt')
+T1btbt.checked ="None"
+T1btbt.constraint ="[[['b','t']],[['b','t']]]"
+T1btbt.conditionDescription ="None"
+T1btbt.condition ="None"
+T1btbt.source = "SModelS"
+#+++++++ next mass plane block ++++++++++++++
+T1btbt = T1btbt.addMassPlane([[x,y]]*2)
+T1btbt.addSource('efficiencyMap',"./orig/atlas_susy_2013_04_T1btbt_1_EM_MAPS/MA5_EM_T1btbt_1_>=10j50.dat", "txt")
+T1btbt.dataUrl= None
+T5 = dataset.addTxName('T5')
+T5.constraint ="[[['jet'],['jet']],[['jet'],['jet']]]"
+T5.conditionDescription =None
+T5.condition =None
+T5.massConstraint = None
+T5.source = "SModelS"
+T5.massConstraint = [['dm >= 0.0','dm > 76.']]*2
+#+++++++ next txName block ++++++++++++++
+#+++++++ next mass plane block ++++++++++++++
+T5_1 = T5.addMassPlane([[x,0.5*(x+y),y]]*2)
+T5_1.addSource('efficiencyMap','orig/atlas_susy_2013_04_T5_x05_EM_MAPS/MA5_EM_T5_x05_GtGrid_SR_10ij50_bjetblind.dat', 'txt')
+T5_1.dataUrl = None
+#+++++++ next mass plane block ++++++++++++++
+T5_2 = T5.addMassPlane([[x,0.05*x + 0.95*y,y]]*2)
+T5_2.addSource('efficiencyMap','orig/atlas_susy_2013_04_T5_x005_EM_MAPS/MA5_EM_T5_x005_GtGrid_SR_10ij50_bjetblind.dat', 'txt')
+T5_2.dataUrl = None
+#+++++++ next mass plane block ++++++++++++++
+T5_3 = T5.addMassPlane([[x, 0.95*x + 0.05*y, y]]*2)
+T5_3.addSource('efficiencyMap','orig/atlas_susy_2013_04_T5_x095_EM_MAPS/MA5_EM_T5_x095_GtGrid_SR_10ij50_bjetblind.dat', 'txt')
+T5_3.dataUrl = None
+T6bbWW = dataset.addTxName('T6bbWW')
+T6bbWW.constraint = "[[['b'],['W']],[['b'],['W']]]"
+T6bbWW.conditionDescription =None
+T6bbWW.condition =None
+T6bbWW.massConstraint = None
+T6bbWW.source = "SModelS"
+T6bbWW.dataUrl = None
+T6bbWW_1 = T6bbWW.addMassPlane([[x, 0.1*y + 0.9*x, y]]*2)
+T6bbWW_1.addSource('efficiencyMap', 'orig/atlas_susy_2013_04_T6bbWW_x01_EM_MAPS/MA5_EM_T6bbWW_x01_GtGrid_SR_10ij50_bjetblind.dat', 'txt')
+#+++++++ next mass plane block ++++++++++++++
+T6bbWW_2 = T6bbWW.addMassPlane([[x, 0.5*x + 0.5*y, y]]*2)
+T6bbWW_2.addSource('efficiencyMap','orig/atlas_susy_2013_04_T6bbWW_x05_EM_MAPS/MA5_EM_T6bbWW_x05_GtGrid_SR_10ij50_bjetblind.dat','txt')
+#+++++++ next mass plane block ++++++++++++++
+T6bbWW_3 = T6bbWW.addMassPlane([[x, 0.9*y + 0.1*x, y]]*2)
+T6bbWW_3.addSource('efficiencyMap','orig/atlas_susy_2013_04_T6bbWW_x09_EM_MAPS/MA5_EM_T6bbWW_x09_GtGrid_SR_10ij50_bjetblind.dat','txt')
 
 databaseCreator.create()
