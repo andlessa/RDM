@@ -34,8 +34,8 @@ from smodels_utils.dataPreparation.inputObjects import MetaInfoInput,DataSetInpu
 from smodels_utils.dataPreparation.databaseCreation import databaseCreator
 from smodels_utils.dataPreparation.massPlaneObjects import x, y, z
 
-databaseCreator.ncpus = 2
-DataSetInput.ntoys = 10
+## databaseCreator.ncpus = 2
+## DataSetInput.ntoys = 10
 
 #+++++++ global info block ++++++++++++++
 info = MetaInfoInput('CMS-SUS-13-012')
