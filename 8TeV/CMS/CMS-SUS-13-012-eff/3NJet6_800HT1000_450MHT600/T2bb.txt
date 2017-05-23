@@ -3,7 +3,6 @@ constraint: [[['b']],[['b']]]
 condition: None
 conditionDescription: None
 susyProcess: pp --> sbottom sbottom, sbottom  --> bottom lsp
-figureUrl: FIXME
 dataUrl: None
 source: SModelS
 validated: TBD

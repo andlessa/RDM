@@ -3,8 +3,7 @@ constraint: [[['t'],['t']],[['t'],['t']]]
 condition: None
 conditionDescription: None
 susyProcess: pp --> gluino gluino, gluino  --> antitop stop, stop --> top lsp
-figureUrl: FIXME;FIXME;FIXME
-dataUrl: FIXME;FIXME;FIXME
+dataUrl: None
 source: SModelS
 validated: TBD
 axes: [[x, 0.5*x + 0.5*y, y], [x, 0.5*x + 0.5*y, y]];[[x, x - 177.0, y], [x, x - 177.0, y]];[[x, y + 177.0, y], [x, y + 177.0, y]]

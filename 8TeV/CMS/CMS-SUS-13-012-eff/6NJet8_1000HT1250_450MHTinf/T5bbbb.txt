@@ -3,8 +3,7 @@ constraint: [[['b'],['b']],[['b'],['b']]]
 condition: None
 conditionDescription: None
 susyProcess: pp --> gluino gluino, gluino  --> bottom sbottom, sbottom --> bottom lsp
-figureUrl: FIXME;FIXME;FIXME
-dataUrl: FIXME;FIXME;FIXME
+dataUrl: None
 source: SModelS
 validated: TBD
 axes: [[x, 0.05*x + 0.95*y, y], [x, 0.05*x + 0.95*y, y]];[[x, 0.5*x + 0.5*y, y], [x, 0.5*x + 0.5*y, y]];[[x, 0.95*x + 0.05*y, y], [x, 0.95*x + 0.05*y, y]]

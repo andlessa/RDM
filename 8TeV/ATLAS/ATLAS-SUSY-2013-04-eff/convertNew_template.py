@@ -149,6 +149,17 @@ T5ZZoff.addMassPlane(T5ZZ_1)
 T5ZZoff.addMassPlane(T5ZZ_2)
 T5ZZoff.addMassPlane(T5ZZ_3)
 
+T2tt = dataset.addTxName('T2tt')
+T2tt.checked ="None"
+T2tt.constraint ="[[['t']],[['t']]]"
+T2tt.conditionDescription ="None"
+T2tt.condition ="None"
+T2tt.source = "SModelS"
+#+++++++ next mass plane block ++++++++++++++
+T2tt_1 = T2tt.addMassPlane([[x,y]]*2)
+T2tt_1.addSource('efficiencyMap',"./orig/atlas_susy_2013_04_$datasetStr$_1_EM_MAPS/MA5_EM_T2tt_1_$datasetStr$.dat", "txt")
+T2tt_1.dataUrl=None
+
 END_BLOCK_TO_FILL
 
 databaseCreator.create()
