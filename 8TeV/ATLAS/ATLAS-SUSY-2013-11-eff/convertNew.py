@@ -8,16 +8,15 @@
 import sys
 import os
 import argparse
-import types
 
 argparser = argparse.ArgumentParser(description =  
 'create info.txt, txname.txt, twiki.txt and sms.py')
 argparser.add_argument ('-utilsPath', '--utilsPath', 
 help = 'path to the package smodels_utils',\
-type = str)
+type = str )
 argparser.add_argument ('-smodelsPath', '--smodelsPath', 
 help = 'path to the package smodels_utils',\
-type = str)
+type = str )
 args = argparser.parse_args()
 
 if args.utilsPath:
@@ -35,7 +34,7 @@ from smodels_utils.dataPreparation.inputObjects import MetaInfoInput,DataSetInpu
 from smodels_utils.dataPreparation.databaseCreation import databaseCreator
 from smodels_utils.dataPreparation.massPlaneObjects import x, y, z
 
-
+DataSetInput.ntoys=10
 
 #+++++++ global info block ++++++++++++++
 info = MetaInfoInput('ATLAS-SUSY-2013-11')
@@ -54,7 +53,7 @@ info.supersedes = 'ATLAS-CONF-2013-049'
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("WWb-SF")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "WWb-SF", observedN = 26, expectedBG = 30.2 , bgError = 3.5, upperLimit = '5.592E-01*fb', expectedUpperLimit = '6.944E-01*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "WWb-SF", observedN = 26, expectedBG = 30.2 , bgError = 3.5)
 #+++++++ next txName block ++++++++++++++
 #+++++++ next txName block ++++++++++++++
 TSlepSlep = dataset.addTxName('TSlepSlep')
@@ -67,11 +66,50 @@ TSlepSlep_1 = TSlepSlep.addMassPlane([[x,y]]*2)
 TSlepSlep_1.addSource('obsExclusion', "orig/exclusion_TSlepSlep.txt", "txt")
 TSlepSlep_1.addSource('efficiencyMap','orig/MA5_EM_WWb-SF.dat', 'txt')
 TSlepSlep_1.dataUrl = None
+TChiWW = dataset.addTxName('TChiWW')
+TChiWW.constraint ="[[['W+']],[['W-']]]"
+TChiWW.conditionDescription = None
+TChiWW.condition = None
+TChiWW.source = 'SModelS'
+#+++++++ next mass plane block ++++++++++++++
+TChiWW_1 = TChiWW.addMassPlane([[x,y]]*2)
+TChiWW_1.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChiWW_1_EM_MAPS/MA5_EM_TChiWW_1_WWb-SF.dat', 'txt')
+TChiWW_1.addSource('obsExclusion', "orig/exclusion_TChiWW.txt", "txt")
+TChiWW_1.dataUrl = None
+TChiWWoff = dataset.addTxName('TChiWWoff')
+TChiWWoff.constraint = "22.2*[[['l+','nu']],[['l-','nu']]]"
+TChiWWoff.conditionDescription = "[[['l+','nu']],[['l-','nu']]] > 2* [[['mu+','nu']],[['l-','nu']]]"
+TChiWWoff.condition = "Cgtr([[['l+','nu']],[['l-','nu']]],2.*[[['mu+','nu']],[['l-','nu']]]); Cgtr([[['l+','nu']],[['l-','nu']]],2.*[[['l+','nu']],[['mu-','nu']]])"
+constraint ="22.2*[[['l+','nu']],[['l-','nu']]]"
+TChiWWoff.massConstraint = [['dm <= 76.']]*2
+TChiWWoff.source = 'SModelS'
+#+++++++ next mass plane block ++++++++++++++
+TChiWWoff.addMassPlane( TChiWW_1 )
+TChipChimSlepSnu = dataset.addTxName('TChipChimSlepSnu')
+TChipChimSlepSnu.constraint = "[[['L-'],['nu']],[['nu'],['L+']]] + [[['L+'],['nu']],[['nu'],['L-']]] + [[['L+'],['nu']],[['L-'],['nu']]] + [[['nu'],['L+']],[['nu'],['L-']]]"
+TChipChimSlepSnu.conditionDescription = "[[['L-'],['nu']],[['nu'],['L+']]] ~ [[['L+'],['nu']],[['nu'],['L-']]], [[['L-'],['nu']],[['nu'],['L+']]] ~ [[['L+'],['nu']],[['L-'],['nu']]], [[['L-'],['nu']],[['nu'],['L+']]] ~ [[['nu'],['L+']],[['nu'],['L-']]],[[['L-'],['nu']],[['nu'],['L+']]] > 2.7*[[['ta-'],['nu']],['nu'],['L+']]],[[['L-'],['nu']],[['nu'],['L+']]] > 2.7*[[['L-'],['nu']],[['nu'],['ta+']]], [[['L+'],['nu']],[['nu'],['L-']]] > 2.7*[[['ta+'],['nu']],[['nu'],['L-']]], [[['L+'],['nu']],[['nu'],['L-']]] > 2.7*[[['L+'],['nu']],[['nu'],['ta-']]], [[['L+'],['nu']],[['L-'],['nu']]] > 2.7*[[['ta+'],['nu']],[['L-'],['nu']]], [[['L+'],['nu']],[['L-'],['nu']]] > 2.7*[[['L+'],['nu']],[['ta-'],['nu']]], [[['nu'],['L+']],[['nu'],['L-']]] > 2.7*[[['nu'],['ta+']],[['nu'],[L-']]], [[['nu'],['L+']],[['nu'],['L-']]] > 2.7*[[['nu'],['L+']],[['nu'],[ta-']]], [[['L-'],['nu']],[['nu'],['L+']]] > 2.7*[[['e-'],['nu']],[['nu'],['L+']]], [[['L-'],['nu']],[['nu'],['L+']]] > 2.7*[[['L-'],['nu']],[['nu'],['e+']]], [[['L+'],['nu']],[['nu'],['L-']]] > 2.7*[[['e+'],['nu']],[['nu'],['L-']]],[[['L+'],['nu']],[['nu'],['L-']]] > 2.7*[[['L+'],['nu']],[['nu'],['e-']]],[[['L+'],['nu']],[['L-'],['nu']]] > 2.7*[[['e+'],['nu']],[['L-'],['nu']]],[[['L+'],['nu']],[['L-'],['nu']]] > 2.7*[[['L+'],['nu']],[['e-'],['nu']]],[[['nu'],['L+']],[['nu'],['L-']]] > 2.7*[[['nu'],['e+']],[['nu'],['L-']]], [[['nu'],['L+']],[['nu'],['L-']]] > 2.7*[[['nu'],['L+']],[['nu'],['e-']]]"
+TChipChimSlepSnu.condition = "Csim([[['L-'],['nu']],[['nu'],['L+']]],[[['L+'],['nu']],[['nu'],['L-']]],[[['L+'],['nu']],[['L-'],['nu']]],[[['nu'],['L+']],[['nu'],['L-']]]); Cgtr([[['L-'],['nu']],[['nu'],['L+']]],3.*[[['ta-'],['nu']],[['nu'],['L+']]]); Cgtr([[['L-'],['nu']],[['nu'],['L+']]],3.*[[['L-'],['nu']],[['nu'],['ta+']]]); Cgtr([[['L+'],['nu']],[['nu'],['L-']]],3.*[[['ta+'],['nu']],[['nu'],['L-']]]); Cgtr([[['L+'],['nu']],[['nu'],['L-']]],3.* [[['L+'],['nu']],[['nu'],['ta-']]]); Cgtr([[['L+'],['nu']],[['L-'],['nu']]],3.*[[['ta+'],['nu']],[['L-'],['nu']]]); Cgtr([[['L+'],['nu']],[['L-'],['nu']]],3.*[[['L+'],['nu']],[['ta-'],['nu']]]); Cgtr([[['nu'],['L+']],[['nu'],[L-']]],3.*[[['nu'],['ta+']],[['nu'],[L-']]]); Cgtr([[['nu'],['L+']],[['nu'],[L-']]],3.*[[['nu'],['L+']],[['nu'],[ta-']]]); Cgtr([[['L-'],['nu']],[['nu'],['L+']]],3.*[[['e-'],['nu']],[['nu'],['L+']]]); Cgtr([[['L-'],['nu']],[['nu'],['L+']]],3.*[[['L-'],['nu']],[['nu'],['e+']]]); Cgtr([[['L+'],['nu']],[['nu'],['L-']]],3.*[[['e+'],['nu']],[['nu'],['L-']]]); Cgtr([[['L+'],['nu']],[['nu'],['L-']]],3.* [[['L+'],['nu']],[['nu'],['e-']]]); Cgtr([[['L+'],['nu']],[['L-'],['nu']]],3.*[[['e+'],['nu']],[['L-'],['nu']]]); Cgtr([[['L+'],['nu']],[['L-'],['nu']]],3.*[[['L+'],['nu']],[['e-'],['nu']]]); Cgtr([[['nu'],['L+']],[['nu'],[L-']]],3.*[[['nu'],['e+']],[['nu'],[L-']]]); Cgtr([[['nu'],['L+']],[['nu'],[L-']]],3.*[[['nu'],['L+']],[['nu'],[e-']]])"
+TChipChimSlepSnu.source = 'SModelS'
+TChipChimSlepSnu.dataUrl = None
+#+++++++ next mass plane block ++++++++++++++
+TChipChimSlepSnu_x005 = TChipChimSlepSnu.addMassPlane([[x,.05*x+.95*y,y]]*2)
+TChipChimSlepSnu_x005.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x005_EM_MAPS/MA5_EM_TChipChimSlepSnu_x005_WWb-SF.dat', 'txt')
+TChipChimSlepSnu_x025 = TChipChimSlepSnu.addMassPlane([[x,.25*x+.75*y,y]]*2)
+TChipChimSlepSnu_x025.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x025_EM_MAPS/MA5_EM_TChipChimSlepSnu_x025_WWb-SF.dat', 'txt')
+TChipChimSlepSnu_x05 = TChipChimSlepSnu.addMassPlane([[x,.50*x+.50*y,y]]*2)
+TChipChimSlepSnu_x05.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x05_EM_MAPS/MA5_EM_TChipChimSlepSnu_x05_WWb-SF.dat', 'txt')
+TChipChimSlepSnu_x05.addSource('obsExclusion', "orig/TChipChimSlepSnu_Obs_x05.txt", "txt")
+TChipChimSlepSnu_x05.addSource('obsExclusionP1', "orig/TChipChimSlepSnu_Obs+1_x05.txt", "txt")
+TChipChimSlepSnu_x05.addSource('obsExclusionM1', "orig/TChipChimSlepSnu_Obs-1_x05.txt", "txt")
+TChipChimSlepSnu_x075 = TChipChimSlepSnu.addMassPlane([[x,.75*x+.25*y,y]]*2)
+TChipChimSlepSnu_x075.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x075_EM_MAPS/MA5_EM_TChipChimSlepSnu_x075_WWb-SF.dat', 'txt')
+TChipChimSlepSnu_x095 = TChipChimSlepSnu.addMassPlane([[x,.95*x+.05*y,y]]*2)
+TChipChimSlepSnu_x095.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x095_EM_MAPS/MA5_EM_TChipChimSlepSnu_x095_WWb-SF.dat', 'txt')
 
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("WWa-SF")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "WWa-SF", observedN = 73, expectedBG = 86.5 , bgError = 7.4, upperLimit = '8.188E-01*fb', expectedUpperLimit = '1.199E+00*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "WWa-SF", observedN = 73, expectedBG = 86.5 , bgError = 7.4)
 #+++++++ next txName block ++++++++++++++
 #+++++++ next txName block ++++++++++++++
 TSlepSlep = dataset.addTxName('TSlepSlep')
@@ -84,11 +122,50 @@ TSlepSlep_1 = TSlepSlep.addMassPlane([[x,y]]*2)
 TSlepSlep_1.addSource('obsExclusion', "orig/exclusion_TSlepSlep.txt", "txt")
 TSlepSlep_1.addSource('efficiencyMap','orig/MA5_EM_WWa-SF.dat', 'txt')
 TSlepSlep_1.dataUrl = None
+TChiWW = dataset.addTxName('TChiWW')
+TChiWW.constraint ="[[['W+']],[['W-']]]"
+TChiWW.conditionDescription = None
+TChiWW.condition = None
+TChiWW.source = 'SModelS'
+#+++++++ next mass plane block ++++++++++++++
+TChiWW_1 = TChiWW.addMassPlane([[x,y]]*2)
+TChiWW_1.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChiWW_1_EM_MAPS/MA5_EM_TChiWW_1_WWa-SF.dat', 'txt')
+TChiWW_1.addSource('obsExclusion', "orig/exclusion_TChiWW.txt", "txt")
+TChiWW_1.dataUrl = None
+TChiWWoff = dataset.addTxName('TChiWWoff')
+TChiWWoff.constraint = "22.2*[[['l+','nu']],[['l-','nu']]]"
+TChiWWoff.conditionDescription = "[[['l+','nu']],[['l-','nu']]] > 2* [[['mu+','nu']],[['l-','nu']]]"
+TChiWWoff.condition = "Cgtr([[['l+','nu']],[['l-','nu']]],2.*[[['mu+','nu']],[['l-','nu']]]); Cgtr([[['l+','nu']],[['l-','nu']]],2.*[[['l+','nu']],[['mu-','nu']]])"
+constraint ="22.2*[[['l+','nu']],[['l-','nu']]]"
+TChiWWoff.massConstraint = [['dm <= 76.']]*2
+TChiWWoff.source = 'SModelS'
+#+++++++ next mass plane block ++++++++++++++
+TChiWWoff.addMassPlane( TChiWW_1 )
+TChipChimSlepSnu = dataset.addTxName('TChipChimSlepSnu')
+TChipChimSlepSnu.constraint = "[[['L-'],['nu']],[['nu'],['L+']]] + [[['L+'],['nu']],[['nu'],['L-']]] + [[['L+'],['nu']],[['L-'],['nu']]] + [[['nu'],['L+']],[['nu'],['L-']]]"
+TChipChimSlepSnu.conditionDescription = "[[['L-'],['nu']],[['nu'],['L+']]] ~ [[['L+'],['nu']],[['nu'],['L-']]], [[['L-'],['nu']],[['nu'],['L+']]] ~ [[['L+'],['nu']],[['L-'],['nu']]], [[['L-'],['nu']],[['nu'],['L+']]] ~ [[['nu'],['L+']],[['nu'],['L-']]],[[['L-'],['nu']],[['nu'],['L+']]] > 2.7*[[['ta-'],['nu']],['nu'],['L+']]],[[['L-'],['nu']],[['nu'],['L+']]] > 2.7*[[['L-'],['nu']],[['nu'],['ta+']]], [[['L+'],['nu']],[['nu'],['L-']]] > 2.7*[[['ta+'],['nu']],[['nu'],['L-']]], [[['L+'],['nu']],[['nu'],['L-']]] > 2.7*[[['L+'],['nu']],[['nu'],['ta-']]], [[['L+'],['nu']],[['L-'],['nu']]] > 2.7*[[['ta+'],['nu']],[['L-'],['nu']]], [[['L+'],['nu']],[['L-'],['nu']]] > 2.7*[[['L+'],['nu']],[['ta-'],['nu']]], [[['nu'],['L+']],[['nu'],['L-']]] > 2.7*[[['nu'],['ta+']],[['nu'],[L-']]], [[['nu'],['L+']],[['nu'],['L-']]] > 2.7*[[['nu'],['L+']],[['nu'],[ta-']]], [[['L-'],['nu']],[['nu'],['L+']]] > 2.7*[[['e-'],['nu']],[['nu'],['L+']]], [[['L-'],['nu']],[['nu'],['L+']]] > 2.7*[[['L-'],['nu']],[['nu'],['e+']]], [[['L+'],['nu']],[['nu'],['L-']]] > 2.7*[[['e+'],['nu']],[['nu'],['L-']]],[[['L+'],['nu']],[['nu'],['L-']]] > 2.7*[[['L+'],['nu']],[['nu'],['e-']]],[[['L+'],['nu']],[['L-'],['nu']]] > 2.7*[[['e+'],['nu']],[['L-'],['nu']]],[[['L+'],['nu']],[['L-'],['nu']]] > 2.7*[[['L+'],['nu']],[['e-'],['nu']]],[[['nu'],['L+']],[['nu'],['L-']]] > 2.7*[[['nu'],['e+']],[['nu'],['L-']]], [[['nu'],['L+']],[['nu'],['L-']]] > 2.7*[[['nu'],['L+']],[['nu'],['e-']]]"
+TChipChimSlepSnu.condition = "Csim([[['L-'],['nu']],[['nu'],['L+']]],[[['L+'],['nu']],[['nu'],['L-']]],[[['L+'],['nu']],[['L-'],['nu']]],[[['nu'],['L+']],[['nu'],['L-']]]); Cgtr([[['L-'],['nu']],[['nu'],['L+']]],3.*[[['ta-'],['nu']],[['nu'],['L+']]]); Cgtr([[['L-'],['nu']],[['nu'],['L+']]],3.*[[['L-'],['nu']],[['nu'],['ta+']]]); Cgtr([[['L+'],['nu']],[['nu'],['L-']]],3.*[[['ta+'],['nu']],[['nu'],['L-']]]); Cgtr([[['L+'],['nu']],[['nu'],['L-']]],3.* [[['L+'],['nu']],[['nu'],['ta-']]]); Cgtr([[['L+'],['nu']],[['L-'],['nu']]],3.*[[['ta+'],['nu']],[['L-'],['nu']]]); Cgtr([[['L+'],['nu']],[['L-'],['nu']]],3.*[[['L+'],['nu']],[['ta-'],['nu']]]); Cgtr([[['nu'],['L+']],[['nu'],[L-']]],3.*[[['nu'],['ta+']],[['nu'],[L-']]]); Cgtr([[['nu'],['L+']],[['nu'],[L-']]],3.*[[['nu'],['L+']],[['nu'],[ta-']]]); Cgtr([[['L-'],['nu']],[['nu'],['L+']]],3.*[[['e-'],['nu']],[['nu'],['L+']]]); Cgtr([[['L-'],['nu']],[['nu'],['L+']]],3.*[[['L-'],['nu']],[['nu'],['e+']]]); Cgtr([[['L+'],['nu']],[['nu'],['L-']]],3.*[[['e+'],['nu']],[['nu'],['L-']]]); Cgtr([[['L+'],['nu']],[['nu'],['L-']]],3.* [[['L+'],['nu']],[['nu'],['e-']]]); Cgtr([[['L+'],['nu']],[['L-'],['nu']]],3.*[[['e+'],['nu']],[['L-'],['nu']]]); Cgtr([[['L+'],['nu']],[['L-'],['nu']]],3.*[[['L+'],['nu']],[['e-'],['nu']]]); Cgtr([[['nu'],['L+']],[['nu'],[L-']]],3.*[[['nu'],['e+']],[['nu'],[L-']]]); Cgtr([[['nu'],['L+']],[['nu'],[L-']]],3.*[[['nu'],['L+']],[['nu'],[e-']]])"
+TChipChimSlepSnu.source = 'SModelS'
+TChipChimSlepSnu.dataUrl = None
+#+++++++ next mass plane block ++++++++++++++
+TChipChimSlepSnu_x005 = TChipChimSlepSnu.addMassPlane([[x,.05*x+.95*y,y]]*2)
+TChipChimSlepSnu_x005.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x005_EM_MAPS/MA5_EM_TChipChimSlepSnu_x005_WWa-SF.dat', 'txt')
+TChipChimSlepSnu_x025 = TChipChimSlepSnu.addMassPlane([[x,.25*x+.75*y,y]]*2)
+TChipChimSlepSnu_x025.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x025_EM_MAPS/MA5_EM_TChipChimSlepSnu_x025_WWa-SF.dat', 'txt')
+TChipChimSlepSnu_x05 = TChipChimSlepSnu.addMassPlane([[x,.50*x+.50*y,y]]*2)
+TChipChimSlepSnu_x05.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x05_EM_MAPS/MA5_EM_TChipChimSlepSnu_x05_WWa-SF.dat', 'txt')
+TChipChimSlepSnu_x05.addSource('obsExclusion', "orig/TChipChimSlepSnu_Obs_x05.txt", "txt")
+TChipChimSlepSnu_x05.addSource('obsExclusionP1', "orig/TChipChimSlepSnu_Obs+1_x05.txt", "txt")
+TChipChimSlepSnu_x05.addSource('obsExclusionM1', "orig/TChipChimSlepSnu_Obs-1_x05.txt", "txt")
+TChipChimSlepSnu_x075 = TChipChimSlepSnu.addMassPlane([[x,.75*x+.25*y,y]]*2)
+TChipChimSlepSnu_x075.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x075_EM_MAPS/MA5_EM_TChipChimSlepSnu_x075_WWa-SF.dat', 'txt')
+TChipChimSlepSnu_x095 = TChipChimSlepSnu.addMassPlane([[x,.95*x+.05*y,y]]*2)
+TChipChimSlepSnu_x095.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x095_EM_MAPS/MA5_EM_TChipChimSlepSnu_x095_WWa-SF.dat', 'txt')
 
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("WWb-DF")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "WWb-DF", observedN = 17, expectedBG = 18.1 , bgError = 2.6, upperLimit = '5.165E-01*fb', expectedUpperLimit = '5.555E-01*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "WWb-DF", observedN = 17, expectedBG = 18.1 , bgError = 2.6)
 #+++++++ next txName block ++++++++++++++
 #+++++++ next txName block ++++++++++++++
 TSlepSlep = dataset.addTxName('TSlepSlep')
@@ -101,11 +178,50 @@ TSlepSlep_1 = TSlepSlep.addMassPlane([[x,y]]*2)
 TSlepSlep_1.addSource('obsExclusion', "orig/exclusion_TSlepSlep.txt", "txt")
 TSlepSlep_1.addSource('efficiencyMap','orig/MA5_EM_WWb-DF.dat', 'txt')
 TSlepSlep_1.dataUrl = None
+TChiWW = dataset.addTxName('TChiWW')
+TChiWW.constraint ="[[['W+']],[['W-']]]"
+TChiWW.conditionDescription = None
+TChiWW.condition = None
+TChiWW.source = 'SModelS'
+#+++++++ next mass plane block ++++++++++++++
+TChiWW_1 = TChiWW.addMassPlane([[x,y]]*2)
+TChiWW_1.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChiWW_1_EM_MAPS/MA5_EM_TChiWW_1_WWb-DF.dat', 'txt')
+TChiWW_1.addSource('obsExclusion', "orig/exclusion_TChiWW.txt", "txt")
+TChiWW_1.dataUrl = None
+TChiWWoff = dataset.addTxName('TChiWWoff')
+TChiWWoff.constraint = "22.2*[[['l+','nu']],[['l-','nu']]]"
+TChiWWoff.conditionDescription = "[[['l+','nu']],[['l-','nu']]] > 2* [[['mu+','nu']],[['l-','nu']]]"
+TChiWWoff.condition = "Cgtr([[['l+','nu']],[['l-','nu']]],2.*[[['mu+','nu']],[['l-','nu']]]); Cgtr([[['l+','nu']],[['l-','nu']]],2.*[[['l+','nu']],[['mu-','nu']]])"
+constraint ="22.2*[[['l+','nu']],[['l-','nu']]]"
+TChiWWoff.massConstraint = [['dm <= 76.']]*2
+TChiWWoff.source = 'SModelS'
+#+++++++ next mass plane block ++++++++++++++
+TChiWWoff.addMassPlane( TChiWW_1 )
+TChipChimSlepSnu = dataset.addTxName('TChipChimSlepSnu')
+TChipChimSlepSnu.constraint = "[[['L-'],['nu']],[['nu'],['L+']]] + [[['L+'],['nu']],[['nu'],['L-']]] + [[['L+'],['nu']],[['L-'],['nu']]] + [[['nu'],['L+']],[['nu'],['L-']]]"
+TChipChimSlepSnu.conditionDescription = "[[['L-'],['nu']],[['nu'],['L+']]] ~ [[['L+'],['nu']],[['nu'],['L-']]], [[['L-'],['nu']],[['nu'],['L+']]] ~ [[['L+'],['nu']],[['L-'],['nu']]], [[['L-'],['nu']],[['nu'],['L+']]] ~ [[['nu'],['L+']],[['nu'],['L-']]],[[['L-'],['nu']],[['nu'],['L+']]] > 2.7*[[['ta-'],['nu']],['nu'],['L+']]],[[['L-'],['nu']],[['nu'],['L+']]] > 2.7*[[['L-'],['nu']],[['nu'],['ta+']]], [[['L+'],['nu']],[['nu'],['L-']]] > 2.7*[[['ta+'],['nu']],[['nu'],['L-']]], [[['L+'],['nu']],[['nu'],['L-']]] > 2.7*[[['L+'],['nu']],[['nu'],['ta-']]], [[['L+'],['nu']],[['L-'],['nu']]] > 2.7*[[['ta+'],['nu']],[['L-'],['nu']]], [[['L+'],['nu']],[['L-'],['nu']]] > 2.7*[[['L+'],['nu']],[['ta-'],['nu']]], [[['nu'],['L+']],[['nu'],['L-']]] > 2.7*[[['nu'],['ta+']],[['nu'],[L-']]], [[['nu'],['L+']],[['nu'],['L-']]] > 2.7*[[['nu'],['L+']],[['nu'],[ta-']]], [[['L-'],['nu']],[['nu'],['L+']]] > 2.7*[[['e-'],['nu']],[['nu'],['L+']]], [[['L-'],['nu']],[['nu'],['L+']]] > 2.7*[[['L-'],['nu']],[['nu'],['e+']]], [[['L+'],['nu']],[['nu'],['L-']]] > 2.7*[[['e+'],['nu']],[['nu'],['L-']]],[[['L+'],['nu']],[['nu'],['L-']]] > 2.7*[[['L+'],['nu']],[['nu'],['e-']]],[[['L+'],['nu']],[['L-'],['nu']]] > 2.7*[[['e+'],['nu']],[['L-'],['nu']]],[[['L+'],['nu']],[['L-'],['nu']]] > 2.7*[[['L+'],['nu']],[['e-'],['nu']]],[[['nu'],['L+']],[['nu'],['L-']]] > 2.7*[[['nu'],['e+']],[['nu'],['L-']]], [[['nu'],['L+']],[['nu'],['L-']]] > 2.7*[[['nu'],['L+']],[['nu'],['e-']]]"
+TChipChimSlepSnu.condition = "Csim([[['L-'],['nu']],[['nu'],['L+']]],[[['L+'],['nu']],[['nu'],['L-']]],[[['L+'],['nu']],[['L-'],['nu']]],[[['nu'],['L+']],[['nu'],['L-']]]); Cgtr([[['L-'],['nu']],[['nu'],['L+']]],3.*[[['ta-'],['nu']],[['nu'],['L+']]]); Cgtr([[['L-'],['nu']],[['nu'],['L+']]],3.*[[['L-'],['nu']],[['nu'],['ta+']]]); Cgtr([[['L+'],['nu']],[['nu'],['L-']]],3.*[[['ta+'],['nu']],[['nu'],['L-']]]); Cgtr([[['L+'],['nu']],[['nu'],['L-']]],3.* [[['L+'],['nu']],[['nu'],['ta-']]]); Cgtr([[['L+'],['nu']],[['L-'],['nu']]],3.*[[['ta+'],['nu']],[['L-'],['nu']]]); Cgtr([[['L+'],['nu']],[['L-'],['nu']]],3.*[[['L+'],['nu']],[['ta-'],['nu']]]); Cgtr([[['nu'],['L+']],[['nu'],[L-']]],3.*[[['nu'],['ta+']],[['nu'],[L-']]]); Cgtr([[['nu'],['L+']],[['nu'],[L-']]],3.*[[['nu'],['L+']],[['nu'],[ta-']]]); Cgtr([[['L-'],['nu']],[['nu'],['L+']]],3.*[[['e-'],['nu']],[['nu'],['L+']]]); Cgtr([[['L-'],['nu']],[['nu'],['L+']]],3.*[[['L-'],['nu']],[['nu'],['e+']]]); Cgtr([[['L+'],['nu']],[['nu'],['L-']]],3.*[[['e+'],['nu']],[['nu'],['L-']]]); Cgtr([[['L+'],['nu']],[['nu'],['L-']]],3.* [[['L+'],['nu']],[['nu'],['e-']]]); Cgtr([[['L+'],['nu']],[['L-'],['nu']]],3.*[[['e+'],['nu']],[['L-'],['nu']]]); Cgtr([[['L+'],['nu']],[['L-'],['nu']]],3.*[[['L+'],['nu']],[['e-'],['nu']]]); Cgtr([[['nu'],['L+']],[['nu'],[L-']]],3.*[[['nu'],['e+']],[['nu'],[L-']]]); Cgtr([[['nu'],['L+']],[['nu'],[L-']]],3.*[[['nu'],['L+']],[['nu'],[e-']]])"
+TChipChimSlepSnu.source = 'SModelS'
+TChipChimSlepSnu.dataUrl = None
+#+++++++ next mass plane block ++++++++++++++
+TChipChimSlepSnu_x005 = TChipChimSlepSnu.addMassPlane([[x,.05*x+.95*y,y]]*2)
+TChipChimSlepSnu_x005.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x005_EM_MAPS/MA5_EM_TChipChimSlepSnu_x005_WWb-DF.dat', 'txt')
+TChipChimSlepSnu_x025 = TChipChimSlepSnu.addMassPlane([[x,.25*x+.75*y,y]]*2)
+TChipChimSlepSnu_x025.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x025_EM_MAPS/MA5_EM_TChipChimSlepSnu_x025_WWb-DF.dat', 'txt')
+TChipChimSlepSnu_x05 = TChipChimSlepSnu.addMassPlane([[x,.50*x+.50*y,y]]*2)
+TChipChimSlepSnu_x05.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x05_EM_MAPS/MA5_EM_TChipChimSlepSnu_x05_WWb-DF.dat', 'txt')
+TChipChimSlepSnu_x05.addSource('obsExclusion', "orig/TChipChimSlepSnu_Obs_x05.txt", "txt")
+TChipChimSlepSnu_x05.addSource('obsExclusionP1', "orig/TChipChimSlepSnu_Obs+1_x05.txt", "txt")
+TChipChimSlepSnu_x05.addSource('obsExclusionM1', "orig/TChipChimSlepSnu_Obs-1_x05.txt", "txt")
+TChipChimSlepSnu_x075 = TChipChimSlepSnu.addMassPlane([[x,.75*x+.25*y,y]]*2)
+TChipChimSlepSnu_x075.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x075_EM_MAPS/MA5_EM_TChipChimSlepSnu_x075_WWb-DF.dat', 'txt')
+TChipChimSlepSnu_x095 = TChipChimSlepSnu.addMassPlane([[x,.95*x+.05*y,y]]*2)
+TChipChimSlepSnu_x095.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x095_EM_MAPS/MA5_EM_TChipChimSlepSnu_x095_WWb-DF.dat', 'txt')
 
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("mT2-90-DF")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "mT2-90-DF", observedN = 21, expectedBG = 23.3 , bgError = 3.7, upperLimit = '5.743E-01*fb', expectedUpperLimit = '6.481E-01*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "mT2-90-DF", observedN = 21, expectedBG = 23.3 , bgError = 3.7)
 #+++++++ next txName block ++++++++++++++
 #+++++++ next txName block ++++++++++++++
 TSlepSlep = dataset.addTxName('TSlepSlep')
@@ -118,11 +234,50 @@ TSlepSlep_1 = TSlepSlep.addMassPlane([[x,y]]*2)
 TSlepSlep_1.addSource('obsExclusion', "orig/exclusion_TSlepSlep.txt", "txt")
 TSlepSlep_1.addSource('efficiencyMap','orig/MA5_EM_mT2-90-DF.dat', 'txt')
 TSlepSlep_1.dataUrl = None
+TChiWW = dataset.addTxName('TChiWW')
+TChiWW.constraint ="[[['W+']],[['W-']]]"
+TChiWW.conditionDescription = None
+TChiWW.condition = None
+TChiWW.source = 'SModelS'
+#+++++++ next mass plane block ++++++++++++++
+TChiWW_1 = TChiWW.addMassPlane([[x,y]]*2)
+TChiWW_1.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChiWW_1_EM_MAPS/MA5_EM_TChiWW_1_mT2-90-DF.dat', 'txt')
+TChiWW_1.addSource('obsExclusion', "orig/exclusion_TChiWW.txt", "txt")
+TChiWW_1.dataUrl = None
+TChiWWoff = dataset.addTxName('TChiWWoff')
+TChiWWoff.constraint = "22.2*[[['l+','nu']],[['l-','nu']]]"
+TChiWWoff.conditionDescription = "[[['l+','nu']],[['l-','nu']]] > 2* [[['mu+','nu']],[['l-','nu']]]"
+TChiWWoff.condition = "Cgtr([[['l+','nu']],[['l-','nu']]],2.*[[['mu+','nu']],[['l-','nu']]]); Cgtr([[['l+','nu']],[['l-','nu']]],2.*[[['l+','nu']],[['mu-','nu']]])"
+constraint ="22.2*[[['l+','nu']],[['l-','nu']]]"
+TChiWWoff.massConstraint = [['dm <= 76.']]*2
+TChiWWoff.source = 'SModelS'
+#+++++++ next mass plane block ++++++++++++++
+TChiWWoff.addMassPlane( TChiWW_1 )
+TChipChimSlepSnu = dataset.addTxName('TChipChimSlepSnu')
+TChipChimSlepSnu.constraint = "[[['L-'],['nu']],[['nu'],['L+']]] + [[['L+'],['nu']],[['nu'],['L-']]] + [[['L+'],['nu']],[['L-'],['nu']]] + [[['nu'],['L+']],[['nu'],['L-']]]"
+TChipChimSlepSnu.conditionDescription = "[[['L-'],['nu']],[['nu'],['L+']]] ~ [[['L+'],['nu']],[['nu'],['L-']]], [[['L-'],['nu']],[['nu'],['L+']]] ~ [[['L+'],['nu']],[['L-'],['nu']]], [[['L-'],['nu']],[['nu'],['L+']]] ~ [[['nu'],['L+']],[['nu'],['L-']]],[[['L-'],['nu']],[['nu'],['L+']]] > 2.7*[[['ta-'],['nu']],['nu'],['L+']]],[[['L-'],['nu']],[['nu'],['L+']]] > 2.7*[[['L-'],['nu']],[['nu'],['ta+']]], [[['L+'],['nu']],[['nu'],['L-']]] > 2.7*[[['ta+'],['nu']],[['nu'],['L-']]], [[['L+'],['nu']],[['nu'],['L-']]] > 2.7*[[['L+'],['nu']],[['nu'],['ta-']]], [[['L+'],['nu']],[['L-'],['nu']]] > 2.7*[[['ta+'],['nu']],[['L-'],['nu']]], [[['L+'],['nu']],[['L-'],['nu']]] > 2.7*[[['L+'],['nu']],[['ta-'],['nu']]], [[['nu'],['L+']],[['nu'],['L-']]] > 2.7*[[['nu'],['ta+']],[['nu'],[L-']]], [[['nu'],['L+']],[['nu'],['L-']]] > 2.7*[[['nu'],['L+']],[['nu'],[ta-']]], [[['L-'],['nu']],[['nu'],['L+']]] > 2.7*[[['e-'],['nu']],[['nu'],['L+']]], [[['L-'],['nu']],[['nu'],['L+']]] > 2.7*[[['L-'],['nu']],[['nu'],['e+']]], [[['L+'],['nu']],[['nu'],['L-']]] > 2.7*[[['e+'],['nu']],[['nu'],['L-']]],[[['L+'],['nu']],[['nu'],['L-']]] > 2.7*[[['L+'],['nu']],[['nu'],['e-']]],[[['L+'],['nu']],[['L-'],['nu']]] > 2.7*[[['e+'],['nu']],[['L-'],['nu']]],[[['L+'],['nu']],[['L-'],['nu']]] > 2.7*[[['L+'],['nu']],[['e-'],['nu']]],[[['nu'],['L+']],[['nu'],['L-']]] > 2.7*[[['nu'],['e+']],[['nu'],['L-']]], [[['nu'],['L+']],[['nu'],['L-']]] > 2.7*[[['nu'],['L+']],[['nu'],['e-']]]"
+TChipChimSlepSnu.condition = "Csim([[['L-'],['nu']],[['nu'],['L+']]],[[['L+'],['nu']],[['nu'],['L-']]],[[['L+'],['nu']],[['L-'],['nu']]],[[['nu'],['L+']],[['nu'],['L-']]]); Cgtr([[['L-'],['nu']],[['nu'],['L+']]],3.*[[['ta-'],['nu']],[['nu'],['L+']]]); Cgtr([[['L-'],['nu']],[['nu'],['L+']]],3.*[[['L-'],['nu']],[['nu'],['ta+']]]); Cgtr([[['L+'],['nu']],[['nu'],['L-']]],3.*[[['ta+'],['nu']],[['nu'],['L-']]]); Cgtr([[['L+'],['nu']],[['nu'],['L-']]],3.* [[['L+'],['nu']],[['nu'],['ta-']]]); Cgtr([[['L+'],['nu']],[['L-'],['nu']]],3.*[[['ta+'],['nu']],[['L-'],['nu']]]); Cgtr([[['L+'],['nu']],[['L-'],['nu']]],3.*[[['L+'],['nu']],[['ta-'],['nu']]]); Cgtr([[['nu'],['L+']],[['nu'],[L-']]],3.*[[['nu'],['ta+']],[['nu'],[L-']]]); Cgtr([[['nu'],['L+']],[['nu'],[L-']]],3.*[[['nu'],['L+']],[['nu'],[ta-']]]); Cgtr([[['L-'],['nu']],[['nu'],['L+']]],3.*[[['e-'],['nu']],[['nu'],['L+']]]); Cgtr([[['L-'],['nu']],[['nu'],['L+']]],3.*[[['L-'],['nu']],[['nu'],['e+']]]); Cgtr([[['L+'],['nu']],[['nu'],['L-']]],3.*[[['e+'],['nu']],[['nu'],['L-']]]); Cgtr([[['L+'],['nu']],[['nu'],['L-']]],3.* [[['L+'],['nu']],[['nu'],['e-']]]); Cgtr([[['L+'],['nu']],[['L-'],['nu']]],3.*[[['e+'],['nu']],[['L-'],['nu']]]); Cgtr([[['L+'],['nu']],[['L-'],['nu']]],3.*[[['L+'],['nu']],[['e-'],['nu']]]); Cgtr([[['nu'],['L+']],[['nu'],[L-']]],3.*[[['nu'],['e+']],[['nu'],[L-']]]); Cgtr([[['nu'],['L+']],[['nu'],[L-']]],3.*[[['nu'],['L+']],[['nu'],[e-']]])"
+TChipChimSlepSnu.source = 'SModelS'
+TChipChimSlepSnu.dataUrl = None
+#+++++++ next mass plane block ++++++++++++++
+TChipChimSlepSnu_x005 = TChipChimSlepSnu.addMassPlane([[x,.05*x+.95*y,y]]*2)
+TChipChimSlepSnu_x005.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x005_EM_MAPS/MA5_EM_TChipChimSlepSnu_x005_mT2-90-DF.dat', 'txt')
+TChipChimSlepSnu_x025 = TChipChimSlepSnu.addMassPlane([[x,.25*x+.75*y,y]]*2)
+TChipChimSlepSnu_x025.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x025_EM_MAPS/MA5_EM_TChipChimSlepSnu_x025_mT2-90-DF.dat', 'txt')
+TChipChimSlepSnu_x05 = TChipChimSlepSnu.addMassPlane([[x,.50*x+.50*y,y]]*2)
+TChipChimSlepSnu_x05.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x05_EM_MAPS/MA5_EM_TChipChimSlepSnu_x05_mT2-90-DF.dat', 'txt')
+TChipChimSlepSnu_x05.addSource('obsExclusion', "orig/TChipChimSlepSnu_Obs_x05.txt", "txt")
+TChipChimSlepSnu_x05.addSource('obsExclusionP1', "orig/TChipChimSlepSnu_Obs+1_x05.txt", "txt")
+TChipChimSlepSnu_x05.addSource('obsExclusionM1', "orig/TChipChimSlepSnu_Obs-1_x05.txt", "txt")
+TChipChimSlepSnu_x075 = TChipChimSlepSnu.addMassPlane([[x,.75*x+.25*y,y]]*2)
+TChipChimSlepSnu_x075.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x075_EM_MAPS/MA5_EM_TChipChimSlepSnu_x075_mT2-90-DF.dat', 'txt')
+TChipChimSlepSnu_x095 = TChipChimSlepSnu.addMassPlane([[x,.95*x+.05*y,y]]*2)
+TChipChimSlepSnu_x095.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x095_EM_MAPS/MA5_EM_TChipChimSlepSnu_x095_mT2-90-DF.dat', 'txt')
 
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("mT2-120-SF")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "mT2-120-SF", observedN = 5, expectedBG = 8.9 , bgError = 2.1, upperLimit = '2.794E-01*fb', expectedUpperLimit = '3.920E-01*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "mT2-120-SF", observedN = 5, expectedBG = 8.9 , bgError = 2.1)
 #+++++++ next txName block ++++++++++++++
 #+++++++ next txName block ++++++++++++++
 TSlepSlep = dataset.addTxName('TSlepSlep')
@@ -135,11 +290,50 @@ TSlepSlep_1 = TSlepSlep.addMassPlane([[x,y]]*2)
 TSlepSlep_1.addSource('obsExclusion', "orig/exclusion_TSlepSlep.txt", "txt")
 TSlepSlep_1.addSource('efficiencyMap','orig/MA5_EM_mT2-120-SF.dat', 'txt')
 TSlepSlep_1.dataUrl = None
+TChiWW = dataset.addTxName('TChiWW')
+TChiWW.constraint ="[[['W+']],[['W-']]]"
+TChiWW.conditionDescription = None
+TChiWW.condition = None
+TChiWW.source = 'SModelS'
+#+++++++ next mass plane block ++++++++++++++
+TChiWW_1 = TChiWW.addMassPlane([[x,y]]*2)
+TChiWW_1.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChiWW_1_EM_MAPS/MA5_EM_TChiWW_1_mT2-120-SF.dat', 'txt')
+TChiWW_1.addSource('obsExclusion', "orig/exclusion_TChiWW.txt", "txt")
+TChiWW_1.dataUrl = None
+TChiWWoff = dataset.addTxName('TChiWWoff')
+TChiWWoff.constraint = "22.2*[[['l+','nu']],[['l-','nu']]]"
+TChiWWoff.conditionDescription = "[[['l+','nu']],[['l-','nu']]] > 2* [[['mu+','nu']],[['l-','nu']]]"
+TChiWWoff.condition = "Cgtr([[['l+','nu']],[['l-','nu']]],2.*[[['mu+','nu']],[['l-','nu']]]); Cgtr([[['l+','nu']],[['l-','nu']]],2.*[[['l+','nu']],[['mu-','nu']]])"
+constraint ="22.2*[[['l+','nu']],[['l-','nu']]]"
+TChiWWoff.massConstraint = [['dm <= 76.']]*2
+TChiWWoff.source = 'SModelS'
+#+++++++ next mass plane block ++++++++++++++
+TChiWWoff.addMassPlane( TChiWW_1 )
+TChipChimSlepSnu = dataset.addTxName('TChipChimSlepSnu')
+TChipChimSlepSnu.constraint = "[[['L-'],['nu']],[['nu'],['L+']]] + [[['L+'],['nu']],[['nu'],['L-']]] + [[['L+'],['nu']],[['L-'],['nu']]] + [[['nu'],['L+']],[['nu'],['L-']]]"
+TChipChimSlepSnu.conditionDescription = "[[['L-'],['nu']],[['nu'],['L+']]] ~ [[['L+'],['nu']],[['nu'],['L-']]], [[['L-'],['nu']],[['nu'],['L+']]] ~ [[['L+'],['nu']],[['L-'],['nu']]], [[['L-'],['nu']],[['nu'],['L+']]] ~ [[['nu'],['L+']],[['nu'],['L-']]],[[['L-'],['nu']],[['nu'],['L+']]] > 2.7*[[['ta-'],['nu']],['nu'],['L+']]],[[['L-'],['nu']],[['nu'],['L+']]] > 2.7*[[['L-'],['nu']],[['nu'],['ta+']]], [[['L+'],['nu']],[['nu'],['L-']]] > 2.7*[[['ta+'],['nu']],[['nu'],['L-']]], [[['L+'],['nu']],[['nu'],['L-']]] > 2.7*[[['L+'],['nu']],[['nu'],['ta-']]], [[['L+'],['nu']],[['L-'],['nu']]] > 2.7*[[['ta+'],['nu']],[['L-'],['nu']]], [[['L+'],['nu']],[['L-'],['nu']]] > 2.7*[[['L+'],['nu']],[['ta-'],['nu']]], [[['nu'],['L+']],[['nu'],['L-']]] > 2.7*[[['nu'],['ta+']],[['nu'],[L-']]], [[['nu'],['L+']],[['nu'],['L-']]] > 2.7*[[['nu'],['L+']],[['nu'],[ta-']]], [[['L-'],['nu']],[['nu'],['L+']]] > 2.7*[[['e-'],['nu']],[['nu'],['L+']]], [[['L-'],['nu']],[['nu'],['L+']]] > 2.7*[[['L-'],['nu']],[['nu'],['e+']]], [[['L+'],['nu']],[['nu'],['L-']]] > 2.7*[[['e+'],['nu']],[['nu'],['L-']]],[[['L+'],['nu']],[['nu'],['L-']]] > 2.7*[[['L+'],['nu']],[['nu'],['e-']]],[[['L+'],['nu']],[['L-'],['nu']]] > 2.7*[[['e+'],['nu']],[['L-'],['nu']]],[[['L+'],['nu']],[['L-'],['nu']]] > 2.7*[[['L+'],['nu']],[['e-'],['nu']]],[[['nu'],['L+']],[['nu'],['L-']]] > 2.7*[[['nu'],['e+']],[['nu'],['L-']]], [[['nu'],['L+']],[['nu'],['L-']]] > 2.7*[[['nu'],['L+']],[['nu'],['e-']]]"
+TChipChimSlepSnu.condition = "Csim([[['L-'],['nu']],[['nu'],['L+']]],[[['L+'],['nu']],[['nu'],['L-']]],[[['L+'],['nu']],[['L-'],['nu']]],[[['nu'],['L+']],[['nu'],['L-']]]); Cgtr([[['L-'],['nu']],[['nu'],['L+']]],3.*[[['ta-'],['nu']],[['nu'],['L+']]]); Cgtr([[['L-'],['nu']],[['nu'],['L+']]],3.*[[['L-'],['nu']],[['nu'],['ta+']]]); Cgtr([[['L+'],['nu']],[['nu'],['L-']]],3.*[[['ta+'],['nu']],[['nu'],['L-']]]); Cgtr([[['L+'],['nu']],[['nu'],['L-']]],3.* [[['L+'],['nu']],[['nu'],['ta-']]]); Cgtr([[['L+'],['nu']],[['L-'],['nu']]],3.*[[['ta+'],['nu']],[['L-'],['nu']]]); Cgtr([[['L+'],['nu']],[['L-'],['nu']]],3.*[[['L+'],['nu']],[['ta-'],['nu']]]); Cgtr([[['nu'],['L+']],[['nu'],[L-']]],3.*[[['nu'],['ta+']],[['nu'],[L-']]]); Cgtr([[['nu'],['L+']],[['nu'],[L-']]],3.*[[['nu'],['L+']],[['nu'],[ta-']]]); Cgtr([[['L-'],['nu']],[['nu'],['L+']]],3.*[[['e-'],['nu']],[['nu'],['L+']]]); Cgtr([[['L-'],['nu']],[['nu'],['L+']]],3.*[[['L-'],['nu']],[['nu'],['e+']]]); Cgtr([[['L+'],['nu']],[['nu'],['L-']]],3.*[[['e+'],['nu']],[['nu'],['L-']]]); Cgtr([[['L+'],['nu']],[['nu'],['L-']]],3.* [[['L+'],['nu']],[['nu'],['e-']]]); Cgtr([[['L+'],['nu']],[['L-'],['nu']]],3.*[[['e+'],['nu']],[['L-'],['nu']]]); Cgtr([[['L+'],['nu']],[['L-'],['nu']]],3.*[[['L+'],['nu']],[['e-'],['nu']]]); Cgtr([[['nu'],['L+']],[['nu'],[L-']]],3.*[[['nu'],['e+']],[['nu'],[L-']]]); Cgtr([[['nu'],['L+']],[['nu'],[L-']]],3.*[[['nu'],['L+']],[['nu'],[e-']]])"
+TChipChimSlepSnu.source = 'SModelS'
+TChipChimSlepSnu.dataUrl = None
+#+++++++ next mass plane block ++++++++++++++
+TChipChimSlepSnu_x005 = TChipChimSlepSnu.addMassPlane([[x,.05*x+.95*y,y]]*2)
+TChipChimSlepSnu_x005.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x005_EM_MAPS/MA5_EM_TChipChimSlepSnu_x005_mT2-120-SF.dat', 'txt')
+TChipChimSlepSnu_x025 = TChipChimSlepSnu.addMassPlane([[x,.25*x+.75*y,y]]*2)
+TChipChimSlepSnu_x025.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x025_EM_MAPS/MA5_EM_TChipChimSlepSnu_x025_mT2-120-SF.dat', 'txt')
+TChipChimSlepSnu_x05 = TChipChimSlepSnu.addMassPlane([[x,.50*x+.50*y,y]]*2)
+TChipChimSlepSnu_x05.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x05_EM_MAPS/MA5_EM_TChipChimSlepSnu_x05_mT2-120-SF.dat', 'txt')
+TChipChimSlepSnu_x05.addSource('obsExclusion', "orig/TChipChimSlepSnu_Obs_x05.txt", "txt")
+TChipChimSlepSnu_x05.addSource('obsExclusionP1', "orig/TChipChimSlepSnu_Obs+1_x05.txt", "txt")
+TChipChimSlepSnu_x05.addSource('obsExclusionM1', "orig/TChipChimSlepSnu_Obs-1_x05.txt", "txt")
+TChipChimSlepSnu_x075 = TChipChimSlepSnu.addMassPlane([[x,.75*x+.25*y,y]]*2)
+TChipChimSlepSnu_x075.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x075_EM_MAPS/MA5_EM_TChipChimSlepSnu_x075_mT2-120-SF.dat', 'txt')
+TChipChimSlepSnu_x095 = TChipChimSlepSnu.addMassPlane([[x,.95*x+.05*y,y]]*2)
+TChipChimSlepSnu_x095.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x095_EM_MAPS/MA5_EM_TChipChimSlepSnu_x095_mT2-120-SF.dat', 'txt')
 
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("WWc-SF")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "WWc-SF", observedN = 10, expectedBG = 20.1 , bgError = 3.5, upperLimit = '3.159E-01*fb', expectedUpperLimit = '6.196E-01*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "WWc-SF", observedN = 10, expectedBG = 20.1 , bgError = 3.5)
 #+++++++ next txName block ++++++++++++++
 #+++++++ next txName block ++++++++++++++
 TSlepSlep = dataset.addTxName('TSlepSlep')
@@ -152,11 +346,50 @@ TSlepSlep_1 = TSlepSlep.addMassPlane([[x,y]]*2)
 TSlepSlep_1.addSource('obsExclusion', "orig/exclusion_TSlepSlep.txt", "txt")
 TSlepSlep_1.addSource('efficiencyMap','orig/MA5_EM_WWc-SF.dat', 'txt')
 TSlepSlep_1.dataUrl = None
+TChiWW = dataset.addTxName('TChiWW')
+TChiWW.constraint ="[[['W+']],[['W-']]]"
+TChiWW.conditionDescription = None
+TChiWW.condition = None
+TChiWW.source = 'SModelS'
+#+++++++ next mass plane block ++++++++++++++
+TChiWW_1 = TChiWW.addMassPlane([[x,y]]*2)
+TChiWW_1.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChiWW_1_EM_MAPS/MA5_EM_TChiWW_1_WWc-SF.dat', 'txt')
+TChiWW_1.addSource('obsExclusion', "orig/exclusion_TChiWW.txt", "txt")
+TChiWW_1.dataUrl = None
+TChiWWoff = dataset.addTxName('TChiWWoff')
+TChiWWoff.constraint = "22.2*[[['l+','nu']],[['l-','nu']]]"
+TChiWWoff.conditionDescription = "[[['l+','nu']],[['l-','nu']]] > 2* [[['mu+','nu']],[['l-','nu']]]"
+TChiWWoff.condition = "Cgtr([[['l+','nu']],[['l-','nu']]],2.*[[['mu+','nu']],[['l-','nu']]]); Cgtr([[['l+','nu']],[['l-','nu']]],2.*[[['l+','nu']],[['mu-','nu']]])"
+constraint ="22.2*[[['l+','nu']],[['l-','nu']]]"
+TChiWWoff.massConstraint = [['dm <= 76.']]*2
+TChiWWoff.source = 'SModelS'
+#+++++++ next mass plane block ++++++++++++++
+TChiWWoff.addMassPlane( TChiWW_1 )
+TChipChimSlepSnu = dataset.addTxName('TChipChimSlepSnu')
+TChipChimSlepSnu.constraint = "[[['L-'],['nu']],[['nu'],['L+']]] + [[['L+'],['nu']],[['nu'],['L-']]] + [[['L+'],['nu']],[['L-'],['nu']]] + [[['nu'],['L+']],[['nu'],['L-']]]"
+TChipChimSlepSnu.conditionDescription = "[[['L-'],['nu']],[['nu'],['L+']]] ~ [[['L+'],['nu']],[['nu'],['L-']]], [[['L-'],['nu']],[['nu'],['L+']]] ~ [[['L+'],['nu']],[['L-'],['nu']]], [[['L-'],['nu']],[['nu'],['L+']]] ~ [[['nu'],['L+']],[['nu'],['L-']]],[[['L-'],['nu']],[['nu'],['L+']]] > 2.7*[[['ta-'],['nu']],['nu'],['L+']]],[[['L-'],['nu']],[['nu'],['L+']]] > 2.7*[[['L-'],['nu']],[['nu'],['ta+']]], [[['L+'],['nu']],[['nu'],['L-']]] > 2.7*[[['ta+'],['nu']],[['nu'],['L-']]], [[['L+'],['nu']],[['nu'],['L-']]] > 2.7*[[['L+'],['nu']],[['nu'],['ta-']]], [[['L+'],['nu']],[['L-'],['nu']]] > 2.7*[[['ta+'],['nu']],[['L-'],['nu']]], [[['L+'],['nu']],[['L-'],['nu']]] > 2.7*[[['L+'],['nu']],[['ta-'],['nu']]], [[['nu'],['L+']],[['nu'],['L-']]] > 2.7*[[['nu'],['ta+']],[['nu'],[L-']]], [[['nu'],['L+']],[['nu'],['L-']]] > 2.7*[[['nu'],['L+']],[['nu'],[ta-']]], [[['L-'],['nu']],[['nu'],['L+']]] > 2.7*[[['e-'],['nu']],[['nu'],['L+']]], [[['L-'],['nu']],[['nu'],['L+']]] > 2.7*[[['L-'],['nu']],[['nu'],['e+']]], [[['L+'],['nu']],[['nu'],['L-']]] > 2.7*[[['e+'],['nu']],[['nu'],['L-']]],[[['L+'],['nu']],[['nu'],['L-']]] > 2.7*[[['L+'],['nu']],[['nu'],['e-']]],[[['L+'],['nu']],[['L-'],['nu']]] > 2.7*[[['e+'],['nu']],[['L-'],['nu']]],[[['L+'],['nu']],[['L-'],['nu']]] > 2.7*[[['L+'],['nu']],[['e-'],['nu']]],[[['nu'],['L+']],[['nu'],['L-']]] > 2.7*[[['nu'],['e+']],[['nu'],['L-']]], [[['nu'],['L+']],[['nu'],['L-']]] > 2.7*[[['nu'],['L+']],[['nu'],['e-']]]"
+TChipChimSlepSnu.condition = "Csim([[['L-'],['nu']],[['nu'],['L+']]],[[['L+'],['nu']],[['nu'],['L-']]],[[['L+'],['nu']],[['L-'],['nu']]],[[['nu'],['L+']],[['nu'],['L-']]]); Cgtr([[['L-'],['nu']],[['nu'],['L+']]],3.*[[['ta-'],['nu']],[['nu'],['L+']]]); Cgtr([[['L-'],['nu']],[['nu'],['L+']]],3.*[[['L-'],['nu']],[['nu'],['ta+']]]); Cgtr([[['L+'],['nu']],[['nu'],['L-']]],3.*[[['ta+'],['nu']],[['nu'],['L-']]]); Cgtr([[['L+'],['nu']],[['nu'],['L-']]],3.* [[['L+'],['nu']],[['nu'],['ta-']]]); Cgtr([[['L+'],['nu']],[['L-'],['nu']]],3.*[[['ta+'],['nu']],[['L-'],['nu']]]); Cgtr([[['L+'],['nu']],[['L-'],['nu']]],3.*[[['L+'],['nu']],[['ta-'],['nu']]]); Cgtr([[['nu'],['L+']],[['nu'],[L-']]],3.*[[['nu'],['ta+']],[['nu'],[L-']]]); Cgtr([[['nu'],['L+']],[['nu'],[L-']]],3.*[[['nu'],['L+']],[['nu'],[ta-']]]); Cgtr([[['L-'],['nu']],[['nu'],['L+']]],3.*[[['e-'],['nu']],[['nu'],['L+']]]); Cgtr([[['L-'],['nu']],[['nu'],['L+']]],3.*[[['L-'],['nu']],[['nu'],['e+']]]); Cgtr([[['L+'],['nu']],[['nu'],['L-']]],3.*[[['e+'],['nu']],[['nu'],['L-']]]); Cgtr([[['L+'],['nu']],[['nu'],['L-']]],3.* [[['L+'],['nu']],[['nu'],['e-']]]); Cgtr([[['L+'],['nu']],[['L-'],['nu']]],3.*[[['e+'],['nu']],[['L-'],['nu']]]); Cgtr([[['L+'],['nu']],[['L-'],['nu']]],3.*[[['L+'],['nu']],[['e-'],['nu']]]); Cgtr([[['nu'],['L+']],[['nu'],[L-']]],3.*[[['nu'],['e+']],[['nu'],[L-']]]); Cgtr([[['nu'],['L+']],[['nu'],[L-']]],3.*[[['nu'],['L+']],[['nu'],[e-']]])"
+TChipChimSlepSnu.source = 'SModelS'
+TChipChimSlepSnu.dataUrl = None
+#+++++++ next mass plane block ++++++++++++++
+TChipChimSlepSnu_x005 = TChipChimSlepSnu.addMassPlane([[x,.05*x+.95*y,y]]*2)
+TChipChimSlepSnu_x005.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x005_EM_MAPS/MA5_EM_TChipChimSlepSnu_x005_WWc-SF.dat', 'txt')
+TChipChimSlepSnu_x025 = TChipChimSlepSnu.addMassPlane([[x,.25*x+.75*y,y]]*2)
+TChipChimSlepSnu_x025.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x025_EM_MAPS/MA5_EM_TChipChimSlepSnu_x025_WWc-SF.dat', 'txt')
+TChipChimSlepSnu_x05 = TChipChimSlepSnu.addMassPlane([[x,.50*x+.50*y,y]]*2)
+TChipChimSlepSnu_x05.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x05_EM_MAPS/MA5_EM_TChipChimSlepSnu_x05_WWc-SF.dat', 'txt')
+TChipChimSlepSnu_x05.addSource('obsExclusion', "orig/TChipChimSlepSnu_Obs_x05.txt", "txt")
+TChipChimSlepSnu_x05.addSource('obsExclusionP1', "orig/TChipChimSlepSnu_Obs+1_x05.txt", "txt")
+TChipChimSlepSnu_x05.addSource('obsExclusionM1', "orig/TChipChimSlepSnu_Obs-1_x05.txt", "txt")
+TChipChimSlepSnu_x075 = TChipChimSlepSnu.addMassPlane([[x,.75*x+.25*y,y]]*2)
+TChipChimSlepSnu_x075.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x075_EM_MAPS/MA5_EM_TChipChimSlepSnu_x075_WWc-SF.dat', 'txt')
+TChipChimSlepSnu_x095 = TChipChimSlepSnu.addMassPlane([[x,.95*x+.05*y,y]]*2)
+TChipChimSlepSnu_x095.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x095_EM_MAPS/MA5_EM_TChipChimSlepSnu_x095_WWc-SF.dat', 'txt')
 
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("WWa-DF")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "WWa-DF", observedN = 70, expectedBG = 73.6 , bgError = 7.9, upperLimit = '1.067E+00*fb', expectedUpperLimit = '1.174E+00*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "WWa-DF", observedN = 70, expectedBG = 73.6 , bgError = 7.9)
 #+++++++ next txName block ++++++++++++++
 #+++++++ next txName block ++++++++++++++
 TSlepSlep = dataset.addTxName('TSlepSlep')
@@ -169,11 +402,50 @@ TSlepSlep_1 = TSlepSlep.addMassPlane([[x,y]]*2)
 TSlepSlep_1.addSource('obsExclusion', "orig/exclusion_TSlepSlep.txt", "txt")
 TSlepSlep_1.addSource('efficiencyMap','orig/MA5_EM_WWa-DF.dat', 'txt')
 TSlepSlep_1.dataUrl = None
+TChiWW = dataset.addTxName('TChiWW')
+TChiWW.constraint ="[[['W+']],[['W-']]]"
+TChiWW.conditionDescription = None
+TChiWW.condition = None
+TChiWW.source = 'SModelS'
+#+++++++ next mass plane block ++++++++++++++
+TChiWW_1 = TChiWW.addMassPlane([[x,y]]*2)
+TChiWW_1.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChiWW_1_EM_MAPS/MA5_EM_TChiWW_1_WWa-DF.dat', 'txt')
+TChiWW_1.addSource('obsExclusion', "orig/exclusion_TChiWW.txt", "txt")
+TChiWW_1.dataUrl = None
+TChiWWoff = dataset.addTxName('TChiWWoff')
+TChiWWoff.constraint = "22.2*[[['l+','nu']],[['l-','nu']]]"
+TChiWWoff.conditionDescription = "[[['l+','nu']],[['l-','nu']]] > 2* [[['mu+','nu']],[['l-','nu']]]"
+TChiWWoff.condition = "Cgtr([[['l+','nu']],[['l-','nu']]],2.*[[['mu+','nu']],[['l-','nu']]]); Cgtr([[['l+','nu']],[['l-','nu']]],2.*[[['l+','nu']],[['mu-','nu']]])"
+constraint ="22.2*[[['l+','nu']],[['l-','nu']]]"
+TChiWWoff.massConstraint = [['dm <= 76.']]*2
+TChiWWoff.source = 'SModelS'
+#+++++++ next mass plane block ++++++++++++++
+TChiWWoff.addMassPlane( TChiWW_1 )
+TChipChimSlepSnu = dataset.addTxName('TChipChimSlepSnu')
+TChipChimSlepSnu.constraint = "[[['L-'],['nu']],[['nu'],['L+']]] + [[['L+'],['nu']],[['nu'],['L-']]] + [[['L+'],['nu']],[['L-'],['nu']]] + [[['nu'],['L+']],[['nu'],['L-']]]"
+TChipChimSlepSnu.conditionDescription = "[[['L-'],['nu']],[['nu'],['L+']]] ~ [[['L+'],['nu']],[['nu'],['L-']]], [[['L-'],['nu']],[['nu'],['L+']]] ~ [[['L+'],['nu']],[['L-'],['nu']]], [[['L-'],['nu']],[['nu'],['L+']]] ~ [[['nu'],['L+']],[['nu'],['L-']]],[[['L-'],['nu']],[['nu'],['L+']]] > 2.7*[[['ta-'],['nu']],['nu'],['L+']]],[[['L-'],['nu']],[['nu'],['L+']]] > 2.7*[[['L-'],['nu']],[['nu'],['ta+']]], [[['L+'],['nu']],[['nu'],['L-']]] > 2.7*[[['ta+'],['nu']],[['nu'],['L-']]], [[['L+'],['nu']],[['nu'],['L-']]] > 2.7*[[['L+'],['nu']],[['nu'],['ta-']]], [[['L+'],['nu']],[['L-'],['nu']]] > 2.7*[[['ta+'],['nu']],[['L-'],['nu']]], [[['L+'],['nu']],[['L-'],['nu']]] > 2.7*[[['L+'],['nu']],[['ta-'],['nu']]], [[['nu'],['L+']],[['nu'],['L-']]] > 2.7*[[['nu'],['ta+']],[['nu'],[L-']]], [[['nu'],['L+']],[['nu'],['L-']]] > 2.7*[[['nu'],['L+']],[['nu'],[ta-']]], [[['L-'],['nu']],[['nu'],['L+']]] > 2.7*[[['e-'],['nu']],[['nu'],['L+']]], [[['L-'],['nu']],[['nu'],['L+']]] > 2.7*[[['L-'],['nu']],[['nu'],['e+']]], [[['L+'],['nu']],[['nu'],['L-']]] > 2.7*[[['e+'],['nu']],[['nu'],['L-']]],[[['L+'],['nu']],[['nu'],['L-']]] > 2.7*[[['L+'],['nu']],[['nu'],['e-']]],[[['L+'],['nu']],[['L-'],['nu']]] > 2.7*[[['e+'],['nu']],[['L-'],['nu']]],[[['L+'],['nu']],[['L-'],['nu']]] > 2.7*[[['L+'],['nu']],[['e-'],['nu']]],[[['nu'],['L+']],[['nu'],['L-']]] > 2.7*[[['nu'],['e+']],[['nu'],['L-']]], [[['nu'],['L+']],[['nu'],['L-']]] > 2.7*[[['nu'],['L+']],[['nu'],['e-']]]"
+TChipChimSlepSnu.condition = "Csim([[['L-'],['nu']],[['nu'],['L+']]],[[['L+'],['nu']],[['nu'],['L-']]],[[['L+'],['nu']],[['L-'],['nu']]],[[['nu'],['L+']],[['nu'],['L-']]]); Cgtr([[['L-'],['nu']],[['nu'],['L+']]],3.*[[['ta-'],['nu']],[['nu'],['L+']]]); Cgtr([[['L-'],['nu']],[['nu'],['L+']]],3.*[[['L-'],['nu']],[['nu'],['ta+']]]); Cgtr([[['L+'],['nu']],[['nu'],['L-']]],3.*[[['ta+'],['nu']],[['nu'],['L-']]]); Cgtr([[['L+'],['nu']],[['nu'],['L-']]],3.* [[['L+'],['nu']],[['nu'],['ta-']]]); Cgtr([[['L+'],['nu']],[['L-'],['nu']]],3.*[[['ta+'],['nu']],[['L-'],['nu']]]); Cgtr([[['L+'],['nu']],[['L-'],['nu']]],3.*[[['L+'],['nu']],[['ta-'],['nu']]]); Cgtr([[['nu'],['L+']],[['nu'],[L-']]],3.*[[['nu'],['ta+']],[['nu'],[L-']]]); Cgtr([[['nu'],['L+']],[['nu'],[L-']]],3.*[[['nu'],['L+']],[['nu'],[ta-']]]); Cgtr([[['L-'],['nu']],[['nu'],['L+']]],3.*[[['e-'],['nu']],[['nu'],['L+']]]); Cgtr([[['L-'],['nu']],[['nu'],['L+']]],3.*[[['L-'],['nu']],[['nu'],['e+']]]); Cgtr([[['L+'],['nu']],[['nu'],['L-']]],3.*[[['e+'],['nu']],[['nu'],['L-']]]); Cgtr([[['L+'],['nu']],[['nu'],['L-']]],3.* [[['L+'],['nu']],[['nu'],['e-']]]); Cgtr([[['L+'],['nu']],[['L-'],['nu']]],3.*[[['e+'],['nu']],[['L-'],['nu']]]); Cgtr([[['L+'],['nu']],[['L-'],['nu']]],3.*[[['L+'],['nu']],[['e-'],['nu']]]); Cgtr([[['nu'],['L+']],[['nu'],[L-']]],3.*[[['nu'],['e+']],[['nu'],[L-']]]); Cgtr([[['nu'],['L+']],[['nu'],[L-']]],3.*[[['nu'],['L+']],[['nu'],[e-']]])"
+TChipChimSlepSnu.source = 'SModelS'
+TChipChimSlepSnu.dataUrl = None
+#+++++++ next mass plane block ++++++++++++++
+TChipChimSlepSnu_x005 = TChipChimSlepSnu.addMassPlane([[x,.05*x+.95*y,y]]*2)
+TChipChimSlepSnu_x005.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x005_EM_MAPS/MA5_EM_TChipChimSlepSnu_x005_WWa-DF.dat', 'txt')
+TChipChimSlepSnu_x025 = TChipChimSlepSnu.addMassPlane([[x,.25*x+.75*y,y]]*2)
+TChipChimSlepSnu_x025.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x025_EM_MAPS/MA5_EM_TChipChimSlepSnu_x025_WWa-DF.dat', 'txt')
+TChipChimSlepSnu_x05 = TChipChimSlepSnu.addMassPlane([[x,.50*x+.50*y,y]]*2)
+TChipChimSlepSnu_x05.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x05_EM_MAPS/MA5_EM_TChipChimSlepSnu_x05_WWa-DF.dat', 'txt')
+TChipChimSlepSnu_x05.addSource('obsExclusion', "orig/TChipChimSlepSnu_Obs_x05.txt", "txt")
+TChipChimSlepSnu_x05.addSource('obsExclusionP1', "orig/TChipChimSlepSnu_Obs+1_x05.txt", "txt")
+TChipChimSlepSnu_x05.addSource('obsExclusionM1', "orig/TChipChimSlepSnu_Obs-1_x05.txt", "txt")
+TChipChimSlepSnu_x075 = TChipChimSlepSnu.addMassPlane([[x,.75*x+.25*y,y]]*2)
+TChipChimSlepSnu_x075.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x075_EM_MAPS/MA5_EM_TChipChimSlepSnu_x075_WWa-DF.dat', 'txt')
+TChipChimSlepSnu_x095 = TChipChimSlepSnu.addMassPlane([[x,.95*x+.05*y,y]]*2)
+TChipChimSlepSnu_x095.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x095_EM_MAPS/MA5_EM_TChipChimSlepSnu_x095_WWa-DF.dat', 'txt')
 
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("mT2-90-SF")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "mT2-90-SF", observedN = 33, expectedBG = 38.2 , bgError = 5.1, upperLimit = '6.617E-01*fb', expectedUpperLimit = '8.341E-01*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "mT2-90-SF", observedN = 33, expectedBG = 38.2 , bgError = 5.1)
 #+++++++ next txName block ++++++++++++++
 #+++++++ next txName block ++++++++++++++
 TSlepSlep = dataset.addTxName('TSlepSlep')
@@ -186,11 +458,50 @@ TSlepSlep_1 = TSlepSlep.addMassPlane([[x,y]]*2)
 TSlepSlep_1.addSource('obsExclusion', "orig/exclusion_TSlepSlep.txt", "txt")
 TSlepSlep_1.addSource('efficiencyMap','orig/MA5_EM_mT2-90-SF.dat', 'txt')
 TSlepSlep_1.dataUrl = None
+TChiWW = dataset.addTxName('TChiWW')
+TChiWW.constraint ="[[['W+']],[['W-']]]"
+TChiWW.conditionDescription = None
+TChiWW.condition = None
+TChiWW.source = 'SModelS'
+#+++++++ next mass plane block ++++++++++++++
+TChiWW_1 = TChiWW.addMassPlane([[x,y]]*2)
+TChiWW_1.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChiWW_1_EM_MAPS/MA5_EM_TChiWW_1_mT2-90-SF.dat', 'txt')
+TChiWW_1.addSource('obsExclusion', "orig/exclusion_TChiWW.txt", "txt")
+TChiWW_1.dataUrl = None
+TChiWWoff = dataset.addTxName('TChiWWoff')
+TChiWWoff.constraint = "22.2*[[['l+','nu']],[['l-','nu']]]"
+TChiWWoff.conditionDescription = "[[['l+','nu']],[['l-','nu']]] > 2* [[['mu+','nu']],[['l-','nu']]]"
+TChiWWoff.condition = "Cgtr([[['l+','nu']],[['l-','nu']]],2.*[[['mu+','nu']],[['l-','nu']]]); Cgtr([[['l+','nu']],[['l-','nu']]],2.*[[['l+','nu']],[['mu-','nu']]])"
+constraint ="22.2*[[['l+','nu']],[['l-','nu']]]"
+TChiWWoff.massConstraint = [['dm <= 76.']]*2
+TChiWWoff.source = 'SModelS'
+#+++++++ next mass plane block ++++++++++++++
+TChiWWoff.addMassPlane( TChiWW_1 )
+TChipChimSlepSnu = dataset.addTxName('TChipChimSlepSnu')
+TChipChimSlepSnu.constraint = "[[['L-'],['nu']],[['nu'],['L+']]] + [[['L+'],['nu']],[['nu'],['L-']]] + [[['L+'],['nu']],[['L-'],['nu']]] + [[['nu'],['L+']],[['nu'],['L-']]]"
+TChipChimSlepSnu.conditionDescription = "[[['L-'],['nu']],[['nu'],['L+']]] ~ [[['L+'],['nu']],[['nu'],['L-']]], [[['L-'],['nu']],[['nu'],['L+']]] ~ [[['L+'],['nu']],[['L-'],['nu']]], [[['L-'],['nu']],[['nu'],['L+']]] ~ [[['nu'],['L+']],[['nu'],['L-']]],[[['L-'],['nu']],[['nu'],['L+']]] > 2.7*[[['ta-'],['nu']],['nu'],['L+']]],[[['L-'],['nu']],[['nu'],['L+']]] > 2.7*[[['L-'],['nu']],[['nu'],['ta+']]], [[['L+'],['nu']],[['nu'],['L-']]] > 2.7*[[['ta+'],['nu']],[['nu'],['L-']]], [[['L+'],['nu']],[['nu'],['L-']]] > 2.7*[[['L+'],['nu']],[['nu'],['ta-']]], [[['L+'],['nu']],[['L-'],['nu']]] > 2.7*[[['ta+'],['nu']],[['L-'],['nu']]], [[['L+'],['nu']],[['L-'],['nu']]] > 2.7*[[['L+'],['nu']],[['ta-'],['nu']]], [[['nu'],['L+']],[['nu'],['L-']]] > 2.7*[[['nu'],['ta+']],[['nu'],[L-']]], [[['nu'],['L+']],[['nu'],['L-']]] > 2.7*[[['nu'],['L+']],[['nu'],[ta-']]], [[['L-'],['nu']],[['nu'],['L+']]] > 2.7*[[['e-'],['nu']],[['nu'],['L+']]], [[['L-'],['nu']],[['nu'],['L+']]] > 2.7*[[['L-'],['nu']],[['nu'],['e+']]], [[['L+'],['nu']],[['nu'],['L-']]] > 2.7*[[['e+'],['nu']],[['nu'],['L-']]],[[['L+'],['nu']],[['nu'],['L-']]] > 2.7*[[['L+'],['nu']],[['nu'],['e-']]],[[['L+'],['nu']],[['L-'],['nu']]] > 2.7*[[['e+'],['nu']],[['L-'],['nu']]],[[['L+'],['nu']],[['L-'],['nu']]] > 2.7*[[['L+'],['nu']],[['e-'],['nu']]],[[['nu'],['L+']],[['nu'],['L-']]] > 2.7*[[['nu'],['e+']],[['nu'],['L-']]], [[['nu'],['L+']],[['nu'],['L-']]] > 2.7*[[['nu'],['L+']],[['nu'],['e-']]]"
+TChipChimSlepSnu.condition = "Csim([[['L-'],['nu']],[['nu'],['L+']]],[[['L+'],['nu']],[['nu'],['L-']]],[[['L+'],['nu']],[['L-'],['nu']]],[[['nu'],['L+']],[['nu'],['L-']]]); Cgtr([[['L-'],['nu']],[['nu'],['L+']]],3.*[[['ta-'],['nu']],[['nu'],['L+']]]); Cgtr([[['L-'],['nu']],[['nu'],['L+']]],3.*[[['L-'],['nu']],[['nu'],['ta+']]]); Cgtr([[['L+'],['nu']],[['nu'],['L-']]],3.*[[['ta+'],['nu']],[['nu'],['L-']]]); Cgtr([[['L+'],['nu']],[['nu'],['L-']]],3.* [[['L+'],['nu']],[['nu'],['ta-']]]); Cgtr([[['L+'],['nu']],[['L-'],['nu']]],3.*[[['ta+'],['nu']],[['L-'],['nu']]]); Cgtr([[['L+'],['nu']],[['L-'],['nu']]],3.*[[['L+'],['nu']],[['ta-'],['nu']]]); Cgtr([[['nu'],['L+']],[['nu'],[L-']]],3.*[[['nu'],['ta+']],[['nu'],[L-']]]); Cgtr([[['nu'],['L+']],[['nu'],[L-']]],3.*[[['nu'],['L+']],[['nu'],[ta-']]]); Cgtr([[['L-'],['nu']],[['nu'],['L+']]],3.*[[['e-'],['nu']],[['nu'],['L+']]]); Cgtr([[['L-'],['nu']],[['nu'],['L+']]],3.*[[['L-'],['nu']],[['nu'],['e+']]]); Cgtr([[['L+'],['nu']],[['nu'],['L-']]],3.*[[['e+'],['nu']],[['nu'],['L-']]]); Cgtr([[['L+'],['nu']],[['nu'],['L-']]],3.* [[['L+'],['nu']],[['nu'],['e-']]]); Cgtr([[['L+'],['nu']],[['L-'],['nu']]],3.*[[['e+'],['nu']],[['L-'],['nu']]]); Cgtr([[['L+'],['nu']],[['L-'],['nu']]],3.*[[['L+'],['nu']],[['e-'],['nu']]]); Cgtr([[['nu'],['L+']],[['nu'],[L-']]],3.*[[['nu'],['e+']],[['nu'],[L-']]]); Cgtr([[['nu'],['L+']],[['nu'],[L-']]],3.*[[['nu'],['L+']],[['nu'],[e-']]])"
+TChipChimSlepSnu.source = 'SModelS'
+TChipChimSlepSnu.dataUrl = None
+#+++++++ next mass plane block ++++++++++++++
+TChipChimSlepSnu_x005 = TChipChimSlepSnu.addMassPlane([[x,.05*x+.95*y,y]]*2)
+TChipChimSlepSnu_x005.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x005_EM_MAPS/MA5_EM_TChipChimSlepSnu_x005_mT2-90-SF.dat', 'txt')
+TChipChimSlepSnu_x025 = TChipChimSlepSnu.addMassPlane([[x,.25*x+.75*y,y]]*2)
+TChipChimSlepSnu_x025.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x025_EM_MAPS/MA5_EM_TChipChimSlepSnu_x025_mT2-90-SF.dat', 'txt')
+TChipChimSlepSnu_x05 = TChipChimSlepSnu.addMassPlane([[x,.50*x+.50*y,y]]*2)
+TChipChimSlepSnu_x05.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x05_EM_MAPS/MA5_EM_TChipChimSlepSnu_x05_mT2-90-SF.dat', 'txt')
+TChipChimSlepSnu_x05.addSource('obsExclusion', "orig/TChipChimSlepSnu_Obs_x05.txt", "txt")
+TChipChimSlepSnu_x05.addSource('obsExclusionP1', "orig/TChipChimSlepSnu_Obs+1_x05.txt", "txt")
+TChipChimSlepSnu_x05.addSource('obsExclusionM1', "orig/TChipChimSlepSnu_Obs-1_x05.txt", "txt")
+TChipChimSlepSnu_x075 = TChipChimSlepSnu.addMassPlane([[x,.75*x+.25*y,y]]*2)
+TChipChimSlepSnu_x075.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x075_EM_MAPS/MA5_EM_TChipChimSlepSnu_x075_mT2-90-SF.dat', 'txt')
+TChipChimSlepSnu_x095 = TChipChimSlepSnu.addMassPlane([[x,.95*x+.05*y,y]]*2)
+TChipChimSlepSnu_x095.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x095_EM_MAPS/MA5_EM_TChipChimSlepSnu_x095_mT2-90-SF.dat', 'txt')
 
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("WWc-DF")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "WWc-DF", observedN = 11, expectedBG = 9.0 , bgError = 2.2, upperLimit = '5.303E-01*fb', expectedUpperLimit = '4.365E-01*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "WWc-DF", observedN = 11, expectedBG = 9.0 , bgError = 2.2)
 #+++++++ next txName block ++++++++++++++
 #+++++++ next txName block ++++++++++++++
 TSlepSlep = dataset.addTxName('TSlepSlep')
@@ -203,11 +514,50 @@ TSlepSlep_1 = TSlepSlep.addMassPlane([[x,y]]*2)
 TSlepSlep_1.addSource('obsExclusion', "orig/exclusion_TSlepSlep.txt", "txt")
 TSlepSlep_1.addSource('efficiencyMap','orig/MA5_EM_WWc-DF.dat', 'txt')
 TSlepSlep_1.dataUrl = None
+TChiWW = dataset.addTxName('TChiWW')
+TChiWW.constraint ="[[['W+']],[['W-']]]"
+TChiWW.conditionDescription = None
+TChiWW.condition = None
+TChiWW.source = 'SModelS'
+#+++++++ next mass plane block ++++++++++++++
+TChiWW_1 = TChiWW.addMassPlane([[x,y]]*2)
+TChiWW_1.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChiWW_1_EM_MAPS/MA5_EM_TChiWW_1_WWc-DF.dat', 'txt')
+TChiWW_1.addSource('obsExclusion', "orig/exclusion_TChiWW.txt", "txt")
+TChiWW_1.dataUrl = None
+TChiWWoff = dataset.addTxName('TChiWWoff')
+TChiWWoff.constraint = "22.2*[[['l+','nu']],[['l-','nu']]]"
+TChiWWoff.conditionDescription = "[[['l+','nu']],[['l-','nu']]] > 2* [[['mu+','nu']],[['l-','nu']]]"
+TChiWWoff.condition = "Cgtr([[['l+','nu']],[['l-','nu']]],2.*[[['mu+','nu']],[['l-','nu']]]); Cgtr([[['l+','nu']],[['l-','nu']]],2.*[[['l+','nu']],[['mu-','nu']]])"
+constraint ="22.2*[[['l+','nu']],[['l-','nu']]]"
+TChiWWoff.massConstraint = [['dm <= 76.']]*2
+TChiWWoff.source = 'SModelS'
+#+++++++ next mass plane block ++++++++++++++
+TChiWWoff.addMassPlane( TChiWW_1 )
+TChipChimSlepSnu = dataset.addTxName('TChipChimSlepSnu')
+TChipChimSlepSnu.constraint = "[[['L-'],['nu']],[['nu'],['L+']]] + [[['L+'],['nu']],[['nu'],['L-']]] + [[['L+'],['nu']],[['L-'],['nu']]] + [[['nu'],['L+']],[['nu'],['L-']]]"
+TChipChimSlepSnu.conditionDescription = "[[['L-'],['nu']],[['nu'],['L+']]] ~ [[['L+'],['nu']],[['nu'],['L-']]], [[['L-'],['nu']],[['nu'],['L+']]] ~ [[['L+'],['nu']],[['L-'],['nu']]], [[['L-'],['nu']],[['nu'],['L+']]] ~ [[['nu'],['L+']],[['nu'],['L-']]],[[['L-'],['nu']],[['nu'],['L+']]] > 2.7*[[['ta-'],['nu']],['nu'],['L+']]],[[['L-'],['nu']],[['nu'],['L+']]] > 2.7*[[['L-'],['nu']],[['nu'],['ta+']]], [[['L+'],['nu']],[['nu'],['L-']]] > 2.7*[[['ta+'],['nu']],[['nu'],['L-']]], [[['L+'],['nu']],[['nu'],['L-']]] > 2.7*[[['L+'],['nu']],[['nu'],['ta-']]], [[['L+'],['nu']],[['L-'],['nu']]] > 2.7*[[['ta+'],['nu']],[['L-'],['nu']]], [[['L+'],['nu']],[['L-'],['nu']]] > 2.7*[[['L+'],['nu']],[['ta-'],['nu']]], [[['nu'],['L+']],[['nu'],['L-']]] > 2.7*[[['nu'],['ta+']],[['nu'],[L-']]], [[['nu'],['L+']],[['nu'],['L-']]] > 2.7*[[['nu'],['L+']],[['nu'],[ta-']]], [[['L-'],['nu']],[['nu'],['L+']]] > 2.7*[[['e-'],['nu']],[['nu'],['L+']]], [[['L-'],['nu']],[['nu'],['L+']]] > 2.7*[[['L-'],['nu']],[['nu'],['e+']]], [[['L+'],['nu']],[['nu'],['L-']]] > 2.7*[[['e+'],['nu']],[['nu'],['L-']]],[[['L+'],['nu']],[['nu'],['L-']]] > 2.7*[[['L+'],['nu']],[['nu'],['e-']]],[[['L+'],['nu']],[['L-'],['nu']]] > 2.7*[[['e+'],['nu']],[['L-'],['nu']]],[[['L+'],['nu']],[['L-'],['nu']]] > 2.7*[[['L+'],['nu']],[['e-'],['nu']]],[[['nu'],['L+']],[['nu'],['L-']]] > 2.7*[[['nu'],['e+']],[['nu'],['L-']]], [[['nu'],['L+']],[['nu'],['L-']]] > 2.7*[[['nu'],['L+']],[['nu'],['e-']]]"
+TChipChimSlepSnu.condition = "Csim([[['L-'],['nu']],[['nu'],['L+']]],[[['L+'],['nu']],[['nu'],['L-']]],[[['L+'],['nu']],[['L-'],['nu']]],[[['nu'],['L+']],[['nu'],['L-']]]); Cgtr([[['L-'],['nu']],[['nu'],['L+']]],3.*[[['ta-'],['nu']],[['nu'],['L+']]]); Cgtr([[['L-'],['nu']],[['nu'],['L+']]],3.*[[['L-'],['nu']],[['nu'],['ta+']]]); Cgtr([[['L+'],['nu']],[['nu'],['L-']]],3.*[[['ta+'],['nu']],[['nu'],['L-']]]); Cgtr([[['L+'],['nu']],[['nu'],['L-']]],3.* [[['L+'],['nu']],[['nu'],['ta-']]]); Cgtr([[['L+'],['nu']],[['L-'],['nu']]],3.*[[['ta+'],['nu']],[['L-'],['nu']]]); Cgtr([[['L+'],['nu']],[['L-'],['nu']]],3.*[[['L+'],['nu']],[['ta-'],['nu']]]); Cgtr([[['nu'],['L+']],[['nu'],[L-']]],3.*[[['nu'],['ta+']],[['nu'],[L-']]]); Cgtr([[['nu'],['L+']],[['nu'],[L-']]],3.*[[['nu'],['L+']],[['nu'],[ta-']]]); Cgtr([[['L-'],['nu']],[['nu'],['L+']]],3.*[[['e-'],['nu']],[['nu'],['L+']]]); Cgtr([[['L-'],['nu']],[['nu'],['L+']]],3.*[[['L-'],['nu']],[['nu'],['e+']]]); Cgtr([[['L+'],['nu']],[['nu'],['L-']]],3.*[[['e+'],['nu']],[['nu'],['L-']]]); Cgtr([[['L+'],['nu']],[['nu'],['L-']]],3.* [[['L+'],['nu']],[['nu'],['e-']]]); Cgtr([[['L+'],['nu']],[['L-'],['nu']]],3.*[[['e+'],['nu']],[['L-'],['nu']]]); Cgtr([[['L+'],['nu']],[['L-'],['nu']]],3.*[[['L+'],['nu']],[['e-'],['nu']]]); Cgtr([[['nu'],['L+']],[['nu'],[L-']]],3.*[[['nu'],['e+']],[['nu'],[L-']]]); Cgtr([[['nu'],['L+']],[['nu'],[L-']]],3.*[[['nu'],['L+']],[['nu'],[e-']]])"
+TChipChimSlepSnu.source = 'SModelS'
+TChipChimSlepSnu.dataUrl = None
+#+++++++ next mass plane block ++++++++++++++
+TChipChimSlepSnu_x005 = TChipChimSlepSnu.addMassPlane([[x,.05*x+.95*y,y]]*2)
+TChipChimSlepSnu_x005.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x005_EM_MAPS/MA5_EM_TChipChimSlepSnu_x005_WWc-DF.dat', 'txt')
+TChipChimSlepSnu_x025 = TChipChimSlepSnu.addMassPlane([[x,.25*x+.75*y,y]]*2)
+TChipChimSlepSnu_x025.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x025_EM_MAPS/MA5_EM_TChipChimSlepSnu_x025_WWc-DF.dat', 'txt')
+TChipChimSlepSnu_x05 = TChipChimSlepSnu.addMassPlane([[x,.50*x+.50*y,y]]*2)
+TChipChimSlepSnu_x05.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x05_EM_MAPS/MA5_EM_TChipChimSlepSnu_x05_WWc-DF.dat', 'txt')
+TChipChimSlepSnu_x05.addSource('obsExclusion', "orig/TChipChimSlepSnu_Obs_x05.txt", "txt")
+TChipChimSlepSnu_x05.addSource('obsExclusionP1', "orig/TChipChimSlepSnu_Obs+1_x05.txt", "txt")
+TChipChimSlepSnu_x05.addSource('obsExclusionM1', "orig/TChipChimSlepSnu_Obs-1_x05.txt", "txt")
+TChipChimSlepSnu_x075 = TChipChimSlepSnu.addMassPlane([[x,.75*x+.25*y,y]]*2)
+TChipChimSlepSnu_x075.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x075_EM_MAPS/MA5_EM_TChipChimSlepSnu_x075_WWc-DF.dat', 'txt')
+TChipChimSlepSnu_x095 = TChipChimSlepSnu.addMassPlane([[x,.95*x+.05*y,y]]*2)
+TChipChimSlepSnu_x095.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x095_EM_MAPS/MA5_EM_TChipChimSlepSnu_x095_WWc-DF.dat', 'txt')
 
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("mT2-120-DF")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "mT2-120-DF", observedN = 5, expectedBG = 3.6 , bgError = 1.2, upperLimit = '3.755E-01*fb', expectedUpperLimit = '2.733E-01*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "mT2-120-DF", observedN = 5, expectedBG = 3.6 , bgError = 1.2)
 #+++++++ next txName block ++++++++++++++
 #+++++++ next txName block ++++++++++++++
 TSlepSlep = dataset.addTxName('TSlepSlep')
@@ -220,11 +570,50 @@ TSlepSlep_1 = TSlepSlep.addMassPlane([[x,y]]*2)
 TSlepSlep_1.addSource('obsExclusion', "orig/exclusion_TSlepSlep.txt", "txt")
 TSlepSlep_1.addSource('efficiencyMap','orig/MA5_EM_mT2-120-DF.dat', 'txt')
 TSlepSlep_1.dataUrl = None
+TChiWW = dataset.addTxName('TChiWW')
+TChiWW.constraint ="[[['W+']],[['W-']]]"
+TChiWW.conditionDescription = None
+TChiWW.condition = None
+TChiWW.source = 'SModelS'
+#+++++++ next mass plane block ++++++++++++++
+TChiWW_1 = TChiWW.addMassPlane([[x,y]]*2)
+TChiWW_1.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChiWW_1_EM_MAPS/MA5_EM_TChiWW_1_mT2-120-DF.dat', 'txt')
+TChiWW_1.addSource('obsExclusion', "orig/exclusion_TChiWW.txt", "txt")
+TChiWW_1.dataUrl = None
+TChiWWoff = dataset.addTxName('TChiWWoff')
+TChiWWoff.constraint = "22.2*[[['l+','nu']],[['l-','nu']]]"
+TChiWWoff.conditionDescription = "[[['l+','nu']],[['l-','nu']]] > 2* [[['mu+','nu']],[['l-','nu']]]"
+TChiWWoff.condition = "Cgtr([[['l+','nu']],[['l-','nu']]],2.*[[['mu+','nu']],[['l-','nu']]]); Cgtr([[['l+','nu']],[['l-','nu']]],2.*[[['l+','nu']],[['mu-','nu']]])"
+constraint ="22.2*[[['l+','nu']],[['l-','nu']]]"
+TChiWWoff.massConstraint = [['dm <= 76.']]*2
+TChiWWoff.source = 'SModelS'
+#+++++++ next mass plane block ++++++++++++++
+TChiWWoff.addMassPlane( TChiWW_1 )
+TChipChimSlepSnu = dataset.addTxName('TChipChimSlepSnu')
+TChipChimSlepSnu.constraint = "[[['L-'],['nu']],[['nu'],['L+']]] + [[['L+'],['nu']],[['nu'],['L-']]] + [[['L+'],['nu']],[['L-'],['nu']]] + [[['nu'],['L+']],[['nu'],['L-']]]"
+TChipChimSlepSnu.conditionDescription = "[[['L-'],['nu']],[['nu'],['L+']]] ~ [[['L+'],['nu']],[['nu'],['L-']]], [[['L-'],['nu']],[['nu'],['L+']]] ~ [[['L+'],['nu']],[['L-'],['nu']]], [[['L-'],['nu']],[['nu'],['L+']]] ~ [[['nu'],['L+']],[['nu'],['L-']]],[[['L-'],['nu']],[['nu'],['L+']]] > 2.7*[[['ta-'],['nu']],['nu'],['L+']]],[[['L-'],['nu']],[['nu'],['L+']]] > 2.7*[[['L-'],['nu']],[['nu'],['ta+']]], [[['L+'],['nu']],[['nu'],['L-']]] > 2.7*[[['ta+'],['nu']],[['nu'],['L-']]], [[['L+'],['nu']],[['nu'],['L-']]] > 2.7*[[['L+'],['nu']],[['nu'],['ta-']]], [[['L+'],['nu']],[['L-'],['nu']]] > 2.7*[[['ta+'],['nu']],[['L-'],['nu']]], [[['L+'],['nu']],[['L-'],['nu']]] > 2.7*[[['L+'],['nu']],[['ta-'],['nu']]], [[['nu'],['L+']],[['nu'],['L-']]] > 2.7*[[['nu'],['ta+']],[['nu'],[L-']]], [[['nu'],['L+']],[['nu'],['L-']]] > 2.7*[[['nu'],['L+']],[['nu'],[ta-']]], [[['L-'],['nu']],[['nu'],['L+']]] > 2.7*[[['e-'],['nu']],[['nu'],['L+']]], [[['L-'],['nu']],[['nu'],['L+']]] > 2.7*[[['L-'],['nu']],[['nu'],['e+']]], [[['L+'],['nu']],[['nu'],['L-']]] > 2.7*[[['e+'],['nu']],[['nu'],['L-']]],[[['L+'],['nu']],[['nu'],['L-']]] > 2.7*[[['L+'],['nu']],[['nu'],['e-']]],[[['L+'],['nu']],[['L-'],['nu']]] > 2.7*[[['e+'],['nu']],[['L-'],['nu']]],[[['L+'],['nu']],[['L-'],['nu']]] > 2.7*[[['L+'],['nu']],[['e-'],['nu']]],[[['nu'],['L+']],[['nu'],['L-']]] > 2.7*[[['nu'],['e+']],[['nu'],['L-']]], [[['nu'],['L+']],[['nu'],['L-']]] > 2.7*[[['nu'],['L+']],[['nu'],['e-']]]"
+TChipChimSlepSnu.condition = "Csim([[['L-'],['nu']],[['nu'],['L+']]],[[['L+'],['nu']],[['nu'],['L-']]],[[['L+'],['nu']],[['L-'],['nu']]],[[['nu'],['L+']],[['nu'],['L-']]]); Cgtr([[['L-'],['nu']],[['nu'],['L+']]],3.*[[['ta-'],['nu']],[['nu'],['L+']]]); Cgtr([[['L-'],['nu']],[['nu'],['L+']]],3.*[[['L-'],['nu']],[['nu'],['ta+']]]); Cgtr([[['L+'],['nu']],[['nu'],['L-']]],3.*[[['ta+'],['nu']],[['nu'],['L-']]]); Cgtr([[['L+'],['nu']],[['nu'],['L-']]],3.* [[['L+'],['nu']],[['nu'],['ta-']]]); Cgtr([[['L+'],['nu']],[['L-'],['nu']]],3.*[[['ta+'],['nu']],[['L-'],['nu']]]); Cgtr([[['L+'],['nu']],[['L-'],['nu']]],3.*[[['L+'],['nu']],[['ta-'],['nu']]]); Cgtr([[['nu'],['L+']],[['nu'],[L-']]],3.*[[['nu'],['ta+']],[['nu'],[L-']]]); Cgtr([[['nu'],['L+']],[['nu'],[L-']]],3.*[[['nu'],['L+']],[['nu'],[ta-']]]); Cgtr([[['L-'],['nu']],[['nu'],['L+']]],3.*[[['e-'],['nu']],[['nu'],['L+']]]); Cgtr([[['L-'],['nu']],[['nu'],['L+']]],3.*[[['L-'],['nu']],[['nu'],['e+']]]); Cgtr([[['L+'],['nu']],[['nu'],['L-']]],3.*[[['e+'],['nu']],[['nu'],['L-']]]); Cgtr([[['L+'],['nu']],[['nu'],['L-']]],3.* [[['L+'],['nu']],[['nu'],['e-']]]); Cgtr([[['L+'],['nu']],[['L-'],['nu']]],3.*[[['e+'],['nu']],[['L-'],['nu']]]); Cgtr([[['L+'],['nu']],[['L-'],['nu']]],3.*[[['L+'],['nu']],[['e-'],['nu']]]); Cgtr([[['nu'],['L+']],[['nu'],[L-']]],3.*[[['nu'],['e+']],[['nu'],[L-']]]); Cgtr([[['nu'],['L+']],[['nu'],[L-']]],3.*[[['nu'],['L+']],[['nu'],[e-']]])"
+TChipChimSlepSnu.source = 'SModelS'
+TChipChimSlepSnu.dataUrl = None
+#+++++++ next mass plane block ++++++++++++++
+TChipChimSlepSnu_x005 = TChipChimSlepSnu.addMassPlane([[x,.05*x+.95*y,y]]*2)
+TChipChimSlepSnu_x005.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x005_EM_MAPS/MA5_EM_TChipChimSlepSnu_x005_mT2-120-DF.dat', 'txt')
+TChipChimSlepSnu_x025 = TChipChimSlepSnu.addMassPlane([[x,.25*x+.75*y,y]]*2)
+TChipChimSlepSnu_x025.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x025_EM_MAPS/MA5_EM_TChipChimSlepSnu_x025_mT2-120-DF.dat', 'txt')
+TChipChimSlepSnu_x05 = TChipChimSlepSnu.addMassPlane([[x,.50*x+.50*y,y]]*2)
+TChipChimSlepSnu_x05.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x05_EM_MAPS/MA5_EM_TChipChimSlepSnu_x05_mT2-120-DF.dat', 'txt')
+TChipChimSlepSnu_x05.addSource('obsExclusion', "orig/TChipChimSlepSnu_Obs_x05.txt", "txt")
+TChipChimSlepSnu_x05.addSource('obsExclusionP1', "orig/TChipChimSlepSnu_Obs+1_x05.txt", "txt")
+TChipChimSlepSnu_x05.addSource('obsExclusionM1', "orig/TChipChimSlepSnu_Obs-1_x05.txt", "txt")
+TChipChimSlepSnu_x075 = TChipChimSlepSnu.addMassPlane([[x,.75*x+.25*y,y]]*2)
+TChipChimSlepSnu_x075.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x075_EM_MAPS/MA5_EM_TChipChimSlepSnu_x075_mT2-120-DF.dat', 'txt')
+TChipChimSlepSnu_x095 = TChipChimSlepSnu.addMassPlane([[x,.95*x+.05*y,y]]*2)
+TChipChimSlepSnu_x095.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x095_EM_MAPS/MA5_EM_TChipChimSlepSnu_x095_mT2-120-DF.dat', 'txt')
 
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("Zjets")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "Zjets", observedN = 1, expectedBG = 1.4 , bgError = 0.6, upperLimit = '2.011E-01*fb', expectedUpperLimit = '2.015E-01*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "Zjets", observedN = 1, expectedBG = 1.4 , bgError = 0.6)
 #+++++++ next txName block ++++++++++++++
 #+++++++ next txName block ++++++++++++++
 TSlepSlep = dataset.addTxName('TSlepSlep')
@@ -237,11 +626,50 @@ TSlepSlep_1 = TSlepSlep.addMassPlane([[x,y]]*2)
 TSlepSlep_1.addSource('obsExclusion', "orig/exclusion_TSlepSlep.txt", "txt")
 TSlepSlep_1.addSource('efficiencyMap','orig/MA5_EM_Zjets.dat', 'txt')
 TSlepSlep_1.dataUrl = None
+TChiWW = dataset.addTxName('TChiWW')
+TChiWW.constraint ="[[['W+']],[['W-']]]"
+TChiWW.conditionDescription = None
+TChiWW.condition = None
+TChiWW.source = 'SModelS'
+#+++++++ next mass plane block ++++++++++++++
+TChiWW_1 = TChiWW.addMassPlane([[x,y]]*2)
+TChiWW_1.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChiWW_1_EM_MAPS/MA5_EM_TChiWW_1_Zjets.dat', 'txt')
+TChiWW_1.addSource('obsExclusion', "orig/exclusion_TChiWW.txt", "txt")
+TChiWW_1.dataUrl = None
+TChiWWoff = dataset.addTxName('TChiWWoff')
+TChiWWoff.constraint = "22.2*[[['l+','nu']],[['l-','nu']]]"
+TChiWWoff.conditionDescription = "[[['l+','nu']],[['l-','nu']]] > 2* [[['mu+','nu']],[['l-','nu']]]"
+TChiWWoff.condition = "Cgtr([[['l+','nu']],[['l-','nu']]],2.*[[['mu+','nu']],[['l-','nu']]]); Cgtr([[['l+','nu']],[['l-','nu']]],2.*[[['l+','nu']],[['mu-','nu']]])"
+constraint ="22.2*[[['l+','nu']],[['l-','nu']]]"
+TChiWWoff.massConstraint = [['dm <= 76.']]*2
+TChiWWoff.source = 'SModelS'
+#+++++++ next mass plane block ++++++++++++++
+TChiWWoff.addMassPlane( TChiWW_1 )
+TChipChimSlepSnu = dataset.addTxName('TChipChimSlepSnu')
+TChipChimSlepSnu.constraint = "[[['L-'],['nu']],[['nu'],['L+']]] + [[['L+'],['nu']],[['nu'],['L-']]] + [[['L+'],['nu']],[['L-'],['nu']]] + [[['nu'],['L+']],[['nu'],['L-']]]"
+TChipChimSlepSnu.conditionDescription = "[[['L-'],['nu']],[['nu'],['L+']]] ~ [[['L+'],['nu']],[['nu'],['L-']]], [[['L-'],['nu']],[['nu'],['L+']]] ~ [[['L+'],['nu']],[['L-'],['nu']]], [[['L-'],['nu']],[['nu'],['L+']]] ~ [[['nu'],['L+']],[['nu'],['L-']]],[[['L-'],['nu']],[['nu'],['L+']]] > 2.7*[[['ta-'],['nu']],['nu'],['L+']]],[[['L-'],['nu']],[['nu'],['L+']]] > 2.7*[[['L-'],['nu']],[['nu'],['ta+']]], [[['L+'],['nu']],[['nu'],['L-']]] > 2.7*[[['ta+'],['nu']],[['nu'],['L-']]], [[['L+'],['nu']],[['nu'],['L-']]] > 2.7*[[['L+'],['nu']],[['nu'],['ta-']]], [[['L+'],['nu']],[['L-'],['nu']]] > 2.7*[[['ta+'],['nu']],[['L-'],['nu']]], [[['L+'],['nu']],[['L-'],['nu']]] > 2.7*[[['L+'],['nu']],[['ta-'],['nu']]], [[['nu'],['L+']],[['nu'],['L-']]] > 2.7*[[['nu'],['ta+']],[['nu'],[L-']]], [[['nu'],['L+']],[['nu'],['L-']]] > 2.7*[[['nu'],['L+']],[['nu'],[ta-']]], [[['L-'],['nu']],[['nu'],['L+']]] > 2.7*[[['e-'],['nu']],[['nu'],['L+']]], [[['L-'],['nu']],[['nu'],['L+']]] > 2.7*[[['L-'],['nu']],[['nu'],['e+']]], [[['L+'],['nu']],[['nu'],['L-']]] > 2.7*[[['e+'],['nu']],[['nu'],['L-']]],[[['L+'],['nu']],[['nu'],['L-']]] > 2.7*[[['L+'],['nu']],[['nu'],['e-']]],[[['L+'],['nu']],[['L-'],['nu']]] > 2.7*[[['e+'],['nu']],[['L-'],['nu']]],[[['L+'],['nu']],[['L-'],['nu']]] > 2.7*[[['L+'],['nu']],[['e-'],['nu']]],[[['nu'],['L+']],[['nu'],['L-']]] > 2.7*[[['nu'],['e+']],[['nu'],['L-']]], [[['nu'],['L+']],[['nu'],['L-']]] > 2.7*[[['nu'],['L+']],[['nu'],['e-']]]"
+TChipChimSlepSnu.condition = "Csim([[['L-'],['nu']],[['nu'],['L+']]],[[['L+'],['nu']],[['nu'],['L-']]],[[['L+'],['nu']],[['L-'],['nu']]],[[['nu'],['L+']],[['nu'],['L-']]]); Cgtr([[['L-'],['nu']],[['nu'],['L+']]],3.*[[['ta-'],['nu']],[['nu'],['L+']]]); Cgtr([[['L-'],['nu']],[['nu'],['L+']]],3.*[[['L-'],['nu']],[['nu'],['ta+']]]); Cgtr([[['L+'],['nu']],[['nu'],['L-']]],3.*[[['ta+'],['nu']],[['nu'],['L-']]]); Cgtr([[['L+'],['nu']],[['nu'],['L-']]],3.* [[['L+'],['nu']],[['nu'],['ta-']]]); Cgtr([[['L+'],['nu']],[['L-'],['nu']]],3.*[[['ta+'],['nu']],[['L-'],['nu']]]); Cgtr([[['L+'],['nu']],[['L-'],['nu']]],3.*[[['L+'],['nu']],[['ta-'],['nu']]]); Cgtr([[['nu'],['L+']],[['nu'],[L-']]],3.*[[['nu'],['ta+']],[['nu'],[L-']]]); Cgtr([[['nu'],['L+']],[['nu'],[L-']]],3.*[[['nu'],['L+']],[['nu'],[ta-']]]); Cgtr([[['L-'],['nu']],[['nu'],['L+']]],3.*[[['e-'],['nu']],[['nu'],['L+']]]); Cgtr([[['L-'],['nu']],[['nu'],['L+']]],3.*[[['L-'],['nu']],[['nu'],['e+']]]); Cgtr([[['L+'],['nu']],[['nu'],['L-']]],3.*[[['e+'],['nu']],[['nu'],['L-']]]); Cgtr([[['L+'],['nu']],[['nu'],['L-']]],3.* [[['L+'],['nu']],[['nu'],['e-']]]); Cgtr([[['L+'],['nu']],[['L-'],['nu']]],3.*[[['e+'],['nu']],[['L-'],['nu']]]); Cgtr([[['L+'],['nu']],[['L-'],['nu']]],3.*[[['L+'],['nu']],[['e-'],['nu']]]); Cgtr([[['nu'],['L+']],[['nu'],[L-']]],3.*[[['nu'],['e+']],[['nu'],[L-']]]); Cgtr([[['nu'],['L+']],[['nu'],[L-']]],3.*[[['nu'],['L+']],[['nu'],[e-']]])"
+TChipChimSlepSnu.source = 'SModelS'
+TChipChimSlepSnu.dataUrl = None
+#+++++++ next mass plane block ++++++++++++++
+TChipChimSlepSnu_x005 = TChipChimSlepSnu.addMassPlane([[x,.05*x+.95*y,y]]*2)
+TChipChimSlepSnu_x005.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x005_EM_MAPS/MA5_EM_TChipChimSlepSnu_x005_Zjets.dat', 'txt')
+TChipChimSlepSnu_x025 = TChipChimSlepSnu.addMassPlane([[x,.25*x+.75*y,y]]*2)
+TChipChimSlepSnu_x025.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x025_EM_MAPS/MA5_EM_TChipChimSlepSnu_x025_Zjets.dat', 'txt')
+TChipChimSlepSnu_x05 = TChipChimSlepSnu.addMassPlane([[x,.50*x+.50*y,y]]*2)
+TChipChimSlepSnu_x05.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x05_EM_MAPS/MA5_EM_TChipChimSlepSnu_x05_Zjets.dat', 'txt')
+TChipChimSlepSnu_x05.addSource('obsExclusion', "orig/TChipChimSlepSnu_Obs_x05.txt", "txt")
+TChipChimSlepSnu_x05.addSource('obsExclusionP1', "orig/TChipChimSlepSnu_Obs+1_x05.txt", "txt")
+TChipChimSlepSnu_x05.addSource('obsExclusionM1', "orig/TChipChimSlepSnu_Obs-1_x05.txt", "txt")
+TChipChimSlepSnu_x075 = TChipChimSlepSnu.addMassPlane([[x,.75*x+.25*y,y]]*2)
+TChipChimSlepSnu_x075.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x075_EM_MAPS/MA5_EM_TChipChimSlepSnu_x075_Zjets.dat', 'txt')
+TChipChimSlepSnu_x095 = TChipChimSlepSnu.addMassPlane([[x,.95*x+.05*y,y]]*2)
+TChipChimSlepSnu_x095.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x095_EM_MAPS/MA5_EM_TChipChimSlepSnu_x095_Zjets.dat', 'txt')
 
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("mT2-150-SF")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "mT2-150-SF", observedN = 3, expectedBG = 3.2 , bgError = 0.7, upperLimit = '2.678E-01*fb', expectedUpperLimit = '2.695E-01*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "mT2-150-SF", observedN = 3, expectedBG = 3.2 , bgError = 0.7)
 #+++++++ next txName block ++++++++++++++
 #+++++++ next txName block ++++++++++++++
 TSlepSlep = dataset.addTxName('TSlepSlep')
@@ -254,11 +682,50 @@ TSlepSlep_1 = TSlepSlep.addMassPlane([[x,y]]*2)
 TSlepSlep_1.addSource('obsExclusion', "orig/exclusion_TSlepSlep.txt", "txt")
 TSlepSlep_1.addSource('efficiencyMap','orig/MA5_EM_mT2-150-SF.dat', 'txt')
 TSlepSlep_1.dataUrl = None
+TChiWW = dataset.addTxName('TChiWW')
+TChiWW.constraint ="[[['W+']],[['W-']]]"
+TChiWW.conditionDescription = None
+TChiWW.condition = None
+TChiWW.source = 'SModelS'
+#+++++++ next mass plane block ++++++++++++++
+TChiWW_1 = TChiWW.addMassPlane([[x,y]]*2)
+TChiWW_1.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChiWW_1_EM_MAPS/MA5_EM_TChiWW_1_mT2-150-SF.dat', 'txt')
+TChiWW_1.addSource('obsExclusion', "orig/exclusion_TChiWW.txt", "txt")
+TChiWW_1.dataUrl = None
+TChiWWoff = dataset.addTxName('TChiWWoff')
+TChiWWoff.constraint = "22.2*[[['l+','nu']],[['l-','nu']]]"
+TChiWWoff.conditionDescription = "[[['l+','nu']],[['l-','nu']]] > 2* [[['mu+','nu']],[['l-','nu']]]"
+TChiWWoff.condition = "Cgtr([[['l+','nu']],[['l-','nu']]],2.*[[['mu+','nu']],[['l-','nu']]]); Cgtr([[['l+','nu']],[['l-','nu']]],2.*[[['l+','nu']],[['mu-','nu']]])"
+constraint ="22.2*[[['l+','nu']],[['l-','nu']]]"
+TChiWWoff.massConstraint = [['dm <= 76.']]*2
+TChiWWoff.source = 'SModelS'
+#+++++++ next mass plane block ++++++++++++++
+TChiWWoff.addMassPlane( TChiWW_1 )
+TChipChimSlepSnu = dataset.addTxName('TChipChimSlepSnu')
+TChipChimSlepSnu.constraint = "[[['L-'],['nu']],[['nu'],['L+']]] + [[['L+'],['nu']],[['nu'],['L-']]] + [[['L+'],['nu']],[['L-'],['nu']]] + [[['nu'],['L+']],[['nu'],['L-']]]"
+TChipChimSlepSnu.conditionDescription = "[[['L-'],['nu']],[['nu'],['L+']]] ~ [[['L+'],['nu']],[['nu'],['L-']]], [[['L-'],['nu']],[['nu'],['L+']]] ~ [[['L+'],['nu']],[['L-'],['nu']]], [[['L-'],['nu']],[['nu'],['L+']]] ~ [[['nu'],['L+']],[['nu'],['L-']]],[[['L-'],['nu']],[['nu'],['L+']]] > 2.7*[[['ta-'],['nu']],['nu'],['L+']]],[[['L-'],['nu']],[['nu'],['L+']]] > 2.7*[[['L-'],['nu']],[['nu'],['ta+']]], [[['L+'],['nu']],[['nu'],['L-']]] > 2.7*[[['ta+'],['nu']],[['nu'],['L-']]], [[['L+'],['nu']],[['nu'],['L-']]] > 2.7*[[['L+'],['nu']],[['nu'],['ta-']]], [[['L+'],['nu']],[['L-'],['nu']]] > 2.7*[[['ta+'],['nu']],[['L-'],['nu']]], [[['L+'],['nu']],[['L-'],['nu']]] > 2.7*[[['L+'],['nu']],[['ta-'],['nu']]], [[['nu'],['L+']],[['nu'],['L-']]] > 2.7*[[['nu'],['ta+']],[['nu'],[L-']]], [[['nu'],['L+']],[['nu'],['L-']]] > 2.7*[[['nu'],['L+']],[['nu'],[ta-']]], [[['L-'],['nu']],[['nu'],['L+']]] > 2.7*[[['e-'],['nu']],[['nu'],['L+']]], [[['L-'],['nu']],[['nu'],['L+']]] > 2.7*[[['L-'],['nu']],[['nu'],['e+']]], [[['L+'],['nu']],[['nu'],['L-']]] > 2.7*[[['e+'],['nu']],[['nu'],['L-']]],[[['L+'],['nu']],[['nu'],['L-']]] > 2.7*[[['L+'],['nu']],[['nu'],['e-']]],[[['L+'],['nu']],[['L-'],['nu']]] > 2.7*[[['e+'],['nu']],[['L-'],['nu']]],[[['L+'],['nu']],[['L-'],['nu']]] > 2.7*[[['L+'],['nu']],[['e-'],['nu']]],[[['nu'],['L+']],[['nu'],['L-']]] > 2.7*[[['nu'],['e+']],[['nu'],['L-']]], [[['nu'],['L+']],[['nu'],['L-']]] > 2.7*[[['nu'],['L+']],[['nu'],['e-']]]"
+TChipChimSlepSnu.condition = "Csim([[['L-'],['nu']],[['nu'],['L+']]],[[['L+'],['nu']],[['nu'],['L-']]],[[['L+'],['nu']],[['L-'],['nu']]],[[['nu'],['L+']],[['nu'],['L-']]]); Cgtr([[['L-'],['nu']],[['nu'],['L+']]],3.*[[['ta-'],['nu']],[['nu'],['L+']]]); Cgtr([[['L-'],['nu']],[['nu'],['L+']]],3.*[[['L-'],['nu']],[['nu'],['ta+']]]); Cgtr([[['L+'],['nu']],[['nu'],['L-']]],3.*[[['ta+'],['nu']],[['nu'],['L-']]]); Cgtr([[['L+'],['nu']],[['nu'],['L-']]],3.* [[['L+'],['nu']],[['nu'],['ta-']]]); Cgtr([[['L+'],['nu']],[['L-'],['nu']]],3.*[[['ta+'],['nu']],[['L-'],['nu']]]); Cgtr([[['L+'],['nu']],[['L-'],['nu']]],3.*[[['L+'],['nu']],[['ta-'],['nu']]]); Cgtr([[['nu'],['L+']],[['nu'],[L-']]],3.*[[['nu'],['ta+']],[['nu'],[L-']]]); Cgtr([[['nu'],['L+']],[['nu'],[L-']]],3.*[[['nu'],['L+']],[['nu'],[ta-']]]); Cgtr([[['L-'],['nu']],[['nu'],['L+']]],3.*[[['e-'],['nu']],[['nu'],['L+']]]); Cgtr([[['L-'],['nu']],[['nu'],['L+']]],3.*[[['L-'],['nu']],[['nu'],['e+']]]); Cgtr([[['L+'],['nu']],[['nu'],['L-']]],3.*[[['e+'],['nu']],[['nu'],['L-']]]); Cgtr([[['L+'],['nu']],[['nu'],['L-']]],3.* [[['L+'],['nu']],[['nu'],['e-']]]); Cgtr([[['L+'],['nu']],[['L-'],['nu']]],3.*[[['e+'],['nu']],[['L-'],['nu']]]); Cgtr([[['L+'],['nu']],[['L-'],['nu']]],3.*[[['L+'],['nu']],[['e-'],['nu']]]); Cgtr([[['nu'],['L+']],[['nu'],[L-']]],3.*[[['nu'],['e+']],[['nu'],[L-']]]); Cgtr([[['nu'],['L+']],[['nu'],[L-']]],3.*[[['nu'],['L+']],[['nu'],[e-']]])"
+TChipChimSlepSnu.source = 'SModelS'
+TChipChimSlepSnu.dataUrl = None
+#+++++++ next mass plane block ++++++++++++++
+TChipChimSlepSnu_x005 = TChipChimSlepSnu.addMassPlane([[x,.05*x+.95*y,y]]*2)
+TChipChimSlepSnu_x005.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x005_EM_MAPS/MA5_EM_TChipChimSlepSnu_x005_mT2-150-SF.dat', 'txt')
+TChipChimSlepSnu_x025 = TChipChimSlepSnu.addMassPlane([[x,.25*x+.75*y,y]]*2)
+TChipChimSlepSnu_x025.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x025_EM_MAPS/MA5_EM_TChipChimSlepSnu_x025_mT2-150-SF.dat', 'txt')
+TChipChimSlepSnu_x05 = TChipChimSlepSnu.addMassPlane([[x,.50*x+.50*y,y]]*2)
+TChipChimSlepSnu_x05.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x05_EM_MAPS/MA5_EM_TChipChimSlepSnu_x05_mT2-150-SF.dat', 'txt')
+TChipChimSlepSnu_x05.addSource('obsExclusion', "orig/TChipChimSlepSnu_Obs_x05.txt", "txt")
+TChipChimSlepSnu_x05.addSource('obsExclusionP1', "orig/TChipChimSlepSnu_Obs+1_x05.txt", "txt")
+TChipChimSlepSnu_x05.addSource('obsExclusionM1', "orig/TChipChimSlepSnu_Obs-1_x05.txt", "txt")
+TChipChimSlepSnu_x075 = TChipChimSlepSnu.addMassPlane([[x,.75*x+.25*y,y]]*2)
+TChipChimSlepSnu_x075.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x075_EM_MAPS/MA5_EM_TChipChimSlepSnu_x075_mT2-150-SF.dat', 'txt')
+TChipChimSlepSnu_x095 = TChipChimSlepSnu.addMassPlane([[x,.95*x+.05*y,y]]*2)
+TChipChimSlepSnu_x095.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x095_EM_MAPS/MA5_EM_TChipChimSlepSnu_x095_mT2-150-SF.dat', 'txt')
 
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("mT2-150-DF")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "mT2-150-DF", observedN = 2, expectedBG = 1.0 , bgError = 0.5, upperLimit = '2.695E-01*fb', expectedUpperLimit = '2.061E-01*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "mT2-150-DF", observedN = 2, expectedBG = 1.0 , bgError = 0.5)
 #+++++++ next txName block ++++++++++++++
 #+++++++ next txName block ++++++++++++++
 TSlepSlep = dataset.addTxName('TSlepSlep')
@@ -271,5 +738,44 @@ TSlepSlep_1 = TSlepSlep.addMassPlane([[x,y]]*2)
 TSlepSlep_1.addSource('obsExclusion', "orig/exclusion_TSlepSlep.txt", "txt")
 TSlepSlep_1.addSource('efficiencyMap','orig/MA5_EM_mT2-150-DF.dat', 'txt')
 TSlepSlep_1.dataUrl = None
+TChiWW = dataset.addTxName('TChiWW')
+TChiWW.constraint ="[[['W+']],[['W-']]]"
+TChiWW.conditionDescription = None
+TChiWW.condition = None
+TChiWW.source = 'SModelS'
+#+++++++ next mass plane block ++++++++++++++
+TChiWW_1 = TChiWW.addMassPlane([[x,y]]*2)
+TChiWW_1.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChiWW_1_EM_MAPS/MA5_EM_TChiWW_1_mT2-150-DF.dat', 'txt')
+TChiWW_1.addSource('obsExclusion', "orig/exclusion_TChiWW.txt", "txt")
+TChiWW_1.dataUrl = None
+TChiWWoff = dataset.addTxName('TChiWWoff')
+TChiWWoff.constraint = "22.2*[[['l+','nu']],[['l-','nu']]]"
+TChiWWoff.conditionDescription = "[[['l+','nu']],[['l-','nu']]] > 2* [[['mu+','nu']],[['l-','nu']]]"
+TChiWWoff.condition = "Cgtr([[['l+','nu']],[['l-','nu']]],2.*[[['mu+','nu']],[['l-','nu']]]); Cgtr([[['l+','nu']],[['l-','nu']]],2.*[[['l+','nu']],[['mu-','nu']]])"
+constraint ="22.2*[[['l+','nu']],[['l-','nu']]]"
+TChiWWoff.massConstraint = [['dm <= 76.']]*2
+TChiWWoff.source = 'SModelS'
+#+++++++ next mass plane block ++++++++++++++
+TChiWWoff.addMassPlane( TChiWW_1 )
+TChipChimSlepSnu = dataset.addTxName('TChipChimSlepSnu')
+TChipChimSlepSnu.constraint = "[[['L-'],['nu']],[['nu'],['L+']]] + [[['L+'],['nu']],[['nu'],['L-']]] + [[['L+'],['nu']],[['L-'],['nu']]] + [[['nu'],['L+']],[['nu'],['L-']]]"
+TChipChimSlepSnu.conditionDescription = "[[['L-'],['nu']],[['nu'],['L+']]] ~ [[['L+'],['nu']],[['nu'],['L-']]], [[['L-'],['nu']],[['nu'],['L+']]] ~ [[['L+'],['nu']],[['L-'],['nu']]], [[['L-'],['nu']],[['nu'],['L+']]] ~ [[['nu'],['L+']],[['nu'],['L-']]],[[['L-'],['nu']],[['nu'],['L+']]] > 2.7*[[['ta-'],['nu']],['nu'],['L+']]],[[['L-'],['nu']],[['nu'],['L+']]] > 2.7*[[['L-'],['nu']],[['nu'],['ta+']]], [[['L+'],['nu']],[['nu'],['L-']]] > 2.7*[[['ta+'],['nu']],[['nu'],['L-']]], [[['L+'],['nu']],[['nu'],['L-']]] > 2.7*[[['L+'],['nu']],[['nu'],['ta-']]], [[['L+'],['nu']],[['L-'],['nu']]] > 2.7*[[['ta+'],['nu']],[['L-'],['nu']]], [[['L+'],['nu']],[['L-'],['nu']]] > 2.7*[[['L+'],['nu']],[['ta-'],['nu']]], [[['nu'],['L+']],[['nu'],['L-']]] > 2.7*[[['nu'],['ta+']],[['nu'],[L-']]], [[['nu'],['L+']],[['nu'],['L-']]] > 2.7*[[['nu'],['L+']],[['nu'],[ta-']]], [[['L-'],['nu']],[['nu'],['L+']]] > 2.7*[[['e-'],['nu']],[['nu'],['L+']]], [[['L-'],['nu']],[['nu'],['L+']]] > 2.7*[[['L-'],['nu']],[['nu'],['e+']]], [[['L+'],['nu']],[['nu'],['L-']]] > 2.7*[[['e+'],['nu']],[['nu'],['L-']]],[[['L+'],['nu']],[['nu'],['L-']]] > 2.7*[[['L+'],['nu']],[['nu'],['e-']]],[[['L+'],['nu']],[['L-'],['nu']]] > 2.7*[[['e+'],['nu']],[['L-'],['nu']]],[[['L+'],['nu']],[['L-'],['nu']]] > 2.7*[[['L+'],['nu']],[['e-'],['nu']]],[[['nu'],['L+']],[['nu'],['L-']]] > 2.7*[[['nu'],['e+']],[['nu'],['L-']]], [[['nu'],['L+']],[['nu'],['L-']]] > 2.7*[[['nu'],['L+']],[['nu'],['e-']]]"
+TChipChimSlepSnu.condition = "Csim([[['L-'],['nu']],[['nu'],['L+']]],[[['L+'],['nu']],[['nu'],['L-']]],[[['L+'],['nu']],[['L-'],['nu']]],[[['nu'],['L+']],[['nu'],['L-']]]); Cgtr([[['L-'],['nu']],[['nu'],['L+']]],3.*[[['ta-'],['nu']],[['nu'],['L+']]]); Cgtr([[['L-'],['nu']],[['nu'],['L+']]],3.*[[['L-'],['nu']],[['nu'],['ta+']]]); Cgtr([[['L+'],['nu']],[['nu'],['L-']]],3.*[[['ta+'],['nu']],[['nu'],['L-']]]); Cgtr([[['L+'],['nu']],[['nu'],['L-']]],3.* [[['L+'],['nu']],[['nu'],['ta-']]]); Cgtr([[['L+'],['nu']],[['L-'],['nu']]],3.*[[['ta+'],['nu']],[['L-'],['nu']]]); Cgtr([[['L+'],['nu']],[['L-'],['nu']]],3.*[[['L+'],['nu']],[['ta-'],['nu']]]); Cgtr([[['nu'],['L+']],[['nu'],[L-']]],3.*[[['nu'],['ta+']],[['nu'],[L-']]]); Cgtr([[['nu'],['L+']],[['nu'],[L-']]],3.*[[['nu'],['L+']],[['nu'],[ta-']]]); Cgtr([[['L-'],['nu']],[['nu'],['L+']]],3.*[[['e-'],['nu']],[['nu'],['L+']]]); Cgtr([[['L-'],['nu']],[['nu'],['L+']]],3.*[[['L-'],['nu']],[['nu'],['e+']]]); Cgtr([[['L+'],['nu']],[['nu'],['L-']]],3.*[[['e+'],['nu']],[['nu'],['L-']]]); Cgtr([[['L+'],['nu']],[['nu'],['L-']]],3.* [[['L+'],['nu']],[['nu'],['e-']]]); Cgtr([[['L+'],['nu']],[['L-'],['nu']]],3.*[[['e+'],['nu']],[['L-'],['nu']]]); Cgtr([[['L+'],['nu']],[['L-'],['nu']]],3.*[[['L+'],['nu']],[['e-'],['nu']]]); Cgtr([[['nu'],['L+']],[['nu'],[L-']]],3.*[[['nu'],['e+']],[['nu'],[L-']]]); Cgtr([[['nu'],['L+']],[['nu'],[L-']]],3.*[[['nu'],['L+']],[['nu'],[e-']]])"
+TChipChimSlepSnu.source = 'SModelS'
+TChipChimSlepSnu.dataUrl = None
+#+++++++ next mass plane block ++++++++++++++
+TChipChimSlepSnu_x005 = TChipChimSlepSnu.addMassPlane([[x,.05*x+.95*y,y]]*2)
+TChipChimSlepSnu_x005.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x005_EM_MAPS/MA5_EM_TChipChimSlepSnu_x005_mT2-150-DF.dat', 'txt')
+TChipChimSlepSnu_x025 = TChipChimSlepSnu.addMassPlane([[x,.25*x+.75*y,y]]*2)
+TChipChimSlepSnu_x025.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x025_EM_MAPS/MA5_EM_TChipChimSlepSnu_x025_mT2-150-DF.dat', 'txt')
+TChipChimSlepSnu_x05 = TChipChimSlepSnu.addMassPlane([[x,.50*x+.50*y,y]]*2)
+TChipChimSlepSnu_x05.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x05_EM_MAPS/MA5_EM_TChipChimSlepSnu_x05_mT2-150-DF.dat', 'txt')
+TChipChimSlepSnu_x05.addSource('obsExclusion', "orig/TChipChimSlepSnu_Obs_x05.txt", "txt")
+TChipChimSlepSnu_x05.addSource('obsExclusionP1', "orig/TChipChimSlepSnu_Obs+1_x05.txt", "txt")
+TChipChimSlepSnu_x05.addSource('obsExclusionM1', "orig/TChipChimSlepSnu_Obs-1_x05.txt", "txt")
+TChipChimSlepSnu_x075 = TChipChimSlepSnu.addMassPlane([[x,.75*x+.25*y,y]]*2)
+TChipChimSlepSnu_x075.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x075_EM_MAPS/MA5_EM_TChipChimSlepSnu_x075_mT2-150-DF.dat', 'txt')
+TChipChimSlepSnu_x095 = TChipChimSlepSnu.addMassPlane([[x,.95*x+.05*y,y]]*2)
+TChipChimSlepSnu_x095.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x095_EM_MAPS/MA5_EM_TChipChimSlepSnu_x095_mT2-150-DF.dat', 'txt')
 
 databaseCreator.create()
