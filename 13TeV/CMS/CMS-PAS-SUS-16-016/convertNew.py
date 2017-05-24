@@ -104,6 +104,7 @@ T2.conditionDescription =None
 T2.condition =None
 T2.source = "CMS"
 T2.massConstraint = None
+"""
 T2off = dataset.addTxName('T2off')
 T2off.checked =''
 T2off.constraint =None
@@ -111,6 +112,7 @@ T2off.conditionDescription =None
 T2off.condition =None
 T2off.massConstraint = [['dm >= 0.0'], ['dm >= 0.0']]
 T2off.source = "CMS"
+"""
 #+++++++ next mass plane block ++++++++++++++
 T2_1 = T2.addMassPlane(2*[[x, y]])
 T2_1.figure = "Figure 5-c"
@@ -122,7 +124,7 @@ T2_1.exclusionDataUrl ="http://cms-results.web.cern.ch/cms-results/public-result
 T2_1.setSources(dataLabels= ['expExclusion', 'expectedUpperLimits', 'obsExclusion', 'upperLimits'],
                  dataFiles= ['orig/T2bbExp.dat', 'orig/CMS-PAS-SUS-16-016_Figure_005-c.root', 'orig/T2bbObs.dat', 'orig/CMS-PAS-SUS-16-016_Figure_005-c.root'],
                  dataFormats= ['txt', 'root', 'txt', 'root'],objectNames= ['None', 'expected_limit_xs_noInterpolation', 'None', 'observed_limit_xs_noInterpolation'])
-T2off.addMassPlane(T2_1)
+# T2off.addMassPlane(T2_1)
 
 #+++++++ next txName block ++++++++++++++
 T2tt = dataset.addTxName('T2tt')
