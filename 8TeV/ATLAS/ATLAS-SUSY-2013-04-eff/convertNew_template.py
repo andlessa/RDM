@@ -9,14 +9,17 @@ import sys
 import os
 import argparse
 
-argparser = argparse.ArgumentParser(description =  
+argparser = argparse.ArgumentParser(description =
 'create info.txt, txname.txt, twiki.txt and sms.py')
-argparser.add_argument ('-utilsPath', '--utilsPath', 
+argparser.add_argument ('-utilsPath', '--utilsPath',
 help = 'path to the package smodels_utils',\
 type = str )
-argparser.add_argument ('-smodelsPath', '--smodelsPath', 
+argparser.add_argument ('-smodelsPath', '--smodelsPath',
 help = 'path to the package smodels_utils',\
 type = str )
+argparser.add_argument ('-t', '--ntoys',
+    help = 'number of toys to throw',\
+    type = int, default=200000  )
 args = argparser.parse_args()
 
 if args.utilsPath:
@@ -34,7 +37,7 @@ from smodels_utils.dataPreparation.inputObjects import MetaInfoInput,DataSetInpu
 from smodels_utils.dataPreparation.databaseCreation import databaseCreator
 from smodels_utils.dataPreparation.massPlaneObjects import x, y, z
 
-# DataSetInput.ntoys = 10
+DataSetInput.ntoys = args.ntoys
 # databaseCreator.ncpus = 1
 
 #+++++++ global info block ++++++++++++++
@@ -225,13 +228,13 @@ T6bbWW.condition =None
 T6bbWW.massConstraint = None
 T6bbWW.source = "SModelS"
 T6bbWW.dataUrl = None
-T6bbWW_1 = T6bbWW.addMassPlane([[x, 0.1*y + 0.9*x, y]]*2)
+T6bbWW_1 = T6bbWW.addMassPlane([[x, 0.1*x + 0.9*y, y]]*2)
 T6bbWW_1.addSource('efficiencyMap', 'orig/atlas_susy_2013_04_T6bbWW_x01_EM_MAPS/MA5_EM_T6bbWW_x01_$datasetStr$.dat', 'txt')
 #+++++++ next mass plane block ++++++++++++++
 T6bbWW_2 = T6bbWW.addMassPlane([[x, 0.5*x + 0.5*y, y]]*2)
 T6bbWW_2.addSource('efficiencyMap','orig/atlas_susy_2013_04_T6bbWW_x05_EM_MAPS/MA5_EM_T6bbWW_x05_$datasetStr$.dat','txt')
 #+++++++ next mass plane block ++++++++++++++
-T6bbWW_3 = T6bbWW.addMassPlane([[x, 0.9*y + 0.1*x, y]]*2)
+T6bbWW_3 = T6bbWW.addMassPlane([[x, 0.9*x + 0.1*y, y]]*2)
 T6bbWW_3.addSource('efficiencyMap','orig/atlas_susy_2013_04_T6bbWW_x09_EM_MAPS/MA5_EM_T6bbWW_x09_$datasetStr$.dat','txt')
 
 END_BLOCK_TO_FILL
