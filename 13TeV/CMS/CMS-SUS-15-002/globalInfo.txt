@@ -5,6 +5,6 @@ url: http://cms-results.web.cern.ch/cms-results/public-results/superseded/SUS-15
 supersedes: CMS-SUS-PAS-15-002
 comment: Do not know where the off constraint for T1tttt came from
 private: False
-implementedBy: Federico Ambrogi
-lastUpdate: 2017/2/27
+implementedBy: Andre Lessa
+lastUpdate: 2017/5/25
 
