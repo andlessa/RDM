@@ -9,5 +9,5 @@ contact: ATLAS collaboration for T1tttt models;SModelS for T5WW and T5ZZ models
 supersedes: ATLAS-CONF-2012-103
 comment: Erratum: JHEP01(2014)109. T1tttt official efficiency maps from ATLAS collaboration; T5WW and T5ZZ efficiency maps created by the SModelS collaboration using MadAnalysis5
 private: False
-implementedBy: Federico A
-lastUpdate: 2017/1/10
+implementedBy: Andre Lessa
+lastUpdate: 2017/5/30
