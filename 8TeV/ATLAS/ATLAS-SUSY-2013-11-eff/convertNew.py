@@ -71,7 +71,6 @@ TSlepSlep_1.addSource('efficiencyMap','orig/atlas_susy_2013_11_TSlepSlep_1_EM_MA
 TSlepSlep_1.dataUrl = None
 TChiWW = dataset.addTxName('TChiWW')
 TChiWW.constraint ="[[['W+']],[['W-']]]"
-TChiWW.massConstraint = None
 TChiWW.conditionDescription = None
 TChiWW.condition = None
 TChiWW.source = 'SModelS'
@@ -109,6 +108,18 @@ TChipChimSlepSnu_x075 = TChipChimSlepSnu.addMassPlane([[x,.75*x+.25*y,y]]*2)
 TChipChimSlepSnu_x075.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x075_EM_MAPS/MA5_EM_TChipChimSlepSnu_x075_WWb-SF.dat', 'txt')
 TChipChimSlepSnu_x095 = TChipChimSlepSnu.addMassPlane([[x,.95*x+.05*y,y]]*2)
 TChipChimSlepSnu_x095.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x095_EM_MAPS/MA5_EM_TChipChimSlepSnu_x095_WWb-SF.dat', 'txt')
+TChipChimSlepSnu_DELTASleptonNeutralino5 = TChipChimSlepSnu.addMassPlane([[x,y+5.0,y]]*2)
+TChipChimSlepSnu_DELTASleptonNeutralino5.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTASleptonNeutralino5_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTASleptonNeutralino5_WWb-SF.dat", "txt")
+TChipChimSlepSnu_DELTASleptonNeutralino10 = TChipChimSlepSnu.addMassPlane([[x,y+10.0,y]]*2)
+TChipChimSlepSnu_DELTASleptonNeutralino10.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTASleptonNeutralino10_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTASleptonNeutralino10_WWb-SF.dat", "txt")
+TChipChimSlepSnu_DELTASleptonNeutralino15 = TChipChimSlepSnu.addMassPlane([[x,y+15.0,y]]*2)
+TChipChimSlepSnu_DELTASleptonNeutralino15.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTASleptonNeutralino15_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTASleptonNeutralino15_WWb-SF.dat", "txt")
+TChipChimSlepSnu_DELTACharginoSlepton5 = TChipChimSlepSnu.addMassPlane([[x,x-5.0,y]]*2)
+TChipChimSlepSnu_DELTACharginoSlepton5.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTACharginoSlepton5_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTACharginoSlepton5_WWb-SF.dat", "txt")
+TChipChimSlepSnu_DELTACharginoSlepton10 = TChipChimSlepSnu.addMassPlane([[x,x-10.0,y]]*2)
+TChipChimSlepSnu_DELTACharginoSlepton10.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTACharginoSlepton10_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTACharginoSlepton10_WWb-SF.dat", "txt")
+TChipChimSlepSnu_DELTACharginoSlepton15 = TChipChimSlepSnu.addMassPlane([[x,x-15.0,y]]*2)
+TChipChimSlepSnu_DELTACharginoSlepton15.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTACharginoSlepton15_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTACharginoSlepton15_WWb-SF.dat", "txt")
 
 
 #+++++++ dataset block ++++++++++++++
@@ -128,7 +139,6 @@ TSlepSlep_1.addSource('efficiencyMap','orig/atlas_susy_2013_11_TSlepSlep_1_EM_MA
 TSlepSlep_1.dataUrl = None
 TChiWW = dataset.addTxName('TChiWW')
 TChiWW.constraint ="[[['W+']],[['W-']]]"
-TChiWW.massConstraint = None
 TChiWW.conditionDescription = None
 TChiWW.condition = None
 TChiWW.source = 'SModelS'
@@ -166,6 +176,18 @@ TChipChimSlepSnu_x075 = TChipChimSlepSnu.addMassPlane([[x,.75*x+.25*y,y]]*2)
 TChipChimSlepSnu_x075.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x075_EM_MAPS/MA5_EM_TChipChimSlepSnu_x075_WWa-SF.dat', 'txt')
 TChipChimSlepSnu_x095 = TChipChimSlepSnu.addMassPlane([[x,.95*x+.05*y,y]]*2)
 TChipChimSlepSnu_x095.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x095_EM_MAPS/MA5_EM_TChipChimSlepSnu_x095_WWa-SF.dat', 'txt')
+TChipChimSlepSnu_DELTASleptonNeutralino5 = TChipChimSlepSnu.addMassPlane([[x,y+5.0,y]]*2)
+TChipChimSlepSnu_DELTASleptonNeutralino5.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTASleptonNeutralino5_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTASleptonNeutralino5_WWa-SF.dat", "txt")
+TChipChimSlepSnu_DELTASleptonNeutralino10 = TChipChimSlepSnu.addMassPlane([[x,y+10.0,y]]*2)
+TChipChimSlepSnu_DELTASleptonNeutralino10.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTASleptonNeutralino10_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTASleptonNeutralino10_WWa-SF.dat", "txt")
+TChipChimSlepSnu_DELTASleptonNeutralino15 = TChipChimSlepSnu.addMassPlane([[x,y+15.0,y]]*2)
+TChipChimSlepSnu_DELTASleptonNeutralino15.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTASleptonNeutralino15_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTASleptonNeutralino15_WWa-SF.dat", "txt")
+TChipChimSlepSnu_DELTACharginoSlepton5 = TChipChimSlepSnu.addMassPlane([[x,x-5.0,y]]*2)
+TChipChimSlepSnu_DELTACharginoSlepton5.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTACharginoSlepton5_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTACharginoSlepton5_WWa-SF.dat", "txt")
+TChipChimSlepSnu_DELTACharginoSlepton10 = TChipChimSlepSnu.addMassPlane([[x,x-10.0,y]]*2)
+TChipChimSlepSnu_DELTACharginoSlepton10.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTACharginoSlepton10_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTACharginoSlepton10_WWa-SF.dat", "txt")
+TChipChimSlepSnu_DELTACharginoSlepton15 = TChipChimSlepSnu.addMassPlane([[x,x-15.0,y]]*2)
+TChipChimSlepSnu_DELTACharginoSlepton15.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTACharginoSlepton15_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTACharginoSlepton15_WWa-SF.dat", "txt")
 
 
 #+++++++ dataset block ++++++++++++++
@@ -185,7 +207,6 @@ TSlepSlep_1.addSource('efficiencyMap','orig/atlas_susy_2013_11_TSlepSlep_1_EM_MA
 TSlepSlep_1.dataUrl = None
 TChiWW = dataset.addTxName('TChiWW')
 TChiWW.constraint ="[[['W+']],[['W-']]]"
-TChiWW.massConstraint = None
 TChiWW.conditionDescription = None
 TChiWW.condition = None
 TChiWW.source = 'SModelS'
@@ -223,6 +244,18 @@ TChipChimSlepSnu_x075 = TChipChimSlepSnu.addMassPlane([[x,.75*x+.25*y,y]]*2)
 TChipChimSlepSnu_x075.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x075_EM_MAPS/MA5_EM_TChipChimSlepSnu_x075_WWb-DF.dat', 'txt')
 TChipChimSlepSnu_x095 = TChipChimSlepSnu.addMassPlane([[x,.95*x+.05*y,y]]*2)
 TChipChimSlepSnu_x095.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x095_EM_MAPS/MA5_EM_TChipChimSlepSnu_x095_WWb-DF.dat', 'txt')
+TChipChimSlepSnu_DELTASleptonNeutralino5 = TChipChimSlepSnu.addMassPlane([[x,y+5.0,y]]*2)
+TChipChimSlepSnu_DELTASleptonNeutralino5.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTASleptonNeutralino5_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTASleptonNeutralino5_WWb-DF.dat", "txt")
+TChipChimSlepSnu_DELTASleptonNeutralino10 = TChipChimSlepSnu.addMassPlane([[x,y+10.0,y]]*2)
+TChipChimSlepSnu_DELTASleptonNeutralino10.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTASleptonNeutralino10_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTASleptonNeutralino10_WWb-DF.dat", "txt")
+TChipChimSlepSnu_DELTASleptonNeutralino15 = TChipChimSlepSnu.addMassPlane([[x,y+15.0,y]]*2)
+TChipChimSlepSnu_DELTASleptonNeutralino15.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTASleptonNeutralino15_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTASleptonNeutralino15_WWb-DF.dat", "txt")
+TChipChimSlepSnu_DELTACharginoSlepton5 = TChipChimSlepSnu.addMassPlane([[x,x-5.0,y]]*2)
+TChipChimSlepSnu_DELTACharginoSlepton5.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTACharginoSlepton5_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTACharginoSlepton5_WWb-DF.dat", "txt")
+TChipChimSlepSnu_DELTACharginoSlepton10 = TChipChimSlepSnu.addMassPlane([[x,x-10.0,y]]*2)
+TChipChimSlepSnu_DELTACharginoSlepton10.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTACharginoSlepton10_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTACharginoSlepton10_WWb-DF.dat", "txt")
+TChipChimSlepSnu_DELTACharginoSlepton15 = TChipChimSlepSnu.addMassPlane([[x,x-15.0,y]]*2)
+TChipChimSlepSnu_DELTACharginoSlepton15.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTACharginoSlepton15_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTACharginoSlepton15_WWb-DF.dat", "txt")
 
 
 #+++++++ dataset block ++++++++++++++
@@ -242,7 +275,6 @@ TSlepSlep_1.addSource('efficiencyMap','orig/atlas_susy_2013_11_TSlepSlep_1_EM_MA
 TSlepSlep_1.dataUrl = None
 TChiWW = dataset.addTxName('TChiWW')
 TChiWW.constraint ="[[['W+']],[['W-']]]"
-TChiWW.massConstraint = None
 TChiWW.conditionDescription = None
 TChiWW.condition = None
 TChiWW.source = 'SModelS'
@@ -280,6 +312,18 @@ TChipChimSlepSnu_x075 = TChipChimSlepSnu.addMassPlane([[x,.75*x+.25*y,y]]*2)
 TChipChimSlepSnu_x075.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x075_EM_MAPS/MA5_EM_TChipChimSlepSnu_x075_mT2-90-DF.dat', 'txt')
 TChipChimSlepSnu_x095 = TChipChimSlepSnu.addMassPlane([[x,.95*x+.05*y,y]]*2)
 TChipChimSlepSnu_x095.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x095_EM_MAPS/MA5_EM_TChipChimSlepSnu_x095_mT2-90-DF.dat', 'txt')
+TChipChimSlepSnu_DELTASleptonNeutralino5 = TChipChimSlepSnu.addMassPlane([[x,y+5.0,y]]*2)
+TChipChimSlepSnu_DELTASleptonNeutralino5.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTASleptonNeutralino5_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTASleptonNeutralino5_mT2-90-DF.dat", "txt")
+TChipChimSlepSnu_DELTASleptonNeutralino10 = TChipChimSlepSnu.addMassPlane([[x,y+10.0,y]]*2)
+TChipChimSlepSnu_DELTASleptonNeutralino10.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTASleptonNeutralino10_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTASleptonNeutralino10_mT2-90-DF.dat", "txt")
+TChipChimSlepSnu_DELTASleptonNeutralino15 = TChipChimSlepSnu.addMassPlane([[x,y+15.0,y]]*2)
+TChipChimSlepSnu_DELTASleptonNeutralino15.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTASleptonNeutralino15_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTASleptonNeutralino15_mT2-90-DF.dat", "txt")
+TChipChimSlepSnu_DELTACharginoSlepton5 = TChipChimSlepSnu.addMassPlane([[x,x-5.0,y]]*2)
+TChipChimSlepSnu_DELTACharginoSlepton5.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTACharginoSlepton5_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTACharginoSlepton5_mT2-90-DF.dat", "txt")
+TChipChimSlepSnu_DELTACharginoSlepton10 = TChipChimSlepSnu.addMassPlane([[x,x-10.0,y]]*2)
+TChipChimSlepSnu_DELTACharginoSlepton10.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTACharginoSlepton10_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTACharginoSlepton10_mT2-90-DF.dat", "txt")
+TChipChimSlepSnu_DELTACharginoSlepton15 = TChipChimSlepSnu.addMassPlane([[x,x-15.0,y]]*2)
+TChipChimSlepSnu_DELTACharginoSlepton15.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTACharginoSlepton15_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTACharginoSlepton15_mT2-90-DF.dat", "txt")
 
 
 #+++++++ dataset block ++++++++++++++
@@ -299,7 +343,6 @@ TSlepSlep_1.addSource('efficiencyMap','orig/atlas_susy_2013_11_TSlepSlep_1_EM_MA
 TSlepSlep_1.dataUrl = None
 TChiWW = dataset.addTxName('TChiWW')
 TChiWW.constraint ="[[['W+']],[['W-']]]"
-TChiWW.massConstraint = None
 TChiWW.conditionDescription = None
 TChiWW.condition = None
 TChiWW.source = 'SModelS'
@@ -337,6 +380,18 @@ TChipChimSlepSnu_x075 = TChipChimSlepSnu.addMassPlane([[x,.75*x+.25*y,y]]*2)
 TChipChimSlepSnu_x075.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x075_EM_MAPS/MA5_EM_TChipChimSlepSnu_x075_mT2-120-SF.dat', 'txt')
 TChipChimSlepSnu_x095 = TChipChimSlepSnu.addMassPlane([[x,.95*x+.05*y,y]]*2)
 TChipChimSlepSnu_x095.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x095_EM_MAPS/MA5_EM_TChipChimSlepSnu_x095_mT2-120-SF.dat', 'txt')
+TChipChimSlepSnu_DELTASleptonNeutralino5 = TChipChimSlepSnu.addMassPlane([[x,y+5.0,y]]*2)
+TChipChimSlepSnu_DELTASleptonNeutralino5.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTASleptonNeutralino5_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTASleptonNeutralino5_mT2-120-SF.dat", "txt")
+TChipChimSlepSnu_DELTASleptonNeutralino10 = TChipChimSlepSnu.addMassPlane([[x,y+10.0,y]]*2)
+TChipChimSlepSnu_DELTASleptonNeutralino10.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTASleptonNeutralino10_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTASleptonNeutralino10_mT2-120-SF.dat", "txt")
+TChipChimSlepSnu_DELTASleptonNeutralino15 = TChipChimSlepSnu.addMassPlane([[x,y+15.0,y]]*2)
+TChipChimSlepSnu_DELTASleptonNeutralino15.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTASleptonNeutralino15_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTASleptonNeutralino15_mT2-120-SF.dat", "txt")
+TChipChimSlepSnu_DELTACharginoSlepton5 = TChipChimSlepSnu.addMassPlane([[x,x-5.0,y]]*2)
+TChipChimSlepSnu_DELTACharginoSlepton5.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTACharginoSlepton5_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTACharginoSlepton5_mT2-120-SF.dat", "txt")
+TChipChimSlepSnu_DELTACharginoSlepton10 = TChipChimSlepSnu.addMassPlane([[x,x-10.0,y]]*2)
+TChipChimSlepSnu_DELTACharginoSlepton10.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTACharginoSlepton10_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTACharginoSlepton10_mT2-120-SF.dat", "txt")
+TChipChimSlepSnu_DELTACharginoSlepton15 = TChipChimSlepSnu.addMassPlane([[x,x-15.0,y]]*2)
+TChipChimSlepSnu_DELTACharginoSlepton15.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTACharginoSlepton15_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTACharginoSlepton15_mT2-120-SF.dat", "txt")
 
 
 #+++++++ dataset block ++++++++++++++
@@ -356,7 +411,6 @@ TSlepSlep_1.addSource('efficiencyMap','orig/atlas_susy_2013_11_TSlepSlep_1_EM_MA
 TSlepSlep_1.dataUrl = None
 TChiWW = dataset.addTxName('TChiWW')
 TChiWW.constraint ="[[['W+']],[['W-']]]"
-TChiWW.massConstraint = None
 TChiWW.conditionDescription = None
 TChiWW.condition = None
 TChiWW.source = 'SModelS'
@@ -394,6 +448,18 @@ TChipChimSlepSnu_x075 = TChipChimSlepSnu.addMassPlane([[x,.75*x+.25*y,y]]*2)
 TChipChimSlepSnu_x075.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x075_EM_MAPS/MA5_EM_TChipChimSlepSnu_x075_WWc-SF.dat', 'txt')
 TChipChimSlepSnu_x095 = TChipChimSlepSnu.addMassPlane([[x,.95*x+.05*y,y]]*2)
 TChipChimSlepSnu_x095.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x095_EM_MAPS/MA5_EM_TChipChimSlepSnu_x095_WWc-SF.dat', 'txt')
+TChipChimSlepSnu_DELTASleptonNeutralino5 = TChipChimSlepSnu.addMassPlane([[x,y+5.0,y]]*2)
+TChipChimSlepSnu_DELTASleptonNeutralino5.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTASleptonNeutralino5_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTASleptonNeutralino5_WWc-SF.dat", "txt")
+TChipChimSlepSnu_DELTASleptonNeutralino10 = TChipChimSlepSnu.addMassPlane([[x,y+10.0,y]]*2)
+TChipChimSlepSnu_DELTASleptonNeutralino10.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTASleptonNeutralino10_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTASleptonNeutralino10_WWc-SF.dat", "txt")
+TChipChimSlepSnu_DELTASleptonNeutralino15 = TChipChimSlepSnu.addMassPlane([[x,y+15.0,y]]*2)
+TChipChimSlepSnu_DELTASleptonNeutralino15.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTASleptonNeutralino15_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTASleptonNeutralino15_WWc-SF.dat", "txt")
+TChipChimSlepSnu_DELTACharginoSlepton5 = TChipChimSlepSnu.addMassPlane([[x,x-5.0,y]]*2)
+TChipChimSlepSnu_DELTACharginoSlepton5.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTACharginoSlepton5_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTACharginoSlepton5_WWc-SF.dat", "txt")
+TChipChimSlepSnu_DELTACharginoSlepton10 = TChipChimSlepSnu.addMassPlane([[x,x-10.0,y]]*2)
+TChipChimSlepSnu_DELTACharginoSlepton10.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTACharginoSlepton10_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTACharginoSlepton10_WWc-SF.dat", "txt")
+TChipChimSlepSnu_DELTACharginoSlepton15 = TChipChimSlepSnu.addMassPlane([[x,x-15.0,y]]*2)
+TChipChimSlepSnu_DELTACharginoSlepton15.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTACharginoSlepton15_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTACharginoSlepton15_WWc-SF.dat", "txt")
 
 
 #+++++++ dataset block ++++++++++++++
@@ -413,7 +479,6 @@ TSlepSlep_1.addSource('efficiencyMap','orig/atlas_susy_2013_11_TSlepSlep_1_EM_MA
 TSlepSlep_1.dataUrl = None
 TChiWW = dataset.addTxName('TChiWW')
 TChiWW.constraint ="[[['W+']],[['W-']]]"
-TChiWW.massConstraint = None
 TChiWW.conditionDescription = None
 TChiWW.condition = None
 TChiWW.source = 'SModelS'
@@ -451,6 +516,18 @@ TChipChimSlepSnu_x075 = TChipChimSlepSnu.addMassPlane([[x,.75*x+.25*y,y]]*2)
 TChipChimSlepSnu_x075.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x075_EM_MAPS/MA5_EM_TChipChimSlepSnu_x075_WWa-DF.dat', 'txt')
 TChipChimSlepSnu_x095 = TChipChimSlepSnu.addMassPlane([[x,.95*x+.05*y,y]]*2)
 TChipChimSlepSnu_x095.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x095_EM_MAPS/MA5_EM_TChipChimSlepSnu_x095_WWa-DF.dat', 'txt')
+TChipChimSlepSnu_DELTASleptonNeutralino5 = TChipChimSlepSnu.addMassPlane([[x,y+5.0,y]]*2)
+TChipChimSlepSnu_DELTASleptonNeutralino5.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTASleptonNeutralino5_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTASleptonNeutralino5_WWa-DF.dat", "txt")
+TChipChimSlepSnu_DELTASleptonNeutralino10 = TChipChimSlepSnu.addMassPlane([[x,y+10.0,y]]*2)
+TChipChimSlepSnu_DELTASleptonNeutralino10.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTASleptonNeutralino10_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTASleptonNeutralino10_WWa-DF.dat", "txt")
+TChipChimSlepSnu_DELTASleptonNeutralino15 = TChipChimSlepSnu.addMassPlane([[x,y+15.0,y]]*2)
+TChipChimSlepSnu_DELTASleptonNeutralino15.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTASleptonNeutralino15_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTASleptonNeutralino15_WWa-DF.dat", "txt")
+TChipChimSlepSnu_DELTACharginoSlepton5 = TChipChimSlepSnu.addMassPlane([[x,x-5.0,y]]*2)
+TChipChimSlepSnu_DELTACharginoSlepton5.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTACharginoSlepton5_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTACharginoSlepton5_WWa-DF.dat", "txt")
+TChipChimSlepSnu_DELTACharginoSlepton10 = TChipChimSlepSnu.addMassPlane([[x,x-10.0,y]]*2)
+TChipChimSlepSnu_DELTACharginoSlepton10.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTACharginoSlepton10_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTACharginoSlepton10_WWa-DF.dat", "txt")
+TChipChimSlepSnu_DELTACharginoSlepton15 = TChipChimSlepSnu.addMassPlane([[x,x-15.0,y]]*2)
+TChipChimSlepSnu_DELTACharginoSlepton15.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTACharginoSlepton15_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTACharginoSlepton15_WWa-DF.dat", "txt")
 
 
 #+++++++ dataset block ++++++++++++++
@@ -470,7 +547,6 @@ TSlepSlep_1.addSource('efficiencyMap','orig/atlas_susy_2013_11_TSlepSlep_1_EM_MA
 TSlepSlep_1.dataUrl = None
 TChiWW = dataset.addTxName('TChiWW')
 TChiWW.constraint ="[[['W+']],[['W-']]]"
-TChiWW.massConstraint = None
 TChiWW.conditionDescription = None
 TChiWW.condition = None
 TChiWW.source = 'SModelS'
@@ -508,6 +584,18 @@ TChipChimSlepSnu_x075 = TChipChimSlepSnu.addMassPlane([[x,.75*x+.25*y,y]]*2)
 TChipChimSlepSnu_x075.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x075_EM_MAPS/MA5_EM_TChipChimSlepSnu_x075_mT2-90-SF.dat', 'txt')
 TChipChimSlepSnu_x095 = TChipChimSlepSnu.addMassPlane([[x,.95*x+.05*y,y]]*2)
 TChipChimSlepSnu_x095.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x095_EM_MAPS/MA5_EM_TChipChimSlepSnu_x095_mT2-90-SF.dat', 'txt')
+TChipChimSlepSnu_DELTASleptonNeutralino5 = TChipChimSlepSnu.addMassPlane([[x,y+5.0,y]]*2)
+TChipChimSlepSnu_DELTASleptonNeutralino5.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTASleptonNeutralino5_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTASleptonNeutralino5_mT2-90-SF.dat", "txt")
+TChipChimSlepSnu_DELTASleptonNeutralino10 = TChipChimSlepSnu.addMassPlane([[x,y+10.0,y]]*2)
+TChipChimSlepSnu_DELTASleptonNeutralino10.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTASleptonNeutralino10_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTASleptonNeutralino10_mT2-90-SF.dat", "txt")
+TChipChimSlepSnu_DELTASleptonNeutralino15 = TChipChimSlepSnu.addMassPlane([[x,y+15.0,y]]*2)
+TChipChimSlepSnu_DELTASleptonNeutralino15.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTASleptonNeutralino15_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTASleptonNeutralino15_mT2-90-SF.dat", "txt")
+TChipChimSlepSnu_DELTACharginoSlepton5 = TChipChimSlepSnu.addMassPlane([[x,x-5.0,y]]*2)
+TChipChimSlepSnu_DELTACharginoSlepton5.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTACharginoSlepton5_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTACharginoSlepton5_mT2-90-SF.dat", "txt")
+TChipChimSlepSnu_DELTACharginoSlepton10 = TChipChimSlepSnu.addMassPlane([[x,x-10.0,y]]*2)
+TChipChimSlepSnu_DELTACharginoSlepton10.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTACharginoSlepton10_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTACharginoSlepton10_mT2-90-SF.dat", "txt")
+TChipChimSlepSnu_DELTACharginoSlepton15 = TChipChimSlepSnu.addMassPlane([[x,x-15.0,y]]*2)
+TChipChimSlepSnu_DELTACharginoSlepton15.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTACharginoSlepton15_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTACharginoSlepton15_mT2-90-SF.dat", "txt")
 
 
 #+++++++ dataset block ++++++++++++++
@@ -527,7 +615,6 @@ TSlepSlep_1.addSource('efficiencyMap','orig/atlas_susy_2013_11_TSlepSlep_1_EM_MA
 TSlepSlep_1.dataUrl = None
 TChiWW = dataset.addTxName('TChiWW')
 TChiWW.constraint ="[[['W+']],[['W-']]]"
-TChiWW.massConstraint = None
 TChiWW.conditionDescription = None
 TChiWW.condition = None
 TChiWW.source = 'SModelS'
@@ -565,6 +652,18 @@ TChipChimSlepSnu_x075 = TChipChimSlepSnu.addMassPlane([[x,.75*x+.25*y,y]]*2)
 TChipChimSlepSnu_x075.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x075_EM_MAPS/MA5_EM_TChipChimSlepSnu_x075_WWc-DF.dat', 'txt')
 TChipChimSlepSnu_x095 = TChipChimSlepSnu.addMassPlane([[x,.95*x+.05*y,y]]*2)
 TChipChimSlepSnu_x095.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x095_EM_MAPS/MA5_EM_TChipChimSlepSnu_x095_WWc-DF.dat', 'txt')
+TChipChimSlepSnu_DELTASleptonNeutralino5 = TChipChimSlepSnu.addMassPlane([[x,y+5.0,y]]*2)
+TChipChimSlepSnu_DELTASleptonNeutralino5.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTASleptonNeutralino5_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTASleptonNeutralino5_WWc-DF.dat", "txt")
+TChipChimSlepSnu_DELTASleptonNeutralino10 = TChipChimSlepSnu.addMassPlane([[x,y+10.0,y]]*2)
+TChipChimSlepSnu_DELTASleptonNeutralino10.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTASleptonNeutralino10_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTASleptonNeutralino10_WWc-DF.dat", "txt")
+TChipChimSlepSnu_DELTASleptonNeutralino15 = TChipChimSlepSnu.addMassPlane([[x,y+15.0,y]]*2)
+TChipChimSlepSnu_DELTASleptonNeutralino15.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTASleptonNeutralino15_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTASleptonNeutralino15_WWc-DF.dat", "txt")
+TChipChimSlepSnu_DELTACharginoSlepton5 = TChipChimSlepSnu.addMassPlane([[x,x-5.0,y]]*2)
+TChipChimSlepSnu_DELTACharginoSlepton5.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTACharginoSlepton5_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTACharginoSlepton5_WWc-DF.dat", "txt")
+TChipChimSlepSnu_DELTACharginoSlepton10 = TChipChimSlepSnu.addMassPlane([[x,x-10.0,y]]*2)
+TChipChimSlepSnu_DELTACharginoSlepton10.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTACharginoSlepton10_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTACharginoSlepton10_WWc-DF.dat", "txt")
+TChipChimSlepSnu_DELTACharginoSlepton15 = TChipChimSlepSnu.addMassPlane([[x,x-15.0,y]]*2)
+TChipChimSlepSnu_DELTACharginoSlepton15.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTACharginoSlepton15_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTACharginoSlepton15_WWc-DF.dat", "txt")
 
 
 #+++++++ dataset block ++++++++++++++
@@ -584,7 +683,6 @@ TSlepSlep_1.addSource('efficiencyMap','orig/atlas_susy_2013_11_TSlepSlep_1_EM_MA
 TSlepSlep_1.dataUrl = None
 TChiWW = dataset.addTxName('TChiWW')
 TChiWW.constraint ="[[['W+']],[['W-']]]"
-TChiWW.massConstraint = None
 TChiWW.conditionDescription = None
 TChiWW.condition = None
 TChiWW.source = 'SModelS'
@@ -622,6 +720,18 @@ TChipChimSlepSnu_x075 = TChipChimSlepSnu.addMassPlane([[x,.75*x+.25*y,y]]*2)
 TChipChimSlepSnu_x075.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x075_EM_MAPS/MA5_EM_TChipChimSlepSnu_x075_mT2-120-DF.dat', 'txt')
 TChipChimSlepSnu_x095 = TChipChimSlepSnu.addMassPlane([[x,.95*x+.05*y,y]]*2)
 TChipChimSlepSnu_x095.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x095_EM_MAPS/MA5_EM_TChipChimSlepSnu_x095_mT2-120-DF.dat', 'txt')
+TChipChimSlepSnu_DELTASleptonNeutralino5 = TChipChimSlepSnu.addMassPlane([[x,y+5.0,y]]*2)
+TChipChimSlepSnu_DELTASleptonNeutralino5.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTASleptonNeutralino5_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTASleptonNeutralino5_mT2-120-DF.dat", "txt")
+TChipChimSlepSnu_DELTASleptonNeutralino10 = TChipChimSlepSnu.addMassPlane([[x,y+10.0,y]]*2)
+TChipChimSlepSnu_DELTASleptonNeutralino10.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTASleptonNeutralino10_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTASleptonNeutralino10_mT2-120-DF.dat", "txt")
+TChipChimSlepSnu_DELTASleptonNeutralino15 = TChipChimSlepSnu.addMassPlane([[x,y+15.0,y]]*2)
+TChipChimSlepSnu_DELTASleptonNeutralino15.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTASleptonNeutralino15_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTASleptonNeutralino15_mT2-120-DF.dat", "txt")
+TChipChimSlepSnu_DELTACharginoSlepton5 = TChipChimSlepSnu.addMassPlane([[x,x-5.0,y]]*2)
+TChipChimSlepSnu_DELTACharginoSlepton5.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTACharginoSlepton5_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTACharginoSlepton5_mT2-120-DF.dat", "txt")
+TChipChimSlepSnu_DELTACharginoSlepton10 = TChipChimSlepSnu.addMassPlane([[x,x-10.0,y]]*2)
+TChipChimSlepSnu_DELTACharginoSlepton10.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTACharginoSlepton10_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTACharginoSlepton10_mT2-120-DF.dat", "txt")
+TChipChimSlepSnu_DELTACharginoSlepton15 = TChipChimSlepSnu.addMassPlane([[x,x-15.0,y]]*2)
+TChipChimSlepSnu_DELTACharginoSlepton15.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTACharginoSlepton15_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTACharginoSlepton15_mT2-120-DF.dat", "txt")
 
 
 #+++++++ dataset block ++++++++++++++
@@ -641,7 +751,6 @@ TSlepSlep_1.addSource('efficiencyMap','orig/atlas_susy_2013_11_TSlepSlep_1_EM_MA
 TSlepSlep_1.dataUrl = None
 TChiWW = dataset.addTxName('TChiWW')
 TChiWW.constraint ="[[['W+']],[['W-']]]"
-TChiWW.massConstraint = None
 TChiWW.conditionDescription = None
 TChiWW.condition = None
 TChiWW.source = 'SModelS'
@@ -679,6 +788,18 @@ TChipChimSlepSnu_x075 = TChipChimSlepSnu.addMassPlane([[x,.75*x+.25*y,y]]*2)
 TChipChimSlepSnu_x075.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x075_EM_MAPS/MA5_EM_TChipChimSlepSnu_x075_Zjets.dat', 'txt')
 TChipChimSlepSnu_x095 = TChipChimSlepSnu.addMassPlane([[x,.95*x+.05*y,y]]*2)
 TChipChimSlepSnu_x095.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x095_EM_MAPS/MA5_EM_TChipChimSlepSnu_x095_Zjets.dat', 'txt')
+TChipChimSlepSnu_DELTASleptonNeutralino5 = TChipChimSlepSnu.addMassPlane([[x,y+5.0,y]]*2)
+TChipChimSlepSnu_DELTASleptonNeutralino5.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTASleptonNeutralino5_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTASleptonNeutralino5_Zjets.dat", "txt")
+TChipChimSlepSnu_DELTASleptonNeutralino10 = TChipChimSlepSnu.addMassPlane([[x,y+10.0,y]]*2)
+TChipChimSlepSnu_DELTASleptonNeutralino10.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTASleptonNeutralino10_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTASleptonNeutralino10_Zjets.dat", "txt")
+TChipChimSlepSnu_DELTASleptonNeutralino15 = TChipChimSlepSnu.addMassPlane([[x,y+15.0,y]]*2)
+TChipChimSlepSnu_DELTASleptonNeutralino15.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTASleptonNeutralino15_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTASleptonNeutralino15_Zjets.dat", "txt")
+TChipChimSlepSnu_DELTACharginoSlepton5 = TChipChimSlepSnu.addMassPlane([[x,x-5.0,y]]*2)
+TChipChimSlepSnu_DELTACharginoSlepton5.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTACharginoSlepton5_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTACharginoSlepton5_Zjets.dat", "txt")
+TChipChimSlepSnu_DELTACharginoSlepton10 = TChipChimSlepSnu.addMassPlane([[x,x-10.0,y]]*2)
+TChipChimSlepSnu_DELTACharginoSlepton10.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTACharginoSlepton10_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTACharginoSlepton10_Zjets.dat", "txt")
+TChipChimSlepSnu_DELTACharginoSlepton15 = TChipChimSlepSnu.addMassPlane([[x,x-15.0,y]]*2)
+TChipChimSlepSnu_DELTACharginoSlepton15.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTACharginoSlepton15_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTACharginoSlepton15_Zjets.dat", "txt")
 
 
 #+++++++ dataset block ++++++++++++++
@@ -698,7 +819,6 @@ TSlepSlep_1.addSource('efficiencyMap','orig/atlas_susy_2013_11_TSlepSlep_1_EM_MA
 TSlepSlep_1.dataUrl = None
 TChiWW = dataset.addTxName('TChiWW')
 TChiWW.constraint ="[[['W+']],[['W-']]]"
-TChiWW.massConstraint = None
 TChiWW.conditionDescription = None
 TChiWW.condition = None
 TChiWW.source = 'SModelS'
@@ -736,6 +856,18 @@ TChipChimSlepSnu_x075 = TChipChimSlepSnu.addMassPlane([[x,.75*x+.25*y,y]]*2)
 TChipChimSlepSnu_x075.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x075_EM_MAPS/MA5_EM_TChipChimSlepSnu_x075_mT2-150-SF.dat', 'txt')
 TChipChimSlepSnu_x095 = TChipChimSlepSnu.addMassPlane([[x,.95*x+.05*y,y]]*2)
 TChipChimSlepSnu_x095.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x095_EM_MAPS/MA5_EM_TChipChimSlepSnu_x095_mT2-150-SF.dat', 'txt')
+TChipChimSlepSnu_DELTASleptonNeutralino5 = TChipChimSlepSnu.addMassPlane([[x,y+5.0,y]]*2)
+TChipChimSlepSnu_DELTASleptonNeutralino5.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTASleptonNeutralino5_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTASleptonNeutralino5_mT2-150-SF.dat", "txt")
+TChipChimSlepSnu_DELTASleptonNeutralino10 = TChipChimSlepSnu.addMassPlane([[x,y+10.0,y]]*2)
+TChipChimSlepSnu_DELTASleptonNeutralino10.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTASleptonNeutralino10_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTASleptonNeutralino10_mT2-150-SF.dat", "txt")
+TChipChimSlepSnu_DELTASleptonNeutralino15 = TChipChimSlepSnu.addMassPlane([[x,y+15.0,y]]*2)
+TChipChimSlepSnu_DELTASleptonNeutralino15.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTASleptonNeutralino15_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTASleptonNeutralino15_mT2-150-SF.dat", "txt")
+TChipChimSlepSnu_DELTACharginoSlepton5 = TChipChimSlepSnu.addMassPlane([[x,x-5.0,y]]*2)
+TChipChimSlepSnu_DELTACharginoSlepton5.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTACharginoSlepton5_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTACharginoSlepton5_mT2-150-SF.dat", "txt")
+TChipChimSlepSnu_DELTACharginoSlepton10 = TChipChimSlepSnu.addMassPlane([[x,x-10.0,y]]*2)
+TChipChimSlepSnu_DELTACharginoSlepton10.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTACharginoSlepton10_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTACharginoSlepton10_mT2-150-SF.dat", "txt")
+TChipChimSlepSnu_DELTACharginoSlepton15 = TChipChimSlepSnu.addMassPlane([[x,x-15.0,y]]*2)
+TChipChimSlepSnu_DELTACharginoSlepton15.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTACharginoSlepton15_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTACharginoSlepton15_mT2-150-SF.dat", "txt")
 
 
 #+++++++ dataset block ++++++++++++++
@@ -755,7 +887,6 @@ TSlepSlep_1.addSource('efficiencyMap','orig/atlas_susy_2013_11_TSlepSlep_1_EM_MA
 TSlepSlep_1.dataUrl = None
 TChiWW = dataset.addTxName('TChiWW')
 TChiWW.constraint ="[[['W+']],[['W-']]]"
-TChiWW.massConstraint = None
 TChiWW.conditionDescription = None
 TChiWW.condition = None
 TChiWW.source = 'SModelS'
@@ -793,5 +924,17 @@ TChipChimSlepSnu_x075 = TChipChimSlepSnu.addMassPlane([[x,.75*x+.25*y,y]]*2)
 TChipChimSlepSnu_x075.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x075_EM_MAPS/MA5_EM_TChipChimSlepSnu_x075_mT2-150-DF.dat', 'txt')
 TChipChimSlepSnu_x095 = TChipChimSlepSnu.addMassPlane([[x,.95*x+.05*y,y]]*2)
 TChipChimSlepSnu_x095.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x095_EM_MAPS/MA5_EM_TChipChimSlepSnu_x095_mT2-150-DF.dat', 'txt')
+TChipChimSlepSnu_DELTASleptonNeutralino5 = TChipChimSlepSnu.addMassPlane([[x,y+5.0,y]]*2)
+TChipChimSlepSnu_DELTASleptonNeutralino5.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTASleptonNeutralino5_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTASleptonNeutralino5_mT2-150-DF.dat", "txt")
+TChipChimSlepSnu_DELTASleptonNeutralino10 = TChipChimSlepSnu.addMassPlane([[x,y+10.0,y]]*2)
+TChipChimSlepSnu_DELTASleptonNeutralino10.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTASleptonNeutralino10_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTASleptonNeutralino10_mT2-150-DF.dat", "txt")
+TChipChimSlepSnu_DELTASleptonNeutralino15 = TChipChimSlepSnu.addMassPlane([[x,y+15.0,y]]*2)
+TChipChimSlepSnu_DELTASleptonNeutralino15.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTASleptonNeutralino15_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTASleptonNeutralino15_mT2-150-DF.dat", "txt")
+TChipChimSlepSnu_DELTACharginoSlepton5 = TChipChimSlepSnu.addMassPlane([[x,x-5.0,y]]*2)
+TChipChimSlepSnu_DELTACharginoSlepton5.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTACharginoSlepton5_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTACharginoSlepton5_mT2-150-DF.dat", "txt")
+TChipChimSlepSnu_DELTACharginoSlepton10 = TChipChimSlepSnu.addMassPlane([[x,x-10.0,y]]*2)
+TChipChimSlepSnu_DELTACharginoSlepton10.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTACharginoSlepton10_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTACharginoSlepton10_mT2-150-DF.dat", "txt")
+TChipChimSlepSnu_DELTACharginoSlepton15 = TChipChimSlepSnu.addMassPlane([[x,x-15.0,y]]*2)
+TChipChimSlepSnu_DELTACharginoSlepton15.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTACharginoSlepton15_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTACharginoSlepton15_mT2-150-DF.dat", "txt")
 
 databaseCreator.create()

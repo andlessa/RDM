@@ -110,6 +110,20 @@ TChipChimSlepSnu_x075 = TChipChimSlepSnu.addMassPlane([[x,.75*x+.25*y,y]]*2)
 TChipChimSlepSnu_x075.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x075_EM_MAPS/MA5_EM_TChipChimSlepSnu_x075_$datasetStr$.dat', 'txt')
 TChipChimSlepSnu_x095 = TChipChimSlepSnu.addMassPlane([[x,.95*x+.05*y,y]]*2)
 TChipChimSlepSnu_x095.addSource('efficiencyMap','orig/atlas_susy_2013_11_TChipChimSlepSnu_x095_EM_MAPS/MA5_EM_TChipChimSlepSnu_x095_$datasetStr$.dat', 'txt')
+TChipChimSlepSnu_DELTASleptonNeutralino5 = TChipChimSlepSnu.addMassPlane([[x,y+5.0,y]]*2)
+TChipChimSlepSnu_DELTASleptonNeutralino5.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTASleptonNeutralino5_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTASleptonNeutralino5_$datasetStr$.dat", "txt")
+TChipChimSlepSnu_DELTASleptonNeutralino10 = TChipChimSlepSnu.addMassPlane([[x,y+10.0,y]]*2)
+TChipChimSlepSnu_DELTASleptonNeutralino10.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTASleptonNeutralino10_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTASleptonNeutralino10_$datasetStr$.dat", "txt")
+TChipChimSlepSnu_DELTASleptonNeutralino15 = TChipChimSlepSnu.addMassPlane([[x,y+15.0,y]]*2)
+TChipChimSlepSnu_DELTASleptonNeutralino15.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTASleptonNeutralino15_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTASleptonNeutralino15_$datasetStr$.dat", "txt")
+TChipChimSlepSnu_DELTACharginoSlepton5 = TChipChimSlepSnu.addMassPlane([[x,x-5.0,y]]*2)
+TChipChimSlepSnu_DELTACharginoSlepton5.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTACharginoSlepton5_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTACharginoSlepton5_$datasetStr$.dat", "txt")
+TChipChimSlepSnu_DELTACharginoSlepton10 = TChipChimSlepSnu.addMassPlane([[x,x-10.0,y]]*2)
+TChipChimSlepSnu_DELTACharginoSlepton10.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTACharginoSlepton10_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTACharginoSlepton10_$datasetStr$.dat", "txt")
+TChipChimSlepSnu_DELTACharginoSlepton15 = TChipChimSlepSnu.addMassPlane([[x,x-15.0,y]]*2)
+TChipChimSlepSnu_DELTACharginoSlepton15.addSource('efficiencyMap',"orig/atlas_susy_2013_11_TChipChimSlepSnu_DELTACharginoSlepton15_EM_MAPS/MA5_EM_TChipChimSlepSnu_DELTACharginoSlepton15_$datasetStr$.dat", "txt")
+
+
 
 END_BLOCK_TO_FILL
 
