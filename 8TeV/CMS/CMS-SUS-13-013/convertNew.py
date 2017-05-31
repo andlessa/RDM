@@ -98,7 +98,7 @@ T6ttWWoff.checked =''
 T6ttWWoff.constraint ="2.3*([[['t'],['L','nu']],[['t'],['jet','jet']]])"
 T6ttWWoff.conditionDescription ="[[['t'],['L','nu']],[['t'],['jet','jet']]] > 2.7* [[['t'],['ta','nu']],[['t'],['jet','jet']]],[[['t'],['L','nu']],[['t'],['jet','jet']]] > 2.7* [[['t'],['e','nu']],[['t'],['jet','jet']]]"
 T6ttWWoff.condition ="Cgtr([[['t'],['L','nu']],[['t'],['jet','jet']]],3.*[[['t'],['ta','nu']],[['t'],['jet','jet']]]);Cgtr([[['t'],['L','nu']],[['t'],['jet','jet']]],3.*[[['t'],['e','nu']],[['t'],['jet','jet']]])"
-T6ttWWoff.massConstraint = [['dm >= 169.0', 'dm <= 76.0'], ['dm >= 169.0', 'dm <= 76.0']]
+T6ttWWoff.massConstraint = [['dm >= 0.0', 'dm <= 76.0'], ['dm >= 0.0', 'dm <= 76.0']]
 T6ttWWoff.source = "CMS"
 #+++++++ next mass plane block ++++++++++++++
 T6ttWW_1 = T6ttWW.addMassPlane(2*[[x, y, 50]])
