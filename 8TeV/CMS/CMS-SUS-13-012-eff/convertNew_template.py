@@ -290,6 +290,7 @@ TChiWZ_1.dataUrl = None
 TChiWW = dataset.addTxName('TChiWW')
 TChiWW.checked = ''
 TChiWW.constraint = "[[['W']],[['W']]]"
+TChiWW.massConstraint = None
 TChiWW.conditionDescription ="None"
 TChiWW.condition ="None"
 TChiWW.source = 'SModelS'
