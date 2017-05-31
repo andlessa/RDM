@@ -71,6 +71,7 @@ TSlepSlep_1.addSource('efficiencyMap','orig/atlas_susy_2013_11_TSlepSlep_1_EM_MA
 TSlepSlep_1.dataUrl = None
 TChiWW = dataset.addTxName('TChiWW')
 TChiWW.constraint ="[[['W+']],[['W-']]]"
+TChiWW.massConstraint = None
 TChiWW.conditionDescription = None
 TChiWW.condition = None
 TChiWW.source = 'SModelS'
@@ -139,6 +140,7 @@ TSlepSlep_1.addSource('efficiencyMap','orig/atlas_susy_2013_11_TSlepSlep_1_EM_MA
 TSlepSlep_1.dataUrl = None
 TChiWW = dataset.addTxName('TChiWW')
 TChiWW.constraint ="[[['W+']],[['W-']]]"
+TChiWW.massConstraint = None
 TChiWW.conditionDescription = None
 TChiWW.condition = None
 TChiWW.source = 'SModelS'
@@ -207,6 +209,7 @@ TSlepSlep_1.addSource('efficiencyMap','orig/atlas_susy_2013_11_TSlepSlep_1_EM_MA
 TSlepSlep_1.dataUrl = None
 TChiWW = dataset.addTxName('TChiWW')
 TChiWW.constraint ="[[['W+']],[['W-']]]"
+TChiWW.massConstraint = None
 TChiWW.conditionDescription = None
 TChiWW.condition = None
 TChiWW.source = 'SModelS'
@@ -275,6 +278,7 @@ TSlepSlep_1.addSource('efficiencyMap','orig/atlas_susy_2013_11_TSlepSlep_1_EM_MA
 TSlepSlep_1.dataUrl = None
 TChiWW = dataset.addTxName('TChiWW')
 TChiWW.constraint ="[[['W+']],[['W-']]]"
+TChiWW.massConstraint = None
 TChiWW.conditionDescription = None
 TChiWW.condition = None
 TChiWW.source = 'SModelS'
@@ -343,6 +347,7 @@ TSlepSlep_1.addSource('efficiencyMap','orig/atlas_susy_2013_11_TSlepSlep_1_EM_MA
 TSlepSlep_1.dataUrl = None
 TChiWW = dataset.addTxName('TChiWW')
 TChiWW.constraint ="[[['W+']],[['W-']]]"
+TChiWW.massConstraint = None
 TChiWW.conditionDescription = None
 TChiWW.condition = None
 TChiWW.source = 'SModelS'
@@ -411,6 +416,7 @@ TSlepSlep_1.addSource('efficiencyMap','orig/atlas_susy_2013_11_TSlepSlep_1_EM_MA
 TSlepSlep_1.dataUrl = None
 TChiWW = dataset.addTxName('TChiWW')
 TChiWW.constraint ="[[['W+']],[['W-']]]"
+TChiWW.massConstraint = None
 TChiWW.conditionDescription = None
 TChiWW.condition = None
 TChiWW.source = 'SModelS'
@@ -479,6 +485,7 @@ TSlepSlep_1.addSource('efficiencyMap','orig/atlas_susy_2013_11_TSlepSlep_1_EM_MA
 TSlepSlep_1.dataUrl = None
 TChiWW = dataset.addTxName('TChiWW')
 TChiWW.constraint ="[[['W+']],[['W-']]]"
+TChiWW.massConstraint = None
 TChiWW.conditionDescription = None
 TChiWW.condition = None
 TChiWW.source = 'SModelS'
@@ -547,6 +554,7 @@ TSlepSlep_1.addSource('efficiencyMap','orig/atlas_susy_2013_11_TSlepSlep_1_EM_MA
 TSlepSlep_1.dataUrl = None
 TChiWW = dataset.addTxName('TChiWW')
 TChiWW.constraint ="[[['W+']],[['W-']]]"
+TChiWW.massConstraint = None
 TChiWW.conditionDescription = None
 TChiWW.condition = None
 TChiWW.source = 'SModelS'
@@ -615,6 +623,7 @@ TSlepSlep_1.addSource('efficiencyMap','orig/atlas_susy_2013_11_TSlepSlep_1_EM_MA
 TSlepSlep_1.dataUrl = None
 TChiWW = dataset.addTxName('TChiWW')
 TChiWW.constraint ="[[['W+']],[['W-']]]"
+TChiWW.massConstraint = None
 TChiWW.conditionDescription = None
 TChiWW.condition = None
 TChiWW.source = 'SModelS'
@@ -683,6 +692,7 @@ TSlepSlep_1.addSource('efficiencyMap','orig/atlas_susy_2013_11_TSlepSlep_1_EM_MA
 TSlepSlep_1.dataUrl = None
 TChiWW = dataset.addTxName('TChiWW')
 TChiWW.constraint ="[[['W+']],[['W-']]]"
+TChiWW.massConstraint = None
 TChiWW.conditionDescription = None
 TChiWW.condition = None
 TChiWW.source = 'SModelS'
@@ -751,6 +761,7 @@ TSlepSlep_1.addSource('efficiencyMap','orig/atlas_susy_2013_11_TSlepSlep_1_EM_MA
 TSlepSlep_1.dataUrl = None
 TChiWW = dataset.addTxName('TChiWW')
 TChiWW.constraint ="[[['W+']],[['W-']]]"
+TChiWW.massConstraint = None
 TChiWW.conditionDescription = None
 TChiWW.condition = None
 TChiWW.source = 'SModelS'
@@ -819,6 +830,7 @@ TSlepSlep_1.addSource('efficiencyMap','orig/atlas_susy_2013_11_TSlepSlep_1_EM_MA
 TSlepSlep_1.dataUrl = None
 TChiWW = dataset.addTxName('TChiWW')
 TChiWW.constraint ="[[['W+']],[['W-']]]"
+TChiWW.massConstraint = None
 TChiWW.conditionDescription = None
 TChiWW.condition = None
 TChiWW.source = 'SModelS'
@@ -887,6 +899,7 @@ TSlepSlep_1.addSource('efficiencyMap','orig/atlas_susy_2013_11_TSlepSlep_1_EM_MA
 TSlepSlep_1.dataUrl = None
 TChiWW = dataset.addTxName('TChiWW')
 TChiWW.constraint ="[[['W+']],[['W-']]]"
+TChiWW.massConstraint = None
 TChiWW.conditionDescription = None
 TChiWW.condition = None
 TChiWW.source = 'SModelS'
