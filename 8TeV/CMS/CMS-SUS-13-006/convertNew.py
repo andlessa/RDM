@@ -10,14 +10,17 @@ import os
 import argparse
 import types
 
-argparser = argparse.ArgumentParser(description =  
+argparser = argparse.ArgumentParser(description =
 'create info.txt, txname.txt, twiki.txt and sms.py')
-argparser.add_argument ('-utilsPath', '--utilsPath', 
+argparser.add_argument ('-utilsPath', '--utilsPath',
 help = 'path to the package smodels_utils',\
 type = str)
-argparser.add_argument ('-smodelsPath', '--smodelsPath', 
+argparser.add_argument ('-smodelsPath', '--smodelsPath',
 help = 'path to the package smodels_utils',\
 type = str)
+argparser.add_argument ('-t', '--ntoys',
+    help = 'number of toys to throw',\
+    type = int, default=200000  )
 args = argparser.parse_args()
 
 if args.utilsPath:
@@ -35,6 +38,7 @@ from smodels_utils.dataPreparation.inputObjects import MetaInfoInput,DataSetInpu
 from smodels_utils.dataPreparation.databaseCreation import databaseCreator
 from smodels_utils.dataPreparation.massPlaneObjects import x, y, z
 
+DataSetInput.ntoys = args.ntoys
 
 
 #+++++++ global info block ++++++++++++++
@@ -67,8 +71,8 @@ TChiWZoff = dataset.addTxName('TChiWZoff')
 TChiWZoff.checked =''
 TChiWZoff.constraint = "71.*([[['mu+','mu-']],[['l','nu']]] + [[['e+','e-']],[['l','nu']]])"
 TChiWZoff.conditionDescription =None
-TChiWZoff.condition = "cGtr([[['mu+','mu-']],[['l','nu']]],[[['e+','e-']],[['l','nu']]])" 
-TChiWZoff.massConstraint = [['dm <= 76.0'], ['dm <= 86.0']]
+TChiWZoff.condition = "cGtr([[['mu+','mu-']],[['l','nu']]],[[['e+','e-']],[['l','nu']]])"
+TChiWZoff.massConstraint = [['dm <= 86.0'], ['dm <= 86.0']]
 TChiWZoff.source = "CMS"
 #+++++++ next mass plane block ++++++++++++++
 TChiWZ_1 = TChiWZ.addMassPlane(2*[[x, y]])
