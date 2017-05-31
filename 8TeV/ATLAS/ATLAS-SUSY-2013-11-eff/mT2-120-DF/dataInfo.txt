@@ -4,4 +4,4 @@ observedN: 5
 expectedBG: 3.6
 bgError: 1.2
 upperLimit: 0.377*fb
-expectedUpperLimit: 0.274*fb
+expectedUpperLimit: 0.272*fb
