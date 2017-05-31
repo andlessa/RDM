@@ -256,8 +256,9 @@ TChiZZ.dataUrl = None
 TChiZZ.constraint = "[[['Z']],[['Z']]]"
 TChiZZ.conditionDescription ="None"
 TChiZZ.condition ="None"
-## TChiZZ.massConstraint = None
+TChiZZ.massConstraint = None
 TChiZZ.source = 'SModelS'
+TChiZZ.massConstraint = None
 TChiZZ_1 = TChiZZ.addMassPlane( [[x,y]]*2 )
 TChiZZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_3NJet6_500HT800_450MHT600.dat", "txt", objectName ="None", index = None )
 TChiZZ_1.dataUrl = None
@@ -267,6 +268,7 @@ TChiWZ.constraint = "[[['W']],[['Z']]]"
 TChiWZ.conditionDescription ="None"
 TChiWZ.condition ="None"
 TChiWZ.source = 'SModelS'
+TChiWZ.massConstraint = None
 TChiWZ_1 = TChiWZ.addMassPlane( [[x,y]]*2 )
 TChiWZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_3NJet6_500HT800_450MHT600.dat", "txt", objectName ="None", index = None )
 TChiWZ_1.dataUrl = None
@@ -562,8 +564,9 @@ TChiZZ.dataUrl = None
 TChiZZ.constraint = "[[['Z']],[['Z']]]"
 TChiZZ.conditionDescription ="None"
 TChiZZ.condition ="None"
-## TChiZZ.massConstraint = None
+TChiZZ.massConstraint = None
 TChiZZ.source = 'SModelS'
+TChiZZ.massConstraint = None
 TChiZZ_1 = TChiZZ.addMassPlane( [[x,y]]*2 )
 TChiZZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_3NJet6_1250HT1500_450MHTinf.dat", "txt", objectName ="None", index = None )
 TChiZZ_1.dataUrl = None
@@ -573,6 +576,7 @@ TChiWZ.constraint = "[[['W']],[['Z']]]"
 TChiWZ.conditionDescription ="None"
 TChiWZ.condition ="None"
 TChiWZ.source = 'SModelS'
+TChiWZ.massConstraint = None
 TChiWZ_1 = TChiWZ.addMassPlane( [[x,y]]*2 )
 TChiWZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_3NJet6_1250HT1500_450MHTinf.dat", "txt", objectName ="None", index = None )
 TChiWZ_1.dataUrl = None
@@ -868,8 +872,9 @@ TChiZZ.dataUrl = None
 TChiZZ.constraint = "[[['Z']],[['Z']]]"
 TChiZZ.conditionDescription ="None"
 TChiZZ.condition ="None"
-## TChiZZ.massConstraint = None
+TChiZZ.massConstraint = None
 TChiZZ.source = 'SModelS'
+TChiZZ.massConstraint = None
 TChiZZ_1 = TChiZZ.addMassPlane( [[x,y]]*2 )
 TChiZZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_3NJet6_1250HT1500_300MHT450.dat", "txt", objectName ="None", index = None )
 TChiZZ_1.dataUrl = None
@@ -879,6 +884,7 @@ TChiWZ.constraint = "[[['W']],[['Z']]]"
 TChiWZ.conditionDescription ="None"
 TChiWZ.condition ="None"
 TChiWZ.source = 'SModelS'
+TChiWZ.massConstraint = None
 TChiWZ_1 = TChiWZ.addMassPlane( [[x,y]]*2 )
 TChiWZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_3NJet6_1250HT1500_300MHT450.dat", "txt", objectName ="None", index = None )
 TChiWZ_1.dataUrl = None
@@ -1174,8 +1180,9 @@ TChiZZ.dataUrl = None
 TChiZZ.constraint = "[[['Z']],[['Z']]]"
 TChiZZ.conditionDescription ="None"
 TChiZZ.condition ="None"
-## TChiZZ.massConstraint = None
+TChiZZ.massConstraint = None
 TChiZZ.source = 'SModelS'
+TChiZZ.massConstraint = None
 TChiZZ_1 = TChiZZ.addMassPlane( [[x,y]]*2 )
 TChiZZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_6NJet8_1000HT1250_200MHT300.dat", "txt", objectName ="None", index = None )
 TChiZZ_1.dataUrl = None
@@ -1185,6 +1192,7 @@ TChiWZ.constraint = "[[['W']],[['Z']]]"
 TChiWZ.conditionDescription ="None"
 TChiWZ.condition ="None"
 TChiWZ.source = 'SModelS'
+TChiWZ.massConstraint = None
 TChiWZ_1 = TChiWZ.addMassPlane( [[x,y]]*2 )
 TChiWZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_6NJet8_1000HT1250_200MHT300.dat", "txt", objectName ="None", index = None )
 TChiWZ_1.dataUrl = None
@@ -1480,8 +1488,9 @@ TChiZZ.dataUrl = None
 TChiZZ.constraint = "[[['Z']],[['Z']]]"
 TChiZZ.conditionDescription ="None"
 TChiZZ.condition ="None"
-## TChiZZ.massConstraint = None
+TChiZZ.massConstraint = None
 TChiZZ.source = 'SModelS'
+TChiZZ.massConstraint = None
 TChiZZ_1 = TChiZZ.addMassPlane( [[x,y]]*2 )
 TChiZZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_6NJet8_800HT1000_300MHT450.dat", "txt", objectName ="None", index = None )
 TChiZZ_1.dataUrl = None
@@ -1491,6 +1500,7 @@ TChiWZ.constraint = "[[['W']],[['Z']]]"
 TChiWZ.conditionDescription ="None"
 TChiWZ.condition ="None"
 TChiWZ.source = 'SModelS'
+TChiWZ.massConstraint = None
 TChiWZ_1 = TChiWZ.addMassPlane( [[x,y]]*2 )
 TChiWZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_6NJet8_800HT1000_300MHT450.dat", "txt", objectName ="None", index = None )
 TChiWZ_1.dataUrl = None
@@ -1786,8 +1796,9 @@ TChiZZ.dataUrl = None
 TChiZZ.constraint = "[[['Z']],[['Z']]]"
 TChiZZ.conditionDescription ="None"
 TChiZZ.condition ="None"
-## TChiZZ.massConstraint = None
+TChiZZ.massConstraint = None
 TChiZZ.source = 'SModelS'
+TChiZZ.massConstraint = None
 TChiZZ_1 = TChiZZ.addMassPlane( [[x,y]]*2 )
 TChiZZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_6NJet8_500HT800_300MHT450.dat", "txt", objectName ="None", index = None )
 TChiZZ_1.dataUrl = None
@@ -1797,6 +1808,7 @@ TChiWZ.constraint = "[[['W']],[['Z']]]"
 TChiWZ.conditionDescription ="None"
 TChiWZ.condition ="None"
 TChiWZ.source = 'SModelS'
+TChiWZ.massConstraint = None
 TChiWZ_1 = TChiWZ.addMassPlane( [[x,y]]*2 )
 TChiWZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_6NJet8_500HT800_300MHT450.dat", "txt", objectName ="None", index = None )
 TChiWZ_1.dataUrl = None
@@ -2092,8 +2104,9 @@ TChiZZ.dataUrl = None
 TChiZZ.constraint = "[[['Z']],[['Z']]]"
 TChiZZ.conditionDescription ="None"
 TChiZZ.condition ="None"
-## TChiZZ.massConstraint = None
+TChiZZ.massConstraint = None
 TChiZZ.source = 'SModelS'
+TChiZZ.massConstraint = None
 TChiZZ_1 = TChiZZ.addMassPlane( [[x,y]]*2 )
 TChiZZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_3NJet6_800HT1000_200MHT300.dat", "txt", objectName ="None", index = None )
 TChiZZ_1.dataUrl = None
@@ -2103,6 +2116,7 @@ TChiWZ.constraint = "[[['W']],[['Z']]]"
 TChiWZ.conditionDescription ="None"
 TChiWZ.condition ="None"
 TChiWZ.source = 'SModelS'
+TChiWZ.massConstraint = None
 TChiWZ_1 = TChiWZ.addMassPlane( [[x,y]]*2 )
 TChiWZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_3NJet6_800HT1000_200MHT300.dat", "txt", objectName ="None", index = None )
 TChiWZ_1.dataUrl = None
@@ -2398,8 +2412,9 @@ TChiZZ.dataUrl = None
 TChiZZ.constraint = "[[['Z']],[['Z']]]"
 TChiZZ.conditionDescription ="None"
 TChiZZ.condition ="None"
-## TChiZZ.massConstraint = None
+TChiZZ.massConstraint = None
 TChiZZ.source = 'SModelS'
+TChiZZ.massConstraint = None
 TChiZZ_1 = TChiZZ.addMassPlane( [[x,y]]*2 )
 TChiZZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_3NJet6_500HT800_200MHT300.dat", "txt", objectName ="None", index = None )
 TChiZZ_1.dataUrl = None
@@ -2409,6 +2424,7 @@ TChiWZ.constraint = "[[['W']],[['Z']]]"
 TChiWZ.conditionDescription ="None"
 TChiWZ.condition ="None"
 TChiWZ.source = 'SModelS'
+TChiWZ.massConstraint = None
 TChiWZ_1 = TChiWZ.addMassPlane( [[x,y]]*2 )
 TChiWZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_3NJet6_500HT800_200MHT300.dat", "txt", objectName ="None", index = None )
 TChiWZ_1.dataUrl = None
@@ -2704,8 +2720,9 @@ TChiZZ.dataUrl = None
 TChiZZ.constraint = "[[['Z']],[['Z']]]"
 TChiZZ.conditionDescription ="None"
 TChiZZ.condition ="None"
-## TChiZZ.massConstraint = None
+TChiZZ.massConstraint = None
 TChiZZ.source = 'SModelS'
+TChiZZ.massConstraint = None
 TChiZZ_1 = TChiZZ.addMassPlane( [[x,y]]*2 )
 TChiZZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_6NJet8_1250HT1500_450MHTinf.dat", "txt", objectName ="None", index = None )
 TChiZZ_1.dataUrl = None
@@ -2715,6 +2732,7 @@ TChiWZ.constraint = "[[['W']],[['Z']]]"
 TChiWZ.conditionDescription ="None"
 TChiWZ.condition ="None"
 TChiWZ.source = 'SModelS'
+TChiWZ.massConstraint = None
 TChiWZ_1 = TChiWZ.addMassPlane( [[x,y]]*2 )
 TChiWZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_6NJet8_1250HT1500_450MHTinf.dat", "txt", objectName ="None", index = None )
 TChiWZ_1.dataUrl = None
@@ -3010,8 +3028,9 @@ TChiZZ.dataUrl = None
 TChiZZ.constraint = "[[['Z']],[['Z']]]"
 TChiZZ.conditionDescription ="None"
 TChiZZ.condition ="None"
-## TChiZZ.massConstraint = None
+TChiZZ.massConstraint = None
 TChiZZ.source = 'SModelS'
+TChiZZ.massConstraint = None
 TChiZZ_1 = TChiZZ.addMassPlane( [[x,y]]*2 )
 TChiZZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_3NJet6_1000HT1250_300MHT450.dat", "txt", objectName ="None", index = None )
 TChiZZ_1.dataUrl = None
@@ -3021,6 +3040,7 @@ TChiWZ.constraint = "[[['W']],[['Z']]]"
 TChiWZ.conditionDescription ="None"
 TChiWZ.condition ="None"
 TChiWZ.source = 'SModelS'
+TChiWZ.massConstraint = None
 TChiWZ_1 = TChiWZ.addMassPlane( [[x,y]]*2 )
 TChiWZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_3NJet6_1000HT1250_300MHT450.dat", "txt", objectName ="None", index = None )
 TChiWZ_1.dataUrl = None
@@ -3316,8 +3336,9 @@ TChiZZ.dataUrl = None
 TChiZZ.constraint = "[[['Z']],[['Z']]]"
 TChiZZ.conditionDescription ="None"
 TChiZZ.condition ="None"
-## TChiZZ.massConstraint = None
+TChiZZ.massConstraint = None
 TChiZZ.source = 'SModelS'
+TChiZZ.massConstraint = None
 TChiZZ_1 = TChiZZ.addMassPlane( [[x,y]]*2 )
 TChiZZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_8NJetinf_1250HT1500_200MHTinf.dat", "txt", objectName ="None", index = None )
 TChiZZ_1.dataUrl = None
@@ -3327,6 +3348,7 @@ TChiWZ.constraint = "[[['W']],[['Z']]]"
 TChiWZ.conditionDescription ="None"
 TChiWZ.condition ="None"
 TChiWZ.source = 'SModelS'
+TChiWZ.massConstraint = None
 TChiWZ_1 = TChiWZ.addMassPlane( [[x,y]]*2 )
 TChiWZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_8NJetinf_1250HT1500_200MHTinf.dat", "txt", objectName ="None", index = None )
 TChiWZ_1.dataUrl = None
@@ -3622,8 +3644,9 @@ TChiZZ.dataUrl = None
 TChiZZ.constraint = "[[['Z']],[['Z']]]"
 TChiZZ.conditionDescription ="None"
 TChiZZ.condition ="None"
-## TChiZZ.massConstraint = None
+TChiZZ.massConstraint = None
 TChiZZ.source = 'SModelS'
+TChiZZ.massConstraint = None
 TChiZZ_1 = TChiZZ.addMassPlane( [[x,y]]*2 )
 TChiZZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_8NJetinf_1000HT1250_200MHTinf.dat", "txt", objectName ="None", index = None )
 TChiZZ_1.dataUrl = None
@@ -3633,6 +3656,7 @@ TChiWZ.constraint = "[[['W']],[['Z']]]"
 TChiWZ.conditionDescription ="None"
 TChiWZ.condition ="None"
 TChiWZ.source = 'SModelS'
+TChiWZ.massConstraint = None
 TChiWZ_1 = TChiWZ.addMassPlane( [[x,y]]*2 )
 TChiWZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_8NJetinf_1000HT1250_200MHTinf.dat", "txt", objectName ="None", index = None )
 TChiWZ_1.dataUrl = None
@@ -3928,8 +3952,9 @@ TChiZZ.dataUrl = None
 TChiZZ.constraint = "[[['Z']],[['Z']]]"
 TChiZZ.conditionDescription ="None"
 TChiZZ.condition ="None"
-## TChiZZ.massConstraint = None
+TChiZZ.massConstraint = None
 TChiZZ.source = 'SModelS'
+TChiZZ.massConstraint = None
 TChiZZ_1 = TChiZZ.addMassPlane( [[x,y]]*2 )
 TChiZZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_3NJet6_800HT1000_300MHT450.dat", "txt", objectName ="None", index = None )
 TChiZZ_1.dataUrl = None
@@ -3939,6 +3964,7 @@ TChiWZ.constraint = "[[['W']],[['Z']]]"
 TChiWZ.conditionDescription ="None"
 TChiWZ.condition ="None"
 TChiWZ.source = 'SModelS'
+TChiWZ.massConstraint = None
 TChiWZ_1 = TChiWZ.addMassPlane( [[x,y]]*2 )
 TChiWZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_3NJet6_800HT1000_300MHT450.dat", "txt", objectName ="None", index = None )
 TChiWZ_1.dataUrl = None
@@ -4234,8 +4260,9 @@ TChiZZ.dataUrl = None
 TChiZZ.constraint = "[[['Z']],[['Z']]]"
 TChiZZ.conditionDescription ="None"
 TChiZZ.condition ="None"
-## TChiZZ.massConstraint = None
+TChiZZ.massConstraint = None
 TChiZZ.source = 'SModelS'
+TChiZZ.massConstraint = None
 TChiZZ_1 = TChiZZ.addMassPlane( [[x,y]]*2 )
 TChiZZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_8NJetinf_800HT1000_200MHTinf.dat", "txt", objectName ="None", index = None )
 TChiZZ_1.dataUrl = None
@@ -4245,6 +4272,7 @@ TChiWZ.constraint = "[[['W']],[['Z']]]"
 TChiWZ.conditionDescription ="None"
 TChiWZ.condition ="None"
 TChiWZ.source = 'SModelS'
+TChiWZ.massConstraint = None
 TChiWZ_1 = TChiWZ.addMassPlane( [[x,y]]*2 )
 TChiWZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_8NJetinf_800HT1000_200MHTinf.dat", "txt", objectName ="None", index = None )
 TChiWZ_1.dataUrl = None
@@ -4540,8 +4568,9 @@ TChiZZ.dataUrl = None
 TChiZZ.constraint = "[[['Z']],[['Z']]]"
 TChiZZ.conditionDescription ="None"
 TChiZZ.condition ="None"
-## TChiZZ.massConstraint = None
+TChiZZ.massConstraint = None
 TChiZZ.source = 'SModelS'
+TChiZZ.massConstraint = None
 TChiZZ_1 = TChiZZ.addMassPlane( [[x,y]]*2 )
 TChiZZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_6NJet8_1500HTinf_300MHTinf.dat", "txt", objectName ="None", index = None )
 TChiZZ_1.dataUrl = None
@@ -4551,6 +4580,7 @@ TChiWZ.constraint = "[[['W']],[['Z']]]"
 TChiWZ.conditionDescription ="None"
 TChiWZ.condition ="None"
 TChiWZ.source = 'SModelS'
+TChiWZ.massConstraint = None
 TChiWZ_1 = TChiWZ.addMassPlane( [[x,y]]*2 )
 TChiWZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_6NJet8_1500HTinf_300MHTinf.dat", "txt", objectName ="None", index = None )
 TChiWZ_1.dataUrl = None
@@ -4846,8 +4876,9 @@ TChiZZ.dataUrl = None
 TChiZZ.constraint = "[[['Z']],[['Z']]]"
 TChiZZ.conditionDescription ="None"
 TChiZZ.condition ="None"
-## TChiZZ.massConstraint = None
+TChiZZ.massConstraint = None
 TChiZZ.source = 'SModelS'
+TChiZZ.massConstraint = None
 TChiZZ_1 = TChiZZ.addMassPlane( [[x,y]]*2 )
 TChiZZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_3NJet6_800HT1000_600MHTinf.dat", "txt", objectName ="None", index = None )
 TChiZZ_1.dataUrl = None
@@ -4857,6 +4888,7 @@ TChiWZ.constraint = "[[['W']],[['Z']]]"
 TChiWZ.conditionDescription ="None"
 TChiWZ.condition ="None"
 TChiWZ.source = 'SModelS'
+TChiWZ.massConstraint = None
 TChiWZ_1 = TChiWZ.addMassPlane( [[x,y]]*2 )
 TChiWZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_3NJet6_800HT1000_600MHTinf.dat", "txt", objectName ="None", index = None )
 TChiWZ_1.dataUrl = None
@@ -5152,8 +5184,9 @@ TChiZZ.dataUrl = None
 TChiZZ.constraint = "[[['Z']],[['Z']]]"
 TChiZZ.conditionDescription ="None"
 TChiZZ.condition ="None"
-## TChiZZ.massConstraint = None
+TChiZZ.massConstraint = None
 TChiZZ.source = 'SModelS'
+TChiZZ.massConstraint = None
 TChiZZ_1 = TChiZZ.addMassPlane( [[x,y]]*2 )
 TChiZZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_6NJet8_500HT800_450MHTinf.dat", "txt", objectName ="None", index = None )
 TChiZZ_1.dataUrl = None
@@ -5163,6 +5196,7 @@ TChiWZ.constraint = "[[['W']],[['Z']]]"
 TChiWZ.conditionDescription ="None"
 TChiWZ.condition ="None"
 TChiWZ.source = 'SModelS'
+TChiWZ.massConstraint = None
 TChiWZ_1 = TChiWZ.addMassPlane( [[x,y]]*2 )
 TChiWZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_6NJet8_500HT800_450MHTinf.dat", "txt", objectName ="None", index = None )
 TChiWZ_1.dataUrl = None
@@ -5458,8 +5492,9 @@ TChiZZ.dataUrl = None
 TChiZZ.constraint = "[[['Z']],[['Z']]]"
 TChiZZ.conditionDescription ="None"
 TChiZZ.condition ="None"
-## TChiZZ.massConstraint = None
+TChiZZ.massConstraint = None
 TChiZZ.source = 'SModelS'
+TChiZZ.massConstraint = None
 TChiZZ_1 = TChiZZ.addMassPlane( [[x,y]]*2 )
 TChiZZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_6NJet8_1000HT1250_300MHT450.dat", "txt", objectName ="None", index = None )
 TChiZZ_1.dataUrl = None
@@ -5469,6 +5504,7 @@ TChiWZ.constraint = "[[['W']],[['Z']]]"
 TChiWZ.conditionDescription ="None"
 TChiWZ.condition ="None"
 TChiWZ.source = 'SModelS'
+TChiWZ.massConstraint = None
 TChiWZ_1 = TChiWZ.addMassPlane( [[x,y]]*2 )
 TChiWZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_6NJet8_1000HT1250_300MHT450.dat", "txt", objectName ="None", index = None )
 TChiWZ_1.dataUrl = None
@@ -5764,8 +5800,9 @@ TChiZZ.dataUrl = None
 TChiZZ.constraint = "[[['Z']],[['Z']]]"
 TChiZZ.conditionDescription ="None"
 TChiZZ.condition ="None"
-## TChiZZ.massConstraint = None
+TChiZZ.massConstraint = None
 TChiZZ.source = 'SModelS'
+TChiZZ.massConstraint = None
 TChiZZ_1 = TChiZZ.addMassPlane( [[x,y]]*2 )
 TChiZZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_6NJet8_800HT1000_450MHTinf.dat", "txt", objectName ="None", index = None )
 TChiZZ_1.dataUrl = None
@@ -5775,6 +5812,7 @@ TChiWZ.constraint = "[[['W']],[['Z']]]"
 TChiWZ.conditionDescription ="None"
 TChiWZ.condition ="None"
 TChiWZ.source = 'SModelS'
+TChiWZ.massConstraint = None
 TChiWZ_1 = TChiWZ.addMassPlane( [[x,y]]*2 )
 TChiWZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_6NJet8_800HT1000_450MHTinf.dat", "txt", objectName ="None", index = None )
 TChiWZ_1.dataUrl = None
@@ -6070,8 +6108,9 @@ TChiZZ.dataUrl = None
 TChiZZ.constraint = "[[['Z']],[['Z']]]"
 TChiZZ.conditionDescription ="None"
 TChiZZ.condition ="None"
-## TChiZZ.massConstraint = None
+TChiZZ.massConstraint = None
 TChiZZ.source = 'SModelS'
+TChiZZ.massConstraint = None
 TChiZZ_1 = TChiZZ.addMassPlane( [[x,y]]*2 )
 TChiZZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_3NJet6_1500HTinf_200MHT300.dat", "txt", objectName ="None", index = None )
 TChiZZ_1.dataUrl = None
@@ -6081,6 +6120,7 @@ TChiWZ.constraint = "[[['W']],[['Z']]]"
 TChiWZ.conditionDescription ="None"
 TChiWZ.condition ="None"
 TChiWZ.source = 'SModelS'
+TChiWZ.massConstraint = None
 TChiWZ_1 = TChiWZ.addMassPlane( [[x,y]]*2 )
 TChiWZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_3NJet6_1500HTinf_200MHT300.dat", "txt", objectName ="None", index = None )
 TChiWZ_1.dataUrl = None
@@ -6376,8 +6416,9 @@ TChiZZ.dataUrl = None
 TChiZZ.constraint = "[[['Z']],[['Z']]]"
 TChiZZ.conditionDescription ="None"
 TChiZZ.condition ="None"
-## TChiZZ.massConstraint = None
+TChiZZ.massConstraint = None
 TChiZZ.source = 'SModelS'
+TChiZZ.massConstraint = None
 TChiZZ_1 = TChiZZ.addMassPlane( [[x,y]]*2 )
 TChiZZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_3NJet6_500HT800_600MHTinf.dat", "txt", objectName ="None", index = None )
 TChiZZ_1.dataUrl = None
@@ -6387,6 +6428,7 @@ TChiWZ.constraint = "[[['W']],[['Z']]]"
 TChiWZ.conditionDescription ="None"
 TChiWZ.condition ="None"
 TChiWZ.source = 'SModelS'
+TChiWZ.massConstraint = None
 TChiWZ_1 = TChiWZ.addMassPlane( [[x,y]]*2 )
 TChiWZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_3NJet6_500HT800_600MHTinf.dat", "txt", objectName ="None", index = None )
 TChiWZ_1.dataUrl = None
@@ -6682,8 +6724,9 @@ TChiZZ.dataUrl = None
 TChiZZ.constraint = "[[['Z']],[['Z']]]"
 TChiZZ.conditionDescription ="None"
 TChiZZ.condition ="None"
-## TChiZZ.massConstraint = None
+TChiZZ.massConstraint = None
 TChiZZ.source = 'SModelS'
+TChiZZ.massConstraint = None
 TChiZZ_1 = TChiZZ.addMassPlane( [[x,y]]*2 )
 TChiZZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_3NJet6_1250HT1500_200MHT300.dat", "txt", objectName ="None", index = None )
 TChiZZ_1.dataUrl = None
@@ -6693,6 +6736,7 @@ TChiWZ.constraint = "[[['W']],[['Z']]]"
 TChiWZ.conditionDescription ="None"
 TChiWZ.condition ="None"
 TChiWZ.source = 'SModelS'
+TChiWZ.massConstraint = None
 TChiWZ_1 = TChiWZ.addMassPlane( [[x,y]]*2 )
 TChiWZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_3NJet6_1250HT1500_200MHT300.dat", "txt", objectName ="None", index = None )
 TChiWZ_1.dataUrl = None
@@ -6988,8 +7032,9 @@ TChiZZ.dataUrl = None
 TChiZZ.constraint = "[[['Z']],[['Z']]]"
 TChiZZ.conditionDescription ="None"
 TChiZZ.condition ="None"
-## TChiZZ.massConstraint = None
+TChiZZ.massConstraint = None
 TChiZZ.source = 'SModelS'
+TChiZZ.massConstraint = None
 TChiZZ_1 = TChiZZ.addMassPlane( [[x,y]]*2 )
 TChiZZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_3NJet6_1000HT1250_600MHTinf.dat", "txt", objectName ="None", index = None )
 TChiZZ_1.dataUrl = None
@@ -6999,6 +7044,7 @@ TChiWZ.constraint = "[[['W']],[['Z']]]"
 TChiWZ.conditionDescription ="None"
 TChiWZ.condition ="None"
 TChiWZ.source = 'SModelS'
+TChiWZ.massConstraint = None
 TChiWZ_1 = TChiWZ.addMassPlane( [[x,y]]*2 )
 TChiWZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_3NJet6_1000HT1250_600MHTinf.dat", "txt", objectName ="None", index = None )
 TChiWZ_1.dataUrl = None
@@ -7294,8 +7340,9 @@ TChiZZ.dataUrl = None
 TChiZZ.constraint = "[[['Z']],[['Z']]]"
 TChiZZ.conditionDescription ="None"
 TChiZZ.condition ="None"
-## TChiZZ.massConstraint = None
+TChiZZ.massConstraint = None
 TChiZZ.source = 'SModelS'
+TChiZZ.massConstraint = None
 TChiZZ_1 = TChiZZ.addMassPlane( [[x,y]]*2 )
 TChiZZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_3NJet6_1000HT1250_200MHT300.dat", "txt", objectName ="None", index = None )
 TChiZZ_1.dataUrl = None
@@ -7305,6 +7352,7 @@ TChiWZ.constraint = "[[['W']],[['Z']]]"
 TChiWZ.conditionDescription ="None"
 TChiWZ.condition ="None"
 TChiWZ.source = 'SModelS'
+TChiWZ.massConstraint = None
 TChiWZ_1 = TChiWZ.addMassPlane( [[x,y]]*2 )
 TChiWZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_3NJet6_1000HT1250_200MHT300.dat", "txt", objectName ="None", index = None )
 TChiWZ_1.dataUrl = None
@@ -7600,8 +7648,9 @@ TChiZZ.dataUrl = None
 TChiZZ.constraint = "[[['Z']],[['Z']]]"
 TChiZZ.conditionDescription ="None"
 TChiZZ.condition ="None"
-## TChiZZ.massConstraint = None
+TChiZZ.massConstraint = None
 TChiZZ.source = 'SModelS'
+TChiZZ.massConstraint = None
 TChiZZ_1 = TChiZZ.addMassPlane( [[x,y]]*2 )
 TChiZZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_8NJetinf_1500HTinf_200MHTinf.dat", "txt", objectName ="None", index = None )
 TChiZZ_1.dataUrl = None
@@ -7611,6 +7660,7 @@ TChiWZ.constraint = "[[['W']],[['Z']]]"
 TChiWZ.conditionDescription ="None"
 TChiWZ.condition ="None"
 TChiWZ.source = 'SModelS'
+TChiWZ.massConstraint = None
 TChiWZ_1 = TChiWZ.addMassPlane( [[x,y]]*2 )
 TChiWZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_8NJetinf_1500HTinf_200MHTinf.dat", "txt", objectName ="None", index = None )
 TChiWZ_1.dataUrl = None
@@ -7906,8 +7956,9 @@ TChiZZ.dataUrl = None
 TChiZZ.constraint = "[[['Z']],[['Z']]]"
 TChiZZ.conditionDescription ="None"
 TChiZZ.condition ="None"
-## TChiZZ.massConstraint = None
+TChiZZ.massConstraint = None
 TChiZZ.source = 'SModelS'
+TChiZZ.massConstraint = None
 TChiZZ_1 = TChiZZ.addMassPlane( [[x,y]]*2 )
 TChiZZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_6NJet8_1500HTinf_200MHT300.dat", "txt", objectName ="None", index = None )
 TChiZZ_1.dataUrl = None
@@ -7917,6 +7968,7 @@ TChiWZ.constraint = "[[['W']],[['Z']]]"
 TChiWZ.conditionDescription ="None"
 TChiWZ.condition ="None"
 TChiWZ.source = 'SModelS'
+TChiWZ.massConstraint = None
 TChiWZ_1 = TChiWZ.addMassPlane( [[x,y]]*2 )
 TChiWZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_6NJet8_1500HTinf_200MHT300.dat", "txt", objectName ="None", index = None )
 TChiWZ_1.dataUrl = None
@@ -8212,8 +8264,9 @@ TChiZZ.dataUrl = None
 TChiZZ.constraint = "[[['Z']],[['Z']]]"
 TChiZZ.conditionDescription ="None"
 TChiZZ.condition ="None"
-## TChiZZ.massConstraint = None
+TChiZZ.massConstraint = None
 TChiZZ.source = 'SModelS'
+TChiZZ.massConstraint = None
 TChiZZ_1 = TChiZZ.addMassPlane( [[x,y]]*2 )
 TChiZZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_6NJet8_1250HT1500_200MHT300.dat", "txt", objectName ="None", index = None )
 TChiZZ_1.dataUrl = None
@@ -8223,6 +8276,7 @@ TChiWZ.constraint = "[[['W']],[['Z']]]"
 TChiWZ.conditionDescription ="None"
 TChiWZ.condition ="None"
 TChiWZ.source = 'SModelS'
+TChiWZ.massConstraint = None
 TChiWZ_1 = TChiWZ.addMassPlane( [[x,y]]*2 )
 TChiWZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_6NJet8_1250HT1500_200MHT300.dat", "txt", objectName ="None", index = None )
 TChiWZ_1.dataUrl = None
@@ -8518,8 +8572,9 @@ TChiZZ.dataUrl = None
 TChiZZ.constraint = "[[['Z']],[['Z']]]"
 TChiZZ.conditionDescription ="None"
 TChiZZ.condition ="None"
-## TChiZZ.massConstraint = None
+TChiZZ.massConstraint = None
 TChiZZ.source = 'SModelS'
+TChiZZ.massConstraint = None
 TChiZZ_1 = TChiZZ.addMassPlane( [[x,y]]*2 )
 TChiZZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_3NJet6_800HT1000_450MHT600.dat", "txt", objectName ="None", index = None )
 TChiZZ_1.dataUrl = None
@@ -8529,6 +8584,7 @@ TChiWZ.constraint = "[[['W']],[['Z']]]"
 TChiWZ.conditionDescription ="None"
 TChiWZ.condition ="None"
 TChiWZ.source = 'SModelS'
+TChiWZ.massConstraint = None
 TChiWZ_1 = TChiWZ.addMassPlane( [[x,y]]*2 )
 TChiWZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_3NJet6_800HT1000_450MHT600.dat", "txt", objectName ="None", index = None )
 TChiWZ_1.dataUrl = None
@@ -8824,8 +8880,9 @@ TChiZZ.dataUrl = None
 TChiZZ.constraint = "[[['Z']],[['Z']]]"
 TChiZZ.conditionDescription ="None"
 TChiZZ.condition ="None"
-## TChiZZ.massConstraint = None
+TChiZZ.massConstraint = None
 TChiZZ.source = 'SModelS'
+TChiZZ.massConstraint = None
 TChiZZ_1 = TChiZZ.addMassPlane( [[x,y]]*2 )
 TChiZZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_6NJet8_800HT1000_200MHT300.dat", "txt", objectName ="None", index = None )
 TChiZZ_1.dataUrl = None
@@ -8835,6 +8892,7 @@ TChiWZ.constraint = "[[['W']],[['Z']]]"
 TChiWZ.conditionDescription ="None"
 TChiWZ.condition ="None"
 TChiWZ.source = 'SModelS'
+TChiWZ.massConstraint = None
 TChiWZ_1 = TChiWZ.addMassPlane( [[x,y]]*2 )
 TChiWZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_6NJet8_800HT1000_200MHT300.dat", "txt", objectName ="None", index = None )
 TChiWZ_1.dataUrl = None
@@ -9130,8 +9188,9 @@ TChiZZ.dataUrl = None
 TChiZZ.constraint = "[[['Z']],[['Z']]]"
 TChiZZ.conditionDescription ="None"
 TChiZZ.condition ="None"
-## TChiZZ.massConstraint = None
+TChiZZ.massConstraint = None
 TChiZZ.source = 'SModelS'
+TChiZZ.massConstraint = None
 TChiZZ_1 = TChiZZ.addMassPlane( [[x,y]]*2 )
 TChiZZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_6NJet8_500HT800_200MHT300.dat", "txt", objectName ="None", index = None )
 TChiZZ_1.dataUrl = None
@@ -9141,6 +9200,7 @@ TChiWZ.constraint = "[[['W']],[['Z']]]"
 TChiWZ.conditionDescription ="None"
 TChiWZ.condition ="None"
 TChiWZ.source = 'SModelS'
+TChiWZ.massConstraint = None
 TChiWZ_1 = TChiWZ.addMassPlane( [[x,y]]*2 )
 TChiWZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_6NJet8_500HT800_200MHT300.dat", "txt", objectName ="None", index = None )
 TChiWZ_1.dataUrl = None
@@ -9436,8 +9496,9 @@ TChiZZ.dataUrl = None
 TChiZZ.constraint = "[[['Z']],[['Z']]]"
 TChiZZ.conditionDescription ="None"
 TChiZZ.condition ="None"
-## TChiZZ.massConstraint = None
+TChiZZ.massConstraint = None
 TChiZZ.source = 'SModelS'
+TChiZZ.massConstraint = None
 TChiZZ_1 = TChiZZ.addMassPlane( [[x,y]]*2 )
 TChiZZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_3NJet6_500HT800_300MHT450.dat", "txt", objectName ="None", index = None )
 TChiZZ_1.dataUrl = None
@@ -9447,6 +9508,7 @@ TChiWZ.constraint = "[[['W']],[['Z']]]"
 TChiWZ.conditionDescription ="None"
 TChiWZ.condition ="None"
 TChiWZ.source = 'SModelS'
+TChiWZ.massConstraint = None
 TChiWZ_1 = TChiWZ.addMassPlane( [[x,y]]*2 )
 TChiWZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_3NJet6_500HT800_300MHT450.dat", "txt", objectName ="None", index = None )
 TChiWZ_1.dataUrl = None
@@ -9742,8 +9804,9 @@ TChiZZ.dataUrl = None
 TChiZZ.constraint = "[[['Z']],[['Z']]]"
 TChiZZ.conditionDescription ="None"
 TChiZZ.condition ="None"
-## TChiZZ.massConstraint = None
+TChiZZ.massConstraint = None
 TChiZZ.source = 'SModelS'
+TChiZZ.massConstraint = None
 TChiZZ_1 = TChiZZ.addMassPlane( [[x,y]]*2 )
 TChiZZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_8NJetinf_500HT800_200MHTinf.dat", "txt", objectName ="None", index = None )
 TChiZZ_1.dataUrl = None
@@ -9753,6 +9816,7 @@ TChiWZ.constraint = "[[['W']],[['Z']]]"
 TChiWZ.conditionDescription ="None"
 TChiWZ.condition ="None"
 TChiWZ.source = 'SModelS'
+TChiWZ.massConstraint = None
 TChiWZ_1 = TChiWZ.addMassPlane( [[x,y]]*2 )
 TChiWZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_8NJetinf_500HT800_200MHTinf.dat", "txt", objectName ="None", index = None )
 TChiWZ_1.dataUrl = None
@@ -10048,8 +10112,9 @@ TChiZZ.dataUrl = None
 TChiZZ.constraint = "[[['Z']],[['Z']]]"
 TChiZZ.conditionDescription ="None"
 TChiZZ.condition ="None"
-## TChiZZ.massConstraint = None
+TChiZZ.massConstraint = None
 TChiZZ.source = 'SModelS'
+TChiZZ.massConstraint = None
 TChiZZ_1 = TChiZZ.addMassPlane( [[x,y]]*2 )
 TChiZZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_3NJet6_1000HT1250_450MHT600.dat", "txt", objectName ="None", index = None )
 TChiZZ_1.dataUrl = None
@@ -10059,6 +10124,7 @@ TChiWZ.constraint = "[[['W']],[['Z']]]"
 TChiWZ.conditionDescription ="None"
 TChiWZ.condition ="None"
 TChiWZ.source = 'SModelS'
+TChiWZ.massConstraint = None
 TChiWZ_1 = TChiWZ.addMassPlane( [[x,y]]*2 )
 TChiWZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_3NJet6_1000HT1250_450MHT600.dat", "txt", objectName ="None", index = None )
 TChiWZ_1.dataUrl = None
@@ -10354,8 +10420,9 @@ TChiZZ.dataUrl = None
 TChiZZ.constraint = "[[['Z']],[['Z']]]"
 TChiZZ.conditionDescription ="None"
 TChiZZ.condition ="None"
-## TChiZZ.massConstraint = None
+TChiZZ.massConstraint = None
 TChiZZ.source = 'SModelS'
+TChiZZ.massConstraint = None
 TChiZZ_1 = TChiZZ.addMassPlane( [[x,y]]*2 )
 TChiZZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_6NJet8_1000HT1250_450MHTinf.dat", "txt", objectName ="None", index = None )
 TChiZZ_1.dataUrl = None
@@ -10365,6 +10432,7 @@ TChiWZ.constraint = "[[['W']],[['Z']]]"
 TChiWZ.conditionDescription ="None"
 TChiWZ.condition ="None"
 TChiWZ.source = 'SModelS'
+TChiWZ.massConstraint = None
 TChiWZ_1 = TChiWZ.addMassPlane( [[x,y]]*2 )
 TChiWZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_6NJet8_1000HT1250_450MHTinf.dat", "txt", objectName ="None", index = None )
 TChiWZ_1.dataUrl = None
@@ -10660,8 +10728,9 @@ TChiZZ.dataUrl = None
 TChiZZ.constraint = "[[['Z']],[['Z']]]"
 TChiZZ.conditionDescription ="None"
 TChiZZ.condition ="None"
-## TChiZZ.massConstraint = None
+TChiZZ.massConstraint = None
 TChiZZ.source = 'SModelS'
+TChiZZ.massConstraint = None
 TChiZZ_1 = TChiZZ.addMassPlane( [[x,y]]*2 )
 TChiZZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_6NJet8_1250HT1500_300MHT450.dat", "txt", objectName ="None", index = None )
 TChiZZ_1.dataUrl = None
@@ -10671,6 +10740,7 @@ TChiWZ.constraint = "[[['W']],[['Z']]]"
 TChiWZ.conditionDescription ="None"
 TChiWZ.condition ="None"
 TChiWZ.source = 'SModelS'
+TChiWZ.massConstraint = None
 TChiWZ_1 = TChiWZ.addMassPlane( [[x,y]]*2 )
 TChiWZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_6NJet8_1250HT1500_300MHT450.dat", "txt", objectName ="None", index = None )
 TChiWZ_1.dataUrl = None
@@ -10966,8 +11036,9 @@ TChiZZ.dataUrl = None
 TChiZZ.constraint = "[[['Z']],[['Z']]]"
 TChiZZ.conditionDescription ="None"
 TChiZZ.condition ="None"
-## TChiZZ.massConstraint = None
+TChiZZ.massConstraint = None
 TChiZZ.source = 'SModelS'
+TChiZZ.massConstraint = None
 TChiZZ_1 = TChiZZ.addMassPlane( [[x,y]]*2 )
 TChiZZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_3NJet6_1500HTinf_300MHTinf.dat", "txt", objectName ="None", index = None )
 TChiZZ_1.dataUrl = None
@@ -10977,6 +11048,7 @@ TChiWZ.constraint = "[[['W']],[['Z']]]"
 TChiWZ.conditionDescription ="None"
 TChiWZ.condition ="None"
 TChiWZ.source = 'SModelS'
+TChiWZ.massConstraint = None
 TChiWZ_1 = TChiWZ.addMassPlane( [[x,y]]*2 )
 TChiWZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_3NJet6_1500HTinf_300MHTinf.dat", "txt", objectName ="None", index = None )
 TChiWZ_1.dataUrl = None
