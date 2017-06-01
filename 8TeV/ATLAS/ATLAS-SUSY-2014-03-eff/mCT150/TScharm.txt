@@ -4,7 +4,7 @@ condition: None
 conditionDescription: None
 susyProcess: pp --> scharm scharm, scharm  --> charm lsp
 checked: NO
-figureUrl: http://hepdata.cedar.ac.uk/resource/1337472/thumb_figFigure2.png
+figureUrl: http://hepdata.cedar.ac.uk/resource/1337472/figFigure2.png
 dataUrl: http://hepdata.cedar.ac.uk/view/ins1337472/first
 source: ATLAS
 validated: True

@@ -3,7 +3,7 @@ constraint: [[['t']],[['t']]]
 condition: None
 conditionDescription: None
 susyProcess: pp --> stop stop, stop  --> top lsp
-figureUrl: http://hepdata.cedar.ac.uk/resource/1469069/thumb_figAuxiliaryFigure5b.png
+figureUrl: http://hepdata.cedar.ac.uk/resource/1469069/figAuxiliaryFigure5b.png
 dataUrl: http://hepdata.cedar.ac.uk/view/ins1469069/d24/input
 source: ATLAS
 validated: TBD

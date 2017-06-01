@@ -17,6 +17,9 @@ argparser.add_argument ( '-utilsPath', '--utilsPath',
 argparser.add_argument ( '-smodelsPath', '--smodelsPath',
 			                   help = 'path to the package smodels_utils',\
                          type = str )
+argparser.add_argument ('-t', '--ntoys',
+    help = 'number of toys to throw',\
+    type = int, default=200000  )
 args = argparser.parse_args()
 
 if args.utilsPath:
@@ -35,7 +38,7 @@ from smodels_utils.dataPreparation.inputObjects import MetaInfoInput,DataSetInpu
 from smodels_utils.dataPreparation.databaseCreation import databaseCreator
 from smodels_utils.dataPreparation.massPlaneObjects import x, y, z
 
-databaseCreator.ncpus = 2
+DataSetInput.ntoys = args.ntoys
 
 #+++++++ global info block ++++++++++++++
 info = MetaInfoInput('ATLAS-SUSY-2015-06')
@@ -66,7 +69,7 @@ T2.source = "ATLAS"
 T2_1 = T2.addMassPlane( [[x,y]]*2 )
 #---- new efficiency map -----
 #----figure----
-T2_1.figureUrl  = "http://hepdata.cedar.ac.uk/resource/1458270/thumb_figAuxiliaryFigure24b.png"
+T2_1.figureUrl  = "http://hepdata.cedar.ac.uk/resource/1458270/figAuxiliaryFigure24b.png"
 T2_1.figure  = "Fig. Aux. 24b"
 #----exclusion source----
 T2_1.addSource( 'obsExclusion', 'orig/Obs_Line_T2.dat', 'txt', objectName = None, index = None )
@@ -85,7 +88,7 @@ T1.source = "ATLAS"
 T1_1 = T1.addMassPlane( [[x,y]]*2 )
 #---- new efficiency map -----
 #----figure----
-T1_1.figureUrl  = "http://hepdata.cedar.ac.uk/resource/1458270/thumb_figAuxiliaryFigure31b.png"
+T1_1.figureUrl  = "http://hepdata.cedar.ac.uk/resource/1458270/figAuxiliaryFigure31b.png"
 T1_1.figure  = "Fig. Aux. 31b"
 #----exclusion source----
 T1_1.addSource( 'obsExclusion', 'orig/Obs_Line_T1.dat', 'txt', objectName = None, index = None )
@@ -128,7 +131,7 @@ T1.source = "ATLAS"
 T1_1 = T1.addMassPlane( [[x,y]]*2 )
 #---- new efficiency map -----
 #----figure----
-T1_1.figureUrl  = "http://hepdata.cedar.ac.uk/resource/1458270/thumb_figAuxiliaryFigure28b.png"
+T1_1.figureUrl  = "http://hepdata.cedar.ac.uk/resource/1458270/figAuxiliaryFigure28b.png"
 T1_1.figure  = "Fig. Aux. 28b"
 #----exclusion source----
 T1_1.addSource( 'obsExclusion', 'orig/Obs_Line_T1.dat', 'txt', objectName = None, index = None )
@@ -171,7 +174,7 @@ T1.source = "ATLAS"
 T1_1 = T1.addMassPlane( [[x,y]]*2 )
 #---- new efficiency map -----
 #----figure----
-T1_1.figureUrl  = "http://hepdata.cedar.ac.uk/resource/1458270/thumb_figAuxiliaryFigure29b.png"
+T1_1.figureUrl  = "http://hepdata.cedar.ac.uk/resource/1458270/figAuxiliaryFigure29b.png"
 T1_1.figure  = "Fig. Aux. 29b"
 #----exclusion source----
 T1_1.addSource( 'obsExclusion', 'orig/Obs_Line_T1.dat', 'txt', objectName = None, index = None )
@@ -195,7 +198,7 @@ T2.source = "ATLAS"
 T2_1 = T2.addMassPlane( [[x,y]]*2 )
 #---- new efficiency map -----
 #----figure----
-T2_1.figureUrl  = "http://hepdata.cedar.ac.uk/resource/1458270/thumb_figAuxiliaryFigure19b.png"
+T2_1.figureUrl  = "http://hepdata.cedar.ac.uk/resource/1458270/figAuxiliaryFigure19b.png"
 T2_1.figure  = "Fig. Aux. 19b"
 #----exclusion source----
 T2_1.addSource( 'obsExclusion', 'orig/Obs_Line_T2.dat', 'txt', objectName = None, index = None )
@@ -257,7 +260,7 @@ T1.source = "ATLAS"
 T1_1 = T1.addMassPlane( [[x,y]]*2 )
 #---- new efficiency map -----
 #----figure----
-T1_1.figureUrl  = "http://hepdata.cedar.ac.uk/resource/1458270/thumb_figAuxiliaryFigure27b.png"
+T1_1.figureUrl  = "http://hepdata.cedar.ac.uk/resource/1458270/figAuxiliaryFigure27b.png"
 T1_1.figure  = "Fig. Aux. 27b"
 #----exclusion source----
 T1_1.addSource( 'obsExclusion', 'orig/Obs_Line_T1.dat', 'txt', objectName = None, index = None )
@@ -300,7 +303,7 @@ T1.source = "ATLAS"
 T1_1 = T1.addMassPlane( [[x,y]]*2 )
 #---- new efficiency map -----
 #----figure----
-T1_1.figureUrl  = "http://hepdata.cedar.ac.uk/resource/1458270/thumb_figAuxiliaryFigure30b.png"
+T1_1.figureUrl  = "http://hepdata.cedar.ac.uk/resource/1458270/figAuxiliaryFigure30b.png"
 T1_1.figure  = "Fig. Aux. 30b"
 #----exclusion source----
 T1_1.addSource( 'obsExclusion', 'orig/Obs_Line_T1.dat', 'txt', objectName = None, index = None )
@@ -324,7 +327,7 @@ T2.source = "ATLAS"
 T2_1 = T2.addMassPlane( [[x,y]]*2 )
 #---- new efficiency map -----
 #----figure----
-T2_1.figureUrl  = "http://hepdata.cedar.ac.uk/resource/1458270/thumb_figAuxiliaryFigure25b.png"
+T2_1.figureUrl  = "http://hepdata.cedar.ac.uk/resource/1458270/figAuxiliaryFigure25b.png"
 T2_1.figure  = "Fig.Aux. 25b"
 #----exclusion source----
 T2_1.addSource( 'obsExclusion', 'orig/Obs_Line_T2.dat', 'txt', objectName = None, index = None )
@@ -343,7 +346,7 @@ T1.source = "ATLAS"
 T1_1 = T1.addMassPlane( [[x,y]]*2 )
 #---- new efficiency map -----
 #----figure----
-T1_1.figureUrl  = "http://hepdata.cedar.ac.uk/resource/1458270/thumb_figAuxiliaryFigure32b.png"
+T1_1.figureUrl  = "http://hepdata.cedar.ac.uk/resource/1458270/figAuxiliaryFigure32b.png"
 T1_1.figure  = "Fig. Aux. 32b"
 #----exclusion source----
 T1_1.addSource( 'obsExclusion', 'orig/Obs_Line_T1.dat', 'txt', objectName = None, index = None )

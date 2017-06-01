@@ -68,7 +68,7 @@ T2ttoff.source = "ATLAS"
 #+++++++ next mass plane block ++++++++++++++
 T2tt_1 = T2tt.addMassPlane(2*[[x, y]])
 T2tt_1.figure = 'Aux.Fig.5b'
-T2tt_1.figureUrl ='http://hepdata.cedar.ac.uk/resource/1469069/thumb_figAuxiliaryFigure5b.png'
+T2tt_1.figureUrl ='http://hepdata.cedar.ac.uk/resource/1469069/figAuxiliaryFigure5b.png'
 T2tt_1.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1469069/all'
 T2tt_1.histoDataUrl = 'http://hepdata.cedar.ac.uk/view/ins1469069/d24/input'
 T2tt_1.dataUrl ='http://hepdata.cedar.ac.uk/view/ins1469069/d24/input'

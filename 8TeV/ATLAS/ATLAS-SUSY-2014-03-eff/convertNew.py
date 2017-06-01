@@ -79,7 +79,7 @@ TScharm.source ='ATLAS'
 #+++++++ next mass plane block ++++++++++++++
 TScharm_1 = TScharm.addMassPlane([[x,y]]*2)
 TScharm_1.figure  = "Figure2"
-TScharm_1.figureUrl  = "http://hepdata.cedar.ac.uk/resource/1337472/thumb_figFigure2.png"
+TScharm_1.figureUrl  = "http://hepdata.cedar.ac.uk/resource/1337472/figFigure2.png"
 TScharm_1.addSource('obsExclusion', 'orig/TScharm_Exclusion.txt', 'txt')
 TScharm_1.addSource('efficiencyMap', 'orig/mCT150.dat', 'txt')
 TScharm_1.dataUrl  = "http://hepdata.cedar.ac.uk/view/ins1337472/first"
