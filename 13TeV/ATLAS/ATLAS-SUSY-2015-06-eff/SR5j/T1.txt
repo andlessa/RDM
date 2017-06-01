@@ -4,7 +4,7 @@ condition: None
 conditionDescription: None
 susyProcess: pp --> gluino gluino, gluino  --> quark antiquark  lsp
 checked: NO
-figureUrl: http://hepdata.cedar.ac.uk/resource/1458270/thumb_figAuxiliaryFigure30b.png
+figureUrl: http://hepdata.cedar.ac.uk/resource/1458270/figAuxiliaryFigure30b.png
 dataUrl: http://hepdata.cedar.ac.uk/view/ins1458270/d87/input
 source: ATLAS
 validated: TBD

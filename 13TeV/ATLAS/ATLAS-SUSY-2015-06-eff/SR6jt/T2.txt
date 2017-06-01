@@ -4,7 +4,7 @@ condition: None
 conditionDescription: None
 susyProcess: pp --> squark squark, squark  --> quark lsp
 checked: NO
-figureUrl: http://hepdata.cedar.ac.uk/resource/1458270/thumb_figAuxiliaryFigure25b.png
+figureUrl: http://hepdata.cedar.ac.uk/resource/1458270/figAuxiliaryFigure25b.png
 dataUrl: http://hepdata.cedar.ac.uk/view/ins1458270/d77/input
 source: ATLAS
 validated: TBD

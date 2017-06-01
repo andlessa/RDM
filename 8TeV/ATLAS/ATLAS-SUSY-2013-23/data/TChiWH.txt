@@ -3,7 +3,7 @@ constraint: [[['higgs']],[['W']]]
 condition: None
 conditionDescription: None
 susyProcess: pp --> neutralino_2 chargino^pm_1, neutralino_2 chargino^pm_1 --> H W lsp lsp
-figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-23/.thumb_fig_08d.png
+figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-23/fig_08d.png
 dataUrl: http://hepdata.cedar.ac.uk/view/ins1341609/d34/input
 source: ATLAS
 validated: True

@@ -63,7 +63,7 @@ TChiWH.source = "ATLAS"
 #+++++++ next mass plane block ++++++++++++++
 TChiWH_1 = TChiWH.addMassPlane(2*[[x, y]])
 TChiWH_1.figure = 'Fig. Aux1'
-TChiWH_1.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-23/.thumb_fig_08d.png'
+TChiWH_1.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-23/fig_08d.png'
 TChiWH_1.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1341609'
 TChiWH_1.histoDataUrl ='http://hepdata.cedar.ac.uk/view/ins1341609'
 TChiWH_1.dataUrl ='http://hepdata.cedar.ac.uk/view/ins1341609/d34/input'
