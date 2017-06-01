@@ -6,7 +6,7 @@ susyProcess: pp --> stop stop, stop  --> top lsp
 figureUrl: http://hepdata.cedar.ac.uk/resource/1469069/figAuxiliaryFigure5b.png
 dataUrl: http://hepdata.cedar.ac.uk/view/ins1469069/d24/input
 source: ATLAS
-validated: TBD
+validated: True
 axes: [[x, y], [x, y]]
 upperLimits: [[[[5.0000E+02*GeV,5.0000E+01*GeV],[5.0000E+02*GeV,5.0000E+01*GeV]],3.5000E-01*pb],
 [[[5.0000E+02*GeV,1.0000E+02*GeV],[5.0000E+02*GeV,1.0000E+02*GeV]],3.9000E-01*pb],
