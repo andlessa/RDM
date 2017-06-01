@@ -4,7 +4,7 @@ condition: None
 conditionDescription: None
 susyProcess: pp --> gluino gluino, gluino  --> quark antiquark neutralino_2, neutralino_2 --> Z lsp
 checked:  
-dataUrl: None;None;None
+dataUrl: None
 source: SModelS
 validated: TBD
 axes: [[x, 0.5*x + 0.5*y, y], [x, 0.5*x + 0.5*y, y]];[[x, 0.05*x + 0.95*y, y], [x, 0.05*x + 0.95*y, y]];[[x, 0.95*x + 0.05*y, y], [x, 0.95*x + 0.05*y, y]]
