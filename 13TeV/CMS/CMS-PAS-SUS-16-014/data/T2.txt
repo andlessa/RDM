@@ -6,7 +6,7 @@ susyProcess: pp --> squark squark, squark  --> quark lsp
 figureUrl: http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-014/CMS-PAS-SUS-16-014_Figure_009-c.png
 dataUrl: http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-014/CMS-PAS-SUS-16-014_Figure_009-c.root
 source: CMS
-validated: TBD
+validated: True
 axes: [[x, y], [x, y]]
 upperLimits: [[[[3.0586E+02*GeV,5.3719E+00*GeV],[3.0586E+02*GeV,5.3719E+00*GeV]],2.7978E+00*pb],
 [[[3.0586E+02*GeV,1.4116E+01*GeV],[3.0586E+02*GeV,1.4116E+01*GeV]],3.0379E+00*pb],

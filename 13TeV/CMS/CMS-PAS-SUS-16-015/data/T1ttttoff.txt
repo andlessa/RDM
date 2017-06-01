@@ -6,7 +6,7 @@ susyProcess: pp --> gluino gluino, gluino  --> top^* antitop^* lsp
 figureUrl: http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-015/CMS-PAS-SUS-16-015_Figure_006-b.png
 dataUrl: http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-015/CMS-PAS-SUS-16-015_Figure_006-b.root
 source: CMS
-validated: TBD
+validated: True
 axes: [[x, y], [x, y]]
 upperLimits: [[[[6.0625E+02*GeV,2.6875E+02*GeV],[6.0625E+02*GeV,2.6875E+02*GeV]],6.8579E-01*pb],
 [[[6.0625E+02*GeV,2.8125E+02*GeV],[6.0625E+02*GeV,2.8125E+02*GeV]],7.4153E-01*pb],

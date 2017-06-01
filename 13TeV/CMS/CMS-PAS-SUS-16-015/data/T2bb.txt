@@ -6,7 +6,7 @@ susyProcess: pp --> sbottom sbottom, sbottom  --> bottom lsp
 figureUrl: http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-015/CMS-PAS-SUS-16-015_Figure_007-a.png
 dataUrl: http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-015/CMS-PAS-SUS-16-015_Figure_007-a.root
 source: CMS
-validated: TBD
+validated: True
 axes: [[x, y], [x, y]]
 upperLimits: [[[[3.0625E+02*GeV,6.2500E+00*GeV],[3.0625E+02*GeV,6.2500E+00*GeV]],4.8341E-01*pb],
 [[[3.0625E+02*GeV,1.8750E+01*GeV],[3.0625E+02*GeV,1.8750E+01*GeV]],5.1428E-01*pb],

@@ -6,7 +6,7 @@ susyProcess: pp --> stop stop, stop  --> top lsp
 figureUrl: http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-014/CMS-PAS-SUS-16-014_Figure_009-a.png
 dataUrl: http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-014/CMS-PAS-SUS-16-014_Figure_009-a.root
 source: CMS
-validated: TBD
+validated: True
 axes: [[x, y], [x, y]]
 upperLimits: [[[[1.5410E+02*GeV,3.0281E+00*GeV],[1.5410E+02*GeV,3.0281E+00*GeV]],4.6806E+02*pb],
 [[[1.5410E+02*GeV,7.0844E+00*GeV],[1.5410E+02*GeV,7.0844E+00*GeV]],4.0433E+02*pb],
