@@ -2,3 +2,6 @@ database.pcl
 utilsPath.pyc
 */*/*/validation/smodels.log
 *~
+*/*/*/validation/*_pretty.root
+*/*/*/validation/*_pretty.png
+__pycache__
