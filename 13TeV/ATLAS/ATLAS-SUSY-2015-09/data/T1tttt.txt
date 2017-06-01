@@ -3,7 +3,7 @@ constraint: [[['t','t']],[['t','t']]]
 condition: None
 conditionDescription: None
 susyProcess: pp --> gluino gluino, gluino  --> top antitop  lsp
-figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2015-09/.thumb_fig_04d.png
+figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2015-09/fig_04d.png
 dataUrl: http://hepdata.cedar.ac.uk/view/ins1424844/all
 source: ATLAS
 validated: True

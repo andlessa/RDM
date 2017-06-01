@@ -72,7 +72,7 @@ T1ttttoff.source = "ATLAS"
 #+++++++ next mass plane block ++++++++++++++
 T1tttt_1 = T1tttt.addMassPlane(2*[[x, y]])
 T1tttt_1.figure = 'Fig 4.d'
-T1tttt_1.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2015-09/.thumb_fig_04d.png'
+T1tttt_1.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2015-09/fig_04d.png'
 T1tttt_1.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1424844/all'
 T1tttt_1.histoDataUrl = 'http://hepdata.cedar.ac.uk/view/ins1424844/all'
 T1tttt_1.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1424844/all'
