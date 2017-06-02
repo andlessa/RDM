@@ -5,7 +5,7 @@ conditionDescription: None
 susyProcess: pp --> neutralino_2 neutralino_2, neutralino_2 --> Z lsp lsp
 dataUrl: None
 source: SModelS
-validated: TBD
+validated: N/A
 axes: [[x, y], [x, y]]
 efficiencyMap: [[[[4.8000E+02*GeV,3.8000E+02*GeV],[4.8000E+02*GeV,3.8000E+02*GeV]],5.8e-05],
 [[[6.0000E+02*GeV,4.2000E+02*GeV],[6.0000E+02*GeV,4.2000E+02*GeV]],0.0002493],

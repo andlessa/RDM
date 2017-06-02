@@ -5,7 +5,7 @@ conditionDescription: None
 susyProcess: pp --> stop stop, stop  --> bottom chargino_1^pm, chargino_1^pm --> W lsp
 dataUrl: None
 source: SModelS
-validated: TBD
+validated: N/A
 axes: [[x, 0.1*x + 0.9*y, y], [x, 0.1*x + 0.9*y, y]];[[x, 0.5*x + 0.5*y, y], [x, 0.5*x + 0.5*y, y]];[[x, 0.9*x + 0.1*y, y], [x, 0.9*x + 0.1*y, y]]
 efficiencyMap: [[[[5.0000E+02*GeV,2.6600E+02*GeV,2.4000E+02*GeV],[5.0000E+02*GeV,2.6600E+02*GeV,2.4000E+02*GeV]],0.0],
 [[[7.5000E+02*GeV,3.6300E+02*GeV,3.2000E+02*GeV],[7.5000E+02*GeV,3.6300E+02*GeV,3.2000E+02*GeV]],0.0],

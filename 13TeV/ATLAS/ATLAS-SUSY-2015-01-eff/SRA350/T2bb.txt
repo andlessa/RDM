@@ -7,7 +7,7 @@ checked: NO
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2015-01/figaux_06c.png,https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2015-01/figaux_07c.png
 dataUrl: http://hepdata.cedar.ac.uk/view/ins1472822/all
 source: ATLAS
-validated: TBD
+validated: True
 axes: [[x, y], [x, y]]
 efficiencyMap: [[[[2.0000E+02*GeV,1.8000E+02*GeV],[2.0000E+02*GeV,1.8000E+02*GeV]],0.0],
 [[[2.5000E+02*GeV,2.3000E+02*GeV],[2.5000E+02*GeV,2.3000E+02*GeV]],0.0],

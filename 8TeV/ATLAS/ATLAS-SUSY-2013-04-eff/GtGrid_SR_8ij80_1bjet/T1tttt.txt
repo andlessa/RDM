@@ -7,7 +7,7 @@ checked: None
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-04/figaux_11a.png
 dataUrl: http://hepdata.cedar.ac.uk/resource/6095/bjetstream/GtGrid_SR_8ij80_1bjet.txt
 source: ATLAS
-validated: TBD
+validated: True
 axes: [[x, y], [x, y]]
 efficiencyMap: [[[[5.0000E+02*GeV,1.0000E+00*GeV],[5.0000E+02*GeV,1.0000E+00*GeV]],6.5507e-05],
 [[[5.0000E+02*GeV,5.0000E+01*GeV],[5.0000E+02*GeV,5.0000E+01*GeV]],0.0],
