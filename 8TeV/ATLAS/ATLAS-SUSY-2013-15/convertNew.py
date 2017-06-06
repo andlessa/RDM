@@ -115,23 +115,21 @@ T6bbWWoffD10.setSources(dataLabels= ['expExclusion', 'obsExclusion', 'upperLimit
                  dataFormats= ['txt', 'txt', 'txt'])
 T6bbWWoff.addMassPlane(T6bbWWoffD10)
 #+++++++ next mass plane block ++++++++++++++
-T6bbWWoffD5 = T6bbWW.addMassPlane(2*[[x, y+5., y]])
+T6bbWWoffD5 = T6bbWWoff.addMassPlane(2*[[x, y+5., y]]) #This is a purely off-shell plane, do not add it to the on-shell txname
 T6bbWWoffD5.figure = "fig(aux) 19"
 T6bbWWoffD5.figureUrl = "https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-15/figaux_019.png"
 T6bbWWoffD5.dataUrl = 'Not defined'
 T6bbWWoffD5.setSources(dataLabels= ['expExclusion', 'obsExclusion', 'upperLimits'],
                  dataFiles= ['orig/exclusion_exp_T6bbWWoffD005.txt', 'orig/exclusion_T6bbWWoffD005.txt', 'orig/limit_T6bbWWoffD005.txt'],
                  dataFormats= ['txt', 'txt', 'txt'])
-T6bbWWoff.addMassPlane(T6bbWWoffD5)
 #+++++++ next mass plane block ++++++++++++++
-T6bbWWoffD20 = T6bbWW.addMassPlane(2*[[x, y+20, y]])
+T6bbWWoffD20 = T6bbWWoff.addMassPlane(2*[[x, y+20., y]]) #This is a purely off-shell plane, do not add it to the on-shell txname
 T6bbWWoffD20.figure = "fig(aux) 20"
 T6bbWWoffD20.figureUrl = "https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-15/figaux_020.png"
 T6bbWWoffD20.dataUrl = 'Not defined'
 T6bbWWoffD20.setSources(dataLabels= ['expExclusion', 'obsExclusion', 'upperLimits'],
                  dataFiles= ['orig/exclusion_exp_T6bbWWoffD020.txt', 'orig/exclusion_T6bbWWoffD020.txt', 'orig/limit_T6bbWWoffD020.txt'],
                  dataFormats= ['txt', 'txt', 'txt'])
-T6bbWWoff.addMassPlane(T6bbWWoffD20)
 #+++++++ next mass plane block ++++++++++++++
 T6bbWWoffM1300 = T6bbWW.addMassPlane(2*[[300, x, y]])
 T6bbWWoffM1300.figure = "fig(aux) 22"
