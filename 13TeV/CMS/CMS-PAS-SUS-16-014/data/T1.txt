@@ -6,7 +6,7 @@ susyProcess: pp --> gluino gluino, gluino  --> quark antiquark  lsp
 figureUrl: http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-014/CMS-PAS-SUS-16-014_Figure_010-c.png
 dataUrl: http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-014/CMS-PAS-SUS-16-014_Figure_010-c.root
 source: CMS
-validated: TBD
+validated: True
 axes: [[x, y], [x, y]]
 upperLimits: [[[[6.0664E+02*GeV,5.9969E+00*GeV],[6.0664E+02*GeV,5.9969E+00*GeV]],2.4880E-01*pb],
 [[[6.0664E+02*GeV,1.5991E+01*GeV],[6.0664E+02*GeV,1.5991E+01*GeV]],2.5942E-01*pb],

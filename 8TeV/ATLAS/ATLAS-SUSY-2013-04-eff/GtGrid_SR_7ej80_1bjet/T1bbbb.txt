@@ -6,7 +6,7 @@ susyProcess: pp --> gluino gluino, gluino  --> bottom antibottom  lsp
 checked: None
 dataUrl: None
 source: SModelS
-validated: TBD
+validated: N/A
 axes: [[x, y], [x, y]]
 efficiencyMap: [[[[9.0000E+02*GeV,6.4000E+02*GeV],[9.0000E+02*GeV,6.4000E+02*GeV]],0.0001967],
 [[[3.0000E+02*GeV,1.2000E+02*GeV],[3.0000E+02*GeV,1.2000E+02*GeV]],1.7e-05],

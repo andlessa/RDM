@@ -41,7 +41,7 @@ DataSetInput.ntoys=args.ntoys
 
 #+++++++ global info block ++++++++++++++
 info = MetaInfoInput('ATLAS-SUSY-2013-11')
-info.comment = 'TSlepSlep efficiency maps created by the SModelS collaboration using MadAnalysis5'
+info.comment = 'TSlepSlep,TChiWW and TChipChimSlepSnu efficiency maps created by the SModelS collaboration using MadAnalysis5'
 info.sqrts = '8.0'
 info.private = False
 info.lumi = '20.3'

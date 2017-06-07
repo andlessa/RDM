@@ -88,23 +88,21 @@ T6bbWWoff.condition = None
 T6bbWWoff.massConstraint = [['dm >= 0.0', 'dm <= 76.0'], ['dm >= 0.0', 'dm <= 76.0']]
 T6bbWWoff.source = "ATLAS"
 #+++++++ next mass plane block ++++++++++++++
-T6bbWWD005 = T6bbWW.addMassPlane(2*[[x, y+5., y]])
+T6bbWWD005 = T6bbWWoff.addMassPlane(2*[[x, y+5., y]]) #This is a purely off-shell plane, do not add it to the on-shell txname
 T6bbWWD005.figure = 'Fig.(aux) 8a'
 T6bbWWD005.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-05/figaux_08a.png'
 T6bbWWD005.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1247462/d37'
 T6bbWWD005.setSources(dataLabels= ['expExclusion', 'expExclusionM1', 'expExclusionP1', 'obsExclusion', 'obsExclusionM1', 'obsExclusionP1', 'upperLimits'],
                  dataFiles= ['orig/T6bbWWoffD005_excExpected.dat', 'orig/T6bbWWoffD005_excExpectedMinusSigma.dat', 'orig/T6bbWWoffD005_excExpectedPlusSigma.dat', 'orig/T6bbWWoffD005_exc.dat', 'orig/T6bbWWoffD005_excMinusSigma.dat', 'orig/T6bbWWoffD005_excPlusSigma.dat', 'orig/T6bbWWoffD005_2014-09-22.dat'],
                  dataFormats= ['txt', 'txt', 'txt', 'txt', 'txt', 'txt', 'txt'])
-T6bbWWoff.addMassPlane(T6bbWWD005)
 #+++++++ next mass plane block ++++++++++++++
-T6bbWWD020 = T6bbWW.addMassPlane(2*[[x, y+20., y]])
+T6bbWWD020 = T6bbWWoff.addMassPlane(2*[[x, y+20., y]]) #This is a purely off-shell plane, do not add it to the on-shell txname
 T6bbWWD020.figure = 'Fig.(aux) 8b'
 T6bbWWD020.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-05/figaux_08b.png'
 T6bbWWD020.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1247462/d38'
 T6bbWWD020.setSources(dataLabels= ['expExclusion', 'expExclusionM1', 'expExclusionP1', 'obsExclusion', 'obsExclusionM1', 'obsExclusionP1', 'upperLimits'],
                  dataFiles= ['orig/T6bbWWoffD020_excExpected.dat', 'orig/T6bbWWoffD020_excExpectedMinusSigma.dat', 'orig/T6bbWWoffD020_excExpectedPlusSigma.dat', 'orig/T6bbWWoffD020_exc.dat', 'orig/T6bbWWoffD020_excMinusSigma.dat', 'orig/T6bbWWoffD020_excPlusSigma.dat', 'orig/T6bbWWoffD020_2014-09-22.dat'],
                  dataFormats= ['txt', 'txt', 'txt', 'txt', 'txt', 'txt', 'txt'])
-T6bbWWoff.addMassPlane(T6bbWWD020)
 #+++++++ next mass plane block ++++++++++++++
 T6bbWWM1300 = T6bbWW.addMassPlane(2*[[300., x, y]])
 T6bbWWM1300.figure = 'Fig.(aux) 9'

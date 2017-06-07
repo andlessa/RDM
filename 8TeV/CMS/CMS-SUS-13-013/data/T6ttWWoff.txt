@@ -5,7 +5,7 @@ conditionDescription: [[['t'],['L','nu']],[['t'],['jet','jet']]] > 2.7* [[['t'],
 susyProcess: pp --> sbottom sbottom, sbottom  --> top chargino_1^pm, chargino_1^pm --> W^* lsp
 dataUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13013/ModelB1_x0p5.root;https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13013/ModelB1_x0p8.root
 source: CMS
-validated: TBD
+validated: True
 axes: [[x, 2.0*y, y], [x, 2.0*y, y]];[[x, 1.25*y, y], [x, 1.25*y, y]]
 upperLimits: [[[[3.0000E+02*GeV,5.0000E+01*GeV,2.5000E+01*GeV],[3.0000E+02*GeV,5.0000E+01*GeV,2.5000E+01*GeV]],3.4581E+02*fb],
 [[[3.0000E+02*GeV,1.0000E+02*GeV,5.0000E+01*GeV],[3.0000E+02*GeV,1.0000E+02*GeV,5.0000E+01*GeV]],3.4390E+02*fb],

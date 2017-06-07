@@ -5,7 +5,7 @@ conditionDescription: [[['mu+']],[['mu-']]] > [[['e+']],[['e-']]]
 susyProcess: pp --> slepton slepton, slepton  --> lepton lsp
 dataUrl: None
 source: SModelS
-validated: TBD
+validated: True
 axes: [[x, y], [x, y]]
 efficiencyMap: [[[[7.2000E+02*GeV,3.9000E+02*GeV],[7.2000E+02*GeV,3.9000E+02*GeV]],0.10509],
 [[[7.2000E+02*GeV,5.1000E+02*GeV],[7.2000E+02*GeV,5.1000E+02*GeV]],0.092132],

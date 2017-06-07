@@ -6,7 +6,7 @@ susyProcess: pp --> sbottom sbottom, sbottom  --> bottom lsp
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2015-01/fig_04.png
 dataUrl: http://hepdata.cedar.ac.uk/view/ins1472822/d4/input
 source: ATLAS
-validated: TBD
+validated: True
 axes: [[x, y], [x, y]]
 upperLimits: [[[[2.0000E+02*GeV,1.8000E+02*GeV],[2.0000E+02*GeV,1.8000E+02*GeV]],1.7190E+01*pb],
 [[[2.5000E+02*GeV,2.3000E+02*GeV],[2.5000E+02*GeV,2.3000E+02*GeV]],1.2240E+01*pb],
