@@ -6,7 +6,7 @@ susyProcess: pp --> gluino squark, gluino squark --> quark quark antiquark lsp l
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-02/figaux_09b.png
 dataUrl: Not defined
 source: ATLAS
-validated: TBD
+validated: False
 axes: [[0.96*x, y], [x, y]]
 upperLimits: [[[[9.60000E+01*GeV,5.00000E+01*GeV],[1.00000E+02*GeV,5.00000E+01*GeV]],3.37270E+08*fb],
 [[[1.07520E+02*GeV,3.70000E+01*GeV],[1.12000E+02*GeV,3.70000E+01*GeV]],4.20186E+06*fb],
