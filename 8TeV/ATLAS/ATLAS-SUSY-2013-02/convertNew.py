@@ -59,6 +59,7 @@ TGQ.constraint ="[[['jet']],[['jet','jet']]]"
 TGQ.conditionDescription ="None"
 TGQ.condition ="None"
 TGQ.source = 'ATLAS'
+TGQ.round_to = 6 ## round to 6 digits to make PCA work.
 #+++++++ next mass plane block ++++++++++++++
 TGQ0 = TGQ.addMassPlane([[0.96*x, y],[x,y]])
 TGQ0.figure = "fig(aux) 9b"
