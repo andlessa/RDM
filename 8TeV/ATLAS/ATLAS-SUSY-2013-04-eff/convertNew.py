@@ -101,7 +101,6 @@ T5WW_2.dataUrl = None
 #+++++++ next mass plane block ++++++++++++++
 T5WW_3 = T5WW.addMassPlane([[x, 0.95*x + 0.05*y, y]]*2)
 T5WW_3.addSource('efficiencyMap','orig/T5WW_x095/MA5_EM_T5WW_Glu095Neu005_>=8j80,0bjet.dat','txt')
-T5WW_3.addSource('obsExclusion', 'orig/Null_Line.txt', 'txt')
 T5WW_3.dataUrl = None
 T5WWoff.addMassPlane(T5WW_1)
 T5WWoff.addMassPlane(T5WW_2)
@@ -260,7 +259,6 @@ T5WW_2.dataUrl = None
 #+++++++ next mass plane block ++++++++++++++
 T5WW_3 = T5WW.addMassPlane([[x, 0.95*x + 0.05*y, y]]*2)
 T5WW_3.addSource('efficiencyMap','orig/T5WW_x095/MA5_EM_T5WW_Glu095Neu005_9j50,0bjet.dat','txt')
-T5WW_3.addSource('obsExclusion', 'orig/Null_Line.txt', 'txt')
 T5WW_3.dataUrl = None
 T5WWoff.addMassPlane(T5WW_1)
 T5WWoff.addMassPlane(T5WW_2)
@@ -419,7 +417,6 @@ T5WW_2.dataUrl = None
 #+++++++ next mass plane block ++++++++++++++
 T5WW_3 = T5WW.addMassPlane([[x, 0.95*x + 0.05*y, y]]*2)
 T5WW_3.addSource('efficiencyMap','orig/T5WW_x095/MA5_EM_T5WW_Glu095Neu005_8j50,0bjet.dat','txt')
-T5WW_3.addSource('obsExclusion', 'orig/Null_Line.txt', 'txt')
 T5WW_3.dataUrl = None
 T5WWoff.addMassPlane(T5WW_1)
 T5WWoff.addMassPlane(T5WW_2)
@@ -578,7 +575,6 @@ T5WW_2.dataUrl = None
 #+++++++ next mass plane block ++++++++++++++
 T5WW_3 = T5WW.addMassPlane([[x, 0.95*x + 0.05*y, y]]*2)
 T5WW_3.addSource('efficiencyMap','orig/T5WW_x095/MA5_EM_T5WW_Glu095Neu005_>=8j80,>=2bjets.dat','txt')
-T5WW_3.addSource('obsExclusion', 'orig/Null_Line.txt', 'txt')
 T5WW_3.dataUrl = None
 T5WWoff.addMassPlane(T5WW_1)
 T5WWoff.addMassPlane(T5WW_2)
@@ -737,7 +733,6 @@ T5WW_2.dataUrl = None
 #+++++++ next mass plane block ++++++++++++++
 T5WW_3 = T5WW.addMassPlane([[x, 0.95*x + 0.05*y, y]]*2)
 T5WW_3.addSource('efficiencyMap','orig/T5WW_x095/MA5_EM_T5WW_Glu095Neu005_8j50,>=2bjets.dat','txt')
-T5WW_3.addSource('obsExclusion', 'orig/Null_Line.txt', 'txt')
 T5WW_3.dataUrl = None
 T5WWoff.addMassPlane(T5WW_1)
 T5WWoff.addMassPlane(T5WW_2)
@@ -896,7 +891,6 @@ T5WW_2.dataUrl = None
 #+++++++ next mass plane block ++++++++++++++
 T5WW_3 = T5WW.addMassPlane([[x, 0.95*x + 0.05*y, y]]*2)
 T5WW_3.addSource('efficiencyMap','orig/T5WW_x095/MA5_EM_T5WW_Glu095Neu005_7j80,0bjet.dat','txt')
-T5WW_3.addSource('obsExclusion', 'orig/Null_Line.txt', 'txt')
 T5WW_3.dataUrl = None
 T5WWoff.addMassPlane(T5WW_1)
 T5WWoff.addMassPlane(T5WW_2)
@@ -1055,7 +1049,6 @@ T5WW_2.dataUrl = None
 #+++++++ next mass plane block ++++++++++++++
 T5WW_3 = T5WW.addMassPlane([[x, 0.95*x + 0.05*y, y]]*2)
 T5WW_3.addSource('efficiencyMap','orig/T5WW_x095/MA5_EM_T5WW_Glu095Neu005_7j80,1bjet.dat','txt')
-T5WW_3.addSource('obsExclusion', 'orig/Null_Line.txt', 'txt')
 T5WW_3.dataUrl = None
 T5WWoff.addMassPlane(T5WW_1)
 T5WWoff.addMassPlane(T5WW_2)
@@ -1214,7 +1207,6 @@ T5WW_2.dataUrl = None
 #+++++++ next mass plane block ++++++++++++++
 T5WW_3 = T5WW.addMassPlane([[x, 0.95*x + 0.05*y, y]]*2)
 T5WW_3.addSource('efficiencyMap','orig/T5WW_x095/MA5_EM_T5WW_Glu095Neu005_9j50,>=2bjets.dat','txt')
-T5WW_3.addSource('obsExclusion', 'orig/Null_Line.txt', 'txt')
 T5WW_3.dataUrl = None
 T5WWoff.addMassPlane(T5WW_1)
 T5WWoff.addMassPlane(T5WW_2)
@@ -1373,7 +1365,6 @@ T5WW_2.dataUrl = None
 #+++++++ next mass plane block ++++++++++++++
 T5WW_3 = T5WW.addMassPlane([[x, 0.95*x + 0.05*y, y]]*2)
 T5WW_3.addSource('efficiencyMap','orig/T5WW_x095/MA5_EM_T5WW_Glu095Neu005_7j80,>=2bjets.dat','txt')
-T5WW_3.addSource('obsExclusion', 'orig/Null_Line.txt', 'txt')
 T5WW_3.dataUrl = None
 T5WWoff.addMassPlane(T5WW_1)
 T5WWoff.addMassPlane(T5WW_2)
@@ -1532,7 +1523,6 @@ T5WW_2.dataUrl = None
 #+++++++ next mass plane block ++++++++++++++
 T5WW_3 = T5WW.addMassPlane([[x, 0.95*x + 0.05*y, y]]*2)
 T5WW_3.addSource('efficiencyMap','orig/T5WW_x095/MA5_EM_T5WW_Glu095Neu005_8j50,1bjet.dat','txt')
-T5WW_3.addSource('obsExclusion', 'orig/Null_Line.txt', 'txt')
 T5WW_3.dataUrl = None
 T5WWoff.addMassPlane(T5WW_1)
 T5WWoff.addMassPlane(T5WW_2)
@@ -1691,7 +1681,6 @@ T5WW_2.dataUrl = None
 #+++++++ next mass plane block ++++++++++++++
 T5WW_3 = T5WW.addMassPlane([[x, 0.95*x + 0.05*y, y]]*2)
 T5WW_3.addSource('efficiencyMap','orig/T5WW_x095/MA5_EM_T5WW_Glu095Neu005_>=8j80,1bjet.dat','txt')
-T5WW_3.addSource('obsExclusion', 'orig/Null_Line.txt', 'txt')
 T5WW_3.dataUrl = None
 T5WWoff.addMassPlane(T5WW_1)
 T5WWoff.addMassPlane(T5WW_2)
@@ -1850,7 +1839,6 @@ T5WW_2.dataUrl = None
 #+++++++ next mass plane block ++++++++++++++
 T5WW_3 = T5WW.addMassPlane([[x, 0.95*x + 0.05*y, y]]*2)
 T5WW_3.addSource('efficiencyMap','orig/T5WW_x095/MA5_EM_T5WW_Glu095Neu005_9j50,1bjet.dat','txt')
-T5WW_3.addSource('obsExclusion', 'orig/Null_Line.txt', 'txt')
 T5WW_3.dataUrl = None
 T5WWoff.addMassPlane(T5WW_1)
 T5WWoff.addMassPlane(T5WW_2)
@@ -2009,7 +1997,6 @@ T5WW_2.dataUrl = None
 #+++++++ next mass plane block ++++++++++++++
 T5WW_3 = T5WW.addMassPlane([[x, 0.95*x + 0.05*y, y]]*2)
 T5WW_3.addSource('efficiencyMap','orig/T5WW_x095/MA5_EM_T5WW_Glu095Neu005_>=10j50.dat','txt')
-T5WW_3.addSource('obsExclusion', 'orig/Null_Line.txt', 'txt')
 T5WW_3.dataUrl = None
 T5WWoff.addMassPlane(T5WW_1)
 T5WWoff.addMassPlane(T5WW_2)
