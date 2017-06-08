@@ -45,7 +45,7 @@ info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-
 info.supersededBy = 'ATLAS-SUSY-2013-15'
 info.contact = 'Sophio Pataria <Sophio.Pataraia@cern.ch>, Tobias Golling <tobias.golling@cern.ch>'
 info.prettyName = 'ATLAS leptonic stop'
-info.supersedes = 'ATLAS-CONF-2012-166'
+# info.supersedes = 'ATLAS-CONF-2012-166'
 
 
 #+++++++ dataset block ++++++++++++++
