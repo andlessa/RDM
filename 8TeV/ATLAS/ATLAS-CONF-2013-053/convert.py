@@ -8,13 +8,15 @@
 import sys
 import os
 import argparse
-import types
 
 argparser = argparse.ArgumentParser(description =  
 'create info.txt, txname.txt, twiki.txt and sms.py')
 argparser.add_argument ('-utilsPath', '--utilsPath', 
 help = 'path to the package smodels_utils',\
-type = types.StringType)
+type = str )
+argparser.add_argument ('-smodelsPath', '--smodelsPath', 
+help = 'path to the package smodels_utils',\
+type = str )
 args = argparser.parse_args()
 
 if args.utilsPath:
@@ -24,11 +26,15 @@ else:
     sys.path.append(os.path.abspath(databaseRoot))
     from utilsPath import utilsPath
     utilsPath = databaseRoot + utilsPath
+if args.smodelsPath:
+    sys.path.append(os.path.abspath(args.smodelsPath))
 
 sys.path.append(os.path.abspath(utilsPath))
-from smodels_utils.dataPreparation.inputObjects import TxNameInput, MetaInfoInput
+from smodels_utils.dataPreparation.inputObjects import MetaInfoInput,DataSetInput
 from smodels_utils.dataPreparation.databaseCreation import databaseCreator
-from smodels_utils.dataPreparation.origPlotObjects import x, y
+from smodels_utils.dataPreparation.massPlaneObjects import x, y, z
+
+
 
 #+++++++ global info block ++++++++++++++
 info = MetaInfoInput('ATLAS-CONF-2013-053')
@@ -36,57 +42,31 @@ info.comment = 'More data in ATLAS-SUSY-2013-05'
 info.sqrts = '8.0'
 info.private = False
 info.lumi = '20.1'
-#info.publication = 
 info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-053/'
 info.supersededBy = 'ATLAS-SUSY-2013-05'
-#info.arxiv = 
-#info.contact = 
 info.prettyName = 'ATLAS 2 b + \slash{E}_{T}'
-#info.supersedes = 
+
+
+#+++++++ dataset block ++++++++++++++
+dataset = DataSetInput('data')
+dataset.setInfo(dataType = 'upperLimit', dataId = None)
 
 #+++++++ next txName block ++++++++++++++
-T2bb = TxNameInput('T2bb')
-T2bb.on.checked ="VM"
-#T2bb.off.checked =
-T2bb.on.constraint ="[[['b']],[['b']]]"
-#T2bb.off.constraint =
-T2bb.on.conditionDescription ="None"
-#T2bb.off.conditionDescription =
-T2bb.on.condition ="None"
-#T2bb.off.condition =
-
+T2bb = dataset.addTxName('T2bb')
+T2bb.checked ="VM"
+T2bb.constraint ="[[['b']],[['b']]]"
+T2bb.conditionDescription ="None"
+T2bb.condition ="None"
+T2bb.source = "ATLAS"
 #+++++++ next mass plane block ++++++++++++++
-T2bb = T2bb.addMassPlane(motherMass = x, lspMass = y)
-#----limit source----
-T2bb.obsUpperLimit.setSource( "orig/Fig4.txt", "txt", objectName = None, index = None )
-#T2bb.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
-#----exclusion source----
-T2bb.obsExclusion.setSource( "orig/exclusion_T2bb.txt", "txt", objectName = None, index = None )
-"""
-T2bb.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
-T2bb.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
-T2bb.expExclusion.setSource( path, filetype, objectName = None, index = None )
-T2bb.expExclusionM1.setSource( path, filetype, objectName = None, index = None )
-T2bb.expExclusionP1.setSource( path, filetype, objectName = None, index = None )
-#----global url settings ----
-T2bb.dataUrl =
-T2bb.histoDataUrl =
-T2bb.exclusionDataUrl =
-"""
-#----figure----
+T2bb = T2bb.addMassPlane(2*[[x, y]])
 T2bb.figure = 'Fig.(aux) 4'
 T2bb.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-053/fig_05a.png'
-"""
-#----limit url settings ----
-T2bb.obsUpperLimit.dataUrl =
-T2bb.expUpperLimit.dataUrl =
-#----exclusion url settings ----
-T2bb.obsExclusion.dataUrl =
-T2bb.obsExclusionM1.dataUrl =
-T2bb.obsExclusionP1.dataUrl =
-T2bb.expExclusion.dataUrl =
-T2bb.expExclusionM1.dataUrl =
-T2bb.expExclusionP1.dataUrl =
-"""
+T2bb.dataUrl = 'Not defined'
+T2bb.setSources(dataLabels= ['obsExclusion', 'upperLimits'],
+                 dataFiles= ['orig/exclusion_T2bb.txt', 'orig/Fig4.txt'],
+                 dataFormats= ['txt', 'txt'])
+
+
 
 databaseCreator.create()
