@@ -8,13 +8,15 @@
 import sys
 import os
 import argparse
-import types
 
 argparser = argparse.ArgumentParser(description =  
 'create info.txt, txname.txt, twiki.txt and sms.py')
 argparser.add_argument ('-utilsPath', '--utilsPath', 
 help = 'path to the package smodels_utils',\
-type = types.StringType)
+type = str )
+argparser.add_argument ('-smodelsPath', '--smodelsPath', 
+help = 'path to the package smodels_utils',\
+type = str )
 args = argparser.parse_args()
 
 if args.utilsPath:
@@ -24,147 +26,63 @@ else:
     sys.path.append(os.path.abspath(databaseRoot))
     from utilsPath import utilsPath
     utilsPath = databaseRoot + utilsPath
+if args.smodelsPath:
+    sys.path.append(os.path.abspath(args.smodelsPath))
 
 sys.path.append(os.path.abspath(utilsPath))
-from smodels_utils.dataPreparation.inputObjects import TxNameInput, MetaInfoInput
+from smodels_utils.dataPreparation.inputObjects import MetaInfoInput,DataSetInput
 from smodels_utils.dataPreparation.databaseCreation import databaseCreator
-from smodels_utils.dataPreparation.origPlotObjects import x, y
+from smodels_utils.dataPreparation.massPlaneObjects import x, y, z
+
+
 
 #+++++++ global info block ++++++++++++++
 info = MetaInfoInput('ATLAS-SUSY-2013-14')
-#info.comment = 
 info.sqrts = '8.0'
 info.private = False
 info.lumi = '20.3'
 info.publication = 'link.springer.com/article/10.1007/JHEP10(2014)096'
 info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-14/'
-# info.supersededBy = 
 info.arxiv = 'http://arxiv.org/abs/1407.0350'
 info.contact = '?'
 info.prettyName = 'ATLAS di-tau'
 info.supersedes = 'ATLAS-CONF-2013-028'
 
-##+++++++ next txName block ++++++++++++++
-TChiChipmStauL = TxNameInput('TChiChipmStauL')
-#TChiChipmStauL.on.checked =
-#ChiChipmStauL.off.checked =
-TChiChipmStauL.on.constraint ="2.*([[['ta'],['ta']],[['nu'],['ta']]]+[[['ta'],['ta']],[['ta'],['nu']]])"
-#TChiChipmStauL.off.constraint =
-TChiChipmStauL.on.conditionDescription ="[[['ta'],['ta']],[['nu'],['ta']]] ~ [[['ta'],['ta']],[['ta'],['nu']]]"
-#TChiChipmStauL.off.conditionDescription =
-TChiChipmStauL.on.condition ="Csim([[['ta'],['ta']],[['nu'],['ta']]],[[['ta'],['ta']],[['ta'],['nu']]])"
-#TChiChipmStauL.off.condition =
-#
-##+++++++ next mass plane block ++++++++++++++
-TChiChipmStauL050 = TChiChipmStauL.addMassPlane(motherMass = x,interMass0 = x*0.5 + (1. - 0.5)*y, lspMass = y)
-##----limit source----
-TChiChipmStauL050.obsUpperLimit.setSource( "orig/limit_TChiChipmStauL.txt", "txt", objectName = None, index = None )
-##TChiChipmStauL050.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
-##----exclusion source----
-TChiChipmStauL050.obsExclusion.setSource( "orig/exclusion_TChiChipmStauL.txt", "txt", objectName = None, index = None )
-##TChiChipmStauL050.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
-##TChiChipmStauL050.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
-#TChiChipmStauL050.expExclusion.setSource( path, filetype, objectName = None, index = None )
-#TChiChipmStauL050.expExclusionM1.setSource( path, filetype, objectName = None, index = None )
-#TChiChipmStauL050.expExclusionP1.setSource( path, filetype, objectName = None, index = None )
-##----global url settings ----
-#TChiChipmStauL050.dataUrl =
-#TChiChipmStauL050.histoDataUrl =
-#TChiChipmStauL050.exclusionDataUrl =
-##----figure----
+
+#+++++++ dataset block ++++++++++++++
+dataset = DataSetInput('data')
+dataset.setInfo(dataType = 'upperLimit', dataId = None)
+
+#+++++++ next txName block ++++++++++++++
+TChiChipmStauL = dataset.addTxName('TChiChipmStauL')
+TChiChipmStauL.constraint ="2.*([[['ta'],['ta']],[['nu'],['ta']]]+[[['ta'],['ta']],[['ta'],['nu']]])"
+TChiChipmStauL.conditionDescription ="[[['ta'],['ta']],[['nu'],['ta']]] ~ [[['ta'],['ta']],[['ta'],['nu']]]"
+TChiChipmStauL.condition ="Csim([[['ta'],['ta']],[['nu'],['ta']]],[[['ta'],['ta']],[['ta'],['nu']]])"
+TChiChipmStauL.source = "ATLAS"
+#+++++++ next mass plane block ++++++++++++++
+TChiChipmStauL050 = TChiChipmStauL.addMassPlane(2*[[x, x*0.5+(1.-0.5)*y, y]])
 TChiChipmStauL050.figure = 'Fig.(aux) 11b'
 TChiChipmStauL050.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-14/figaux_11b.png'
-##----limit url settings ----
-TChiChipmStauL050.obsUpperLimit.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1304288/d29'
-#TChiChipmStauL050.expUpperLimit.dataUrl =
-##----exclusion url settings ----
-#TChiChipmStauL050.obsExclusion.dataUrl =
-#TChiChipmStauL050.obsExclusionM1.dataUrl =
-#TChiChipmStauL050.obsExclusionP1.dataUrl =
-#TChiChipmStauL050.expExclusion.dataUrl =
-#TChiChipmStauL050.expExclusionM1.dataUrl =
-#TChiChipmStauStau050.expExclusionP1.dataUrl =
-#
+TChiChipmStauL050.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1304288/d29'
+TChiChipmStauL050.setSources(dataLabels= ['obsExclusion', 'upperLimits'],
+                 dataFiles= ['orig/exclusion_TChiChipmStauL.txt', 'orig/limit_TChiChipmStauL.txt'],
+                 dataFormats= ['txt', 'txt'])
+
 #+++++++ next txName block ++++++++++++++
-#TStauStau = TxNameInput('TStauStau')
-##TStauStau.on.checked =
-##TStauStau.off.checked =
-#TStauStau.on.constraint ="[[['ta+']],[['ta-']]]"
-##TStauStau.off.constraint =
-#TStauStau.on.conditionDescription ="None"
-##TStauStau.off.conditionDescription =
-#TStauStau.on.condition ="None"
-##TStauStau.off.condition =
-#
-##+++++++ next mass plane block ++++++++++++++
-#TStauStau = TStauStau.addMassPlane(motherMass = x, lspMass = y)
-##----limit source----
-#TStauStau.obsUpperLimit.setSource( "orig/TStauStau.txt", "txt", objectName = None, index = None )
-##TStauStau.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
-##----exclusion source----
-#TStauStau.obsExclusion.setSource( "orig/limit_TStauStau.txt", "txt", objectName = None, index = None )
-#TStauStau.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
-#TStauStau.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
-#TStauStau.expExclusion.setSource( path, filetype, objectName = None, index = None )
-#TStauStau.expExclusionM1.setSource( path, filetype, objectName = None, index = None )
-#TStauStau.expExclusionP1.setSource( path, filetype, objectName = None, index = None )
-##----global url settings ----
-#TStauStau.dataUrl =
-#TStauStau.histoDataUrl =
-#TStauStau.exclusionDataUrl =
-##----figure----
-#TStauStau.figure =
-#TStauStau.figureUrl =
-##----limit url settings ----
-#TStauStau.obsUpperLimit.dataUrl =
-#TStauStau.expUpperLimit.dataUrl =
-##----exclusion url settings ----
-#TStauStau.obsExclusion.dataUrl =
-#TStauStau.obsExclusionM1.dataUrl =
-#TStauStau.obsExclusionP1.dataUrl =
-#TStauStau.expExclusion.dataUrl =
-#TStauStau.expExclusionM1.dataUrl =
-#TStauStau.expExclusionP1.dataUrl =
-#
-##+++++++ next txName block ++++++++++++++
-TChipChimStauSnu = TxNameInput('TChipChimStauSnu')
-#TChipChimStauSnu.on.checked =
-#TChipChimStauSnu.off.checked =
-TChipChimStauSnu.on.constraint ="[[['ta-'],['nu']],[['nu'],['ta+']]] + [[['ta+'],['nu']],[['nu'],['ta-']]] + [[['ta+'],['nu']],[['ta-'],['nu']]] + [[['nu'],['ta+']],[['nu'],['ta-']]]"
-#TChipChimStauSnu.off.constraint =
-TChipChimStauSnu.on.conditionDescription ="[[['ta-'],['nu']],[['nu'],['ta+']]] ~ [[['ta+'],['nu']],[['nu'],['ta-']]], [[['ta-'],['nu']],[['nu'],['ta+']]] ~ [[['ta+'],['nu']],[['ta-'],['nu']]], [[['ta-'],['nu']],[['nu'],['ta+']]] ~ [[['nu'],['ta+']],[['nu'],['ta-']]]"
-#TChipChimStauSnu.off.conditionDescription =
-TChipChimStauSnu.on.condition ="Csim([[['ta-'],['nu']],[['nu'],['ta+']]],[[['ta+'],['nu']],[['nu'],['ta-']]],[[['ta+'],['nu']],[['ta-'],['nu']]],[[['nu'],['ta+']],[['nu'],['ta-']]])"
-#TChipChimStauSnu.off.condition =
-#
-##+++++++ next mass plane block ++++++++++++++
-TChipChimStauSnu050 = TChipChimStauSnu.addMassPlane(motherMass = x, interMass0 = x*0.5 + (1. - 0.5)*y, lspMass = y)
-##----limit source----
-TChipChimStauSnu050.obsUpperLimit.setSource( "orig/limit_TChipChimStauSnu.txt", "txt", objectName = None, index = None )
-#TChipChimStauSnu050.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
-##----exclusion source----
-TChipChimStauSnu050.obsExclusion.setSource( "orig/exclusion_TChipChimStauSnu.txt", "txt", objectName = None, index = None )
-#TChipChimStauSnu050.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
-#TChipChimStauSnu050.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
-#TChipChimStauSnu050.expExclusion.setSource( path, filetype, objectName = None, index = None )
-#TChipChimStauSnu050.expExclusionM1.setSource( path, filetype, objectName = None, index = None )
-#TChipChimStauSnu050.expExclusionP1.setSource( path, filetype, objectName = None, index = None )
-##----global url settings ----
-#TChipChimStauSnu050.dataUrl =
-#TChipChimStauSnu050.histoDataUrl =
-#TChipChimStauSnu050.exclusionDataUrl =
-##----figure----
+TChipChimStauSnu = dataset.addTxName('TChipChimStauSnu')
+TChipChimStauSnu.constraint ="[[['ta-'],['nu']],[['nu'],['ta+']]] + [[['ta+'],['nu']],[['nu'],['ta-']]] + [[['ta+'],['nu']],[['ta-'],['nu']]] + [[['nu'],['ta+']],[['nu'],['ta-']]]"
+TChipChimStauSnu.conditionDescription ="[[['ta-'],['nu']],[['nu'],['ta+']]] ~ [[['ta+'],['nu']],[['nu'],['ta-']]], [[['ta-'],['nu']],[['nu'],['ta+']]] ~ [[['ta+'],['nu']],[['ta-'],['nu']]], [[['ta-'],['nu']],[['nu'],['ta+']]] ~ [[['nu'],['ta+']],[['nu'],['ta-']]]"
+TChipChimStauSnu.condition ="Csim([[['ta-'],['nu']],[['nu'],['ta+']]],[[['ta+'],['nu']],[['nu'],['ta-']]],[[['ta+'],['nu']],[['ta-'],['nu']]],[[['nu'],['ta+']],[['nu'],['ta-']]])"
+TChipChimStauSnu.source = "ATLAS"
+#+++++++ next mass plane block ++++++++++++++
+TChipChimStauSnu050 = TChipChimStauSnu.addMassPlane(2*[[x, x*0.5+(1.-0.5)*y, y]])
 TChipChimStauSnu050.figure = 'Fig.(aux) 11a'
 TChipChimStauSnu050.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-14/figaux_11a.png'
-##----limit url settings ----
-#TChipChimStauSnu050.obsUpperLimit.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1304288/d28'
-#TChipChimStauSnu050.expUpperLimit.dataUrl =
-##----exclusion url settings ----
-#TChipChimStauSnu050.obsExclusion.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1304288/d20'
-#TChipChimStauSnu050.obsExclusionM1.dataUrl =
-#TChipChimStauSnu050.obsExclusionP1.dataUrl =
-#TChipChimStauSnu050.expExclusion.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1304288/d19'
-#TChipChimStauSnu050.expExclusionM1.dataUrl =
-#TChipChimStauSnu050.expExclusionP1.dataUrl =
+TChipChimStauSnu050.dataUrl = 'Not defined'
+TChipChimStauSnu050.setSources(dataLabels= ['obsExclusion', 'upperLimits'],
+                 dataFiles= ['orig/exclusion_TChipChimStauSnu.txt', 'orig/limit_TChipChimStauSnu.txt'],
+                 dataFormats= ['txt', 'txt'])
+
+
 
 databaseCreator.create()

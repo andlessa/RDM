@@ -14,7 +14,10 @@ argparser = argparse.ArgumentParser(description =
 'create info.txt, txname.txt, twiki.txt and sms.py')
 argparser.add_argument ('-utilsPath', '--utilsPath', 
 help = 'path to the package smodels_utils',\
-type = types.StringType)
+type = str)
+argparser.add_argument ('-smodelsPath', '--smodelsPath', 
+help = 'path to the package smodels_utils',\
+type = str)
 args = argparser.parse_args()
 
 if args.utilsPath:
@@ -24,11 +27,15 @@ else:
     sys.path.append(os.path.abspath(databaseRoot))
     from utilsPath import utilsPath
     utilsPath = databaseRoot + utilsPath
+if args.smodelsPath:
+    sys.path.append(os.path.abspath(args.smodelsPath))
 
 sys.path.append(os.path.abspath(utilsPath))
-from smodels_utils.dataPreparation.inputObjects import TxNameInput, MetaInfoInput
+from smodels_utils.dataPreparation.inputObjects import MetaInfoInput,DataSetInput
 from smodels_utils.dataPreparation.databaseCreation import databaseCreator
-from smodels_utils.dataPreparation.origPlotObjects import x, y
+from smodels_utils.dataPreparation.massPlaneObjects import x, y, z
+
+
 
 #+++++++ global info block ++++++++++++++
 info = MetaInfoInput('ATLAS-CONF-2013-036')
@@ -36,87 +43,38 @@ info.comment = 'Will be superseded by SUSY-2013-13 (no data available yet)'
 info.sqrts = '8.0'
 info.private = False
 info.lumi = '20.7'
-#info.publication = 
 info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-036/'
-#info.supersededBy = 
-#info.arxiv = 
-#info.contact = 
 info.prettyName = 'ATLAS multileptons'
-#info.supersedes = 
+
+
+#+++++++ dataset block ++++++++++++++
+dataset = DataSetInput('data')
+dataset.setInfo(dataType = 'upperLimit', dataId = None)
 
 #+++++++ next txName block ++++++++++++++
-TChiChiSlepSlep = TxNameInput('TChiChiSlepSlep')
-TChiChiSlepSlep.on.checked ="VM"
-#TChiChiSlepSlep.off.checked =
-TChiChiSlepSlep.on.constraint ="[[['e+'],['e-']],[['e+'],['e-']]]+[[['e-'],['e+']],[['e-'],['e+']]]+[[['e+'],['e-']],[['e-'],['e+']]] + [[['mu+'],['mu-']],[['mu+'],['mu-']]]+[[['mu-'],['mu+']],[['mu-'],['mu+']]]+[[['mu+'],['mu-']],[['mu-'],['mu+']]] + [[['e+'],['e-']],[['mu+'],['mu-']]]+[[['e-'],['e+']],[['mu-'],['mu+']]]+[[['e+'],['e-']],[['mu-'],['mu+']]]"
-#TChiChiSlepSlep.off.constraint =
-TChiChiSlepSlep.on.conditionDescription ="[[['mu+'],['mu-']],[['e+'],['e-']]] ~ 2.*[[['mu+'],['mu-']],[['mu+'],['mu-']]], [[['mu+'],['mu-']],[['e+'],['e-']]] ~ 2.*[[['e+'],['e-']],[['e+'],['e-']]], [[['mu-'],['mu+']],[['e-'],['e+']]] ~ 2.*[[['e-'],['e+']],[['e-'],['e+']]], [[['mu-'],['mu+']],[['e-'],['e+']]] ~ 2.*[[['mu-'],['mu+']],[['mu-'],['mu+']]], [[['mu+'],['mu-']],[['e-'],['e+']]] ~ 2.*[[['e+'],['e-']],[['e-'],['e+']]], [[['mu+'],['mu-']],[['e-'],['e+']]] ~ 2.*[[['mu+'],['mu-']],[['mu-'],['mu+']]]"
-#TChiChiSlepSlep.off.conditionDescription =
-TChiChiSlepSlep.on.condition ="Csim([[['mu+'],['mu-']],[['e+'],['e-']]],2.*[[['mu+'],['mu-']],[['mu+'],['mu-']]],2.*[[['e+'],['e-']],[['e+'],['e-']]]); Csim([[['mu-'],['mu+']],[['e-'],['e+']]],2.*[[['e-'],['e+']],[['e-'],['e+']]],2.*[[['mu-'],['mu+']],[['mu-'],['mu+']]]); Csim([[['mu+'],['mu-']],[['e-'],['e+']]],[[['e+'],['e-']],[['e-'],['e+']]],[[['mu+'],['mu-']],[['mu-'],['mu+']]])"
-#TChiChiSlepSlep.off.condition =
-
+TChiChiSlepSlep = dataset.addTxName('TChiChiSlepSlep')
+TChiChiSlepSlep.checked ="VM"
+TChiChiSlepSlep.constraint ="[[['e+'],['e-']],[['e+'],['e-']]]+[[['e-'],['e+']],[['e-'],['e+']]]+[[['e+'],['e-']],[['e-'],['e+']]] + [[['mu+'],['mu-']],[['mu+'],['mu-']]]+[[['mu-'],['mu+']],[['mu-'],['mu+']]]+[[['mu+'],['mu-']],[['mu-'],['mu+']]] + [[['e+'],['e-']],[['mu+'],['mu-']]]+[[['e-'],['e+']],[['mu-'],['mu+']]]+[[['e+'],['e-']],[['mu-'],['mu+']]]"
+TChiChiSlepSlep.conditionDescription ="[[['mu+'],['mu-']],[['e+'],['e-']]] ~ 2.*[[['mu+'],['mu-']],[['mu+'],['mu-']]], [[['mu+'],['mu-']],[['e+'],['e-']]] ~ 2.*[[['e+'],['e-']],[['e+'],['e-']]], [[['mu-'],['mu+']],[['e-'],['e+']]] ~ 2.*[[['e-'],['e+']],[['e-'],['e+']]], [[['mu-'],['mu+']],[['e-'],['e+']]] ~ 2.*[[['mu-'],['mu+']],[['mu-'],['mu+']]], [[['mu+'],['mu-']],[['e-'],['e+']]] ~ 2.*[[['e+'],['e-']],[['e-'],['e+']]], [[['mu+'],['mu-']],[['e-'],['e+']]] ~ 2.*[[['mu+'],['mu-']],[['mu-'],['mu+']]]"
+TChiChiSlepSlep.condition ="Csim([[['mu+'],['mu-']],[['e+'],['e-']]],2.*[[['mu+'],['mu-']],[['mu+'],['mu-']]],2.*[[['e+'],['e-']],[['e+'],['e-']]]); Csim([[['mu-'],['mu+']],[['e-'],['e+']]],2.*[[['e-'],['e+']],[['e-'],['e+']]],2.*[[['mu-'],['mu+']],[['mu-'],['mu+']]]); Csim([[['mu+'],['mu-']],[['e-'],['e+']]],[[['e+'],['e-']],[['e-'],['e+']]],[[['mu+'],['mu-']],[['mu-'],['mu+']]])"
+TChiChiSlepSlep.source = 'ATLAS'
 #+++++++ next mass plane block ++++++++++++++
-TChiChiSlepSlepD080 = TChiChiSlepSlep.addMassPlane(motherMass = x+80., interMass0 = x+80.-y, lspMass = x)
-TChiChiSlepSlepD080.setBranch_1(motherMass = x+80., interMass0 = x+80.-y, lspMass = x)
-TChiChiSlepSlepD080.setBranch_2(motherMass = x+75., interMass0 = x+80.-y, lspMass = x)
-#----limit source----
-TChiChiSlepSlepD080.obsUpperLimit.setSource( 'orig/TChiChiSlepSlepD080.txt', 'txt', objectName = None, index = None )
-TChiChiSlepSlepD080.obsUpperLimit.unit = 'fb'
-#TChiChiSlepSlepD080.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
-#----exclusion source----
-TChiChiSlepSlepD080.obsExclusion.setSource( 'orig/TChiChiSlepSlepD080_excl.txt', 'txt' )
-#TChiChiSlepSlepD080.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
-#TChiChiSlepSlepD080.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
-#TChiChiSlepSlepD080.expExclusion.setSource( path, filetype, objectName = None, index = None )
-#TChiChiSlepSlepD080.expExclusionM1.setSource( path, filetype, objectName = None, index = None )
-#TChiChiSlepSlepD080.expExclusionP1.setSource( path, filetype, objectName = None, index = None )
-#----global url settings ----
-#TChiChiSlepSlepD080.dataUrl =
-#TChiChiSlepSlepD080.histoDataUrl =
-#TChiChiSlepSlepD080.exclusionDataUrl =
-#----figure----
+TChiChiSlepSlepD080 = TChiChiSlepSlep.addMassPlane([[x+80., x+80.-y, x],[x+75., x+80.-y, x]])
 TChiChiSlepSlepD080.figure = 'Fig.(aux) 1a'
 TChiChiSlepSlepD080.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-036/figaux_01a.png'
-#----limit url settings ----
-#TChiChiSlepSlepD080.obsUpperLimit.dataUrl =
-#TChiChiSlepSlepD080.expUpperLimit.dataUrl =
-#----exclusion url settings ----
-#TChiChiSlepSlepD080.obsExclusion.dataUrl =
-#TChiChiSlepSlepD080.obsExclusionM1.dataUrl =
-#TChiChiSlepSlepD080.obsExclusionP1.dataUrl =
-#TChiChiSlepSlepD080.expExclusion.dataUrl =
-#TChiChiSlepSlepD080.expExclusionM1.dataUrl =
-#TChiChiSlepSlepD080.expExclusionP1.dataUrl =
-
+TChiChiSlepSlepD080.dataUrl = 'Not defined'
+TChiChiSlepSlepD080.setSources(dataLabels= ['obsExclusion', 'upperLimits'],
+                 dataFiles= ['orig/TChiChiSlepSlepD080_excl.txt', 'orig/TChiChiSlepSlepD080.txt'],
+                 dataFormats= ['txt', 'txt'],objectNames= [None, 'None'],indices= [None, 'None'],units= [None, 'fb'])
 #+++++++ next mass plane block ++++++++++++++
-TChiChiSlepSlep050 = TChiChiSlepSlep.addMassPlane(motherMass = y+x, interMass0 = 0.5*(y+x+x), lspMass = x)
-#----limit source----
-TChiChiSlepSlep050.obsUpperLimit.setSource( 'orig/TChiChiSlepSlep050.txt', 'txt', objectName = None, index = None )
-TChiChiSlepSlep050.obsUpperLimit.unit = 'fb'
-#TChiChiSlepSlep050.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
-#----exclusion source----
-TChiChiSlepSlep050.obsExclusion.setSource( 'orig/TChiChiSlepSlep050_excl.txt', 'txt' )
-#TChiChiSlepSlep050.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
-#TChiChiSlepSlep050.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
-#TChiChiSlepSlep050.expExclusion.setSource( path, filetype, objectName = None, index = None )
-#TChiChiSlepSlep050.expExclusionM1.setSource( path, filetype, objectName = None, index = None )
-#TChiChiSlepSlep050.expExclusionP1.setSource( path, filetype, objectName = None, index = None )
-#----global url settings ----
-#TChiChiSlepSlep050.dataUrl =
-#TChiChiSlepSlep050.histoDataUrl =
-#TChiChiSlepSlep050.exclusionDataUrl =
-#----figure----
+TChiChiSlepSlep050 = TChiChiSlepSlep.addMassPlane(2*[[y+x, 0.5*(y+x+x), x]])
 TChiChiSlepSlep050.figure = 'Fig.(aux) 1b'
 TChiChiSlepSlep050.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-036/fig_07b.png'
-#----limit url settings ----
-#TChiChiSlepSlep050.obsUpperLimit.dataUrl =
-#TChiChiSlepSlep050.expUpperLimit.dataUrl =
-#----exclusion url settings ----
-#TChiChiSlepSlep050.obsExclusion.dataUrl =
-#TChiChiSlepSlep050.obsExclusionM1.dataUrl =
-#TChiChiSlepSlep050.obsExclusionP1.dataUrl =
-#TChiChiSlepSlep050.expExclusion.dataUrl =
-#TChiChiSlepSlep050.expExclusionM1.dataUrl =
-#TChiChiSlepSlep050.expExclusionP1.dataUrl =
+TChiChiSlepSlep050.dataUrl = 'Not defined'
+TChiChiSlepSlep050.setSources(dataLabels= ['obsExclusion', 'upperLimits'],
+                 dataFiles= ['orig/TChiChiSlepSlep050_excl.txt', 'orig/TChiChiSlepSlep050.txt'],
+                 dataFormats= ['txt', 'txt'],objectNames= [None, 'None'],indices= [None, 'None'],units= [None, 'fb'])
+
+
 
 databaseCreator.create()

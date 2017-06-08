@@ -1,7 +1,7 @@
-dataType: efficiencyMap
 dataId: MET2_HT3_nb3
+dataType: efficiencyMap
 observedN: 18
 expectedBG: 23.2
 bgError: 3.8
-upperLimit: 0.506345431686*fb
-expectedUpperLimit: 0.685170638018*fb
+upperLimit: 5.0635E-01*fb
+expectedUpperLimit: 6.8517E-01*fb

@@ -1,7 +1,7 @@
-dataType: efficiencyMap
 dataId: SRSL1c
+dataType: efficiencyMap
 observedN: 12
 expectedBG: 12.3
 bgError: 4.0
-upperLimit: 0.578693684877*fb
-expectedUpperLimit: 0.577715271827*fb
+upperLimit: 5.787E-01*fb
+expectedUpperLimit: 5.777E-01*fb

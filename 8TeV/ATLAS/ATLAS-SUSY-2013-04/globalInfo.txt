@@ -1,6 +1,6 @@
+id: ATLAS-SUSY-2013-04
 sqrts: 8.0*TeV
 lumi: 20.3/fb
-id: ATLAS-SUSY-2013-04
 prettyName: ATLAS \ge 7 jets
 url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-04/
 arxiv: http://arxiv.org/abs/1308.1841
@@ -11,4 +11,3 @@ comment: there are exclusion lines for T5WWLSP060 and TWZWZ050050 also. Erratum:
 private: False
 implementedBy: Federico A
 lastUpdate: 2016/9/29
-
