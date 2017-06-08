@@ -38,7 +38,7 @@ from smodels_utils.dataPreparation.massPlaneObjects import x, y, z
 
 #+++++++ global info block ++++++++++++++
 info = MetaInfoInput('ATLAS-CONF-2013-061')
-info.comment = 'Superseeded by ATLAS-SUSY-2013-18 but publication has fewer topologies, e.g. T1btbt result will be lost'
+info.comment = 'Superseeded by ATLAS-SUSY-2013-18 but publication has fewer topologies, e.g. T1btbt is onyl in conf note.'
 info.sqrts = '8.0'
 info.private = False
 info.lumi = '20.1'

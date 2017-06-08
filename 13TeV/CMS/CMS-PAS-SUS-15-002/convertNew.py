@@ -47,6 +47,7 @@ info.arxiv = ''
 info.contact = ''
 info.publication = ''
 info.comment = 'Only CDS entry https://cds.cern.ch/record/2114817'
+info.supersededBy = 'CMS-SUS-15-002'
 
 
 #+++++++ dataset block ++++++++++++++

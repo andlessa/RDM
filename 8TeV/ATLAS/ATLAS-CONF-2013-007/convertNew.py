@@ -39,7 +39,7 @@ from smodels_utils.dataPreparation.massPlaneObjects import x, y, z
 
 #+++++++ global info block ++++++++++++++
 info = MetaInfoInput('ATLAS-CONF-2013-007')
-info.comment = 'A technical problem has been found in the pseudo-experiments used to make Table 4 in the conference note of March 1. superseded by ATLAS-SUSY-2013-09, fastlim maps contain more topologies for ATLAS-CONF-2013-007. Topologies included here are, T1, T1bbbb, T1bbbt, T1bbqq, T1bbtt, T1btbt, T1btqq, T1bttt, T1qqtt, T1tttt, T2, T2bb, T2bt, T2tt, T5bbbb, T5bbbt, T5btbt, T5tbtb, T5tbtt, T5tttt, TGQ, TGQbbq, TGQbtq, TGQQtt.'
+info.comment = 'A technical problem has been found in the pseudo-experiments used to make Table 4 in the conference note of March 1. (Partly) superseded by ATLAS-SUSY-2013-09, fastlim maps contain more topologies for ATLAS-CONF-2013-007. Topologies included here are, T1, T1bbbb, T1bbbt, T1bbqq, T1bbtt, T1btbt, T1btqq, T1bttt, T1qqtt, T1tttt, T2, T2bb, T2bt, T2tt, T5bbbb, T5bbbt, T5btbt, T5tbtb, T5tbtt, T5tttt, TGQ, TGQbbq, TGQbtq, TGQQtt.'
 info.sqrts = '8.0'
 info.private = False
 info.lumi = '20.7'

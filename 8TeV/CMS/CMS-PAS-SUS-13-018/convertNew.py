@@ -46,7 +46,7 @@ info.private = False
 info.arxiv = ''
 info.contact = ''
 info.publication = ''
-info.comment = 'Only https://cds.cern.ch/record/1693164?ln=it document,will be superseeded by CMS-SUS-14-001'
+info.comment = 'Only https://cds.cern.ch/record/1693164 document, will be superseeded by CMS-SUS-14-001'
 info.supersedes =''
 info.supersededBy = ''
 

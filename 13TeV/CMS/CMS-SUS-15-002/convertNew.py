@@ -9,12 +9,12 @@ import sys
 import os
 import argparse
 
-argparser = argparse.ArgumentParser(description =  
+argparser = argparse.ArgumentParser(description =
 'create info.txt, txname.txt, twiki.txt and sms.py')
-argparser.add_argument ('-utilsPath', '--utilsPath', 
+argparser.add_argument ('-utilsPath', '--utilsPath',
 help = 'path to the package smodels_utils',\
 type = str )
-argparser.add_argument ('-smodelsPath', '--smodelsPath', 
+argparser.add_argument ('-smodelsPath', '--smodelsPath',
 help = 'path to the package smodels_utils',\
 type = str )
 args = argparser.parse_args()
@@ -38,8 +38,8 @@ databaseCreator.ncpus = 1
 
 
 #+++++++ global info block ++++++++++++++
-info = MetaInfoInput('CMS-PAS-SUS-15-002')
-info.url = 'http://cms-results.web.cern.ch/cms-results/public-results/superseded/SUS-15-002/index.html'
+info = MetaInfoInput('CMS-SUS-15-002')
+info.url = 'http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-15-002/'
 info.sqrts = 13
 info.lumi = 2.2
 info.prettyName = ''
