@@ -1,6 +1,6 @@
+id: ATLAS-CONF-2012-166
 sqrts: 8.0*TeV
 lumi: 13.0/fb
-id: ATLAS-CONF-2012-166
 prettyName: ATLAS leptonic stop
 url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2012-166/
 supersededBy: ATLAS-SUSY-2013-15
@@ -8,4 +8,3 @@ comment: superseding publication contain more Data
 private: False
 implementedBy: Federico A
 lastUpdate: 2016/9/29
-

@@ -1,7 +1,7 @@
-dataType: efficiencyMap
 dataId: SR2jt
+dataType: efficiencyMap
 observedN: 26
 expectedBG: 23
 bgError: 4
-upperLimit: 5.06682967658*fb
-expectedUpperLimit: 4.25867429599*fb
+upperLimit: 5.08*fb
+expectedUpperLimit: 4.28*fb

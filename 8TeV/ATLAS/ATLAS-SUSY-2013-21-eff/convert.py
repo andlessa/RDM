@@ -10,11 +10,14 @@ import os
 import argparse
 import types
 
-argparser = argparse.ArgumentParser(description = \
+argparser = argparse.ArgumentParser(description =  
 'create info.txt, txname.txt, twiki.txt and sms.py')
 argparser.add_argument ('-utilsPath', '--utilsPath', 
 help = 'path to the package smodels_utils',\
-type = types.StringType)
+type = str)
+argparser.add_argument ('-smodelsPath', '--smodelsPath', 
+help = 'path to the package smodels_utils',\
+type = str)
 args = argparser.parse_args()
 
 if args.utilsPath:
@@ -24,11 +27,15 @@ else:
     sys.path.append(os.path.abspath(databaseRoot))
     from utilsPath import utilsPath
     utilsPath = databaseRoot + utilsPath
+if args.smodelsPath:
+    sys.path.append(os.path.abspath(args.smodelsPath))
 
 sys.path.append(os.path.abspath(utilsPath))
-from smodels_utils.dataPreparation.inputObjects import TxNameInput, MetaInfoInput
+from smodels_utils.dataPreparation.inputObjects import MetaInfoInput,DataSetInput
 from smodels_utils.dataPreparation.databaseCreation import databaseCreator
-from smodels_utils.dataPreparation.origPlotObjects import x, y
+from smodels_utils.dataPreparation.massPlaneObjects import x, y, z
+
+
 
 #+++++++ global info block ++++++++++++++
 info = MetaInfoInput('ATLAS-SUSY-2013-21')
@@ -38,179 +45,163 @@ info.lumi = 20.3
 info.prettyName = 'stop  to charm'
 info.private = False
 info.arxiv = 'http://arxiv.org/pdf/1407.0608v2.pdf'
-#info.contact =
 info.publication = 'http://journals.aps.org/prd/abstract/10.1103/PhysRevD.90.052008'
-#info.comment =
-#info.supersedes =
-#info.supersededBy =
 
+
+
+#+++++++ dataset block ++++++++++++++
+dataset = DataSetInput("C2")
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "C2", observedN = 71, expectedBG = 75 , bgError = 11, upperLimit = '1.270E+00*fb', expectedUpperLimit = '1.407E+00*fb')
 #+++++++ next txName block ++++++++++++++
-T2bbWW = TxNameInput('T2bbWW')
-T2bbWW.on.checked = ''
-T2bbWW.off.checked =''
-T2bbWW.on.constraint = "[[['b','W']],[['b','W']]]"
-T2bbWW.off.constraint = "[[['b','L','nu']],[['b','L','nu']]]+[[['b','jet','jet']],[['b','jet','jet']]]+[[['b','jet','jet']],[['b','L','nu']]]"
-T2bbWW.on.conditionDescription = None
-T2bbWW.off.conditionDescription = None
-T2bbWW.on.condition = None
-T2bbWW.off.condition = None 
-#T2bbWW.branchingRatio =
-
+T2cc = dataset.addTxName('T2cc')
+T2cc.constraint = "[[['c']],[['c']]]"
+T2cc.conditionDescription = None
+T2cc.condition = None
+T2cc.source = 'ATLAS'
 #+++++++ next mass plane block ++++++++++++++
-T2bbWW_1 = T2bbWW.addMassPlane(motherMass = x , lspMass = y )
-#---- new efficiency map -----
-#----figure----
-T2bbWW_1.figure =''
-T2bbWW_1.figureUrl =''
-#----exclusion source----
-T2bbWW_1.obsExclusion.setSource(   'orig/T2bbWWoff_Obs.txt',      'txt', objectName = None, index = None )
-T2bbWW_1.obsExclusionM1.setSource( 'orig/T2bbWWoff_ObsMinus.txt', 'txt', objectName = None, index = None )
-T2bbWW_1.obsExclusionP1.setSource( 'orig/T2bbWWoff_ObsPlus.txt',  'txt', objectName = None, index = None )
-#T2bbWW_1.expExclusion.setSource( path, type, objectName = None, index = None )
-#T2bbWW_1.expExclusionM1.setSource( path, type, objectName = None, index = None )
-#T2bbWW_1.expExclusionP1.setSource( path, type, objectName = None, index = None )
-#----limit source----
-T2bbWW_1.efficiencyMap.setSource( 'orig/T2bbWWoff_M1.dat', 'txt', objectName = None, index = None, dataset="M1" )
-T2bbWW_1.efficiencyMap.setStatistics( observedN=33054, expectedBG=33450, bgError=960 )
-#----global url settings ----
-T2bbWW_1.dataUrl =''
-#----efficiency map url settings ----
-T2bbWW_1.efficiencyMap.dataUrl =''
+T2cc_1 = T2cc.addMassPlane([[x,y]]*2)
+T2cc_1.addSource('obsExclusion','orig/T2cc_Obs.txt', 'txt')
+T2cc_1.addSource('obsExclusionM1','orig/T2cc_ObsMinus.txt', 'txt')
+T2cc_1.addSource('obsExclusionP1','orig/T2cc_ObsPlus.txt',  'txt')
+T2cc_1.addSource('efficiencyMap','orig/T2cc_C2.dat', 'txt')
+T2cc_1.dataUrl = None
+
+
+#+++++++ dataset block ++++++++++++++
+dataset = DataSetInput("C1")
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "C1", observedN = 208, expectedBG = 210 , bgError = 21, upperLimit = '2.440E+00*fb', expectedUpperLimit = '2.504E+00*fb')
+#+++++++ next txName block ++++++++++++++
+T2cc = dataset.addTxName('T2cc')
+T2cc.constraint = "[[['c']],[['c']]]"
+T2cc.conditionDescription = None
+T2cc.condition = None
+T2cc.source = 'ATLAS'
+#+++++++ next mass plane block ++++++++++++++
+T2cc_1 = T2cc.addMassPlane([[x,y]]*2)
+T2cc_1.addSource('obsExclusion','orig/T2cc_Obs.txt', 'txt')
+T2cc_1.addSource('obsExclusionM1','orig/T2cc_ObsMinus.txt', 'txt')
+T2cc_1.addSource('obsExclusionP1','orig/T2cc_ObsPlus.txt',  'txt')
+T2cc_1.addSource('efficiencyMap','orig/T2cc_C1.dat', 'txt')
+T2cc_1.dataUrl = None
+
+
+#+++++++ dataset block ++++++++++++++
+dataset = DataSetInput("M1")
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "M1", observedN = 33054, expectedBG = 33450 , bgError = 960, upperLimit = '8.218E+01*fb', expectedUpperLimit = '9.492E+01*fb')
+#+++++++ next txName block ++++++++++++++
+T2bbWW =  dataset.addTxName('T2bbWW')
+T2bbWW.constraint = "[[['b','W']],[['b','W']]]"
+T2bbWW.conditionDescription = None
+T2bbWW.condition = None
+T2bbWW.massConstraint = None
+T2bbWW.source = 'ATLAS'
+#+++++++ next txName block ++++++++++++++
+T2bbWWoff = dataset.addTxName('T2bbWWoff')
+T2bbWWoff.constraint = "[[['b','L','nu']],[['b','L','nu']]]+[[['b','jet','jet']],[['b','jet','jet']]]+[[['b','jet','jet']],[['b','L','nu']]]"
+T2bbWWoff.conditionDescription = None
+T2bbWWoff.condition = None 
+T2bbWWoff.massConstraint = [['dm <= 76.']]*2
+T2bbWWoff.source = 'ATLAS'
+#+++++++ next mass plane block ++++++++++++++
+T2bbWW_1 = T2bbWW.addMassPlane([[x,y]]*2)
+T2bbWW_1.addSource('obsExclusion','orig/T2bbWWoff_Obs.txt','txt')
+T2bbWW_1.addSource('obsExclusionM1','orig/T2bbWWoff_ObsMinus.txt', 'txt')
+T2bbWW_1.addSource('obsExclusionP1','orig/T2bbWWoff_ObsPlus.txt',  'txt')
+T2bbWW_1.addSource('efficiencyMap','orig/T2bbWWoff_M1.dat', 'txt')
+T2bbWW_1.dataUrl = None
+T2bbWWoff.addMassPlane(T2bbWW_1)
+#+++++++ next txName block ++++++++++++++
+T2bb = dataset.addTxName('T2bb')
+T2bb.constraint ="[[['b']],[['b']]]"
+T2bb.conditionDescription = None
+T2bb.condition = None
+T2bb.source = 'ATLAS'
+#+++++++ next mass plane block ++++++++++++++
+T2bb_1 = T2bb.addMassPlane([[x,y]]*2)
+T2bb_1.addSource('obsExclusion','orig/T2bb_Obs.txt', 'txt')
+T2bb_1.addSource('obsExclusionM1','orig/T2bb_ObsMinus.txt', 'txt')
+T2bb_1.addSource('obsExclusionP1','orig/T2bb_ObsPlus.txt', 'txt')
+T2bb_1.addSource('efficiencyMap','orig/T2bb_M1.dat', 'txt')
+T2bb_1.dataUrl = None
+
+
+#+++++++ dataset block ++++++++++++++
+dataset = DataSetInput("M3")
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "M3", observedN = 1776, expectedBG = 1770 , bgError = 81, upperLimit = '9.062E+00*fb', expectedUpperLimit = '8.845E+00*fb')
+#+++++++ next txName block ++++++++++++++
+T2bbWW =  dataset.addTxName('T2bbWW')
+T2bbWW.constraint = "[[['b','W']],[['b','W']]]"
+T2bbWW.conditionDescription = None
+T2bbWW.condition = None
+T2bbWW.massConstraint = None
+T2bbWW.source = 'ATLAS'
+#+++++++ next txName block ++++++++++++++
+T2bbWWoff = dataset.addTxName('T2bbWWoff')
+T2bbWWoff.constraint = "[[['b','L','nu']],[['b','L','nu']]]+[[['b','jet','jet']],[['b','jet','jet']]]+[[['b','jet','jet']],[['b','L','nu']]]"
+T2bbWWoff.conditionDescription = None
+T2bbWWoff.condition = None 
+T2bbWWoff.massConstraint = [['dm <= 76.']]*2
+T2bbWWoff.source = 'ATLAS'
+#+++++++ next mass plane block ++++++++++++++
+T2bbWW_1 = T2bbWW.addMassPlane([[x,y]]*2)
+T2bbWW_1.addSource('obsExclusion','orig/T2bbWWoff_Obs.txt','txt')
+T2bbWW_1.addSource('obsExclusionM1','orig/T2bbWWoff_ObsMinus.txt', 'txt')
+T2bbWW_1.addSource('obsExclusionP1','orig/T2bbWWoff_ObsPlus.txt',  'txt')
+T2bbWW_1.addSource('efficiencyMap','orig/T2bbWWoff_M3.dat', 'txt')
+T2bbWW_1.dataUrl = None
+T2bbWWoff.addMassPlane(T2bbWW_1)
+#+++++++ next txName block ++++++++++++++
+T2bb = dataset.addTxName('T2bb')
+T2bb.constraint ="[[['b']],[['b']]]"
+T2bb.conditionDescription = None
+T2bb.condition = None
+T2bb.source = 'ATLAS'
+#+++++++ next mass plane block ++++++++++++++
+T2bb_1 = T2bb.addMassPlane([[x,y]]*2)
+T2bb_1.addSource('obsExclusion','orig/T2bb_Obs.txt', 'txt')
+T2bb_1.addSource('obsExclusionM1','orig/T2bb_ObsMinus.txt', 'txt')
+T2bb_1.addSource('obsExclusionP1','orig/T2bb_ObsPlus.txt', 'txt')
+T2bb_1.addSource('efficiencyMap','orig/T2bb_M3.dat', 'txt')
+T2bb_1.dataUrl = None
+
+
+#+++++++ dataset block ++++++++++++++
+dataset = DataSetInput("M2")
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "M2", observedN = 8606, expectedBG = 8620 , bgError = 270, upperLimit = '2.719E+01*fb', expectedUpperLimit = '2.757E+01*fb')
+#+++++++ next txName block ++++++++++++++
+T2bbWW =  dataset.addTxName('T2bbWW')
+T2bbWW.constraint = "[[['b','W']],[['b','W']]]"
+T2bbWW.conditionDescription = None
+T2bbWW.condition = None
+T2bbWW.massConstraint = None
+T2bbWW.source = 'ATLAS'
+#+++++++ next txName block ++++++++++++++
+T2bbWWoff = dataset.addTxName('T2bbWWoff')
+T2bbWWoff.constraint = "[[['b','L','nu']],[['b','L','nu']]]+[[['b','jet','jet']],[['b','jet','jet']]]+[[['b','jet','jet']],[['b','L','nu']]]"
+T2bbWWoff.conditionDescription = None
+T2bbWWoff.condition = None 
+T2bbWWoff.massConstraint = [['dm <= 76.']]*2
+T2bbWWoff.source = 'ATLAS'
+#+++++++ next mass plane block ++++++++++++++
+T2bbWW_1 = T2bbWW.addMassPlane([[x,y]]*2)
+T2bbWW_1.addSource('obsExclusion','orig/T2bbWWoff_Obs.txt','txt')
+T2bbWW_1.addSource('obsExclusionM1','orig/T2bbWWoff_ObsMinus.txt', 'txt')
+T2bbWW_1.addSource('obsExclusionP1','orig/T2bbWWoff_ObsPlus.txt',  'txt')
+T2bbWW_1.addSource('efficiencyMap','orig/T2bbWWoff_M2.dat', 'txt')
+T2bbWW_1.dataUrl = None
+T2bbWWoff.addMassPlane(T2bbWW_1)
+#+++++++ next txName block ++++++++++++++
+T2bb = dataset.addTxName('T2bb')
+T2bb.constraint ="[[['b']],[['b']]]"
+T2bb.conditionDescription = None
+T2bb.condition = None
+T2bb.source = 'ATLAS'
+#+++++++ next mass plane block ++++++++++++++
+T2bb_1 = T2bb.addMassPlane([[x,y]]*2)
+T2bb_1.addSource('obsExclusion','orig/T2bb_Obs.txt', 'txt')
+T2bb_1.addSource('obsExclusionM1','orig/T2bb_ObsMinus.txt', 'txt')
+T2bb_1.addSource('obsExclusionP1','orig/T2bb_ObsPlus.txt', 'txt')
+T2bb_1.addSource('efficiencyMap','orig/T2bb_M2.dat', 'txt')
+T2bb_1.dataUrl = None
+
 databaseCreator.create()
-
-#---- new efficiency map -----
-#----figure----
-T2bbWW_1.figure =''
-T2bbWW_1.figureUrl =''
-#----limit source----
-T2bbWW_1.efficiencyMap.setSource( 'orig/T2bbWWoff_M2.dat', 'txt', objectName = None, index = None, dataset="M2" )
-T2bbWW_1.efficiencyMap.setStatistics( observedN=8606, expectedBG=8620, bgError=270 )
-#----global url settings ----
-T2bbWW_1.dataUrl =''
-#----efficiency map url settings ----
-T2bbWW_1.efficiencyMap.dataUrl =''
-databaseCreator.create(True)
-
-#---- new efficiency map -----
-#----figure----
-T2bbWW_1.figure =''
-T2bbWW_1.figureUrl =''
-#----limit source----
-T2bbWW_1.efficiencyMap.setSource( 'orig/T2bbWWoff_M3.dat', 'txt', objectName = None, index = None, dataset="M3" )
-T2bbWW_1.efficiencyMap.setStatistics( observedN=1776, expectedBG=1770, bgError=81 )
-#----global url settings ----
-T2bbWW_1.dataUrl =''
-#----efficiency map url settings ----
-T2bbWW_1.efficiencyMap.dataUrl =''
-databaseCreator.create(True)
-
-
-#+++++++ next txName block ++++++++++++++
-T2cc = TxNameInput('T2cc')
-T2cc.on.checked =''
-T2cc.off.checked =''
-T2cc.on.constraint = "[[['c']],[['c']]]"
-#T2cc.off.constraint =
-T2cc.on.conditionDescription = None
-#T2cc.off.conditionDescription =
-T2cc.on.condition = None
-#T2cc.off.condition =
-#T2cc.branchingRatio =
-
-#+++++++ next mass plane block ++++++++++++++
-T2cc_1 = T2cc.addMassPlane(motherMass =x , lspMass =y )
-#---- new efficiency map -----
-#----figure----
-T2cc_1.figure =''
-T2cc_1.figureUrl =''
-#----exclusion source----
-T2cc_1.obsExclusion.setSource(   'orig/T2cc_Obs.txt',      'txt', objectName = None, index = None )
-T2cc_1.obsExclusionM1.setSource( 'orig/T2cc_ObsMinus.txt', 'txt',objectName = None, index = None )
-T2cc_1.obsExclusionP1.setSource( 'orig/T2cc_ObsPlus.txt',  'txt', objectName = None, index = None )
-#T2cc_1.expExclusion.setSource( path, type, objectName = None, index = None )
-#T2cc_1.expExclusionM1.setSource( path, type, objectName = None, index = None )
-#T2cc_1.expExclusionP1.setSource( path, type, objectName = None, index = None )
-#----limit source----
-T2cc_1.efficiencyMap.setSource( 'orig/T2cc_C1.dat', 'txt', objectName = None, index = None, dataset="C1" )
-T2cc_1.efficiencyMap.setStatistics( observedN=208, expectedBG=210, bgError=21 )
-#----global url settings ----
-T2cc_1.dataUrl =''
-#----efficiency map url settings ----
-T2cc_1.efficiencyMap.dataUrl =''
-databaseCreator.create(True)
-
-#---- new efficiency map -----
-#----figure----
-T2cc_1.figure =''
-T2cc_1.figureUrl =''
-#----limit source----
-T2cc_1.efficiencyMap.setSource( 'orig/T2cc_C2.dat', 'txt', objectName = None, index = None, dataset="C2" )
-T2cc_1.efficiencyMap.setStatistics( observedN=71, expectedBG=75, bgError=11 )
-#----global url settings ----
-T2cc_1.dataUrl =''
-#----efficiency map url settings ----
-T2cc_1.efficiencyMap.dataUrl =''
-databaseCreator.create(True)
-
-
-#+++++++ next txName block ++++++++++++++
-T2bb = TxNameInput('T2bb')
-T2bb.on.checked =''
-T2bb.off.checked =''
-T2bb.on.constraint ="[[['b']],[['b']]]"
-#T2bb.off.constraint =
-T2bb.on.conditionDescription = None
-#T2bb.off.conditionDescription =
-T2bb.on.condition = None
-#T2bb.off.condition =
-#T2bb.branchingRatio =
-
-#+++++++ next mass plane block ++++++++++++++
-T2bb_1 = T2bb.addMassPlane(motherMass =x , lspMass =y )
-#---- new efficiency map -----
-#----figure----
-T2bb_1.figure =''
-T2bb_1.figureUrl =''
-#----exclusion source----
-T2bb_1.obsExclusion.setSource(   'orig/T2bb_Obs.txt',      'txt', objectName = None, index = None )
-T2bb_1.obsExclusionM1.setSource( 'orig/T2bb_ObsMinus.txt',      'txt', objectName = None, index = None )
-T2bb_1.obsExclusionP1.setSource( 'orig/T2bb_ObsPlus.txt',      'txt', objectName = None, index = None )
-#T2bb_1.expExclusion.setSource( path, type, objectName = None, index = None )
-#T2bb_1.expExclusionM1.setSource( path, type, objectName = None, index = None )
-#T2bb_1.expExclusionP1.setSource( path, type, objectName = None, index = None )
-#----limit source----
-T2bb_1.efficiencyMap.setSource( 'orig/T2bb_M1.dat', 'txt', objectName = None, index = None, dataset="M1" )
-T2bb_1.efficiencyMap.setStatistics( observedN=33054, expectedBG=33450, bgError=960 )
-#----global url settings ----
-T2bb_1.dataUrl =''
-#----efficiency map url settings ----
-T2bb_1.efficiencyMap.dataUrl =''
-databaseCreator.create(True)
-
-#---- new efficiency map -----
-#----figure----
-T2bb_1.figure =''
-T2bb_1.figureUrl =''
-#----limit source----
-T2bb_1.efficiencyMap.setSource( 'orig/T2bb_M2.dat', 'txt', objectName = None, index = None, dataset="M2" )
-T2bb_1.efficiencyMap.setStatistics( observedN=8606, expectedBG=8620, bgError=270 )
-#----global url settings ----
-T2bb_1.dataUrl =''
-#----efficiency map url settings ----
-T2bb_1.efficiencyMap.dataUrl =''
-databaseCreator.create(True)
-
-#---- new efficiency map -----
-#----figure----
-T2bb_1.figure =''
-T2bb_1.figureUrl =''
-#----limit source----
-T2bb_1.efficiencyMap.setSource( 'orig/T2bb_M3.dat','txt', objectName = None, index = None, dataset="M3" )
-T2bb_1.efficiencyMap.setStatistics( observedN=1776, expectedBG=1770, bgError=81 )
-#----global url settings ----
-T2bb_1.dataUrl =''
-#----efficiency map url settings ----
-T2bb_1.efficiencyMap.dataUrl =''
-databaseCreator.create(True)
-
-

@@ -8,7 +8,6 @@
 import sys
 import os
 import argparse
-import types
 
 argparser = argparse.ArgumentParser(description =  
 'create info.txt, txname.txt, twiki.txt and sms.py')
@@ -31,212 +30,130 @@ if args.smodelsPath:
     sys.path.append(os.path.abspath(args.smodelsPath))
 
 sys.path.append(os.path.abspath(utilsPath))
-from smodels_utils.dataPreparation.inputObjects import TxNameInput, MetaInfoInput
+from smodels_utils.dataPreparation.inputObjects import MetaInfoInput,DataSetInput
 from smodels_utils.dataPreparation.databaseCreation import databaseCreator
-from smodels_utils.dataPreparation.origPlotObjects import x, y
+from smodels_utils.dataPreparation.massPlaneObjects import x, y, z
+
+
 
 #+++++++ global info block ++++++++++++++
 info = MetaInfoInput('CMS-PAS-SUS-16-016')
 info.url = "http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-016/index.html"
 info.sqrts = 13
 info.lumi = 12.9
-#info.prettyName =
 info.private = False
-#info.arxiv =
-#info.contact =
-#info.publication =
 info.comment = "Only CDS entry https://cds.cern.ch/record/2205163"
-#info.supersedes =
-#info.supersededBy = 'SUS-16-016'
+
+
+#+++++++ dataset block ++++++++++++++
+dataset = DataSetInput('data')
+dataset.setInfo(dataType = 'upperLimit', dataId = None)
 
 #+++++++ next txName block ++++++++++++++
-T1bbbb = TxNameInput('T1bbbb')
-T1bbbb.on.checked =''
-T1bbbb.off.checked =''
-T1bbbb.on.constraint ="[[['b','b']],[['b','b']]]"
-#T1bbbb.off.constraint =
-T1bbbb.on.conditionDescription =None
-#T1bbbb.off.conditionDescription =
-T1bbbb.on.condition =None
-#T1bbbb.off.condition =
-#T1bbbb.branchingRatio =
-
+T1bbbb = dataset.addTxName('T1bbbb')
+T1bbbb.checked =''
+T1bbbb.constraint ="[[['b','b']],[['b','b']]]"
+T1bbbb.conditionDescription =None
+T1bbbb.condition =None
+T1bbbb.source = "CMS"
 #+++++++ next mass plane block ++++++++++++++
-T1bbbb_1 = T1bbbb.addMassPlane(motherMass = x, lspMass = y)
-#----figure----
+T1bbbb_1 = T1bbbb.addMassPlane(2*[[x, y]])
 T1bbbb_1.figure = "Figure 5-a"
 T1bbbb_1.figureUrl ="http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-016/CMS-PAS-SUS-16-016_Figure_005-a.png"
-#----limit source----
-T1bbbb_1.obsUpperLimit.setSource( "orig/CMS-PAS-SUS-16-016_Figure_005-a.root", "root", objectName = 'observed_limit_xs_noInterpolation', index = None )
-T1bbbb_1.expUpperLimit.setSource( 'orig/CMS-PAS-SUS-16-016_Figure_005-a.root', 'root', objectName = 'expected_limit_xs_noInterpolation', index = None )
-#T1bbbb_1.obsUpperLimit.setSource( "orig/CMS-PAS-SUS-16-016_Figure_005-a.root", "root", objectName = 'observed_limit_mu', index = None )
-#T1bbbb_1.expUpperLimit.setSource( 'orig/CMS-PAS-SUS-16-016_Figure_005-a.root', 'root', objectName = 'expected_limit_mu', index = None )
-
-#----exclusion source----
-T1bbbb_1.obsExclusion.setSource( "orig/T1bbbbObs.dat", "txt", objectName = None, index = None )
-#T1bbbb_1.obsExclusionM1.setSource( 'orig/CMS-PAS-SUS-16-016_Figure_005-a.root', 'root', objectName = 'ObsLimSdn', index = None )
-#T1bbbb_1.obsExclusionP1.setSource( 'orig/CMS-PAS-SUS-16-016_Figure_005-a.root', 'root', objectName = 'ObsLimSup', index = None )
-T1bbbb_1.expExclusion.setSource( 'orig/T1bbbbExp.dat', 'txt', objectName = None, index = None )
-#T1bbbb_1.obsUpperLimit.setSource( "orig/CMS-PAS-SUS-16-016_Figure_005-a.root", "root", objectName = 'observed_limit_mu_noInterpolation', index = None )
-#T1bbbb_1.expUpperLimit.setSource( 'orig/CMS-PAS-SUS-16-016_Figure_005-a.root', 'root', objectName = 'expected_limit_mu_noInterpolation', index = None )
-#---- global url settings ----
 T1bbbb_1.dataUrl = "http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-016/index.html"
-
-#----limit url settings ----
 T1bbbb_1.histoDataUrl ="http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-016/index.html"
-T1bbbb_1.obsUpperLimit.dataUrl = "http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-016/CMS-PAS-SUS-16-016_Figure_005-a.root"
-T1bbbb_1.expUpperLimit.dataUrl =  "http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-016/CMS-PAS-SUS-16-016_Figure_005-a.root"
-
-#----exclusion url settings ----
+T1bbbb_1.dataUrl = "http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-016/CMS-PAS-SUS-16-016_Figure_005-a.root"
 T1bbbb_1.exclusionDataUrl ="http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-016/index.html"
-T1bbbb_1.obsExclusion.dataUrl =  'http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-016/CMS-PAS-SUS-16-016_Figure_005-a.root'
-T1bbbb_1.obsExclusionM1.dataUrl = 'http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-016/CMS-PAS-SUS-16-016_Figure_005-a.roott'
-T1bbbb_1.obsExclusionP1.dataUrl ='http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-016/CMS-PAS-SUS-16-016_Figure_005-a.root'
-T1bbbb_1.expExclusion.dataUrl ='http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-016/CMS-PAS-SUS-16-016_Figure_005-a.root'
-T1bbbb_1.expExclusionM1.dataUrl ='http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-016/CMS-PAS-SUS-16-016_Figure_005-a.root'
-T1bbbb_1.expExclusionP1.dataUrl = 'http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-016/CMS-PAS-SUS-16-016_Figure_005-a.root'
+T1bbbb_1.setSources(dataLabels= ['expExclusion', 'expectedUpperLimits', 'obsExclusion', 'upperLimits'],
+                 dataFiles= ['orig/T1bbbbExp.dat', 'orig/CMS-PAS-SUS-16-016_Figure_005-a.root', 'orig/T1bbbbObs.dat', 'orig/CMS-PAS-SUS-16-016_Figure_005-a.root'],
+                 dataFormats= ['txt', 'root', 'txt', 'root'],objectNames= ['None', 'expected_limit_xs_noInterpolation', 'None', 'observed_limit_xs_noInterpolation'])
 
 #+++++++ next txName block ++++++++++++++
-T1tttt = TxNameInput('T1tttt')
-T1tttt.on.checked =''
-T1tttt.off.checked =''
-T1tttt.on.constraint ="[[['t','t']],[['t','t']]]"
-T1tttt.off.constraint = "[[['b','W','b','W']],[['b','W','b','W']]]" 
-T1tttt.on.conditionDescription =None
-T1tttt.off.conditionDescription =None
-T1tttt.on.condition =None
-T1tttt.off.condition =None
-#T1tttt.branchingRatio =
-
+T1tttt = dataset.addTxName('T1tttt')
+T1tttt.checked =''
+T1tttt.constraint ="[[['t','t']],[['t','t']]]"
+T1tttt.conditionDescription =None
+T1tttt.condition =None
+T1tttt.source = "CMS"
+T1tttt.massConstraint = None
+T1ttttoff = dataset.addTxName('T1ttttoff')
+T1ttttoff.checked =''
+T1ttttoff.constraint = "[[['b','W','b','W']],[['b','W','b','W']]]" 
+T1ttttoff.conditionDescription =None
+T1ttttoff.condition =None
+T1ttttoff.massConstraint = [['dm <= 338.0'], ['dm <= 338.0']]
+T1ttttoff.source = "CMS"
 #+++++++ next mass plane block ++++++++++++++
-T1tttt_1 = T1tttt.addMassPlane(motherMass = x, lspMass = y)
-#----figure----
+T1tttt_1 = T1tttt.addMassPlane(2*[[x, y]])
 T1tttt_1.figure = "Figure 5-b"
 T1tttt_1.figureUrl ="http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-016/index.html#Figure_005-b"
-#----limit source----
-T1tttt_1.obsUpperLimit.setSource( 'orig/CMS-PAS-SUS-16-016_Figure_005-b.root', 'root', objectName = 'observed_limit_xs_noInterpolation', index = None )
-T1tttt_1.expUpperLimit.setSource( 'orig/CMS-PAS-SUS-16-016_Figure_005-b.root', 'root', objectName = 'expected_limit_xs_noInterpolation', index = None )
-#----exclusion source----
-T1tttt_1.obsExclusion.setSource( 'orig/T1ttttObs.dat', 'txt', objectName = None, index = None )
-#T1tttt_1.obsExclusionM1.setSource( 'orig/CMS-PAS-SUS-16-016_Figure_005-b.root', 'root', objectName = 'ObsLimSdn', index = None )
-#T1tttt_1.obsExclusionP1.setSource( 'orig/CMS-PAS-SUS-16-016_Figure_005-b.root', 'root', objectName = 'ObsLimSup', index = None )
-T1tttt_1.expExclusion.setSource( 'orig/T1ttttExp.dat', 'txt', objectName = None, index = None )
-#T1tttt_1.expExclusionM1.setSource( 'orig/CMS-PAS-SUS-16-016_Figure_005-b.root', 'root', objectName = 'ExpLimSdn', index = None )
-#T1tttt_1.expExclusionP1.setSource( 'orig/CMS-PAS-SUS-16-016_Figure_005-b.root', 'root', objectName = 'ExpLimSup', index = None  )
-#----global url settings ----
 T1tttt_1.dataUrl = "http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-016/index.html"
-#----limit url settings ----
 T1tttt_1.histoDataUrl ="http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-016/index.html"
-T1tttt_1.obsUpperLimit.dataUrl = "http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-016/CMS-PAS-SUS-16-016_Figure_005-b.root"
-#T1tttt_1.expUpperLimit.dataUrl = 
-#----exclusion url settings ----
+T1tttt_1.dataUrl = "http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-016/CMS-PAS-SUS-16-016_Figure_005-b.root"
 T1tttt_1.exclusionDataUrl ="http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-016/index.html"
-T1tttt_1.obsExclusion.dataUrl =  'http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-016/CMS-PAS-SUS-16-016_Figure_005-b.root'
-T1tttt_1.obsExclusionM1.dataUrl = 'http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-016/CMS-PAS-SUS-16-016_Figure_005-b.roott'
-T1tttt_1.obsExclusionP1.dataUrl ='http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-016/CMS-PAS-SUS-16-016_Figure_005-b.root'
-T1tttt_1.expExclusion.dataUrl ='http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-016/CMS-PAS-SUS-16-016_Figure_005-b.root'
-T1tttt_1.expExclusionM1.dataUrl ='http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-016/CMS-PAS-SUS-16-016_Figure_005-b.root'
-T1tttt_1.expExclusionP1.dataUrl = 'http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-016/CMS-PAS-SUS-16-016_Figure_005-b.root'
+T1tttt_1.setSources(dataLabels= ['expExclusion', 'expectedUpperLimits', 'obsExclusion', 'upperLimits'],
+                 dataFiles= ['orig/T1ttttExp.dat', 'orig/CMS-PAS-SUS-16-016_Figure_005-b.root', 'orig/T1ttttObs.dat', 'orig/CMS-PAS-SUS-16-016_Figure_005-b.root'],
+                 dataFormats= ['txt', 'root', 'txt', 'root'],objectNames= ['None', 'expected_limit_xs_noInterpolation', 'None', 'observed_limit_xs_noInterpolation'])
+T1ttttoff.addMassPlane(T1tttt_1)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#+++++++ next txName block ++++++++++++++
+T2 = dataset.addTxName('T2bb')
+T2.checked =''
+T2.constraint ="[[['b']],[['b']]]"
+T2.conditionDescription =None
+T2.condition =None
+T2.source = "CMS"
+T2.massConstraint = None
+"""
+T2off = dataset.addTxName('T2off')
+T2off.checked =''
+T2off.constraint =None
+T2off.conditionDescription =None
+T2off.condition =None
+T2off.massConstraint = [['dm >= 0.0'], ['dm >= 0.0']]
+T2off.source = "CMS"
+"""
 #+++++++ next mass plane block ++++++++++++++
-
-T2 = TxNameInput('T2bb')
-T2.on.checked =''
-T2.off.checked =''
-T2.on.constraint ="[[['b']],[['b']]]"
-T2.off.constraint =None
-T2.on.conditionDescription =None
-T2.off.conditionDescription =None
-T2.on.condition =None
-T2.off.condition =None
-#T2.branchingRatio =
-
-#+++++++ next mass plane block ++++++++++++++
-T2_1 = T2.addMassPlane(motherMass = x, lspMass = y)
-#----figure----
+T2_1 = T2.addMassPlane(2*[[x, y]])
 T2_1.figure = "Figure 5-c"
 T2_1.figureUrl ="http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-016/CMS-PAS-SUS-16-016_Figure_005-c.png"
-#----limit source----
-T2_1.obsUpperLimit.setSource( 'orig/CMS-PAS-SUS-16-016_Figure_005-c.root', 'root', objectName = 'observed_limit_xs_noInterpolation', index = None )
-T2_1.expUpperLimit.setSource( 'orig/CMS-PAS-SUS-16-016_Figure_005-c.root', 'root', objectName = 'expected_limit_xs_noInterpolation', index = None )
-#----exclusion source----
-T2_1.obsExclusion.setSource( 'orig/T2bbObs.dat', 'txt', objectName = None, index = None )
-#T2_1.obsExclusionM1.setSource( 'orig/CMS-PAS-SUS-16-016_Figure_005-c.root', 'root', objectName = 'ObsLimSdn', index = None )
-#T2_1.obsExclusionP1.setSource( 'orig/CMS-PAS-SUS-16-016_Figure_005-c.root', 'root', objectName = 'ObsLimSup', index = None )
-T2_1.expExclusion.setSource( 'orig/T2bbExp.dat', 'txt', objectName = None, index = None )
-#T2_1.expExclusionM1.setSource( 'orig/CMS-PAS-SUS-16-016_Figure_005-c.root', 'root', objectName = 'ExpLimSdn', index = None )
-#T2_1.expExclusionP1.setSource( 'orig/CMS-PAS-SUS-16-016_Figure_005-c.root', 'root', objectName = 'ExpLimSup', index = None  )
-#----global url settings ----
 T2_1.dataUrl = "http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-016/index.html"
-#----limit url settings ----
 T2_1.histoDataUrl ="http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-016/index.html"
-T2_1.obsUpperLimit.dataUrl = "http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-016/CMS-PAS-SUS-16-016_Figure_005-c.root"
-#T2_1.expUpperlimit.dataUrl =
-#----exclusion url settings ----
+T2_1.dataUrl = "http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-016/CMS-PAS-SUS-16-016_Figure_005-c.root"
 T2_1.exclusionDataUrl ="http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-016/index.html"
-T2_1.obsExclusion.dataUrl =  'http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-016/CMS-PAS-SUS-16-016_Figure_005-c.root'
-T2_1.obsExclusionM1.dataUrl = 'http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-016/CMS-PAS-SUS-16-016_Figure_005-c.roott'
-T2_1.obsExclusionP1.dataUrl ='http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-016/CMS-PAS-SUS-16-016_Figure_005-c.root'
-T2_1.expExclusion.dataUrl ='http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-016/CMS-PAS-SUS-16-016_Figure_005-c.root'
-T2_1.expExclusionM1.dataUrl ='http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-016/CMS-PAS-SUS-16-016_Figure_005-c.root'
-T2_1.expExclusionP1.dataUrl = 'http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-016/CMS-PAS-SUS-16-016_Figure_005-c.root'
+T2_1.setSources(dataLabels= ['expExclusion', 'expectedUpperLimits', 'obsExclusion', 'upperLimits'],
+                 dataFiles= ['orig/T2bbExp.dat', 'orig/CMS-PAS-SUS-16-016_Figure_005-c.root', 'orig/T2bbObs.dat', 'orig/CMS-PAS-SUS-16-016_Figure_005-c.root'],
+                 dataFormats= ['txt', 'root', 'txt', 'root'],objectNames= ['None', 'expected_limit_xs_noInterpolation', 'None', 'observed_limit_xs_noInterpolation'])
+# T2off.addMassPlane(T2_1)
 
-
-
-T2tt = TxNameInput('T2tt')
-T2tt.on.checked =''
-T2tt.off.checked =''
-T2tt.on.constraint ="[[['t']],[['t']]]"
-T2tt.off.constraint = "[[['b','W']],[['b','W']]]"
-T2tt.on.conditionDescription =None
-T2tt.off.conditionDescription =None
-T2tt.on.condition =None
-T2tt.off.condition =None
-#T2.branchingRatio =    
-
+#+++++++ next txName block ++++++++++++++
+T2tt = dataset.addTxName('T2tt')
+T2tt.checked =''
+T2tt.constraint ="[[['t']],[['t']]]"
+T2tt.conditionDescription =None
+T2tt.condition =None
+T2tt.source = "CMS"
+T2tt.massConstraint = None
+T2ttoff = dataset.addTxName('T2ttoff')
+T2ttoff.checked =''
+T2ttoff.constraint = "[[['b','W']],[['b','W']]]"
+T2ttoff.conditionDescription =None
+T2ttoff.condition =None
+T2ttoff.massConstraint = [['dm <= 169.0'], ['dm <= 169.0']]
+T2ttoff.source = "CMS"
 #+++++++ next mass plane block ++++++++++++++
-T2tt_2 = T2tt.addMassPlane(motherMass = x, lspMass = y)
-#----figure----
+T2tt_2 = T2tt.addMassPlane(2*[[x, y]])
 T2tt_2.figure = "Figure 5-d"
 T2tt_2.figureUrl ="http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-016/CMS-PAS-SUS-16-016_Figure_005-d.png"
-#----limit source----
-T2tt_2.obsUpperLimit.setSource( 'orig/CMS-PAS-SUS-16-016_Figure_005-d.root', 'root', objectName = "observed_limit_xs_noInterpolation", index = None )
-T2tt_2.expUpperLimit.setSource( 'orig/CMS-PAS-SUS-16-016_Figure_005-d.root', 'root', objectName = 'expected_limit_xs_noInterpolation', index = None )
-#----exclusion source----
-T2tt_2.obsExclusion.setSource( 'orig/T2ttObs.dat', 'txt', objectName = None, index = None )
-#T2_2.obsExclusionM1.setSource( 'orig/CMS-PAS-SUS-16-016_Figure_005-d.root', 'root', objectName = 'ObsLimSdn', index = None )
-#T2_2.obsExclusionP1.setSource( 'orig/CMS-PAS-SUS-16-016_Figure_005-d.root', 'root', objectName = 'ObsLimSup', index = None )
-T2tt_2.expExclusion.setSource( 'orig/T2ttExp.dat', 'txt', objectName = None, index = None )
-#T2_2.expExclusionM1.setSource( 'orig/CMS-PAS-SUS-16-016_Figure_005-d.root', 'root', objectName = 'ExpLimSdn', index = None )
-#T2_2.expExclusionP1.setSource( 'orig/CMS-PAS-SUS-16-016_Figure_005-d.root', 'root', objectName = 'ExpLimSup', index = None  )
-#----global url settings ----
 T2tt_2.dataUrl = "http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-016/index.html"
-#----limit url settings ----
 T2tt_2.histoDataUrl ="http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-016/index.html"
-T2tt_2.obsUpperLimit.dataUrl = "http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-016/CMS-PAS-SUS-16-016_Figure_005-d.root"
-#T2_2.expUpperlimit.dataUrl =
-#----exclusion url settings ----
+T2tt_2.dataUrl = "http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-016/CMS-PAS-SUS-16-016_Figure_005-d.root"
 T2tt_2.exclusionDataUrl ="http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-016/index.html"
-T2tt_2.obsExclusion.dataUrl =  'http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-016/CMS-PAS-SUS-16-016_Figure_005-d.root'
-T2tt_2.obsExclusionM1.dataUrl = 'http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-016/CMS-PAS-SUS-16-016_Figure_005-d.roott'
-T2tt_2.obsExclusionP1.dataUrl ='http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-016/CMS-PAS-SUS-16-016_Figure_005-d.root'
-T2tt_2.expExclusion.dataUrl ='http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-016/CMS-PAS-SUS-16-016_Figure_005-d.root'
-T2tt_2.expExclusionM1.dataUrl ='http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-016/CMS-PAS-SUS-16-016_Figure_005-d.root'
-T2tt_2.expExclusionP1.dataUrl = 'http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-016/CMS-PAS-SUS-16-016_Figure_005-d.root'
+T2tt_2.setSources(dataLabels= ['expExclusion', 'expectedUpperLimits', 'obsExclusion', 'upperLimits'],
+                 dataFiles= ['orig/T2ttExp.dat', 'orig/CMS-PAS-SUS-16-016_Figure_005-d.root', 'orig/T2ttObs.dat', 'orig/CMS-PAS-SUS-16-016_Figure_005-d.root'],
+                 dataFormats= ['txt', 'root', 'txt', 'root'],objectNames= ['None', 'expected_limit_xs_noInterpolation', 'None', 'observed_limit_xs_noInterpolation'])
+T2ttoff.addMassPlane(T2tt_2)
+
 
 
 databaseCreator.create()

@@ -1,6 +1,6 @@
+id: ATLAS-SUSY-2015-02
 sqrts: 13*TeV
 lumi: 3.2/fb
-id: ATLAS-SUSY-2015-02
 prettyName: Top 1l
 url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2015-02/
 arxiv: http://arxiv.org/abs/1606.03903
@@ -9,4 +9,3 @@ comment: Very weird exclusion due to best CLs selection, and fluctuation in the 
 private: False
 implementedBy: Federico Ambrogi
 lastUpdate: 2017/2/27
-

@@ -1,9 +1,8 @@
+id: CMS-PAS-SUS-16-024
 sqrts: 13*TeV
 lumi: 12.9/fb
-id: CMS-PAS-SUS-16-024
 url: http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-024/
 comment: https://cds.cern.ch/record/2205168
 private: False
-implementedBy: Andre Lessa
-lastUpdate: 2017/5/25
-
+implementedBy: Federico Ambrogi
+lastUpdate: 2017/3/1

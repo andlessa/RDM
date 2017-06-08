@@ -1,6 +1,6 @@
+id: ATLAS-SUSY-2013-11
 sqrts: 8.0*TeV
 lumi: 20.3/fb
-id: ATLAS-SUSY-2013-11
 prettyName: ATLAS dilepton
 url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-11/
 arxiv: http://arxiv.org/abs/1403.5294
@@ -9,6 +9,5 @@ contact: SModelS
 supersedes: ATLAS-CONF-2013-049
 comment: TSlepSlep,TChiWW and TChipChimSlepSnu efficiency maps created by the SModelS collaboration using MadAnalysis5
 private: False
-implementedBy: Federico Ambrogi
-lastUpdate: 2017/3/17
-
+implementedBy: Andre Lessa
+lastUpdate: 2017/5/31

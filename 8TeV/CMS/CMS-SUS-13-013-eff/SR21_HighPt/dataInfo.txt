@@ -1,7 +1,7 @@
-dataType: efficiencyMap
 dataId: SR21_HighPt
+dataType: efficiencyMap
 observedN: 12
 expectedBG: 7.06
 bgError: 2.5
-upperLimit: 0.702366232493*fb
-expectedUpperLimit: 0.436028522062*fb
+upperLimit: 7.015E-01*fb
+expectedUpperLimit: 4.335E-01*fb

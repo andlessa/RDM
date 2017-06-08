@@ -1,6 +1,6 @@
+id: ATLAS-SUSY-2015-01
 sqrts: 13*TeV
 lumi: 3.2/fb
-id: ATLAS-SUSY-2015-01
 prettyName: 2b
 url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2015-01/
 arxiv: https://arxiv.org/abs/1606.08772v2
@@ -9,4 +9,3 @@ contact: ATLAS collaboration
 private: False
 implementedBy: Andre Lessa
 lastUpdate: 2017/5/11
-

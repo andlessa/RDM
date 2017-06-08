@@ -1,7 +1,7 @@
 database.pcl
+__pycache__
 utilsPath.pyc
 */*/*/validation/smodels.log
+*/*/*/validation/*.png
+*/*/*/validation/*pretty.root
 *~
-*/*/*/validation/*_pretty.root
-*/*/*/validation/*_pretty.png
-__pycache__

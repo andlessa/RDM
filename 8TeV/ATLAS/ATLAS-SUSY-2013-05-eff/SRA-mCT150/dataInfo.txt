@@ -1,7 +1,7 @@
-dataType: efficiencyMap
 dataId: SRA-mCT150
+dataType: efficiencyMap
 observedN: 102
 expectedBG: 94
 bgError: 13
-upperLimit: 1.94318510327*fb
-expectedUpperLimit: 1.63868041824*fb
+upperLimit: 1.945E+00*fb
+expectedUpperLimit: 1.632E+00*fb

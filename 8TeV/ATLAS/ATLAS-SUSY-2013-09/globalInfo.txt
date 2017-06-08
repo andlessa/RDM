@@ -1,6 +1,6 @@
+id: ATLAS-SUSY-2013-09
 sqrts: 8.0*TeV
 lumi: 20.3/fb
-id: ATLAS-SUSY-2013-09
 prettyName: ATLAS SS+b
 url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-09/
 arxiv: http://arxiv.org/abs/1404.2500
@@ -11,4 +11,3 @@ comment: exclusionLines digitized by hand (MT). CONF-2013-007 has many more topo
 private: False
 implementedBy: Federico A
 lastUpdate: 2016/9/29
-

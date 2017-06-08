@@ -1,5 +1,5 @@
-dataType: efficiencyMap
 dataId: SRnoZa
+dataType: efficiencyMap
 observedN: 101
 expectedBG: 96.0
 bgError: 19.0

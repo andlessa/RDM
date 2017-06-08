@@ -2,19 +2,24 @@
 
 """
 .. module:: convert
-   :synopsis: used to create info.dat and the <txname>.dat files.
+   :synopsis: used to create info.txt and the <txname>.txt files.
 
 """
 import sys
 import os
 import argparse
-import types
 
 argparser = argparse.ArgumentParser(description =
-'create info.dat, txname.dat, twiki.dat and sms.py')
+'create info.txt, txname.txt, twiki.txt and sms.py')
 argparser.add_argument ('-utilsPath', '--utilsPath',
 help = 'path to the package smodels_utils',\
-type = types.StringType)
+type = str )
+argparser.add_argument ('-smodelsPath', '--smodelsPath',
+help = 'path to the package smodels_utils',\
+type = str )
+argparser.add_argument ('-t', '--ntoys',
+            help = 'number of toys to throw',\
+            type = int, default=200000  )
 args = argparser.parse_args()
 
 if args.utilsPath:
@@ -24,1480 +29,375 @@ else:
     sys.path.append(os.path.abspath(databaseRoot))
     from utilsPath import utilsPath
     utilsPath = databaseRoot + utilsPath
+if args.smodelsPath:
+    sys.path.append(os.path.abspath(args.smodelsPath))
 
 sys.path.append(os.path.abspath(utilsPath))
-from smodels_utils.dataPreparation.inputObjects import TxNameInput, MetaInfoInput
+from smodels_utils.dataPreparation.inputObjects import MetaInfoInput,DataSetInput
 from smodels_utils.dataPreparation.databaseCreation import databaseCreator
-from smodels_utils.dataPreparation.origPlotObjects import x, y
+from smodels_utils.dataPreparation.massPlaneObjects import x, y, z
+
+## databaseCreator.ncpus = 2
+DataSetInput.ntoys = args.ntoys
 
 #+++++++ global info block ++++++++++++++
 info = MetaInfoInput('CMS-SUS-13-012')
-#info.comment = 'T1,T2,T1tttt official efficiency maps from the CMS collaboration; T5WW and T5ZZ created by the SModelS collaboration using MadAnalysis5' 
-info.comment = 'T1,T2,T1tttt official efficiency maps from the CMS collaboration; TChiWZ,TChiWW,TChiZZ,T1btbt,T2tt,T2bb,T1bbbb,T5,T5WW,T5ZZ,T6bbWW,T6bbWWoff,T5bbbb,T5tttt created by the SModelS collaboration using MadAnalysis5'
+info.comment = 'T1,T2,T1tttt official efficiency maps from the CMS collaboration; T5WW and T5ZZ created by the SModelS collaboration using MadAnalysis5'
 info.sqrts = '8.0'
 info.private = False
 info.lumi = '19.5'
 info.publication = 'JHEP06(2014)055'
 info.url = 'https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS13012'
-#info.superseded_by =
 info.arxiv = 'http://arxiv.org/abs/1402.4770'
 info.contact = 'cms-pag-conveners-sus@NOSPAMcernSPAMNOT.ch, SModelS collaboration'
-info.prettyName = ''
 info.implementedBy = 'Federico A.'
-# info.supersedes =
 
+def add ( dataset ):
+    #+++++++ next txName block ++++++++++++++
+    T5WW = dataset.addTxName('T5WW')
+    T5WW.checked = ' '
+    T5WW.constraint ="[[['jet','jet'],['W']],[['jet','jet'],['W']]]"
+    T5WW.conditionDescription ="None"
+    T5WW.condition ="None"
+    T5WW.massConstraint = None
+    T5WW.source = 'SModelS'
+    T5WW.dataUrl = None
+    #+++++++ next txName block ++++++++++++++
+    T5WWoff = dataset.addTxName('T5WWoff')
+    T5WWoff.constraint ="2.23*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
+    T5WWoff.conditionDescription ="None"
+    T5WWoff.condition =None
+    T5WWoff.dataUrl = None
+    T5WWoff.massConstraint = [['dm >= 0.0','dm <= 76.']]*2
+    T5WWoff.source = 'SModelS'
+    #+++++++ next mass plane block ++++++++++++++
 
-#+++++++ next txName block ++++++++++++++
-T2 = TxNameInput('T2')
-T2.on.checked =''
-T2.on.constraint ="[[['jet']],[['jet']]]"
-T2.on.conditionDescription ="None"
-T2.on.condition ="None"
-#+++++++ next mass plane block ++++++++++++++
-T2qq = T2.addMassPlane(motherMass = x, lspMass = y)
-#---- new efficiency map -----
-#----figure----
-T2qq.figure = "Fig_7a"
-T2qq.figureUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13012/Fig_7a.pdf"
-#----exclusion source----
-T2qq.obsExclusion.setSource( "orig/SUS13012_XsecLimits_T2qq.root", "root", objectName = "combined_obsExclOneTimesProspino", index = None )
-T2qq.obsExclusionM1.setSource( "orig/SUS13012_XsecLimits_T2qq.root", "root", objectName = "combined_obsExclMinusSysErrProspino", index = None )
-T2qq.obsExclusionP1.setSource( "orig/SUS13012_XsecLimits_T2qq.root", "root", objectName = "combined_obsExclPlusSysErrProspino", index = None )
-T2qq.expExclusion.setSource( "orig/SUS13012_XsecLimits_T2qq.root", "root", objectName = "combined_expExclOneTimesProspino", index = None )
-T2qq.expExclusionM1.setSource( "orig/SUS13012_XsecLimits_T2qq.root", "root", objectName = "combined_expExclMinusOneSigmaProspino", index = None )
-T2qq.expExclusionP1.setSource( "orig/SUS13012_XsecLimits_T2qq.root", "root", objectName = "combined_expExclPlusOneSigmaProspino", index = None)
+    T5WW_x05 = T5WW.addMassPlane([[x,0.5*(x+y),y]]*2)
+    #T5WW_x05.dataUrl = None
+    T5WW_x05.addSource('obsExclusion', "orig/CMS_T5VV_x05.dat", "txt")
+    T5WW_x05.addSource('efficiencyMap',"orig/T5WW_x05/MA5_EM_T5WW_x05_%s.dat" % dataset._name, "txt")
+    #+++++++ next mass plane block ++++++++++++++
+    T5WW_x005 = T5WW.addMassPlane([[x,0.05*x + 0.95*y,y]]*2)
+    #T5WW_x005.dataUrl = None
+    T5WW_x005.addSource('efficiencyMap',"orig/T5WW_x005/MA5_EM_T5WW_Glu005Neu095_%s.dat" % dataset._name, "txt")
+    #+++++++ next mass plane block ++++++++++++++
+    T5WW_x095 = T5WW.addMassPlane([[x,0.95*x + 0.05*y,y]]*2)
+    #T5WW_x095.dataUrl = None
+    T5WW_x095.addSource('efficiencyMap',"orig/T5WW_x095/MA5_EM_T5WW_Glu095Neu005_%s.dat" % dataset._name, "txt")
+    T5WW_d077 = T5WW.addMassPlane([[x,y+77,y]]*2)
+    #T5WW_d077.dataUrl = None
+    T5WW_d077.addSource('efficiencyMap',"orig/cms_sus_13_012_T5WW_77_EM_MAPS/MA5_EM_T5WW_77_%s.dat" % dataset._name, "txt")
+    T5WW_d010 = T5WW.addMassPlane([[x,y+10,y]]*2)
+    #T5WW_d010.dataUrl = None
+    T5WW_d010.addSource('efficiencyMap',"orig/cms_sus_13_012_T5WW_10_EM_MAPS/MA5_EM_T5WW_10_%s.dat" % dataset._name, "txt")
+    T5WWoff.addMassPlane(T5WW_d077)
+    T5WWoff.addMassPlane(T5WW_d010)
+    T5WWoff.addMassPlane(T5WW_x05)
+    T5WWoff.addMassPlane(T5WW_x005)
+    T5WWoff.addMassPlane(T5WW_x095)
+    TChiZZ = dataset.addTxName('TChiZZ')
+    TChiZZ.checked = ''
+    TChiZZ.dataUrl = None
+    TChiZZ.constraint = "[[['Z']],[['Z']]]"
+    TChiZZ.conditionDescription ="None"
+    TChiZZ.condition ="None"
+    TChiZZ.massConstraint = None
+    TChiZZ.source = 'SModelS'
+    TChiZZ.massConstraint = None
+    TChiZZ_1 = TChiZZ.addMassPlane( [[x,y]]*2 )
+    TChiZZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_%s.dat" % dataset, "txt", objectName ="None", index = None )
+    TChiZZ_1.dataUrl = None
+    TChiWZ = dataset.addTxName('TChiWZ')
+    TChiWZ.checked = ''
+    TChiWZ.constraint = "[[['W']],[['Z']]]"
+    TChiWZ.conditionDescription ="None"
+    TChiWZ.condition ="None"
+    TChiWZ.source = 'SModelS'
+    TChiWZ.massConstraint = None
+    TChiWZ_1 = TChiWZ.addMassPlane( [[x,y]]*2 )
+    TChiWZ_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_%s.dat" % dataset, "txt", objectName ="None", index = None )
+    TChiWZ_1.dataUrl = None
+    TChiWW = dataset.addTxName('TChiWW')
+    TChiWW.checked = ''
+    TChiWW.constraint = "[[['W']],[['W']]]"
+    TChiWW.massConstraint = None
+    TChiWW.conditionDescription ="None"
+    TChiWW.condition ="None"
+    TChiWW.source = 'SModelS'
+    TChiWW_1 = TChiWW.addMassPlane( [[x,y]]*2 )
+    TChiWW_1.addSource ( "efficiencyMap", "orig/cms_sus_13_012_TChiWW_1_EM_MAPS/MA5_EM_TChiWW_1_%s.dat" % dataset, "txt", objectName ="None", index = None )
+    TChiWW_1.figureUrl = "FIXME"
+    TChiWW_1.dataUrl = None
+    T5 = dataset.addTxName('T5')
+    T5.checked = ''
+    T5.constraint ="[[['jet'],['jet']],[['jet'],['jet']]]"
+    T5.conditionDescription ="None"
+    T5.condition ="None"
+    T5.massConstraint = None
+    T5.source = 'SModelS'
+    T5.dataUrl = None
+    T5_x005 = T5.addMassPlane( [[x,0.05*x + 0.95*y,y]]*2 )
+    T5_x005.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM_T5_x005_%s.dat" % dataset, "txt", objectName ="None", index = None )
+    T5_x05 = T5.addMassPlane( [[x,0.5*x + 0.5*y,y]]*2 )
+    T5_x05.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x05_EM_MAPS/MA5_EM_T5_x05_%s.dat" % dataset, "txt", objectName ="None", index = None )
+    T5_x095 = T5.addMassPlane( [[x,0.95*x + 0.05*y,y]]*2 )
+    T5_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5_x095_EM_MAPS/MA5_EM_T5_x095_%s.dat" % dataset, "txt", objectName ="None", index = None )
+    T5bbbb = dataset.addTxName('T5bbbb')
+    T5bbbb.checked = ''
+    T5bbbb.constraint ="[[['b'],['b']],[['b'],['b']]]"
+    T5bbbb.conditionDescription ="None"
+    T5bbbb.condition ="None"
+    T5bbbb.massConstraint = None
+    T5bbbb.source = 'SModelS'
+    T5bbbb.dataUrl = None
+    T5bbbb_x005 = T5bbbb.addMassPlane( [[x,0.05*x + 0.95*y,y]]*2 )
+    T5bbbb_x005.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5bbbb_x005_EM_MAPS/MA5_EM_T5bbbb_x005_%s.dat" % dataset, "txt", objectName ="None", index = None )
+    T5bbbb_x05 = T5bbbb.addMassPlane( [[x,0.5*x + 0.5*y,y]]*2 )
+    T5bbbb_x05.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5bbbb_x05_EM_MAPS/MA5_EM_T5bbbb_x05_%s.dat" % dataset, "txt", objectName ="None", index = None )
+    T5bbbb_x095 = T5bbbb.addMassPlane( [[x,0.95*x + 0.05*y,y]]*2 )
+    T5bbbb_x095.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5bbbb_x095_EM_MAPS/MA5_EM_T5bbbb_x095_%s.dat" % dataset, "txt", objectName ="None", index = None )
+    T5tttt = dataset.addTxName('T5tttt')
+    T5tttt.checked = ''
+    T5tttt.constraint ="[[['t'],['t']],[['t'],['t']]]"
+    T5tttt.conditionDescription ="None"
+    T5tttt.condition ="None"
+    T5tttt.massConstraint = None
+    T5tttt.source = 'SModelS'
+    T5tttt.dataUrl = None
+    T5tttt_x05 = T5tttt.addMassPlane( [[x,0.5*x + 0.5*y,y]]*2 )
+    T5tttt_x05.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5tttt_x05_EM_MAPS/MA5_EM_T5tttt_x05_%s.dat" % dataset, "txt", objectName ="None", index = None )
+    T5tttt_p177 = T5tttt.addMassPlane( [[x, x-177.,y]]*2 )
+    T5tttt_p177.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5tttt_DiffGluStop177_EM_MAPS/MA5_EM_T5tttt_DiffGluStop177_%s.dat" % dataset, "txt", objectName ="None", index = None )
+    T5tttt_m177 = T5tttt.addMassPlane( [[x, y+177.,y]]*2 )
+    T5tttt_m177.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T5tttt_DiffStopNeu177_EM_MAPS/MA5_EM_T5tttt_DiffStopNeu177_%s.dat" % dataset, "txt", objectName ="None", index = None )
+    T6bbWW = dataset.addTxName('T6bbWW')
+    T6bbWW.checked = ''
+    T6bbWW.constraint = "[[['b'],['W']],[['b'],['W']]]"
+    T6bbWW.conditionDescription ="None"
+    T6bbWW.condition ="None"
+    T6bbWW.massConstraint = None
+    T6bbWW.source = 'SModelS'
+    T6bbWW.dataUrl = None
+    T6bbWW_x05 = T6bbWW.addMassPlane( [[x,0.5*x + 0.5*y,y]]*2 )
+    T6bbWW_x05.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T6bbWW_x05_EM_MAPS/MA5_EM_T6bbWW_x05_%s.dat" % dataset, "txt", objectName ="None", index = None )
+    T6bbWW_x01 = T6bbWW.addMassPlane( [[x,0.1 *x + 0.9 *y,y]]*2  )
+    T6bbWW_x01.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T6bbWW_x01_EM_MAPS/MA5_EM_T6bbWW_x01_%s.dat" % dataset, "txt", objectName ="None", index = None )
+    T6bbWW_x09 = T6bbWW.addMassPlane( [[x,0.9 *x + 0.1 *y,y]]*2  )
+    T6bbWW_x09.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T6bbWW_x09_EM_MAPS/MA5_EM_T6bbWW_x09_%s.dat" % dataset, "txt", objectName ="None", index = None )
+    T6bbWW_d10 = T6bbWW.addMassPlane( [[x, y+10. , y ]]*2  )
+    T6bbWW_d10.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T6bbWW_DiffChargNeu10_EM_MAPS/MA5_EM_T6bbWW_DiffChargNeu10_%s.dat" % dataset, "txt", objectName ="None", index = None )
+    T6bbWW_d77 = T6bbWW.addMassPlane( [[x, y+77. , y ]]*2  )
+    T6bbWW_d77.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T6bbWW_DiffChargNeu77_EM_MAPS/MA5_EM_T6bbWW_DiffChargNeu77_%s.dat" % dataset, "txt", objectName ="None", index = None )
+    T6bbWWoff = dataset.addTxName('T6bbWWoff')
+    T6bbWWoff.checked = ''
+    T6bbWWoff.constraint = "2.23*[[['b'],['jet','jet']],[['b'],['jet','jet']]]"
+    T6bbWWoff.conditionDescription ="None"
+    T6bbWWoff.condition ="None"
+    ## T6bbWWoff.massConstraint = None
+    T6bbWWoff.massConstraint = [['dm >= 0.0','dm <= 76.']]*2
+    T6bbWWoff.source = 'SModelS'
+    T6bbWWoff.dataUrl = None
+    T6bbWWoff_x05 = T6bbWWoff.addMassPlane( [[x,0.5*x + 0.5*y,y]]*2 )
+    T6bbWWoff_x05.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T6bbWW_x05_EM_MAPS/MA5_EM_T6bbWW_x05_%s.dat" % dataset, "txt", objectName ="None", index = None )
+    T6bbWWoff_x01 = T6bbWWoff.addMassPlane( [[x,0.1 *x + 0.9 *y,y]]*2  )
+    T6bbWWoff_x01.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T6bbWW_x01_EM_MAPS/MA5_EM_T6bbWW_x01_%s.dat" % dataset, "txt", objectName ="None", index = None )
+    T6bbWWoff_x09 = T6bbWWoff.addMassPlane( [[x,0.9 *x + 0.1 *y,y]]*2  )
+    T6bbWWoff_x09.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T6bbWW_x09_EM_MAPS/MA5_EM_T6bbWW_x09_%s.dat" % dataset, "txt", objectName ="None", index = None )
+    T6bbWWoff_d10 = T6bbWWoff.addMassPlane( [[x, y+10. , y ]]*2  )
+    T6bbWWoff_d10.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T6bbWW_DiffChargNeu10_EM_MAPS/MA5_EM_T6bbWW_DiffChargNeu10_%s.dat" % dataset, "txt", objectName ="None", index = None )
+    T6bbWWoff_d77 = T6bbWWoff.addMassPlane( [[x, y+77. , y ]]*2  )
+    T6bbWWoff_d77.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T6bbWW_DiffChargNeu77_EM_MAPS/MA5_EM_T6bbWW_DiffChargNeu77_%s.dat" % dataset, "txt", objectName ="None", index = None )
+    T2 = dataset.addTxName('T2')
+    T2.checked =''
+    T2.constraint ="[[['jet']],[['jet']]]"
+    T2.conditionDescription ="None"
+    T2.condition ="None"
+    T2.source = 'CMS'
+    #+++++++ next mass plane block ++++++++++++++
+    T2qq = T2.addMassPlane([[x,y]]*2)
+    T2qq.figure = "Fig_7a"
+    T2qq.figureUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13012/Fig_7a.pdf"
+    T2qq.dataUrl = None
+    T2qq.addSource('obsExclusion', "orig/SUS13012_XsecLimits_T2qq.root", "root", objectName = "combined_obsExclOneTimesProspino")
+    T2qq.addSource('obsExclusionM1', "orig/SUS13012_XsecLimits_T2qq.root", "root", objectName = "combined_obsExclMinusSysErrProspino")
+    T2qq.addSource('obsExclusionP1',"orig/SUS13012_XsecLimits_T2qq.root", "root", objectName = "combined_obsExclPlusSysErrProspino")
+    T2qq.addSource('expExclusion', "orig/SUS13012_XsecLimits_T2qq.root", "root", objectName = "combined_expExclOneTimesProspino")
+    T2qq.addSource('expExclusionM1',"orig/SUS13012_XsecLimits_T2qq.root", "root", objectName = "combined_expExclMinusOneSigmaProspino")
+    T2qq.addSource('expExclusionP1',"orig/SUS13012_XsecLimits_T2qq.root", "root", objectName = "combined_expExclPlusOneSigmaProspino")
+    T2qq.addSource('efficiencyMap',"orig/SUS13012_XsecLimits_T2qq.root", "root", objectName ="h_EffAcc_%s" % dataset )
+    #+++++++ next txName block ++++++++++++++
+    T1tttt = dataset.addTxName('T1tttt')
+    T1tttt.constraint ="[[['t','t']],[['t','t']]]"
+    T1tttt.conditionDescription ="None"
+    T1tttt.condition ="None"
+    T1tttt.massConstraint = None
+    T1tttt.source = 'CMS'
+    #+++++++ next txName block ++++++++++++++
+    T1ttttoff = dataset.addTxName('T1ttttoff')
+    T1ttttoff.constraint = "[[['b','W','b','W']],[['b','W','b','W']]]"
+    T1ttttoff.conditionDescription ="None"
+    T1ttttoff.condition = "None"
+    T1ttttoff.massConstraint = [['dm <= 338.']]*2
+    T1ttttoff.source = 'CMS'
+    #+++++++ next mass plane block ++++++++++++++
+    T1bbbb = dataset.addTxName('T1bbbb')
+    T1bbbb.constraint ="[[['b','b']],[['b','b']]]"
+    T1bbbb.conditionDescription ="None"
+    T1bbbb.condition ="None"
+    T1bbbb.massConstraint = None
+    T1bbbb.source = 'SModelS'
+    T1btbt = dataset.addTxName('T1btbt')
+    T1btbt.constraint ="[[['b','t']],[['b','t']]]"
+    T1btbt.conditionDescription ="None"
+    T1btbt.condition ="None"
+    T1btbt.massConstraint = None
+    T1btbt.source = 'SModelS'
+    T2bb = dataset.addTxName('T2bb')
+    T2bb.constraint ="[[['b']],[['b']]]"
+    T2bb.conditionDescription ="None"
+    T2bb.condition ="None"
+    T2bb.massConstraint = None
+    T2bb.source = 'SModelS'
+    T2bb.dataUrl = None
+    T2tt = dataset.addTxName('T2tt')
+    T2tt.constraint ="[[['t']],[['t']]]"
+    T2tt.conditionDescription ="None"
+    T2tt.condition ="None"
+    T2tt.massConstraint = None
+    T2tt.source = 'SModelS'
+    T2ttoff = dataset.addTxName('T2ttoff')
+    T2ttoff.constraint ="[[['W','b']],[['W','b']]]"
+    T2ttoff.conditionDescription ="None"
+    T2ttoff.condition ="None"
+    T2ttoff.massConstraint = [[ 'dm <= 169.' ]]*2
+    T2ttoff.source = 'SModelS'
+    T2ttoff.dataUrl = None
+    T1tttt_1 = T1tttt.addMassPlane([[x,y]]*2)
+    T1tttt_1.figure = "Fig_7c"
+    T1tttt_1.figureUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13012/Fig_7c.pdf"
+    T1tttt_1.dataUrl = None
+    T1tttt_1.addSource('obsExclusion', "orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName = "combined_obsExclOneTimesProspino")
+    T1tttt_1.addSource('obsExclusionM1', "orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName = "combined_obsExclMinusSysErrProspino")
+    T1tttt_1.addSource('obsExclusionP1', "orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName = "combined_obsExclPlusSysErrProspino")
+    T1tttt_1.addSource('expExclusion', "orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName = "combined_expExclOneTimesProspino")
+    T1tttt_1.addSource('expExclusionM1', "orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName = "combined_expExclMinusOneSigmaProspino")
+    T1tttt_1.addSource('expExclusionP1', "orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName = "combined_expExclPlusOneSigmaProspino")
+    T1tttt_1.addSource('efficiencyMap',"orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName ="h_EffAcc_%s"% dataset )
+    T1ttttoff_1 = T1ttttoff.addMassPlane([[x,y]]*2)
+    T1ttttoff_1.figure = "Fig_7c"
+    T1ttttoff_1.figureUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13012/Fig_7c.pdf"
+    T1ttttoff_1.dataUrl = None
+    T1ttttoff_1.addSource('obsExclusion', "orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName = "combined_obsExclOneTimesProspino")
+    T1ttttoff_1.addSource('obsExclusionM1', "orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName = "combined_obsExclMinusSysErrProspino")
+    T1ttttoff_1.addSource('obsExclusionP1', "orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName = "combined_obsExclPlusSysErrProspino")
+    T1ttttoff_1.addSource('expExclusion', "orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName = "combined_expExclOneTimesProspino")
+    T1ttttoff_1.addSource('expExclusionM1', "orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName = "combined_expExclMinusOneSigmaProspino")
+    T1ttttoff_1.addSource('expExclusionP1', "orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName = "combined_expExclPlusOneSigmaProspino")
+    T1ttttoff_1.addSource('efficiencyMap',"orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName ="h_EffAcc_%s" % dataset )
+    T1bbbb_1 = T1bbbb.addMassPlane([[x,y]]*2)
+    T1bbbb_1.figure = "Fig_7c"
+    T1bbbb_1.figureUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13012/Fig_7c.pdf"
+    T1bbbb_1.dataUrl = None
+    T1bbbb_1.addSource('efficiencyMap',"orig/cms_sus_13_012_T1bbbb_1_EM_MAPS/MA5_EM_T1bbbb_1_%s.dat" % dataset, "txt", objectName ="None", index = None )
+    T1btbt_1 = T1btbt.addMassPlane([[x,y]]*2)
+    T1btbt_1.figure = "Fig_7c"
+    T1btbt_1.figureUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13012/Fig_7c.pdf"
+    T1btbt_1.dataUrl = None
+    T1btbt_1.addSource('efficiencyMap',"orig/cms_sus_13_012_T1btbt_1_EM_MAPS/MA5_EM_T1btbt_1_%s.dat" % dataset, "txt", objectName ="None", index = None )
+    T2bb_1 = T2bb.addMassPlane([[x,y]]*2)
+    T2bb_1.addSource('efficiencyMap',"orig/cms_sus_13_012_T2bb_1_EM_MAPS/MA5_EM_T2bb_1_%s.dat" % dataset, "txt", objectName ="None", index = None )
+    T2tt_1 = T2tt.addMassPlane([[x,y]]*2)
+    T2tt_1.figure = None
+    T2tt_1.figureUrl = None
+    T2tt_1.dataUrl = None
+    T2tt_1.addSource('efficiencyMap',"orig/cms_sus_13_012_T2tt_1_EM_MAPS/MA5_EM_T2tt_1_%s.dat" % dataset, "txt", objectName ="None", index = None )
+    T2ttoff_1 = T2ttoff.addMassPlane([[x,y]]*2)
+    T2ttoff_1.figure = "FIXME"
+    T2ttoff_1.figureUrl = "FIXME"
+    T2ttoff_1.dataUrl = None
+    T2ttoff_1.addSource('efficiencyMap',"orig/cms_sus_13_012_T2tt_1_EM_MAPS/MA5_EM_T2tt_1_%s.dat" % dataset, "txt", objectName ="None", index = None )
+    #+++++++ next txName block ++++++++++++++
+    T1 = dataset.addTxName('T1')
+    T1.constraint ="[[['jet','jet']],[['jet','jet']]]"
+    T1.conditionDescription ="None"
+    T1.condition ="None"
+    T1.source = 'CMS'
+    #+++++++ next mass plane block ++++++++++++++
+    T1qqqq = T1.addMassPlane([[x,y]]*2)
+    T1qqqq.figure = "Fig_7b"
+    T1qqqq.figureUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13012/Fig_7b.pdf"
+    T1qqqq.dataUrl = None
+    T1qqqq.addSource('obsExclusion', "orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName = "combined_obsExclOneTimesProspino")
+    T1qqqq.addSource('obsExclusionM1', "orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName = "combined_obsExclMinusSysErrProspino")
+    T1qqqq.addSource('obsExclusionP1', "orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName = "combined_obsExclPlusSysErrProspino")
+    T1qqqq.addSource('expExclusion', "orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName = "combined_expExclOneTimesProspino")
+    T1qqqq.addSource('expExclusionM1', "orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName = "combined_expExclMinusOneSigmaProspino")
+    T1qqqq.addSource('expExclusionP1', "orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName = "combined_expExclPlusOneSigmaProspino")
+    T1qqqq.addSource('efficiencyMap',"orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName ="h_EffAcc_%s" % dataset )
+    #+++++++ next txName block ++++++++++++++
+    T5ZZ = dataset.addTxName('T5ZZ')
+    T5ZZ.checked = ' '
+    T5ZZ.constraint ="[[['jet','jet'],['Z']],[['jet','jet'],['Z']]]"
+    T5ZZ.conditionDescription ="None"
+    T5ZZ.condition ="None"
+    T5ZZ.massConstraint = None
+    T5ZZ.dataUrl = None
+    T5ZZ.source = 'SModelS'
+    #+++++++ next txName block ++++++++++++++
+    #+++++++ next mass plane block ++++++++++++++
+    T5ZZ_x05 = T5ZZ.addMassPlane([[x,0.5*(x+y),y]]*2)
+    T5ZZ_x05.addSource('obsExclusion', "orig/CMS_T5VV_x05.dat", "txt")
+    T5ZZ_x05.addSource('efficiencyMap',"orig/T5ZZ_x05/MA5_EM_T5ZZ_x05_%s.dat" % dataset, "txt")
+    #+++++++ next mass plane block ++++++++++++++
+    T5ZZ_x005 = T5ZZ.addMassPlane([[x,0.05*x + 0.95*y,y]]*2)
+    T5ZZ_x005.addSource('efficiencyMap',"orig/T5ZZ_x005/MA5_EM_T5ZZ_Glu005Neu095_%s.dat" % dataset, "txt")
+    #+++++++ next mass plane block ++++++++++++++
+    T5ZZ_x095 = T5ZZ.addMassPlane([[x,0.95*x + 0.05*y,y]]*2)
+    T5ZZ_x095.addSource('efficiencyMap',"orig/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_%s.dat" % dataset, "txt")
 
-#+++++++ next txName block ++++++++++++++
-T1tttt = TxNameInput('T1tttt')
-T1tttt.on.constraint ="[[['t','t']],[['t','t']]]"
-T1tttt.off.constraint = "[[['b','W','b','W']],[['b','W','b','W']]]"
-T1tttt.on.conditionDescription ="None"
-T1tttt.off.conditionDescription ="None"
-T1tttt.off.condition = "None"
-T1tttt.on.condition ="None"
-#+++++++ next mass plane block ++++++++++++++
-T1tttt = T1tttt.addMassPlane(motherMass = x, lspMass = y)
-#---- new efficiency map -----
-#----figure----
-T1tttt.figure = "Fig_7c"
-T1tttt.figureUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13012/Fig_7c.pdf"
-#----exclusion source----
-T1tttt.obsExclusion.setSource( "orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName = "combined_obsExclOneTimesProspino", index = None )
-T1tttt.obsExclusionM1.setSource( "orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName = "combined_obsExclMinusSysErrProspino", index = None )
-T1tttt.obsExclusionP1.setSource( "orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName = "combined_obsExclPlusSysErrProspino", index = None )
-T1tttt.expExclusion.setSource( "orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName = "combined_expExclOneTimesProspino", index = None )
-T1tttt.expExclusionM1.setSource( "orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName = "combined_expExclMinusOneSigmaProspino", index = None )
-T1tttt.expExclusionP1.setSource( "orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName = "combined_expExclPlusOneSigmaProspino", index = None )
-#+++++++ next txName block ++++++++++++++
-T1 = TxNameInput('T1')
-#T1.on.checked =" "
-T1.on.constraint ="[[['jet','jet']],[['jet','jet']]]"
-T1.on.conditionDescription ="None"
-T1.on.condition ="None"
-#T1bbbb.off.fuzzycondition =
-#+++++++ next mass plane block ++++++++++++++
-T1qqqq = T1.addMassPlane(motherMass = x, lspMass = y)
-#---- new efficiency map -----
-#----figure----
-T1qqqq.figure = "Fig_7b"
-T1qqqq.figureUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13012/Fig_7b.pdf"
-#----exclusion source----
-T1qqqq.obsExclusion.setSource( "orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName = "combined_obsExclOneTimesProspino", index = None )
-T1qqqq.obsExclusionM1.setSource( "orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName = "combined_obsExclMinusSysErrProspino", index = None )
-T1qqqq.obsExclusionP1.setSource( "orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName = "combined_obsExclPlusSysErrProspino", index = None )
-T1qqqq.expExclusion.setSource( "orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName = "combined_expExclOneTimesProspino", index = None )
-T1qqqq.expExclusionM1.setSource( "orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName = "combined_expExclMinusOneSigmaProspino", index = None )
-T1qqqq.expExclusionP1.setSource( "orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName = "combined_expExclPlusOneSigmaProspino", index = None )
+datasets = { "3NJet6_500HT800_450MHT600": ( 454, 418, 66 ), 
+             "3NJet6_1250HT1500_450MHTinf": ( 23, 17.6, 4.1 ),
+             "3NJet6_1250HT1500_300MHT450": ( 38, 42.8, 9.5 ),
+             "6NJet8_1000HT1250_200MHT300": ( 67, 70, 16 ),
+             "6NJet8_800HT1000_300MHT450": ( 35, 28.6, 6.9 ),
+            "6NJet8_500HT800_300MHT450": ( 62, 52, 12 ),
+            "3NJet6_800HT1000_200MHT300": ( 808, 777, 107 ),
+            "3NJet6_500HT800_200MHT300": ( 6159, 6088, 665 ),
+            "6NJet8_1250HT1500_450MHTinf": ( 2, 0.5, 2.6 ),
+            "3NJet6_1000HT1250_300MHT450": ( 129, 137, 20 ),
+            "8NJetinf_1250HT1500_200MHTinf": ( 5, 7.1, 3.8 ),
+            "8NJetinf_1000HT1250_200MHTinf": ( 8, 5.6, 2.3 ),
+            "3NJet6_800HT1000_300MHT450": ( 305, 330, 40 ),
+            "8NJetinf_800HT1000_200MHTinf": ( 9, 8.3, 3.4 ),
+            "6NJet8_1500HTinf_300MHTinf": ( 3, 7.9, 3.6 ),
+            "3NJet6_800HT1000_600MHTinf": ( 52, 54.8, 9.7 ),
+            "6NJet8_500HT800_450MHTinf": ( 9, 0.8, 3.3 ),
+            "6NJet8_1000HT1250_300MHT450": ( 20, 21.6, 5.8 ),
+            "6NJet8_800HT1000_450MHTinf": ( 4, 6.0, 2.8 ),
+            "3NJet6_1500HTinf_200MHT300": ( 94, 86, 17 ),
+            "3NJet6_500HT800_600MHTinf": ( 62, 57.4, 11.2 ),
+            "3NJet6_1250HT1500_200MHT300": ( 98, 109, 18 ),
+            "3NJet6_1000HT1250_600MHTinf": ( 32, 22.8, 5.2 ),
+            "3NJet6_1000HT1250_200MHT300": ( 335, 305, 41 ),
+            "8NJetinf_1500HTinf_200MHTinf": ( 2, 3.3, 4.7 ),
+            "6NJet8_1500HTinf_200MHT300": ( 18, 21.1, 8.1 ),
+            "6NJet8_1250HT1500_200MHT300": ( 24, 28., 8.2 ),
+            "3NJet6_800HT1000_450MHT600": ( 124, 108, 15 ),
+            "6NJet8_800HT1000_200MHT300": ( 111, 124, 29 ),
+            "6NJet8_500HT800_200MHT300": ( 266, 290, 65 ),
+            "3NJet6_500HT800_300MHT450": ( 2305, 2278, 266 ),
+            "8NJetinf_500HT800_200MHTinf": ( 8, 4.8, 2.3 ),
+            "3NJet6_1000HT1250_450MHT600": ( 34, 32.3, 6.1 ),
+            "6NJet8_1000HT1250_450MHTinf": ( 4, 2.2, 3.8 ),
+            "6NJet8_1250HT1500_300MHT450": ( 5, 9.4, 3.6 ),
+            "3NJet6_1500HTinf_300MHTinf": ( 39, 29.7, 5.8 )
+}
 
-#+++++++ next txName block ++++++++++++++
-T5ZZ = TxNameInput('T5ZZ')
-T5ZZ.on.checked =" "
-T5ZZ.off.checked =''
-T5ZZ.on.constraint ="[[['jet','jet'],['Z']],[['jet','jet'],['Z']]]"
-T5ZZ.off.constraint ="2.23*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
-T5ZZ.on.conditionDescription ="None"
-T5ZZ.off.conditionDescription ="None"
-T5ZZ.off.condition =None
-T5ZZ.on.condition ="None"
-#+++++++ next mass plane block ++++++++++++++
-T5ZZ_x05 = T5ZZ.addMassPlane(motherMass = x, interMass0 = 0.5*(x+y), lspMass = y)
-#---- new efficiency map -----
-#----figure----
-#----exclusion source----
-T5ZZ_x05 .obsExclusion.setSource( "orig/CMS_T5VV_x05.dat", "txt", objectName = None, index = None )
-#+++++++ next mass plane block ++++++++++++++
-T5ZZ_x005 = T5ZZ.addMassPlane(motherMass = x, interMass0 = 0.05*x + 0.95*y, lspMass = y)
-#---- new efficiency map -----
-#----figure----
-#----exclusion source----
-#T5ZZ_2 .obsExclusion.setSource( "orig/Null_Line.txt", "txt", objectName = None, index = None )
+for name, numbers in datasets.items():
+    #+++++++ dataset block ++++++++++++++
+    dataset = DataSetInput( name )
+    dataset.setInfo(dataType = 'efficiencyMap', dataId = name, 
+            observedN = numbers[0], expectedBG = numbers[1], bgError = numbers[2] )
+    add ( dataset )
 
-#+++++++ next mass plane block ++++++++++++++
-T5ZZ_x095 = T5ZZ.addMassPlane(motherMass = x, interMass0 = 0.95*x + 0.05*y, lspMass = y)
-#---- new efficiency map -----
-#----figure----
-#----exclusion source-
-#T5ZZ_3 .obsExclusion.setSource( "orig/Null_Line.txt", "txt", objectName = None, index = None )
-
-#+++++++ next txName block ++++++++++++++
-T5WW = TxNameInput('T5WW')
-T5WW.on.checked =" "
-T5WW.off.checked =''
-T5WW.on.constraint ="[[['jet','jet'],['W']],[['jet','jet'],['W']]]"
-T5WW.off.constraint ="2.23*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
-T5WW.on.conditionDescription ="None"
-T5WW.off.conditionDescription ="None"
-T5WW.off.condition =None
-T5WW.on.condition ="None"
-#+++++++ next mass plane block ++++++++++++++
-T5WW_x05 = T5WW.addMassPlane(motherMass = x, interMass0 = 0.5*(x+y), lspMass = y)
-#---- new efficiency map -----
-#----figure----
-#----exclusion source----
-T5WW_x05 .obsExclusion.setSource( "orig/CMS_T5VV_x05.dat", "txt", objectName = None, index = None )
-#+++++++ next mass plane block ++++++++++++++
-T5WW_x005 = T5WW.addMassPlane(motherMass = x, interMass0 = 0.05*x + 0.95*y, lspMass = y)
-#---- new efficiency map -----
-#----figure----
-#----exclusion source----
-#T5WW_2 .obsExclusion.setSource( "orig/Null_Line.txt", "txt", objectName = None, index = None )
-#+++++++ next mass plane block ++++++++++++++
-T5WW_x095 = T5WW.addMassPlane(motherMass = x, interMass0 = 0.95*x + 0.05*y, lspMass = y)
-#---- new efficiency map -----
-
-#+++++++ next txName block ++++++++++++++                                                                         
-T2tt = TxNameInput('T2tt')
-T2tt.on.checked =''
-T2tt.off.checked =''
-T2tt.on.constraint =  "[[['t']],[['t']]]"
-T2tt.off.constraint = "[[['W','b']],[['W','b']]]"
-T2tt.on.conditionDescription ="None"
-T2tt.off.conditionDescription ="None"
-T2tt.on.condition = None
-T2tt.off.condition = None
-#T2tt.branchingRatio =                                                                                            
-#+++++++ next mass plane block ++++++++++++++                                                                     
-T2tt_1 = T2tt.addMassPlane(motherMass = x, lspMass = y)
-#T2tt_1.obsExclusion.setSource( 'orig/Null.txt', 'txt', objectName = None, index = None )
-
-# 2.2 obtained by 1/(W->jet jet * W-> jet jet) = 1/(0.67*0.67) = 2.23                                             
-#+++++++ next txName block ++++++++++++++                                                                         
-TChiWW = TxNameInput('TChiWW')
-TChiWW.on.checked =''
-TChiWW.off.checked =''
-TChiWW.on.constraint =  "[[['W']],[['W']]]"
-TChiWW.off.constraint = "2.23*[[['jet','jet']],[['jet','jet']]]"
-TChiWW.on.conditionDescription ="None"
-TChiWW.off.conditionDescription ="None"
-TChiWW.on.condition = None
-TChiWW.off.condition = None
-#T2tt.branchingRatio =                                                                                            
-#+++++++ next mass plane block ++++++++++++++                                                                     
-TChiWW_1 = TChiWW.addMassPlane(motherMass = x, lspMass = y)
-#TChiWW_1.obsExclusion.setSource( 'orig/Null.txt', 'txt', objectName = None , index = None )
-
-# 2.1 obtained by 1/(Z->jet jet * Z-> jet jet) = 1/(0.69*0.69) = 2.1                                                  
-#+++++++ next txName block ++++++++++++++                                                                             
-TChiZZ = TxNameInput('TChiZZ')
-TChiZZ.on.checked =''
-TChiZZ.off.checked =''
-TChiZZ.on.constraint =  "[[['Z']],[['Z']]]"
-TChiZZ.off.constraint = "2.1*[[['jet','jet']],[['jet','jet']]]"
-TChiZZ.on.conditionDescription ="None"
-TChiZZ.off.conditionDescription ="None"
-TChiZZ.on.condition = None
-TChiZZ.off.condition = None
-#T2tt.branchingRatio =                                                                                                
-#+++++++ next mass plane block ++++++++++++++                                                                         
-TChiZZ_1 = TChiZZ.addMassPlane(motherMass = x, lspMass = y)
-#TChiZZ_1.obsExclusion.setSource( 'orig/Null.txt', 'txt', objectName = None , index = None )
-
-#+++++++ next txName block ++++++++++++++                                                                             
-TChiWZ = TxNameInput('TChiWZ')
-TChiWZ.on.checked =''
-TChiWZ.off.checked =''
-TChiWZ.on.constraint =  "[[['W']],[['Z']]]"
-TChiWZ.off.constraint = "2.1*[[['jet','jet']],[['jet','jet']]]"
-TChiWZ.on.conditionDescription ="None"
-TChiWZ.off.conditionDescription ="None"
-TChiWZ.on.condition = None
-TChiWZ.off.condition = None
-#T2tt.branchingRatio =                                                                                                
-#+++++++ next mass plane block ++++++++++++++                                                                         
-TChiWZ_1 = TChiWZ.addMassPlane(motherMass = x, lspMass = y)
-#TChiWZ_1.obsExclusion.setSource( 'orig/Null.txt', 'txt', objectName = None , index = None )
-
-
-
-#+++++++ next txName block ++++++++++++++                                                                             
-T2bb = TxNameInput('T2bb')
-T2bb.on.checked =''
-T2bb.off.checked =''
-T2bb.on.constraint =  "[[['b']],[['b']]]"
-T2bb.on.conditionDescription ="None"
-T2bb.on.condition = None
-#T2tt.branchingRatio =                                                                                                
-#+++++++ next mass plane block ++++++++++++++                                                                         
-T2bb_1 = T2bb.addMassPlane(motherMass = x, lspMass = y)
-#T2bb_1.obsExclusion.setSource( 'orig/Null.txt', 'txt', objectName = None, index = None )
-
-#+++++++ next txName block ++++++++++++++                                                                             
-T1btbt = TxNameInput('T1btbt')
-T1btbt.on.checked =''
-T1btbt.off.checked =''
-T1btbt.on.constraint =  "[[['b','t']],[['b','t']]]"
-#T2tt.off.constraint = "[[['W','b']],[['W','b']]]"                                                                    
-T1btbt.on.conditionDescription ="None"
-#T2tt.off.conditionDescription ="None"                                                                                
-T1btbt.on.condition = None
-#T2tt.off.condition = None                                                                                            
-#T2tt.branchingRatio =                                                                                                
-#+++++++ next mass plane block ++++++++++++++                                                                         
-T1btbt_1 = T1btbt.addMassPlane(motherMass = x, lspMass = y)
-#T1btbt_1.obsExclusion.setSource( 'orig/Null.txt', 'txt', objectName = None , index = None )
-
-#+++++++ next txName block ++++++++++++++                                                                             
-T1bbbb = TxNameInput('T1bbbb')
-T1bbbb.on.checked =''
-T1bbbb.off.checked =''
-T1bbbb.on.constraint =  "[[['b','b']],[['b','b']]]"
-T1bbbb.on.conditionDescription ="None"
-T1bbbb.on.condition = None
-#T2tt.branchingRatio =                                                                                                
-#+++++++ next mass plane block ++++++++++++++                                                                         
-T1bbbb_1 = T1bbbb.addMassPlane(motherMass = x, lspMass = y)
-#T1bbbb_1.obsExclusion.setSource( 'orig/Null.txt', 'txt', objectName = None , index = None )
-
-
-
-###
-T1qqqq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName ="h_EffAcc_3NJet6_500HT800_200MHT300", index = None, dataset="3NJet6_500HT800_200MHT300")
-T1qqqq.efficiencyMap.setStatistics(observedN=6159, expectedBG=6088, bgError=665)
-T1tttt.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName ="h_EffAcc_3NJet6_500HT800_200MHT300", index = None, dataset="3NJet6_500HT800_200MHT300")
-T1tttt.efficiencyMap.setStatistics(observedN=6159, expectedBG=6088, bgError=665)
-T2qq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T2qq.root", "root", objectName ="h_EffAcc_3NJet6_500HT800_200MHT300", index = None, dataset="3NJet6_500HT800_200MHT300")
-T2qq.efficiencyMap.setStatistics(observedN=6159, expectedBG=6088, bgError=665)
-T5WW_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x005_EM_MAPS/MA5_EM_T5WW_x005_3NJet6_500HT800_200MHT300.dat", "txt", objectName ="None", index = None, dataset="3NJet6_500HT800_200MHT300")
-T5WW_x005.efficiencyMap.setStatistics(observedN=6159, expectedBG=6088, bgError=665)
-T5WW_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x05_EM_MAPS/MA5_EM_T5WW_x05_3NJet6_500HT800_200MHT300.dat", "txt", objectName ="None", index = None, dataset="3NJet6_500HT800_200MHT300")
-T5WW_x05.efficiencyMap.setStatistics(observedN=6159, expectedBG=6088, bgError=665)
-T5WW_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x095_EM_MAPS/MA5_EM_T5WW_x095_3NJet6_500HT800_200MHT300.dat", "txt", objectName ="None", index = None, dataset="3NJet6_500HT800_200MHT300")
-T5WW_x095.efficiencyMap.setStatistics(observedN=6159, expectedBG=6088, bgError=665)
-T5ZZ_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x005_EM_MAPS/MA5_EM_T5ZZ_x005_3NJet6_500HT800_200MHT300.dat", "txt", objectName ="None", index = None, dataset="3NJet6_500HT800_200MHT300")
-T5ZZ_x005.efficiencyMap.setStatistics(observedN=6159, expectedBG=6088, bgError=665)
-T5ZZ_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x05_EM_MAPS/MA5_EM_T5ZZ_x05_3NJet6_500HT800_200MHT300.dat", "txt", objectName ="None", index = None, dataset="3NJet6_500HT800_200MHT300")
-T5ZZ_x05.efficiencyMap.setStatistics(observedN=6159, expectedBG=6088, bgError=665)
-T5ZZ_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x095_EM_MAPS/MA5_EM_T5ZZ_x095_3NJet6_500HT800_200MHT300.dat", "txt", objectName ="None", index = None, dataset="3NJet6_500HT800_200MHT300")
-T5ZZ_x095.efficiencyMap.setStatistics(observedN=6159, expectedBG=6088, bgError=665)
-TChiWZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_3NJet6_500HT800_200MHT300.dat", "txt", objectName ="None", index = None, dataset="3NJet6_500HT800_200MHT300")
-TChiWZ_1.efficiencyMap.setStatistics(observedN=6159, expectedBG=6088, bgError=665)
-TChiWW_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWW_1_EM_MAPS/MA5_EM_TChiWW_1_3NJet6_500HT800_200MHT300.dat", "txt", objectName ="None", index = None, dataset="3NJet6_500HT800_200MHT300")
-TChiWW_1.efficiencyMap.setStatistics(observedN=6159, expectedBG=6088, bgError=665)
-TChiZZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_3NJet6_500HT800_200MHT300.dat", "txt", objectName ="None", index = None, dataset="3NJet6_500HT800_200MHT300")
-TChiZZ_1.efficiencyMap.setStatistics(observedN=6159, expectedBG=6088, bgError=665)
-T2bb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2bb_1_EM_MAPS/MA5_EM_T2bb_1_3NJet6_500HT800_200MHT300.dat", "txt", objectName ="None", index = None, dataset="3NJet6_500HT800_200MHT300")
-T2bb_1.efficiencyMap.setStatistics(observedN=6159, expectedBG=6088, bgError=665)
-T2tt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2tt_1_EM_MAPS/MA5_EM_T2tt_1_3NJet6_500HT800_200MHT300.dat", "txt", objectName ="None", index = None, dataset="3NJet6_500HT800_200MHT300")
-T2tt_1.efficiencyMap.setStatistics(observedN=6159, expectedBG=6088, bgError=665)
-T1btbt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1btbt_1_EM_MAPS/MA5_EM_T1btbt_1_3NJet6_500HT800_200MHT300.dat", "txt", objectName ="None", index = None, dataset="3NJet6_500HT800_200MHT300")
-T1btbt_1.efficiencyMap.setStatistics(observedN=6159, expectedBG=6088, bgError=665)
-T1bbbb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1bbbb_1_EM_MAPS/MA5_EM_T1bbbb_1_3NJet6_500HT800_200MHT300.dat", "txt", objectName ="None", index = None, dataset="3NJet6_500HT800_200MHT300")
-T1bbbb_1.efficiencyMap.setStatistics(observedN=6159, expectedBG=6088, bgError=665)
 databaseCreator.create()
-###
-T1qqqq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName ="h_EffAcc_3NJet6_500HT800_300MHT450", index = None, dataset="3NJet6_500HT800_300MHT450")
-T1qqqq.efficiencyMap.setStatistics(observedN=2305, expectedBG=2278, bgError=266 )
-T1tttt.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName ="h_EffAcc_3NJet6_500HT800_300MHT450", index = None, dataset="3NJet6_500HT800_300MHT450")
-T1tttt.efficiencyMap.setStatistics(observedN=2305, expectedBG=2278, bgError=266 )
-T2qq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T2qq.root", "root", objectName ="h_EffAcc_3NJet6_500HT800_300MHT450", index = None, dataset="3NJet6_500HT800_300MHT450")
-T2qq.efficiencyMap.setStatistics(observedN=2305, expectedBG=2278, bgError=266 )
-T5WW_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x005_EM_MAPS/MA5_EM_T5WW_x005_3NJet6_500HT800_300MHT450.dat", "txt", objectName ="None", index = None, dataset="3NJet6_500HT800_300MHT450")
-T5WW_x005.efficiencyMap.setStatistics(observedN=2305, expectedBG=2278, bgError=266 )
-T5WW_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x05_EM_MAPS/MA5_EM_T5WW_x05_3NJet6_500HT800_300MHT450.dat", "txt", objectName ="None", index = None, dataset="3NJet6_500HT800_300MHT450")
-T5WW_x05.efficiencyMap.setStatistics(observedN=2305, expectedBG=2278, bgError=266 )
-T5WW_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x095_EM_MAPS/MA5_EM_T5WW_x095_3NJet6_500HT800_300MHT450.dat", "txt", objectName ="None", index = None, dataset="3NJet6_500HT800_300MHT450")
-T5WW_x095.efficiencyMap.setStatistics(observedN=2305, expectedBG=2278, bgError=266 )
-T5ZZ_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x005_EM_MAPS/MA5_EM_T5ZZ_x005_3NJet6_500HT800_300MHT450.dat", "txt", objectName ="None", index = None, dataset="3NJet6_500HT800_300MHT450")
-T5ZZ_x005.efficiencyMap.setStatistics(observedN=2305, expectedBG=2278, bgError=266 )
-T5ZZ_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x05_EM_MAPS/MA5_EM_T5ZZ_x05_3NJet6_500HT800_300MHT450.dat", "txt", objectName ="None", index = None, dataset="3NJet6_500HT800_300MHT450")
-T5ZZ_x05.efficiencyMap.setStatistics(observedN=2305, expectedBG=2278, bgError=266 )
-T5ZZ_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x095_EM_MAPS/MA5_EM_T5ZZ_x095_3NJet6_500HT800_300MHT450.dat", "txt", objectName ="None", index = None, dataset="3NJet6_500HT800_300MHT450")
-T5ZZ_x095.efficiencyMap.setStatistics(observedN=2305, expectedBG=2278, bgError=266 )
-TChiWZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_3NJet6_500HT800_300MHT450.dat", "txt", objectName ="None", index = None, dataset="3NJet6_500HT800_300MHT450")
-TChiWZ_1.efficiencyMap.setStatistics(observedN=2305, expectedBG=2278, bgError=266 )
-TChiWW_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWW_1_EM_MAPS/MA5_EM_TChiWW_1_3NJet6_500HT800_300MHT450.dat", "txt", objectName ="None", index = None, dataset="3NJet6_500HT800_300MHT450")
-TChiWW_1.efficiencyMap.setStatistics(observedN=2305, expectedBG=2278, bgError=266 )
-TChiZZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_3NJet6_500HT800_300MHT450.dat", "txt", objectName ="None", index = None, dataset="3NJet6_500HT800_300MHT450")
-TChiZZ_1.efficiencyMap.setStatistics(observedN=2305, expectedBG=2278, bgError=266 )
-T2bb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2bb_1_EM_MAPS/MA5_EM_T2bb_1_3NJet6_500HT800_300MHT450.dat", "txt", objectName ="None", index = None, dataset="3NJet6_500HT800_300MHT450")
-T2bb_1.efficiencyMap.setStatistics(observedN=2305, expectedBG=2278, bgError=266 )
-T2tt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2tt_1_EM_MAPS/MA5_EM_T2tt_1_3NJet6_500HT800_300MHT450.dat", "txt", objectName ="None", index = None, dataset="3NJet6_500HT800_300MHT450")
-T2tt_1.efficiencyMap.setStatistics(observedN=2305, expectedBG=2278, bgError=266 )
-T1btbt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1btbt_1_EM_MAPS/MA5_EM_T1btbt_1_3NJet6_500HT800_300MHT450.dat", "txt", objectName ="None", index = None, dataset="3NJet6_500HT800_300MHT450")
-T1btbt_1.efficiencyMap.setStatistics(observedN=2305, expectedBG=2278, bgError=266 )
-T1bbbb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1bbbb_1_EM_MAPS/MA5_EM_T1bbbb_1_3NJet6_500HT800_300MHT450.dat", "txt", objectName ="None", index = None, dataset="3NJet6_500HT800_300MHT450")
-T1bbbb_1.efficiencyMap.setStatistics(observedN=2305, expectedBG=2278, bgError=266 )
-databaseCreator.create()
-###
-T1qqqq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName ="h_EffAcc_8NJetinf_1500HTinf_200MHTinf", index = None, dataset="8NJetinf_1500HTinf_200MHTinf")
-T1qqqq.efficiencyMap.setStatistics(observedN=2, expectedBG=3.3, bgError=4.7)
-T1tttt.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName ="h_EffAcc_8NJetinf_1500HTinf_200MHTinf", index = None, dataset="8NJetinf_1500HTinf_200MHTinf")
-T1tttt.efficiencyMap.setStatistics(observedN=2, expectedBG=3.3, bgError=4.7)
-T2qq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T2qq.root", "root", objectName ="h_EffAcc_8NJetinf_1500HTinf_200MHTinf", index = None, dataset="8NJetinf_1500HTinf_200MHTinf")
-T2qq.efficiencyMap.setStatistics(observedN=2, expectedBG=3.3, bgError=4.7)
-T5WW_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x005_EM_MAPS/MA5_EM_T5WW_x005_8NJetinf_1500HTinf_200MHTinf.dat", "txt", objectName ="None", index = None, dataset="8NJetinf_1500HTinf_200MHTinf")
-T5WW_x005.efficiencyMap.setStatistics(observedN=2, expectedBG=3.3, bgError=4.7)
-T5WW_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x05_EM_MAPS/MA5_EM_T5WW_x05_8NJetinf_1500HTinf_200MHTinf.dat", "txt", objectName ="None", index = None, dataset="8NJetinf_1500HTinf_200MHTinf")
-T5WW_x05.efficiencyMap.setStatistics(observedN=2, expectedBG=3.3, bgError=4.7)
-T5WW_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x095_EM_MAPS/MA5_EM_T5WW_x095_8NJetinf_1500HTinf_200MHTinf.dat", "txt", objectName ="None", index = None, dataset="8NJetinf_1500HTinf_200MHTinf")
-T5WW_x095.efficiencyMap.setStatistics(observedN=2, expectedBG=3.3, bgError=4.7)
-T5ZZ_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x005_EM_MAPS/MA5_EM_T5ZZ_x005_8NJetinf_1500HTinf_200MHTinf.dat", "txt", objectName ="None", index = None, dataset="8NJetinf_1500HTinf_200MHTinf")
-T5ZZ_x005.efficiencyMap.setStatistics(observedN=2, expectedBG=3.3, bgError=4.7)
-T5ZZ_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x05_EM_MAPS/MA5_EM_T5ZZ_x05_8NJetinf_1500HTinf_200MHTinf.dat", "txt", objectName ="None", index = None, dataset="8NJetinf_1500HTinf_200MHTinf")
-T5ZZ_x05.efficiencyMap.setStatistics(observedN=2, expectedBG=3.3, bgError=4.7)
-T5ZZ_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x095_EM_MAPS/MA5_EM_T5ZZ_x095_8NJetinf_1500HTinf_200MHTinf.dat", "txt", objectName ="None", index = None, dataset="8NJetinf_1500HTinf_200MHTinf")
-T5ZZ_x095.efficiencyMap.setStatistics(observedN=2, expectedBG=3.3, bgError=4.7)
-TChiWZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_8NJetinf_1500HTinf_200MHTinf.dat", "txt", objectName ="None", index = None, dataset="8NJetinf_1500HTinf_200MHTinf")
-TChiWZ_1.efficiencyMap.setStatistics(observedN=2, expectedBG=3.3, bgError=4.7)
-TChiWW_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWW_1_EM_MAPS/MA5_EM_TChiWW_1_8NJetinf_1500HTinf_200MHTinf.dat", "txt", objectName ="None", index = None, dataset="8NJetinf_1500HTinf_200MHTinf")
-TChiWW_1.efficiencyMap.setStatistics(observedN=2, expectedBG=3.3, bgError=4.7)
-TChiZZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_8NJetinf_1500HTinf_200MHTinf.dat", "txt", objectName ="None", index = None, dataset="8NJetinf_1500HTinf_200MHTinf")
-TChiZZ_1.efficiencyMap.setStatistics(observedN=2, expectedBG=3.3, bgError=4.7)
-T2bb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2bb_1_EM_MAPS/MA5_EM_T2bb_1_8NJetinf_1500HTinf_200MHTinf.dat", "txt", objectName ="None", index = None, dataset="8NJetinf_1500HTinf_200MHTinf")
-T2bb_1.efficiencyMap.setStatistics(observedN=2, expectedBG=3.3, bgError=4.7)
-T2tt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2tt_1_EM_MAPS/MA5_EM_T2tt_1_8NJetinf_1500HTinf_200MHTinf.dat", "txt", objectName ="None", index = None, dataset="8NJetinf_1500HTinf_200MHTinf")
-T2tt_1.efficiencyMap.setStatistics(observedN=2, expectedBG=3.3, bgError=4.7)
-T1btbt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1btbt_1_EM_MAPS/MA5_EM_T1btbt_1_8NJetinf_1500HTinf_200MHTinf.dat", "txt", objectName ="None", index = None, dataset="8NJetinf_1500HTinf_200MHTinf")
-T1btbt_1.efficiencyMap.setStatistics(observedN=2, expectedBG=3.3, bgError=4.7)
-T1bbbb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1bbbb_1_EM_MAPS/MA5_EM_T1bbbb_1_8NJetinf_1500HTinf_200MHTinf.dat", "txt", objectName ="None", index = None, dataset="8NJetinf_1500HTinf_200MHTinf")
-T1bbbb_1.efficiencyMap.setStatistics(observedN=2, expectedBG=3.3, bgError=4.7)
-databaseCreator.create()
-###
-T1qqqq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName ="h_EffAcc_8NJetinf_1250HT1500_200MHTinf", index = None, dataset="8NJetinf_1250HT1500_200MHTinf")
-T1qqqq.efficiencyMap.setStatistics(observedN=5, expectedBG=7.1, bgError=3.8 )
-T1tttt.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName ="h_EffAcc_8NJetinf_1250HT1500_200MHTinf", index = None, dataset="8NJetinf_1250HT1500_200MHTinf")
-T1tttt.efficiencyMap.setStatistics(observedN=5, expectedBG=7.1, bgError=3.8 )
-T2qq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T2qq.root", "root", objectName ="h_EffAcc_8NJetinf_1250HT1500_200MHTinf", index = None, dataset="8NJetinf_1250HT1500_200MHTinf")
-T2qq.efficiencyMap.setStatistics(observedN=5, expectedBG=7.1, bgError=3.8 )
-T5WW_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x005_EM_MAPS/MA5_EM_T5WW_x005_8NJetinf_1250HT1500_200MHTinf.dat", "txt", objectName ="None", index = None, dataset="8NJetinf_1250HT1500_200MHTinf")
-T5WW_x005.efficiencyMap.setStatistics(observedN=5, expectedBG=7.1, bgError=3.8 )
-T5WW_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x05_EM_MAPS/MA5_EM_T5WW_x05_8NJetinf_1250HT1500_200MHTinf.dat", "txt", objectName ="None", index = None, dataset="8NJetinf_1250HT1500_200MHTinf")
-T5WW_x05.efficiencyMap.setStatistics(observedN=5, expectedBG=7.1, bgError=3.8 )
-T5WW_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x095_EM_MAPS/MA5_EM_T5WW_x095_8NJetinf_1250HT1500_200MHTinf.dat", "txt", objectName ="None", index = None, dataset="8NJetinf_1250HT1500_200MHTinf")
-T5WW_x095.efficiencyMap.setStatistics(observedN=5, expectedBG=7.1, bgError=3.8 )
-T5ZZ_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x005_EM_MAPS/MA5_EM_T5ZZ_x005_8NJetinf_1250HT1500_200MHTinf.dat", "txt", objectName ="None", index = None, dataset="8NJetinf_1250HT1500_200MHTinf")
-T5ZZ_x005.efficiencyMap.setStatistics(observedN=5, expectedBG=7.1, bgError=3.8 )
-T5ZZ_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x05_EM_MAPS/MA5_EM_T5ZZ_x05_8NJetinf_1250HT1500_200MHTinf.dat", "txt", objectName ="None", index = None, dataset="8NJetinf_1250HT1500_200MHTinf")
-T5ZZ_x05.efficiencyMap.setStatistics(observedN=5, expectedBG=7.1, bgError=3.8 )
-T5ZZ_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x095_EM_MAPS/MA5_EM_T5ZZ_x095_8NJetinf_1250HT1500_200MHTinf.dat", "txt", objectName ="None", index = None, dataset="8NJetinf_1250HT1500_200MHTinf")
-T5ZZ_x095.efficiencyMap.setStatistics(observedN=5, expectedBG=7.1, bgError=3.8 )
-TChiWZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_8NJetinf_1250HT1500_200MHTinf.dat", "txt", objectName ="None", index = None, dataset="8NJetinf_1250HT1500_200MHTinf")
-TChiWZ_1.efficiencyMap.setStatistics(observedN=5, expectedBG=7.1, bgError=3.8 )
-TChiWW_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWW_1_EM_MAPS/MA5_EM_TChiWW_1_8NJetinf_1250HT1500_200MHTinf.dat", "txt", objectName ="None", index = None, dataset="8NJetinf_1250HT1500_200MHTinf")
-TChiWW_1.efficiencyMap.setStatistics(observedN=5, expectedBG=7.1, bgError=3.8 )
-TChiZZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_8NJetinf_1250HT1500_200MHTinf.dat", "txt", objectName ="None", index = None, dataset="8NJetinf_1250HT1500_200MHTinf")
-TChiZZ_1.efficiencyMap.setStatistics(observedN=5, expectedBG=7.1, bgError=3.8 )
-T2bb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2bb_1_EM_MAPS/MA5_EM_T2bb_1_8NJetinf_1250HT1500_200MHTinf.dat", "txt", objectName ="None", index = None, dataset="8NJetinf_1250HT1500_200MHTinf")
-T2bb_1.efficiencyMap.setStatistics(observedN=5, expectedBG=7.1, bgError=3.8 )
-T2tt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2tt_1_EM_MAPS/MA5_EM_T2tt_1_8NJetinf_1250HT1500_200MHTinf.dat", "txt", objectName ="None", index = None, dataset="8NJetinf_1250HT1500_200MHTinf")
-T2tt_1.efficiencyMap.setStatistics(observedN=5, expectedBG=7.1, bgError=3.8 )
-T1btbt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1btbt_1_EM_MAPS/MA5_EM_T1btbt_1_8NJetinf_1250HT1500_200MHTinf.dat", "txt", objectName ="None", index = None, dataset="8NJetinf_1250HT1500_200MHTinf")
-T1btbt_1.efficiencyMap.setStatistics(observedN=5, expectedBG=7.1, bgError=3.8 )
-T1bbbb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1bbbb_1_EM_MAPS/MA5_EM_T1bbbb_1_8NJetinf_1250HT1500_200MHTinf.dat", "txt", objectName ="None", index = None, dataset="8NJetinf_1250HT1500_200MHTinf")
-T1bbbb_1.efficiencyMap.setStatistics(observedN=5, expectedBG=7.1, bgError=3.8 )
-databaseCreator.create()
-###
-T1qqqq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName ="h_EffAcc_8NJetinf_1000HT1250_200MHTinf", index = None, dataset="8NJetinf_1000HT1250_200MHTinf")
-T1qqqq.efficiencyMap.setStatistics( observedN=8, expectedBG=5.6, bgError=2.3 )
-T1tttt.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName ="h_EffAcc_8NJetinf_1000HT1250_200MHTinf", index = None, dataset="8NJetinf_1000HT1250_200MHTinf")
-T1tttt.efficiencyMap.setStatistics( observedN=8, expectedBG=5.6, bgError=2.3 )
-T2qq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T2qq.root", "root", objectName ="h_EffAcc_8NJetinf_1000HT1250_200MHTinf", index = None, dataset="8NJetinf_1000HT1250_200MHTinf")
-T2qq.efficiencyMap.setStatistics( observedN=8, expectedBG=5.6, bgError=2.3 )
-T5WW_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x005_EM_MAPS/MA5_EM_T5WW_x005_8NJetinf_1000HT1250_200MHTinf.dat", "txt", objectName ="None", index = None, dataset="8NJetinf_1000HT1250_200MHTinf")
-T5WW_x005.efficiencyMap.setStatistics( observedN=8, expectedBG=5.6, bgError=2.3 )
-T5WW_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x05_EM_MAPS/MA5_EM_T5WW_x05_8NJetinf_1000HT1250_200MHTinf.dat", "txt", objectName ="None", index = None, dataset="8NJetinf_1000HT1250_200MHTinf")
-T5WW_x05.efficiencyMap.setStatistics( observedN=8, expectedBG=5.6, bgError=2.3 )
-T5WW_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x095_EM_MAPS/MA5_EM_T5WW_x095_8NJetinf_1000HT1250_200MHTinf.dat", "txt", objectName ="None", index = None, dataset="8NJetinf_1000HT1250_200MHTinf")
-T5WW_x095.efficiencyMap.setStatistics( observedN=8, expectedBG=5.6, bgError=2.3 )
-T5ZZ_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x005_EM_MAPS/MA5_EM_T5ZZ_x005_8NJetinf_1000HT1250_200MHTinf.dat", "txt", objectName ="None", index = None, dataset="8NJetinf_1000HT1250_200MHTinf")
-T5ZZ_x005.efficiencyMap.setStatistics( observedN=8, expectedBG=5.6, bgError=2.3 )
-T5ZZ_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x05_EM_MAPS/MA5_EM_T5ZZ_x05_8NJetinf_1000HT1250_200MHTinf.dat", "txt", objectName ="None", index = None, dataset="8NJetinf_1000HT1250_200MHTinf")
-T5ZZ_x05.efficiencyMap.setStatistics( observedN=8, expectedBG=5.6, bgError=2.3 )
-T5ZZ_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x095_EM_MAPS/MA5_EM_T5ZZ_x095_8NJetinf_1000HT1250_200MHTinf.dat", "txt", objectName ="None", index = None, dataset="8NJetinf_1000HT1250_200MHTinf")
-T5ZZ_x095.efficiencyMap.setStatistics( observedN=8, expectedBG=5.6, bgError=2.3 )
-TChiWZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_8NJetinf_1000HT1250_200MHTinf.dat", "txt", objectName ="None", index = None, dataset="8NJetinf_1000HT1250_200MHTinf")
-TChiWZ_1.efficiencyMap.setStatistics( observedN=8, expectedBG=5.6, bgError=2.3 )
-TChiWW_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWW_1_EM_MAPS/MA5_EM_TChiWW_1_8NJetinf_1000HT1250_200MHTinf.dat", "txt", objectName ="None", index = None, dataset="8NJetinf_1000HT1250_200MHTinf")
-TChiWW_1.efficiencyMap.setStatistics( observedN=8, expectedBG=5.6, bgError=2.3 )
-TChiZZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_8NJetinf_1000HT1250_200MHTinf.dat", "txt", objectName ="None", index = None, dataset="8NJetinf_1000HT1250_200MHTinf")
-TChiZZ_1.efficiencyMap.setStatistics( observedN=8, expectedBG=5.6, bgError=2.3 )
-T2bb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2bb_1_EM_MAPS/MA5_EM_T2bb_1_8NJetinf_1000HT1250_200MHTinf.dat", "txt", objectName ="None", index = None, dataset="8NJetinf_1000HT1250_200MHTinf")
-T2bb_1.efficiencyMap.setStatistics( observedN=8, expectedBG=5.6, bgError=2.3 )
-T2tt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2tt_1_EM_MAPS/MA5_EM_T2tt_1_8NJetinf_1000HT1250_200MHTinf.dat", "txt", objectName ="None", index = None, dataset="8NJetinf_1000HT1250_200MHTinf")
-T2tt_1.efficiencyMap.setStatistics( observedN=8, expectedBG=5.6, bgError=2.3 )
-T1btbt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1btbt_1_EM_MAPS/MA5_EM_T1btbt_1_8NJetinf_1000HT1250_200MHTinf.dat", "txt", objectName ="None", index = None, dataset="8NJetinf_1000HT1250_200MHTinf")
-T1btbt_1.efficiencyMap.setStatistics( observedN=8, expectedBG=5.6, bgError=2.3 )
-T1bbbb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1bbbb_1_EM_MAPS/MA5_EM_T1bbbb_1_8NJetinf_1000HT1250_200MHTinf.dat", "txt", objectName ="None", index = None, dataset="8NJetinf_1000HT1250_200MHTinf")
-T1bbbb_1.efficiencyMap.setStatistics( observedN=8, expectedBG=5.6, bgError=2.3 )
-databaseCreator.create()
-###
-T1qqqq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName ="h_EffAcc_8NJetinf_800HT1000_200MHTinf", index = None, dataset="8NJetinf_800HT1000_200MHTinf")
-T1qqqq.efficiencyMap.setStatistics(observedN=9, expectedBG=8.3, bgError=3.4)
-T1tttt.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName ="h_EffAcc_8NJetinf_800HT1000_200MHTinf", index = None, dataset="8NJetinf_800HT1000_200MHTinf")
-T1tttt.efficiencyMap.setStatistics(observedN=9, expectedBG=8.3, bgError=3.4)
-T2qq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T2qq.root", "root", objectName ="h_EffAcc_8NJetinf_800HT1000_200MHTinf", index = None, dataset="8NJetinf_800HT1000_200MHTinf")
-T2qq.efficiencyMap.setStatistics(observedN=9, expectedBG=8.3, bgError=3.4)
-T5WW_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x005_EM_MAPS/MA5_EM_T5WW_x005_8NJetinf_800HT1000_200MHTinf.dat", "txt", objectName ="None", index = None, dataset="8NJetinf_800HT1000_200MHTinf")
-T5WW_x005.efficiencyMap.setStatistics(observedN=9, expectedBG=8.3, bgError=3.4)
-T5WW_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x05_EM_MAPS/MA5_EM_T5WW_x05_8NJetinf_800HT1000_200MHTinf.dat", "txt", objectName ="None", index = None, dataset="8NJetinf_800HT1000_200MHTinf")
-T5WW_x05.efficiencyMap.setStatistics(observedN=9, expectedBG=8.3, bgError=3.4)
-T5WW_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x095_EM_MAPS/MA5_EM_T5WW_x095_8NJetinf_800HT1000_200MHTinf.dat", "txt", objectName ="None", index = None, dataset="8NJetinf_800HT1000_200MHTinf")
-T5WW_x095.efficiencyMap.setStatistics(observedN=9, expectedBG=8.3, bgError=3.4)
-T5ZZ_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x005_EM_MAPS/MA5_EM_T5ZZ_x005_8NJetinf_800HT1000_200MHTinf.dat", "txt", objectName ="None", index = None, dataset="8NJetinf_800HT1000_200MHTinf")
-T5ZZ_x005.efficiencyMap.setStatistics(observedN=9, expectedBG=8.3, bgError=3.4)
-T5ZZ_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x05_EM_MAPS/MA5_EM_T5ZZ_x05_8NJetinf_800HT1000_200MHTinf.dat", "txt", objectName ="None", index = None, dataset="8NJetinf_800HT1000_200MHTinf")
-T5ZZ_x05.efficiencyMap.setStatistics(observedN=9, expectedBG=8.3, bgError=3.4)
-T5ZZ_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x095_EM_MAPS/MA5_EM_T5ZZ_x095_8NJetinf_800HT1000_200MHTinf.dat", "txt", objectName ="None", index = None, dataset="8NJetinf_800HT1000_200MHTinf")
-T5ZZ_x095.efficiencyMap.setStatistics(observedN=9, expectedBG=8.3, bgError=3.4)
-TChiWZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_8NJetinf_800HT1000_200MHTinf.dat", "txt", objectName ="None", index = None, dataset="8NJetinf_800HT1000_200MHTinf")
-TChiWZ_1.efficiencyMap.setStatistics(observedN=9, expectedBG=8.3, bgError=3.4)
-TChiWW_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWW_1_EM_MAPS/MA5_EM_TChiWW_1_8NJetinf_800HT1000_200MHTinf.dat", "txt", objectName ="None", index = None, dataset="8NJetinf_800HT1000_200MHTinf")
-TChiWW_1.efficiencyMap.setStatistics(observedN=9, expectedBG=8.3, bgError=3.4)
-TChiZZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_8NJetinf_800HT1000_200MHTinf.dat", "txt", objectName ="None", index = None, dataset="8NJetinf_800HT1000_200MHTinf")
-TChiZZ_1.efficiencyMap.setStatistics(observedN=9, expectedBG=8.3, bgError=3.4)
-T2bb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2bb_1_EM_MAPS/MA5_EM_T2bb_1_8NJetinf_800HT1000_200MHTinf.dat", "txt", objectName ="None", index = None, dataset="8NJetinf_800HT1000_200MHTinf")
-T2bb_1.efficiencyMap.setStatistics(observedN=9, expectedBG=8.3, bgError=3.4)
-T2tt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2tt_1_EM_MAPS/MA5_EM_T2tt_1_8NJetinf_800HT1000_200MHTinf.dat", "txt", objectName ="None", index = None, dataset="8NJetinf_800HT1000_200MHTinf")
-T2tt_1.efficiencyMap.setStatistics(observedN=9, expectedBG=8.3, bgError=3.4)
-T1btbt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1btbt_1_EM_MAPS/MA5_EM_T1btbt_1_8NJetinf_800HT1000_200MHTinf.dat", "txt", objectName ="None", index = None, dataset="8NJetinf_800HT1000_200MHTinf")
-T1btbt_1.efficiencyMap.setStatistics(observedN=9, expectedBG=8.3, bgError=3.4)
-T1bbbb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1bbbb_1_EM_MAPS/MA5_EM_T1bbbb_1_8NJetinf_800HT1000_200MHTinf.dat", "txt", objectName ="None", index = None, dataset="8NJetinf_800HT1000_200MHTinf")
-T1bbbb_1.efficiencyMap.setStatistics(observedN=9, expectedBG=8.3, bgError=3.4)
-databaseCreator.create()
-###
-T1qqqq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName ="h_EffAcc_8NJetinf_500HT800_200MHTinf", index = None, dataset="8NJetinf_500HT800_200MHTinf")
-T1qqqq.efficiencyMap.setStatistics(observedN=8, expectedBG=4.8, bgError=2.3)
-T1tttt.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName ="h_EffAcc_8NJetinf_500HT800_200MHTinf", index = None, dataset="8NJetinf_500HT800_200MHTinf")
-T1tttt.efficiencyMap.setStatistics(observedN=8, expectedBG=4.8, bgError=2.3)
-T2qq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T2qq.root", "root", objectName ="h_EffAcc_8NJetinf_500HT800_200MHTinf", index = None, dataset="8NJetinf_500HT800_200MHTinf")
-T2qq.efficiencyMap.setStatistics(observedN=8, expectedBG=4.8, bgError=2.3)
-T5WW_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x005_EM_MAPS/MA5_EM_T5WW_x005_8NJetinf_500HT800_200MHTinf.dat", "txt", objectName ="None", index = None, dataset="8NJetinf_500HT800_200MHTinf")
-T5WW_x005.efficiencyMap.setStatistics(observedN=8, expectedBG=4.8, bgError=2.3)
-T5WW_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x05_EM_MAPS/MA5_EM_T5WW_x05_8NJetinf_500HT800_200MHTinf.dat", "txt", objectName ="None", index = None, dataset="8NJetinf_500HT800_200MHTinf")
-T5WW_x05.efficiencyMap.setStatistics(observedN=8, expectedBG=4.8, bgError=2.3)
-T5WW_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x095_EM_MAPS/MA5_EM_T5WW_x095_8NJetinf_500HT800_200MHTinf.dat", "txt", objectName ="None", index = None, dataset="8NJetinf_500HT800_200MHTinf")
-T5WW_x095.efficiencyMap.setStatistics(observedN=8, expectedBG=4.8, bgError=2.3)
-T5ZZ_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x005_EM_MAPS/MA5_EM_T5ZZ_x005_8NJetinf_500HT800_200MHTinf.dat", "txt", objectName ="None", index = None, dataset="8NJetinf_500HT800_200MHTinf")
-T5ZZ_x005.efficiencyMap.setStatistics(observedN=8, expectedBG=4.8, bgError=2.3)
-T5ZZ_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x05_EM_MAPS/MA5_EM_T5ZZ_x05_8NJetinf_500HT800_200MHTinf.dat", "txt", objectName ="None", index = None, dataset="8NJetinf_500HT800_200MHTinf")
-T5ZZ_x05.efficiencyMap.setStatistics(observedN=8, expectedBG=4.8, bgError=2.3)
-T5ZZ_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x095_EM_MAPS/MA5_EM_T5ZZ_x095_8NJetinf_500HT800_200MHTinf.dat", "txt", objectName ="None", index = None, dataset="8NJetinf_500HT800_200MHTinf")
-T5ZZ_x095.efficiencyMap.setStatistics(observedN=8, expectedBG=4.8, bgError=2.3)
-TChiWZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_8NJetinf_500HT800_200MHTinf.dat", "txt", objectName ="None", index = None, dataset="8NJetinf_500HT800_200MHTinf")
-TChiWZ_1.efficiencyMap.setStatistics(observedN=8, expectedBG=4.8, bgError=2.3)
-TChiWW_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWW_1_EM_MAPS/MA5_EM_TChiWW_1_8NJetinf_500HT800_200MHTinf.dat", "txt", objectName ="None", index = None, dataset="8NJetinf_500HT800_200MHTinf")
-TChiWW_1.efficiencyMap.setStatistics(observedN=8, expectedBG=4.8, bgError=2.3)
-TChiZZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_8NJetinf_500HT800_200MHTinf.dat", "txt", objectName ="None", index = None, dataset="8NJetinf_500HT800_200MHTinf")
-TChiZZ_1.efficiencyMap.setStatistics(observedN=8, expectedBG=4.8, bgError=2.3)
-T2bb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2bb_1_EM_MAPS/MA5_EM_T2bb_1_8NJetinf_500HT800_200MHTinf.dat", "txt", objectName ="None", index = None, dataset="8NJetinf_500HT800_200MHTinf")
-T2bb_1.efficiencyMap.setStatistics(observedN=8, expectedBG=4.8, bgError=2.3)
-T2tt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2tt_1_EM_MAPS/MA5_EM_T2tt_1_8NJetinf_500HT800_200MHTinf.dat", "txt", objectName ="None", index = None, dataset="8NJetinf_500HT800_200MHTinf")
-T2tt_1.efficiencyMap.setStatistics(observedN=8, expectedBG=4.8, bgError=2.3)
-T1btbt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1btbt_1_EM_MAPS/MA5_EM_T1btbt_1_8NJetinf_500HT800_200MHTinf.dat", "txt", objectName ="None", index = None, dataset="8NJetinf_500HT800_200MHTinf")
-T1btbt_1.efficiencyMap.setStatistics(observedN=8, expectedBG=4.8, bgError=2.3)
-T1bbbb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1bbbb_1_EM_MAPS/MA5_EM_T1bbbb_1_8NJetinf_500HT800_200MHTinf.dat", "txt", objectName ="None", index = None, dataset="8NJetinf_500HT800_200MHTinf")
-T1bbbb_1.efficiencyMap.setStatistics(observedN=8, expectedBG=4.8, bgError=2.3)
-databaseCreator.create()
-###
-T1qqqq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName ="h_EffAcc_6NJet8_1500HTinf_300MHTinf", index = None, dataset="6NJet8_1500HTinf_300MHTinf")
-T1qqqq.efficiencyMap.setStatistics(observedN=3, expectedBG=7.9, bgError=3.6)
-T1tttt.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName ="h_EffAcc_6NJet8_1500HTinf_300MHTinf", index = None, dataset="6NJet8_1500HTinf_300MHTinf")
-T1tttt.efficiencyMap.setStatistics(observedN=3, expectedBG=7.9, bgError=3.6)
-T2qq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T2qq.root", "root", objectName ="h_EffAcc_6NJet8_1500HTinf_300MHTinf", index = None, dataset="6NJet8_1500HTinf_300MHTinf")
-T2qq.efficiencyMap.setStatistics(observedN=3, expectedBG=7.9, bgError=3.6)
-T5WW_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x005_EM_MAPS/MA5_EM_T5WW_x005_6NJet8_1500HTinf_300MHTinf.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1500HTinf_300MHTinf")
-T5WW_x005.efficiencyMap.setStatistics(observedN=3, expectedBG=7.9, bgError=3.6)
-T5WW_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x05_EM_MAPS/MA5_EM_T5WW_x05_6NJet8_1500HTinf_300MHTinf.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1500HTinf_300MHTinf")
-T5WW_x05.efficiencyMap.setStatistics(observedN=3, expectedBG=7.9, bgError=3.6)
-T5WW_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x095_EM_MAPS/MA5_EM_T5WW_x095_6NJet8_1500HTinf_300MHTinf.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1500HTinf_300MHTinf")
-T5WW_x095.efficiencyMap.setStatistics(observedN=3, expectedBG=7.9, bgError=3.6)
-T5ZZ_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x005_EM_MAPS/MA5_EM_T5ZZ_x005_6NJet8_1500HTinf_300MHTinf.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1500HTinf_300MHTinf")
-T5ZZ_x005.efficiencyMap.setStatistics(observedN=3, expectedBG=7.9, bgError=3.6)
-T5ZZ_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x05_EM_MAPS/MA5_EM_T5ZZ_x05_6NJet8_1500HTinf_300MHTinf.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1500HTinf_300MHTinf")
-T5ZZ_x05.efficiencyMap.setStatistics(observedN=3, expectedBG=7.9, bgError=3.6)
-T5ZZ_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x095_EM_MAPS/MA5_EM_T5ZZ_x095_6NJet8_1500HTinf_300MHTinf.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1500HTinf_300MHTinf")
-T5ZZ_x095.efficiencyMap.setStatistics(observedN=3, expectedBG=7.9, bgError=3.6)
-TChiWZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_6NJet8_1500HTinf_300MHTinf.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1500HTinf_300MHTinf")
-TChiWZ_1.efficiencyMap.setStatistics(observedN=3, expectedBG=7.9, bgError=3.6)
-TChiWW_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWW_1_EM_MAPS/MA5_EM_TChiWW_1_6NJet8_1500HTinf_300MHTinf.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1500HTinf_300MHTinf")
-TChiWW_1.efficiencyMap.setStatistics(observedN=3, expectedBG=7.9, bgError=3.6)
-TChiZZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_6NJet8_1500HTinf_300MHTinf.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1500HTinf_300MHTinf")
-TChiZZ_1.efficiencyMap.setStatistics(observedN=3, expectedBG=7.9, bgError=3.6)
-T2bb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2bb_1_EM_MAPS/MA5_EM_T2bb_1_6NJet8_1500HTinf_300MHTinf.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1500HTinf_300MHTinf")
-T2bb_1.efficiencyMap.setStatistics(observedN=3, expectedBG=7.9, bgError=3.6)
-T2tt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2tt_1_EM_MAPS/MA5_EM_T2tt_1_6NJet8_1500HTinf_300MHTinf.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1500HTinf_300MHTinf")
-T2tt_1.efficiencyMap.setStatistics(observedN=3, expectedBG=7.9, bgError=3.6)
-T1btbt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1btbt_1_EM_MAPS/MA5_EM_T1btbt_1_6NJet8_1500HTinf_300MHTinf.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1500HTinf_300MHTinf")
-T1btbt_1.efficiencyMap.setStatistics(observedN=3, expectedBG=7.9, bgError=3.6)
-T1bbbb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1bbbb_1_EM_MAPS/MA5_EM_T1bbbb_1_6NJet8_1500HTinf_300MHTinf.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1500HTinf_300MHTinf")
-T1bbbb_1.efficiencyMap.setStatistics(observedN=3, expectedBG=7.9, bgError=3.6)
-databaseCreator.create()
-###
-T1qqqq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName ="h_EffAcc_6NJet8_1500HTinf_200MHT300", index = None, dataset="6NJet8_1500HTinf_200MHT300")
-T1qqqq.efficiencyMap.setStatistics(observedN=18, expectedBG=21.1, bgError=8.1)
-T1tttt.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName ="h_EffAcc_6NJet8_1500HTinf_200MHT300", index = None, dataset="6NJet8_1500HTinf_200MHT300")
-T1tttt.efficiencyMap.setStatistics(observedN=18, expectedBG=21.1, bgError=8.1)
-T2qq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T2qq.root", "root", objectName ="h_EffAcc_6NJet8_1500HTinf_200MHT300", index = None, dataset="6NJet8_1500HTinf_200MHT300")
-T2qq.efficiencyMap.setStatistics(observedN=18, expectedBG=21.1, bgError=8.1)
-T5WW_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x005_EM_MAPS/MA5_EM_T5WW_x005_6NJet8_1500HTinf_200MHT300.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1500HTinf_200MHT300")
-T5WW_x005.efficiencyMap.setStatistics(observedN=18, expectedBG=21.1, bgError=8.1)
-T5WW_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x05_EM_MAPS/MA5_EM_T5WW_x05_6NJet8_1500HTinf_200MHT300.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1500HTinf_200MHT300")
-T5WW_x05.efficiencyMap.setStatistics(observedN=18, expectedBG=21.1, bgError=8.1)
-T5WW_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x095_EM_MAPS/MA5_EM_T5WW_x095_6NJet8_1500HTinf_200MHT300.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1500HTinf_200MHT300")
-T5WW_x095.efficiencyMap.setStatistics(observedN=18, expectedBG=21.1, bgError=8.1)
-T5ZZ_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x005_EM_MAPS/MA5_EM_T5ZZ_x005_6NJet8_1500HTinf_200MHT300.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1500HTinf_200MHT300")
-T5ZZ_x005.efficiencyMap.setStatistics(observedN=18, expectedBG=21.1, bgError=8.1)
-T5ZZ_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x05_EM_MAPS/MA5_EM_T5ZZ_x05_6NJet8_1500HTinf_200MHT300.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1500HTinf_200MHT300")
-T5ZZ_x05.efficiencyMap.setStatistics(observedN=18, expectedBG=21.1, bgError=8.1)
-T5ZZ_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x095_EM_MAPS/MA5_EM_T5ZZ_x095_6NJet8_1500HTinf_200MHT300.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1500HTinf_200MHT300")
-T5ZZ_x095.efficiencyMap.setStatistics(observedN=18, expectedBG=21.1, bgError=8.1)
-TChiWZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_6NJet8_1500HTinf_200MHT300.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1500HTinf_200MHT300")
-TChiWZ_1.efficiencyMap.setStatistics(observedN=18, expectedBG=21.1, bgError=8.1)
-TChiWW_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWW_1_EM_MAPS/MA5_EM_TChiWW_1_6NJet8_1500HTinf_200MHT300.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1500HTinf_200MHT300")
-TChiWW_1.efficiencyMap.setStatistics(observedN=18, expectedBG=21.1, bgError=8.1)
-TChiZZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_6NJet8_1500HTinf_200MHT300.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1500HTinf_200MHT300")
-TChiZZ_1.efficiencyMap.setStatistics(observedN=18, expectedBG=21.1, bgError=8.1)
-T2bb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2bb_1_EM_MAPS/MA5_EM_T2bb_1_6NJet8_1500HTinf_200MHT300.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1500HTinf_200MHT300")
-T2bb_1.efficiencyMap.setStatistics(observedN=18, expectedBG=21.1, bgError=8.1)
-T2tt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2tt_1_EM_MAPS/MA5_EM_T2tt_1_6NJet8_1500HTinf_200MHT300.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1500HTinf_200MHT300")
-T2tt_1.efficiencyMap.setStatistics(observedN=18, expectedBG=21.1, bgError=8.1)
-T1btbt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1btbt_1_EM_MAPS/MA5_EM_T1btbt_1_6NJet8_1500HTinf_200MHT300.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1500HTinf_200MHT300")
-T1btbt_1.efficiencyMap.setStatistics(observedN=18, expectedBG=21.1, bgError=8.1)
-T1bbbb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1bbbb_1_EM_MAPS/MA5_EM_T1bbbb_1_6NJet8_1500HTinf_200MHT300.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1500HTinf_200MHT300")
-T1bbbb_1.efficiencyMap.setStatistics(observedN=18, expectedBG=21.1, bgError=8.1)
-databaseCreator.create()
-###
-T1qqqq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName ="h_EffAcc_6NJet8_1250HT1500_450MHTinf", index = None, dataset="6NJet8_1250HT1500_450MHTinf")
-T1qqqq.efficiencyMap.setStatistics(observedN=2, expectedBG=0.5, bgError=2.6)
-T1tttt.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName ="h_EffAcc_6NJet8_1250HT1500_450MHTinf", index = None, dataset="6NJet8_1250HT1500_450MHTinf")
-T1tttt.efficiencyMap.setStatistics(observedN=2, expectedBG=0.5, bgError=2.6)
-T2qq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T2qq.root", "root", objectName ="h_EffAcc_6NJet8_1250HT1500_450MHTinf", index = None, dataset="6NJet8_1250HT1500_450MHTinf")
-T2qq.efficiencyMap.setStatistics(observedN=2, expectedBG=0.5, bgError=2.6)
-T5WW_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x005_EM_MAPS/MA5_EM_T5WW_x005_6NJet8_1250HT1500_450MHTinf.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1250HT1500_450MHTinf")
-T5WW_x005.efficiencyMap.setStatistics(observedN=2, expectedBG=0.5, bgError=2.6)
-T5WW_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x05_EM_MAPS/MA5_EM_T5WW_x05_6NJet8_1250HT1500_450MHTinf.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1250HT1500_450MHTinf")
-T5WW_x05.efficiencyMap.setStatistics(observedN=2, expectedBG=0.5, bgError=2.6)
-T5WW_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x095_EM_MAPS/MA5_EM_T5WW_x095_6NJet8_1250HT1500_450MHTinf.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1250HT1500_450MHTinf")
-T5WW_x095.efficiencyMap.setStatistics(observedN=2, expectedBG=0.5, bgError=2.6)
-T5ZZ_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x005_EM_MAPS/MA5_EM_T5ZZ_x005_6NJet8_1250HT1500_450MHTinf.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1250HT1500_450MHTinf")
-T5ZZ_x005.efficiencyMap.setStatistics(observedN=2, expectedBG=0.5, bgError=2.6)
-T5ZZ_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x05_EM_MAPS/MA5_EM_T5ZZ_x05_6NJet8_1250HT1500_450MHTinf.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1250HT1500_450MHTinf")
-T5ZZ_x05.efficiencyMap.setStatistics(observedN=2, expectedBG=0.5, bgError=2.6)
-T5ZZ_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x095_EM_MAPS/MA5_EM_T5ZZ_x095_6NJet8_1250HT1500_450MHTinf.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1250HT1500_450MHTinf")
-T5ZZ_x095.efficiencyMap.setStatistics(observedN=2, expectedBG=0.5, bgError=2.6)
-TChiWZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_6NJet8_1250HT1500_450MHTinf.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1250HT1500_450MHTinf")
-TChiWZ_1.efficiencyMap.setStatistics(observedN=2, expectedBG=0.5, bgError=2.6)
-TChiWW_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWW_1_EM_MAPS/MA5_EM_TChiWW_1_6NJet8_1250HT1500_450MHTinf.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1250HT1500_450MHTinf")
-TChiWW_1.efficiencyMap.setStatistics(observedN=2, expectedBG=0.5, bgError=2.6)
-TChiZZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_6NJet8_1250HT1500_450MHTinf.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1250HT1500_450MHTinf")
-TChiZZ_1.efficiencyMap.setStatistics(observedN=2, expectedBG=0.5, bgError=2.6)
-T2bb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2bb_1_EM_MAPS/MA5_EM_T2bb_1_6NJet8_1250HT1500_450MHTinf.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1250HT1500_450MHTinf")
-T2bb_1.efficiencyMap.setStatistics(observedN=2, expectedBG=0.5, bgError=2.6)
-T2tt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2tt_1_EM_MAPS/MA5_EM_T2tt_1_6NJet8_1250HT1500_450MHTinf.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1250HT1500_450MHTinf")
-T2tt_1.efficiencyMap.setStatistics(observedN=2, expectedBG=0.5, bgError=2.6)
-T1btbt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1btbt_1_EM_MAPS/MA5_EM_T1btbt_1_6NJet8_1250HT1500_450MHTinf.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1250HT1500_450MHTinf")
-T1btbt_1.efficiencyMap.setStatistics(observedN=2, expectedBG=0.5, bgError=2.6)
-T1bbbb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1bbbb_1_EM_MAPS/MA5_EM_T1bbbb_1_6NJet8_1250HT1500_450MHTinf.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1250HT1500_450MHTinf")
-T1bbbb_1.efficiencyMap.setStatistics(observedN=2, expectedBG=0.5, bgError=2.6)
-databaseCreator.create()
-###
-T1qqqq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName ="h_EffAcc_6NJet8_1250HT1500_300MHT450", index = None, dataset="6NJet8_1250HT1500_300MHT450")
-T1qqqq.efficiencyMap.setStatistics(observedN=5, expectedBG=9.4, bgError=3.6)
-T1tttt.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName ="h_EffAcc_6NJet8_1250HT1500_300MHT450", index = None, dataset="6NJet8_1250HT1500_300MHT450")
-T1tttt.efficiencyMap.setStatistics(observedN=5, expectedBG=9.4, bgError=3.6)
-T2qq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T2qq.root", "root", objectName ="h_EffAcc_6NJet8_1250HT1500_300MHT450", index = None, dataset="6NJet8_1250HT1500_300MHT450")
-T2qq.efficiencyMap.setStatistics(observedN=5, expectedBG=9.4, bgError=3.6)
-T5WW_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x005_EM_MAPS/MA5_EM_T5WW_x005_6NJet8_1250HT1500_300MHT450.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1250HT1500_300MHT450")
-T5WW_x005.efficiencyMap.setStatistics(observedN=5, expectedBG=9.4, bgError=3.6)
-T5WW_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x05_EM_MAPS/MA5_EM_T5WW_x05_6NJet8_1250HT1500_300MHT450.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1250HT1500_300MHT450")
-T5WW_x05.efficiencyMap.setStatistics(observedN=5, expectedBG=9.4, bgError=3.6)
-T5WW_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x095_EM_MAPS/MA5_EM_T5WW_x095_6NJet8_1250HT1500_300MHT450.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1250HT1500_300MHT450")
-T5WW_x095.efficiencyMap.setStatistics(observedN=5, expectedBG=9.4, bgError=3.6)
-T5ZZ_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x005_EM_MAPS/MA5_EM_T5ZZ_x005_6NJet8_1250HT1500_300MHT450.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1250HT1500_300MHT450")
-T5ZZ_x005.efficiencyMap.setStatistics(observedN=5, expectedBG=9.4, bgError=3.6)
-T5ZZ_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x05_EM_MAPS/MA5_EM_T5ZZ_x05_6NJet8_1250HT1500_300MHT450.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1250HT1500_300MHT450")
-T5ZZ_x05.efficiencyMap.setStatistics(observedN=5, expectedBG=9.4, bgError=3.6)
-T5ZZ_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x095_EM_MAPS/MA5_EM_T5ZZ_x095_6NJet8_1250HT1500_300MHT450.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1250HT1500_300MHT450")
-T5ZZ_x095.efficiencyMap.setStatistics(observedN=5, expectedBG=9.4, bgError=3.6)
-TChiWZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_6NJet8_1250HT1500_300MHT450.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1250HT1500_300MHT450")
-TChiWZ_1.efficiencyMap.setStatistics(observedN=5, expectedBG=9.4, bgError=3.6)
-TChiWW_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWW_1_EM_MAPS/MA5_EM_TChiWW_1_6NJet8_1250HT1500_300MHT450.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1250HT1500_300MHT450")
-TChiWW_1.efficiencyMap.setStatistics(observedN=5, expectedBG=9.4, bgError=3.6)
-TChiZZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_6NJet8_1250HT1500_300MHT450.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1250HT1500_300MHT450")
-TChiZZ_1.efficiencyMap.setStatistics(observedN=5, expectedBG=9.4, bgError=3.6)
-T2bb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2bb_1_EM_MAPS/MA5_EM_T2bb_1_6NJet8_1250HT1500_300MHT450.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1250HT1500_300MHT450")
-T2bb_1.efficiencyMap.setStatistics(observedN=5, expectedBG=9.4, bgError=3.6)
-T2tt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2tt_1_EM_MAPS/MA5_EM_T2tt_1_6NJet8_1250HT1500_300MHT450.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1250HT1500_300MHT450")
-T2tt_1.efficiencyMap.setStatistics(observedN=5, expectedBG=9.4, bgError=3.6)
-T1btbt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1btbt_1_EM_MAPS/MA5_EM_T1btbt_1_6NJet8_1250HT1500_300MHT450.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1250HT1500_300MHT450")
-T1btbt_1.efficiencyMap.setStatistics(observedN=5, expectedBG=9.4, bgError=3.6)
-T1bbbb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1bbbb_1_EM_MAPS/MA5_EM_T1bbbb_1_6NJet8_1250HT1500_300MHT450.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1250HT1500_300MHT450")
-T1bbbb_1.efficiencyMap.setStatistics(observedN=5, expectedBG=9.4, bgError=3.6)
-databaseCreator.create()
-###
-T1qqqq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName ="h_EffAcc_6NJet8_1250HT1500_200MHT300", index = None, dataset="6NJet8_1250HT1500_200MHT300")
-T1qqqq.efficiencyMap.setStatistics(observedN=24, expectedBG=28.0, bgError=8.2)
-T1tttt.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName ="h_EffAcc_6NJet8_1250HT1500_200MHT300", index = None, dataset="6NJet8_1250HT1500_200MHT300")
-T1tttt.efficiencyMap.setStatistics(observedN=24, expectedBG=28.0, bgError=8.2)
-T2qq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T2qq.root", "root", objectName ="h_EffAcc_6NJet8_1250HT1500_200MHT300", index = None, dataset="6NJet8_1250HT1500_200MHT300")
-T2qq.efficiencyMap.setStatistics(observedN=24, expectedBG=28.0, bgError=8.2)
-T5WW_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x005_EM_MAPS/MA5_EM_T5WW_x005_6NJet8_1250HT1500_200MHT300.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1250HT1500_200MHT300")
-T5WW_x005.efficiencyMap.setStatistics(observedN=24, expectedBG=28.0, bgError=8.2)
-T5WW_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x05_EM_MAPS/MA5_EM_T5WW_x05_6NJet8_1250HT1500_200MHT300.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1250HT1500_200MHT300")
-T5WW_x05.efficiencyMap.setStatistics(observedN=24, expectedBG=28.0, bgError=8.2)
-T5WW_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x095_EM_MAPS/MA5_EM_T5WW_x095_6NJet8_1250HT1500_200MHT300.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1250HT1500_200MHT300")
-T5WW_x095.efficiencyMap.setStatistics(observedN=24, expectedBG=28.0, bgError=8.2)
-T5ZZ_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x005_EM_MAPS/MA5_EM_T5ZZ_x005_6NJet8_1250HT1500_200MHT300.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1250HT1500_200MHT300")
-T5ZZ_x005.efficiencyMap.setStatistics(observedN=24, expectedBG=28.0, bgError=8.2)
-T5ZZ_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x05_EM_MAPS/MA5_EM_T5ZZ_x05_6NJet8_1250HT1500_200MHT300.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1250HT1500_200MHT300")
-T5ZZ_x05.efficiencyMap.setStatistics(observedN=24, expectedBG=28.0, bgError=8.2)
-T5ZZ_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x095_EM_MAPS/MA5_EM_T5ZZ_x095_6NJet8_1250HT1500_200MHT300.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1250HT1500_200MHT300")
-T5ZZ_x095.efficiencyMap.setStatistics(observedN=24, expectedBG=28.0, bgError=8.2)
-TChiWZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_6NJet8_1250HT1500_200MHT300.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1250HT1500_200MHT300")
-TChiWZ_1.efficiencyMap.setStatistics(observedN=24, expectedBG=28.0, bgError=8.2)
-TChiWW_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWW_1_EM_MAPS/MA5_EM_TChiWW_1_6NJet8_1250HT1500_200MHT300.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1250HT1500_200MHT300")
-TChiWW_1.efficiencyMap.setStatistics(observedN=24, expectedBG=28.0, bgError=8.2)
-TChiZZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_6NJet8_1250HT1500_200MHT300.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1250HT1500_200MHT300")
-TChiZZ_1.efficiencyMap.setStatistics(observedN=24, expectedBG=28.0, bgError=8.2)
-T2bb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2bb_1_EM_MAPS/MA5_EM_T2bb_1_6NJet8_1250HT1500_200MHT300.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1250HT1500_200MHT300")
-T2bb_1.efficiencyMap.setStatistics(observedN=24, expectedBG=28.0, bgError=8.2)
-T2tt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2tt_1_EM_MAPS/MA5_EM_T2tt_1_6NJet8_1250HT1500_200MHT300.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1250HT1500_200MHT300")
-T2tt_1.efficiencyMap.setStatistics(observedN=24, expectedBG=28.0, bgError=8.2)
-T1btbt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1btbt_1_EM_MAPS/MA5_EM_T1btbt_1_6NJet8_1250HT1500_200MHT300.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1250HT1500_200MHT300")
-T1btbt_1.efficiencyMap.setStatistics(observedN=24, expectedBG=28.0, bgError=8.2)
-T1bbbb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1bbbb_1_EM_MAPS/MA5_EM_T1bbbb_1_6NJet8_1250HT1500_200MHT300.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1250HT1500_200MHT300")
-T1bbbb_1.efficiencyMap.setStatistics(observedN=24, expectedBG=28.0, bgError=8.2)
-databaseCreator.create()
-###
-T1qqqq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName ="h_EffAcc_6NJet8_1000HT1250_450MHTinf", index = None, dataset="6NJet8_1000HT1250_450MHTinf")
-T1qqqq.efficiencyMap.setStatistics(observedN=4, expectedBG=2.2, bgError=3.8)
-T1tttt.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName ="h_EffAcc_6NJet8_1000HT1250_450MHTinf", index = None, dataset="6NJet8_1000HT1250_450MHTinf")
-T1tttt.efficiencyMap.setStatistics(observedN=4, expectedBG=2.2, bgError=3.8)
-T2qq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T2qq.root", "root", objectName ="h_EffAcc_6NJet8_1000HT1250_450MHTinf", index = None, dataset="6NJet8_1000HT1250_450MHTinf")
-T2qq.efficiencyMap.setStatistics(observedN=4, expectedBG=2.2, bgError=3.8)
-T5WW_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x005_EM_MAPS/MA5_EM_T5WW_x005_6NJet8_1000HT1250_450MHTinf.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1000HT1250_450MHTinf")
-T5WW_x005.efficiencyMap.setStatistics(observedN=4, expectedBG=2.2, bgError=3.8)
-T5WW_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x05_EM_MAPS/MA5_EM_T5WW_x05_6NJet8_1000HT1250_450MHTinf.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1000HT1250_450MHTinf")
-T5WW_x05.efficiencyMap.setStatistics(observedN=4, expectedBG=2.2, bgError=3.8)
-T5WW_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x095_EM_MAPS/MA5_EM_T5WW_x095_6NJet8_1000HT1250_450MHTinf.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1000HT1250_450MHTinf")
-T5WW_x095.efficiencyMap.setStatistics(observedN=4, expectedBG=2.2, bgError=3.8)
-T5ZZ_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x005_EM_MAPS/MA5_EM_T5ZZ_x005_6NJet8_1000HT1250_450MHTinf.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1000HT1250_450MHTinf")
-T5ZZ_x005.efficiencyMap.setStatistics(observedN=4, expectedBG=2.2, bgError=3.8)
-T5ZZ_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x05_EM_MAPS/MA5_EM_T5ZZ_x05_6NJet8_1000HT1250_450MHTinf.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1000HT1250_450MHTinf")
-T5ZZ_x05.efficiencyMap.setStatistics(observedN=4, expectedBG=2.2, bgError=3.8)
-T5ZZ_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x095_EM_MAPS/MA5_EM_T5ZZ_x095_6NJet8_1000HT1250_450MHTinf.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1000HT1250_450MHTinf")
-T5ZZ_x095.efficiencyMap.setStatistics(observedN=4, expectedBG=2.2, bgError=3.8)
-TChiWZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_6NJet8_1000HT1250_450MHTinf.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1000HT1250_450MHTinf")
-TChiWZ_1.efficiencyMap.setStatistics(observedN=4, expectedBG=2.2, bgError=3.8)
-TChiWW_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWW_1_EM_MAPS/MA5_EM_TChiWW_1_6NJet8_1000HT1250_450MHTinf.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1000HT1250_450MHTinf")
-TChiWW_1.efficiencyMap.setStatistics(observedN=4, expectedBG=2.2, bgError=3.8)
-TChiZZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_6NJet8_1000HT1250_450MHTinf.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1000HT1250_450MHTinf")
-TChiZZ_1.efficiencyMap.setStatistics(observedN=4, expectedBG=2.2, bgError=3.8)
-T2bb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2bb_1_EM_MAPS/MA5_EM_T2bb_1_6NJet8_1000HT1250_450MHTinf.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1000HT1250_450MHTinf")
-T2bb_1.efficiencyMap.setStatistics(observedN=4, expectedBG=2.2, bgError=3.8)
-T2tt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2tt_1_EM_MAPS/MA5_EM_T2tt_1_6NJet8_1000HT1250_450MHTinf.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1000HT1250_450MHTinf")
-T2tt_1.efficiencyMap.setStatistics(observedN=4, expectedBG=2.2, bgError=3.8)
-T1btbt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1btbt_1_EM_MAPS/MA5_EM_T1btbt_1_6NJet8_1000HT1250_450MHTinf.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1000HT1250_450MHTinf")
-T1btbt_1.efficiencyMap.setStatistics(observedN=4, expectedBG=2.2, bgError=3.8)
-T1bbbb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1bbbb_1_EM_MAPS/MA5_EM_T1bbbb_1_6NJet8_1000HT1250_450MHTinf.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1000HT1250_450MHTinf")
-T1bbbb_1.efficiencyMap.setStatistics(observedN=4, expectedBG=2.2, bgError=3.8)
-databaseCreator.create()
-###
-T1qqqq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName ="h_EffAcc_6NJet8_1000HT1250_300MHT450", index = None, dataset="6NJet8_1000HT1250_300MHT450")
-T1qqqq.efficiencyMap.setStatistics(observedN=20, expectedBG=21.6, bgError=5.8)
-T1tttt.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName ="h_EffAcc_6NJet8_1000HT1250_300MHT450", index = None, dataset="6NJet8_1000HT1250_300MHT450")
-T1tttt.efficiencyMap.setStatistics(observedN=20, expectedBG=21.6, bgError=5.8)
-T2qq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T2qq.root", "root", objectName ="h_EffAcc_6NJet8_1000HT1250_300MHT450", index = None, dataset="6NJet8_1000HT1250_300MHT450")
-T2qq.efficiencyMap.setStatistics(observedN=20, expectedBG=21.6, bgError=5.8)
-T5WW_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x005_EM_MAPS/MA5_EM_T5WW_x005_6NJet8_1000HT1250_300MHT450.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1000HT1250_300MHT450")
-T5WW_x005.efficiencyMap.setStatistics(observedN=20, expectedBG=21.6, bgError=5.8)
-T5WW_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x05_EM_MAPS/MA5_EM_T5WW_x05_6NJet8_1000HT1250_300MHT450.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1000HT1250_300MHT450")
-T5WW_x05.efficiencyMap.setStatistics(observedN=20, expectedBG=21.6, bgError=5.8)
-T5WW_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x095_EM_MAPS/MA5_EM_T5WW_x095_6NJet8_1000HT1250_300MHT450.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1000HT1250_300MHT450")
-T5WW_x095.efficiencyMap.setStatistics(observedN=20, expectedBG=21.6, bgError=5.8)
-T5ZZ_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x005_EM_MAPS/MA5_EM_T5ZZ_x005_6NJet8_1000HT1250_300MHT450.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1000HT1250_300MHT450")
-T5ZZ_x005.efficiencyMap.setStatistics(observedN=20, expectedBG=21.6, bgError=5.8)
-T5ZZ_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x05_EM_MAPS/MA5_EM_T5ZZ_x05_6NJet8_1000HT1250_300MHT450.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1000HT1250_300MHT450")
-T5ZZ_x05.efficiencyMap.setStatistics(observedN=20, expectedBG=21.6, bgError=5.8)
-T5ZZ_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x095_EM_MAPS/MA5_EM_T5ZZ_x095_6NJet8_1000HT1250_300MHT450.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1000HT1250_300MHT450")
-T5ZZ_x095.efficiencyMap.setStatistics(observedN=20, expectedBG=21.6, bgError=5.8)
-TChiWZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_6NJet8_1000HT1250_300MHT450.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1000HT1250_300MHT450")
-TChiWZ_1.efficiencyMap.setStatistics(observedN=20, expectedBG=21.6, bgError=5.8)
-TChiWW_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWW_1_EM_MAPS/MA5_EM_TChiWW_1_6NJet8_1000HT1250_300MHT450.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1000HT1250_300MHT450")
-TChiWW_1.efficiencyMap.setStatistics(observedN=20, expectedBG=21.6, bgError=5.8)
-TChiZZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_6NJet8_1000HT1250_300MHT450.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1000HT1250_300MHT450")
-TChiZZ_1.efficiencyMap.setStatistics(observedN=20, expectedBG=21.6, bgError=5.8)
-T2bb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2bb_1_EM_MAPS/MA5_EM_T2bb_1_6NJet8_1000HT1250_300MHT450.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1000HT1250_300MHT450")
-T2bb_1.efficiencyMap.setStatistics(observedN=20, expectedBG=21.6, bgError=5.8)
-T2tt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2tt_1_EM_MAPS/MA5_EM_T2tt_1_6NJet8_1000HT1250_300MHT450.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1000HT1250_300MHT450")
-T2tt_1.efficiencyMap.setStatistics(observedN=20, expectedBG=21.6, bgError=5.8)
-T1btbt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1btbt_1_EM_MAPS/MA5_EM_T1btbt_1_6NJet8_1000HT1250_300MHT450.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1000HT1250_300MHT450")
-T1btbt_1.efficiencyMap.setStatistics(observedN=20, expectedBG=21.6, bgError=5.8)
-T1bbbb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1bbbb_1_EM_MAPS/MA5_EM_T1bbbb_1_6NJet8_1000HT1250_300MHT450.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1000HT1250_300MHT450")
-T1bbbb_1.efficiencyMap.setStatistics(observedN=20, expectedBG=21.6, bgError=5.8)
-databaseCreator.create()
-###
-T1qqqq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName ="h_EffAcc_6NJet8_1000HT1250_200MHT300", index = None, dataset="6NJet8_1000HT1250_200MHT300")
-T1qqqq.efficiencyMap.setStatistics(observedN=67, expectedBG=70, bgError=16)
-T1tttt.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName ="h_EffAcc_6NJet8_1000HT1250_200MHT300", index = None, dataset="6NJet8_1000HT1250_200MHT300")
-T1tttt.efficiencyMap.setStatistics(observedN=67, expectedBG=70, bgError=16)
-T2qq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T2qq.root", "root", objectName ="h_EffAcc_6NJet8_1000HT1250_200MHT300", index = None, dataset="6NJet8_1000HT1250_200MHT300")
-T2qq.efficiencyMap.setStatistics(observedN=67, expectedBG=70, bgError=16)
-T5WW_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x005_EM_MAPS/MA5_EM_T5WW_x005_6NJet8_1000HT1250_200MHT300.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1000HT1250_200MHT300")
-T5WW_x005.efficiencyMap.setStatistics(observedN=67, expectedBG=70, bgError=16)
-T5WW_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x05_EM_MAPS/MA5_EM_T5WW_x05_6NJet8_1000HT1250_200MHT300.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1000HT1250_200MHT300")
-T5WW_x05.efficiencyMap.setStatistics(observedN=67, expectedBG=70, bgError=16)
-T5WW_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x095_EM_MAPS/MA5_EM_T5WW_x095_6NJet8_1000HT1250_200MHT300.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1000HT1250_200MHT300")
-T5WW_x095.efficiencyMap.setStatistics(observedN=67, expectedBG=70, bgError=16)
-T5ZZ_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x005_EM_MAPS/MA5_EM_T5ZZ_x005_6NJet8_1000HT1250_200MHT300.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1000HT1250_200MHT300")
-T5ZZ_x005.efficiencyMap.setStatistics(observedN=67, expectedBG=70, bgError=16)
-T5ZZ_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x05_EM_MAPS/MA5_EM_T5ZZ_x05_6NJet8_1000HT1250_200MHT300.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1000HT1250_200MHT300")
-T5ZZ_x05.efficiencyMap.setStatistics(observedN=67, expectedBG=70, bgError=16)
-T5ZZ_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x095_EM_MAPS/MA5_EM_T5ZZ_x095_6NJet8_1000HT1250_200MHT300.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1000HT1250_200MHT300")
-T5ZZ_x095.efficiencyMap.setStatistics(observedN=67, expectedBG=70, bgError=16)
-TChiWZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_6NJet8_1000HT1250_200MHT300.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1000HT1250_200MHT300")
-TChiWZ_1.efficiencyMap.setStatistics(observedN=67, expectedBG=70, bgError=16)
-TChiWW_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWW_1_EM_MAPS/MA5_EM_TChiWW_1_6NJet8_1000HT1250_200MHT300.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1000HT1250_200MHT300")
-TChiWW_1.efficiencyMap.setStatistics(observedN=67, expectedBG=70, bgError=16)
-TChiZZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_6NJet8_1000HT1250_200MHT300.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1000HT1250_200MHT300")
-TChiZZ_1.efficiencyMap.setStatistics(observedN=67, expectedBG=70, bgError=16)
-T2bb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2bb_1_EM_MAPS/MA5_EM_T2bb_1_6NJet8_1000HT1250_200MHT300.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1000HT1250_200MHT300")
-T2bb_1.efficiencyMap.setStatistics(observedN=67, expectedBG=70, bgError=16)
-T2tt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2tt_1_EM_MAPS/MA5_EM_T2tt_1_6NJet8_1000HT1250_200MHT300.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1000HT1250_200MHT300")
-T2tt_1.efficiencyMap.setStatistics(observedN=67, expectedBG=70, bgError=16)
-T1btbt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1btbt_1_EM_MAPS/MA5_EM_T1btbt_1_6NJet8_1000HT1250_200MHT300.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1000HT1250_200MHT300")
-T1btbt_1.efficiencyMap.setStatistics(observedN=67, expectedBG=70, bgError=16)
-T1bbbb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1bbbb_1_EM_MAPS/MA5_EM_T1bbbb_1_6NJet8_1000HT1250_200MHT300.dat", "txt", objectName ="None", index = None, dataset="6NJet8_1000HT1250_200MHT300")
-T1bbbb_1.efficiencyMap.setStatistics(observedN=67, expectedBG=70, bgError=16)
-databaseCreator.create()
-###
-T1qqqq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName ="h_EffAcc_6NJet8_800HT1000_450MHTinf", index = None, dataset="6NJet8_800HT1000_450MHTinf")
-T1qqqq.efficiencyMap.setStatistics(observedN=4, expectedBG=6.0, bgError=2.8)
-T1tttt.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName ="h_EffAcc_6NJet8_800HT1000_450MHTinf", index = None, dataset="6NJet8_800HT1000_450MHTinf")
-T1tttt.efficiencyMap.setStatistics(observedN=4, expectedBG=6.0, bgError=2.8)
-T2qq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T2qq.root", "root", objectName ="h_EffAcc_6NJet8_800HT1000_450MHTinf", index = None, dataset="6NJet8_800HT1000_450MHTinf")
-T2qq.efficiencyMap.setStatistics(observedN=4, expectedBG=6.0, bgError=2.8)
-T5WW_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x005_EM_MAPS/MA5_EM_T5WW_x005_6NJet8_800HT1000_450MHTinf.dat", "txt", objectName ="None", index = None, dataset="6NJet8_800HT1000_450MHTinf")
-T5WW_x005.efficiencyMap.setStatistics(observedN=4, expectedBG=6.0, bgError=2.8)
-T5WW_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x05_EM_MAPS/MA5_EM_T5WW_x05_6NJet8_800HT1000_450MHTinf.dat", "txt", objectName ="None", index = None, dataset="6NJet8_800HT1000_450MHTinf")
-T5WW_x05.efficiencyMap.setStatistics(observedN=4, expectedBG=6.0, bgError=2.8)
-T5WW_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x095_EM_MAPS/MA5_EM_T5WW_x095_6NJet8_800HT1000_450MHTinf.dat", "txt", objectName ="None", index = None, dataset="6NJet8_800HT1000_450MHTinf")
-T5WW_x095.efficiencyMap.setStatistics(observedN=4, expectedBG=6.0, bgError=2.8)
-T5ZZ_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x005_EM_MAPS/MA5_EM_T5ZZ_x005_6NJet8_800HT1000_450MHTinf.dat", "txt", objectName ="None", index = None, dataset="6NJet8_800HT1000_450MHTinf")
-T5ZZ_x005.efficiencyMap.setStatistics(observedN=4, expectedBG=6.0, bgError=2.8)
-T5ZZ_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x05_EM_MAPS/MA5_EM_T5ZZ_x05_6NJet8_800HT1000_450MHTinf.dat", "txt", objectName ="None", index = None, dataset="6NJet8_800HT1000_450MHTinf")
-T5ZZ_x05.efficiencyMap.setStatistics(observedN=4, expectedBG=6.0, bgError=2.8)
-T5ZZ_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x095_EM_MAPS/MA5_EM_T5ZZ_x095_6NJet8_800HT1000_450MHTinf.dat", "txt", objectName ="None", index = None, dataset="6NJet8_800HT1000_450MHTinf")
-T5ZZ_x095.efficiencyMap.setStatistics(observedN=4, expectedBG=6.0, bgError=2.8)
-TChiWZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_6NJet8_800HT1000_450MHTinf.dat", "txt", objectName ="None", index = None, dataset="6NJet8_800HT1000_450MHTinf")
-TChiWZ_1.efficiencyMap.setStatistics(observedN=4, expectedBG=6.0, bgError=2.8)
-TChiWW_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWW_1_EM_MAPS/MA5_EM_TChiWW_1_6NJet8_800HT1000_450MHTinf.dat", "txt", objectName ="None", index = None, dataset="6NJet8_800HT1000_450MHTinf")
-TChiWW_1.efficiencyMap.setStatistics(observedN=4, expectedBG=6.0, bgError=2.8)
-TChiZZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_6NJet8_800HT1000_450MHTinf.dat", "txt", objectName ="None", index = None, dataset="6NJet8_800HT1000_450MHTinf")
-TChiZZ_1.efficiencyMap.setStatistics(observedN=4, expectedBG=6.0, bgError=2.8)
-T2bb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2bb_1_EM_MAPS/MA5_EM_T2bb_1_6NJet8_800HT1000_450MHTinf.dat", "txt", objectName ="None", index = None, dataset="6NJet8_800HT1000_450MHTinf")
-T2bb_1.efficiencyMap.setStatistics(observedN=4, expectedBG=6.0, bgError=2.8)
-T2tt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2tt_1_EM_MAPS/MA5_EM_T2tt_1_6NJet8_800HT1000_450MHTinf.dat", "txt", objectName ="None", index = None, dataset="6NJet8_800HT1000_450MHTinf")
-T2tt_1.efficiencyMap.setStatistics(observedN=4, expectedBG=6.0, bgError=2.8)
-T1btbt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1btbt_1_EM_MAPS/MA5_EM_T1btbt_1_6NJet8_800HT1000_450MHTinf.dat", "txt", objectName ="None", index = None, dataset="6NJet8_800HT1000_450MHTinf")
-T1btbt_1.efficiencyMap.setStatistics(observedN=4, expectedBG=6.0, bgError=2.8)
-T1bbbb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1bbbb_1_EM_MAPS/MA5_EM_T1bbbb_1_6NJet8_800HT1000_450MHTinf.dat", "txt", objectName ="None", index = None, dataset="6NJet8_800HT1000_450MHTinf")
-T1bbbb_1.efficiencyMap.setStatistics(observedN=4, expectedBG=6.0, bgError=2.8)
-databaseCreator.create()
-###
-T1qqqq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName ="h_EffAcc_6NJet8_800HT1000_300MHT450", index = None, dataset="6NJet8_800HT1000_300MHT450")
-T1qqqq.efficiencyMap.setStatistics(observedN=35, expectedBG=28.6, bgError=6.9)
-T1tttt.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName ="h_EffAcc_6NJet8_800HT1000_300MHT450", index = None, dataset="6NJet8_800HT1000_300MHT450")
-T1tttt.efficiencyMap.setStatistics(observedN=35, expectedBG=28.6, bgError=6.9)
-T2qq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T2qq.root", "root", objectName ="h_EffAcc_6NJet8_800HT1000_300MHT450", index = None, dataset="6NJet8_800HT1000_300MHT450")
-T2qq.efficiencyMap.setStatistics(observedN=35, expectedBG=28.6, bgError=6.9)
-T5WW_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x005_EM_MAPS/MA5_EM_T5WW_x005_6NJet8_800HT1000_300MHT450.dat", "txt", objectName ="None", index = None, dataset="6NJet8_800HT1000_300MHT450")
-T5WW_x005.efficiencyMap.setStatistics(observedN=35, expectedBG=28.6, bgError=6.9)
-T5WW_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x05_EM_MAPS/MA5_EM_T5WW_x05_6NJet8_800HT1000_300MHT450.dat", "txt", objectName ="None", index = None, dataset="6NJet8_800HT1000_300MHT450")
-T5WW_x05.efficiencyMap.setStatistics(observedN=35, expectedBG=28.6, bgError=6.9)
-T5WW_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x095_EM_MAPS/MA5_EM_T5WW_x095_6NJet8_800HT1000_300MHT450.dat", "txt", objectName ="None", index = None, dataset="6NJet8_800HT1000_300MHT450")
-T5WW_x095.efficiencyMap.setStatistics(observedN=35, expectedBG=28.6, bgError=6.9)
-T5ZZ_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x005_EM_MAPS/MA5_EM_T5ZZ_x005_6NJet8_800HT1000_300MHT450.dat", "txt", objectName ="None", index = None, dataset="6NJet8_800HT1000_300MHT450")
-T5ZZ_x005.efficiencyMap.setStatistics(observedN=35, expectedBG=28.6, bgError=6.9)
-T5ZZ_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x05_EM_MAPS/MA5_EM_T5ZZ_x05_6NJet8_800HT1000_300MHT450.dat", "txt", objectName ="None", index = None, dataset="6NJet8_800HT1000_300MHT450")
-T5ZZ_x05.efficiencyMap.setStatistics(observedN=35, expectedBG=28.6, bgError=6.9)
-T5ZZ_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x095_EM_MAPS/MA5_EM_T5ZZ_x095_6NJet8_800HT1000_300MHT450.dat", "txt", objectName ="None", index = None, dataset="6NJet8_800HT1000_300MHT450")
-T5ZZ_x095.efficiencyMap.setStatistics(observedN=35, expectedBG=28.6, bgError=6.9)
-TChiWZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_6NJet8_800HT1000_300MHT450.dat", "txt", objectName ="None", index = None, dataset="6NJet8_800HT1000_300MHT450")
-TChiWZ_1.efficiencyMap.setStatistics(observedN=35, expectedBG=28.6, bgError=6.9)
-TChiWW_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWW_1_EM_MAPS/MA5_EM_TChiWW_1_6NJet8_800HT1000_300MHT450.dat", "txt", objectName ="None", index = None, dataset="6NJet8_800HT1000_300MHT450")
-TChiWW_1.efficiencyMap.setStatistics(observedN=35, expectedBG=28.6, bgError=6.9)
-TChiZZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_6NJet8_800HT1000_300MHT450.dat", "txt", objectName ="None", index = None, dataset="6NJet8_800HT1000_300MHT450")
-TChiZZ_1.efficiencyMap.setStatistics(observedN=35, expectedBG=28.6, bgError=6.9)
-T2bb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2bb_1_EM_MAPS/MA5_EM_T2bb_1_6NJet8_800HT1000_300MHT450.dat", "txt", objectName ="None", index = None, dataset="6NJet8_800HT1000_300MHT450")
-T2bb_1.efficiencyMap.setStatistics(observedN=35, expectedBG=28.6, bgError=6.9)
-T2tt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2tt_1_EM_MAPS/MA5_EM_T2tt_1_6NJet8_800HT1000_300MHT450.dat", "txt", objectName ="None", index = None, dataset="6NJet8_800HT1000_300MHT450")
-T2tt_1.efficiencyMap.setStatistics(observedN=35, expectedBG=28.6, bgError=6.9)
-T1btbt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1btbt_1_EM_MAPS/MA5_EM_T1btbt_1_6NJet8_800HT1000_300MHT450.dat", "txt", objectName ="None", index = None, dataset="6NJet8_800HT1000_300MHT450")
-T1btbt_1.efficiencyMap.setStatistics(observedN=35, expectedBG=28.6, bgError=6.9)
-T1bbbb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1bbbb_1_EM_MAPS/MA5_EM_T1bbbb_1_6NJet8_800HT1000_300MHT450.dat", "txt", objectName ="None", index = None, dataset="6NJet8_800HT1000_300MHT450")
-T1bbbb_1.efficiencyMap.setStatistics(observedN=35, expectedBG=28.6, bgError=6.9)
-databaseCreator.create()
-###
-T1qqqq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName ="h_EffAcc_6NJet8_800HT1000_200MHT300", index = None, dataset="6NJet8_800HT1000_200MHT300")
-T1qqqq.efficiencyMap.setStatistics(observedN=111, expectedBG=124, bgError=29)
-T1tttt.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName ="h_EffAcc_6NJet8_800HT1000_200MHT300", index = None, dataset="6NJet8_800HT1000_200MHT300")
-T1tttt.efficiencyMap.setStatistics(observedN=111, expectedBG=124, bgError=29)
-T2qq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T2qq.root", "root", objectName ="h_EffAcc_6NJet8_800HT1000_200MHT300", index = None, dataset="6NJet8_800HT1000_200MHT300")
-T2qq.efficiencyMap.setStatistics(observedN=111, expectedBG=124, bgError=29)
-T5WW_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x005_EM_MAPS/MA5_EM_T5WW_x005_6NJet8_800HT1000_200MHT300.dat", "txt", objectName ="None", index = None, dataset="6NJet8_800HT1000_200MHT300")
-T5WW_x005.efficiencyMap.setStatistics(observedN=111, expectedBG=124, bgError=29)
-T5WW_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x05_EM_MAPS/MA5_EM_T5WW_x05_6NJet8_800HT1000_200MHT300.dat", "txt", objectName ="None", index = None, dataset="6NJet8_800HT1000_200MHT300")
-T5WW_x05.efficiencyMap.setStatistics(observedN=111, expectedBG=124, bgError=29)
-T5WW_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x095_EM_MAPS/MA5_EM_T5WW_x095_6NJet8_800HT1000_200MHT300.dat", "txt", objectName ="None", index = None, dataset="6NJet8_800HT1000_200MHT300")
-T5WW_x095.efficiencyMap.setStatistics(observedN=111, expectedBG=124, bgError=29)
-T5ZZ_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x005_EM_MAPS/MA5_EM_T5ZZ_x005_6NJet8_800HT1000_200MHT300.dat", "txt", objectName ="None", index = None, dataset="6NJet8_800HT1000_200MHT300")
-T5ZZ_x005.efficiencyMap.setStatistics(observedN=111, expectedBG=124, bgError=29)
-T5ZZ_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x05_EM_MAPS/MA5_EM_T5ZZ_x05_6NJet8_800HT1000_200MHT300.dat", "txt", objectName ="None", index = None, dataset="6NJet8_800HT1000_200MHT300")
-T5ZZ_x05.efficiencyMap.setStatistics(observedN=111, expectedBG=124, bgError=29)
-T5ZZ_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x095_EM_MAPS/MA5_EM_T5ZZ_x095_6NJet8_800HT1000_200MHT300.dat", "txt", objectName ="None", index = None, dataset="6NJet8_800HT1000_200MHT300")
-T5ZZ_x095.efficiencyMap.setStatistics(observedN=111, expectedBG=124, bgError=29)
-TChiWZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_6NJet8_800HT1000_200MHT300.dat", "txt", objectName ="None", index = None, dataset="6NJet8_800HT1000_200MHT300")
-TChiWZ_1.efficiencyMap.setStatistics(observedN=111, expectedBG=124, bgError=29)
-TChiWW_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWW_1_EM_MAPS/MA5_EM_TChiWW_1_6NJet8_800HT1000_200MHT300.dat", "txt", objectName ="None", index = None, dataset="6NJet8_800HT1000_200MHT300")
-TChiWW_1.efficiencyMap.setStatistics(observedN=111, expectedBG=124, bgError=29)
-TChiZZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_6NJet8_800HT1000_200MHT300.dat", "txt", objectName ="None", index = None, dataset="6NJet8_800HT1000_200MHT300")
-TChiZZ_1.efficiencyMap.setStatistics(observedN=111, expectedBG=124, bgError=29)
-T2bb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2bb_1_EM_MAPS/MA5_EM_T2bb_1_6NJet8_800HT1000_200MHT300.dat", "txt", objectName ="None", index = None, dataset="6NJet8_800HT1000_200MHT300")
-T2bb_1.efficiencyMap.setStatistics(observedN=111, expectedBG=124, bgError=29)
-T2tt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2tt_1_EM_MAPS/MA5_EM_T2tt_1_6NJet8_800HT1000_200MHT300.dat", "txt", objectName ="None", index = None, dataset="6NJet8_800HT1000_200MHT300")
-T2tt_1.efficiencyMap.setStatistics(observedN=111, expectedBG=124, bgError=29)
-T1btbt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1btbt_1_EM_MAPS/MA5_EM_T1btbt_1_6NJet8_800HT1000_200MHT300.dat", "txt", objectName ="None", index = None, dataset="6NJet8_800HT1000_200MHT300")
-T1btbt_1.efficiencyMap.setStatistics(observedN=111, expectedBG=124, bgError=29)
-T1bbbb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1bbbb_1_EM_MAPS/MA5_EM_T1bbbb_1_6NJet8_800HT1000_200MHT300.dat", "txt", objectName ="None", index = None, dataset="6NJet8_800HT1000_200MHT300")
-T1bbbb_1.efficiencyMap.setStatistics(observedN=111, expectedBG=124, bgError=29)
-databaseCreator.create()
-###
-T1qqqq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName ="h_EffAcc_6NJet8_500HT800_450MHTinf", index = None, dataset="6NJet8_500HT800_450MHTinf")
-T1qqqq.efficiencyMap.setStatistics(observedN=9, expectedBG=0.8, bgError=3.3)
-T1tttt.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName ="h_EffAcc_6NJet8_500HT800_450MHTinf", index = None, dataset="6NJet8_500HT800_450MHTinf")
-T1tttt.efficiencyMap.setStatistics(observedN=9, expectedBG=0.8, bgError=3.3)
-T2qq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T2qq.root", "root", objectName ="h_EffAcc_6NJet8_500HT800_450MHTinf", index = None, dataset="6NJet8_500HT800_450MHTinf")
-T2qq.efficiencyMap.setStatistics(observedN=9, expectedBG=0.8, bgError=3.3)
-T5WW_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x005_EM_MAPS/MA5_EM_T5WW_x005_6NJet8_500HT800_450MHTinf.dat", "txt", objectName ="None", index = None, dataset="6NJet8_500HT800_450MHTinf")
-T5WW_x005.efficiencyMap.setStatistics(observedN=9, expectedBG=0.8, bgError=3.3)
-T5WW_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x05_EM_MAPS/MA5_EM_T5WW_x05_6NJet8_500HT800_450MHTinf.dat", "txt", objectName ="None", index = None, dataset="6NJet8_500HT800_450MHTinf")
-T5WW_x05.efficiencyMap.setStatistics(observedN=9, expectedBG=0.8, bgError=3.3)
-T5WW_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x095_EM_MAPS/MA5_EM_T5WW_x095_6NJet8_500HT800_450MHTinf.dat", "txt", objectName ="None", index = None, dataset="6NJet8_500HT800_450MHTinf")
-T5WW_x095.efficiencyMap.setStatistics(observedN=9, expectedBG=0.8, bgError=3.3)
-T5ZZ_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x005_EM_MAPS/MA5_EM_T5ZZ_x005_6NJet8_500HT800_450MHTinf.dat", "txt", objectName ="None", index = None, dataset="6NJet8_500HT800_450MHTinf")
-T5ZZ_x005.efficiencyMap.setStatistics(observedN=9, expectedBG=0.8, bgError=3.3)
-T5ZZ_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x05_EM_MAPS/MA5_EM_T5ZZ_x05_6NJet8_500HT800_450MHTinf.dat", "txt", objectName ="None", index = None, dataset="6NJet8_500HT800_450MHTinf")
-T5ZZ_x05.efficiencyMap.setStatistics(observedN=9, expectedBG=0.8, bgError=3.3)
-T5ZZ_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x095_EM_MAPS/MA5_EM_T5ZZ_x095_6NJet8_500HT800_450MHTinf.dat", "txt", objectName ="None", index = None, dataset="6NJet8_500HT800_450MHTinf")
-T5ZZ_x095.efficiencyMap.setStatistics(observedN=9, expectedBG=0.8, bgError=3.3)
-TChiWZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_6NJet8_500HT800_450MHTinf.dat", "txt", objectName ="None", index = None, dataset="6NJet8_500HT800_450MHTinf")
-TChiWZ_1.efficiencyMap.setStatistics(observedN=9, expectedBG=0.8, bgError=3.3)
-TChiWW_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWW_1_EM_MAPS/MA5_EM_TChiWW_1_6NJet8_500HT800_450MHTinf.dat", "txt", objectName ="None", index = None, dataset="6NJet8_500HT800_450MHTinf")
-TChiWW_1.efficiencyMap.setStatistics(observedN=9, expectedBG=0.8, bgError=3.3)
-TChiZZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_6NJet8_500HT800_450MHTinf.dat", "txt", objectName ="None", index = None, dataset="6NJet8_500HT800_450MHTinf")
-TChiZZ_1.efficiencyMap.setStatistics(observedN=9, expectedBG=0.8, bgError=3.3)
-T2bb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2bb_1_EM_MAPS/MA5_EM_T2bb_1_6NJet8_500HT800_450MHTinf.dat", "txt", objectName ="None", index = None, dataset="6NJet8_500HT800_450MHTinf")
-T2bb_1.efficiencyMap.setStatistics(observedN=9, expectedBG=0.8, bgError=3.3)
-T2tt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2tt_1_EM_MAPS/MA5_EM_T2tt_1_6NJet8_500HT800_450MHTinf.dat", "txt", objectName ="None", index = None, dataset="6NJet8_500HT800_450MHTinf")
-T2tt_1.efficiencyMap.setStatistics(observedN=9, expectedBG=0.8, bgError=3.3)
-T1btbt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1btbt_1_EM_MAPS/MA5_EM_T1btbt_1_6NJet8_500HT800_450MHTinf.dat", "txt", objectName ="None", index = None, dataset="6NJet8_500HT800_450MHTinf")
-T1btbt_1.efficiencyMap.setStatistics(observedN=9, expectedBG=0.8, bgError=3.3)
-T1bbbb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1bbbb_1_EM_MAPS/MA5_EM_T1bbbb_1_6NJet8_500HT800_450MHTinf.dat", "txt", objectName ="None", index = None, dataset="6NJet8_500HT800_450MHTinf")
-T1bbbb_1.efficiencyMap.setStatistics(observedN=9, expectedBG=0.8, bgError=3.3)
-databaseCreator.create()
-###
-T1qqqq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName ="h_EffAcc_6NJet8_500HT800_300MHT450", index = None, dataset="6NJet8_500HT800_300MHT450")
-T1qqqq.efficiencyMap.setStatistics(observedN=62, expectedBG=52, bgError=12)
-T1tttt.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName ="h_EffAcc_6NJet8_500HT800_300MHT450", index = None, dataset="6NJet8_500HT800_300MHT450")
-T1tttt.efficiencyMap.setStatistics(observedN=62, expectedBG=52, bgError=12)
-T2qq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T2qq.root", "root", objectName ="h_EffAcc_6NJet8_500HT800_300MHT450", index = None, dataset="6NJet8_500HT800_300MHT450")
-T2qq.efficiencyMap.setStatistics(observedN=62, expectedBG=52, bgError=12)
-T5WW_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x005_EM_MAPS/MA5_EM_T5WW_x005_6NJet8_500HT800_300MHT450.dat", "txt", objectName ="None", index = None, dataset="6NJet8_500HT800_300MHT450")
-T5WW_x005.efficiencyMap.setStatistics(observedN=62, expectedBG=52, bgError=12)
-T5WW_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x05_EM_MAPS/MA5_EM_T5WW_x05_6NJet8_500HT800_300MHT450.dat", "txt", objectName ="None", index = None, dataset="6NJet8_500HT800_300MHT450")
-T5WW_x05.efficiencyMap.setStatistics(observedN=62, expectedBG=52, bgError=12)
-T5WW_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x095_EM_MAPS/MA5_EM_T5WW_x095_6NJet8_500HT800_300MHT450.dat", "txt", objectName ="None", index = None, dataset="6NJet8_500HT800_300MHT450")
-T5WW_x095.efficiencyMap.setStatistics(observedN=62, expectedBG=52, bgError=12)
-T5ZZ_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x005_EM_MAPS/MA5_EM_T5ZZ_x005_6NJet8_500HT800_300MHT450.dat", "txt", objectName ="None", index = None, dataset="6NJet8_500HT800_300MHT450")
-T5ZZ_x005.efficiencyMap.setStatistics(observedN=62, expectedBG=52, bgError=12)
-T5ZZ_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x05_EM_MAPS/MA5_EM_T5ZZ_x05_6NJet8_500HT800_300MHT450.dat", "txt", objectName ="None", index = None, dataset="6NJet8_500HT800_300MHT450")
-T5ZZ_x05.efficiencyMap.setStatistics(observedN=62, expectedBG=52, bgError=12)
-T5ZZ_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x095_EM_MAPS/MA5_EM_T5ZZ_x095_6NJet8_500HT800_300MHT450.dat", "txt", objectName ="None", index = None, dataset="6NJet8_500HT800_300MHT450")
-T5ZZ_x095.efficiencyMap.setStatistics(observedN=62, expectedBG=52, bgError=12)
-TChiWZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_6NJet8_500HT800_300MHT450.dat", "txt", objectName ="None", index = None, dataset="6NJet8_500HT800_300MHT450")
-TChiWZ_1.efficiencyMap.setStatistics(observedN=62, expectedBG=52, bgError=12)
-TChiWW_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWW_1_EM_MAPS/MA5_EM_TChiWW_1_6NJet8_500HT800_300MHT450.dat", "txt", objectName ="None", index = None, dataset="6NJet8_500HT800_300MHT450")
-TChiWW_1.efficiencyMap.setStatistics(observedN=62, expectedBG=52, bgError=12)
-TChiZZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_6NJet8_500HT800_300MHT450.dat", "txt", objectName ="None", index = None, dataset="6NJet8_500HT800_300MHT450")
-TChiZZ_1.efficiencyMap.setStatistics(observedN=62, expectedBG=52, bgError=12)
-T2bb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2bb_1_EM_MAPS/MA5_EM_T2bb_1_6NJet8_500HT800_300MHT450.dat", "txt", objectName ="None", index = None, dataset="6NJet8_500HT800_300MHT450")
-T2bb_1.efficiencyMap.setStatistics(observedN=62, expectedBG=52, bgError=12)
-T2tt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2tt_1_EM_MAPS/MA5_EM_T2tt_1_6NJet8_500HT800_300MHT450.dat", "txt", objectName ="None", index = None, dataset="6NJet8_500HT800_300MHT450")
-T2tt_1.efficiencyMap.setStatistics(observedN=62, expectedBG=52, bgError=12)
-T1btbt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1btbt_1_EM_MAPS/MA5_EM_T1btbt_1_6NJet8_500HT800_300MHT450.dat", "txt", objectName ="None", index = None, dataset="6NJet8_500HT800_300MHT450")
-T1btbt_1.efficiencyMap.setStatistics(observedN=62, expectedBG=52, bgError=12)
-T1bbbb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1bbbb_1_EM_MAPS/MA5_EM_T1bbbb_1_6NJet8_500HT800_300MHT450.dat", "txt", objectName ="None", index = None, dataset="6NJet8_500HT800_300MHT450")
-T1bbbb_1.efficiencyMap.setStatistics(observedN=62, expectedBG=52, bgError=12)
-databaseCreator.create()
-###
-T1qqqq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName ="h_EffAcc_6NJet8_500HT800_200MHT300", index = None, dataset="6NJet8_500HT800_200MHT300")
-T1qqqq.efficiencyMap.setStatistics(observedN=266, expectedBG=290, bgError=65)
-T1tttt.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName ="h_EffAcc_6NJet8_500HT800_200MHT300", index = None, dataset="6NJet8_500HT800_200MHT300")
-T1tttt.efficiencyMap.setStatistics(observedN=266, expectedBG=290, bgError=65)
-T2qq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T2qq.root", "root", objectName ="h_EffAcc_6NJet8_500HT800_200MHT300", index = None, dataset="6NJet8_500HT800_200MHT300")
-T2qq.efficiencyMap.setStatistics(observedN=266, expectedBG=290, bgError=65)
-T5WW_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x005_EM_MAPS/MA5_EM_T5WW_x005_6NJet8_500HT800_200MHT300.dat", "txt", objectName ="None", index = None, dataset="6NJet8_500HT800_200MHT300")
-T5WW_x005.efficiencyMap.setStatistics(observedN=266, expectedBG=290, bgError=65)
-T5WW_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x05_EM_MAPS/MA5_EM_T5WW_x05_6NJet8_500HT800_200MHT300.dat", "txt", objectName ="None", index = None, dataset="6NJet8_500HT800_200MHT300")
-T5WW_x05.efficiencyMap.setStatistics(observedN=266, expectedBG=290, bgError=65)
-T5WW_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x095_EM_MAPS/MA5_EM_T5WW_x095_6NJet8_500HT800_200MHT300.dat", "txt", objectName ="None", index = None, dataset="6NJet8_500HT800_200MHT300")
-T5WW_x095.efficiencyMap.setStatistics(observedN=266, expectedBG=290, bgError=65)
-T5ZZ_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x005_EM_MAPS/MA5_EM_T5ZZ_x005_6NJet8_500HT800_200MHT300.dat", "txt", objectName ="None", index = None, dataset="6NJet8_500HT800_200MHT300")
-T5ZZ_x005.efficiencyMap.setStatistics(observedN=266, expectedBG=290, bgError=65)
-T5ZZ_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x05_EM_MAPS/MA5_EM_T5ZZ_x05_6NJet8_500HT800_200MHT300.dat", "txt", objectName ="None", index = None, dataset="6NJet8_500HT800_200MHT300")
-T5ZZ_x05.efficiencyMap.setStatistics(observedN=266, expectedBG=290, bgError=65)
-T5ZZ_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x095_EM_MAPS/MA5_EM_T5ZZ_x095_6NJet8_500HT800_200MHT300.dat", "txt", objectName ="None", index = None, dataset="6NJet8_500HT800_200MHT300")
-T5ZZ_x095.efficiencyMap.setStatistics(observedN=266, expectedBG=290, bgError=65)
-TChiWZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_6NJet8_500HT800_200MHT300.dat", "txt", objectName ="None", index = None, dataset="6NJet8_500HT800_200MHT300")
-TChiWZ_1.efficiencyMap.setStatistics(observedN=266, expectedBG=290, bgError=65)
-TChiWW_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWW_1_EM_MAPS/MA5_EM_TChiWW_1_6NJet8_500HT800_200MHT300.dat", "txt", objectName ="None", index = None, dataset="6NJet8_500HT800_200MHT300")
-TChiWW_1.efficiencyMap.setStatistics(observedN=266, expectedBG=290, bgError=65)
-TChiZZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_6NJet8_500HT800_200MHT300.dat", "txt", objectName ="None", index = None, dataset="6NJet8_500HT800_200MHT300")
-TChiZZ_1.efficiencyMap.setStatistics(observedN=266, expectedBG=290, bgError=65)
-T2bb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2bb_1_EM_MAPS/MA5_EM_T2bb_1_6NJet8_500HT800_200MHT300.dat", "txt", objectName ="None", index = None, dataset="6NJet8_500HT800_200MHT300")
-T2bb_1.efficiencyMap.setStatistics(observedN=266, expectedBG=290, bgError=65)
-T2tt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2tt_1_EM_MAPS/MA5_EM_T2tt_1_6NJet8_500HT800_200MHT300.dat", "txt", objectName ="None", index = None, dataset="6NJet8_500HT800_200MHT300")
-T2tt_1.efficiencyMap.setStatistics(observedN=266, expectedBG=290, bgError=65)
-T1btbt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1btbt_1_EM_MAPS/MA5_EM_T1btbt_1_6NJet8_500HT800_200MHT300.dat", "txt", objectName ="None", index = None, dataset="6NJet8_500HT800_200MHT300")
-T1btbt_1.efficiencyMap.setStatistics(observedN=266, expectedBG=290, bgError=65)
-T1bbbb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1bbbb_1_EM_MAPS/MA5_EM_T1bbbb_1_6NJet8_500HT800_200MHT300.dat", "txt", objectName ="None", index = None, dataset="6NJet8_500HT800_200MHT300")
-T1bbbb_1.efficiencyMap.setStatistics(observedN=266, expectedBG=290, bgError=65)
-databaseCreator.create()
-###
-T1qqqq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName ="h_EffAcc_3NJet6_1500HTinf_300MHTinf", index = None, dataset="3NJet6_1500HTinf_300MHTinf")
-T1qqqq.efficiencyMap.setStatistics(observedN=39, expectedBG=29.7, bgError=5.8)
-T1tttt.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName ="h_EffAcc_3NJet6_1500HTinf_300MHTinf", index = None, dataset="3NJet6_1500HTinf_300MHTinf")
-T1tttt.efficiencyMap.setStatistics(observedN=39, expectedBG=29.7, bgError=5.8)
-T2qq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T2qq.root", "root", objectName ="h_EffAcc_3NJet6_1500HTinf_300MHTinf", index = None, dataset="3NJet6_1500HTinf_300MHTinf")
-T2qq.efficiencyMap.setStatistics(observedN=39, expectedBG=29.7, bgError=5.8)
-T5WW_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x005_EM_MAPS/MA5_EM_T5WW_x005_3NJet6_1500HTinf_300MHTinf.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1500HTinf_300MHTinf")
-T5WW_x005.efficiencyMap.setStatistics(observedN=39, expectedBG=29.7, bgError=5.8)
-T5WW_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x05_EM_MAPS/MA5_EM_T5WW_x05_3NJet6_1500HTinf_300MHTinf.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1500HTinf_300MHTinf")
-T5WW_x05.efficiencyMap.setStatistics(observedN=39, expectedBG=29.7, bgError=5.8)
-T5WW_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x095_EM_MAPS/MA5_EM_T5WW_x095_3NJet6_1500HTinf_300MHTinf.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1500HTinf_300MHTinf")
-T5WW_x095.efficiencyMap.setStatistics(observedN=39, expectedBG=29.7, bgError=5.8)
-T5ZZ_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x005_EM_MAPS/MA5_EM_T5ZZ_x005_3NJet6_1500HTinf_300MHTinf.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1500HTinf_300MHTinf")
-T5ZZ_x005.efficiencyMap.setStatistics(observedN=39, expectedBG=29.7, bgError=5.8)
-T5ZZ_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x05_EM_MAPS/MA5_EM_T5ZZ_x05_3NJet6_1500HTinf_300MHTinf.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1500HTinf_300MHTinf")
-T5ZZ_x05.efficiencyMap.setStatistics(observedN=39, expectedBG=29.7, bgError=5.8)
-T5ZZ_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x095_EM_MAPS/MA5_EM_T5ZZ_x095_3NJet6_1500HTinf_300MHTinf.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1500HTinf_300MHTinf")
-T5ZZ_x095.efficiencyMap.setStatistics(observedN=39, expectedBG=29.7, bgError=5.8)
-TChiWZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_3NJet6_1500HTinf_300MHTinf.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1500HTinf_300MHTinf")
-TChiWZ_1.efficiencyMap.setStatistics(observedN=39, expectedBG=29.7, bgError=5.8)
-TChiWW_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWW_1_EM_MAPS/MA5_EM_TChiWW_1_3NJet6_1500HTinf_300MHTinf.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1500HTinf_300MHTinf")
-TChiWW_1.efficiencyMap.setStatistics(observedN=39, expectedBG=29.7, bgError=5.8)
-TChiZZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_3NJet6_1500HTinf_300MHTinf.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1500HTinf_300MHTinf")
-TChiZZ_1.efficiencyMap.setStatistics(observedN=39, expectedBG=29.7, bgError=5.8)
-T2bb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2bb_1_EM_MAPS/MA5_EM_T2bb_1_3NJet6_1500HTinf_300MHTinf.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1500HTinf_300MHTinf")
-T2bb_1.efficiencyMap.setStatistics(observedN=39, expectedBG=29.7, bgError=5.8)
-T2tt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2tt_1_EM_MAPS/MA5_EM_T2tt_1_3NJet6_1500HTinf_300MHTinf.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1500HTinf_300MHTinf")
-T2tt_1.efficiencyMap.setStatistics(observedN=39, expectedBG=29.7, bgError=5.8)
-T1btbt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1btbt_1_EM_MAPS/MA5_EM_T1btbt_1_3NJet6_1500HTinf_300MHTinf.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1500HTinf_300MHTinf")
-T1btbt_1.efficiencyMap.setStatistics(observedN=39, expectedBG=29.7, bgError=5.8)
-T1bbbb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1bbbb_1_EM_MAPS/MA5_EM_T1bbbb_1_3NJet6_1500HTinf_300MHTinf.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1500HTinf_300MHTinf")
-T1bbbb_1.efficiencyMap.setStatistics(observedN=39, expectedBG=29.7, bgError=5.8)
-databaseCreator.create()
-###
-T1qqqq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName ="h_EffAcc_3NJet6_1500HTinf_200MHT300", index = None, dataset="3NJet6_1500HTinf_200MHT300")
-T1qqqq.efficiencyMap.setStatistics(observedN=94, expectedBG=86, bgError=17)
-T1tttt.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName ="h_EffAcc_3NJet6_1500HTinf_200MHT300", index = None, dataset="3NJet6_1500HTinf_200MHT300")
-T1tttt.efficiencyMap.setStatistics(observedN=94, expectedBG=86, bgError=17)
-T2qq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T2qq.root", "root", objectName ="h_EffAcc_3NJet6_1500HTinf_200MHT300", index = None, dataset="3NJet6_1500HTinf_200MHT300")
-T2qq.efficiencyMap.setStatistics(observedN=94, expectedBG=86, bgError=17)
-T5WW_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x005_EM_MAPS/MA5_EM_T5WW_x005_3NJet6_1500HTinf_200MHT300.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1500HTinf_200MHT300")
-T5WW_x005.efficiencyMap.setStatistics(observedN=94, expectedBG=86, bgError=17)
-T5WW_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x05_EM_MAPS/MA5_EM_T5WW_x05_3NJet6_1500HTinf_200MHT300.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1500HTinf_200MHT300")
-T5WW_x05.efficiencyMap.setStatistics(observedN=94, expectedBG=86, bgError=17)
-T5WW_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x095_EM_MAPS/MA5_EM_T5WW_x095_3NJet6_1500HTinf_200MHT300.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1500HTinf_200MHT300")
-T5WW_x095.efficiencyMap.setStatistics(observedN=94, expectedBG=86, bgError=17)
-T5ZZ_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x005_EM_MAPS/MA5_EM_T5ZZ_x005_3NJet6_1500HTinf_200MHT300.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1500HTinf_200MHT300")
-T5ZZ_x005.efficiencyMap.setStatistics(observedN=94, expectedBG=86, bgError=17)
-T5ZZ_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x05_EM_MAPS/MA5_EM_T5ZZ_x05_3NJet6_1500HTinf_200MHT300.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1500HTinf_200MHT300")
-T5ZZ_x05.efficiencyMap.setStatistics(observedN=94, expectedBG=86, bgError=17)
-T5ZZ_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x095_EM_MAPS/MA5_EM_T5ZZ_x095_3NJet6_1500HTinf_200MHT300.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1500HTinf_200MHT300")
-T5ZZ_x095.efficiencyMap.setStatistics(observedN=94, expectedBG=86, bgError=17)
-TChiWZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_3NJet6_1500HTinf_200MHT300.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1500HTinf_200MHT300")
-TChiWZ_1.efficiencyMap.setStatistics(observedN=94, expectedBG=86, bgError=17)
-TChiWW_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWW_1_EM_MAPS/MA5_EM_TChiWW_1_3NJet6_1500HTinf_200MHT300.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1500HTinf_200MHT300")
-TChiWW_1.efficiencyMap.setStatistics(observedN=94, expectedBG=86, bgError=17)
-TChiZZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_3NJet6_1500HTinf_200MHT300.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1500HTinf_200MHT300")
-TChiZZ_1.efficiencyMap.setStatistics(observedN=94, expectedBG=86, bgError=17)
-T2bb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2bb_1_EM_MAPS/MA5_EM_T2bb_1_3NJet6_1500HTinf_200MHT300.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1500HTinf_200MHT300")
-T2bb_1.efficiencyMap.setStatistics(observedN=94, expectedBG=86, bgError=17)
-T2tt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2tt_1_EM_MAPS/MA5_EM_T2tt_1_3NJet6_1500HTinf_200MHT300.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1500HTinf_200MHT300")
-T2tt_1.efficiencyMap.setStatistics(observedN=94, expectedBG=86, bgError=17)
-T1btbt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1btbt_1_EM_MAPS/MA5_EM_T1btbt_1_3NJet6_1500HTinf_200MHT300.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1500HTinf_200MHT300")
-T1btbt_1.efficiencyMap.setStatistics(observedN=94, expectedBG=86, bgError=17)
-T1bbbb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1bbbb_1_EM_MAPS/MA5_EM_T1bbbb_1_3NJet6_1500HTinf_200MHT300.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1500HTinf_200MHT300")
-T1bbbb_1.efficiencyMap.setStatistics(observedN=94, expectedBG=86, bgError=17)
-databaseCreator.create()
-###
-T1qqqq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName ="h_EffAcc_3NJet6_1250HT1500_450MHTinf", index = None, dataset="3NJet6_1250HT1500_450MHTinf")
-T1qqqq.efficiencyMap.setStatistics(observedN=23, expectedBG=17.6, bgError=4.1)
-T1tttt.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName ="h_EffAcc_3NJet6_1250HT1500_450MHTinf", index = None, dataset="3NJet6_1250HT1500_450MHTinf")
-T1tttt.efficiencyMap.setStatistics(observedN=23, expectedBG=17.6, bgError=4.1)
-T2qq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T2qq.root", "root", objectName ="h_EffAcc_3NJet6_1250HT1500_450MHTinf", index = None, dataset="3NJet6_1250HT1500_450MHTinf")
-T2qq.efficiencyMap.setStatistics(observedN=23, expectedBG=17.6, bgError=4.1)
-T5WW_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x005_EM_MAPS/MA5_EM_T5WW_x005_3NJet6_1250HT1500_450MHTinf.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1250HT1500_450MHTinf")
-T5WW_x005.efficiencyMap.setStatistics(observedN=23, expectedBG=17.6, bgError=4.1)
-T5WW_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x05_EM_MAPS/MA5_EM_T5WW_x05_3NJet6_1250HT1500_450MHTinf.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1250HT1500_450MHTinf")
-T5WW_x05.efficiencyMap.setStatistics(observedN=23, expectedBG=17.6, bgError=4.1)
-T5WW_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x095_EM_MAPS/MA5_EM_T5WW_x095_3NJet6_1250HT1500_450MHTinf.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1250HT1500_450MHTinf")
-T5WW_x095.efficiencyMap.setStatistics(observedN=23, expectedBG=17.6, bgError=4.1)
-T5ZZ_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x005_EM_MAPS/MA5_EM_T5ZZ_x005_3NJet6_1250HT1500_450MHTinf.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1250HT1500_450MHTinf")
-T5ZZ_x005.efficiencyMap.setStatistics(observedN=23, expectedBG=17.6, bgError=4.1)
-T5ZZ_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x05_EM_MAPS/MA5_EM_T5ZZ_x05_3NJet6_1250HT1500_450MHTinf.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1250HT1500_450MHTinf")
-T5ZZ_x05.efficiencyMap.setStatistics(observedN=23, expectedBG=17.6, bgError=4.1)
-T5ZZ_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x095_EM_MAPS/MA5_EM_T5ZZ_x095_3NJet6_1250HT1500_450MHTinf.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1250HT1500_450MHTinf")
-T5ZZ_x095.efficiencyMap.setStatistics(observedN=23, expectedBG=17.6, bgError=4.1)
-TChiWZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_3NJet6_1250HT1500_450MHTinf.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1250HT1500_450MHTinf")
-TChiWZ_1.efficiencyMap.setStatistics(observedN=23, expectedBG=17.6, bgError=4.1)
-TChiWW_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWW_1_EM_MAPS/MA5_EM_TChiWW_1_3NJet6_1250HT1500_450MHTinf.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1250HT1500_450MHTinf")
-TChiWW_1.efficiencyMap.setStatistics(observedN=23, expectedBG=17.6, bgError=4.1)
-TChiZZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_3NJet6_1250HT1500_450MHTinf.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1250HT1500_450MHTinf")
-TChiZZ_1.efficiencyMap.setStatistics(observedN=23, expectedBG=17.6, bgError=4.1)
-T2bb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2bb_1_EM_MAPS/MA5_EM_T2bb_1_3NJet6_1250HT1500_450MHTinf.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1250HT1500_450MHTinf")
-T2bb_1.efficiencyMap.setStatistics(observedN=23, expectedBG=17.6, bgError=4.1)
-T2tt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2tt_1_EM_MAPS/MA5_EM_T2tt_1_3NJet6_1250HT1500_450MHTinf.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1250HT1500_450MHTinf")
-T2tt_1.efficiencyMap.setStatistics(observedN=23, expectedBG=17.6, bgError=4.1)
-T1btbt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1btbt_1_EM_MAPS/MA5_EM_T1btbt_1_3NJet6_1250HT1500_450MHTinf.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1250HT1500_450MHTinf")
-T1btbt_1.efficiencyMap.setStatistics(observedN=23, expectedBG=17.6, bgError=4.1)
-T1bbbb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1bbbb_1_EM_MAPS/MA5_EM_T1bbbb_1_3NJet6_1250HT1500_450MHTinf.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1250HT1500_450MHTinf")
-T1bbbb_1.efficiencyMap.setStatistics(observedN=23, expectedBG=17.6, bgError=4.1)
-databaseCreator.create()
-###
-T1qqqq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName ="h_EffAcc_3NJet6_1250HT1500_300MHT450", index = None, dataset="3NJet6_1250HT1500_300MHT450")
-T1qqqq.efficiencyMap.setStatistics(observedN=38, expectedBG=42.8, bgError=9.5)
-T1tttt.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName ="h_EffAcc_3NJet6_1250HT1500_300MHT450", index = None, dataset="3NJet6_1250HT1500_300MHT450")
-T1tttt.efficiencyMap.setStatistics(observedN=38, expectedBG=42.8, bgError=9.5)
-T2qq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T2qq.root", "root", objectName ="h_EffAcc_3NJet6_1250HT1500_300MHT450", index = None, dataset="3NJet6_1250HT1500_300MHT450")
-T2qq.efficiencyMap.setStatistics(observedN=38, expectedBG=42.8, bgError=9.5)
-T5WW_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x005_EM_MAPS/MA5_EM_T5WW_x005_3NJet6_1250HT1500_300MHT450.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1250HT1500_300MHT450")
-T5WW_x005.efficiencyMap.setStatistics(observedN=38, expectedBG=42.8, bgError=9.5)
-T5WW_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x05_EM_MAPS/MA5_EM_T5WW_x05_3NJet6_1250HT1500_300MHT450.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1250HT1500_300MHT450")
-T5WW_x05.efficiencyMap.setStatistics(observedN=38, expectedBG=42.8, bgError=9.5)
-T5WW_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x095_EM_MAPS/MA5_EM_T5WW_x095_3NJet6_1250HT1500_300MHT450.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1250HT1500_300MHT450")
-T5WW_x095.efficiencyMap.setStatistics(observedN=38, expectedBG=42.8, bgError=9.5)
-T5ZZ_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x005_EM_MAPS/MA5_EM_T5ZZ_x005_3NJet6_1250HT1500_300MHT450.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1250HT1500_300MHT450")
-T5ZZ_x005.efficiencyMap.setStatistics(observedN=38, expectedBG=42.8, bgError=9.5)
-T5ZZ_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x05_EM_MAPS/MA5_EM_T5ZZ_x05_3NJet6_1250HT1500_300MHT450.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1250HT1500_300MHT450")
-T5ZZ_x05.efficiencyMap.setStatistics(observedN=38, expectedBG=42.8, bgError=9.5)
-T5ZZ_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x095_EM_MAPS/MA5_EM_T5ZZ_x095_3NJet6_1250HT1500_300MHT450.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1250HT1500_300MHT450")
-T5ZZ_x095.efficiencyMap.setStatistics(observedN=38, expectedBG=42.8, bgError=9.5)
-TChiWZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_3NJet6_1250HT1500_300MHT450.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1250HT1500_300MHT450")
-TChiWZ_1.efficiencyMap.setStatistics(observedN=38, expectedBG=42.8, bgError=9.5)
-TChiWW_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWW_1_EM_MAPS/MA5_EM_TChiWW_1_3NJet6_1250HT1500_300MHT450.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1250HT1500_300MHT450")
-TChiWW_1.efficiencyMap.setStatistics(observedN=38, expectedBG=42.8, bgError=9.5)
-TChiZZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_3NJet6_1250HT1500_300MHT450.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1250HT1500_300MHT450")
-TChiZZ_1.efficiencyMap.setStatistics(observedN=38, expectedBG=42.8, bgError=9.5)
-T2bb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2bb_1_EM_MAPS/MA5_EM_T2bb_1_3NJet6_1250HT1500_300MHT450.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1250HT1500_300MHT450")
-T2bb_1.efficiencyMap.setStatistics(observedN=38, expectedBG=42.8, bgError=9.5)
-T2tt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2tt_1_EM_MAPS/MA5_EM_T2tt_1_3NJet6_1250HT1500_300MHT450.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1250HT1500_300MHT450")
-T2tt_1.efficiencyMap.setStatistics(observedN=38, expectedBG=42.8, bgError=9.5)
-T1btbt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1btbt_1_EM_MAPS/MA5_EM_T1btbt_1_3NJet6_1250HT1500_300MHT450.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1250HT1500_300MHT450")
-T1btbt_1.efficiencyMap.setStatistics(observedN=38, expectedBG=42.8, bgError=9.5)
-T1bbbb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1bbbb_1_EM_MAPS/MA5_EM_T1bbbb_1_3NJet6_1250HT1500_300MHT450.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1250HT1500_300MHT450")
-T1bbbb_1.efficiencyMap.setStatistics(observedN=38, expectedBG=42.8, bgError=9.5)
-databaseCreator.create()
-###
-T1qqqq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName ="h_EffAcc_3NJet6_1250HT1500_200MHT300", index = None, dataset="3NJet6_1250HT1500_200MHT300")
-T1qqqq.efficiencyMap.setStatistics(observedN=98, expectedBG=109, bgError=18)
-T1tttt.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName ="h_EffAcc_3NJet6_1250HT1500_200MHT300", index = None, dataset="3NJet6_1250HT1500_200MHT300")
-T1tttt.efficiencyMap.setStatistics(observedN=98, expectedBG=109, bgError=18)
-T2qq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T2qq.root", "root", objectName ="h_EffAcc_3NJet6_1250HT1500_200MHT300", index = None, dataset="3NJet6_1250HT1500_200MHT300")
-T2qq.efficiencyMap.setStatistics(observedN=98, expectedBG=109, bgError=18)
-T5WW_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x005_EM_MAPS/MA5_EM_T5WW_x005_3NJet6_1250HT1500_200MHT300.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1250HT1500_200MHT300")
-T5WW_x005.efficiencyMap.setStatistics(observedN=98, expectedBG=109, bgError=18)
-T5WW_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x05_EM_MAPS/MA5_EM_T5WW_x05_3NJet6_1250HT1500_200MHT300.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1250HT1500_200MHT300")
-T5WW_x05.efficiencyMap.setStatistics(observedN=98, expectedBG=109, bgError=18)
-T5WW_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x095_EM_MAPS/MA5_EM_T5WW_x095_3NJet6_1250HT1500_200MHT300.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1250HT1500_200MHT300")
-T5WW_x095.efficiencyMap.setStatistics(observedN=98, expectedBG=109, bgError=18)
-T5ZZ_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x005_EM_MAPS/MA5_EM_T5ZZ_x005_3NJet6_1250HT1500_200MHT300.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1250HT1500_200MHT300")
-T5ZZ_x005.efficiencyMap.setStatistics(observedN=98, expectedBG=109, bgError=18)
-T5ZZ_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x05_EM_MAPS/MA5_EM_T5ZZ_x05_3NJet6_1250HT1500_200MHT300.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1250HT1500_200MHT300")
-T5ZZ_x05.efficiencyMap.setStatistics(observedN=98, expectedBG=109, bgError=18)
-T5ZZ_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x095_EM_MAPS/MA5_EM_T5ZZ_x095_3NJet6_1250HT1500_200MHT300.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1250HT1500_200MHT300")
-T5ZZ_x095.efficiencyMap.setStatistics(observedN=98, expectedBG=109, bgError=18)
-TChiWZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_3NJet6_1250HT1500_200MHT300.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1250HT1500_200MHT300")
-TChiWZ_1.efficiencyMap.setStatistics(observedN=98, expectedBG=109, bgError=18)
-TChiWW_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWW_1_EM_MAPS/MA5_EM_TChiWW_1_3NJet6_1250HT1500_200MHT300.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1250HT1500_200MHT300")
-TChiWW_1.efficiencyMap.setStatistics(observedN=98, expectedBG=109, bgError=18)
-TChiZZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_3NJet6_1250HT1500_200MHT300.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1250HT1500_200MHT300")
-TChiZZ_1.efficiencyMap.setStatistics(observedN=98, expectedBG=109, bgError=18)
-T2bb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2bb_1_EM_MAPS/MA5_EM_T2bb_1_3NJet6_1250HT1500_200MHT300.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1250HT1500_200MHT300")
-T2bb_1.efficiencyMap.setStatistics(observedN=98, expectedBG=109, bgError=18)
-T2tt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2tt_1_EM_MAPS/MA5_EM_T2tt_1_3NJet6_1250HT1500_200MHT300.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1250HT1500_200MHT300")
-T2tt_1.efficiencyMap.setStatistics(observedN=98, expectedBG=109, bgError=18)
-T1btbt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1btbt_1_EM_MAPS/MA5_EM_T1btbt_1_3NJet6_1250HT1500_200MHT300.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1250HT1500_200MHT300")
-T1btbt_1.efficiencyMap.setStatistics(observedN=98, expectedBG=109, bgError=18)
-T1bbbb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1bbbb_1_EM_MAPS/MA5_EM_T1bbbb_1_3NJet6_1250HT1500_200MHT300.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1250HT1500_200MHT300")
-T1bbbb_1.efficiencyMap.setStatistics(observedN=98, expectedBG=109, bgError=18)
-databaseCreator.create()
-###
-T1qqqq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName ="h_EffAcc_3NJet6_1000HT1250_600MHTinf", index = None, dataset="3NJet6_1000HT1250_600MHTinf")
-T1qqqq.efficiencyMap.setStatistics(observedN=32, expectedBG=22.8, bgError=5.2)
-T1tttt.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName ="h_EffAcc_3NJet6_1000HT1250_600MHTinf", index = None, dataset="3NJet6_1000HT1250_600MHTinf")
-T1tttt.efficiencyMap.setStatistics(observedN=32, expectedBG=22.8, bgError=5.2)
-T2qq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T2qq.root", "root", objectName ="h_EffAcc_3NJet6_1000HT1250_600MHTinf", index = None, dataset="3NJet6_1000HT1250_600MHTinf")
-T2qq.efficiencyMap.setStatistics(observedN=32, expectedBG=22.8, bgError=5.2)
-T5WW_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x005_EM_MAPS/MA5_EM_T5WW_x005_3NJet6_1000HT1250_600MHTinf.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1000HT1250_600MHTinf")
-T5WW_x005.efficiencyMap.setStatistics(observedN=32, expectedBG=22.8, bgError=5.2)
-T5WW_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x05_EM_MAPS/MA5_EM_T5WW_x05_3NJet6_1000HT1250_600MHTinf.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1000HT1250_600MHTinf")
-T5WW_x05.efficiencyMap.setStatistics(observedN=32, expectedBG=22.8, bgError=5.2)
-T5WW_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x095_EM_MAPS/MA5_EM_T5WW_x095_3NJet6_1000HT1250_600MHTinf.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1000HT1250_600MHTinf")
-T5WW_x095.efficiencyMap.setStatistics(observedN=32, expectedBG=22.8, bgError=5.2)
-T5ZZ_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x005_EM_MAPS/MA5_EM_T5ZZ_x005_3NJet6_1000HT1250_600MHTinf.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1000HT1250_600MHTinf")
-T5ZZ_x005.efficiencyMap.setStatistics(observedN=32, expectedBG=22.8, bgError=5.2)
-T5ZZ_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x05_EM_MAPS/MA5_EM_T5ZZ_x05_3NJet6_1000HT1250_600MHTinf.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1000HT1250_600MHTinf")
-T5ZZ_x05.efficiencyMap.setStatistics(observedN=32, expectedBG=22.8, bgError=5.2)
-T5ZZ_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x095_EM_MAPS/MA5_EM_T5ZZ_x095_3NJet6_1000HT1250_600MHTinf.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1000HT1250_600MHTinf")
-T5ZZ_x095.efficiencyMap.setStatistics(observedN=32, expectedBG=22.8, bgError=5.2)
-TChiWZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_3NJet6_1000HT1250_600MHTinf.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1000HT1250_600MHTinf")
-TChiWZ_1.efficiencyMap.setStatistics(observedN=32, expectedBG=22.8, bgError=5.2)
-TChiWW_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWW_1_EM_MAPS/MA5_EM_TChiWW_1_3NJet6_1000HT1250_600MHTinf.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1000HT1250_600MHTinf")
-TChiWW_1.efficiencyMap.setStatistics(observedN=32, expectedBG=22.8, bgError=5.2)
-TChiZZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_3NJet6_1000HT1250_600MHTinf.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1000HT1250_600MHTinf")
-TChiZZ_1.efficiencyMap.setStatistics(observedN=32, expectedBG=22.8, bgError=5.2)
-T2bb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2bb_1_EM_MAPS/MA5_EM_T2bb_1_3NJet6_1000HT1250_600MHTinf.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1000HT1250_600MHTinf")
-T2bb_1.efficiencyMap.setStatistics(observedN=32, expectedBG=22.8, bgError=5.2)
-T2tt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2tt_1_EM_MAPS/MA5_EM_T2tt_1_3NJet6_1000HT1250_600MHTinf.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1000HT1250_600MHTinf")
-T2tt_1.efficiencyMap.setStatistics(observedN=32, expectedBG=22.8, bgError=5.2)
-T1btbt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1btbt_1_EM_MAPS/MA5_EM_T1btbt_1_3NJet6_1000HT1250_600MHTinf.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1000HT1250_600MHTinf")
-T1btbt_1.efficiencyMap.setStatistics(observedN=32, expectedBG=22.8, bgError=5.2)
-T1bbbb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1bbbb_1_EM_MAPS/MA5_EM_T1bbbb_1_3NJet6_1000HT1250_600MHTinf.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1000HT1250_600MHTinf")
-T1bbbb_1.efficiencyMap.setStatistics(observedN=32, expectedBG=22.8, bgError=5.2)
-databaseCreator.create()
-###
-T1qqqq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName ="h_EffAcc_3NJet6_1000HT1250_450MHT600", index = None, dataset="3NJet6_1000HT1250_450MHT600")
-T1qqqq.efficiencyMap.setStatistics(observedN=34, expectedBG=32.3, bgError=6.1)
-T1tttt.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName ="h_EffAcc_3NJet6_1000HT1250_450MHT600", index = None, dataset="3NJet6_1000HT1250_450MHT600")
-T1tttt.efficiencyMap.setStatistics(observedN=34, expectedBG=32.3, bgError=6.1)
-T2qq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T2qq.root", "root", objectName ="h_EffAcc_3NJet6_1000HT1250_450MHT600", index = None, dataset="3NJet6_1000HT1250_450MHT600")
-T2qq.efficiencyMap.setStatistics(observedN=34, expectedBG=32.3, bgError=6.1)
-T5WW_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x005_EM_MAPS/MA5_EM_T5WW_x005_3NJet6_1000HT1250_450MHT600.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1000HT1250_450MHT600")
-T5WW_x005.efficiencyMap.setStatistics(observedN=34, expectedBG=32.3, bgError=6.1)
-T5WW_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x05_EM_MAPS/MA5_EM_T5WW_x05_3NJet6_1000HT1250_450MHT600.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1000HT1250_450MHT600")
-T5WW_x05.efficiencyMap.setStatistics(observedN=34, expectedBG=32.3, bgError=6.1)
-T5WW_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x095_EM_MAPS/MA5_EM_T5WW_x095_3NJet6_1000HT1250_450MHT600.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1000HT1250_450MHT600")
-T5WW_x095.efficiencyMap.setStatistics(observedN=34, expectedBG=32.3, bgError=6.1)
-T5ZZ_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x005_EM_MAPS/MA5_EM_T5ZZ_x005_3NJet6_1000HT1250_450MHT600.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1000HT1250_450MHT600")
-T5ZZ_x005.efficiencyMap.setStatistics(observedN=34, expectedBG=32.3, bgError=6.1)
-T5ZZ_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x05_EM_MAPS/MA5_EM_T5ZZ_x05_3NJet6_1000HT1250_450MHT600.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1000HT1250_450MHT600")
-T5ZZ_x05.efficiencyMap.setStatistics(observedN=34, expectedBG=32.3, bgError=6.1)
-T5ZZ_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x095_EM_MAPS/MA5_EM_T5ZZ_x095_3NJet6_1000HT1250_450MHT600.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1000HT1250_450MHT600")
-T5ZZ_x095.efficiencyMap.setStatistics(observedN=34, expectedBG=32.3, bgError=6.1)
-TChiWZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_3NJet6_1000HT1250_450MHT600.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1000HT1250_450MHT600")
-TChiWZ_1.efficiencyMap.setStatistics(observedN=34, expectedBG=32.3, bgError=6.1)
-TChiWW_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWW_1_EM_MAPS/MA5_EM_TChiWW_1_3NJet6_1000HT1250_450MHT600.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1000HT1250_450MHT600")
-TChiWW_1.efficiencyMap.setStatistics(observedN=34, expectedBG=32.3, bgError=6.1)
-TChiZZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_3NJet6_1000HT1250_450MHT600.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1000HT1250_450MHT600")
-TChiZZ_1.efficiencyMap.setStatistics(observedN=34, expectedBG=32.3, bgError=6.1)
-T2bb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2bb_1_EM_MAPS/MA5_EM_T2bb_1_3NJet6_1000HT1250_450MHT600.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1000HT1250_450MHT600")
-T2bb_1.efficiencyMap.setStatistics(observedN=34, expectedBG=32.3, bgError=6.1)
-T2tt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2tt_1_EM_MAPS/MA5_EM_T2tt_1_3NJet6_1000HT1250_450MHT600.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1000HT1250_450MHT600")
-T2tt_1.efficiencyMap.setStatistics(observedN=34, expectedBG=32.3, bgError=6.1)
-T1btbt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1btbt_1_EM_MAPS/MA5_EM_T1btbt_1_3NJet6_1000HT1250_450MHT600.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1000HT1250_450MHT600")
-T1btbt_1.efficiencyMap.setStatistics(observedN=34, expectedBG=32.3, bgError=6.1)
-T1bbbb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1bbbb_1_EM_MAPS/MA5_EM_T1bbbb_1_3NJet6_1000HT1250_450MHT600.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1000HT1250_450MHT600")
-T1bbbb_1.efficiencyMap.setStatistics(observedN=34, expectedBG=32.3, bgError=6.1)
-databaseCreator.create()
-###
-T1qqqq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName ="h_EffAcc_3NJet6_1000HT1250_300MHT450", index = None, dataset="3NJet6_1000HT1250_300MHT450")
-T1qqqq.efficiencyMap.setStatistics(observedN=129, expectedBG=137, bgError=20)
-T1tttt.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName ="h_EffAcc_3NJet6_1000HT1250_300MHT450", index = None, dataset="3NJet6_1000HT1250_300MHT450")
-T1tttt.efficiencyMap.setStatistics(observedN=129, expectedBG=137, bgError=20)
-T2qq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T2qq.root", "root", objectName ="h_EffAcc_3NJet6_1000HT1250_300MHT450", index = None, dataset="3NJet6_1000HT1250_300MHT450")
-T2qq.efficiencyMap.setStatistics(observedN=129, expectedBG=137, bgError=20)
-T5WW_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x005_EM_MAPS/MA5_EM_T5WW_x005_3NJet6_1000HT1250_300MHT450.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1000HT1250_300MHT450")
-T5WW_x005.efficiencyMap.setStatistics(observedN=129, expectedBG=137, bgError=20)
-T5WW_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x05_EM_MAPS/MA5_EM_T5WW_x05_3NJet6_1000HT1250_300MHT450.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1000HT1250_300MHT450")
-T5WW_x05.efficiencyMap.setStatistics(observedN=129, expectedBG=137, bgError=20)
-T5WW_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x095_EM_MAPS/MA5_EM_T5WW_x095_3NJet6_1000HT1250_300MHT450.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1000HT1250_300MHT450")
-T5WW_x095.efficiencyMap.setStatistics(observedN=129, expectedBG=137, bgError=20)
-T5ZZ_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x005_EM_MAPS/MA5_EM_T5ZZ_x005_3NJet6_1000HT1250_300MHT450.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1000HT1250_300MHT450")
-T5ZZ_x005.efficiencyMap.setStatistics(observedN=129, expectedBG=137, bgError=20)
-T5ZZ_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x05_EM_MAPS/MA5_EM_T5ZZ_x05_3NJet6_1000HT1250_300MHT450.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1000HT1250_300MHT450")
-T5ZZ_x05.efficiencyMap.setStatistics(observedN=129, expectedBG=137, bgError=20)
-T5ZZ_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x095_EM_MAPS/MA5_EM_T5ZZ_x095_3NJet6_1000HT1250_300MHT450.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1000HT1250_300MHT450")
-T5ZZ_x095.efficiencyMap.setStatistics(observedN=129, expectedBG=137, bgError=20)
-TChiWZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_3NJet6_1000HT1250_300MHT450.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1000HT1250_300MHT450")
-TChiWZ_1.efficiencyMap.setStatistics(observedN=129, expectedBG=137, bgError=20)
-TChiWW_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWW_1_EM_MAPS/MA5_EM_TChiWW_1_3NJet6_1000HT1250_300MHT450.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1000HT1250_300MHT450")
-TChiWW_1.efficiencyMap.setStatistics(observedN=129, expectedBG=137, bgError=20)
-TChiZZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_3NJet6_1000HT1250_300MHT450.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1000HT1250_300MHT450")
-TChiZZ_1.efficiencyMap.setStatistics(observedN=129, expectedBG=137, bgError=20)
-T2bb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2bb_1_EM_MAPS/MA5_EM_T2bb_1_3NJet6_1000HT1250_300MHT450.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1000HT1250_300MHT450")
-T2bb_1.efficiencyMap.setStatistics(observedN=129, expectedBG=137, bgError=20)
-T2tt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2tt_1_EM_MAPS/MA5_EM_T2tt_1_3NJet6_1000HT1250_300MHT450.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1000HT1250_300MHT450")
-T2tt_1.efficiencyMap.setStatistics(observedN=129, expectedBG=137, bgError=20)
-T1btbt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1btbt_1_EM_MAPS/MA5_EM_T1btbt_1_3NJet6_1000HT1250_300MHT450.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1000HT1250_300MHT450")
-T1btbt_1.efficiencyMap.setStatistics(observedN=129, expectedBG=137, bgError=20)
-T1bbbb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1bbbb_1_EM_MAPS/MA5_EM_T1bbbb_1_3NJet6_1000HT1250_300MHT450.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1000HT1250_300MHT450")
-T1bbbb_1.efficiencyMap.setStatistics(observedN=129, expectedBG=137, bgError=20)
-databaseCreator.create()
-###
-T1qqqq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName ="h_EffAcc_3NJet6_1000HT1250_200MHT300", index = None, dataset="3NJet6_1000HT1250_200MHT300")
-T1qqqq.efficiencyMap.setStatistics(observedN=335, expectedBG=305, bgError=41)
-T1tttt.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName ="h_EffAcc_3NJet6_1000HT1250_200MHT300", index = None, dataset="3NJet6_1000HT1250_200MHT300")
-T1tttt.efficiencyMap.setStatistics(observedN=335, expectedBG=305, bgError=41)
-T2qq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T2qq.root", "root", objectName ="h_EffAcc_3NJet6_1000HT1250_200MHT300", index = None, dataset="3NJet6_1000HT1250_200MHT300")
-T2qq.efficiencyMap.setStatistics(observedN=335, expectedBG=305, bgError=41)
-T5WW_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x005_EM_MAPS/MA5_EM_T5WW_x005_3NJet6_1000HT1250_200MHT300.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1000HT1250_200MHT300")
-T5WW_x005.efficiencyMap.setStatistics(observedN=335, expectedBG=305, bgError=41)
-T5WW_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x05_EM_MAPS/MA5_EM_T5WW_x05_3NJet6_1000HT1250_200MHT300.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1000HT1250_200MHT300")
-T5WW_x05.efficiencyMap.setStatistics(observedN=335, expectedBG=305, bgError=41)
-T5WW_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x095_EM_MAPS/MA5_EM_T5WW_x095_3NJet6_1000HT1250_200MHT300.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1000HT1250_200MHT300")
-T5WW_x095.efficiencyMap.setStatistics(observedN=335, expectedBG=305, bgError=41)
-T5ZZ_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x005_EM_MAPS/MA5_EM_T5ZZ_x005_3NJet6_1000HT1250_200MHT300.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1000HT1250_200MHT300")
-T5ZZ_x005.efficiencyMap.setStatistics(observedN=335, expectedBG=305, bgError=41)
-T5ZZ_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x05_EM_MAPS/MA5_EM_T5ZZ_x05_3NJet6_1000HT1250_200MHT300.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1000HT1250_200MHT300")
-T5ZZ_x05.efficiencyMap.setStatistics(observedN=335, expectedBG=305, bgError=41)
-T5ZZ_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x095_EM_MAPS/MA5_EM_T5ZZ_x095_3NJet6_1000HT1250_200MHT300.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1000HT1250_200MHT300")
-T5ZZ_x095.efficiencyMap.setStatistics(observedN=335, expectedBG=305, bgError=41)
-TChiWZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_3NJet6_1000HT1250_200MHT300.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1000HT1250_200MHT300")
-TChiWZ_1.efficiencyMap.setStatistics(observedN=335, expectedBG=305, bgError=41)
-TChiWW_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWW_1_EM_MAPS/MA5_EM_TChiWW_1_3NJet6_1000HT1250_200MHT300.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1000HT1250_200MHT300")
-TChiWW_1.efficiencyMap.setStatistics(observedN=335, expectedBG=305, bgError=41)
-TChiZZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_3NJet6_1000HT1250_200MHT300.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1000HT1250_200MHT300")
-TChiZZ_1.efficiencyMap.setStatistics(observedN=335, expectedBG=305, bgError=41)
-T2bb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2bb_1_EM_MAPS/MA5_EM_T2bb_1_3NJet6_1000HT1250_200MHT300.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1000HT1250_200MHT300")
-T2bb_1.efficiencyMap.setStatistics(observedN=335, expectedBG=305, bgError=41)
-T2tt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2tt_1_EM_MAPS/MA5_EM_T2tt_1_3NJet6_1000HT1250_200MHT300.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1000HT1250_200MHT300")
-T2tt_1.efficiencyMap.setStatistics(observedN=335, expectedBG=305, bgError=41)
-T1btbt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1btbt_1_EM_MAPS/MA5_EM_T1btbt_1_3NJet6_1000HT1250_200MHT300.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1000HT1250_200MHT300")
-T1btbt_1.efficiencyMap.setStatistics(observedN=335, expectedBG=305, bgError=41)
-T1bbbb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1bbbb_1_EM_MAPS/MA5_EM_T1bbbb_1_3NJet6_1000HT1250_200MHT300.dat", "txt", objectName ="None", index = None, dataset="3NJet6_1000HT1250_200MHT300")
-T1bbbb_1.efficiencyMap.setStatistics(observedN=335, expectedBG=305, bgError=41)
-databaseCreator.create()
-###
-T1qqqq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName ="h_EffAcc_3NJet6_800HT1000_600MHTinf", index = None, dataset="3NJet6_800HT1000_600MHTinf")
-T1qqqq.efficiencyMap.setStatistics(observedN=52, expectedBG=54.8, bgError=9.7)
-T1tttt.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName ="h_EffAcc_3NJet6_800HT1000_600MHTinf", index = None, dataset="3NJet6_800HT1000_600MHTinf")
-T1tttt.efficiencyMap.setStatistics(observedN=52, expectedBG=54.8, bgError=9.7)
-T2qq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T2qq.root", "root", objectName ="h_EffAcc_3NJet6_800HT1000_600MHTinf", index = None, dataset="3NJet6_800HT1000_600MHTinf")
-T2qq.efficiencyMap.setStatistics(observedN=52, expectedBG=54.8, bgError=9.7)
-T5WW_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x005_EM_MAPS/MA5_EM_T5WW_x005_3NJet6_800HT1000_600MHTinf.dat", "txt", objectName ="None", index = None, dataset="3NJet6_800HT1000_600MHTinf")
-T5WW_x005.efficiencyMap.setStatistics(observedN=52, expectedBG=54.8, bgError=9.7)
-T5WW_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x05_EM_MAPS/MA5_EM_T5WW_x05_3NJet6_800HT1000_600MHTinf.dat", "txt", objectName ="None", index = None, dataset="3NJet6_800HT1000_600MHTinf")
-T5WW_x05.efficiencyMap.setStatistics(observedN=52, expectedBG=54.8, bgError=9.7)
-T5WW_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x095_EM_MAPS/MA5_EM_T5WW_x095_3NJet6_800HT1000_600MHTinf.dat", "txt", objectName ="None", index = None, dataset="3NJet6_800HT1000_600MHTinf")
-T5WW_x095.efficiencyMap.setStatistics(observedN=52, expectedBG=54.8, bgError=9.7)
-T5ZZ_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x005_EM_MAPS/MA5_EM_T5ZZ_x005_3NJet6_800HT1000_600MHTinf.dat", "txt", objectName ="None", index = None, dataset="3NJet6_800HT1000_600MHTinf")
-T5ZZ_x005.efficiencyMap.setStatistics(observedN=52, expectedBG=54.8, bgError=9.7)
-T5ZZ_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x05_EM_MAPS/MA5_EM_T5ZZ_x05_3NJet6_800HT1000_600MHTinf.dat", "txt", objectName ="None", index = None, dataset="3NJet6_800HT1000_600MHTinf")
-T5ZZ_x05.efficiencyMap.setStatistics(observedN=52, expectedBG=54.8, bgError=9.7)
-T5ZZ_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x095_EM_MAPS/MA5_EM_T5ZZ_x095_3NJet6_800HT1000_600MHTinf.dat", "txt", objectName ="None", index = None, dataset="3NJet6_800HT1000_600MHTinf")
-T5ZZ_x095.efficiencyMap.setStatistics(observedN=52, expectedBG=54.8, bgError=9.7)
-TChiWZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_3NJet6_800HT1000_600MHTinf.dat", "txt", objectName ="None", index = None, dataset="3NJet6_800HT1000_600MHTinf")
-TChiWZ_1.efficiencyMap.setStatistics(observedN=52, expectedBG=54.8, bgError=9.7)
-TChiWW_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWW_1_EM_MAPS/MA5_EM_TChiWW_1_3NJet6_800HT1000_600MHTinf.dat", "txt", objectName ="None", index = None, dataset="3NJet6_800HT1000_600MHTinf")
-TChiWW_1.efficiencyMap.setStatistics(observedN=52, expectedBG=54.8, bgError=9.7)
-TChiZZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_3NJet6_800HT1000_600MHTinf.dat", "txt", objectName ="None", index = None, dataset="3NJet6_800HT1000_600MHTinf")
-TChiZZ_1.efficiencyMap.setStatistics(observedN=52, expectedBG=54.8, bgError=9.7)
-T2bb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2bb_1_EM_MAPS/MA5_EM_T2bb_1_3NJet6_800HT1000_600MHTinf.dat", "txt", objectName ="None", index = None, dataset="3NJet6_800HT1000_600MHTinf")
-T2bb_1.efficiencyMap.setStatistics(observedN=52, expectedBG=54.8, bgError=9.7)
-T2tt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2tt_1_EM_MAPS/MA5_EM_T2tt_1_3NJet6_800HT1000_600MHTinf.dat", "txt", objectName ="None", index = None, dataset="3NJet6_800HT1000_600MHTinf")
-T2tt_1.efficiencyMap.setStatistics(observedN=52, expectedBG=54.8, bgError=9.7)
-T1btbt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1btbt_1_EM_MAPS/MA5_EM_T1btbt_1_3NJet6_800HT1000_600MHTinf.dat", "txt", objectName ="None", index = None, dataset="3NJet6_800HT1000_600MHTinf")
-T1btbt_1.efficiencyMap.setStatistics(observedN=52, expectedBG=54.8, bgError=9.7)
-T1bbbb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1bbbb_1_EM_MAPS/MA5_EM_T1bbbb_1_3NJet6_800HT1000_600MHTinf.dat", "txt", objectName ="None", index = None, dataset="3NJet6_800HT1000_600MHTinf")
-T1bbbb_1.efficiencyMap.setStatistics(observedN=52, expectedBG=54.8, bgError=9.7)
-databaseCreator.create()
-###
-T1qqqq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName ="h_EffAcc_3NJet6_800HT1000_450MHT600", index = None, dataset="3NJet6_800HT1000_450MHT600")
-T1qqqq.efficiencyMap.setStatistics(observedN=124, expectedBG=108, bgError=15)
-T1tttt.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName ="h_EffAcc_3NJet6_800HT1000_450MHT600", index = None, dataset="3NJet6_800HT1000_450MHT600")
-T1tttt.efficiencyMap.setStatistics(observedN=124, expectedBG=108, bgError=15)
-T2qq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T2qq.root", "root", objectName ="h_EffAcc_3NJet6_800HT1000_450MHT600", index = None, dataset="3NJet6_800HT1000_450MHT600")
-T2qq.efficiencyMap.setStatistics(observedN=124, expectedBG=108, bgError=15)
-T5WW_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x005_EM_MAPS/MA5_EM_T5WW_x005_3NJet6_800HT1000_450MHT600.dat", "txt", objectName ="None", index = None, dataset="3NJet6_800HT1000_450MHT600")
-T5WW_x005.efficiencyMap.setStatistics(observedN=124, expectedBG=108, bgError=15)
-T5WW_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x05_EM_MAPS/MA5_EM_T5WW_x05_3NJet6_800HT1000_450MHT600.dat", "txt", objectName ="None", index = None, dataset="3NJet6_800HT1000_450MHT600")
-T5WW_x05.efficiencyMap.setStatistics(observedN=124, expectedBG=108, bgError=15)
-T5WW_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x095_EM_MAPS/MA5_EM_T5WW_x095_3NJet6_800HT1000_450MHT600.dat", "txt", objectName ="None", index = None, dataset="3NJet6_800HT1000_450MHT600")
-T5WW_x095.efficiencyMap.setStatistics(observedN=124, expectedBG=108, bgError=15)
-T5ZZ_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x005_EM_MAPS/MA5_EM_T5ZZ_x005_3NJet6_800HT1000_450MHT600.dat", "txt", objectName ="None", index = None, dataset="3NJet6_800HT1000_450MHT600")
-T5ZZ_x005.efficiencyMap.setStatistics(observedN=124, expectedBG=108, bgError=15)
-T5ZZ_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x05_EM_MAPS/MA5_EM_T5ZZ_x05_3NJet6_800HT1000_450MHT600.dat", "txt", objectName ="None", index = None, dataset="3NJet6_800HT1000_450MHT600")
-T5ZZ_x05.efficiencyMap.setStatistics(observedN=124, expectedBG=108, bgError=15)
-T5ZZ_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x095_EM_MAPS/MA5_EM_T5ZZ_x095_3NJet6_800HT1000_450MHT600.dat", "txt", objectName ="None", index = None, dataset="3NJet6_800HT1000_450MHT600")
-T5ZZ_x095.efficiencyMap.setStatistics(observedN=124, expectedBG=108, bgError=15)
-TChiWZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_3NJet6_800HT1000_450MHT600.dat", "txt", objectName ="None", index = None, dataset="3NJet6_800HT1000_450MHT600")
-TChiWZ_1.efficiencyMap.setStatistics(observedN=124, expectedBG=108, bgError=15)
-TChiWW_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWW_1_EM_MAPS/MA5_EM_TChiWW_1_3NJet6_800HT1000_450MHT600.dat", "txt", objectName ="None", index = None, dataset="3NJet6_800HT1000_450MHT600")
-TChiWW_1.efficiencyMap.setStatistics(observedN=124, expectedBG=108, bgError=15)
-TChiZZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_3NJet6_800HT1000_450MHT600.dat", "txt", objectName ="None", index = None, dataset="3NJet6_800HT1000_450MHT600")
-TChiZZ_1.efficiencyMap.setStatistics(observedN=124, expectedBG=108, bgError=15)
-T2bb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2bb_1_EM_MAPS/MA5_EM_T2bb_1_3NJet6_800HT1000_450MHT600.dat", "txt", objectName ="None", index = None, dataset="3NJet6_800HT1000_450MHT600")
-T2bb_1.efficiencyMap.setStatistics(observedN=124, expectedBG=108, bgError=15)
-T2tt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2tt_1_EM_MAPS/MA5_EM_T2tt_1_3NJet6_800HT1000_450MHT600.dat", "txt", objectName ="None", index = None, dataset="3NJet6_800HT1000_450MHT600")
-T2tt_1.efficiencyMap.setStatistics(observedN=124, expectedBG=108, bgError=15)
-T1btbt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1btbt_1_EM_MAPS/MA5_EM_T1btbt_1_3NJet6_800HT1000_450MHT600.dat", "txt", objectName ="None", index = None, dataset="3NJet6_800HT1000_450MHT600")
-T1btbt_1.efficiencyMap.setStatistics(observedN=124, expectedBG=108, bgError=15)
-T1bbbb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1bbbb_1_EM_MAPS/MA5_EM_T1bbbb_1_3NJet6_800HT1000_450MHT600.dat", "txt", objectName ="None", index = None, dataset="3NJet6_800HT1000_450MHT600")
-T1bbbb_1.efficiencyMap.setStatistics(observedN=124, expectedBG=108, bgError=15)
-databaseCreator.create()
-###
-T1qqqq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName ="h_EffAcc_3NJet6_800HT1000_300MHT450", index = None, dataset="3NJet6_800HT1000_300MHT450")
-T1qqqq.efficiencyMap.setStatistics(observedN=305, expectedBG=330, bgError=40)
-T1tttt.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName ="h_EffAcc_3NJet6_800HT1000_300MHT450", index = None, dataset="3NJet6_800HT1000_300MHT450")
-T1tttt.efficiencyMap.setStatistics(observedN=305, expectedBG=330, bgError=40)
-T2qq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T2qq.root", "root", objectName ="h_EffAcc_3NJet6_800HT1000_300MHT450", index = None, dataset="3NJet6_800HT1000_300MHT450")
-T2qq.efficiencyMap.setStatistics(observedN=305, expectedBG=330, bgError=40)
-T5WW_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x005_EM_MAPS/MA5_EM_T5WW_x005_3NJet6_800HT1000_300MHT450.dat", "txt", objectName ="None", index = None, dataset="3NJet6_800HT1000_300MHT450")
-T5WW_x005.efficiencyMap.setStatistics(observedN=305, expectedBG=330, bgError=40)
-T5WW_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x05_EM_MAPS/MA5_EM_T5WW_x05_3NJet6_800HT1000_300MHT450.dat", "txt", objectName ="None", index = None, dataset="3NJet6_800HT1000_300MHT450")
-T5WW_x05.efficiencyMap.setStatistics(observedN=305, expectedBG=330, bgError=40)
-T5WW_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x095_EM_MAPS/MA5_EM_T5WW_x095_3NJet6_800HT1000_300MHT450.dat", "txt", objectName ="None", index = None, dataset="3NJet6_800HT1000_300MHT450")
-T5WW_x095.efficiencyMap.setStatistics(observedN=305, expectedBG=330, bgError=40)
-T5ZZ_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x005_EM_MAPS/MA5_EM_T5ZZ_x005_3NJet6_800HT1000_300MHT450.dat", "txt", objectName ="None", index = None, dataset="3NJet6_800HT1000_300MHT450")
-T5ZZ_x005.efficiencyMap.setStatistics(observedN=305, expectedBG=330, bgError=40)
-T5ZZ_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x05_EM_MAPS/MA5_EM_T5ZZ_x05_3NJet6_800HT1000_300MHT450.dat", "txt", objectName ="None", index = None, dataset="3NJet6_800HT1000_300MHT450")
-T5ZZ_x05.efficiencyMap.setStatistics(observedN=305, expectedBG=330, bgError=40)
-T5ZZ_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x095_EM_MAPS/MA5_EM_T5ZZ_x095_3NJet6_800HT1000_300MHT450.dat", "txt", objectName ="None", index = None, dataset="3NJet6_800HT1000_300MHT450")
-T5ZZ_x095.efficiencyMap.setStatistics(observedN=305, expectedBG=330, bgError=40)
-TChiWZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_3NJet6_800HT1000_300MHT450.dat", "txt", objectName ="None", index = None, dataset="3NJet6_800HT1000_300MHT450")
-TChiWZ_1.efficiencyMap.setStatistics(observedN=305, expectedBG=330, bgError=40)
-TChiWW_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWW_1_EM_MAPS/MA5_EM_TChiWW_1_3NJet6_800HT1000_300MHT450.dat", "txt", objectName ="None", index = None, dataset="3NJet6_800HT1000_300MHT450")
-TChiWW_1.efficiencyMap.setStatistics(observedN=305, expectedBG=330, bgError=40)
-TChiZZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_3NJet6_800HT1000_300MHT450.dat", "txt", objectName ="None", index = None, dataset="3NJet6_800HT1000_300MHT450")
-TChiZZ_1.efficiencyMap.setStatistics(observedN=305, expectedBG=330, bgError=40)
-T2bb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2bb_1_EM_MAPS/MA5_EM_T2bb_1_3NJet6_800HT1000_300MHT450.dat", "txt", objectName ="None", index = None, dataset="3NJet6_800HT1000_300MHT450")
-T2bb_1.efficiencyMap.setStatistics(observedN=305, expectedBG=330, bgError=40)
-T2tt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2tt_1_EM_MAPS/MA5_EM_T2tt_1_3NJet6_800HT1000_300MHT450.dat", "txt", objectName ="None", index = None, dataset="3NJet6_800HT1000_300MHT450")
-T2tt_1.efficiencyMap.setStatistics(observedN=305, expectedBG=330, bgError=40)
-T1btbt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1btbt_1_EM_MAPS/MA5_EM_T1btbt_1_3NJet6_800HT1000_300MHT450.dat", "txt", objectName ="None", index = None, dataset="3NJet6_800HT1000_300MHT450")
-T1btbt_1.efficiencyMap.setStatistics(observedN=305, expectedBG=330, bgError=40)
-T1bbbb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1bbbb_1_EM_MAPS/MA5_EM_T1bbbb_1_3NJet6_800HT1000_300MHT450.dat", "txt", objectName ="None", index = None, dataset="3NJet6_800HT1000_300MHT450")
-T1bbbb_1.efficiencyMap.setStatistics(observedN=305, expectedBG=330, bgError=40)
-databaseCreator.create()
-###
-T1qqqq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName ="h_EffAcc_3NJet6_800HT1000_200MHT300", index = None, dataset="3NJet6_800HT1000_200MHT300")
-T1qqqq.efficiencyMap.setStatistics(observedN=808, expectedBG=777, bgError=107)
-T1tttt.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName ="h_EffAcc_3NJet6_800HT1000_200MHT300", index = None, dataset="3NJet6_800HT1000_200MHT300")
-T1tttt.efficiencyMap.setStatistics(observedN=808, expectedBG=777, bgError=107)
-T2qq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T2qq.root", "root", objectName ="h_EffAcc_3NJet6_800HT1000_200MHT300", index = None, dataset="3NJet6_800HT1000_200MHT300")
-T2qq.efficiencyMap.setStatistics(observedN=808, expectedBG=777, bgError=107)
-T5WW_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x005_EM_MAPS/MA5_EM_T5WW_x005_3NJet6_800HT1000_200MHT300.dat", "txt", objectName ="None", index = None, dataset="3NJet6_800HT1000_200MHT300")
-T5WW_x005.efficiencyMap.setStatistics(observedN=808, expectedBG=777, bgError=107)
-T5WW_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x05_EM_MAPS/MA5_EM_T5WW_x05_3NJet6_800HT1000_200MHT300.dat", "txt", objectName ="None", index = None, dataset="3NJet6_800HT1000_200MHT300")
-T5WW_x05.efficiencyMap.setStatistics(observedN=808, expectedBG=777, bgError=107)
-T5WW_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x095_EM_MAPS/MA5_EM_T5WW_x095_3NJet6_800HT1000_200MHT300.dat", "txt", objectName ="None", index = None, dataset="3NJet6_800HT1000_200MHT300")
-T5WW_x095.efficiencyMap.setStatistics(observedN=808, expectedBG=777, bgError=107)
-T5ZZ_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x005_EM_MAPS/MA5_EM_T5ZZ_x005_3NJet6_800HT1000_200MHT300.dat", "txt", objectName ="None", index = None, dataset="3NJet6_800HT1000_200MHT300")
-T5ZZ_x005.efficiencyMap.setStatistics(observedN=808, expectedBG=777, bgError=107)
-T5ZZ_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x05_EM_MAPS/MA5_EM_T5ZZ_x05_3NJet6_800HT1000_200MHT300.dat", "txt", objectName ="None", index = None, dataset="3NJet6_800HT1000_200MHT300")
-T5ZZ_x05.efficiencyMap.setStatistics(observedN=808, expectedBG=777, bgError=107)
-T5ZZ_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x095_EM_MAPS/MA5_EM_T5ZZ_x095_3NJet6_800HT1000_200MHT300.dat", "txt", objectName ="None", index = None, dataset="3NJet6_800HT1000_200MHT300")
-T5ZZ_x095.efficiencyMap.setStatistics(observedN=808, expectedBG=777, bgError=107)
-TChiWZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_3NJet6_800HT1000_200MHT300.dat", "txt", objectName ="None", index = None, dataset="3NJet6_800HT1000_200MHT300")
-TChiWZ_1.efficiencyMap.setStatistics(observedN=808, expectedBG=777, bgError=107)
-TChiWW_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWW_1_EM_MAPS/MA5_EM_TChiWW_1_3NJet6_800HT1000_200MHT300.dat", "txt", objectName ="None", index = None, dataset="3NJet6_800HT1000_200MHT300")
-TChiWW_1.efficiencyMap.setStatistics(observedN=808, expectedBG=777, bgError=107)
-TChiZZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_3NJet6_800HT1000_200MHT300.dat", "txt", objectName ="None", index = None, dataset="3NJet6_800HT1000_200MHT300")
-TChiZZ_1.efficiencyMap.setStatistics(observedN=808, expectedBG=777, bgError=107)
-T2bb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2bb_1_EM_MAPS/MA5_EM_T2bb_1_3NJet6_800HT1000_200MHT300.dat", "txt", objectName ="None", index = None, dataset="3NJet6_800HT1000_200MHT300")
-T2bb_1.efficiencyMap.setStatistics(observedN=808, expectedBG=777, bgError=107)
-T2tt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2tt_1_EM_MAPS/MA5_EM_T2tt_1_3NJet6_800HT1000_200MHT300.dat", "txt", objectName ="None", index = None, dataset="3NJet6_800HT1000_200MHT300")
-T2tt_1.efficiencyMap.setStatistics(observedN=808, expectedBG=777, bgError=107)
-T1btbt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1btbt_1_EM_MAPS/MA5_EM_T1btbt_1_3NJet6_800HT1000_200MHT300.dat", "txt", objectName ="None", index = None, dataset="3NJet6_800HT1000_200MHT300")
-T1btbt_1.efficiencyMap.setStatistics(observedN=808, expectedBG=777, bgError=107)
-T1bbbb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1bbbb_1_EM_MAPS/MA5_EM_T1bbbb_1_3NJet6_800HT1000_200MHT300.dat", "txt", objectName ="None", index = None, dataset="3NJet6_800HT1000_200MHT300")
-T1bbbb_1.efficiencyMap.setStatistics(observedN=808, expectedBG=777, bgError=107)
-databaseCreator.create()
-###
-T1qqqq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName ="h_EffAcc_3NJet6_500HT800_600MHTinf", index = None, dataset="3NJet6_500HT800_600MHTinf")
-T1qqqq.efficiencyMap.setStatistics(observedN=62, expectedBG=57.4, bgError=11.2)
-T1tttt.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName ="h_EffAcc_3NJet6_500HT800_600MHTinf", index = None, dataset="3NJet6_500HT800_600MHTinf")
-T1tttt.efficiencyMap.setStatistics(observedN=62, expectedBG=57.4, bgError=11.2)
-T2qq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T2qq.root", "root", objectName ="h_EffAcc_3NJet6_500HT800_600MHTinf", index = None, dataset="3NJet6_500HT800_600MHTinf")
-T2qq.efficiencyMap.setStatistics(observedN=62, expectedBG=57.4, bgError=11.2)
-T5WW_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x005_EM_MAPS/MA5_EM_T5WW_x005_3NJet6_500HT800_600MHTinf.dat", "txt", objectName ="None", index = None, dataset="3NJet6_500HT800_600MHTinf")
-T5WW_x005.efficiencyMap.setStatistics(observedN=62, expectedBG=57.4, bgError=11.2)
-T5WW_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x05_EM_MAPS/MA5_EM_T5WW_x05_3NJet6_500HT800_600MHTinf.dat", "txt", objectName ="None", index = None, dataset="3NJet6_500HT800_600MHTinf")
-T5WW_x05.efficiencyMap.setStatistics(observedN=62, expectedBG=57.4, bgError=11.2)
-T5WW_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x095_EM_MAPS/MA5_EM_T5WW_x095_3NJet6_500HT800_600MHTinf.dat", "txt", objectName ="None", index = None, dataset="3NJet6_500HT800_600MHTinf")
-T5WW_x095.efficiencyMap.setStatistics(observedN=62, expectedBG=57.4, bgError=11.2)
-T5ZZ_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x005_EM_MAPS/MA5_EM_T5ZZ_x005_3NJet6_500HT800_600MHTinf.dat", "txt", objectName ="None", index = None, dataset="3NJet6_500HT800_600MHTinf")
-T5ZZ_x005.efficiencyMap.setStatistics(observedN=62, expectedBG=57.4, bgError=11.2)
-T5ZZ_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x05_EM_MAPS/MA5_EM_T5ZZ_x05_3NJet6_500HT800_600MHTinf.dat", "txt", objectName ="None", index = None, dataset="3NJet6_500HT800_600MHTinf")
-T5ZZ_x05.efficiencyMap.setStatistics(observedN=62, expectedBG=57.4, bgError=11.2)
-T5ZZ_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x095_EM_MAPS/MA5_EM_T5ZZ_x095_3NJet6_500HT800_600MHTinf.dat", "txt", objectName ="None", index = None, dataset="3NJet6_500HT800_600MHTinf")
-T5ZZ_x095.efficiencyMap.setStatistics(observedN=62, expectedBG=57.4, bgError=11.2)
-TChiWZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_3NJet6_500HT800_600MHTinf.dat", "txt", objectName ="None", index = None, dataset="3NJet6_500HT800_600MHTinf")
-TChiWZ_1.efficiencyMap.setStatistics(observedN=62, expectedBG=57.4, bgError=11.2)
-TChiWW_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWW_1_EM_MAPS/MA5_EM_TChiWW_1_3NJet6_500HT800_600MHTinf.dat", "txt", objectName ="None", index = None, dataset="3NJet6_500HT800_600MHTinf")
-TChiWW_1.efficiencyMap.setStatistics(observedN=62, expectedBG=57.4, bgError=11.2)
-TChiZZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_3NJet6_500HT800_600MHTinf.dat", "txt", objectName ="None", index = None, dataset="3NJet6_500HT800_600MHTinf")
-TChiZZ_1.efficiencyMap.setStatistics(observedN=62, expectedBG=57.4, bgError=11.2)
-T2bb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2bb_1_EM_MAPS/MA5_EM_T2bb_1_3NJet6_500HT800_600MHTinf.dat", "txt", objectName ="None", index = None, dataset="3NJet6_500HT800_600MHTinf")
-T2bb_1.efficiencyMap.setStatistics(observedN=62, expectedBG=57.4, bgError=11.2)
-T2tt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2tt_1_EM_MAPS/MA5_EM_T2tt_1_3NJet6_500HT800_600MHTinf.dat", "txt", objectName ="None", index = None, dataset="3NJet6_500HT800_600MHTinf")
-T2tt_1.efficiencyMap.setStatistics(observedN=62, expectedBG=57.4, bgError=11.2)
-T1btbt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1btbt_1_EM_MAPS/MA5_EM_T1btbt_1_3NJet6_500HT800_600MHTinf.dat", "txt", objectName ="None", index = None, dataset="3NJet6_500HT800_600MHTinf")
-T1btbt_1.efficiencyMap.setStatistics(observedN=62, expectedBG=57.4, bgError=11.2)
-T1bbbb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1bbbb_1_EM_MAPS/MA5_EM_T1bbbb_1_3NJet6_500HT800_600MHTinf.dat", "txt", objectName ="None", index = None, dataset="3NJet6_500HT800_600MHTinf")
-T1bbbb_1.efficiencyMap.setStatistics(observedN=62, expectedBG=57.4, bgError=11.2)
-databaseCreator.create()
-###
-T1qqqq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName ="h_EffAcc_3NJet6_500HT800_450MHT600", index = None, dataset="3NJet6_500HT800_450MHT600")
-T1qqqq.efficiencyMap.setStatistics(observedN=454, expectedBG=418, bgError=66)
-T1tttt.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName ="h_EffAcc_3NJet6_500HT800_450MHT600", index = None, dataset="3NJet6_500HT800_450MHT600")
-T1tttt.efficiencyMap.setStatistics(observedN=454, expectedBG=418, bgError=66)
-T2qq.efficiencyMap.setSource("orig/SUS13012_XsecLimits_T2qq.root", "root", objectName ="h_EffAcc_3NJet6_500HT800_450MHT600", index = None, dataset="3NJet6_500HT800_450MHT600")
-T2qq.efficiencyMap.setStatistics(observedN=454, expectedBG=418, bgError=66)
-T5WW_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x005_EM_MAPS/MA5_EM_T5WW_x005_3NJet6_500HT800_450MHT600.dat", "txt", objectName ="None", index = None, dataset="3NJet6_500HT800_450MHT600")
-T5WW_x005.efficiencyMap.setStatistics(observedN=454, expectedBG=418, bgError=66)
-T5WW_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x05_EM_MAPS/MA5_EM_T5WW_x05_3NJet6_500HT800_450MHT600.dat", "txt", objectName ="None", index = None, dataset="3NJet6_500HT800_450MHT600")
-T5WW_x05.efficiencyMap.setStatistics(observedN=454, expectedBG=418, bgError=66)
-T5WW_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5WW_x095_EM_MAPS/MA5_EM_T5WW_x095_3NJet6_500HT800_450MHT600.dat", "txt", objectName ="None", index = None, dataset="3NJet6_500HT800_450MHT600")
-T5WW_x095.efficiencyMap.setStatistics(observedN=454, expectedBG=418, bgError=66)
-T5ZZ_x005.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x005_EM_MAPS/MA5_EM_T5ZZ_x005_3NJet6_500HT800_450MHT600.dat", "txt", objectName ="None", index = None, dataset="3NJet6_500HT800_450MHT600")
-T5ZZ_x005.efficiencyMap.setStatistics(observedN=454, expectedBG=418, bgError=66)
-T5ZZ_x05.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x05_EM_MAPS/MA5_EM_T5ZZ_x05_3NJet6_500HT800_450MHT600.dat", "txt", objectName ="None", index = None, dataset="3NJet6_500HT800_450MHT600")
-T5ZZ_x05.efficiencyMap.setStatistics(observedN=454, expectedBG=418, bgError=66)
-T5ZZ_x095.efficiencyMap.setSource("orig/cms_sus_13_012_T5ZZ_x095_EM_MAPS/MA5_EM_T5ZZ_x095_3NJet6_500HT800_450MHT600.dat", "txt", objectName ="None", index = None, dataset="3NJet6_500HT800_450MHT600")
-T5ZZ_x095.efficiencyMap.setStatistics(observedN=454, expectedBG=418, bgError=66)
-TChiWZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWZ_1_EM_MAPS/MA5_EM_TChiWZ_1_3NJet6_500HT800_450MHT600.dat", "txt", objectName ="None", index = None, dataset="3NJet6_500HT800_450MHT600")
-TChiWZ_1.efficiencyMap.setStatistics(observedN=454, expectedBG=418, bgError=66)
-TChiWW_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiWW_1_EM_MAPS/MA5_EM_TChiWW_1_3NJet6_500HT800_450MHT600.dat", "txt", objectName ="None", index = None, dataset="3NJet6_500HT800_450MHT600")
-TChiWW_1.efficiencyMap.setStatistics(observedN=454, expectedBG=418, bgError=66)
-TChiZZ_1.efficiencyMap.setSource("orig/cms_sus_13_012_TChiZZ_1_EM_MAPS/MA5_EM_TChiZZ_1_3NJet6_500HT800_450MHT600.dat", "txt", objectName ="None", index = None, dataset="3NJet6_500HT800_450MHT600")
-TChiZZ_1.efficiencyMap.setStatistics(observedN=454, expectedBG=418, bgError=66)
-T2bb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2bb_1_EM_MAPS/MA5_EM_T2bb_1_3NJet6_500HT800_450MHT600.dat", "txt", objectName ="None", index = None, dataset="3NJet6_500HT800_450MHT600")
-T2bb_1.efficiencyMap.setStatistics(observedN=454, expectedBG=418, bgError=66)
-T2tt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T2tt_1_EM_MAPS/MA5_EM_T2tt_1_3NJet6_500HT800_450MHT600.dat", "txt", objectName ="None", index = None, dataset="3NJet6_500HT800_450MHT600")
-T2tt_1.efficiencyMap.setStatistics(observedN=454, expectedBG=418, bgError=66)
-T1btbt_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1btbt_1_EM_MAPS/MA5_EM_T1btbt_1_3NJet6_500HT800_450MHT600.dat", "txt", objectName ="None", index = None, dataset="3NJet6_500HT800_450MHT600")
-T1btbt_1.efficiencyMap.setStatistics(observedN=454, expectedBG=418, bgError=66)
-T1bbbb_1.efficiencyMap.setSource("orig/cms_sus_13_012_T1bbbb_1_EM_MAPS/MA5_EM_T1bbbb_1_3NJet6_500HT800_450MHT600.dat", "txt", objectName ="None", index = None, dataset="3NJet6_500HT800_450MHT600")
-T1bbbb_1.efficiencyMap.setStatistics(observedN=454, expectedBG=418, bgError=66)
-databaseCreator.create()
-
-
-
-
-
-
-

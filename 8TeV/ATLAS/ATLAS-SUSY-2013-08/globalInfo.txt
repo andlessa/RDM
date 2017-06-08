@@ -1,6 +1,6 @@
+id: ATLAS-SUSY-2013-08
 sqrts: 8.0*TeV
 lumi: 20.3/fb
-id: ATLAS-SUSY-2013-08
 prettyName: ATLAS heavy stop
 url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-08/
 arxiv: http://arxiv.org/abs/1403.5222
@@ -10,4 +10,3 @@ supersedes: ATLAS-CONF-2013-025
 private: False
 implementedBy: Federico A
 lastUpdate: 2016/9/29
-

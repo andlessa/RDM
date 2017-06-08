@@ -1,11 +1,10 @@
+id: ATLAS-CONF-2013-053
 sqrts: 8.0*TeV
 lumi: 20.1/fb
-id: ATLAS-CONF-2013-053
 prettyName: ATLAS 2 b + \slash{E}_{T}
 url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-053/
-comment: More data in ATLAS-SUSY-2013-05
 supersededBy: ATLAS-SUSY-2013-05
+comment: More data in ATLAS-SUSY-2013-05
 private: False
 implementedBy: Federico A
 lastUpdate: 2016/9/29
-

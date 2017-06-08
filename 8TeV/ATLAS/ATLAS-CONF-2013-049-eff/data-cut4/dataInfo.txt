@@ -1,5 +1,5 @@
-dataType: efficiencyMap
 dataId: em: mT2 > 110
+dataType: efficiencyMap
 observedN: 5
 expectedBG: 4.4
 bgError: 2.0

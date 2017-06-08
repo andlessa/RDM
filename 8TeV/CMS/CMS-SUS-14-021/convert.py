@@ -8,16 +8,15 @@
 import sys
 import os
 import argparse
-import types
 
 argparser = argparse.ArgumentParser(description =  
 'create info.txt, txname.txt, twiki.txt and sms.py')
 argparser.add_argument ('-utilsPath', '--utilsPath', 
 help = 'path to the package smodels_utils',\
-type = types.StringType)
+type = str )
 argparser.add_argument ('-smodelsPath', '--smodelsPath', 
 help = 'path to the package smodels_utils',\
-type = types.StringType)
+type = str )
 args = argparser.parse_args()
 
 if args.utilsPath:
@@ -31,9 +30,11 @@ if args.smodelsPath:
     sys.path.append(os.path.abspath(args.smodelsPath))
 
 sys.path.append(os.path.abspath(utilsPath))
-from smodels_utils.dataPreparation.inputObjects import TxNameInput, MetaInfoInput
+from smodels_utils.dataPreparation.inputObjects import MetaInfoInput,DataSetInput
 from smodels_utils.dataPreparation.databaseCreation import databaseCreator
-from smodels_utils.dataPreparation.origPlotObjects import x, y
+from smodels_utils.dataPreparation.massPlaneObjects import x, y, z
+
+
 
 #+++++++ global info block ++++++++++++++
 info = MetaInfoInput('CMS-SUS-14-021')
@@ -49,46 +50,39 @@ info.comment ='ISR jet. Only single lepton analysis data available and implement
 info.supersedes =''
 info.supersededBy =''
 
-#+++++++ next txName block ++++++++++++++
-T2bbWW = TxNameInput('T2bbWW')
-T2bbWW.on.checked = ''
-T2bbWW.off.checked = ''
-T2bbWW.on.constraint = "[[['b','W']],[['b','W']]]"
-T2bbWW.off.constraint = "3.47*[[['b','l','nu']],[['b','jet','jet']]]"
-T2bbWW.on.conditionDescription = None
-T2bbWW.off.conditionDescription ="None"
-T2bbWW.on.condition =None
-T2bbWW.off.condition ="None"
-#T2bbWW.branchingRatio =
 
+#+++++++ dataset block ++++++++++++++
+dataset = DataSetInput('data')
+dataset.setInfo(dataType = 'upperLimit', dataId = None)
+
+#+++++++ next txName block ++++++++++++++
+T2bbWW = dataset.addTxName('T2bbWW')
+T2bbWW.checked = ''
+T2bbWW.constraint = "[[['b','W']],[['b','W']]]"
+T2bbWW.conditionDescription = None
+T2bbWW.condition =None
+T2bbWW.source = "CMS"
+T2bbWW.massConstraint = None
+T2bbWWoff = dataset.addTxName('T2bbWWoff')
+T2bbWWoff.checked = ''
+T2bbWWoff.constraint = "3.47*[[['b','l','nu']],[['b','jet','jet']]]"
+T2bbWWoff.conditionDescription ="None"
+T2bbWWoff.condition ="None"
+T2bbWWoff.massConstraint = [['dm <= 76.0'], ['dm <= 76.0']]
+T2bbWWoff.source = "CMS"
 #+++++++ next mass plane block ++++++++++++++
-T2bbWW_1 = T2bbWW.addMassPlane(motherMass = x, lspMass = y)
-#----figure----
+T2bbWW_1 = T2bbWW.addMassPlane(2*[[x, y]])
 T2bbWW_1.figure = 'Fig.3 Left'
 T2bbWW_1.figureUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS14021/singleLeptonLimits.pdf'
-#----limit source----
-T2bbWW_1.obsUpperLimit.setSource( 'orig/singleLeptonLimitHistograms.root', 'root', objectName = 'hObserved', index = None )
-T2bbWW_1.expUpperLimit.setSource( 'orig/singleLeptonLimitHistograms.root', 'root', objectName = 'hExpected', index = None )
-#----exclusion source----
-T2bbWW_1.obsExclusion.setSource( 'orig/singleLeptonLimitHistograms.root', 'root', objectName = 'gObserved', index = None )
-T2bbWW_1.obsExclusionM1.setSource( 'orig/singleLeptonLimitHistograms.root', 'root', objectName = 'gObservedDown', index = None )
-T2bbWW_1.obsExclusionP1.setSource( 'orig/singleLeptonLimitHistograms.root', 'root', objectName = 'gObservedUp', index = None )
-T2bbWW_1.expExclusion.setSource( 'orig/singleLeptonLimitHistograms.root', 'root', objectName = 'gExpected', index = None )
-T2bbWW_1.expExclusionM1.setSource( 'orig/singleLeptonLimitHistograms.root', 'root', objectName = 'gExpectedDown', index = None )
-T2bbWW_1.expExclusionP1.setSource( 'orig/singleLeptonLimitHistograms.root', 'root', objectName = 'gExpectedUp', index = None )
-#----global url settings ----
 T2bbWW_1.dataUrl = 'https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS14021'
-#----limit url settings ----
 T2bbWW_1.histoDataUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS14021/singleLeptonLimitHistograms.root'
-T2bbWW_1.obsUpperLimit.dataUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS14021/singleLeptonLimitHistograms.root'
-T2bbWW_1.expUpperLimit.dataUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS14021/singleLeptonLimitHistograms.root'
-#----exclusion url settings ----
+T2bbWW_1.dataUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS14021/singleLeptonLimitHistograms.root'
 T2bbWW_1.exclusionDataUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS14021/singleLeptonLimitHistograms.root'
-T2bbWW_1.obsExclusion.dataUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS14021/singleLeptonLimitHistograms.root'
-T2bbWW_1.obsExclusionM1.dataUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS14021/singleLeptonLimitHistograms.root'
-T2bbWW_1.obsExclusionP1.dataUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS14021/singleLeptonLimitHistograms.root'
-T2bbWW_1.expExclusion.dataUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS14021/singleLeptonLimitHistograms.root'
-T2bbWW_1.expExclusionM1.dataUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS14021/singleLeptonLimitHistograms.root'
-T2bbWW_1.expExclusionP1.dataUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS14021/singleLeptonLimitHistograms.root'
+T2bbWW_1.setSources(dataLabels= ['expExclusion', 'expExclusionM1', 'expExclusionP1', 'expectedUpperLimits', 'obsExclusion', 'obsExclusionM1', 'obsExclusionP1', 'upperLimits'],
+                 dataFiles= ['orig/singleLeptonLimitHistograms.root', 'orig/singleLeptonLimitHistograms.root', 'orig/singleLeptonLimitHistograms.root', 'orig/singleLeptonLimitHistograms.root', 'orig/singleLeptonLimitHistograms.root', 'orig/singleLeptonLimitHistograms.root', 'orig/singleLeptonLimitHistograms.root', 'orig/singleLeptonLimitHistograms.root'],
+                 dataFormats= ['root', 'root', 'root', 'root', 'root', 'root', 'root', 'root'],objectNames= ['gExpected', 'gExpectedDown', 'gExpectedUp', 'hExpected', 'gObserved', 'gObservedDown', 'gObservedUp', 'hObserved'])
+T2bbWWoff.addMassPlane(T2bbWW_1)
+
+
 
 databaseCreator.create()

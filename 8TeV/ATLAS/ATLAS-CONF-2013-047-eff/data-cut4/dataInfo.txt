@@ -1,5 +1,5 @@
-dataType: efficiencyMap
 dataId: C Medium
+dataType: efficiencyMap
 observedN: 228
 expectedBG: 210.0
 bgError: 40.0
