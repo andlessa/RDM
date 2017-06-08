@@ -47,7 +47,7 @@ info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-15/'
 info.arxiv = 'http://arxiv.org/abs/1407.0583'
 info.contact =  "ATLAS collaboration"
 info.prettyName = 'ATLAS (aysmmetric) stop'
-info.supersedes = 'ATLAS-CONF-2013-037; CONF-2012-166'
+info.supersedes = 'ATLAS-CONF-2013-037; ATLAS-CONF-2012-166'
 
 
 #+++++++ dataset block ++++++++++++++
