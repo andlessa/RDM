@@ -130,7 +130,7 @@ T2tt.constraint =  "[[['t']],[['t']]]"
 T2tt.conditionDescription = None
 T2tt.condition = None
 T2tt.source = "CMS"
-T2tt.massConstraint = None
+T2tt.massConstraint = [['dm >= 169.0']]*2 #Use only on-shell data to avoid interpolation in the removed data band
 T2ttoff = dataset.addTxName('T2ttoff')
 T2ttoff.checked = ''
 T2ttoff.constraint = "[[['b','W']],[['b','W']]]"
@@ -147,8 +147,8 @@ T2tt_1.histoDataUrl = 'http://cms-results.web.cern.ch/cms-results/public-results
 T2tt_1.dataUrl = 'http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-033/CMS-SUS-16-033_Figure_013-a.root'
 T2tt_1.exclusionDataUrl =  'http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-033/CMS-SUS-16-033_Figure_013-a.root'
 T2tt_1.setSources(dataLabels= ['expExclusion', 'expExclusionM1', 'expExclusionP1', 'obsExclusion', 'obsExclusionM1', 'obsExclusionP1', 'upperLimits','expectedUpperLimits'],
-                    dataFiles= ['orig/T2tt.root', 'orig/T2tt.root','orig/T2tt.root','orig/T2tt.root','orig/T2tt.root','orig/T2tt.root','orig/T2tt.root','orig/T2tt.root'],
-                    dataFormats= ['root','root', 'root', 'root', 'root', 'root', 'root', 'root'],objectNames= ['ExpLim2', 'ExpLimSdn2', 'ExpLimSup2', 'ObsLim2', 'ObsLimSdn2', 'ObsLimSup2', 'MassScan2D','MassScan2DExp'])
+                    dataFiles= ['orig/T2tt_fix.root', 'orig/T2tt_fix.root','orig/T2tt_fix.root','orig/T2tt_fix.root','orig/T2tt_fix.root','orig/T2tt_fix.root','orig/T2tt_fix.root','orig/T2tt_fix.root'],
+                    dataFormats= ['root','root', 'root', 'root', 'root', 'root', 'root', 'root'],objectNames= ['ExpLim2', 'ExpLimSdn2', 'ExpLimSup2', 'ObsLim2', 'ObsLimSdn2', 'ObsLimSup2', 'MassScan2D_fix','MassScan2DExp'])
 T2ttoff.addMassPlane(T2tt_1)
 
 
