@@ -38,7 +38,7 @@ from smodels_utils.dataPreparation.massPlaneObjects import x, y, z
 
 #+++++++ global info block ++++++++++++++
 info = MetaInfoInput('ATLAS-CONF-2013-089')
-info.comment = 'There are more topologies (with more then three masses). Superseded by ATLAS-SUSY-2013-20.'
+info.comment = 'There are more topologies (with more than three masses). Superseded by ATLAS-SUSY-2013-20.'
 info.sqrts = '8.0'
 info.private = False
 info.lumi = '20.3'
