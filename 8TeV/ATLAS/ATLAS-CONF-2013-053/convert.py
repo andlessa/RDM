@@ -44,7 +44,7 @@ info.private = False
 info.lumi = '20.1'
 info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-053/'
 info.supersededBy = 'ATLAS-SUSY-2013-05'
-info.prettyName = 'ATLAS 2 b + \slash{E}_{T}'
+info.prettyName = '0 leptons + 2 b-jets + Etmiss'
 
 
 #+++++++ dataset block ++++++++++++++

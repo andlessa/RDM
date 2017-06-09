@@ -41,7 +41,7 @@ info = MetaInfoInput('ATLAS-SUSY-2013-18')
 info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-18/'
 info.sqrts = '8.0*TeV'
 info.lumi = 20.1
-info.prettyName ='Atlas Three b'
+info.prettyName = '0-1 leptons + >= 3 b-jets + Etmiss'
 info.private =False
 info.arxiv = 'http://arxiv.org/abs/1407.0600'
 info.contact =''

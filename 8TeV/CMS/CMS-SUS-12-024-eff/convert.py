@@ -46,7 +46,7 @@ info.publication = 'http://www.sciencedirect.com/science/article/pii/S0370269313
 info.url = 'https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS12024'
 info.arxiv = 'http://arxiv.org/abs/1305.2390'
 info.contact = 'Keith Ulmer <keith.ulmer@cern.ch>, Josh Thompson <joshua.thompson@cern.ch>, Alessandro Gaz <alessandro.gaz@cern.ch>'
-info.prettyName = '\slash{E}_{T}+b'
+info.prettyName = '0 leptons + >= 3 (1b-)jets + Etmiss'
 
 
 

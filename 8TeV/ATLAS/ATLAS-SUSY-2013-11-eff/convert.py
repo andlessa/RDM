@@ -49,7 +49,7 @@ info.publication = 'http://link.springer.com/article/10.1007/JHEP05(2014)071'
 info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-11/'
 info.arxiv = 'http://arxiv.org/abs/1403.5294'
 info.contact = 'SModelS'
-info.prettyName = 'ATLAS dilepton'
+info.prettyName = '2 leptons (e,mu) + Etmiss'
 info.supersedes = 'ATLAS-CONF-2013-049'
 
 

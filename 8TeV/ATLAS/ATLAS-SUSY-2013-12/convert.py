@@ -45,7 +45,7 @@ info.lumi = '20.3'
 info.publication = 'http://link.springer.com/article/10.1007/JHEP04(2014)169'
 info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-12/'
 info.arxiv = 'http://arxiv.org/abs/1402.7029'
-info.prettyName = 'ATLAS trilepton inc Wh decay'
+info.prettyName = '3 leptons (e,mu,tau) + Etmiss'
 info.supersedes = 'ATLAS-CONF-2013-035; CONF-2012-154'
 
 

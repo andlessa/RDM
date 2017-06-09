@@ -46,7 +46,7 @@ info.publication = 'http://link.springer.com/article/10.1007/JHEP10%282013%29130
 info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-04/'
 info.arxiv = 'http://arxiv.org/abs/1308.1841'
 info.contact = "ATLAS collaboration"
-info.prettyName = 'ATLAS \ge 7 jets'
+info.prettyName = '0 leptons + >= 7-10 jets + Etmiss'
 info.supersedes = 'ATLAS-CONF-2012-103'
 
 

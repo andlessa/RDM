@@ -46,7 +46,7 @@ info.publication =  'link.springer.com/article/10.1007/JHEP11(2014)118'
 info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-15/'
 info.arxiv = 'http://arxiv.org/abs/1407.0583'
 info.contact =  "ATLAS collaboration"
-info.prettyName = 'ATLAS (aysmmetric) stop'
+info.prettyName = '1 lepton + 4 (1 b-)jets + Etmiss'
 info.supersedes = 'ATLAS-CONF-2013-037; ATLAS-CONF-2012-166'
 
 

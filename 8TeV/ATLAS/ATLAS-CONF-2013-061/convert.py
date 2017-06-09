@@ -44,7 +44,7 @@ info.private = False
 info.lumi = '20.1'
 info.publication = 'http://cds.cern.ch/record/1557778'
 info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-061/'
-info.prettyName = 'ATLAS three b-jets'
+info.prettyName = '0 or >=1 leptons + jets + >= 3 b-jets + Etmiss'
 
 
 #+++++++ dataset block ++++++++++++++

@@ -1,7 +1,7 @@
 id: ATLAS-CONF-2013-089
 sqrts: 8.0*TeV
 lumi: 20.3/fb
-prettyName: 2l
+prettyName: 2 leptons (e,mu) + Etmiss
 url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-089/ https://cds.cern.ch/record/1595272
 comment: There are more topologies (with more then three masses). Superseeded by ATLAS-SUSY-2013-20.
 private: False

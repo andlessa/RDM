@@ -43,7 +43,7 @@ info.private = False
 info.lumi = '20.3'
 info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-093/'
 info.supersededBy = 'ATLAS-SUSY-2013-23'
-info.prettyName = 'ATLAS ew higgs'
+info.prettyName = '1 lepton + 2 b-jets + Etmiss (mbb = mH)'
 
 
 #+++++++ dataset block ++++++++++++++

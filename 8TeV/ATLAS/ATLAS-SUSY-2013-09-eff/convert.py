@@ -42,6 +42,7 @@ info = MetaInfoInput('ATLAS-SUSY-2013-09')
 info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-09/'
 info.sqrts = 8
 info.lumi = '20.3'
+info.prettyName = '2 SS leptons'
 info.private = False
 info.arxiv = 'http://arxiv.org/abs/1404.2500'
 info.contact = "ATLAS collaboration"

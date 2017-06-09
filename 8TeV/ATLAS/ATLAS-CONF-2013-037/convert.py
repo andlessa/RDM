@@ -44,7 +44,7 @@ info.lumi = '20.7'
 info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-037/'
 info.supersededBy = 'ATLAS-SUSY-2013-15'
 info.contact = 'Sophio Pataria <Sophio.Pataraia@cern.ch>, Tobias Golling <tobias.golling@cern.ch>'
-info.prettyName = 'ATLAS leptonic stop'
+info.prettyName = '1 lepton + >= 4(1 b-)jets + Etmiss'
 # info.supersedes = 'ATLAS-CONF-2012-166'
 
 

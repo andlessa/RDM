@@ -45,7 +45,7 @@ info.publication = 'JHEP06(2014)055'
 info.url = 'https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS13012'
 info.arxiv = 'http://arxiv.org/abs/1402.4770'
 info.contact = 'cms-pag-conveners-sus@NOSPAMcernSPAMNOT.ch'
-info.prettyName = ''
+info.prettyName = 'jet multiplicity + HTmiss'
 info.implementedBy = 'Federico A.'
 
 

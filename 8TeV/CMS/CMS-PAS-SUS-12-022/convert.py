@@ -44,7 +44,7 @@ info.lumi = '9.2'
 info.url = 'https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS12022'
 info.supersededBy = 'CMS-SUS-13-006 (more data)'
 info.contact = 'Benjamin Hooberman <hooberman@gmail.com>, Lesya Shchutska <lesya.shchutska@cern.ch>'
-info.prettyName = 'weakinos'
+info.prettyName = 'multi-lepton + Etmiss final states (exactly 3 or 4 leptons, 2 SS leptons, 2 SFOS leptons + 2 jets, etc)'
 
 
 #+++++++ dataset block ++++++++++++++

@@ -92,6 +92,7 @@ info.sqrts = '8*TeV'
 info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-035/'
 info.contact = 'fastlim'
 info.lumi = '20.7/fb'
+info.prettyName = '3 leptons (e,mu) + Etmiss'
 
 
 for dt in datasetsInfo:

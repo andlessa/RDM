@@ -47,7 +47,7 @@ info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-08/'
 info.supersededBy = ""
 info.arxiv = 'http://arxiv.org/abs/1403.5222'
 info.contact = "ATLAS collaboration"
-info.prettyName = 'ATLAS heavy stop'
+info.prettyName = 'Z + b-jets + Etmiss'
 info.supersedes = 'ATLAS-CONF-2013-025'
 
 

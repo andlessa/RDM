@@ -42,6 +42,7 @@ info = MetaInfoInput('CMS-PAS-SUS-13-015')
 info.url = 'https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS13015'
 info.sqrts = 8
 info.lumi = 19.4
+info.prettyName = '>= 5(1b-)jets + Etmiss'
 info.private = False
 info.publication ='http://cds.cern.ch/record/1635353/files/SUS-13-015-pas.pdf'
 info.comment ='PAS so no arxiv publication - only cds.cern; whenever the error on the expected SM background is asymmetric for some signal regions, the largest value is used'

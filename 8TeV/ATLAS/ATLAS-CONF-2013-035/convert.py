@@ -44,7 +44,7 @@ info.private = False
 info.lumi = '20.7'
 info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-035/'
 info.supersededBy = 'ATLAS-SUSY-2013-12'
-info.prettyName = 'ATLAS trilepton weakinos'
+info.prettyName = '3 leptons (e,mu) + Etmiss'
 
 
 #+++++++ dataset block ++++++++++++++

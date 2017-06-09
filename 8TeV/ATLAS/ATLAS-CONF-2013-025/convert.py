@@ -43,7 +43,7 @@ info.private = False
 info.lumi = '20.7'
 info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-025/'
 info.supersededBy = 'ATLAS-SUSY-2013-08' 
-info.prettyName = 'ATLAS heavy stop'
+info.prettyName = '>= 5 (>=1 b-)  jets + 2,3 SF OS leptons + Etmiss'
 
 
 #+++++++ dataset block ++++++++++++++

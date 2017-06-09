@@ -43,7 +43,7 @@ info.sqrts = '8.0'
 info.private = False
 info.lumi = '20.3'
 info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-062/ http://cds.cern.ch/record/1557779'
-info.prettyName = 'ATLAS soft leptons'
+info.prettyName = '1 lepton + jets + ETmiss'
 
 
 #+++++++ dataset block ++++++++++++++

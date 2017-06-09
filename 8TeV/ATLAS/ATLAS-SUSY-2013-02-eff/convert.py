@@ -46,7 +46,7 @@ info.lumi = '20.3'
 info.publication = 'http://link.springer.com/article/10.1007/JHEP09%282014%29176'
 info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-02/'
 info.arxiv = 'http://arxiv.org/abs/1405.7875'
-info.prettyName =  "jets and met"
+info.prettyName = '0 leptons + 2-6 jets + Etmiss'
 info.supersedes = 'ATLAS-CONF-2013-047'
 
 

@@ -42,6 +42,7 @@ info = MetaInfoInput('ATLAS-SUSY-2014-03')
 info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2014-03/'
 info.sqrts = 8
 info.lumi = 20.3 
+info.prettyName = '>= 2(c-)jets + Etmiss'
 info.arxiv = 'http://arxiv.org/abs/1501.01325'
 info.publication = 'http://journals.aps.org/prl/abstract/10.1103/PhysRevLett.114.161801'
 

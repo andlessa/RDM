@@ -1,6 +1,7 @@
 id: ATLAS-SUSY-2013-16
 sqrts: 8*TeV
 lumi: 20.1/fb
+prettyName: 0 lepton + 6 (2 b-)jets + Etmiss
 url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-16/
 arxiv: http://arxiv.org/abs/1406.1122
 publication: http://link.springer.com/article/10.1007%2FJHEP09%282014%29015

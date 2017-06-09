@@ -41,7 +41,7 @@ info = MetaInfoInput('ATLAS-SUSY-2015-09')
 info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2015-09/'
 info.sqrts = 13
 info.lumi = 3.2
-info.prettyName = '2 SS or 3 lep'
+info.prettyName = 'jets + 2 SS or >=3 leptons'
 info.private = False
 info.arxiv = 'http://arxiv.org/abs/1602.09058'
 info.contact = ''

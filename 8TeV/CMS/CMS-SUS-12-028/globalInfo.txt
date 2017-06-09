@@ -1,7 +1,7 @@
 id: CMS-SUS-12-028
 sqrts: 8*TeV
 lumi: 11.7/fb
-prettyName: alphaT
+prettyName: jets + Etmiss, alpha_T
 url: https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS12028
 arxiv: http://arxiv.org/abs/1303.2985
 publication: Eur. Phys. J. C 73 (2013) 2568

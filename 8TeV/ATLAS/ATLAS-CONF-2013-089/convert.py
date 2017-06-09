@@ -43,7 +43,7 @@ info.sqrts = '8.0'
 info.private = False
 info.lumi = '20.3'
 info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-089/ https://cds.cern.ch/record/1595272'
-info.prettyName = '2l'
+info.prettyName = '2 leptons (e,mu) + Etmiss'
 
 
 #+++++++ dataset block ++++++++++++++

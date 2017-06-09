@@ -47,7 +47,7 @@ info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-09/'
 info.comment ='exclusionLines digitized by hand (MT). CONF-2013-007 has many more topologies available, e.g. T1btbt, so superseededBy field not set' 
 info.arxiv = 'http://arxiv.org/abs/1404.2500'
 info.contact = "ATLAS collaboration"
-info.prettyName = 'ATLAS SS+b'
+info.prettyName = '2 SS leptons'
 info.supersedes = 'ATLAS-CONF-2013-007; ATLAS-CONF-2012-151'
 
 

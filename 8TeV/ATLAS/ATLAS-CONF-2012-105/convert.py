@@ -43,7 +43,7 @@ info.private = False
 info.lumi = '5.8'
 info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2012-105/'
 info.supersededBy = 'ATLAS-SUSY-2013-09'
-info.prettyName = 'ATLAS SS'
+info.prettyName = '2 SS leptons + >= 4 jets + Etmiss'
 info.implementedBy = 'MT'
 
 

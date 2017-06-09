@@ -43,7 +43,7 @@ info.private = False
 info.lumi = '20.5'
 info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-024/'
 info.supersededBy = 'ATLAS-SUSY-2013-16'
-info.prettyName = 'ATLAS hadronic stop'
+info.prettyName = '0 lepton + 6 (2 b-)jets + Etmiss'
 
 
 #+++++++ dataset block ++++++++++++++

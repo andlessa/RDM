@@ -41,7 +41,7 @@ info = MetaInfoInput('CMS-SUS-13-019')
 info.url ='https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS13019'
 info.sqrts = 8
 info.lumi = 19.5
-info.prettyName = 'MT2'
+info.prettyName = '>= 2 jets + Etmiss, M_T2'
 info.private = False
 info.arxiv = 'http://arxiv.org/abs/1502.04358'
 info.contact =''

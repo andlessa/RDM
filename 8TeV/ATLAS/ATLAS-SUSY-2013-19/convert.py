@@ -45,7 +45,7 @@ info.lumi = '20.3'
 info.publication = 'http://link.springer.com/article/10.1007/JHEP06(2014)124'
 info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-19/'
 info.arxiv = 'http://arxiv.org/abs/1403.4853'
-info.prettyName = 'ATLAS stop dilepton'
+info.prettyName = '2 OS leptons + (b)jets + Etmiss (leptonic/hadronic m_T2)'
 info.supersedes = 'ATLAS-CONF-2013-048'
 
 

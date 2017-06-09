@@ -42,6 +42,7 @@ info = MetaInfoInput('CMS-SUS-13-011')
 info.url = 'https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS13011'
 info.sqrts = 8
 info.lumi = 19.5
+info.prettyName = '1 lepton + >= 4 (1b-)jets + Etmiss'
 info.private = False
 info.arxiv = 'arXiv:1308.1586v2'
 info.publication = 'Eur. Phys. J. C 73 (2013) 2677'

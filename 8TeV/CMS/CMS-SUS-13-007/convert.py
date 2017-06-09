@@ -42,7 +42,7 @@ info = MetaInfoInput('CMS-SUS-13-007')
 info.url ='https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS13007'
 info.sqrts = 8
 info.lumi = 19.3
-info.prettyName = 'e/\mu DP'
+info.prettyName = '1 lepton + >= 2 b-jets + Etmiss'
 info.private = False
 info.arxiv = 'http://arxiv.org/abs/arXiv:1311.4937'
 info.contact ='Loukas Gouskos <loukas.gouskos@cern.ch>, Markus Stoye <Markus.Stoye@cern.ch>'

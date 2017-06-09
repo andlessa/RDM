@@ -44,7 +44,7 @@ info.sqrts = '8.0'
 info.private = False
 info.lumi = '20.7'
 info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-007/'
-info.prettyName = 'ATLAS SS+b'
+info.prettyName = '2 SS leptons + 0-3 b-jets + Etmiss'
 info.implementedBy = 'MT'
 
 

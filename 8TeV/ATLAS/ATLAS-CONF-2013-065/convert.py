@@ -44,7 +44,7 @@ info.private = False
 info.lumi = '20.3'
 info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-065/ http://cds.cern.ch/record/1562840'
 info.supersededBy =  "ATLAS-SUSY-2013-19"
-info.prettyName = 'ATLAS dileptonic stop'
+info.prettyName = '2 leptons + (b)jets + Etmiss'
 
 
 #+++++++ dataset block ++++++++++++++

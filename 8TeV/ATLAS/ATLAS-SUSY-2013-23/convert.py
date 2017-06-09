@@ -41,7 +41,7 @@ info = MetaInfoInput('ATLAS-SUSY-2013-23')
 info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-23/'
 info.sqrts = 8
 info.lumi = 20.3
-info.prettyName = 'ATLAS ew higgs'
+info.prettyName = '1 lepton + 2 b-jets (or 2photons) + Etmiss (mbb = mH)'
 info.private = False
 info.arxiv = 'http://arxiv.org/abs/1501.07110'
 info.publication = 'http://link.springer.com/article/10.1140/epjc/s10052-015-3408-7'

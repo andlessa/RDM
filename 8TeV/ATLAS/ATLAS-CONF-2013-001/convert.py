@@ -44,7 +44,7 @@ info.private = False
 info.lumi = '12.8'
 info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-001/'
 info.supersededBy = 'ATLAS-SUSY-2013-05'
-info.prettyName = 'ATLAS W_{off} stop'
+info.prettyName = '0 leptons + 2 b-jets + Etmiss'
 info.implementedBy = 'MT'
 
 

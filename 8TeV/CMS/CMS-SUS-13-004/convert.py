@@ -41,7 +41,7 @@ info = MetaInfoInput('CMS-SUS-13-004')
 info.url = 'https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS13004'
 info.sqrts = 8
 info.lumi = 19.3
-info.prettyName = 'Razor with b-jets'
+info.prettyName = '>= 1 b-jet + Etmiss, Razor'
 info.private = False
 info.arxiv = 'http://arxiv.org/abs/1502.00300v2'
 info.publication = 'http://dx.doi.org/10.1103/PhysRevD.91.052018'

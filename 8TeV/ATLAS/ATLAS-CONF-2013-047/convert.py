@@ -45,7 +45,7 @@ info.private = False
 info.lumi = '20.3'
 info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-047/ http://cds.cern.ch/record/1547563'
 info.supersededBy = 'ATLAS-SUSY-2013-02'
-info.prettyName = 'ATLAS hadronic TGQ'
+info.prettyName = '0 leptons + 2-6 jets + Etmiss'
 
 
 #+++++++ dataset block ++++++++++++++

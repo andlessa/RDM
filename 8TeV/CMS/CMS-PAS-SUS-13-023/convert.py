@@ -41,7 +41,7 @@ info = MetaInfoInput('CMS-PAS-SUS-13-023')
 info.url = 'https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS13023'
 info.sqrts = 8
 info.lumi = 18.9 
-info.prettyName = 'Fully hadronic Stop'
+info.prettyName = 'hadronic stop'
 info.private = False
 info.comment = 'PAS:http://inspirehep.net/record/1387812/files/SUS-13-023-pas.pdf'
 

@@ -41,7 +41,7 @@ info = MetaInfoInput('CMS-PAS-SUS-15-002')
 info.url = 'http://cms-results.web.cern.ch/cms-results/public-results/superseded/SUS-15-002/index.html'
 info.sqrts = 13
 info.lumi = 2.2
-info.prettyName = ''
+info.prettyName = '>= 4jets + Etmiss, HT, HTmiss'
 info.private = False
 info.arxiv = ''
 info.contact = ''

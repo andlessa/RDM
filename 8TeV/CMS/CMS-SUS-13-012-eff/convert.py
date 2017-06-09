@@ -46,6 +46,7 @@ info.comment = 'T1,T2,T1tttt official efficiency maps from the CMS collaboration
 info.sqrts = '8.0'
 info.private = False
 info.lumi = '19.5'
+info.prettyName = 'jet multiplicity + HTmiss'
 info.publication = 'JHEP06(2014)055'
 info.url = 'https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS13012'
 info.arxiv = 'http://arxiv.org/abs/1402.4770'

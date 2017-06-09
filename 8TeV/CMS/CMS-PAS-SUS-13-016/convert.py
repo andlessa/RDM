@@ -42,7 +42,7 @@ info.sqrts = '8.0'
 info.private = False
 info.lumi = '19.7'
 info.url = 'https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS13016'
-info.prettyName = 'OS + b'
+info.prettyName = '2 OS leptons + >= 4 (2b-)jets + Etmiss'
 
 
 #+++++++ dataset block ++++++++++++++
