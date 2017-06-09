@@ -69,7 +69,7 @@ T1ttttoff.source = "CMS"
 #+++++++ next mass plane block ++++++++++++++
 T1tttt_1 = T1tttt.addMassPlane(2*[[x, y]])
 T1tttt_1.figure = 'Figure 6-a'
-T1tttt_1.figureUrl = 'cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-019/CMS-PAS-SUS-16-019_Figure_006-a.png'
+T1tttt_1.figureUrl = 'http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-019/CMS-PAS-SUS-16-019_Figure_006-a.png'
 T1tttt_1.dataUrl = 'http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-019/CMS-PAS-SUS-16-019_Figure_006-a.root'
 T1tttt_1.histoDataUrl = 'http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-019/CMS-PAS-SUS-16-019_Figure_006-a.root'
 T1tttt_1.exclusionDataUrl = 'http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-019/CMS-PAS-SUS-16-019_Figure_006-a.root'
