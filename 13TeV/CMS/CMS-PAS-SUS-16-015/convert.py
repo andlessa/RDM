@@ -42,6 +42,7 @@ info = MetaInfoInput('CMS-PAS-SUS-16-015')
 info.url ='http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-015/'
 info.sqrts = 13
 info.lumi = 12.9
+info.prettyName = 'jets + MET, MT2'
 info.private = False 
 info.comment = 'https://cds.cern.ch/record/2205162'
 

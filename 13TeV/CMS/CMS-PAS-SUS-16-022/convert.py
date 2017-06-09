@@ -41,6 +41,7 @@ info = MetaInfoInput('CMS-PAS-SUS-16-022')
 info.url = 'http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-022/'
 info.sqrts = 13
 info.lumi = 12.9
+info.prettyName = '>= 3 leptons'
 info.comment = 'https://cds.cern.ch/record/2205165'
 
 
