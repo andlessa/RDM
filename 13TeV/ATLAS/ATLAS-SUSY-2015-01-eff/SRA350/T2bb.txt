@@ -4,7 +4,7 @@ condition: None
 conditionDescription: None
 susyProcess: pp --> sbottom sbottom, sbottom  --> bottom lsp
 checked: NO
-figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2015-01/figaux_06c.png,https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2015-01/figaux_07c.png
+figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2015-01/figaux_06c.png; https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2015-01/figaux_07c.png
 dataUrl: http://hepdata.cedar.ac.uk/view/ins1472822/all
 source: ATLAS
 validated: False

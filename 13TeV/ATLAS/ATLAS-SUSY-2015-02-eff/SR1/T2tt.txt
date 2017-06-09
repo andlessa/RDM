@@ -4,7 +4,7 @@ condition: None
 conditionDescription: None
 susyProcess: pp --> stop stop, stop  --> top lsp
 checked: NO
-figureUrl: http://hepdata.cedar.ac.uk/resource/1469069/figAuxiliaryFigure9b.png,http://hepdata.cedar.ac.uk/resource/1469069/figAuxiliaryFigure12b.png
+figureUrl: http://hepdata.cedar.ac.uk/resource/1469069/figAuxiliaryFigure9b.png; http://hepdata.cedar.ac.uk/resource/1469069/figAuxiliaryFigure12b.png
 dataUrl: http://hepdata.cedar.ac.uk/view/ins1469069/all
 source: ATLAS
 validated: True

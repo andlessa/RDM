@@ -64,7 +64,7 @@ T2bb.source = "ATLAS"
 T2bb_1 = T2bb.addMassPlane( [[x,y]]*2 )
 #---- new efficiency map -----
 #----figure----
-T2bb_1.figureUrl  = "https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2015-01/figaux_06e.png,https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2015-01/figaux_07e.png"
+T2bb_1.figureUrl  = "https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2015-01/figaux_06e.png; https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2015-01/figaux_07e.png"
 T2bb_1.figure  = "Fig.6e,Fig.7e"
 #----exclusion source----
 T2bb_1.addSource( 'obsExclusion', 'orig/T2bb_Obs_Excl.dat', 'txt', objectName = None, index = None )
@@ -88,7 +88,7 @@ T2bb.source = "ATLAS"
 T2bb_1 = T2bb.addMassPlane( [[x,y]]*2 )
 #---- new efficiency map -----
 #----figure----
-T2bb_1.figureUrl  = "https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2015-01/figaux_06c.png,https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2015-01/figaux_07c.png"
+T2bb_1.figureUrl  = "https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2015-01/figaux_06c.png; https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2015-01/figaux_07c.png"
 T2bb_1.figure  = "Fig.6c,Fig.7c"
 #----exclusion source----
 T2bb_1.addSource( 'obsExclusion', 'orig/T2bb_Obs_Excl.dat', 'txt', objectName = None, index = None )
@@ -112,7 +112,7 @@ T2bb.source = "ATLAS"
 T2bb_1 = T2bb.addMassPlane( [[x,y]]*2 )
 #---- new efficiency map -----
 #----figure----
-T2bb_1.figureUrl  = "https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2015-01/figaux_06d.png,https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2015-01/figaux_07d.png"
+T2bb_1.figureUrl  = "https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2015-01/figaux_06d.png; https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2015-01/figaux_07d.png"
 T2bb_1.figure  = "Fig.6d,Fig.7d"
 #----exclusion source----
 T2bb_1.addSource( 'obsExclusion', 'orig/T2bb_Obs_Excl.dat', 'txt', objectName = None, index = None )
@@ -136,8 +136,8 @@ T2bb.source = "ATLAS"
 T2bb_1 = T2bb.addMassPlane( [[x,y]]*2 )
 #---- new efficiency map -----
 #----figure----
-T2bb_1.figureUrl  = "https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2015-01/figaux_06b.png,https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2015-01/figaux_07b.png"
-T2bb_1.figure  = "https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2015-01/figaux_06b.png,https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2015-01/figaux_07b.png"
+T2bb_1.figureUrl  = "https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2015-01/figaux_06b.png; https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2015-01/figaux_07b.png"
+T2bb_1.figure  = "https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2015-01/figaux_06b.png; https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2015-01/figaux_07b.png"
 #----exclusion source----
 T2bb_1.addSource( 'obsExclusion', 'orig/T2bb_Obs_Excl.dat', 'txt', objectName = None, index = None )
 T2bb_1.addSource( 'expExclusion', 'orig/T2bb_Exp_Excl.dat', 'txt', objectName = None, index = None )
@@ -160,7 +160,7 @@ databaseCreator.create()
 #---- new efficiency map -----
 #----figure----
 T2bb_1.figure = 'Fig.6c,Fig.7c'
-T2bb_1.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2015-01/figaux_06c.png,https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2015-01/figaux_07c.png'
+T2bb_1.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2015-01/figaux_06c.png; https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2015-01/figaux_07c.png'
 #----limit source----
 T2bb_1.efficiencyMap.setSource( 'orig/EffMap_T2bb_SRA350.txt', 'txt', objectName = None, index = None, dataset="SRA350" )
 T2bb_1.efficiencyMap.usePercentage(False)
@@ -174,7 +174,7 @@ databaseCreator.create(True)
 #---- new efficiency map -----
 #----figure----
 T2bb_1.figure = 'Fig.6d,Fig.7d'
-T2bb_1.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2015-01/figaux_06d.png,https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2015-01/figaux_07d.png'
+T2bb_1.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2015-01/figaux_06d.png; https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2015-01/figaux_07d.png'
 #----limit source----
 T2bb_1.efficiencyMap.setSource( 'orig/EffMap_T2bb_SRA450.txt', 'txt', objectName = None, index = None, dataset="SRA450" )
 T2bb_1.efficiencyMap.usePercentage(False)
@@ -188,7 +188,7 @@ databaseCreator.create(True)
 #---- new efficiency map -----
 #----figure----
 T2bb_1.figure = 'Fig.6e,Fig.7e'
-T2bb_1.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2015-01/figaux_06e.png,https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2015-01/figaux_07e.png'
+T2bb_1.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2015-01/figaux_06e.png; https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2015-01/figaux_07e.png'
 #----limit source----
 T2bb_1.efficiencyMap.setSource( 'orig/EffMap_T2bb_SRB.txt', 'txt', objectName = None, index = None, dataset="SRB" )
 T2bb_1.efficiencyMap.usePercentage(False)

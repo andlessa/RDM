@@ -64,7 +64,7 @@ T2tt.source = "ATLAS"
 T2tt_1 = T2tt.addMassPlane( [[x,y]]*2 )
 #---- new efficiency map -----
 #----figure----
-T2tt_1.figureUrl  = "http://hepdata.cedar.ac.uk/resource/1469069/figAuxiliaryFigure10b.png,http://hepdata.cedar.ac.uk/resource/1469069/figAuxiliaryFigure13b.png"
+T2tt_1.figureUrl  = "http://hepdata.cedar.ac.uk/resource/1469069/figAuxiliaryFigure10b.png; http://hepdata.cedar.ac.uk/resource/1469069/figAuxiliaryFigure13b.png"
 T2tt_1.figure  = "Aux.Fig.10b,Aux.Fig.13b"
 #----exclusion source----
 T2tt_1.addSource( 'obsExclusion', 'orig/T2tt_ATLAS_SUSY_2015_02_Obs.txt', 'txt', objectName = None, index = None )
@@ -88,7 +88,7 @@ T2tt.source = "ATLAS"
 T2tt_1 = T2tt.addMassPlane( [[x,y]]*2 )
 #---- new efficiency map -----
 #----figure----
-T2tt_1.figureUrl  = "http://hepdata.cedar.ac.uk/resource/1469069/figAuxiliaryFigure11b.png,http://hepdata.cedar.ac.uk/resource/1469069/figAuxiliaryFigure14b.png"
+T2tt_1.figureUrl  = "http://hepdata.cedar.ac.uk/resource/1469069/figAuxiliaryFigure11b.png; http://hepdata.cedar.ac.uk/resource/1469069/figAuxiliaryFigure14b.png"
 T2tt_1.figure  = "Aux.Fig.11b,Aux.Fig.14b"
 #----exclusion source----
 T2tt_1.addSource( 'obsExclusion', 'orig/T2tt_ATLAS_SUSY_2015_02_Obs.txt', 'txt', objectName = None, index = None )
@@ -112,7 +112,7 @@ T2tt.source = "ATLAS"
 T2tt_1 = T2tt.addMassPlane( [[x,y]]*2 )
 #---- new efficiency map -----
 #----figure----
-T2tt_1.figureUrl  = "http://hepdata.cedar.ac.uk/resource/1469069/figAuxiliaryFigure9b.png,http://hepdata.cedar.ac.uk/resource/1469069/figAuxiliaryFigure12b.png"
+T2tt_1.figureUrl  = "http://hepdata.cedar.ac.uk/resource/1469069/figAuxiliaryFigure9b.png; http://hepdata.cedar.ac.uk/resource/1469069/figAuxiliaryFigure12b.png"
 T2tt_1.figure  = "Aux.Fig.9b , Aux.Fig.12b"
 #----exclusion source----
 T2tt_1.addSource( 'obsExclusion', 'orig/T2tt_ATLAS_SUSY_2015_02_Obs.txt', 'txt', objectName = None, index = None )
