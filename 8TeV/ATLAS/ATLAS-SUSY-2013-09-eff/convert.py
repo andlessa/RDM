@@ -62,8 +62,8 @@ T1tttt.condition = "None"
 T1tttt.source = 'ATLAS'
 #+++++++ next mass plane block ++++++++++++++
 T1tttt_1 = T1tttt.addMassPlane([[x,y]]*2)
-T1tttt_1.figure ="No Figure"
-T1tttt_1.figureUrl ="No Figure"
+# T1tttt_1.figure ="No Figure"
+T1tttt_1.figureUrl = None
 T1tttt_1.addSource('obsExclusion', "orig/exclusion_T1tttt.txt", "txt")
 T1tttt_1.addSource('efficiencyMap', "orig/EffMap_T1tttt_SR3b.txt", "txt")
 T1tttt_1.dataUrl = 'http://hepdata.cedar.ac.uk/view/ins1289225'
