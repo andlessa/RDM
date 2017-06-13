@@ -1,4 +1,4 @@
-database.pcl
+db*.pcl
 __pycache__
 utilsPath.pyc
 */*/*/validation/smodels.log
