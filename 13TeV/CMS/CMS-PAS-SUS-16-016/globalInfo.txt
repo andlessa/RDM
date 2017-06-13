@@ -1,7 +1,7 @@
 id: CMS-PAS-SUS-16-016
 sqrts: 13*TeV
 lumi: 12.9/fb
-prettyName: >= 1 jet + MET, alphaT
+prettyName: >= 1 jet + Etmiss, alphaT
 url: http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-016/index.html
 comment: Only CDS entry https://cds.cern.ch/record/2205163
 private: False
