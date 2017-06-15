@@ -42,7 +42,7 @@ DataSetInput.ntoys = args.ntoys
 
 #+++++++ global info block ++++++++++++++
 info = MetaInfoInput('CMS-SUS-13-012')
-info.comment = 'T1,T2,T1tttt official efficiency maps from the CMS collaboration; T5WW and T5ZZ created by the SModelS collaboration using MadAnalysis5'
+info.comment = 'T1,T2,T1tttt official efficiency maps from the CMS collaboration; T1btbt,T1bbbb,T2bb,T2tt,T5,T5bbbb,T5tttt,T6bbWW,TChiWZ,TChiZZ,TChiWW,T5WW and T5ZZ created by the SModelS collaboration using MadAnalysis5'
 info.sqrts = '8.0'
 info.private = False
 info.lumi = '19.5'
@@ -85,13 +85,13 @@ def add ( dataset ):
     T5WW_x095 = T5WW.addMassPlane([[x,0.95*x + 0.05*y,y]]*2)
     #T5WW_x095.dataUrl = None
     T5WW_x095.addSource('efficiencyMap',"orig/T5WW_x095/MA5_EM_T5WW_Glu095Neu005_%s.dat" % dataset._name, "txt")
-    T5WW_d077 = T5WW.addMassPlane([[x,y+77,y]]*2)
-    #T5WW_d077.dataUrl = None
-    T5WW_d077.addSource('efficiencyMap',"orig/cms_sus_13_012_T5WW_77_EM_MAPS/MA5_EM_T5WW_77_%s.dat" % dataset._name, "txt")
+    T5WW_d075 = T5WW.addMassPlane([[x,y+75,y]]*2)
+    #T5WW_d075.dataUrl = None
+    T5WW_d075.addSource('efficiencyMap',"orig/cms_sus_13_012_T5WW_75_EM_MAPS/MA5_EM_T5WW_75_%s.dat" % dataset._name, "txt")
     T5WW_d010 = T5WW.addMassPlane([[x,y+10,y]]*2)
     #T5WW_d010.dataUrl = None
     T5WW_d010.addSource('efficiencyMap',"orig/cms_sus_13_012_T5WW_10_EM_MAPS/MA5_EM_T5WW_10_%s.dat" % dataset._name, "txt")
-    T5WWoff.addMassPlane(T5WW_d077)
+    T5WWoff.addMassPlane(T5WW_d075)
     T5WWoff.addMassPlane(T5WW_d010)
     T5WWoff.addMassPlane(T5WW_x05)
     T5WWoff.addMassPlane(T5WW_x005)
@@ -187,8 +187,8 @@ def add ( dataset ):
     T6bbWW_x09.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T6bbWW_x09_EM_MAPS/MA5_EM_T6bbWW_x09_%s.dat" % dataset, "txt", objectName ="None", index = None )
     T6bbWW_d10 = T6bbWW.addMassPlane( [[x, y+10. , y ]]*2  )
     T6bbWW_d10.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T6bbWW_DiffChargNeu10_EM_MAPS/MA5_EM_T6bbWW_DiffChargNeu10_%s.dat" % dataset, "txt", objectName ="None", index = None )
-    T6bbWW_d77 = T6bbWW.addMassPlane( [[x, y+77. , y ]]*2  )
-    T6bbWW_d77.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T6bbWW_DiffChargNeu77_EM_MAPS/MA5_EM_T6bbWW_DiffChargNeu77_%s.dat" % dataset, "txt", objectName ="None", index = None )
+    T6bbWW_d75 = T6bbWW.addMassPlane( [[x, y+75. , y ]]*2  )
+    T6bbWW_d75.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T6bbWW_75_EM_MAPS/MA5_EM_T6bbWW_75_%s.dat" % dataset, "txt", objectName ="None", index = None )
     T6bbWWoff = dataset.addTxName('T6bbWWoff')
     T6bbWWoff.checked = ''
     T6bbWWoff.constraint = "2.23*[[['b'],['jet','jet']],[['b'],['jet','jet']]]"
@@ -206,8 +206,8 @@ def add ( dataset ):
     T6bbWWoff_x09.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T6bbWW_x09_EM_MAPS/MA5_EM_T6bbWW_x09_%s.dat" % dataset, "txt", objectName ="None", index = None )
     T6bbWWoff_d10 = T6bbWWoff.addMassPlane( [[x, y+10. , y ]]*2  )
     T6bbWWoff_d10.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T6bbWW_DiffChargNeu10_EM_MAPS/MA5_EM_T6bbWW_DiffChargNeu10_%s.dat" % dataset, "txt", objectName ="None", index = None )
-    T6bbWWoff_d77 = T6bbWWoff.addMassPlane( [[x, y+77. , y ]]*2  )
-    T6bbWWoff_d77.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T6bbWW_DiffChargNeu77_EM_MAPS/MA5_EM_T6bbWW_DiffChargNeu77_%s.dat" % dataset, "txt", objectName ="None", index = None )
+    T6bbWWoff_d75 = T6bbWWoff.addMassPlane( [[x, y+75. , y ]]*2  )
+    T6bbWWoff_d75.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T6bbWW_75_EM_MAPS/MA5_EM_T6bbWW_75_%s.dat" % dataset, "txt", objectName ="None", index = None )
     T2 = dataset.addTxName('T2')
     T2.checked =''
     T2.constraint ="[[['jet']],[['jet']]]"
