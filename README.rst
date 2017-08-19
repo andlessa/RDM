@@ -9,7 +9,7 @@ Instructions for Releases of New Database Versions:
 
 #. Create a clean (public) version of the database
 #. Merge or overwrite the latest version to the master branch of the `smodels-database-release repository <https://github.com/SModelS/smodels-database-release>`_
-#. Go to the smodels:master branch and run::
+#. Go to the `smodels:master <https://github.com/SModelS/smodels/tree/master>`_ branch and run::
 
 .. code-block::
 
