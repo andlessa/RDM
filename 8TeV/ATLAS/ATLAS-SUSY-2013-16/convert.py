@@ -8,13 +8,15 @@
 import sys
 import os
 import argparse
-import types
 
-argparser = argparse.ArgumentParser(description = \
+argparser = argparse.ArgumentParser(description =  
 'create info.txt, txname.txt, twiki.txt and sms.py')
 argparser.add_argument ('-utilsPath', '--utilsPath', 
 help = 'path to the package smodels_utils',\
-type = types.StringType)
+type = str )
+argparser.add_argument ('-smodelsPath', '--smodelsPath', 
+help = 'path to the package smodels_utils',\
+type = str )
 args = argparser.parse_args()
 
 if args.utilsPath:
@@ -24,18 +26,22 @@ else:
     sys.path.append(os.path.abspath(databaseRoot))
     from utilsPath import utilsPath
     utilsPath = databaseRoot + utilsPath
+if args.smodelsPath:
+    sys.path.append(os.path.abspath(args.smodelsPath))
 
 sys.path.append(os.path.abspath(utilsPath))
-from smodels_utils.dataPreparation.inputObjects import TxNameInput, MetaInfoInput
+from smodels_utils.dataPreparation.inputObjects import MetaInfoInput,DataSetInput
 from smodels_utils.dataPreparation.databaseCreation import databaseCreator
-from smodels_utils.dataPreparation.origPlotObjects import x, y
+from smodels_utils.dataPreparation.massPlaneObjects import x, y, z
+
+
 
 #+++++++ global info block ++++++++++++++
 info = MetaInfoInput('ATLAS-SUSY-2013-16')
 info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-16/'
 info.sqrts = '8'
 info.lumi = '20.1'
-info.prettyName = ''
+info.prettyName = '0 lepton + 6 (2 b-)jets + Etmiss'
 info.private = False
 info.arxiv = 'http://arxiv.org/abs/1406.1122'
 info.contact = ''
@@ -44,46 +50,29 @@ info.supersedes = 'ATLAS-CONF-2013-024'
 info.comment =''
 
 
-#+++++++ next txName block ++++++++++++++
-T2tt = TxNameInput('T2tt')
-T2tt.on.checked = ""
-#T2tt.off.checked =
-T2tt.on.constraint = "[[['t']],[['t']]]"
-#T2tt.off.constraint =
-T2tt.on.conditionDescription = "None"
-#T2tt.off.conditionDescription =
-T2tt.on.condition = "None"
-#T2tt.off.condition =
-#T2tt.branchingRatio =
+#+++++++ dataset block ++++++++++++++
+dataset = DataSetInput('data')
+dataset.setInfo(dataType = 'upperLimit', dataId = None)
 
+#+++++++ next txName block ++++++++++++++
+T2tt = dataset.addTxName('T2tt')
+T2tt.checked = ""
+T2tt.constraint = "[[['t']],[['t']]]"
+T2tt.conditionDescription = "None"
+T2tt.condition = "None"
+T2tt.source = "ATLAS"
 #+++++++ next mass plane block ++++++++++++++
-T2tt_1 = T2tt.addMassPlane(motherMass = x , lspMass = y)
-#----figure----
+T2tt_1 = T2tt.addMassPlane(2*[[x, y]])
 T2tt_1.figure ="fig_08"
 T2tt_1.figureUrl ="https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-16/fig_08.png"
-#----limit source----
-T2tt_1.obsUpperLimit.setSource( "orig/T2tt_UL.dat", "txt", objectName = None, index = None )
-#T2tt_1.expUpperLimit.setSource( path, type, objectName = None, index = None )
-#----exclusion source----
-T2tt_1.obsExclusion.setSource( "orig/T2tt_Exclusion.txt", "txt", objectName = None, index = None )
-#T2tt_1.obsExclusionM1.setSource( path, type, objectName = None, index = None )
-#T2tt_1.obsExclusionP1.setSource( path, type, objectName = None, index = None )
-#T2tt_1.expExclusion.setSource( path, type, objectName = None, index = None )
-#T2tt_1.expExclusionM1.setSource( path, type, objectName = None, index = None )
-#T2tt_1.expExclusionP1.setSource( path, type, objectName = None, index = None )
-#----global url settings ----
 T2tt_1.dataUrl ='http://hepdata.cedar.ac.uk/view/ins1299143'
-#----limit url settings ----
 T2tt_1.histoDataUrl ='http://hepdata.cedar.ac.uk/view/ins1299143'
-T2tt_1.obsUpperLimit.dataUrl ='http://hepdata.cedar.ac.uk/view/ins1299143'
-T2tt_1.expUpperLimit.dataUrl =""
-#----exclusion url settings ----
+T2tt_1.dataUrl ='http://hepdata.cedar.ac.uk/view/ins1299143'
 T2tt_1.exclusionDataUrl ='http://hepdata.cedar.ac.uk/view/ins1299143'
-T2tt_1.obsExclusion.dataUrl ='http://hepdata.cedar.ac.uk/view/ins1299143'
-T2tt_1.obsExclusionM1.dataUrl =''
-T2tt_1.obsExclusionP1.dataUrl =''
-T2tt_1.expExclusion.dataUrl =''
-T2tt_1.expExclusionM1.dataUrl =''
-T2tt_1.expExclusionP1.dataUrl =''
+T2tt_1.setSources(dataLabels= ['obsExclusion', 'upperLimits'],
+                 dataFiles= ['orig/T2tt_Exclusion.txt', 'orig/T2tt_UL.dat'],
+                 dataFormats= ['txt', 'txt'])
+
+
 
 databaseCreator.create()

@@ -14,10 +14,10 @@ argparser = argparse.ArgumentParser(description =
 'create info.txt, txname.txt, twiki.txt and sms.py')
 argparser.add_argument ('-utilsPath', '--utilsPath', 
 help = 'path to the package smodels_utils',\
-type = types.StringType)
+type = str)
 argparser.add_argument ('-smodelsPath', '--smodelsPath', 
 help = 'path to the package smodels_utils',\
-type = types.StringType)
+type = str)
 args = argparser.parse_args()
 
 if args.utilsPath:
@@ -31,9 +31,11 @@ if args.smodelsPath:
     sys.path.append(os.path.abspath(args.smodelsPath))
 
 sys.path.append(os.path.abspath(utilsPath))
-from smodels_utils.dataPreparation.inputObjects import TxNameInput, MetaInfoInput
+from smodels_utils.dataPreparation.inputObjects import MetaInfoInput,DataSetInput
 from smodels_utils.dataPreparation.databaseCreation import databaseCreator
-from smodels_utils.dataPreparation.origPlotObjects import x, y
+from smodels_utils.dataPreparation.massPlaneObjects import x, y, z
+
+
 
 #+++++++ global info block ++++++++++++++
 info = MetaInfoInput('ATLAS-CONF-2013-047')
@@ -41,327 +43,146 @@ info.comment = 'T5WWLSP060 and T6WWLSP060 originally have xvalue on y-axes, chan
 info.sqrts = '8.0'
 info.private = False
 info.lumi = '20.3'
-#info.publication = 
-info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-047/ http://cds.cern.ch/record/1547563'
+info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-047/; http://cds.cern.ch/record/1547563'
 info.supersededBy = 'ATLAS-SUSY-2013-02'
-#info.arxiv = 
-#info.contact = 
-info.prettyName = 'ATLAS hadronic TGQ'
-#info.supersedes = 
+info.prettyName = '0 leptons + 2-6 jets + Etmiss'
+
+
+#+++++++ dataset block ++++++++++++++
+dataset = DataSetInput('data')
+dataset.setInfo(dataType = 'upperLimit', dataId = None)
 
 #+++++++ next txName block ++++++++++++++
-TGQ = TxNameInput('TGQ')
-TGQ.on.checked ="VM"
-#TGQ.off.checked =
-TGQ.on.constraint ="[[['jet']],[['jet','jet']]]"
-#TGQ.off.constraint =
-TGQ.on.conditionDescription ="None"
-#TGQ.off.conditionDescription =
-TGQ.on.condition ="None"
-#TGQ.off.condition =
-
+TGQ = dataset.addTxName('TGQ')
+TGQ.checked ="VM"
+TGQ.constraint ="[[['jet']],[['jet','jet']]]"
+TGQ.conditionDescription ="None"
+TGQ.condition ="None"
+TGQ.source = 'ATLAS'
+TGQ.round_to = 6 ## round to 6 digits to make PCA work.
 #+++++++ next mass plane block ++++++++++++++
-TGQ0 = TGQ.addMassPlane(motherMass = x, lspMass = y)
-TGQ0.setBranch_1 ( motherMass = 0.96 * x, lspMass = y )                                                                         
-TGQ0.setBranch_2 ( motherMass = x, lspMass = y )  
-#----limit source----
-TGQ0.obsUpperLimit.setSource( "orig/TGQ.dat", "txt", objectName = None, index = None )
-TGQ0.obsUpperLimit.unit = 'fb'
-#TGQ.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
-#----exclusion source----
-TGQ0.obsExclusion.setSource( "orig/TGQ_exc.dat", "txt", objectName = None, index = None )
-#TGQ.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
-#TGQ.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
-#TGQ.expExclusion.setSource( path, filetype, objectName = None, index = None )
-#TGQ.expExclusionM1.setSource( path, filetype, objectName = None, index = None )
-#TGQ.expExclusionP1.setSource( path, filetype, objectName = None, index = None )
-#----global url settings ----
-#TGQ.dataUrl =
-#TGQ.histoDataUrl =
-#TGQ.exclusionDataUrl =
-#----figure----
+TGQ0 = TGQ.addMassPlane([[0.96*x, y], [x,y]])
 TGQ0.figure = 'Fig. 19b'
 TGQ0.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-047/fig_19b.png'
-#----limit url settings ----
-TGQ0.obsUpperLimit.dataUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-047/fig_19b_PRELIMINARY.data'
-#TGQ.expUpperLimit.dataUrl =
-#----exclusion url settings ----
-#TGQ.obsExclusion.dataUrl =
-#TGQ.obsExclusionM1.dataUrl =
-#TGQ.obsExclusionP1.dataUrl =
-#TGQ.expExclusion.dataUrl =
-#TGQ.expExclusionM1.dataUrl =
-#TGQ.expExclusionP1.dataUrl =
+TGQ0.dataUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-047/fig_19b_PRELIMINARY.data'
+TGQ0.setSources(dataLabels= ['obsExclusion', 'upperLimits'],
+                 dataFiles= ['orig/TGQ_exc.dat', 'orig/TGQ.dat'],
+                 dataFormats= ['txt', 'txt'],units= [None, 'fb'])
 
 #+++++++ next txName block ++++++++++++++
-T6WW = TxNameInput('T6WW')
-T6WW.on.checked ="VM"
-#T6WW.off.checked =
-T6WW.on.constraint ="[[['jet'],['W']],[['jet'],['W']]]"
-T6WW.off.constraint ="2.23 * [[['jet'],['jet','jet']],[['jet'],['jet','jet']]]"
-T6WW.on.conditionDescription ="None"
-T6WW.off.conditionDescription = "None"
-T6WW.on.condition ="None"
-T6WW.off.condition = "None"
-
+T6WW = dataset.addTxName('T6WW')
+T6WW.checked ="VM"
+T6WW.constraint ="[[['jet'],['W']],[['jet'],['W']]]"
+T6WW.conditionDescription ="None"
+T6WW.condition ="None"
+T6WW.massConstraint = None
+T6WW.source = 'ATLAS'
+T6WWoff = dataset.addTxName('T6WWoff')
+T6WWoff.constraint ="2.23 * [[['jet'],['jet','jet']],[['jet'],['jet','jet']]]"
+T6WWoff.conditionDescription = "None"
+T6WWoff.condition = "None"
+T6WWoff.massConstraint = [['dm >= 0.0', 'dm <= 76.0'], ['dm >= 0.0', 'dm <= 76.0']]
+T6WWoff.source = 'ATLAS'
 #+++++++ next mass plane block ++++++++++++++
-T6WWLSP060 = T6WW.addMassPlane(motherMass = x, interMass0 = y, lspMass = 60.0)
-#----limit source----
-T6WWLSP060.obsUpperLimit.setSource( "orig/T6WWLSP060.dat", "txt", objectName = None, index = None )
-T6WWLSP060.obsUpperLimit.unit = 'fb'
-#T6WWLSP060.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
-#----exclusion source----
-T6WWLSP060.obsExclusion.setSource( "orig/T6WWLSP060_exc.dat", "txt", objectName = None, index = None )
-#T6WWLSP060.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
-#T6WWLSP060.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
-#T6WWLSP060.expExclusion.setSource( path, filetype, objectName = None, index = None )
-#T6WWLSP060.expExclusionM1.setSource( path, filetype, objectName = None, index = None )
-#T6WWLSP060.expExclusionP1.setSource( path, filetype, objectName = None, index = None )
-#----global url settings ----
-#T6WWLSP060.dataUrl =
-#T6WWLSP060.histoDataUrl =
-#T6WWLSP060.exclusionDataUrl =
-#----figure----
+T6WWLSP060 = T6WW.addMassPlane(2*[[x, y, 60.0]])
 T6WWLSP060.figure = 'Fig. 21c'
 T6WWLSP060.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-047/fig_21c.png'
-#----limit url settings ----
-T6WWLSP060.obsUpperLimit.dataUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-047/fig_21c_PRELIMINARY.data'
-#T6WWLSP060.expUpperLimit.dataUrl =
-#----exclusion url settings ----
-#T6WWLSP060.obsExclusion.dataUrl =
-#T6WWLSP060.obsExclusionM1.dataUrl =
-#T6WWLSP060.obsExclusionP1.dataUrl =
-#T6WWLSP060.expExclusion.dataUrl =
-#T6WWLSP060.expExclusionM1.dataUrl =
-#T6WWLSP060.expExclusionP1.dataUrl =
-
+T6WWLSP060.dataUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-047/fig_21c_PRELIMINARY.data'
+T6WWLSP060.setSources(dataLabels= ['obsExclusion', 'upperLimits'],
+                 dataFiles= ['orig/T6WWLSP060_exc.dat', 'orig/T6WWLSP060.dat'],
+                 dataFormats= ['txt', 'txt'],units= [None, 'fb'])
+T6WWoff.addMassPlane(T6WWLSP060)
 #+++++++ next mass plane block ++++++++++++++
-T6WW050 = T6WW.addMassPlane(motherMass = x, interMass0 = x*0.5 + (1. - 0.5)*y, lspMass = y)
-#----limit source----
-T6WW050.obsUpperLimit.setSource( "orig/T6WW050.dat", "txt", objectName = None, index = None )
-T6WW050.obsUpperLimit.unit = 'fb'
-# T6WW050.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
-#----exclusion source----
-T6WW050.obsExclusion.setSource( "orig/T6WW050_exc.dat", "txt", objectName = None, index = None )
-#T6WW050.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
-#T6WW050.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
-#T6WW050.expExclusion.setSource( path, filetype, objectName = None, index = None )
-#T6WW050.expExclusionM1.setSource( path, filetype, objectName = None, index = None #T6WW050.expExclusionP1.setSource( path, filetype, objectName = None, index = None )
-#----global url settings ----
-#T6WW050.dataUrl =
-#T6WW050.histoDataUrl =
-#T6WW050.exclusionDataUrl =
-#----figure----
+T6WW050 = T6WW.addMassPlane(2*[[x, x*0.5+(1.-0.5)*y, y]])
 T6WW050.figure = 'Fig. 21d'
 T6WW050.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-047/fig_21d.png'
-#----limit url settings ----
-T6WW050.obsUpperLimit.dataUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-047/fig_21d_PRELIMINARY.data'
-#T6WW050.expUpperLimit.dataUrl =
-#----exclusion url settings ----
-#T6WW050.obsExclusion.dataUrl =
-#T6WW050.obsExclusionM1.dataUrl =
-#T6WW050.obsExclusionP1.dataUrl =
-#T6WW050.expExclusion.dataUrl =
-#T6WW050.expExclusionM1.dataUrl =
-#T6WW050.expExclusionP1.dataUrl =
+T6WW050.dataUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-047/fig_21d_PRELIMINARY.data'
+T6WW050.setSources(dataLabels= ['obsExclusion', 'upperLimits'],
+                 dataFiles= ['orig/T6WW050_exc.dat', 'orig/T6WW050.dat'],
+                 dataFormats= ['txt', 'txt'],units= [None, 'fb'])
+T6WWoff.addMassPlane(T6WW050)
 
 #+++++++ next txName block ++++++++++++++
-T2 = TxNameInput('T2')
-T2.on.checked ="VM"
-#T2.off.checked =
-T2.on.constraint ="[[['jet']],[['jet']]]"
-#T2.off.constraint =
-T2.on.conditionDescription ="None"
-#T2.off.conditionDescription =
-T2.on.condition ="None"
-#T2.off.condition =
-
+T2 = dataset.addTxName('T2')
+T2.checked ="VM"
+T2.constraint ="[[['jet']],[['jet']]]"
+T2.conditionDescription ="None"
+T2.condition ="None"
+T2.source = 'ATLAS'
 #+++++++ next mass plane block ++++++++++++++
-T2 = T2.addMassPlane(motherMass = x, lspMass = y)
-#----limit source----
-T2.obsUpperLimit.setSource( "orig/T2.dat", "txt", objectName = None, index = None )
-T2.obsUpperLimit.unit = 'fb'
-# T2.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
-#----exclusion source----
-T2.obsExclusion.setSource( "orig/T2_exc.dat", "txt", objectName = None, index = None )
-#T2.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
-#T2.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
-#T2.expExclusion.setSource( path, filetype, objectName = None, index = None )
-#T2.expExclusionM1.setSource( path, filetype, objectName = None, index = None )
-#T2.expExclusionP1.setSource( path, filetype, objectName = None, index = None )
-#----global url settings ----
-#T2.dataUrl =
-#T2.histoDataUrl =
-#T2.exclusionDataUrl =
-#----figure----
+T2 = T2.addMassPlane(2*[[x, y]])
 T2.figure = 'Fig. 19c'
 T2.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-047/fig_19c.png'
-#----limit url settings ----
-T2.obsUpperLimit.dataUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-047/fig_19c_PRELIMINARY.data'
-#T2.expUpperLimit.dataUrl =
-#----exclusion url settings ----
-#T2.obsExclusion.dataUrl =
-#T2.obsExclusionM1.dataUrl =
-#T2.obsExclusionP1.dataUrl =
-#T2.expExclusion.dataUrl =
-#T2.expExclusionM1.dataUrl =
-#T2.expExclusionP1.dataUrl =
+T2.dataUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-047/fig_19c_PRELIMINARY.data'
+T2.setSources(dataLabels= ['obsExclusion', 'upperLimits'],
+                 dataFiles= ['orig/T2_exc.dat', 'orig/T2.dat'],
+                 dataFormats= ['txt', 'txt'],units= [None, 'fb'])
 
 #+++++++ next txName block ++++++++++++++
-T1 = TxNameInput('T1')
-T1.on.checked ="VM"
-#T1.off.checked =
-T1.on.constraint ="[[['jet','jet']],[['jet','jet']]]"
-#T1.off.constraint =
-T1.on.conditionDescription ="None"
-#T1.off.conditionDescription =
-T1.on.condition ="None"
-#T1.off.condition =
-
+T1 = dataset.addTxName('T1')
+T1.checked ="VM"
+T1.constraint ="[[['jet','jet']],[['jet','jet']]]"
+T1.conditionDescription ="None"
+T1.condition ="None"
+T1.source = 'ATLAS'
 #+++++++ next mass plane block ++++++++++++++
-T1 = T1.addMassPlane(motherMass = x, lspMass = y)
-#----limit source----
-T1.obsUpperLimit.setSource( "orig/T1.dat", "txt", objectName = None, index = None )
-T1.obsUpperLimit.unit = 'fb'
-# T1.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
-#----exclusion source----
-T1.obsExclusion.setSource( "orig/T1_exc.dat", "txt", objectName = None, index = None )
-#T1.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
-#T1.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
-#T1.expExclusion.setSource( path, filetype, objectName = None, index = None )
-#T1.expExclusionM1.setSource( path, filetype, objectName = None, index = None )
-#T1.expExclusionP1.setSource( path, filetype, objectName = None, index = None )
-#----global url settings ----
-#T1.dataUrl =
-#T1.histoDataUrl =
-#T1.exclusionDataUrl =
-#----figure----
+T1 = T1.addMassPlane(2*[[x, y]])
 T1.figure = 'Fig. 19a'
 T1.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-047/fig_19a.png'
-#----limit url settings ----
-T1.obsUpperLimit.dataUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-047/fig_19a_PRELIMINARY.data'
-#T1.expUpperLimit.dataUrl =
-#----exclusion url settings ----
-#T1.obsExclusion.dataUrl =
-#T1.obsExclusionM1.dataUrl =
-#T1.obsExclusionP1.dataUrl =
-#T1.expExclusion.dataUrl =
-#T1.expExclusionM1.dataUrl =
-#T1.expExclusionP1.dataUrl =
+T1.dataUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-047/fig_19a_PRELIMINARY.data'
+T1.setSources(dataLabels= ['obsExclusion', 'upperLimits'],
+                 dataFiles= ['orig/T1_exc.dat', 'orig/T1.dat'],
+                 dataFormats= ['txt', 'txt'],units= [None, 'fb'])
 
 #+++++++ next txName block ++++++++++++++
-T5WW = TxNameInput('T5WW')
-T5WW.on.checked ="VM"
-#T5WW.off.checked =
-T5WW.on.constraint ="[[['jet','jet'],['W']],[['jet','jet'],['W']]]"
-T5WW.off.constraint = "2.23 * [[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
-T5WW.on.conditionDescription ="None"
-T5WW.off.conditionDescription = "None"
-T5WW.on.condition ="None"
-T5WW.off.condition = "None"
-
+T5WW = dataset.addTxName('T5WW')
+T5WW.checked ="VM"
+T5WW.constraint ="[[['jet','jet'],['W']],[['jet','jet'],['W']]]"
+T5WW.conditionDescription ="None"
+T5WW.condition ="None"
+T5WW.massConstraint = None
+T5WW.source = 'ATLAS'
+T5WWoff = dataset.addTxName('T5WWoff')
+T5WWoff.constraint = "2.23 * [[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]"
+T5WWoff.conditionDescription = "None"
+T5WWoff.condition = "None"
+T5WWoff.massConstraint = [['dm >= 0.0', 'dm <= 76.0'], ['dm >= 0.0', 'dm <= 76.0']]
+T5WWoff.source = 'ATLAS'
 #+++++++ next mass plane block ++++++++++++++
-T5WWLSP060 = T5WW.addMassPlane(motherMass = x, interMass0 = y, lspMass = 60.0)
-#----limit source----
-T5WWLSP060.obsUpperLimit.setSource( "orig/T5WWLSP060.dat", "txt", objectName = None, index = None )
-T5WWLSP060.obsUpperLimit.unit = 'fb'
-# T5WWLSP060.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
-#----exclusion source----
-T5WWLSP060.obsExclusion.setSource( "orig/T5WWLSP60_exc.dat", "txt", objectName = None, index = None )
-#T5WWLSP060.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
-#T5WWLSP060.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
-#T5WWLSP060.expExclusion.setSource( path, filetype, objectName = None, index = None )
-#T5WWLSP060.expExclusionM1.setSource( path, filetype, objectName = None, index = None )
-#T5WWLSP060.expExclusionP1.setSource( path, filetype, objectName = None, index = None )
-#----global url settings ----
-#T5WWLSP060.dataUrl =
-#T5WWLSP060.histoDataUrl =
-#T5WWLSP060.exclusionDataUrl =
-#----figure----
+T5WWLSP060 = T5WW.addMassPlane(2*[[x, y, 60.0]])
 T5WWLSP060.figure = 'Fig. 21a'
 T5WWLSP060.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-047/fig_21a.png'
-#----limit url settings ----
-T5WWLSP060.obsUpperLimit.dataUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-047/fig_21b_PRELIMINARY.data'
-#T5WWLSP060.expUpperLimit.dataUrl =
-##----exclusion url settings ----
-#T5WWLSP060.obsExclusion.dataUrl =
-#T5WWLSP060.obsExclusionM1.dataUrl =
-#T5WWLSP060.obsExclusionP1.dataUrl =
-#T5WWLSP060.expExclusion.dataUrl =
-#T5WWLSP060.expExclusionM1.dataUrl =
-#T5WWLSP060.expExclusionP1.dataUrl =
-
+T5WWLSP060.dataUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-047/fig_21b_PRELIMINARY.data'
+T5WWLSP060.setSources(dataLabels= ['obsExclusion', 'upperLimits'],
+                 dataFiles= ['orig/T5WWLSP60_exc.dat', 'orig/T5WWLSP060.dat'],
+                 dataFormats= ['txt', 'txt'],units= [None, 'fb'])
+T5WWoff.addMassPlane(T5WWLSP060)
 #+++++++ next mass plane block ++++++++++++++
-T5WW050 = T5WW.addMassPlane(motherMass = x, interMass0 = x*0.5 + (1. - 0.5)*y, lspMass = y)
-#----limit source----
-T5WW050.obsUpperLimit.setSource( "orig/T5WW050.dat", "txt", objectName = None, index = None )
-T5WW050.obsUpperLimit.unit = 'fb'
-#T5WW050.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
-#----exclusion source----
-T5WW050.obsExclusion.setSource( "orig/T5WW050_exc.dat", "txt", objectName = None, index = None )
-#T5WW050.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
-#T5WW050.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
-#T5WW050.expExclusion.setSource( path, filetype, objectName = None, index = None )
-#T5WW050.expExclusionM1.setSource( path, filetype, objectName = None, index = None )
-#T5WW050.expExclusionP1.setSource( path, filetype, objectName = None, index = None )
-#----global url settings ----
-#T5WW050.dataUrl =
-#T5WW050.histoDataUrl =
-#T5WW050.exclusionDataUrl =
-#----figure----
+T5WW050 = T5WW.addMassPlane(2*[[x, x*0.5+(1.-0.5)*y, y]])
 T5WW050.figure = 'Fig. 21b'
 T5WW050.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-047/fig_21b.png'
-#----limit url settings ----
-T5WW050.obsUpperLimit.dataUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-047/fig_21a_PRELIMINARY.data'
-#T5WW050.expUpperLimit.dataUrl =
-#----exclusion url settings ----
-#T5WW050.obsExclusion.dataUrl =
-#T5WW050.obsExclusionM1.dataUrl =
-#T5WW050.obsExclusionP1.dataUrl =
-#T5WW050.expExclusion.dataUrl =
-#T5WW050.expExclusionM1.dataUrl =
-#T5WW050.expExclusionP1.dataUrl =
+T5WW050.dataUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-047/fig_21a_PRELIMINARY.data'
+T5WW050.setSources(dataLabels= ['obsExclusion', 'upperLimits'],
+                 dataFiles= ['orig/T5WW050_exc.dat', 'orig/T5WW050.dat'],
+                 dataFormats= ['txt', 'txt'],units= [None, 'fb'])
+T5WWoff.addMassPlane(T5WW050)
 
 #+++++++ next txName block ++++++++++++++
-T5tctc = TxNameInput('T5tctc')
-T5tctc.on.checked ="VM"
-#T5tctc.off.checked =
-T5tctc.on.constraint ="[[['t'],['jet']],[['t'],['jet']]]"
-#T5tctc.off.constraint =
-T5tctc.on.conditionDescription ="None"
-#T5tctc.off.conditionDescription =
-T5tctc.on.condition ="None"
-#T5tctc.off.condition =
-
+T5tctc = dataset.addTxName('T5tctc')
+T5tctc.checked ="VM"
+T5tctc.constraint ="[[['t'],['jet']],[['t'],['jet']]]"
+T5tctc.conditionDescription ="None"
+T5tctc.condition ="None"
+T5tctc.source = 'ATLAS'
 #+++++++ next mass plane block ++++++++++++++
-T5tctcD020 = T5tctc.addMassPlane(motherMass = x, interMass0 = y, lspMass = y - 20.0)
-#----limit source----
-T5tctcD020.obsUpperLimit.setSource( "orig/T5tctc.dat", "txt", objectName = None, index = None )
-T5tctcD020.obsUpperLimit.unit = 'fb'
-# T5tctcD020.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
-#----exclusion source----
-T5tctcD020.obsExclusion.setSource( "orig/T5tctc_exc.dat", "txt", objectName = None, index = None )
-#T5tctcD020.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
-#T5tctcD020.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
-#T5tctcD020.expExclusion.setSource( path, filetype, objectName = None, index = None )
-#T5tctcD020.expExclusionM1.setSource( path, filetype, objectName = None, index = None )
-#T5tctcD020.expExclusionP1.setSource( path, filetype, objectName = None, index = None )
-#----global url settings ----
-#T5tctcD020.dataUrl =
-#T5tctcD020.histoDataUrl =
-#T5tctcD020.exclusionDataUrl =
-#----figure----
+T5tctcD020 = T5tctc.addMassPlane(2*[[x, y, y-20.0]])
 T5tctcD020.figure = "fig 24"
 T5tctcD020.figureUrl = "https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-047/fig_24.png"
-#----limit url settings ----
-T5tctcD020.obsUpperLimit.dataUrl = "https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-047/fig_24_PRELIMINARY.data"
-# T5tctcD020.expUpperLimit.dataUrl =
-#----exclusion url settings ----
-# T5tctcD020.obsExclusion.dataUrl =
-# T# 5tctcD020.obsExclusionM1.dataUrl =
-# T5tctcD020.obsExclusionP1.dataUrl =
-# T5tctcD020.expExclusion.dataUrl =
-# T5tctcD020.expExclusionM1.dataUrl =
-# T5tctcD020.expExclusionP1.dataUrl =
+T5tctcD020.dataUrl = "https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-047/fig_24_PRELIMINARY.data"
+T5tctcD020.setSources(dataLabels= ['obsExclusion', 'upperLimits'],
+                 dataFiles= ['orig/T5tctc_exc.dat', 'orig/T5tctc.dat'],
+                 dataFormats= ['txt', 'txt'],units= [None, 'fb'])
+
+
 
 databaseCreator.create()

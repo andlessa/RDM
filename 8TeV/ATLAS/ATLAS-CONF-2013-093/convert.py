@@ -8,13 +8,15 @@
 import sys
 import os
 import argparse
-import types
 
 argparser = argparse.ArgumentParser(description =  
 'create info.txt, txname.txt, twiki.txt and sms.py')
 argparser.add_argument ('-utilsPath', '--utilsPath', 
 help = 'path to the package smodels_utils',\
-type = types.StringType)
+type = str )
+argparser.add_argument ('-smodelsPath', '--smodelsPath', 
+help = 'path to the package smodels_utils',\
+type = str )
 args = argparser.parse_args()
 
 if args.utilsPath:
@@ -24,67 +26,46 @@ else:
     sys.path.append(os.path.abspath(databaseRoot))
     from utilsPath import utilsPath
     utilsPath = databaseRoot + utilsPath
+if args.smodelsPath:
+    sys.path.append(os.path.abspath(args.smodelsPath))
 
 sys.path.append(os.path.abspath(utilsPath))
-from smodels_utils.dataPreparation.inputObjects import TxNameInput, MetaInfoInput
+from smodels_utils.dataPreparation.inputObjects import MetaInfoInput,DataSetInput
 from smodels_utils.dataPreparation.databaseCreation import databaseCreator
-from smodels_utils.dataPreparation.origPlotObjects import x, y
+from smodels_utils.dataPreparation.massPlaneObjects import x, y, z
+
+
 
 #+++++++ global info block ++++++++++++++
 info = MetaInfoInput('ATLAS-CONF-2013-093')
-#info.comment = 
 info.sqrts = '8.0'
 info.private = False
 info.lumi = '20.3'
-# info.publication = 
 info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-093/'
 info.supersededBy = 'ATLAS-SUSY-2013-23'
-#info.arxiv = 
-#info.contact = 
-info.prettyName = 'ATLAS ew higgs'
-#info.supersedes = 
+info.prettyName = '1 lepton + 2 b-jets + Etmiss (mbb = mH)'
+
+
+#+++++++ dataset block ++++++++++++++
+dataset = DataSetInput('data')
+dataset.setInfo(dataType = 'upperLimit', dataId = None)
 
 #+++++++ next txName block ++++++++++++++
-TChiWH = TxNameInput('TChiWH')
-TChiWH.on.checked ="VM"
-#TChiWH.off.checked =
-TChiWH.on.constraint ="[[['higgs']],[['W']]]"
-#TChiWH.off.constraint =
-TChiWH.on.conditionDescription ="None"
-#TChiWH.off.conditionDescription =
-TChiWH.on.condition ="None"
-# TChiWH.off.condition =
-
+TChiWH = dataset.addTxName('TChiWH')
+TChiWH.checked ="VM"
+TChiWH.constraint ="[[['higgs']],[['W']]]"
+TChiWH.conditionDescription ="None"
+TChiWH.condition ="None"
+TChiWH.source = "ATLAS"
 #+++++++ next mass plane block ++++++++++++++
-TChiWH = TChiWH.addMassPlane(motherMass = x, lspMass = y)
-#----limit source----
-TChiWH.obsUpperLimit.setSource( "orig/TChiWH.dat", "txt", objectName = None, index = None )
-#TChiWH.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
-#----exclusion source----
-TChiWH.obsExclusion.setSource( "orig/TChiWH_exc.dat", "txt", objectName = None, index = None )
-#TChiWH.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
-#TChiWH.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
-#TChiWH.expExclusion.setSource( path, filetype, objectName = None, index = None )
-#TChiWH.expExclusionM1.setSource( path, filetype, objectName = None, index = None )
-#TChiWH.expExclusionP1.setSource( path, filetype, objectName = None, index = None )
-#----global url settings ----
-#TChiWH.dataUrl =
-#TChiWH.histoDataUrl =
-#TChiWH.exclusionDataUrl =
-#----figure----
+TChiWH = TChiWH.addMassPlane(2*[[x, y]])
 TChiWH.figure = "fig 10"
 TChiWH.figureUrl = "https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2013-093/fig_10.png" 
-#----limit url settings ----
-"""
-TChiWH.obsUpperLimit.dataUrl =
-TChiWH.expUpperLimit.dataUrl =
-#----exclusion url settings ----
-TChiWH.obsExclusion.dataUrl =
-TChiWH.obsExclusionM1.dataUrl =
-TChiWH.obsExclusionP1.dataUrl =
-TChiWH.expExclusion.dataUrl =
-TChiWH.expExclusionM1.dataUrl =
-TChiWH.expExclusionP1.dataUrl =
-"""
+TChiWH.dataUrl = 'Not defined'
+TChiWH.setSources(dataLabels= ['obsExclusion', 'upperLimits'],
+                 dataFiles= ['orig/TChiWH_exc.dat', 'orig/TChiWH.dat'],
+                 dataFormats= ['txt', 'txt'])
+
+
 
 databaseCreator.create()

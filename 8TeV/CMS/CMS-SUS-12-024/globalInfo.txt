@@ -1,7 +1,7 @@
 id: CMS-SUS-12-024
 sqrts: 8.0*TeV
 lumi: 19.4/fb
-prettyName: \slash{E}_{T}+b
+prettyName: 0 leptons + >= 3 (1b-)jets + Etmiss
 url: https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS12024
 arxiv: http://arxiv.org/abs/1305.2390
 publication: http://www.sciencedirect.com/science/article/pii/S0370269313005339

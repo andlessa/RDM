@@ -1,7 +1,7 @@
 id: ATLAS-SUSY-2013-09
 sqrts: 8.0*TeV
 lumi: 20.3/fb
-prettyName: ATLAS SS+b
+prettyName: 2 SS leptons + Etmiss
 url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-09/
 arxiv: http://arxiv.org/abs/1404.2500
 publication: http://link.springer.com/article/10.1007/JHEP06(2014)035

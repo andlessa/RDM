@@ -14,10 +14,10 @@ argparser = argparse.ArgumentParser(description =
 'create info.txt, txname.txt, twiki.txt and sms.py')
 argparser.add_argument ('-utilsPath', '--utilsPath', 
 help = 'path to the package smodels_utils',\
-type = types.StringType)
+type = str)
 argparser.add_argument ('-smodelsPath', '--smodelsPath', 
 help = 'path to the package smodels_utils',\
-type = types.StringType)
+type = str)
 args = argparser.parse_args()
 
 if args.utilsPath:
@@ -31,17 +31,18 @@ if args.smodelsPath:
     sys.path.append(os.path.abspath(args.smodelsPath))
 
 sys.path.append(os.path.abspath(utilsPath))
-from smodels_utils.dataPreparation.inputObjects import TxNameInput, MetaInfoInput
+from smodels_utils.dataPreparation.inputObjects import MetaInfoInput,DataSetInput
 from smodels_utils.dataPreparation.databaseCreation import databaseCreator
-from smodels_utils.dataPreparation.origPlotObjects import x, y
+from smodels_utils.dataPreparation.massPlaneObjects import x, y, z
 
-#+++++++ global info block ++++++++++++++
+
+
 #+++++++ global info block ++++++++++++++
 info = MetaInfoInput('CMS-SUS-13-013')
 info.url ='https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS13013'
 info.sqrts = 8
 info.lumi = 19.5
-info.prettyName =''
+info.prettyName = '2 SS leptons + (b-)jets + Etmiss'
 info.private = False
 info.arxiv = 'http://arxiv.org/pdf/1311.6736v2.pdf'
 info.contact =''
@@ -51,164 +52,87 @@ info.supersedes ='CMS-SUS-12-017'
 info.supersededBy =''
 
 
-#+++++++ next txName block ++++++++++++++
-T1tttt = TxNameInput('T1tttt')
-T1tttt.on.checked =''
-#T1tttt.off.checked =''
-T1tttt.on.constraint ="[[['t','t']],[['t','t']]]"
-T1tttt.off.constraint ="[[['b','b','W','W']],[['b','b','W','W']]]"
-T1tttt.on.conditionDescription = 'None'
-T1tttt.off.conditionDescription ='None'
-T1tttt.on.condition = 'None'
-T1tttt.off.condition ="None"
-#T1tttt.branchingRatio =
+#+++++++ dataset block ++++++++++++++
+dataset = DataSetInput('data')
+dataset.setInfo(dataType = 'upperLimit', dataId = None)
 
+#+++++++ next txName block ++++++++++++++
+T1tttt = dataset.addTxName('T1tttt')
+T1tttt.checked =''
+T1tttt.constraint ="[[['t','t']],[['t','t']]]"
+T1tttt.conditionDescription = 'None'
+T1tttt.condition = 'None'
+T1tttt.source = "CMS"
+T1tttt.massConstraint = None
+T1ttttoff = dataset.addTxName('T1ttttoff')
+T1ttttoff.constraint ="[[['b','b','W','W']],[['b','b','W','W']]]"
+T1ttttoff.conditionDescription ='None'
+T1ttttoff.condition ="None"
+T1ttttoff.massConstraint = [['dm <= 338.0'], ['dm <= 338.0']]
+T1ttttoff.source = "CMS"
 #+++++++ next mass plane block ++++++++++++++
-T1tttt_1 = T1tttt.addMassPlane(motherMass = x, lspMass = y)
-#----figure----
+T1tttt_1 = T1tttt.addMassPlane(2*[[x, y]])
 T1tttt_1.figure ='Figure 5'
 T1tttt_1.figureUrl ='https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13013/Figure5_A1.pdf'
-#----limit source----
-T1tttt_1.obsUpperLimit.setSource( 'orig/ModelA1.root', 'root', objectName = 'observedUL', index = None )
-T1tttt_1.expUpperLimit.setSource( 'orig/ModelA1.root', 'root', objectName = "expectedUL", index = None )
-T1tttt_1.obsUpperLimit.unit = 'fb'
-T1tttt_1.expUpperLimit.unit = 'fb'
-#----exclusion source----
-T1tttt_1.obsExclusion.setSource( 'orig/ModelA1.root', 'root', objectName = 'graph_smoothed_Obs', index = None )
-T1tttt_1.obsExclusionM1.setSource( 'orig/ModelA1.root', 'root', objectName = 'graph_smoothed_ObsM', index = None )
-T1tttt_1.obsExclusionP1.setSource( 'orig/ModelA1.root', 'root', objectName = 'graph_smoothed_ObsP', index = None )
-T1tttt_1.expExclusion.setSource( 'orig/ModelA1.root', 'root', objectName = 'graph_smoothed_Exp', index = None )
-T1tttt_1.expExclusionM1.setSource( 'orig/ModelA1.root', 'root', objectName = 'graph_smoothed_ExpM', index = None )
-T1tttt_1.expExclusionP1.setSource( 'orig/ModelA1.root', 'root', objectName = 'graph_smoothed_ExpP', index = None )
-#----global url settings ----
 T1tttt_1.dataUrl ='https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13013/ModelA1.root'
-#----limit url settings ----
 T1tttt_1.histoDataUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13013/Figure5_A1.pdf'
-T1tttt_1.obsUpperLimit.dataUrl ='https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13013/ModelA1.root'
-T1tttt_1.expUpperLimit.dataUrl ='https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13013/ModelA1.root'
-#----exclusion url settings ----
+T1tttt_1.dataUrl ='https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13013/ModelA1.root'
 T1tttt_1.exclusionDataUrl ='https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13013/ModelA1.root'
-T1tttt_1.obsExclusion.dataUrl =''
-T1tttt_1.obsExclusionM1.dataUrl =''
-T1tttt_1.obsExclusionP1.dataUrl =''
-T1tttt_1.expExclusion.dataUrl =''
-T1tttt_1.expExclusionM1.dataUrl =''
-T1tttt_1.expExclusionP1.dataUrl =''
+T1tttt_1.setSources(dataLabels= ['expExclusion', 'expExclusionM1', 'expExclusionP1', 'expectedUpperLimits', 'obsExclusion', 'obsExclusionM1', 'obsExclusionP1', 'upperLimits'],
+                 dataFiles= ['orig/ModelA1.root', 'orig/ModelA1.root', 'orig/ModelA1.root', 'orig/ModelA1.root', 'orig/ModelA1.root', 'orig/ModelA1.root', 'orig/ModelA1.root', 'orig/ModelA1.root'],
+                 dataFormats= ['root', 'root', 'root', 'root', 'root', 'root', 'root', 'root'],objectNames= ['graph_smoothed_Exp', 'graph_smoothed_ExpM', 'graph_smoothed_ExpP', 'expectedUL', 'graph_smoothed_Obs', 'graph_smoothed_ObsM', 'graph_smoothed_ObsP', 'observedUL'],units= [None, None, None, 'fb', None, None, None, 'fb'])
+T1ttttoff.addMassPlane(T1tttt_1)
 
 #+++++++ next txName block ++++++++++++++
-T6ttWW = TxNameInput('T6ttWW')
-T6ttWW.on.checked =''
-T6ttWW.off.checked =''
-T6ttWW.on.constraint ="[[['t'],['W']],[['t'],['W']]]"
-T6ttWW.off.constraint ="2.3*([[['t'],['L','nu']],[['t'],['jet','jet']]])"
-T6ttWW.on.conditionDescription = "None"
-T6ttWW.off.conditionDescription ="[[['t'],['L','nu']],[['t'],['jet','jet']]] > 2.7* [[['t'],['ta','nu']],[['t'],['jet','jet']]],[[['t'],['L','nu']],[['t'],['jet','jet']]] > 2.7* [[['t'],['e','nu']],[['t'],['jet','jet']]]"
-T6ttWW.on.condition = "None"
-T6ttWW.off.condition ="Cgtr([[['t'],['L','nu']],[['t'],['jet','jet']]],3.*[[['t'],['ta','nu']],[['t'],['jet','jet']]]);Cgtr([[['t'],['L','nu']],[['t'],['jet','jet']]],3.*[[['t'],['e','nu']],[['t'],['jet','jet']]])"
-#T6ttWW.off.constraint = None
-T6ttWW.on.conditionDescription = None
-#T6ttWW.off.conditionDescription =
-T6ttWW.on.condition =None
-#T6ttWW.off.condition =
-#T6ttWW.branchingRatio =
-
+T6ttWW = dataset.addTxName('T6ttWW')
+T6ttWW.checked =''
+T6ttWW.constraint ="[[['t'],['W']],[['t'],['W']]]"
+T6ttWW.conditionDescription = "None"
+T6ttWW.condition = "None"
+T6ttWW.conditionDescription = None
+T6ttWW.condition =None
+T6ttWW.source = "CMS"
+T6ttWW.massConstraint = None
+T6ttWWoff = dataset.addTxName('T6ttWWoff')
+T6ttWWoff.checked =''
+T6ttWWoff.constraint ="2.3*([[['t'],['L','nu']],[['t'],['jet','jet']]])"
+T6ttWWoff.conditionDescription ="[[['t'],['L','nu']],[['t'],['jet','jet']]] > 2.7* [[['t'],['ta','nu']],[['t'],['jet','jet']]],[[['t'],['L','nu']],[['t'],['jet','jet']]] > 2.7* [[['t'],['e','nu']],[['t'],['jet','jet']]]"
+T6ttWWoff.condition ="Cgtr([[['t'],['L','nu']],[['t'],['jet','jet']]],3.*[[['t'],['ta','nu']],[['t'],['jet','jet']]]);Cgtr([[['t'],['L','nu']],[['t'],['jet','jet']]],3.*[[['t'],['e','nu']],[['t'],['jet','jet']]])"
+T6ttWWoff.massConstraint = [['dm >= 0.0', 'dm <= 76.0'], ['dm >= 0.0', 'dm <= 76.0']]
+T6ttWWoff.source = "CMS"
 #+++++++ next mass plane block ++++++++++++++
-T6ttWW_1 = T6ttWW.addMassPlane(motherMass = x, interMass0 = y, lspMass = 50 )
-#T6ttWW_1.setBranch_2(motherMass = , interMass0 = , lspMass = )
-#----figure----
+T6ttWW_1 = T6ttWW.addMassPlane(2*[[x, y, 50]])
 T6ttWW_1.figure = 'Fig.6'
 T6ttWW_1.figureUrl ='https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13013/Figure6_B1a.pdf'
-#----limit source----
-T6ttWW_1.obsUpperLimit.setSource( 'orig/ModelB1.root', 'root', objectName = 'observedUL', index = None )
-T6ttWW_1.expUpperLimit.setSource( 'orig/ModelB1.root', 'root', objectName = 'expectedUL', index = None  )
-T6ttWW_1.obsUpperLimit.unit = 'fb'
-T6ttWW_1.expUpperLimit.unit = 'fb'
-#----exclusion source----
-T6ttWW_1.obsExclusion.setSource( 'orig/ModelB1.root', 'root', objectName = 'graph_smoothed_Obs', index = None )
-T6ttWW_1.obsExclusionM1.setSource( 'orig/ModelB1.root', 'root',  objectName = 'graph_smoothed_ObsM', index = None)
-T6ttWW_1.obsExclusionP1.setSource( 'orig/ModelB1.root', 'root', objectName = 'graph_smoothed_ObsP', index = None )
-T6ttWW_1.expExclusion.setSource( 'orig/ModelB1.root', 'root', objectName = 'graph_smoothed_Exp', index = None  )
-T6ttWW_1.expExclusionM1.setSource( 'orig/ModelB1.root', 'root', objectName = 'graph_smoothed_ExpM', index = None )
-T6ttWW_1.expExclusionP1.setSource( 'orig/ModelB1.root', 'root', objectName = 'graph_smoothed_ExpP', index = None)
-#----global url settings ----
 T6ttWW_1.dataUrl = 'https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS13013'
-#----limit url settings ----
 T6ttWW_1.histoDataUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13013/ModelB1.root'
-T6ttWW_1.obsUpperLimit.dataUrl ='https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13013/ModelB1.root'
-T6ttWW_1.expUpperLimit.dataUrl ='https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13013/ModelB1.root'
-#----exclusion url settings ----
+T6ttWW_1.dataUrl ='https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13013/ModelB1.root'
 T6ttWW_1.exclusionDataUrl ='https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13013/ModelB1.root'
-T6ttWW_1.obsExclusion.dataUrl ='https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13013/ModelB1.root'
-T6ttWW_1.obsExclusionM1.dataUrl ='https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13013/ModelB1.root'
-T6ttWW_1.obsExclusionP1.dataUrl ='https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13013/ModelB1.root'
-T6ttWW_1.expExclusion.dataUrl ='https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13013/ModelB1.root'
-T6ttWW_1.expExclusionM1.dataUrl ='https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13013/ModelB1.root'
-T6ttWW_1.expExclusionP1.dataUrl ='https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13013/ModelB1.root'
-
+T6ttWW_1.setSources(dataLabels= ['expExclusion', 'expExclusionM1', 'expExclusionP1', 'expectedUpperLimits', 'obsExclusion', 'obsExclusionM1', 'obsExclusionP1', 'upperLimits'],
+                 dataFiles= ['orig/ModelB1.root', 'orig/ModelB1.root', 'orig/ModelB1.root', 'orig/ModelB1.root', 'orig/ModelB1.root', 'orig/ModelB1.root', 'orig/ModelB1.root', 'orig/ModelB1.root'],
+                 dataFormats= ['root', 'root', 'root', 'root', 'root', 'root', 'root', 'root'],objectNames= ['graph_smoothed_Exp', 'graph_smoothed_ExpM', 'graph_smoothed_ExpP', 'expectedUL', 'graph_smoothed_Obs', 'graph_smoothed_ObsM', 'graph_smoothed_ObsP', 'observedUL'],units= [None, None, None, 'fb', None, None, None, 'fb'])
+T6ttWWoff.addMassPlane(T6ttWW_1)
 #+++++++ next mass plane block ++++++++++++++
-T6ttWW_2 = T6ttWW.addMassPlane(motherMass = x, interMass0 = y/(0.5), lspMass = y)
-#T6ttWW_2.setBranch_2(motherMass = , interMass0 = , lspMass = )
-#----figure----
-#T6ttWW_2.figure = 'No Fig'
-#T6ttWW_2.figureUrl =''
-#----limit source----
-T6ttWW_2.obsUpperLimit.setSource( 'orig/ModelB1_x0p5.root', 'root', objectName = 'observedUL', index = None)
-T6ttWW_2.expUpperLimit.setSource( 'orig/ModelB1_x0p5.root', 'root', objectName = 'expectedUL', index = None  )
-T6ttWW_2.obsUpperLimit.unit = 'fb'
-T6ttWW_2.expUpperLimit.unit = 'fb'
-#----exclusion source----
-T6ttWW_2.obsExclusion.setSource( 'orig/ModelB1_x0p5.root', 'root', objectName = 'graph_smoothed_Obs', index = None )
-T6ttWW_2.obsExclusionM1.setSource( 'orig/ModelB1_x0p5.root', 'root',  objectName = 'graph_smoothed_ObsM', index = None)
-T6ttWW_2.obsExclusionP1.setSource( 'orig/ModelB1_x0p5.root', 'root', objectName = 'graph_smoothed_ObsP', index = None )
-T6ttWW_2.expExclusion.setSource( 'orig/ModelB1_x0p5.root', 'root', objectName = 'graph_smoothed_Exp', index = None  )
-T6ttWW_2.expExclusionM1.setSource( 'orig/ModelB1_x0p5.root', 'root', objectName = 'graph_smoothed_ExpM', index = None)
-T6ttWW_2.expExclusionP1.setSource( 'orig/ModelB1_x0p5.root', 'root', objectName = 'graph_smoothed_ExpP', index = None)
-#----global url settings ----
+T6ttWW_2 = T6ttWW.addMassPlane(2*[[x, y/(0.5), y]])
 T6ttWW_2.dataUrl = 'https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS13013'
-#----limit url settings ----
 T6ttWW_2.histoDataUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13013/ModelB1_x0p5.root'
-T6ttWW_2.obsUpperLimit.dataUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13013/ModelB1_x0p5.root'
-T6ttWW_2.expUpperLimit.dataUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13013/ModelB1_x0p5.root'
-#----exclusion url settings ----
+T6ttWW_2.dataUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13013/ModelB1_x0p5.root'
 T6ttWW_2.exclusionDataUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13013/ModelB1_x0p5.root'
-T6ttWW_2.obsExclusion.dataUrl ='https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13013/ModelB1_x0p5.root'
-T6ttWW_2.obsExclusionM1.dataUrl ='https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13013/ModelB1_x0p5.root'
-T6ttWW_2.obsExclusionP1.dataUrl ='https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13013/ModelB1_x0p5.root'
-T6ttWW_2.expExclusion.dataUrl ='https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13013/ModelB1_x0p5.root'
-T6ttWW_2.expExclusionM1.dataUrl ='https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13013/ModelB1_x0p5.root'
-T6ttWW_2.expExclusionP1.dataUrl ='https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13013/ModelB1_x0p5.root'
-
+T6ttWW_2.setSources(dataLabels= ['expExclusion', 'expExclusionM1', 'expExclusionP1', 'expectedUpperLimits', 'obsExclusion', 'obsExclusionM1', 'obsExclusionP1', 'upperLimits'],
+                 dataFiles= ['orig/ModelB1_x0p5.root', 'orig/ModelB1_x0p5.root', 'orig/ModelB1_x0p5.root', 'orig/ModelB1_x0p5.root', 'orig/ModelB1_x0p5.root', 'orig/ModelB1_x0p5.root', 'orig/ModelB1_x0p5.root', 'orig/ModelB1_x0p5.root'],
+                 dataFormats= ['root', 'root', 'root', 'root', 'root', 'root', 'root', 'root'],objectNames= ['graph_smoothed_Exp', 'graph_smoothed_ExpM', 'graph_smoothed_ExpP', 'expectedUL', 'graph_smoothed_Obs', 'graph_smoothed_ObsM', 'graph_smoothed_ObsP', 'observedUL'],units= [None, None, None, 'fb', None, None, None, 'fb'])
+T6ttWWoff.addMassPlane(T6ttWW_2)
 #+++++++ next mass plane block ++++++++++++++
-T6ttWW_3 = T6ttWW.addMassPlane(motherMass = x, interMass0 = y/(0.8), lspMass = y)
-#T6ttWW_3.setBranch_2(motherMass = , interMass0 = , lspMass = )
-#----figure----
-#T6ttWW_3.figure = 'No Fig'
-#T6ttWW_3.figureUrl =''
-#----limit source----
-T6ttWW_3.obsUpperLimit.setSource( 'orig/ModelB1_x0p8.root', 'root', objectName = 'observedUL', index = None)
-T6ttWW_3.expUpperLimit.setSource( 'orig/ModelB1_x0p8.root', 'root', objectName = 'expectedUL', index = None  )
-T6ttWW_3.obsUpperLimit.unit = 'fb'
-T6ttWW_3.expUpperLimit.unit = 'fb'
-#----exclusion source----
-T6ttWW_3.obsExclusion.setSource( 'orig/ModelB1_x0p8.root', 'root', objectName = 'graph_smoothed_Obs', index = None )
-T6ttWW_3.obsExclusionM1.setSource( 'orig/ModelB1_x0p8.root', 'root',  objectName = 'graph_smoothed_ObsM', index = None)
-T6ttWW_3.obsExclusionP1.setSource( 'orig/ModelB1_x0p8.root', 'root', objectName = 'graph_smoothed_ObsP', index = None )
-T6ttWW_3.expExclusion.setSource( 'orig/ModelB1_x0p8.root', 'root', objectName = 'graph_smoothed_Exp', index = None  )
-T6ttWW_3.expExclusionM1.setSource( 'orig/ModelB1_x0p8.root', 'root', objectName = 'graph_smoothed_ExpM', index = None)
-T6ttWW_3.expExclusionP1.setSource( 'orig/ModelB1_x0p8.root', 'root', objectName = 'graph_smoothed_ExpP', index = None)
-#----global url settings ----
+T6ttWW_3 = T6ttWW.addMassPlane(2*[[x, y/(0.8), y]])
 T6ttWW_3.dataUrl = 'https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS13013'
-#----limit url settings ----
 T6ttWW_3.histoDataUrl =  'https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13013/ModelB1_x0p8.root'
-T6ttWW_3.obsUpperLimit.dataUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13013/ModelB1_x0p8.root'
-T6ttWW_3.expUpperLimit.dataUrl ='https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13013/ModelB1_x0p8.root'
-#----exclusion url settings ----
+T6ttWW_3.dataUrl = 'https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13013/ModelB1_x0p8.root'
 T6ttWW_3.exclusionDataUrl ='https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13013/ModelB1_x0p8.root'
-T6ttWW_3.obsExclusion.dataUrl ='https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13013/ModelB1_x0p8.root'
-T6ttWW_3.obsExclusionM1.dataUrl ='https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13013/ModelB1_x0p8.root'
-T6ttWW_3.obsExclusionP1.dataUrl ='https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13013/ModelB1_x0p8.root'
-T6ttWW_3.expExclusion.dataUrl ='https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13013/ModelB1_x0p8.root'
-T6ttWW_3.expExclusionM1.dataUrl ='https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13013/ModelB1_x0p8.root'
-T6ttWW_3.expExclusionP1.dataUrl ='https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13013/ModelB1_x0p8.root'
+T6ttWW_3.setSources(dataLabels= ['expExclusion', 'expExclusionM1', 'expExclusionP1', 'expectedUpperLimits', 'obsExclusion', 'obsExclusionM1', 'obsExclusionP1', 'upperLimits'],
+                 dataFiles= ['orig/ModelB1_x0p8.root', 'orig/ModelB1_x0p8.root', 'orig/ModelB1_x0p8.root', 'orig/ModelB1_x0p8.root', 'orig/ModelB1_x0p8.root', 'orig/ModelB1_x0p8.root', 'orig/ModelB1_x0p8.root', 'orig/ModelB1_x0p8.root'],
+                 dataFormats= ['root', 'root', 'root', 'root', 'root', 'root', 'root', 'root'],objectNames= ['graph_smoothed_Exp', 'graph_smoothed_ExpM', 'graph_smoothed_ExpP', 'expectedUL', 'graph_smoothed_Obs', 'graph_smoothed_ObsM', 'graph_smoothed_ObsP', 'observedUL'],units= [None, None, None, 'fb', None, None, None, 'fb'])
+T6ttWWoff.addMassPlane(T6ttWW_3)
+
+
 
 databaseCreator.create()

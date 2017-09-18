@@ -8,13 +8,15 @@
 import sys
 import os
 import argparse
-import types
 
 argparser = argparse.ArgumentParser(description =  
 'create info.txt, txname.txt, twiki.txt and sms.py')
 argparser.add_argument ('-utilsPath', '--utilsPath', 
 help = 'path to the package smodels_utils',\
-type = types.StringType)
+type = str )
+argparser.add_argument ('-smodelsPath', '--smodelsPath', 
+help = 'path to the package smodels_utils',\
+type = str )
 args = argparser.parse_args()
 
 if args.utilsPath:
@@ -24,11 +26,15 @@ else:
     sys.path.append(os.path.abspath(databaseRoot))
     from utilsPath import utilsPath
     utilsPath = databaseRoot + utilsPath
+if args.smodelsPath:
+    sys.path.append(os.path.abspath(args.smodelsPath))
 
 sys.path.append(os.path.abspath(utilsPath))
-from smodels_utils.dataPreparation.inputObjects import TxNameInput, MetaInfoInput
+from smodels_utils.dataPreparation.inputObjects import MetaInfoInput,DataSetInput
 from smodels_utils.dataPreparation.databaseCreation import databaseCreator
-from smodels_utils.dataPreparation.origPlotObjects import x, y
+from smodels_utils.dataPreparation.massPlaneObjects import x, y, z
+
+
 
 #+++++++ global info block ++++++++++++++
 info = MetaInfoInput('ATLAS-SUSY-2013-08')
@@ -41,49 +47,29 @@ info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-08/'
 info.supersededBy = ""
 info.arxiv = 'http://arxiv.org/abs/1403.5222'
 info.contact = "ATLAS collaboration"
-info.prettyName = 'ATLAS heavy stop'
+info.prettyName = 'Z + b-jets + Etmiss'
 info.supersedes = 'ATLAS-CONF-2013-025'
 
-#+++++++ next txName block ++++++++++++++
-T6ZZtt = TxNameInput('T6ZZtt')
-#T6ZZtt.on.checked = 
-#T6ZZtt.off.checked =
-T6ZZtt.on.constraint ="[[['Z'],['t']],[['Z'],['t']]]"
-#T6ZZtt.off.constraint = None
-T6ZZtt.on.conditionDescription ="None"
-#T6ZZtt.off.conditionDescription =
-T6ZZtt.on.condition ="None"
-#T6ZZtt.off.condition =
 
+#+++++++ dataset block ++++++++++++++
+dataset = DataSetInput('data')
+dataset.setInfo(dataType = 'upperLimit', dataId = None)
+
+#+++++++ next txName block ++++++++++++++
+T6ZZtt = dataset.addTxName('T6ZZtt')
+T6ZZtt.constraint ="[[['Z'],['t']],[['Z'],['t']]]"
+T6ZZtt.conditionDescription ="None"
+T6ZZtt.condition ="None"
+T6ZZtt.source = "ATLAS"
 #+++++++ next mass plane block ++++++++++++++
-T6ZZttD180 = T6ZZtt.addMassPlane(motherMass = x, interMass0 = y + 180.0, lspMass = y)
-#----limit source----
-T6ZZttD180.obsUpperLimit.setSource( "orig/limit_T6ZZtt.txt" , "txt", objectName = None, index = None )
-T6ZZttD180.obsUpperLimit.unit = 'fb'
-#T6ZZttD180.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
-#----exclusion source----
-T6ZZttD180.obsExclusion.setSource( "orig/exclusion_T6ZZtt.txt", "txt", objectName = None, index = None )
-T6ZZttD180.obsExclusionM1.setSource( "orig/exclusionm1_T6ZZtt.txt", "txt", objectName = None, index = None )
-T6ZZttD180.obsExclusionP1.setSource( "orig/exclusionp1_T6ZZtt.txt", "txt", objectName = None, index = None )
-T6ZZttD180.expExclusion.setSource( "orig/expectexclusion_T6ZZtt.txt", "txt", objectName = None, index = None )
-T6ZZttD180.expExclusionM1.setSource( "orig/expectexclusionm1_T6ZZtt.txt", "txt", objectName = None, index = None )
-T6ZZttD180.expExclusionP1.setSource( "orig/expectexclusionp1_T6ttZZ.txt", "txt", objectName = None, index = None )
-#----global url settings ----
-# T6ZZttD180.dataUrl = ""
-# T6ZZttD180.histoDataUrl =
-# T6ZZttD180.exclusionDataUrl =
-#----figure----
+T6ZZttD180 = T6ZZtt.addMassPlane(2*[[x, y+180.0, y]])
 T6ZZttD180.figure = "Fig 6"
 T6ZZttD180.figureUrl = "https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-08/figaux_06.png"
-##----limit url settings ----
-#T6ZZttD180.obsUpperLimit.dataUrl =
-#T6ZZttD180.expUpperLimit.dataUrl =
-##----exclusion url settings ----
-#T6ZZttD180.obsExclusion.dataUrl = 
-#T6ZZttD180.obsExclusionM1.dataUrl =
-#T6ZZttD180.obsExclusionP1.dataUrl =
-#T6ZZttD180.expExclusion.dataUrl =
-#T6ZZttD180.expExclusionM1.dataUrl =
-#T6ZZttD180.expExclusionP1.dataUrl =
+T6ZZttD180.dataUrl = 'Not defined'
+T6ZZttD180.setSources(dataLabels= ['expExclusion', 'expExclusionM1', 'expExclusionP1', 'obsExclusion', 'obsExclusionM1', 'obsExclusionP1', 'upperLimits'],
+                 dataFiles= ['orig/expectexclusion_T6ZZtt.txt', 'orig/expectexclusionm1_T6ZZtt.txt', 'orig/expectexclusionp1_T6ttZZ.txt', 'orig/exclusion_T6ZZtt.txt', 'orig/exclusionm1_T6ZZtt.txt', 'orig/exclusionp1_T6ZZtt.txt', 'orig/limit_T6ZZtt.txt'],
+                 dataFormats= ['txt', 'txt', 'txt', 'txt', 'txt', 'txt', 'txt'],units= [None, None, None, None, None, None, 'fb'])
+
+
 
 databaseCreator.create()

@@ -1,7 +1,7 @@
 id: ATLAS-SUSY-2013-19
 sqrts: 8.0*TeV
 lumi: 20.3/fb
-prettyName: ATLAS stop dilepton
+prettyName: 2 OS leptons + (b-)jets + Etmiss (leptonic/hadronic MT2)
 url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-19/
 arxiv: http://arxiv.org/abs/1403.4853
 publication: http://link.springer.com/article/10.1007/JHEP06(2014)124

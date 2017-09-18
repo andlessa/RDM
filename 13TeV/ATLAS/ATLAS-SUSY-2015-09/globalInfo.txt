@@ -1,7 +1,7 @@
 id: ATLAS-SUSY-2015-09
 sqrts: 13*TeV
 lumi: 3.2/fb
-prettyName: 2 SS or 3 lep
+prettyName: jets + 2 SS leptons or >=3 leptons
 url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2015-09/
 arxiv: http://arxiv.org/abs/1602.09058
 private: False

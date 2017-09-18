@@ -14,10 +14,10 @@ argparser = argparse.ArgumentParser(description =
 'create info.txt, txname.txt, twiki.txt and sms.py')
 argparser.add_argument ('-utilsPath', '--utilsPath', 
 help = 'path to the package smodels_utils',\
-type = types.StringType)
+type = str )
 argparser.add_argument ('-smodelsPath', '--smodelsPath', 
 help = 'path to the package smodels_utils',\
-type = types.StringType)
+type = str )
 args = argparser.parse_args()
 
 if args.utilsPath:
@@ -30,275 +30,626 @@ else:
 if args.smodelsPath:
     sys.path.append(os.path.abspath(args.smodelsPath))
 
-
 sys.path.append(os.path.abspath(utilsPath))
-from smodels_utils.dataPreparation.inputObjects import TxNameInput, MetaInfoInput
+from smodels_utils.dataPreparation.inputObjects import MetaInfoInput,DataSetInput
 from smodels_utils.dataPreparation.databaseCreation import databaseCreator
-from smodels_utils.dataPreparation.origPlotObjects import x, y
+from smodels_utils.dataPreparation.massPlaneObjects import x, y, z
+
+
 
 #+++++++ global info block ++++++++++++++
 info = MetaInfoInput('CMS-SUS-12-024')
-#info.comment = 
 info.sqrts = '8.0'
 info.private = False
 info.lumi = '19.4'
 info.publication = 'http://www.sciencedirect.com/science/article/pii/S0370269313005339'
 info.url = 'https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS12024'
-#info.superseded_by = 
 info.arxiv = 'http://arxiv.org/abs/1305.2390'
 info.contact = 'Keith Ulmer <keith.ulmer@cern.ch>, Josh Thompson <joshua.thompson@cern.ch>, Alessandro Gaz <alessandro.gaz@cern.ch>'
-info.prettyName = '\slash{E}_{T}+b'
-# info.supersedes = 
+info.prettyName = '0 leptons + >= 3 (1b-)jets + Etmiss'
 
+
+
+
+#+++++++ dataset block ++++++++++++++
+dataset = DataSetInput("MET3_HT3_nb3")
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "MET3_HT3_nb3", observedN = 6, expectedBG = 5.9 , bgError = 1.9, upperLimit = '3.9702E-01*fb', expectedUpperLimit = '3.5007E-01*fb')
 #+++++++ next txName block ++++++++++++++
-T1bbbb = TxNameInput('T1bbbb')
-T1bbbb.on.checked ="AL"
-#T1bbbb.off.checked =
-T1bbbb.on.constraint ="[[['b','b']],[['b','b']]]"
-#T1bbbb.off.constraint =
-T1bbbb.on.conditionDescription ="None"
-#T1bbbb.off.condition =
-T1bbbb.on.condition ="None"
-#T1bbbb.off.fuzzycondition =
-
+T1bbbb = dataset.addTxName('T1bbbb')
+T1bbbb.checked ="AL"
+T1bbbb.constraint ="[[['b','b']],[['b','b']]]"
+T1bbbb.conditionDescription ="None"
+T1bbbb.condition ="None"
+T1bbbb.source = 'CMS'
 #+++++++ next mass plane block ++++++++++++++
-T1bbbb = T1bbbb.addMassPlane(motherMass = x, lspMass = y)
-#----limit source----
-T1bbbb.efficiencyMap.setSource( "orig/efficiency_T1bbbb_multi.root", "root", objectName = "heff_MET2_HT1_nb3", index = None, dataset="MET2_HT1_nb3" )
-T1bbbb.efficiencyMap.setStatistics ( observedN=161, expectedBG=157, bgError=13 )
-## T1bbbb.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
-#----exclusion source----
-T1bbbb.obsExclusion.setSource( "orig/graph_smoothed_Obs_T1bbbb.root", "root", objectName = "graph_smoothed_Obs_T1bbbb", index = None )
-#T1bbbb.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
-#T1bbbb.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
-#T1bbbb.expExclusion.setSource( path, filetype, objectName = None, index = None )
-#T1bbbb.expExclusionM1.setSource( path, filetype, objectName = None, index = None )
-#T1bbbb.expExclusionP1.setSource( path, filetype, objectName = None, index = None )
-#----global url settings ----
-#T1bbbb.dataUrl =
-#T1bbbb.histoDataUrl =
-#T1bbbb.exclusionDataUrl =
-#----figure----
+T1bbbb = T1bbbb.addMassPlane([[x,y]]*2)
+T1bbbb.addSource('efficiencyMap', "orig/efficiency_T1bbbb_multi.root", "root", objectName = "heff_MET3_HT3_nb3")
+T1bbbb.addSource('obsExclusion',"orig/graph_smoothed_Obs_T1bbbb.root", "root", objectName = "graph_smoothed_Obs_T1bbbb")
 T1bbbb.figure = "Fig 7 (left)"
 T1bbbb.figureUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12024/T1bbbb_exclusions_corrected.pdf"
-#----limit url settings ----
-T1bbbb.efficiencyMap.dataUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12024/efficiency_T1bbbb_multi.root"
-#T1bbbb.expUpperLimit.dataUrl =
-#----exclusion url settings ----
-T1bbbb.obsExclusion.dataUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12024/T1bbbb_exclusions_corrected.C"
-#T1bbbb.obsExclusionM1.dataUrl =
-#T1bbbb.obsExclusionP1.dataUrl =
-#T1bbbb.expExclusion.dataUrl =
-#T1bbbb.expExclusionM1.dataUrl =
-#T1bbbb.expExclusionP1.dataUrl =
-
+T1bbbb.dataUrl  = None
 # +++++++ next txName block ++++++++++++++
-T1tttt = TxNameInput('T1tttt')
-T1tttt.on.checked ="AL"
-T1tttt.off.checked ="AL"
-T1tttt.on.constraint ="[[['t','t']],[['t','t']]]"
-T1tttt.off.constraint ="[[['b','b','W','W']],[['b','b','W','W']]]"
-T1tttt.on.conditionDescription ="None"
-T1tttt.off.conditionDescription ="None"
-T1tttt.on.condition ="None"
-T1tttt.off.condition ="None"
-
-#+++++++ next mass plane block ++++++++++++++
-T1tttt = T1tttt.addMassPlane(motherMass = x, lspMass = y)
-#----limit source----
-# T1tttt.obsUpperLimit.setSource( "orig/T1tttt_exclusion_corrected.C", "cMacro", objectName = "hXsec_obs_final", index = None )
-T1tttt.efficiencyMap.setSource( "orig/efficiency_T1tttt_multi.root", "root", objectName = "heff_MET2_HT1_nb3", index = None, dataset="MET2_HT1_nb3" )
-T1tttt.efficiencyMap.setStatistics ( observedN=161, expectedBG=157, bgError=13 )
-# T1tttt.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
-#----exclusion source----
-T1tttt.obsExclusion.setSource( "orig/graph_smoothed_Obs_T1tttt.root", "root", objectName = "graph_smoothed_Obs_T1tttt", index = None )
-#T1tttt.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
-#T1tttt.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
-#T1tttt.expExclusion.setSource( path, filetype, objectName = None, index = None )
-#T1tttt.expExclusionM1.setSource( path, filetype, objectName = None, index = None )
-#T1tttt.expExclusionP1.setSource( path, filetype, objectName = None, index = None )
-#----global url settings ----
-#T1tttt.dataUrl =
-#T1tttt.histoDataUrl =
-#T1tttt.exclusionDataUrl =
-#----figure----
-T1tttt.figure = "Fig 7 (right)"
-T1tttt.figureUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12024/T1tttt_exclusions_corrected.pdf"
-#----limit url settings ----
-T1tttt.obsUpperLimit.dataUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12024/T1tttt_exclusion_corrected.C"
-# T1tttt.expUpperLimit.dataUrl =
-#----exclusion url settings ----
-T1tttt.obsExclusion.dataUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12024/T1tttt_exclusion_corrected.C"
-#T1tttt.obsExclusionM1.dataUrl =
-#T1tttt.obsExclusionP1.dataUrl =
-#T1tttt.expExclusion.dataUrl =
-#T1tttt.expExclusionM1.dataUrl =
-#T1tttt.expExclusionP1.dataUrl =
-
-"""
+T1tttt = dataset.addTxName('T1tttt')
+T1tttt.checked ="AL"
+T1tttt.constraint ="[[['t','t']],[['t','t']]]"
+T1tttt.conditionDescription ="None"
+T1tttt.condition ="None"
+T1tttt.massConstraint = None
+T1tttt.source = 'CMS'
 #+++++++ next txName block ++++++++++++++
-T5tttt = TxNameInput('T5tttt')
-T5tttt.on.checked ="AL"
-T5tttt.off.checked =
-T5tttt.on.constraint ="[[['t'],['t']],[['t'],['t']]]"
-T5tttt.off.constraint =
-T5tttt.on.condition ="None"
-T5tttt.off.condition =
-T5tttt.on.fuzzycondition ="None"
-T5tttt.off.fuzzycondition =
-
+T1ttttoff = dataset.addTxName('T1ttttoff')
+T1ttttoff.checked ="AL"
+T1ttttoff.constraint ="[[['b','b','W','W']],[['b','b','W','W']]]"
+T1ttttoff.condition ="None"
+T1ttttoff.conditionDescription ="None"
+T1ttttoff.massConstraint = [['dm <= 338.']]*2
+T1ttttoff.source = 'CMS'
 #+++++++ next mass plane block ++++++++++++++
-T5ttttM11000 = T5tttt.addMassPlane(motherMass = 1000.0, interMass0 = x, lspMass = y)
-#----limit source----
-T5ttttM11000.obsUpperLimit.setSource( path, filetype, objectName = None, index = None )
-T5ttttM11000.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
-#----exclusion source----
-T5ttttM11000.obsExclusion.setSource( path, filetype, objectName = None, index = None )
-T5ttttM11000.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
-T5ttttM11000.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
-T5ttttM11000.expExclusion.setSource( path, filetype, objectName = None, index = None )
-T5ttttM11000.expExclusionM1.setSource( path, filetype, objectName = None, index = None )
-T5ttttM11000.expExclusionP1.setSource( path, filetype, objectName = None, index = None )
-#----global url settings ----
-T5ttttM11000.dataUrl =
-T5ttttM11000.histoDataUrl =
-T5ttttM11000.exclusionDataUrl =
-#----figure----
-T5ttttM11000.figure =
-T5ttttM11000.figureUrl =
-#----limit url settings ----
-T5ttttM11000.obsUpperLimit.dataUrl =
-T5ttttM11000.expUpperLimit.dataUrl =
-#----exclusion url settings ----
-T5ttttM11000.obsExclusion.dataUrl =
-T5ttttM11000.obsExclusionM1.dataUrl =
-T5ttttM11000.obsExclusionP1.dataUrl =
-T5ttttM11000.expExclusion.dataUrl =
-T5ttttM11000.expExclusionM1.dataUrl =
-T5ttttM11000.expExclusionP1.dataUrl =
+T1tttt = T1tttt.addMassPlane([[x,y]]*2)
+T1tttt.addSource('efficiencyMap',"orig/efficiency_T1tttt_multi.root", "root", objectName = "heff_MET3_HT3_nb3")
+T1tttt.addSource('obsExclusion',"orig/graph_smoothed_Obs_T1tttt.root", "root", objectName = "graph_smoothed_Obs_T1tttt")
+T1tttt.figure = "Fig 7 (right)"
+T1tttt.figureUrl =  "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12024/T1tttt_exclusions_corrected.pdf"
+T1tttt.dataUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12024"
+T1ttttoff.addMassPlane(T1tttt)
 
+
+#+++++++ dataset block ++++++++++++++
+dataset = DataSetInput("MET4_HT3_nb2")
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "MET4_HT3_nb2", observedN = 19, expectedBG = 20.7 , bgError = 3.2, upperLimit = '5.7300E-01*fb', expectedUpperLimit = '6.1033E-01*fb')
+#+++++++ next txName block ++++++++++++++
+T1bbbb = dataset.addTxName('T1bbbb')
+T1bbbb.checked ="AL"
+T1bbbb.constraint ="[[['b','b']],[['b','b']]]"
+T1bbbb.conditionDescription ="None"
+T1bbbb.condition ="None"
+T1bbbb.source = 'CMS'
 #+++++++ next mass plane block ++++++++++++++
-T5ttttLSP050 = T5tttt.addMassPlane(motherMass = x, interMass0 = y, lspMass = 50.0)
-#----limit source----
-T5ttttLSP050.obsUpperLimit.setSource( path, filetype, objectName = None, index = None )
-T5ttttLSP050.expUpperlimit.setSource( path, filetype, objectName = None, index = None )
-#----exclusion source----
-T5ttttLSP050.obsExclusion.setSource( path, filetype, objectName = None, index = None )
-T5ttttLSP050.obsExclusionM1.setSource( path, filetype, objectName = None, index = None )
-T5ttttLSP050.obsExclusionP1.setSource( path, filetype, objectName = None, index = None )
-T5ttttLSP050.expExclusion.setSource( path, filetype, objectName = None, index = None )
-T5ttttLSP050.expExclusionM1.setSource( path, filetype, objectName = None, index = None )
-T5ttttLSP050.expExclusionP1.setSource( path, filetype, objectName = None, index = None )
-#----global url settings ----
-T5ttttLSP050.dataUrl =
-T5ttttLSP050.histoDataUrl =
-T5ttttLSP050.exclusionDataUrl =
-#----figure----
-T5ttttLSP050.figure =
-T5ttttLSP050.figureUrl =
-#----limit url settings ----
-T5ttttLSP050.obsUpperLimit.dataUrl =
-T5ttttLSP050.expUpperLimit.dataUrl =
-#----exclusion url settings ----
-T5ttttLSP050.obsExclusion.dataUrl =
-T5ttttLSP050.obsExclusionM1.dataUrl =
-T5ttttLSP050.obsExclusionP1.dataUrl =
-T5ttttLSP050.expExclusion.dataUrl =
-T5ttttLSP050.expExclusionM1.dataUrl =
-T5ttttLSP050.expExclusionP1.dataUrl =
-"""
+T1bbbb = T1bbbb.addMassPlane([[x,y]]*2)
+T1bbbb.addSource('efficiencyMap', "orig/efficiency_T1bbbb_multi.root", "root", objectName = "heff_MET4_HT3_nb2")
+T1bbbb.addSource('obsExclusion',"orig/graph_smoothed_Obs_T1bbbb.root", "root", objectName = "graph_smoothed_Obs_T1bbbb")
+T1bbbb.figure = "Fig 7 (left)"
+T1bbbb.figureUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12024/T1bbbb_exclusions_corrected.pdf"
+T1bbbb.dataUrl  = None
+# +++++++ next txName block ++++++++++++++
+T1tttt = dataset.addTxName('T1tttt')
+T1tttt.checked ="AL"
+T1tttt.constraint ="[[['t','t']],[['t','t']]]"
+T1tttt.conditionDescription ="None"
+T1tttt.condition ="None"
+T1tttt.massConstraint = None
+T1tttt.source = 'CMS'
+#+++++++ next txName block ++++++++++++++
+T1ttttoff = dataset.addTxName('T1ttttoff')
+T1ttttoff.checked ="AL"
+T1ttttoff.constraint ="[[['b','b','W','W']],[['b','b','W','W']]]"
+T1ttttoff.condition ="None"
+T1ttttoff.conditionDescription ="None"
+T1ttttoff.massConstraint = [['dm <= 338.']]*2
+T1ttttoff.source = 'CMS'
+#+++++++ next mass plane block ++++++++++++++
+T1tttt = T1tttt.addMassPlane([[x,y]]*2)
+T1tttt.addSource('efficiencyMap',"orig/efficiency_T1tttt_multi.root", "root", objectName = "heff_MET4_HT3_nb2")
+T1tttt.addSource('obsExclusion',"orig/graph_smoothed_Obs_T1tttt.root", "root", objectName = "graph_smoothed_Obs_T1tttt")
+T1tttt.figure = "Fig 7 (right)"
+T1tttt.figureUrl =  "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12024/T1tttt_exclusions_corrected.pdf"
+T1tttt.dataUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12024"
+T1ttttoff.addMassPlane(T1tttt)
+
+
+#+++++++ dataset block ++++++++++++++
+dataset = DataSetInput("MET2_HT2_nb3")
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "MET2_HT2_nb3", observedN = 182, expectedBG = 179 , bgError = 13, upperLimit = '2.0613E+00*fb', expectedUpperLimit = '1.9515E+00*fb')
+#+++++++ next txName block ++++++++++++++
+T1bbbb = dataset.addTxName('T1bbbb')
+T1bbbb.checked ="AL"
+T1bbbb.constraint ="[[['b','b']],[['b','b']]]"
+T1bbbb.conditionDescription ="None"
+T1bbbb.condition ="None"
+T1bbbb.source = 'CMS'
+#+++++++ next mass plane block ++++++++++++++
+T1bbbb = T1bbbb.addMassPlane([[x,y]]*2)
+T1bbbb.addSource('efficiencyMap', "orig/efficiency_T1bbbb_multi.root", "root", objectName = "heff_MET2_HT2_nb3")
+T1bbbb.addSource('obsExclusion',"orig/graph_smoothed_Obs_T1bbbb.root", "root", objectName = "graph_smoothed_Obs_T1bbbb")
+T1bbbb.figure = "Fig 7 (left)"
+T1bbbb.figureUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12024/T1bbbb_exclusions_corrected.pdf"
+T1bbbb.dataUrl  = None
+# +++++++ next txName block ++++++++++++++
+T1tttt = dataset.addTxName('T1tttt')
+T1tttt.checked ="AL"
+T1tttt.constraint ="[[['t','t']],[['t','t']]]"
+T1tttt.conditionDescription ="None"
+T1tttt.condition ="None"
+T1tttt.massConstraint = None
+T1tttt.source = 'CMS'
+#+++++++ next txName block ++++++++++++++
+T1ttttoff = dataset.addTxName('T1ttttoff')
+T1ttttoff.checked ="AL"
+T1ttttoff.constraint ="[[['b','b','W','W']],[['b','b','W','W']]]"
+T1ttttoff.condition ="None"
+T1ttttoff.conditionDescription ="None"
+T1ttttoff.massConstraint = [['dm <= 338.']]*2
+T1ttttoff.source = 'CMS'
+#+++++++ next mass plane block ++++++++++++++
+T1tttt = T1tttt.addMassPlane([[x,y]]*2)
+T1tttt.addSource('efficiencyMap',"orig/efficiency_T1tttt_multi.root", "root", objectName = "heff_MET2_HT2_nb3")
+T1tttt.addSource('obsExclusion',"orig/graph_smoothed_Obs_T1tttt.root", "root", objectName = "graph_smoothed_Obs_T1tttt")
+T1tttt.figure = "Fig 7 (right)"
+T1tttt.figureUrl =  "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12024/T1tttt_exclusions_corrected.pdf"
+T1tttt.dataUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12024"
+T1ttttoff.addMassPlane(T1tttt)
+
+
+#+++++++ dataset block ++++++++++++++
+dataset = DataSetInput("MET2_HT1_nb3")
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "MET2_HT1_nb3", observedN = 161, expectedBG = 157 , bgError = 13, upperLimit = '2.0431E+00*fb', expectedUpperLimit = '1.8875E+00*fb')
+#+++++++ next txName block ++++++++++++++
+T1bbbb = dataset.addTxName('T1bbbb')
+T1bbbb.checked ="AL"
+T1bbbb.constraint ="[[['b','b']],[['b','b']]]"
+T1bbbb.conditionDescription ="None"
+T1bbbb.condition ="None"
+T1bbbb.source = 'CMS'
+#+++++++ next mass plane block ++++++++++++++
+T1bbbb = T1bbbb.addMassPlane([[x,y]]*2)
+T1bbbb.addSource('efficiencyMap', "orig/efficiency_T1bbbb_multi.root", "root", objectName = "heff_MET2_HT1_nb3")
+T1bbbb.addSource('obsExclusion',"orig/graph_smoothed_Obs_T1bbbb.root", "root", objectName = "graph_smoothed_Obs_T1bbbb")
+T1bbbb.figure = "Fig 7 (left)"
+T1bbbb.figureUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12024/T1bbbb_exclusions_corrected.pdf"
+T1bbbb.dataUrl  = None
+# +++++++ next txName block ++++++++++++++
+T1tttt = dataset.addTxName('T1tttt')
+T1tttt.checked ="AL"
+T1tttt.constraint ="[[['t','t']],[['t','t']]]"
+T1tttt.conditionDescription ="None"
+T1tttt.condition ="None"
+T1tttt.massConstraint = None
+T1tttt.source = 'CMS'
+#+++++++ next txName block ++++++++++++++
+T1ttttoff = dataset.addTxName('T1ttttoff')
+T1ttttoff.checked ="AL"
+T1ttttoff.constraint ="[[['b','b','W','W']],[['b','b','W','W']]]"
+T1ttttoff.condition ="None"
+T1ttttoff.conditionDescription ="None"
+T1ttttoff.massConstraint = [['dm <= 338.']]*2
+T1ttttoff.source = 'CMS'
+#+++++++ next mass plane block ++++++++++++++
+T1tttt = T1tttt.addMassPlane([[x,y]]*2)
+T1tttt.addSource('efficiencyMap',"orig/efficiency_T1tttt_multi.root", "root", objectName = "heff_MET2_HT1_nb3")
+T1tttt.addSource('obsExclusion',"orig/graph_smoothed_Obs_T1tttt.root", "root", objectName = "graph_smoothed_Obs_T1tttt")
+T1tttt.figure = "Fig 7 (right)"
+T1tttt.figureUrl =  "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12024/T1tttt_exclusions_corrected.pdf"
+T1tttt.dataUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12024"
+T1ttttoff.addMassPlane(T1tttt)
+
+
+#+++++++ dataset block ++++++++++++++
+dataset = DataSetInput("MET4_HT2_nb3")
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "MET4_HT2_nb3", observedN = 8, expectedBG = 8.4 , bgError = 2.1, upperLimit = '4.2514E-01*fb', expectedUpperLimit = '4.2430E-01*fb')
+#+++++++ next txName block ++++++++++++++
+T1bbbb = dataset.addTxName('T1bbbb')
+T1bbbb.checked ="AL"
+T1bbbb.constraint ="[[['b','b']],[['b','b']]]"
+T1bbbb.conditionDescription ="None"
+T1bbbb.condition ="None"
+T1bbbb.source = 'CMS'
+#+++++++ next mass plane block ++++++++++++++
+T1bbbb = T1bbbb.addMassPlane([[x,y]]*2)
+T1bbbb.addSource('efficiencyMap', "orig/efficiency_T1bbbb_multi.root", "root", objectName = "heff_MET4_HT2_nb3")
+T1bbbb.addSource('obsExclusion',"orig/graph_smoothed_Obs_T1bbbb.root", "root", objectName = "graph_smoothed_Obs_T1bbbb")
+T1bbbb.figure = "Fig 7 (left)"
+T1bbbb.figureUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12024/T1bbbb_exclusions_corrected.pdf"
+T1bbbb.dataUrl  = None
+# +++++++ next txName block ++++++++++++++
+T1tttt = dataset.addTxName('T1tttt')
+T1tttt.checked ="AL"
+T1tttt.constraint ="[[['t','t']],[['t','t']]]"
+T1tttt.conditionDescription ="None"
+T1tttt.condition ="None"
+T1tttt.massConstraint = None
+T1tttt.source = 'CMS'
+#+++++++ next txName block ++++++++++++++
+T1ttttoff = dataset.addTxName('T1ttttoff')
+T1ttttoff.checked ="AL"
+T1ttttoff.constraint ="[[['b','b','W','W']],[['b','b','W','W']]]"
+T1ttttoff.condition ="None"
+T1ttttoff.conditionDescription ="None"
+T1ttttoff.massConstraint = [['dm <= 338.']]*2
+T1ttttoff.source = 'CMS'
+#+++++++ next mass plane block ++++++++++++++
+T1tttt = T1tttt.addMassPlane([[x,y]]*2)
+T1tttt.addSource('efficiencyMap',"orig/efficiency_T1tttt_multi.root", "root", objectName = "heff_MET4_HT2_nb3")
+T1tttt.addSource('obsExclusion',"orig/graph_smoothed_Obs_T1tttt.root", "root", objectName = "graph_smoothed_Obs_T1tttt")
+T1tttt.figure = "Fig 7 (right)"
+T1tttt.figureUrl =  "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12024/T1tttt_exclusions_corrected.pdf"
+T1tttt.dataUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12024"
+T1ttttoff.addMassPlane(T1tttt)
+
+
+#+++++++ dataset block ++++++++++++++
+dataset = DataSetInput("MET4_HT4_nb2")
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "MET4_HT4_nb2", observedN = 19, expectedBG = 19.0 , bgError = 3.2, upperLimit = '6.2027E-01*fb', expectedUpperLimit = '6.2027E-01*fb')
+#+++++++ next txName block ++++++++++++++
+T1bbbb = dataset.addTxName('T1bbbb')
+T1bbbb.checked ="AL"
+T1bbbb.constraint ="[[['b','b']],[['b','b']]]"
+T1bbbb.conditionDescription ="None"
+T1bbbb.condition ="None"
+T1bbbb.source = 'CMS'
+#+++++++ next mass plane block ++++++++++++++
+T1bbbb = T1bbbb.addMassPlane([[x,y]]*2)
+T1bbbb.addSource('efficiencyMap', "orig/efficiency_T1bbbb_multi.root", "root", objectName = "heff_MET4_HT4_nb2")
+T1bbbb.addSource('obsExclusion',"orig/graph_smoothed_Obs_T1bbbb.root", "root", objectName = "graph_smoothed_Obs_T1bbbb")
+T1bbbb.figure = "Fig 7 (left)"
+T1bbbb.figureUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12024/T1bbbb_exclusions_corrected.pdf"
+T1bbbb.dataUrl  = None
+# +++++++ next txName block ++++++++++++++
+T1tttt = dataset.addTxName('T1tttt')
+T1tttt.checked ="AL"
+T1tttt.constraint ="[[['t','t']],[['t','t']]]"
+T1tttt.conditionDescription ="None"
+T1tttt.condition ="None"
+T1tttt.massConstraint = None
+T1tttt.source = 'CMS'
+#+++++++ next txName block ++++++++++++++
+T1ttttoff = dataset.addTxName('T1ttttoff')
+T1ttttoff.checked ="AL"
+T1ttttoff.constraint ="[[['b','b','W','W']],[['b','b','W','W']]]"
+T1ttttoff.condition ="None"
+T1ttttoff.conditionDescription ="None"
+T1ttttoff.massConstraint = [['dm <= 338.']]*2
+T1ttttoff.source = 'CMS'
+#+++++++ next mass plane block ++++++++++++++
+T1tttt = T1tttt.addMassPlane([[x,y]]*2)
+T1tttt.addSource('efficiencyMap',"orig/efficiency_T1tttt_multi.root", "root", objectName = "heff_MET4_HT4_nb2")
+T1tttt.addSource('obsExclusion',"orig/graph_smoothed_Obs_T1tttt.root", "root", objectName = "graph_smoothed_Obs_T1tttt")
+T1tttt.figure = "Fig 7 (right)"
+T1tttt.figureUrl =  "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12024/T1tttt_exclusions_corrected.pdf"
+T1tttt.dataUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12024"
+T1ttttoff.addMassPlane(T1tttt)
+
+
+#+++++++ dataset block ++++++++++++++
+dataset = DataSetInput("MET4_HT4_nb3")
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "MET4_HT4_nb3", observedN = 4, expectedBG = 2.1 , bgError = 1.1, upperLimit = '3.8500E-01*fb', expectedUpperLimit = '2.6167E-01*fb')
+#+++++++ next txName block ++++++++++++++
+T1bbbb = dataset.addTxName('T1bbbb')
+T1bbbb.checked ="AL"
+T1bbbb.constraint ="[[['b','b']],[['b','b']]]"
+T1bbbb.conditionDescription ="None"
+T1bbbb.condition ="None"
+T1bbbb.source = 'CMS'
+#+++++++ next mass plane block ++++++++++++++
+T1bbbb = T1bbbb.addMassPlane([[x,y]]*2)
+T1bbbb.addSource('efficiencyMap', "orig/efficiency_T1bbbb_multi.root", "root", objectName = "heff_MET4_HT4_nb3")
+T1bbbb.addSource('obsExclusion',"orig/graph_smoothed_Obs_T1bbbb.root", "root", objectName = "graph_smoothed_Obs_T1bbbb")
+T1bbbb.figure = "Fig 7 (left)"
+T1bbbb.figureUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12024/T1bbbb_exclusions_corrected.pdf"
+T1bbbb.dataUrl  = None
+# +++++++ next txName block ++++++++++++++
+T1tttt = dataset.addTxName('T1tttt')
+T1tttt.checked ="AL"
+T1tttt.constraint ="[[['t','t']],[['t','t']]]"
+T1tttt.conditionDescription ="None"
+T1tttt.condition ="None"
+T1tttt.massConstraint = None
+T1tttt.source = 'CMS'
+#+++++++ next txName block ++++++++++++++
+T1ttttoff = dataset.addTxName('T1ttttoff')
+T1ttttoff.checked ="AL"
+T1ttttoff.constraint ="[[['b','b','W','W']],[['b','b','W','W']]]"
+T1ttttoff.condition ="None"
+T1ttttoff.conditionDescription ="None"
+T1ttttoff.massConstraint = [['dm <= 338.']]*2
+T1ttttoff.source = 'CMS'
+#+++++++ next mass plane block ++++++++++++++
+T1tttt = T1tttt.addMassPlane([[x,y]]*2)
+T1tttt.addSource('efficiencyMap',"orig/efficiency_T1tttt_multi.root", "root", objectName = "heff_MET4_HT4_nb3")
+T1tttt.addSource('obsExclusion',"orig/graph_smoothed_Obs_T1tttt.root", "root", objectName = "graph_smoothed_Obs_T1tttt")
+T1tttt.figure = "Fig 7 (right)"
+T1tttt.figureUrl =  "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12024/T1tttt_exclusions_corrected.pdf"
+T1tttt.dataUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12024"
+T1ttttoff.addMassPlane(T1tttt)
+
+
+#+++++++ dataset block ++++++++++++++
+dataset = DataSetInput("MET3_HT4_nb3")
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "MET3_HT4_nb3", observedN = 4, expectedBG = 2.9 , bgError = 1.3, upperLimit = '3.6165E-01*fb', expectedUpperLimit = '2.5204E-01*fb')
+#+++++++ next txName block ++++++++++++++
+T1bbbb = dataset.addTxName('T1bbbb')
+T1bbbb.checked ="AL"
+T1bbbb.constraint ="[[['b','b']],[['b','b']]]"
+T1bbbb.conditionDescription ="None"
+T1bbbb.condition ="None"
+T1bbbb.source = 'CMS'
+#+++++++ next mass plane block ++++++++++++++
+T1bbbb = T1bbbb.addMassPlane([[x,y]]*2)
+T1bbbb.addSource('efficiencyMap', "orig/efficiency_T1bbbb_multi.root", "root", objectName = "heff_MET3_HT4_nb3")
+T1bbbb.addSource('obsExclusion',"orig/graph_smoothed_Obs_T1bbbb.root", "root", objectName = "graph_smoothed_Obs_T1bbbb")
+T1bbbb.figure = "Fig 7 (left)"
+T1bbbb.figureUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12024/T1bbbb_exclusions_corrected.pdf"
+T1bbbb.dataUrl  = None
+# +++++++ next txName block ++++++++++++++
+T1tttt = dataset.addTxName('T1tttt')
+T1tttt.checked ="AL"
+T1tttt.constraint ="[[['t','t']],[['t','t']]]"
+T1tttt.conditionDescription ="None"
+T1tttt.condition ="None"
+T1tttt.massConstraint = None
+T1tttt.source = 'CMS'
+#+++++++ next txName block ++++++++++++++
+T1ttttoff = dataset.addTxName('T1ttttoff')
+T1ttttoff.checked ="AL"
+T1ttttoff.constraint ="[[['b','b','W','W']],[['b','b','W','W']]]"
+T1ttttoff.condition ="None"
+T1ttttoff.conditionDescription ="None"
+T1ttttoff.massConstraint = [['dm <= 338.']]*2
+T1ttttoff.source = 'CMS'
+#+++++++ next mass plane block ++++++++++++++
+T1tttt = T1tttt.addMassPlane([[x,y]]*2)
+T1tttt.addSource('efficiencyMap',"orig/efficiency_T1tttt_multi.root", "root", objectName = "heff_MET3_HT4_nb3")
+T1tttt.addSource('obsExclusion',"orig/graph_smoothed_Obs_T1tttt.root", "root", objectName = "graph_smoothed_Obs_T1tttt")
+T1tttt.figure = "Fig 7 (right)"
+T1tttt.figureUrl =  "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12024/T1tttt_exclusions_corrected.pdf"
+T1tttt.dataUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12024"
+T1ttttoff.addMassPlane(T1tttt)
+
+
+#+++++++ dataset block ++++++++++++++
+dataset = DataSetInput("MET2_HT3_nb3")
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "MET2_HT3_nb3", observedN = 18, expectedBG = 23.2 , bgError = 3.8, upperLimit = '5.0635E-01*fb', expectedUpperLimit = '6.8517E-01*fb')
+#+++++++ next txName block ++++++++++++++
+T1bbbb = dataset.addTxName('T1bbbb')
+T1bbbb.checked ="AL"
+T1bbbb.constraint ="[[['b','b']],[['b','b']]]"
+T1bbbb.conditionDescription ="None"
+T1bbbb.condition ="None"
+T1bbbb.source = 'CMS'
+#+++++++ next mass plane block ++++++++++++++
+T1bbbb = T1bbbb.addMassPlane([[x,y]]*2)
+T1bbbb.addSource('efficiencyMap', "orig/efficiency_T1bbbb_multi.root", "root", objectName = "heff_MET2_HT3_nb3")
+T1bbbb.addSource('obsExclusion',"orig/graph_smoothed_Obs_T1bbbb.root", "root", objectName = "graph_smoothed_Obs_T1bbbb")
+T1bbbb.figure = "Fig 7 (left)"
+T1bbbb.figureUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12024/T1bbbb_exclusions_corrected.pdf"
+T1bbbb.dataUrl  = None
+# +++++++ next txName block ++++++++++++++
+T1tttt = dataset.addTxName('T1tttt')
+T1tttt.checked ="AL"
+T1tttt.constraint ="[[['t','t']],[['t','t']]]"
+T1tttt.conditionDescription ="None"
+T1tttt.condition ="None"
+T1tttt.massConstraint = None
+T1tttt.source = 'CMS'
+#+++++++ next txName block ++++++++++++++
+T1ttttoff = dataset.addTxName('T1ttttoff')
+T1ttttoff.checked ="AL"
+T1ttttoff.constraint ="[[['b','b','W','W']],[['b','b','W','W']]]"
+T1ttttoff.condition ="None"
+T1ttttoff.conditionDescription ="None"
+T1ttttoff.massConstraint = [['dm <= 338.']]*2
+T1ttttoff.source = 'CMS'
+#+++++++ next mass plane block ++++++++++++++
+T1tttt = T1tttt.addMassPlane([[x,y]]*2)
+T1tttt.addSource('efficiencyMap',"orig/efficiency_T1tttt_multi.root", "root", objectName = "heff_MET2_HT3_nb3")
+T1tttt.addSource('obsExclusion',"orig/graph_smoothed_Obs_T1tttt.root", "root", objectName = "graph_smoothed_Obs_T1tttt")
+T1tttt.figure = "Fig 7 (right)"
+T1tttt.figureUrl =  "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12024/T1tttt_exclusions_corrected.pdf"
+T1tttt.dataUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12024"
+T1ttttoff.addMassPlane(T1tttt)
+
+
+#+++++++ dataset block ++++++++++++++
+dataset = DataSetInput("MET4_HT2_nb2")
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "MET4_HT2_nb2", observedN = 66, expectedBG = 70.5 , bgError = 6.3, upperLimit = '9.7444E-01*fb', expectedUpperLimit = '1.1161E+00*fb')
+#+++++++ next txName block ++++++++++++++
+T1bbbb = dataset.addTxName('T1bbbb')
+T1bbbb.checked ="AL"
+T1bbbb.constraint ="[[['b','b']],[['b','b']]]"
+T1bbbb.conditionDescription ="None"
+T1bbbb.condition ="None"
+T1bbbb.source = 'CMS'
+#+++++++ next mass plane block ++++++++++++++
+T1bbbb = T1bbbb.addMassPlane([[x,y]]*2)
+T1bbbb.addSource('efficiencyMap', "orig/efficiency_T1bbbb_multi.root", "root", objectName = "heff_MET4_HT2_nb2")
+T1bbbb.addSource('obsExclusion',"orig/graph_smoothed_Obs_T1bbbb.root", "root", objectName = "graph_smoothed_Obs_T1bbbb")
+T1bbbb.figure = "Fig 7 (left)"
+T1bbbb.figureUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12024/T1bbbb_exclusions_corrected.pdf"
+T1bbbb.dataUrl  = None
+# +++++++ next txName block ++++++++++++++
+T1tttt = dataset.addTxName('T1tttt')
+T1tttt.checked ="AL"
+T1tttt.constraint ="[[['t','t']],[['t','t']]]"
+T1tttt.conditionDescription ="None"
+T1tttt.condition ="None"
+T1tttt.massConstraint = None
+T1tttt.source = 'CMS'
+#+++++++ next txName block ++++++++++++++
+T1ttttoff = dataset.addTxName('T1ttttoff')
+T1ttttoff.checked ="AL"
+T1ttttoff.constraint ="[[['b','b','W','W']],[['b','b','W','W']]]"
+T1ttttoff.condition ="None"
+T1ttttoff.conditionDescription ="None"
+T1ttttoff.massConstraint = [['dm <= 338.']]*2
+T1ttttoff.source = 'CMS'
+#+++++++ next mass plane block ++++++++++++++
+T1tttt = T1tttt.addMassPlane([[x,y]]*2)
+T1tttt.addSource('efficiencyMap',"orig/efficiency_T1tttt_multi.root", "root", objectName = "heff_MET4_HT2_nb2")
+T1tttt.addSource('obsExclusion',"orig/graph_smoothed_Obs_T1tttt.root", "root", objectName = "graph_smoothed_Obs_T1tttt")
+T1tttt.figure = "Fig 7 (right)"
+T1tttt.figureUrl =  "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12024/T1tttt_exclusions_corrected.pdf"
+T1tttt.dataUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12024"
+T1ttttoff.addMassPlane(T1tttt)
+
+
+#+++++++ dataset block ++++++++++++++
+dataset = DataSetInput("MET3_HT1_nb3")
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "MET3_HT1_nb3", observedN = 15, expectedBG = 15.5 , bgError = 3.0, upperLimit = '5.5542E-01*fb', expectedUpperLimit = '5.5753E-01*fb')
+#+++++++ next txName block ++++++++++++++
+T1bbbb = dataset.addTxName('T1bbbb')
+T1bbbb.checked ="AL"
+T1bbbb.constraint ="[[['b','b']],[['b','b']]]"
+T1bbbb.conditionDescription ="None"
+T1bbbb.condition ="None"
+T1bbbb.source = 'CMS'
+#+++++++ next mass plane block ++++++++++++++
+T1bbbb = T1bbbb.addMassPlane([[x,y]]*2)
+T1bbbb.addSource('efficiencyMap', "orig/efficiency_T1bbbb_multi.root", "root", objectName = "heff_MET3_HT1_nb3")
+T1bbbb.addSource('obsExclusion',"orig/graph_smoothed_Obs_T1bbbb.root", "root", objectName = "graph_smoothed_Obs_T1bbbb")
+T1bbbb.figure = "Fig 7 (left)"
+T1bbbb.figureUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12024/T1bbbb_exclusions_corrected.pdf"
+T1bbbb.dataUrl  = None
+# +++++++ next txName block ++++++++++++++
+T1tttt = dataset.addTxName('T1tttt')
+T1tttt.checked ="AL"
+T1tttt.constraint ="[[['t','t']],[['t','t']]]"
+T1tttt.conditionDescription ="None"
+T1tttt.condition ="None"
+T1tttt.massConstraint = None
+T1tttt.source = 'CMS'
+#+++++++ next txName block ++++++++++++++
+T1ttttoff = dataset.addTxName('T1ttttoff')
+T1ttttoff.checked ="AL"
+T1ttttoff.constraint ="[[['b','b','W','W']],[['b','b','W','W']]]"
+T1ttttoff.condition ="None"
+T1ttttoff.conditionDescription ="None"
+T1ttttoff.massConstraint = [['dm <= 338.']]*2
+T1ttttoff.source = 'CMS'
+#+++++++ next mass plane block ++++++++++++++
+T1tttt = T1tttt.addMassPlane([[x,y]]*2)
+T1tttt.addSource('efficiencyMap',"orig/efficiency_T1tttt_multi.root", "root", objectName = "heff_MET3_HT1_nb3")
+T1tttt.addSource('obsExclusion',"orig/graph_smoothed_Obs_T1tttt.root", "root", objectName = "graph_smoothed_Obs_T1tttt")
+T1tttt.figure = "Fig 7 (right)"
+T1tttt.figureUrl =  "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12024/T1tttt_exclusions_corrected.pdf"
+T1tttt.dataUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12024"
+T1ttttoff.addMassPlane(T1tttt)
+
+
+#+++++++ dataset block ++++++++++++++
+dataset = DataSetInput("MET3_HT2_nb3")
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "MET3_HT2_nb3", observedN = 36, expectedBG = 32.1 , bgError = 4.3, upperLimit = '9.6536E-01*fb', expectedUpperLimit = '7.8674E-01*fb')
+#+++++++ next txName block ++++++++++++++
+T1bbbb = dataset.addTxName('T1bbbb')
+T1bbbb.checked ="AL"
+T1bbbb.constraint ="[[['b','b']],[['b','b']]]"
+T1bbbb.conditionDescription ="None"
+T1bbbb.condition ="None"
+T1bbbb.source = 'CMS'
+#+++++++ next mass plane block ++++++++++++++
+T1bbbb = T1bbbb.addMassPlane([[x,y]]*2)
+T1bbbb.addSource('efficiencyMap', "orig/efficiency_T1bbbb_multi.root", "root", objectName = "heff_MET3_HT2_nb3")
+T1bbbb.addSource('obsExclusion',"orig/graph_smoothed_Obs_T1bbbb.root", "root", objectName = "graph_smoothed_Obs_T1bbbb")
+T1bbbb.figure = "Fig 7 (left)"
+T1bbbb.figureUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12024/T1bbbb_exclusions_corrected.pdf"
+T1bbbb.dataUrl  = None
+# +++++++ next txName block ++++++++++++++
+T1tttt = dataset.addTxName('T1tttt')
+T1tttt.checked ="AL"
+T1tttt.constraint ="[[['t','t']],[['t','t']]]"
+T1tttt.conditionDescription ="None"
+T1tttt.condition ="None"
+T1tttt.massConstraint = None
+T1tttt.source = 'CMS'
+#+++++++ next txName block ++++++++++++++
+T1ttttoff = dataset.addTxName('T1ttttoff')
+T1ttttoff.checked ="AL"
+T1ttttoff.constraint ="[[['b','b','W','W']],[['b','b','W','W']]]"
+T1ttttoff.condition ="None"
+T1ttttoff.conditionDescription ="None"
+T1ttttoff.massConstraint = [['dm <= 338.']]*2
+T1ttttoff.source = 'CMS'
+#+++++++ next mass plane block ++++++++++++++
+T1tttt = T1tttt.addMassPlane([[x,y]]*2)
+T1tttt.addSource('efficiencyMap',"orig/efficiency_T1tttt_multi.root", "root", objectName = "heff_MET3_HT2_nb3")
+T1tttt.addSource('obsExclusion',"orig/graph_smoothed_Obs_T1tttt.root", "root", objectName = "graph_smoothed_Obs_T1tttt")
+T1tttt.figure = "Fig 7 (right)"
+T1tttt.figureUrl =  "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12024/T1tttt_exclusions_corrected.pdf"
+T1tttt.dataUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12024"
+T1ttttoff.addMassPlane(T1tttt)
+
+
+#+++++++ dataset block ++++++++++++++
+dataset = DataSetInput("MET2_HT4_nb3")
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "MET2_HT4_nb3", observedN = 14, expectedBG = 12.3 , bgError = 2.7, upperLimit = '6.0499E-01*fb', expectedUpperLimit = '5.1236E-01*fb')
+#+++++++ next txName block ++++++++++++++
+T1bbbb = dataset.addTxName('T1bbbb')
+T1bbbb.checked ="AL"
+T1bbbb.constraint ="[[['b','b']],[['b','b']]]"
+T1bbbb.conditionDescription ="None"
+T1bbbb.condition ="None"
+T1bbbb.source = 'CMS'
+#+++++++ next mass plane block ++++++++++++++
+T1bbbb = T1bbbb.addMassPlane([[x,y]]*2)
+T1bbbb.addSource('efficiencyMap', "orig/efficiency_T1bbbb_multi.root", "root", objectName = "heff_MET2_HT4_nb3")
+T1bbbb.addSource('obsExclusion',"orig/graph_smoothed_Obs_T1bbbb.root", "root", objectName = "graph_smoothed_Obs_T1bbbb")
+T1bbbb.figure = "Fig 7 (left)"
+T1bbbb.figureUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12024/T1bbbb_exclusions_corrected.pdf"
+T1bbbb.dataUrl  = None
+# +++++++ next txName block ++++++++++++++
+T1tttt = dataset.addTxName('T1tttt')
+T1tttt.checked ="AL"
+T1tttt.constraint ="[[['t','t']],[['t','t']]]"
+T1tttt.conditionDescription ="None"
+T1tttt.condition ="None"
+T1tttt.massConstraint = None
+T1tttt.source = 'CMS'
+#+++++++ next txName block ++++++++++++++
+T1ttttoff = dataset.addTxName('T1ttttoff')
+T1ttttoff.checked ="AL"
+T1ttttoff.constraint ="[[['b','b','W','W']],[['b','b','W','W']]]"
+T1ttttoff.condition ="None"
+T1ttttoff.conditionDescription ="None"
+T1ttttoff.massConstraint = [['dm <= 338.']]*2
+T1ttttoff.source = 'CMS'
+#+++++++ next mass plane block ++++++++++++++
+T1tttt = T1tttt.addMassPlane([[x,y]]*2)
+T1tttt.addSource('efficiencyMap',"orig/efficiency_T1tttt_multi.root", "root", objectName = "heff_MET2_HT4_nb3")
+T1tttt.addSource('obsExclusion',"orig/graph_smoothed_Obs_T1tttt.root", "root", objectName = "graph_smoothed_Obs_T1tttt")
+T1tttt.figure = "Fig 7 (right)"
+T1tttt.figureUrl =  "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12024/T1tttt_exclusions_corrected.pdf"
+T1tttt.dataUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12024"
+T1ttttoff.addMassPlane(T1tttt)
+
+
+#+++++++ dataset block ++++++++++++++
+dataset = DataSetInput("MET4_HT3_nb3")
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "MET4_HT3_nb3", observedN = 2, expectedBG = 2.0 , bgError = 1.0, upperLimit = '2.6247E-01*fb', expectedUpperLimit = '2.6247E-01*fb')
+#+++++++ next txName block ++++++++++++++
+T1bbbb = dataset.addTxName('T1bbbb')
+T1bbbb.checked ="AL"
+T1bbbb.constraint ="[[['b','b']],[['b','b']]]"
+T1bbbb.conditionDescription ="None"
+T1bbbb.condition ="None"
+T1bbbb.source = 'CMS'
+#+++++++ next mass plane block ++++++++++++++
+T1bbbb = T1bbbb.addMassPlane([[x,y]]*2)
+T1bbbb.addSource('efficiencyMap', "orig/efficiency_T1bbbb_multi.root", "root", objectName = "heff_MET4_HT3_nb3")
+T1bbbb.addSource('obsExclusion',"orig/graph_smoothed_Obs_T1bbbb.root", "root", objectName = "graph_smoothed_Obs_T1bbbb")
+T1bbbb.figure = "Fig 7 (left)"
+T1bbbb.figureUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12024/T1bbbb_exclusions_corrected.pdf"
+T1bbbb.dataUrl  = None
+# +++++++ next txName block ++++++++++++++
+T1tttt = dataset.addTxName('T1tttt')
+T1tttt.checked ="AL"
+T1tttt.constraint ="[[['t','t']],[['t','t']]]"
+T1tttt.conditionDescription ="None"
+T1tttt.condition ="None"
+T1tttt.massConstraint = None
+T1tttt.source = 'CMS'
+#+++++++ next txName block ++++++++++++++
+T1ttttoff = dataset.addTxName('T1ttttoff')
+T1ttttoff.checked ="AL"
+T1ttttoff.constraint ="[[['b','b','W','W']],[['b','b','W','W']]]"
+T1ttttoff.condition ="None"
+T1ttttoff.conditionDescription ="None"
+T1ttttoff.massConstraint = [['dm <= 338.']]*2
+T1ttttoff.source = 'CMS'
+#+++++++ next mass plane block ++++++++++++++
+T1tttt = T1tttt.addMassPlane([[x,y]]*2)
+T1tttt.addSource('efficiencyMap',"orig/efficiency_T1tttt_multi.root", "root", objectName = "heff_MET4_HT3_nb3")
+T1tttt.addSource('obsExclusion',"orig/graph_smoothed_Obs_T1tttt.root", "root", objectName = "graph_smoothed_Obs_T1tttt")
+T1tttt.figure = "Fig 7 (right)"
+T1tttt.figureUrl =  "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12024/T1tttt_exclusions_corrected.pdf"
+T1tttt.dataUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12024"
+T1ttttoff.addMassPlane(T1tttt)
 
 databaseCreator.create()
-
-T1bbbb.efficiencyMap.setSource( "orig/efficiency_T1bbbb_multi.root", "root", objectName = "heff_MET2_HT2_nb3", index = None, dataset="MET2_HT2_nb3" )
-T1bbbb.efficiencyMap.setStatistics ( observedN=182, expectedBG=179, bgError=13 )
-
-T1tttt.efficiencyMap.setSource( "orig/efficiency_T1tttt_multi.root", "root", objectName = "heff_MET2_HT2_nb3", index = None, dataset="MET2_HT2_nb3" )
-T1tttt.efficiencyMap.setStatistics ( observedN=182, expectedBG=179, bgError=13 )
-
-databaseCreator.create( True )
-
-T1bbbb.efficiencyMap.setSource( "orig/efficiency_T1bbbb_multi.root", "root", objectName = "heff_MET2_HT3_nb3", index = None, dataset="MET2_HT3_nb3" )
-T1bbbb.efficiencyMap.setStatistics ( observedN=18, expectedBG=23.2, bgError=3.8 )
-
-T1tttt.efficiencyMap.setSource( "orig/efficiency_T1tttt_multi.root", "root", objectName = "heff_MET2_HT3_nb3", index = None, dataset="MET2_HT3_nb3" )
-T1tttt.efficiencyMap.setStatistics ( observedN=18, expectedBG=23.2, bgError=3.8 )
-
-
-databaseCreator.create( True )
-
-T1bbbb.efficiencyMap.setSource( "orig/efficiency_T1bbbb_multi.root", "root", objectName = "heff_MET2_HT4_nb3", index = None, dataset="MET2_HT4_nb3" )
-T1bbbb.efficiencyMap.setStatistics ( observedN=14, expectedBG=12.3, bgError=2.7 )
-T1tttt.efficiencyMap.setSource( "orig/efficiency_T1tttt_multi.root", "root", objectName = "heff_MET2_HT4_nb3", index = None, dataset="MET2_HT4_nb3" )
-T1tttt.efficiencyMap.setStatistics ( observedN=14, expectedBG=12.3, bgError=2.7 )
-
-databaseCreator.create( True )
-
-T1bbbb.efficiencyMap.setSource( "orig/efficiency_T1bbbb_multi.root", "root", objectName = "heff_MET3_HT1_nb3", index = None, dataset="MET3_HT1_nb3" )
-T1bbbb.efficiencyMap.setStatistics ( observedN=15, expectedBG=15.5, bgError=3.0 )
-T1tttt.efficiencyMap.setSource( "orig/efficiency_T1tttt_multi.root", "root", objectName = "heff_MET3_HT1_nb3", index = None, dataset="MET3_HT1_nb3" )
-T1tttt.efficiencyMap.setStatistics ( observedN=15, expectedBG=15.5, bgError=3.0 )
-
-databaseCreator.create( True )
-
-T1bbbb.efficiencyMap.setSource( "orig/efficiency_T1bbbb_multi.root", "root", objectName = "heff_MET3_HT2_nb3", index = None, dataset="MET3_HT2_nb3" )
-T1bbbb.efficiencyMap.setStatistics ( observedN=36, expectedBG=32.1, bgError=4.3 )
-T1tttt.efficiencyMap.setSource( "orig/efficiency_T1tttt_multi.root", "root", objectName = "heff_MET3_HT2_nb3", index = None, dataset="MET3_HT2_nb3" )
-T1tttt.efficiencyMap.setStatistics ( observedN=36, expectedBG=32.1, bgError=4.3 )
-
-databaseCreator.create( True )
-
-T1bbbb.efficiencyMap.setSource( "orig/efficiency_T1bbbb_multi.root", "root", objectName = "heff_MET3_HT3_nb3", index = None, dataset="MET3_HT3_nb3" )
-T1bbbb.efficiencyMap.setStatistics ( observedN=6, expectedBG=5.9, bgError=1.9 )
-T1tttt.efficiencyMap.setSource( "orig/efficiency_T1tttt_multi.root", "root", objectName = "heff_MET3_HT3_nb3", index = None, dataset="MET3_HT3_nb3" )
-T1tttt.efficiencyMap.setStatistics ( observedN=6, expectedBG=5.9, bgError=1.9 )
-
-databaseCreator.create( True )
-
-T1bbbb.efficiencyMap.setSource( "orig/efficiency_T1bbbb_multi.root", "root", objectName = "heff_MET3_HT4_nb3", index = None, dataset="MET3_HT4_nb3" )
-T1bbbb.efficiencyMap.setStatistics ( observedN=4, expectedBG=2.9, bgError=1.3 )
-T1tttt.efficiencyMap.setSource( "orig/efficiency_T1tttt_multi.root", "root", objectName = "heff_MET3_HT4_nb3", index = None, dataset="MET3_HT4_nb3" )
-T1tttt.efficiencyMap.setStatistics ( observedN=4, expectedBG=2.9, bgError=1.3 )
-
-databaseCreator.create( True )
-
-T1bbbb.efficiencyMap.setSource( "orig/efficiency_T1bbbb_multi.root", "root", objectName = "heff_MET4_HT2_nb3", index = None, dataset="MET4_HT2_nb3" )
-T1bbbb.efficiencyMap.setStatistics ( observedN=8, expectedBG=8.4, bgError=2.1 )
-T1tttt.efficiencyMap.setSource( "orig/efficiency_T1tttt_multi.root", "root", objectName = "heff_MET4_HT2_nb3", index = None, dataset="MET4_HT2_nb3" )
-T1tttt.efficiencyMap.setStatistics ( observedN=8, expectedBG=8.4, bgError=2.1 )
-
-databaseCreator.create( True )
-
-T1bbbb.efficiencyMap.setSource( "orig/efficiency_T1bbbb_multi.root", "root", objectName = "heff_MET4_HT3_nb3", index = None, dataset="MET4_HT3_nb3" )
-T1bbbb.efficiencyMap.setStatistics ( observedN=2, expectedBG=2.0, bgError=1.0 )
-T1tttt.efficiencyMap.setSource( "orig/efficiency_T1tttt_multi.root", "root", objectName = "heff_MET4_HT3_nb3", index = None, dataset="MET4_HT3_nb3" )
-T1tttt.efficiencyMap.setStatistics ( observedN=2, expectedBG=2.0, bgError=1.0 )
-
-databaseCreator.create( True )
-
-T1bbbb.efficiencyMap.setSource( "orig/efficiency_T1bbbb_multi.root", "root", objectName = "heff_MET4_HT4_nb3", index = None, dataset="MET4_HT4_nb3" )
-T1bbbb.efficiencyMap.setStatistics ( observedN=4, expectedBG=2.1, bgError=1.1 )
-T1tttt.efficiencyMap.setSource( "orig/efficiency_T1tttt_multi.root", "root", objectName = "heff_MET4_HT4_nb3", index = None, dataset="MET4_HT4_nb3" )
-T1tttt.efficiencyMap.setStatistics ( observedN=4, expectedBG=2.1, bgError=1.1 )
-
-databaseCreator.create( True )
-
-T1bbbb.efficiencyMap.setSource( "orig/efficiency_T1bbbb_multi.root", "root", objectName = "heff_MET4_HT2_nb2", index = None, dataset="MET4_HT2_nb2" )
-T1bbbb.efficiencyMap.setStatistics ( observedN=66, expectedBG=70.5, bgError=6.3 )
-T1tttt.efficiencyMap.setSource( "orig/efficiency_T1tttt_multi.root", "root", objectName = "heff_MET4_HT2_nb2", index = None, dataset="MET4_HT2_nb2" )
-T1tttt.efficiencyMap.setStatistics ( observedN=66, expectedBG=70.5, bgError=6.3 )
-databaseCreator.create( True )
-
-T1bbbb.efficiencyMap.setSource( "orig/efficiency_T1bbbb_multi.root", "root", objectName = "heff_MET4_HT3_nb2", index = None, dataset="MET4_HT3_nb2" )
-T1bbbb.efficiencyMap.setStatistics ( observedN=19, expectedBG=20.7, bgError=3.2 )
-T1tttt.efficiencyMap.setSource( "orig/efficiency_T1tttt_multi.root", "root", objectName = "heff_MET4_HT3_nb2", index = None, dataset="MET4_HT3_nb2" )
-T1tttt.efficiencyMap.setStatistics ( observedN=19, expectedBG=20.7, bgError=3.2 )
-
-databaseCreator.create( True )
-
-T1bbbb.efficiencyMap.setSource( "orig/efficiency_T1bbbb_multi.root", "root", objectName = "heff_MET4_HT4_nb2", index = None, dataset="MET4_HT4_nb2" )
-T1bbbb.efficiencyMap.setStatistics ( observedN=19, expectedBG=19.0, bgError=3.2 )
-T1tttt.efficiencyMap.setSource( "orig/efficiency_T1tttt_multi.root", "root", objectName = "heff_MET4_HT4_nb2", index = None, dataset="MET4_HT4_nb2" )
-T1tttt.efficiencyMap.setStatistics ( observedN=19, expectedBG=19.0, bgError=3.2 )
-
-databaseCreator.create( True )

@@ -1,7 +1,7 @@
 id: ATLAS-SUSY-2013-15
 sqrts: 8*TeV
 lumi: 20.3/fb
-prettyName: ATLAS (asymmetric) stop
+prettyName: 1 lepton + 4 (1 b-)jets + Etmiss
 url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-15/
 arxiv: http://arxiv.org/abs/1407.0583
 publication: http://link.springer.com/article/10.1007/JHEP11(2014)118
