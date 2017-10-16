@@ -72,6 +72,7 @@ for i,name in enumerate(datasetNames):
     #+++++++ next mass plane block ++++++++++++++
     plane = HSCPM1.addMassPlane([[x],[x]])
     plane.setSources(dataLabels= ['efficiencyMap'],dataFiles=['orig/effmap_M1_chargino_allfit_mre'+name+'_clean.txt'], dataFormats=['txt'])
+#    plane.addSource(dataLabels='obsExclusion',dataFiles='orig/CMS-PAS-EXO-16-036_Figure_003-b.dat', dataFormats='txt', unit='pb')
     #+++++++ next txName block ++++++++++++++
     HSCPM3 = dataset.addTxName('THSCPM3')
     HSCPM3.checked =''
