@@ -4,7 +4,7 @@ condition: None
 conditionDescription: None
 susyProcess: pp --> gluino gluino, gluino  --> quark antiquark  lsp
 figureUrl: http://cms-results.web.cern.ch/cms-results/public-results/superseded/SUS-15-002/CMS-PAS-SUS-15-002_Figure_008-c.png
-dataUrl: http://cms-results.web.cern.ch/cms-results/public-results/superseded/SUS-15-002/MassScanT1Smooth.root
+dataUrl: http://cms-results.web.cern.ch/cms-results/public-results/superseded/SUS-15-002/MassScanT1qqqqSmooth.root
 source: CMS
 validated: True
 axes: [[x, y], [x, y]]
