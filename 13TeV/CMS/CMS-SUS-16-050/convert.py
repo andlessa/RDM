@@ -50,7 +50,7 @@ info.lumi = 35.9
 info.prettyName = 'hadronic top tagging'
 info.private = False
 info.arxiv = 'https://arxiv.org/abs/1710.11188'
-info.comment = ''
+info.comment = 'root files Figure_009-c.root and Figure_009-d.root are swapped!'
 info.implementedBy = 'WW'
 info.contact = 'CMS collaboration'
 
@@ -98,13 +98,13 @@ T5tctc.condition =None
 T5tctc.source ='CMS'
 
 T5tctc_1 = T5tctc.addMassPlane([[x,y+20,y]]*2)
-T5tctc_1.addSource( 'upperLimits', 'orig/CMS-SUS-16-050_Figure_009-d.root', 'root',
+T5tctc_1.addSource( 'upperLimits', 'orig/CMS-SUS-16-050_Figure_009-c.root', 'root',
 		objectName = 'combined_obsLimit_BR100pct' )
-T5tctc_1.addSource( 'expectedUpperLimits', 'orig/CMS-SUS-16-050_Figure_009-d.root', 'root',
+T5tctc_1.addSource( 'expectedUpperLimits', 'orig/CMS-SUS-16-050_Figure_009-c.root', 'root',
 		objectName = 'combined_expLimit_BR100pct' )
 T5tctc_1.addSource( 'obsExclusion', 'orig/T5tctc_fake_excl.txt', 'txt' )
-T5tctc_1.dataUrl = "http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-050/CMS-SUS-16-050_Figure_009-d.root"
-T5tctc_1.figureUrl = "http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-050/CMS-SUS-16-050_Figure_009-d.png"
+T5tctc_1.dataUrl = "http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-050/CMS-SUS-16-050_Figure_009-c.root"
+T5tctc_1.figureUrl = "http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-050/CMS-SUS-16-050_Figure_009-c.png"
 
 T5tttt = dataset.addTxName('T5tttt')
 T5tttt.checked=''
@@ -114,12 +114,12 @@ T5tttt.condition =None
 T5tttt.source ='CMS'
 
 T5tttt_1 = T5tttt.addMassPlane([[x,y+175,y]]*2)
-T5tttt_1.addSource( 'upperLimits', 'orig/CMS-SUS-16-050_Figure_009-c.root', 'root',
+T5tttt_1.addSource( 'upperLimits', 'orig/CMS-SUS-16-050_Figure_009-d.root', 'root',
 		objectName = 'combined_obsLimit_BR100pct' )
-T5tttt_1.addSource( 'expectedUpperLimits', 'orig/CMS-SUS-16-050_Figure_009-c.root', 'root',
+T5tttt_1.addSource( 'expectedUpperLimits', 'orig/CMS-SUS-16-050_Figure_009-d.root', 'root',
 		objectName = 'combined_expLimit_BR100pct' )
 T5tttt_1.addSource( 'obsExclusion', 'orig/T5tttt_fake_excl.txt', 'txt' )
-T5tttt_1.dataUrl = "http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-050/CMS-SUS-16-050_Figure_009-c.root"
-T5tttt_1.figureUrl = "http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-050/CMS-SUS-16-050_Figure_009-c.png"
+T5tttt_1.dataUrl = "http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-050/CMS-SUS-16-050_Figure_009-d.root"
+T5tttt_1.figureUrl = "http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-050/CMS-SUS-16-050_Figure_009-d.png"
 
 databaseCreator.create()
