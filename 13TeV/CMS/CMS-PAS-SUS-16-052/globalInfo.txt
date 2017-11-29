@@ -8,4 +8,3 @@ comment: https://cds.cern.ch/record/2273394, http://inspirehep.net/record/160900
 private: False
 implementedBy: Wolfgang Waltenberger
 lastUpdate: 2017/8/25
-combinableWith: CMS-PAS-SUS-16-050

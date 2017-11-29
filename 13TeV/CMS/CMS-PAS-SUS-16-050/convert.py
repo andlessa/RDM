@@ -53,7 +53,6 @@ info.arxiv = 'https://arxiv.org/abs/1704.07781'
 info.comment = ''
 info.implementedBy = 'WW'
 info.contact = 'CMS collaboration'
-info.combinableWith = "CMS-PAS-SUS-16-052, CMS-PAS-SUS-16-024, CMS-PAS-SUS-16-022" 
 
 dataset = DataSetInput('data') 
 dataset.setInfo(dataType = 'upperLimit', dataId = None)
