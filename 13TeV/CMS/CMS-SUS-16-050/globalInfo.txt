@@ -1,12 +1,12 @@
 id: CMS-SUS-16-050
 sqrts: 13.0*TeV
 lumi: 35.9/fb
-prettyName: hadronic top tagging
+prettyName: 0L + top tag
 url: http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-050/index.html
 arxiv: https://arxiv.org/abs/1710.11188
 contact: CMS collaboration
 supersedes: CMS-PAS-SUS-16-050
-comment: root files Figure_009-c.root and Figure_009-d.root are swapped!
+comment: root files don't contain limit curves. root files Figure_009-c.root and Figure_009-d.root are swapped!
 private: False
 implementedBy: Wolfgang Waltenberger
 lastUpdate: 2017/11/29
