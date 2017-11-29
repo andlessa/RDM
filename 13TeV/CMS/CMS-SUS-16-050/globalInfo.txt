@@ -1,0 +1,10 @@
+id: CMS-SUS-16-050
+sqrts: 13.0*TeV
+lumi: 35.9/fb
+prettyName: hadronic top tagging
+url: http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-050/index.html
+arxiv: https://arxiv.org/abs/1710.11188
+contact: CMS collaboration
+private: False
+implementedBy: Wolfgang Waltenberger
+lastUpdate: 2017/11/29
