@@ -3,8 +3,8 @@ constraint: [[['t','t']],[['t','t']]]
 condition: None
 conditionDescription: None
 susyProcess: pp --> gluino gluino, gluino  --> top antitop  lsp
-figureUrl: http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-050/CMS-PAS-SUS-16-050_Figure_008-a.png
-dataUrl: http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-050/CMS-PAS-SUS-16-050_Figure_008-a.root
+figureUrl: http://cms-results.web.cern.ch/cms-results/public-results/superseded/SUS-16-050/CMS-PAS-SUS-16-050_Figure_008-a.png
+dataUrl: http://cms-results.web.cern.ch/cms-results/public-results/superseded/SUS-16-050/CMS-PAS-SUS-16-050_Figure_008-a.root
 source: CMS
 validated: TBD
 axes: [[x, y], [x, y]]

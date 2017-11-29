@@ -52,6 +52,7 @@ info.private = False
 info.arxiv = 'https://arxiv.org/abs/1710.11188'
 info.comment = 'root files Figure_009-c.root and Figure_009-d.root are swapped!'
 info.implementedBy = 'WW'
+info.supersedes = "CMS-PAS-SUS-16-050"
 info.contact = 'CMS collaboration'
 
 dataset = DataSetInput('data')
