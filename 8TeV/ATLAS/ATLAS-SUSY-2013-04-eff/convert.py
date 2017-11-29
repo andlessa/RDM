@@ -1966,7 +1966,7 @@ T1tttt.source = "ATLAS"
 T1tttt = T1tttt.addMassPlane([[x,y]]*2)
 T1tttt.addSource('efficiencyMap',"./orig/GtGrid_SR_10ij50_bjetblind.txt", "txt")
 T1tttt.addSource('obsExclusion', "orig/exclusion_T1tttt.txt", "txt")
-T1tttt.dataUrl="http://hepdata.cedar.ac.uk/resource/6095/bjetstream/GtGrid_SR_10ij50_bjetblind.txt"
+T1tttt.dataUrl="http://hepdata.cedar.ac.uk/resource/6095/ins1247060_resources.tar.gz"
 T1tttt.figure = 'Fig (aux). 11a'
 T1tttt.figureUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-04/figaux_11a.png'
 #+++++++ next txName block ++++++++++++++

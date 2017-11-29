@@ -5,7 +5,7 @@ conditionDescription: None
 susyProcess: pp --> gluino gluino, gluino  --> top antitop  lsp
 checked: None
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-04/figaux_11a.png
-dataUrl: http://hepdata.cedar.ac.uk/resource/6095/bjetstream/GtGrid_SR_10ij50_bjetblind.txt
+dataUrl: http://hepdata.cedar.ac.uk/resource/6095/ins1247060_resources.tar.gz
 source: ATLAS
 validated: True
 axes: [[x, y], [x, y]]
