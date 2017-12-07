@@ -70,10 +70,20 @@ T2tt_1.addSource( 'upperLimits', 'orig/CMS-SUS-16-050_Figure_008.root', 'root',
 		objectName = 'combined_obsLimit_BR100pct' )
 T2tt_1.addSource( 'expectedUpperLimits', 'orig/CMS-SUS-16-050_Figure_008.root', 'root',
 		objectName = 'combined_expLimit_BR100pct' )
+#T2tt_1.removeArea ( [ [ 150,0 ], [200,0 ], [300,100], [260,110] ] )
 T2tt_1.addSource( 'obsExclusion', 'orig/T2tt_fake_excl.txt', 'txt' )
 ## fixme add expected
 T2tt_1.dataUrl = "http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-050/CMS-SUS-16-050_Figure_008.root"
 T2tt_1.figureUrl = "http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-050/CMS-SUS-16-050_Figure_008.png"
+
+T2ttoff = dataset.addTxName('T2ttoff')
+T2ttoff.checked =''
+T2ttoff.constraint = "[[['b','W']],[['b','W']]]"
+T2ttoff.conditionDescription =None
+T2ttoff.condition =None
+T2ttoff.massConstraint = [['dm <= 169.0'], ['dm <= 169.0']]
+T2ttoff.source = "CMS"
+T2ttoff.addMassPlane(T2tt_1)
 
 T1tttt = dataset.addTxName('T1tttt')
 T1tttt.checked=''
@@ -90,6 +100,14 @@ T1tttt_1.addSource( 'expectedUpperLimits', 'orig/CMS-SUS-16-050_Figure_009-a.roo
 T1tttt_1.addSource( 'obsExclusion', 'orig/T1tttt_fake_excl.txt', 'txt' )
 T1tttt_1.dataUrl = "http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-050/CMS-SUS-16-050_Figure_009-a.root"
 T1tttt_1.figureUrl = "http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-050/CMS-SUS-16-050_Figure_009-a.png"
+
+T1ttttoff = dataset.addTxName('T1ttttoff')
+T1ttttoff.constraint ="[[['b','W','b','W']],[['b','W','b','W']]]"
+T1ttttoff.conditionDescription = None
+T1ttttoff.condition = None
+T1ttttoff.massConstraint = [['dm <= 338.0'], ['dm <= 338.0']]
+T1ttttoff.source = "CMS"
+T1ttttoff.addMassPlane(T1tttt_1)
 
 T5tctc = dataset.addTxName('T5tctc')
 T5tctc.checked=''
