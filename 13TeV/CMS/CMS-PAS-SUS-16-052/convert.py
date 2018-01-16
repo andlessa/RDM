@@ -51,8 +51,8 @@ info.sqrts = '13.0*TeV'
 info.lumi = 35.9
 info.prettyName = 'soft lepton, <= 2 jets'
 info.private = False
-# info.arxiv = 'https://arxiv.org/abs/1704.07781'
-info.comment = 'https://cds.cern.ch/record/2273394, http://inspirehep.net/record/1609006'
+# info.arxiv = 'https://arxiv.org/abs/....'
+info.comment = 'EPS 2017. https://cds.cern.ch/record/2273394, http://inspirehep.net/record/1609006'
 info.implementedBy = 'WW'
 info.contact = 'CMS'
 

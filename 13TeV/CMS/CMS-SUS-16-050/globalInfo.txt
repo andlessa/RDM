@@ -6,7 +6,7 @@ url: http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-
 arxiv: https://arxiv.org/abs/1710.11188
 contact: CMS collaboration
 supersedes: CMS-PAS-SUS-16-050
-comment: root files do not contain limit curves. root files Figure_009-c.root and Figure_009-d.root are swapped!
+comment: LHCP 2017. root files do not contain limit curves. root files Figure_009-c.root and Figure_009-d.root are swapped!
 private: False
 implementedBy: Wolfgang Waltenberger
 lastUpdate: 2017/11/29
