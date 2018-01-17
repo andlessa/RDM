@@ -44,7 +44,8 @@ info.sqrts = 13
 info.lumi = 12.9
 info.prettyName = 'jets + MET, MT2'
 info.private = False 
-info.comment = 'https://cds.cern.ch/record/2205162'
+info.comment = 'https://cds.cern.ch/record/2205162. Superseded by CMS-SUS-16-036.'
+info.supersededBy = 'CMS-SUS-16-036'
 
 
 #+++++++ dataset block ++++++++++++++

@@ -44,7 +44,8 @@ info.sqrts = 13
 info.lumi = 12.9
 info.prettyName = 'jets + 1 lepton'
 info.private = False
-info.comment = 'https://cds.cern.ch/record/2204932'
+info.comment = 'https://cds.cern.ch/record/2204932. Superseded by CMS-SUS-16-037.'
+info.supersededBy = 'CMS-SUS-16-037'
 
 
 #+++++++ dataset block ++++++++++++++

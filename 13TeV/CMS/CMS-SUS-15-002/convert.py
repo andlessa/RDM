@@ -47,8 +47,9 @@ info.private = False
 info.arxiv = ''
 info.contact = ''
 info.publication = ''
-info.comment = 'Do not know where the off constraint for T1tttt came from'
+info.comment = 'Do not know where the off constraint for T1tttt came from. Superseded by CMS-SUS-16-033 and CMS-SUS-16-036.'
 info.supersedes = 'CMS-SUS-PAS-15-002'
+info.supersededBy = 'CMS-SUS-16-033'
 
 
 #+++++++ dataset block ++++++++++++++
