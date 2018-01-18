@@ -6,7 +6,7 @@ susyProcess: pp --> neutralino_2 chargino^pm_1, neutralino_2 chargino^pm_1  --> 
 figureUrl: http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-039/CMS-SUS-16-039_Figure_017.png
 dataUrl: http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-039/CMS-SUS-16-039_Figure_017.root
 source: CMS
-validated: TBD
+validated: True
 axes: [[x, 0.5*x + 0.5*y, y], [x, 0.5*x + 0.5*y, y]]
 upperLimits: [[[[1.0384E+02*GeV,5.3261E+01*GeV,2.6786E+00*GeV],[1.0384E+02*GeV,5.3261E+01*GeV,2.6786E+00*GeV]],1.5535E+00*pb],
 [[[1.0384E+02*GeV,5.8321E+01*GeV,1.2798E+01*GeV],[1.0384E+02*GeV,5.8321E+01*GeV,1.2798E+01*GeV]],2.1006E+00*pb],

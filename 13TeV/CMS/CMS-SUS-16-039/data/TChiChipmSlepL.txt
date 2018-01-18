@@ -6,7 +6,7 @@ susyProcess: pp --> neutralino_2 chargino^pm_1, neutralino_2 chargino^pm_1  --> 
 figureUrl: http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-039/CMS-SUS-16-039_Figure_014.png;http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-039/CMS-SUS-16-039_Figure_015-a.png;http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-039/CMS-SUS-16-039_Figure_015-b.png
 dataUrl: http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-039/CMS-SUS-16-039_Figure_014.root;http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-039/CMS-SUS-16-039_Figure_015-a.root;http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-039/CMS-SUS-16-039_Figure_015-b.root
 source: CMS
-validated: TBD
+validated: True
 axes: [[x, 0.5*x + 0.5*y, y], [x, 0.5*x + 0.5*y, y]];[[x, 0.05*x + 0.95*y, y], [x, 0.05*x + 0.95*y, y]];[[x, 0.95*x + 0.05*y, y], [x, 0.95*x + 0.05*y, y]]
 upperLimits: [[[[1.06250E+02*GeV,5.62500E+01*GeV,6.25000E+00*GeV],[1.06250E+02*GeV,5.62500E+01*GeV,6.25000E+00*GeV]],1.12776E-01*pb],
 [[[1.06250E+02*GeV,6.25000E+01*GeV,1.87500E+01*GeV],[1.06250E+02*GeV,6.25000E+01*GeV,1.87500E+01*GeV]],9.63607E-02*pb],
