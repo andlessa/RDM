@@ -8,5 +8,5 @@ publication: Submitted to J. High Energy Phys.
 contact: cms-phys-conveners-sus@cern.ch
 comment: Moriond 2017. Negative values in TChiChipmSlepL and TChiChipmSlepStau root files. Added TChiChipmStauStau.
 private: False
-implementedBy: Andre Lessa
-lastUpdate: 2018/1/17
+implementedBy: Juhi Dutta
+lastUpdate: 2018/1/21
