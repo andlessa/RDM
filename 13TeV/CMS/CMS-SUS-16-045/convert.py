@@ -97,7 +97,7 @@ TChiWH_1.dataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publ
 TChiWH_1.histoDataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-045/CMS-SUS-16-045_Figure_005-b.root'
 TChiWH_1.exclusionDataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-045/CMS-SUS-16-045_Figure_005-b.root'
 TChiWH_1.setSources(dataLabels=['expExclusion','expExclusionM1','expExclusionP1','obsExclusion','obsExclusionM1','obsExclusionP1','upperLimits'],
-                    dataFiles=['orig/CMS-SUS-16-045_Figure_005-2.root','orig/CMS-SUS-16-045_Figure_005-2.root','orig/CMS-SUS-16-045_Figure_005-2.root','orig/CMS-SUS-16-045_Figure_005-2.root','orig/CMS-SUS-16-045_Figure_005-2.root','orig/CMS-SUS-16-045_Figure_005-2.root','orig/CMS-SUS-16-045_Figure_005-2.root'],
+                    dataFiles=['orig/CMS-SUS-16-045_Figure_005-b.root','orig/CMS-SUS-16-045_Figure_005-b.root','orig/CMS-SUS-16-045_Figure_005-b.root','orig/CMS-SUS-16-045_Figure_005-b.root','orig/CMS-SUS-16-045_Figure_005-b.root','orig/CMS-SUS-16-045_Figure_005-b.root','orig/CMS-SUS-16-045_Figure_005-b.root'],
                     dataFormats=['root','root','root','root','root','root','root'],objectNames=['expL;1','expLD;1','expLU;1','obsL;1','obsLD;1','obsLU;1','xsecLimit;1'],
                     units=[None,None,None,None,None,None,'pb'])
 
