@@ -3,8 +3,8 @@ constraint: [[['t'],['c']],[['t'],['c']]]
 condition: None
 conditionDescription: None
 susyProcess: pp --> gluino gluino, gluino --> top stop, stop --> charm lsp
-figureUrl: http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-050/CMS-SUS-16-050_Figure_009-c.png
-dataUrl: http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-050/CMS-SUS-16-050_Figure_009-c.root
+figureUrl: http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-050/CMS-SUS-16-050_Figure_009-d.png
+dataUrl: http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-050/CMS-SUS-16-050_Figure_009-d.root
 source: CMS
 validated: True
 axes: [[x, y + 20, y], [x, y + 20, y]]

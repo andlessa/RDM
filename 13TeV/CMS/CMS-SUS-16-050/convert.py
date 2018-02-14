@@ -50,7 +50,7 @@ info.lumi = 35.9
 info.prettyName = '0L + top tag'
 info.private = False
 info.arxiv = 'https://arxiv.org/abs/1710.11188'
-info.comment = 'LHCP 2017. root files do not contain limit curves. root files Figure_009-c.root and Figure_009-d.root are swapped!'
+info.comment = '' ## LHCP 2017. root files do not contain limit curves. root files Figure_009-c.root and Figure_009-d.root are swapped!'
 info.implementedBy = 'WW'
 info.supersedes = "CMS-PAS-SUS-16-050"
 info.contact = 'CMS collaboration'
@@ -71,7 +71,12 @@ T2tt_1.addSource( 'upperLimits', 'orig/CMS-SUS-16-050_Figure_008.root', 'root',
 T2tt_1.addSource( 'expectedUpperLimits', 'orig/CMS-SUS-16-050_Figure_008.root', 'root',
 		objectName = 'combined_expLimit_BR100pct' )
 #T2tt_1.removeArea ( [ [ 150,0 ], [200,0 ], [300,100], [260,110] ] )
-T2tt_1.addSource( 'obsExclusion', 'orig/T2tt_fake_excl.txt', 'txt' )
+T2tt_1.addSource( 'obsExclusion', 'orig/CMS-SUS-16-050_Figure_008.root', 'root', objectName = 'ObsLim' )
+T2tt_1.addSource( 'obsExclusionP1', 'orig/CMS-SUS-16-050_Figure_008.root', 'root', objectName = 'ObsLimSup' )
+T2tt_1.addSource( 'obsExclusionM1', 'orig/CMS-SUS-16-050_Figure_008.root', 'root', objectName = 'ObsLimSdn' )
+T2tt_1.addSource( 'expExclusion', 'orig/CMS-SUS-16-050_Figure_008.root', 'root', objectName = 'ExpLim' )
+T2tt_1.addSource( 'expExclusionP1', 'orig/CMS-SUS-16-050_Figure_008.root', 'root', objectName = 'ExpLimSup' )
+T2tt_1.addSource( 'expExclusionM1', 'orig/CMS-SUS-16-050_Figure_008.root', 'root', objectName = 'ExpLimSdn' )
 ## fixme add expected
 T2tt_1.dataUrl = "http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-050/CMS-SUS-16-050_Figure_008.root"
 T2tt_1.figureUrl = "http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-050/CMS-SUS-16-050_Figure_008.png"
@@ -97,7 +102,12 @@ T1tttt_1.addSource( 'upperLimits', 'orig/CMS-SUS-16-050_Figure_009-a.root', 'roo
 		objectName = 'combined_obsLimit_BR100pct' )
 T1tttt_1.addSource( 'expectedUpperLimits', 'orig/CMS-SUS-16-050_Figure_009-a.root', 'root',
 		objectName = 'combined_expLimit_BR100pct' )
-T1tttt_1.addSource( 'obsExclusion', 'orig/T1tttt_fake_excl.txt', 'txt' )
+T1tttt_1.addSource( 'obsExclusion', 'orig/CMS-SUS-16-050_Figure_009-a.root', 'root', objectName = 'ObsLim' )
+T1tttt_1.addSource( 'obsExclusionP1', 'orig/CMS-SUS-16-050_Figure_009-a.root', 'root', objectName = 'ObsLimSup' )
+T1tttt_1.addSource( 'obsExclusionM1', 'orig/CMS-SUS-16-050_Figure_009-a.root', 'root', objectName = 'ObsLimSdn' )
+T1tttt_1.addSource( 'expExclusion', 'orig/CMS-SUS-16-050_Figure_009-a.root', 'root', objectName = 'ExpLim' )
+T1tttt_1.addSource( 'expExclusionP1', 'orig/CMS-SUS-16-050_Figure_009-a.root', 'root', objectName = 'ExpLimSup' )
+T1tttt_1.addSource( 'expExclusionM1', 'orig/CMS-SUS-16-050_Figure_009-a.root', 'root', objectName = 'ExpLimSdn' )
 T1tttt_1.dataUrl = "http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-050/CMS-SUS-16-050_Figure_009-a.root"
 T1tttt_1.figureUrl = "http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-050/CMS-SUS-16-050_Figure_009-a.png"
 
@@ -117,13 +127,18 @@ T5tctc.condition =None
 T5tctc.source ='CMS'
 
 T5tctc_1 = T5tctc.addMassPlane([[x,y+20,y]]*2)
-T5tctc_1.addSource( 'upperLimits', 'orig/CMS-SUS-16-050_Figure_009-c.root', 'root',
+T5tctc_1.addSource( 'upperLimits', 'orig/CMS-SUS-16-050_Figure_009-d.root', 'root',
 		objectName = 'combined_obsLimit_BR100pct' )
-T5tctc_1.addSource( 'expectedUpperLimits', 'orig/CMS-SUS-16-050_Figure_009-c.root', 'root',
+T5tctc_1.addSource( 'expectedUpperLimits', 'orig/CMS-SUS-16-050_Figure_009-d.root', 'root',
 		objectName = 'combined_expLimit_BR100pct' )
-T5tctc_1.addSource( 'obsExclusion', 'orig/T5tctc_fake_excl.txt', 'txt' )
-T5tctc_1.dataUrl = "http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-050/CMS-SUS-16-050_Figure_009-c.root"
-T5tctc_1.figureUrl = "http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-050/CMS-SUS-16-050_Figure_009-c.png"
+T5tctc_1.addSource( 'obsExclusion', 'orig/CMS-SUS-16-050_Figure_009-d.root', 'root', objectName = 'ObsLim' )
+T5tctc_1.addSource( 'obsExclusionP1', 'orig/CMS-SUS-16-050_Figure_009-d.root', 'root', objectName = 'ObsLimSup' )
+T5tctc_1.addSource( 'obsExclusionM1', 'orig/CMS-SUS-16-050_Figure_009-d.root', 'root', objectName = 'ObsLimSdn' )
+T5tctc_1.addSource( 'expExclusion', 'orig/CMS-SUS-16-050_Figure_009-d.root', 'root', objectName = 'ExpLim' )
+T5tctc_1.addSource( 'expExclusionP1', 'orig/CMS-SUS-16-050_Figure_009-d.root', 'root', objectName = 'ExpLimSup' )
+T5tctc_1.addSource( 'expExclusionM1', 'orig/CMS-SUS-16-050_Figure_009-d.root', 'root', objectName = 'ExpLimSdn' )
+T5tctc_1.dataUrl = "http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-050/CMS-SUS-16-050_Figure_009-d.root"
+T5tctc_1.figureUrl = "http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-050/CMS-SUS-16-050_Figure_009-d.png"
 
 T5tttt = dataset.addTxName('T5tttt')
 T5tttt.checked=''
@@ -133,12 +148,17 @@ T5tttt.condition =None
 T5tttt.source ='CMS'
 
 T5tttt_1 = T5tttt.addMassPlane([[x,y+175,y]]*2)
-T5tttt_1.addSource( 'upperLimits', 'orig/CMS-SUS-16-050_Figure_009-d.root', 'root',
+T5tttt_1.addSource( 'upperLimits', 'orig/CMS-SUS-16-050_Figure_009-c.root', 'root',
 		objectName = 'combined_obsLimit_BR100pct' )
-T5tttt_1.addSource( 'expectedUpperLimits', 'orig/CMS-SUS-16-050_Figure_009-d.root', 'root',
+T5tttt_1.addSource( 'expectedUpperLimits', 'orig/CMS-SUS-16-050_Figure_009-c.root', 'root',
 		objectName = 'combined_expLimit_BR100pct' )
-T5tttt_1.addSource( 'obsExclusion', 'orig/T5tttt_fake_excl.txt', 'txt' )
-T5tttt_1.dataUrl = "http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-050/CMS-SUS-16-050_Figure_009-d.root"
-T5tttt_1.figureUrl = "http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-050/CMS-SUS-16-050_Figure_009-d.png"
+T5tttt_1.addSource( 'obsExclusion', 'orig/CMS-SUS-16-050_Figure_009-c.root', 'root', objectName = 'ObsLim' )
+T5tttt_1.addSource( 'obsExclusionP1', 'orig/CMS-SUS-16-050_Figure_009-c.root', 'root', objectName = 'ObsLimSup' )
+T5tttt_1.addSource( 'obsExclusionM1', 'orig/CMS-SUS-16-050_Figure_009-c.root', 'root', objectName = 'ObsLimSdn' )
+T5tttt_1.addSource( 'expExclusion', 'orig/CMS-SUS-16-050_Figure_009-c.root', 'root', objectName = 'ExpLim' )
+T5tttt_1.addSource( 'expExclusionP1', 'orig/CMS-SUS-16-050_Figure_009-c.root', 'root', objectName = 'ExpLimSup' )
+T5tttt_1.addSource( 'expExclusionM1', 'orig/CMS-SUS-16-050_Figure_009-c.root', 'root', objectName = 'ExpLimSdn' )
+T5tttt_1.dataUrl = "http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-050/CMS-SUS-16-050_Figure_009-c.root"
+T5tttt_1.figureUrl = "http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-050/CMS-SUS-16-050_Figure_009-c.png"
 
 databaseCreator.create()
