@@ -1,12 +1,12 @@
 txName: T2cc
-constraint: [[['c']],[['c']]]
+constraint: [[['jet']],[['jet']]]
 condition: None
 conditionDescription: None
 susyProcess: pp --> stop stop, stop  --> charm lsp
 figureUrl: http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-036/CMS-SUS-16-036_Figure_008-b.png
 dataUrl: http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-036/CMS-SUS-16-036_Figure_008-b.root
 source: CMS
-validated: True
+validated: TBD
 axes: [[x, y], [x, y]]
 upperLimits: [[[[1.5625E+02*GeV,7.7500E+01*GeV],[1.5625E+02*GeV,7.7500E+01*GeV]],1.1086E+01*pb],
 [[[1.5625E+02*GeV,8.2500E+01*GeV],[1.5625E+02*GeV,8.2500E+01*GeV]],1.0636E+01*pb],

@@ -9,4 +9,4 @@ contact: cms-phys-conveners-sus@cern.ch
 comment: Moriond 2017. The mixed decay topology for stop pair production with stop->t \chi1_0 (50% BR) and stop->b \chi^{\pm} -> b W^{\pm} \chi1_0 (50%), has not been implemented since the branching ratio is fixed and the mass difference between the chargino and neutralino is fixed to 5 GeV. 
 private: False
 implementedBy: Juhi Dutta
-lastUpdate: 2017/12/28
+lastUpdate: 2018/2/16

@@ -224,7 +224,7 @@ T6bbWW_1.setSources(dataLabels=['expExclusion','expExclusionM1','expExclusionP1'
 
 T2cc=dataset.addTxName('T2cc')
 T2cc.checked=''
-T2cc.constraint="[[['c']],[['c']]]"
+T2cc.constraint="[[['jet']],[['jet']]]"
 T2cc.condition=None
 T2cc.conditionDescription = None
 T2cc.source="CMS"
