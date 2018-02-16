@@ -46,7 +46,8 @@ info.prettyName = 'same-sign dilepton'
 info.private = False
 info.arxiv = 'http://arxiv.org/abs/1605.03171'
 info.publication = 'http://dx.doi.org/10.1140/epjc/s10052-016-4261-z'
-info.comment = 'Only T1tttt can be implemneted (other topologies have only up to 2 mass planes)'
+info.comment = 'Only T1tttt can be implemneted (other topologies have only up to 2 mass planes). Superseded by CMS-SUS-16-035.'
+info.supersededBy = 'CMS-SUS-16-035'
 
 
 #+++++++ dataset block ++++++++++++++

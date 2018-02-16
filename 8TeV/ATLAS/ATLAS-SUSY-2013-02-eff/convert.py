@@ -127,7 +127,7 @@ T2 = T2.addMassPlane([[x,y]]*2)
 T2.figure  = "figaux_29b"
 T2.addSource('efficiencyMap',"orig/T2_SR6jt+.dat","txt")
 T2.addSource('obsExclusion',"orig/exclusion_T2.txt", "txt")
-T2.figureUrl  = "https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-02/figaux_29.png"
+T2.figureUrl  = "https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-02/figaux_29b.png"
 T2.dataUrl  = "http://hepdata.cedar.ac.uk/view/ins1298722/d148"
 #+++++++ next txName block ++++++++++++++
 T1 = dataset.addTxName('T1')

@@ -3,7 +3,7 @@ constraint: [[['jet']],[['jet']]]
 condition: None
 conditionDescription: None
 susyProcess: pp --> squark squark, squark  --> quark lsp
-figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-02/figaux_29.png
+figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-02/figaux_29b.png
 dataUrl: http://hepdata.cedar.ac.uk/view/ins1298722/d148
 source: ATLAS
 validated: True

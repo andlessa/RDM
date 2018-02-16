@@ -42,8 +42,8 @@ info.url = 'http://cms-results.web.cern.ch/cms-results/public-results/preliminar
 info.sqrts = 13
 info.lumi = 12.9
 info.private = False 
-info.comment = 'https://cds.cern.ch/record/2205168'
-
+info.comment = 'https://cds.cern.ch/record/2205168. Superseded by CMS-SUS-16-039.'
+info.supersededBy = 'CMS-SUS-16-039'
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput('data')
