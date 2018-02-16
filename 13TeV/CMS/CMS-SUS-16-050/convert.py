@@ -48,12 +48,13 @@ info.url = 'http://cms-results.web.cern.ch/cms-results/public-results/publicatio
 info.sqrts = '13.0*TeV'
 info.lumi = 35.9
 info.prettyName = '0L + top tag'
+info.publication = "Phys. Rev. D 97 (2018) 012007, http://dx.doi.org/10.1103/PhysRevD.97.012007"
 info.private = False
 info.arxiv = 'https://arxiv.org/abs/1710.11188'
 info.comment = 'no charm tagging is performed in analyses, therefore we apply the T5tctc result also to up quarks (=T5tqtq)' ## LHCP 2017. root files do not contain limit curves. root files Figure_009-c.root and Figure_009-d.root are swapped!'
 info.implementedBy = 'WW'
 info.supersedes = "CMS-PAS-SUS-16-050"
-info.contact = 'CMS collaboration'
+info.contact = 'CMS collaboration, cms-phys-conveners-sus@cern.ch'
 
 dataset = DataSetInput('data')
 dataset.setInfo(dataType = 'upperLimit', dataId = None)
