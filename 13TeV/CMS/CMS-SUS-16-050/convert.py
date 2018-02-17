@@ -140,7 +140,6 @@ T5tctc_1.addSource( 'expExclusionP1', 'orig/CMS-SUS-16-050_Figure_009-d.root', '
 T5tctc_1.addSource( 'expExclusionM1', 'orig/CMS-SUS-16-050_Figure_009-d.root', 'root', objectName = 'ExpLimSdn' )
 T5tctc_1.dataUrl = "http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-050/CMS-SUS-16-050_Figure_009-d.root"
 T5tctc_1.figureUrl = "http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-050/CMS-SUS-16-050_Figure_009-d.png"
-T5tctc_1.comment = 'no charm tagging is performed in analyses, therefore we apply the T5tctc result also to up quarks'
 
 T5tttt = dataset.addTxName('T5tttt')
 T5tttt.checked=''
