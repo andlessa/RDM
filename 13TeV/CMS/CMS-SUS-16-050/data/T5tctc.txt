@@ -1,12 +1,12 @@
-txName: T5tqtq
+txName: T5tctc
 constraint: [[['t'],['jet']],[['t'],['jet']]]
 condition: None
 conditionDescription: None
-susyProcess: pp --> gluino gluino, gluino --> top stop, stop --> quark lsp
+susyProcess: pp --> gluino gluino, gluino --> top stop, stop --> charm lsp
 figureUrl: http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-050/CMS-SUS-16-050_Figure_009-d.png
 dataUrl: http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-050/CMS-SUS-16-050_Figure_009-d.root
 source: CMS
-validated: True
+validated: TBD
 axes: [[x, y + 20, y], [x, y + 20, y]]
 upperLimits: [[[[6.0000E+02*GeV,2.0000E+01*GeV,0.0000E+00*GeV],[6.0000E+02*GeV,2.0000E+01*GeV,0.0000E+00*GeV]],9.6637E-02*pb],
 [[[6.0000E+02*GeV,3.2500E+01*GeV,1.2500E+01*GeV],[6.0000E+02*GeV,3.2500E+01*GeV,1.2500E+01*GeV]],8.6980E-02*pb],
