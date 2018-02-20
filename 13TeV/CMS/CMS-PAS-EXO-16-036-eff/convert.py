@@ -37,7 +37,7 @@ from smodels_utils.dataPreparation.massPlaneObjects import x, y, z
 
 
 #+++++++ global info block ++++++++++++++
-info = MetaInfoInput('CMS-PAS-EXO-13-006')
+info = MetaInfoInput('CMS-PAS-EXO-13-036')
 info.url = 'http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/EXO-16-036/index.html'
 info.sqrts = 13
 info.lumi = 12.9
