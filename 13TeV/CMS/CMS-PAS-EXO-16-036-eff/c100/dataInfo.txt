@@ -1,7 +1,7 @@
 dataId: c100
 dataType: efficiencyMap
-observedN: 2
-expectedBG: 1.45
-bgError: 0.29
-upperLimit: 0.4*fb
-expectedUpperLimit: 0.307*fb
+observedN: 1
+expectedBG: 0.3377
+bgError: 0.127
+upperLimit: 0.346*fb
+expectedUpperLimit: 0.232*fb

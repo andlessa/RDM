@@ -48,9 +48,9 @@ info.comment ='Search for long-lived charged particles implemented using a corre
 
 #++Define list of datasets++
 datasetNames = ['c000','c100','c200','c300']
-observedNs = [5,2,0,0]
-expectedBGs = [2.63,1.45,0.017,0.0045]
-bgErrors = [0.53,0.29,0.003,0.001]
+observedNs = [5,1,0,0] #Extracted from a fit of the data
+expectedBGs = [2.63,0.3377,0.0258,0.0045] #Extracted from a log fit of CMS BG
+bgErrors = [0.53,0.127,0.0036,0.001] #Estimated from the error between a log fit and a linear fit of the CMS BG
 #obsUpperLimits = ['1.15*fb','0.441*fb','0.16*fb','0.159*fb']
 #expUpperLimits = ['1.23*fb','0.338*fb','0.16*fb','0.159*fb']
 for i,name in enumerate(datasetNames):
