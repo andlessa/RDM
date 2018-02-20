@@ -62,9 +62,9 @@ HSCPM1.dataUrl = 'http://cms-results.web.cern.ch/cms-results/public-results/prel
 HSCPM1.source = 'CMS'
 #+++++++ next mass plane block ++++++++++++++
 plane = HSCPM1.addMassPlane([[x],[x]])
-plane.setSources(dataLabels=['obsExclusion','upperLimits'],
-                    dataFiles=['orig/CMS-PAS-EXO-16-036_Figure_003-b_stauDP.dat','orig/CMS-PAS-EXO-16-036_Figure_003-b_stauDP.dat'],
-                    dataFormats=['txt','txt'],units=[None,'pb'])
+plane.setSources(dataLabels=['upperLimits'],
+                    dataFiles=['orig/CMS-PAS-EXO-16-036_Figure_003-b_stauDP.dat'],
+                    dataFormats=['txt'],units=['pb'])
 
 
 #+++++++ next txName block ++++++++++++++
@@ -78,9 +78,9 @@ RHadGM1.dataUrl = 'http://cms-results.web.cern.ch/cms-results/public-results/pre
 RHadGM1.source = 'CMS'
 #+++++++ next mass plane block ++++++++++++++
 plane = RHadGM1.addMassPlane([[x],[x]])
-plane.setSources(dataLabels=['obsExclusion','upperLimits'],
-                    dataFiles=['orig/CMS-PAS-EXO-16-036_Figure_003-b_gluino50.dat','orig/CMS-PAS-EXO-16-036_Figure_003-b_gluino50.dat'],
-                    dataFormats=['txt','txt'],units=[None,'pb'])
+plane.setSources(dataLabels=['upperLimits'],
+                    dataFiles=['orig/CMS-PAS-EXO-16-036_Figure_003-b_gluino50.dat'],
+                    dataFormats=['txt'],units=['pb'])
 
 #+++++++ next txName block ++++++++++++++
 RHadQM1 = dataset.addTxName('TRHadQM1')
@@ -93,9 +93,9 @@ RHadQM1.dataUrl = 'http://cms-results.web.cern.ch/cms-results/public-results/pre
 RHadQM1.source = 'CMS'
 #+++++++ next mass plane block ++++++++++++++
 plane = RHadQM1.addMassPlane([[x],[x]])
-plane.setSources(dataLabels=['obsExclusion','upperLimits'],
-                    dataFiles=['orig/CMS-PAS-EXO-16-036_Figure_003-b_stop.dat','orig/CMS-PAS-EXO-16-036_Figure_003-b_stop.dat'],
-                    dataFormats=['txt','txt'],units=[None,'pb'])
+plane.setSources(dataLabels=['upperLimits'],
+                    dataFiles=['orig/CMS-PAS-EXO-16-036_Figure_003-b_stop.dat'],
+                    dataFormats=['txt'],units=['pb'])
 
 
 databaseCreator.create()
