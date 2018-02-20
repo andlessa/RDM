@@ -1,4 +1,4 @@
-id: CMS-PAS-EXO-13-036
+id: CMS-PAS-EXO-16-036
 sqrts: 13*TeV
 lumi: 12.9/fb
 prettyName: hscp search
