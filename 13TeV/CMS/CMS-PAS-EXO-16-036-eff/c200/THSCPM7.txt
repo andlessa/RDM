@@ -5,7 +5,7 @@ conditionDescription: None
 susyProcess: pp --> lsp chargino^pm_2, lsp chargino^pm_2 --> tau stau_1 chargino^pm_1, chargino^pm_1 --> nu stau_1
 dataUrl: None
 source: SModelS
-validated: TBD
+validated: N/A
 axes: [[x, z], [x, y, z]]
 finalState: ['HSCP', 'HSCP']
 efficiencyMap: [[[[5.5700E+02*GeV,4.0000E+02*GeV],[5.5700E+02*GeV,5.5200E+02*GeV,4.0000E+02*GeV]],0.49328],
