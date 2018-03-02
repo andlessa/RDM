@@ -4,7 +4,7 @@ condition: None
 susyProcess: pp --> stop stop, stop stop --> stop stop
 dataUrl: http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/EXO-16-036/CMS-PAS-EXO-16-036_Figure_003-b.png
 source: CMS
-validated: TBD
+validated: True
 axes: [[x], [x]]
 finalState: ['RHadronQ', 'RHadronQ']
 upperLimits: [[[[9.9180E+01*GeV],[9.9180E+01*GeV]],1.0992E-02*pb],

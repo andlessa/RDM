@@ -4,7 +4,7 @@ condition: None
 susyProcess: pp --> gluino gluino, gluino gluino --> gluino gluino
 dataUrl: http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/EXO-16-036/CMS-PAS-EXO-16-036_Figure_003-b.png
 source: CMS
-validated: TBD
+validated: True
 axes: [[x], [x]]
 finalState: ['RHadronG', 'RHadronG']
 upperLimits: [[[[2.0000E+02*GeV],[2.0000E+02*GeV]],1.6118E-02*pb],
