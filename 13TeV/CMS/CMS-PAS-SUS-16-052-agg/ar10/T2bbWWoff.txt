@@ -1,12 +1,12 @@
-txName: T2bbffff
+txName: T2bbWWoff
 constraint: [[['b','mu','nu']],[['b','jet','jet']]]+[[['b','e','nu']],[['b','jet','jet']]]
 condition: None
 conditionDescription: None
-susyProcess: pp --> stop stop, stop  --> bottom f f lsp
+susyProcess: pp --> stop stop, stop  --> bottom W^* lsp
 figureUrl: http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-052/CMS-PAS-SUS-16-052_Figure-aux_007.png
 dataUrl: http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-052/AccpEffMap_T2tt.root
 source: SModelS
-validated: True
+validated: TBD
 axes: [[x, x - y], [x, x - y]]
 efficiencyMap: [[[[2.5000E+02*GeV,2.4000E+02*GeV],[2.5000E+02*GeV,2.4000E+02*GeV]],2.1408e-05],
 [[[2.5000E+02*GeV,2.3000E+02*GeV],[2.5000E+02*GeV,2.3000E+02*GeV]],8.3399e-05],

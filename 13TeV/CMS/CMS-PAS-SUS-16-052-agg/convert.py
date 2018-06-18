@@ -110,64 +110,63 @@ for agg in creator.aggregate:
         tmp.append ( s )
     dsnames.append ( tmp )
 
+#  T2bbWWoff.txt  T6bbWWoffSemiLep.txt
 for ctr,dataset in enumerate(creator):
     #+++++++ next txName block ++++++++++++++
-    T2bbffff = dataset.addTxName('T2bbffff')
-    T2bbffff.checked =''
-    T2bbffff.constraint = "[[['b','mu','nu']],[['b','jet','jet']]]+[[['b','e','nu']],[['b','jet','jet']]]"
-    #T2bbffff.constraint = "[[['b','W']],[['b','W']]]"
-    T2bbffff.conditionDescription = None
-    T2bbffff.condition =None
-    T2bbffff.source ='SModelS'                                                                #+++++++ next mass plane block ++++++++++++++
-    T2bbffff_1 = T2bbffff.addMassPlane([[x,x-y]]*2)
+    T2bbWWoff = dataset.addTxName('T2bbWWoff')
+    T2bbWWoff.checked =''
+    T2bbWWoff.constraint = "[[['b','mu','nu']],[['b','jet','jet']]]+[[['b','e','nu']],[['b','jet','jet']]]"
+    #T2bbWWoff.constraint = "[[['b','W']],[['b','W']]]"
+    T2bbWWoff.conditionDescription = None
+    T2bbWWoff.condition =None
+    T2bbWWoff.source ='SModelS'                                                                #+++++++ next mass plane block ++++++++++++++
+    T2bbWWoff_1 = T2bbWWoff.addMassPlane([[x,x-y]]*2)
     #----exclusion source----
     #dataId = dataset.dataId.lower()
     #dataId = dataId.replace("x","X").replace("y","Y")
     dataId = dsnames[ctr]
-    T2bbffff_1.addSource( 'efficiencyMap', 'orig/AccpEffMap_T2tt.root', 'root',
+    T2bbWWoff_1.addSource( 'efficiencyMap', 'orig/AccpEffMap_T2tt.root', 'root',
                         objectName = dataId, scale=3.47 )
-    T2bbffff_1.addSource( 'obsExclusion', 'orig/CMS-PAS-SUS-16-052_Figure_004.root',\
+    T2bbWWoff_1.addSource( 'obsExclusion', 'orig/CMS-PAS-SUS-16-052_Figure_004.root',\
                         'canvas', objectName = "cCONT_", index=6 )
-    T2bbffff_1.addSource( 'obsExclusionP1', 'orig/CMS-PAS-SUS-16-052_Figure_004.root',\
+    T2bbWWoff_1.addSource( 'obsExclusionP1', 'orig/CMS-PAS-SUS-16-052_Figure_004.root',\
                         'canvas', objectName = "cCONT_", index=7 )
-    T2bbffff_1.addSource( 'obsExclusionM1', 'orig/CMS-PAS-SUS-16-052_Figure_004.root',\
+    T2bbWWoff_1.addSource( 'obsExclusionM1', 'orig/CMS-PAS-SUS-16-052_Figure_004.root',\
                         'canvas', objectName = "cCONT_", index=8 )
-    T2bbffff_1.addSource( 'expExclusion', 'orig/CMS-PAS-SUS-16-052_Figure_004.root',\
+    T2bbWWoff_1.addSource( 'expExclusion', 'orig/CMS-PAS-SUS-16-052_Figure_004.root',\
                         'canvas', objectName = "cCONT_", index=3 )
-    T2bbffff_1.addSource( 'expExclusionP1', 'orig/CMS-PAS-SUS-16-052_Figure_004.root',\
+    T2bbWWoff_1.addSource( 'expExclusionP1', 'orig/CMS-PAS-SUS-16-052_Figure_004.root',\
                         'canvas', objectName = "cCONT_", index=4 )
-    T2bbffff_1.addSource( 'expExclusionM1', 'orig/CMS-PAS-SUS-16-052_Figure_004.root',\
+    T2bbWWoff_1.addSource( 'expExclusionM1', 'orig/CMS-PAS-SUS-16-052_Figure_004.root',\
                         'canvas', objectName = "cCONT_", index=5 )
-    T2bbffff_1.dataUrl = "http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-052/AccpEffMap_T2tt.root"
-    T2bbffff_1.figureUrl = "http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-052/CMS-PAS-SUS-16-052_Figure-aux_007.png"
+    T2bbWWoff_1.dataUrl = "http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-052/AccpEffMap_T2tt.root"
+    T2bbWWoff_1.figureUrl = "http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-052/CMS-PAS-SUS-16-052_Figure-aux_007.png"
 
-    """
     #+++++++ next txName block ++++++++++++++
-    T4bbffff = dataset.addTxName('T4bbffff')
-    T4bbffff.checked =''
-    T4bbffff.constraint = "[[['b'],['mu','nu']],[['b'],['jet','jet']]]+[[['b'],['e','nu']],[['b'],['jet','jet']]]"
-    # T4bbffff.constraint = "[[['b'],['W']],[['b'],['W']]]"
-    T4bbffff.conditionDescription = None
-    T4bbffff.condition =None
-    T4bbffff.source ='SModelS'                                                                #+++++++ next mass plane block ++++++++++++++
-    T4bbffff_1 = T4bbffff.addMassPlane([[x,x-.5*y,x-y]]*2)
+    T6bbWWoffSemiLep = dataset.addTxName('T6bbWWoffSemiLep')
+    T6bbWWoffSemiLep.checked =''
+    T6bbWWoffSemiLep.constraint = "[[['b'],['mu','nu']],[['b'],['jet','jet']]]+[[['b'],['e','nu']],[['b'],['jet','jet']]]"
+    # T6bbWWoffSemiLep.constraint = "[[['b'],['W']],[['b'],['W']]]"
+    T6bbWWoffSemiLep.conditionDescription = None
+    T6bbWWoffSemiLep.condition =None
+    T6bbWWoffSemiLep.source ='SModelS'                                                                #+++++++ next mass plane block ++++++++++++++
+    T6bbWWoffSemiLep_1 = T6bbWWoffSemiLep.addMassPlane([[x,x-.5*y,x-y]]*2)
     #----exclusion source----
-    T4bbffff_1.addSource( 'efficiencyMap', 'orig/AccpEffMap_T2bW.root', 'root',
+    T6bbWWoffSemiLep_1.addSource( 'efficiencyMap', 'orig/AccpEffMap_T2bW.root', 'root',
                         objectName = dataId, scale=3.47 )
-    T4bbffff_1.addSource( 'obsExclusion', 'orig/CMS-PAS-SUS-16-052_Figure_005.root',\
+    T6bbWWoffSemiLep_1.addSource( 'obsExclusion', 'orig/CMS-PAS-SUS-16-052_Figure_005.root',\
                         'canvas', objectName = "cCONT_", index=6 )
-    T4bbffff_1.addSource( 'obsExclusionP1', 'orig/CMS-PAS-SUS-16-052_Figure_005.root',\
+    T6bbWWoffSemiLep_1.addSource( 'obsExclusionP1', 'orig/CMS-PAS-SUS-16-052_Figure_005.root',\
                         'canvas', objectName = "cCONT_", index=7 )
-    T4bbffff_1.addSource( 'obsExclusionM1', 'orig/CMS-PAS-SUS-16-052_Figure_005.root',\
+    T6bbWWoffSemiLep_1.addSource( 'obsExclusionM1', 'orig/CMS-PAS-SUS-16-052_Figure_005.root',\
                         'canvas', objectName = "cCONT_", index=8 )
-    T4bbffff_1.addSource( 'expExclusion', 'orig/CMS-PAS-SUS-16-052_Figure_005.root',\
+    T6bbWWoffSemiLep_1.addSource( 'expExclusion', 'orig/CMS-PAS-SUS-16-052_Figure_005.root',\
                         'canvas', objectName = "cCONT_", index=3 )
-    T4bbffff_1.addSource( 'expExclusionP1', 'orig/CMS-PAS-SUS-16-052_Figure_005.root',\
+    T6bbWWoffSemiLep_1.addSource( 'expExclusionP1', 'orig/CMS-PAS-SUS-16-052_Figure_005.root',\
                         'canvas', objectName = "cCONT_", index=4 )
-    T4bbffff_1.addSource( 'expExclusionM1', 'orig/CMS-PAS-SUS-16-052_Figure_005.root',\
+    T6bbWWoffSemiLep_1.addSource( 'expExclusionM1', 'orig/CMS-PAS-SUS-16-052_Figure_005.root',\
                         'canvas', objectName = "cCONT_", index=5 )
-    T4bbffff_1.dataUrl = "http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-052/AccpEffMap_T2bW.root"
-    T4bbffff_1.figureUrl = "http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-052/CMS-PAS-SUS-16-052_Figure-aux_008.png"
-    """
+    T6bbWWoffSemiLep_1.dataUrl = "http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-052/AccpEffMap_T2bW.root"
+    T6bbWWoffSemiLep_1.figureUrl = "http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-052/CMS-PAS-SUS-16-052_Figure-aux_008.png"
 
 databaseCreator.create()
