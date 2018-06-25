@@ -113,7 +113,7 @@ for agg in creator.aggregate:
 #  T2bbWWoff.txt  T6bbWWoffSemiLep.txt
 for ctr,dataset in enumerate(creator):
     #+++++++ next txName block ++++++++++++++
-    T2bbWWoff = dataset.addTxName('T2bbWWoff')
+    T2bbWWoff = dataset.addTxName('T2bbWWoffSemiLep')
     T2bbWWoff.checked =''
     T2bbWWoff.constraint = "[[['b','mu','nu']],[['b','jet','jet']]]+[[['b','e','nu']],[['b','jet','jet']]]"
     #T2bbWWoff.constraint = "[[['b','W']],[['b','W']]]"
