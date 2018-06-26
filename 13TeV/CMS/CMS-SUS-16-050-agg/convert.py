@@ -90,12 +90,19 @@ aggregation = [[1, 6, 10, 11, 22, 38], [2], [3], [4], [5], [7, 12, 13, 16, 17, 1
 ## low pointers [1, 2, 5, 6, 7, 8, 11, 12, 13, 23, 24, 25, 29, 33, 34, 35, 36, 37, 38, 41, 45, 48, 52, 59, 62, 66, 67, 69, 74, 77, 78, 80, 84]
 
 info.createCovarianceMatrix ( "orig/CMS-SUS-16-050_Figure-aux_001.root", \
-        "total_covar", addOrder=True, max_datasets = max_datasets, aggregate=aggregation )
+        "total_covar", addOrder=True, max_datasets = max_datasets, 
+        aggregate=aggregation )
 
 creator = DatasetsFromLatex ( "orig/tables.tex", max_datasets = max_datasets,
          ds_name = "t#1b#2MT2#3MET#4", aggregate=aggregation )
 
-for ctr,dataset in enumerate(creator):
+datasets = list ( creator )
+
+info.createCovarianceMatrix ( "orig/CMS-SUS-16-050_Figure-aux_001.root", \
+        "total_covar", addOrder=True, max_datasets = max_datasets, 
+        aggregate=aggregation, datasets=datasets )
+
+for ctr,dataset in enumerate(datasets):
     #+++++++ next txName block ++++++++++++++
     T2tt = dataset.addTxName('T2tt')
     T2tt.checked =''
