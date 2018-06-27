@@ -1,5 +1,5 @@
 txName: T6bbWWoffSemiLep
-constraint: [[['b'],['mu','nu']],[['b'],['jet','jet']]]+[[['b'],['e','nu']],[['b'],['jet','jet']]]
+constraint: [[['b'],['l','nu']],[['b'],['jet','jet']]]
 condition: None
 conditionDescription: None
 susyProcess: pp --> stop stop, stop  --> bottom chargino_1^pm, chargino_1^pm --> W^*_l lsp

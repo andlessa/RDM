@@ -145,7 +145,7 @@ for ctr,dataset in enumerate(creator):
     #+++++++ next txName block ++++++++++++++
     T6bbWWoffSemiLep = dataset.addTxName('T6bbWWoffSemiLep')
     T6bbWWoffSemiLep.checked =''
-    T6bbWWoffSemiLep.constraint = "[[['b'],['mu','nu']],[['b'],['jet','jet']]]+[[['b'],['e','nu']],[['b'],['jet','jet']]]"
+    T6bbWWoffSemiLep.constraint = "[[['b'],['l','nu']],[['b'],['jet','jet']]]"
     # T6bbWWoffSemiLep.constraint = "[[['b'],['W']],[['b'],['W']]]"
     T6bbWWoffSemiLep.conditionDescription = None
     T6bbWWoffSemiLep.condition =None
