@@ -6,7 +6,7 @@ susyProcess: pp --> stop stop, stop  --> bottom W lsp
 figureUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS14021/efficienciesSRSL1c.png
 dataUrl: https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS14021
 source: CMS
-validated: False
+validated: TBD
 axes: [[x, y], [x, y]]
 efficiencyMap: [[[[1.0000E+02*GeV,2.0000E+01*GeV],[1.0000E+02*GeV,2.0000E+01*GeV]],3.0828e-08],
 [[[1.0000E+02*GeV,2.5000E+01*GeV],[1.0000E+02*GeV,2.5000E+01*GeV]],1.7694e-08],

@@ -1,12 +1,12 @@
-txName: T2bbWWoff
+txName: T2bbWWoffSemiLep
 constraint: 6.94*[[['b','mu','nu']],[['b','jet','jet']]]
 condition: None
 conditionDescription: None
-susyProcess: pp --> stop stop, stop  --> bottom W^* lsp
+susyProcess: pp --> stop stop, stop  --> bottom W^* lsp, W^* --> l nu
 figureUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS14021/efficienciesSRSL1c.png
 dataUrl: https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS14021
 source: CMS
-validated: False
+validated: TBD
 axes: [[x, y], [x, y]]
 efficiencyMap: [[[[1.0000E+02*GeV,2.5000E+01*GeV],[1.0000E+02*GeV,2.5000E+01*GeV]],1.7694e-08],
 [[[1.0000E+02*GeV,3.0000E+01*GeV],[1.0000E+02*GeV,3.0000E+01*GeV]],4.5598e-09],
