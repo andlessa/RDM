@@ -6,7 +6,7 @@ susyProcess: pp --> stop stop, stop  --> bottom chargino_1^pm, chargino_1^pm -->
 figureUrl: http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-052/CMS-PAS-SUS-16-052_Figure-aux_008.png
 dataUrl: http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-052/AccpEffMap_T2bW.root
 source: SModelS
-validated: TBD
+validated: True
 axes: [[x, x - 0.5*y, x - y], [x, x - 0.5*y, x - y]]
 efficiencyMap: [[[[2.5000E+02*GeV,2.4500E+02*GeV,2.4000E+02*GeV],[2.5000E+02*GeV,2.4500E+02*GeV,2.4000E+02*GeV]],0.00073991],
 [[[2.5000E+02*GeV,2.4000E+02*GeV,2.3000E+02*GeV],[2.5000E+02*GeV,2.4000E+02*GeV,2.3000E+02*GeV]],0.0012645],
