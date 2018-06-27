@@ -62,7 +62,8 @@ dataset.setInfo(dataType = 'upperLimit', dataId = None)
 #+++++++ next txName block ++++++++++++++
 T2bbWWoffSemiLep = dataset.addTxName('T2bbWWoffSemiLep')
 T2bbWWoffSemiLep.checked =''
-T2bbWWoffSemiLep.constraint = "3.47*([[['b','mu','nu']],[['b','jet','jet']]]+[[['b','e','nu']],[['b','jet','jet']]])"
+T2bbWWoffSemiLep.constraint = "3.47*([[['b','l','nu']],[['b','jet','jet']]])"
+#T2bbWWoffSemiLep.constraint = "3.47*([[['b','mu','nu']],[['b','jet','jet']]]+[[['b','e','nu']],[['b','jet','jet']]])"
 T2bbWWoffSemiLep.conditionDescription = None
 # T2bbWWoffSemiLep.massConstraint = [['dm <= 76.']]*2
 T2bbWWoffSemiLep.condition =None

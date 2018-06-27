@@ -115,8 +115,8 @@ for ctr,dataset in enumerate(creator):
     #+++++++ next txName block ++++++++++++++
     T2bbWWoff = dataset.addTxName('T2bbWWoffSemiLep')
     T2bbWWoff.checked =''
-    T2bbWWoff.constraint = "[[['b','mu','nu']],[['b','jet','jet']]]+[[['b','e','nu']],[['b','jet','jet']]]"
-    #T2bbWWoff.constraint = "[[['b','W']],[['b','W']]]"
+    T2bbWWoff.constraint = "[[['b','l','nu']],[['b','jet','jet']]]"
+    # T2bbWWoff.constraint = "[[['b','mu','nu']],[['b','jet','jet']]]+[[['b','e','nu']],[['b','jet','jet']]]"
     T2bbWWoff.conditionDescription = None
     T2bbWWoff.condition =None
     T2bbWWoff.source ='SModelS'                                                                #+++++++ next mass plane block ++++++++++++++
