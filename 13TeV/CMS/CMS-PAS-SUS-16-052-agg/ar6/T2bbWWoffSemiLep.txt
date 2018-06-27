@@ -2,11 +2,11 @@ txName: T2bbWWoffSemiLep
 constraint: [[['b','l','nu']],[['b','jet','jet']]]
 condition: None
 conditionDescription: None
-susyProcess: pp --> stop stop, stop  --> bottom W^* lsp, W^* --> l nu
+susyProcess: pp --> stop stop, stop  --> bottom W^* lsp, W^* --> l neutrino
 figureUrl: http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-052/CMS-PAS-SUS-16-052_Figure-aux_007.png
 dataUrl: http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-052/AccpEffMap_T2tt.root
 source: SModelS
-validated: TBD
+validated: True
 axes: [[x, x - y], [x, x - y]]
 efficiencyMap: [[[[2.5000E+02*GeV,2.4000E+02*GeV],[2.5000E+02*GeV,2.4000E+02*GeV]],7.9126e-05],
 [[[2.5000E+02*GeV,2.3000E+02*GeV],[2.5000E+02*GeV,2.3000E+02*GeV]],0.00037109],
