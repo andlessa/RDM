@@ -6,7 +6,7 @@ susyProcess: pp --> stop stop, stop  --> bottom chargino_1^pm, chargino_1^pm -->
 figureUrl: https://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-052/CMS-PAS-SUS-16-052_Figure_005.png
 dataUrl: https://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-052/CMS-PAS-SUS-16-052_Figure_005.root
 source: CMS
-validated: TBD
+validated: True
 axes: [[x, x - 0.5*y, x - y], [x, x - 0.5*y, x - y]]
 upperLimits: [[[[2.5000E+02*GeV,2.4500E+02*GeV,2.4000E+02*GeV],[2.5000E+02*GeV,2.4500E+02*GeV,2.4000E+02*GeV]],3.1357E+00*pb],
 [[[2.5000E+02*GeV,2.4250E+02*GeV,2.3500E+02*GeV],[2.5000E+02*GeV,2.4250E+02*GeV,2.3500E+02*GeV]],2.3099E+00*pb],
