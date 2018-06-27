@@ -1,12 +1,12 @@
-txName: T2bbWWoff
+txName: T2bbWWoffSemiLep
 constraint: 3.47*([[['b','mu','nu']],[['b','jet','jet']]]+[[['b','e','nu']],[['b','jet','jet']]])
 condition: None
 conditionDescription: None
-susyProcess: pp --> stop stop, stop  --> bottom W^* lsp
+susyProcess: pp --> stop stop, stop  --> bottom W^*_l lsp
 figureUrl: https://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-052/CMS-PAS-SUS-16-052_Figure_004.png
 dataUrl: https://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-052/CMS-PAS-SUS-16-052_Figure_004.root
 source: CMS
-validated: True
+validated: TBD
 axes: [[x, x - y], [x, x - y]]
 upperLimits: [[[[2.5000E+02*GeV,2.4000E+02*GeV],[2.5000E+02*GeV,2.4000E+02*GeV]],3.5858E+00*pb],
 [[[2.5000E+02*GeV,2.3500E+02*GeV],[2.5000E+02*GeV,2.3500E+02*GeV]],2.8122E+00*pb],
