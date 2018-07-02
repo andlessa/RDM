@@ -61,7 +61,7 @@ T2bbWW.condition =None
 T2bbWW.massConstraint = None
 T2bbWW.source = 'CMS'
 #+++++++ next txName block ++++++++++++++
-T2bbWWoff = dataset.addTxName('T2bbWWoffSemiLep')
+T2bbWWoff = dataset.addTxName('T2bbWWoff')
 T2bbWWoff.constraint = "6.94*[[['b','mu','nu']],[['b','jet','jet']]]"
 T2bbWWoff.conditionDescription =None
 T2bbWWoff.condition =None
@@ -95,7 +95,7 @@ T2bbWW.condition =None
 T2bbWW.massConstraint = None
 T2bbWW.source = 'CMS'
 #+++++++ next txName block ++++++++++++++
-T2bbWWoff = dataset.addTxName('T2bbWWoffSemiLep')
+T2bbWWoff = dataset.addTxName('T2bbWWoff')
 T2bbWWoff.constraint = "6.94*[[['b','mu','nu']],[['b','jet','jet']]]"
 T2bbWWoff.conditionDescription =None
 T2bbWWoff.condition =None
@@ -129,7 +129,7 @@ T2bbWW.condition =None
 T2bbWW.massConstraint = None
 T2bbWW.source = 'CMS'
 #+++++++ next txName block ++++++++++++++
-T2bbWWoff = dataset.addTxName('T2bbWWoffSemiLep')
+T2bbWWoff = dataset.addTxName('T2bbWWoff')
 T2bbWWoff.constraint = "6.94*[[['b','mu','nu']],[['b','jet','jet']]]"
 T2bbWWoff.conditionDescription =None
 T2bbWWoff.condition =None
@@ -163,7 +163,7 @@ T2bbWW.condition =None
 T2bbWW.massConstraint = None
 T2bbWW.source = 'CMS'
 #+++++++ next txName block ++++++++++++++
-T2bbWWoff = dataset.addTxName('T2bbWWoffSemiLep')
+T2bbWWoff = dataset.addTxName('T2bbWWoff')
 T2bbWWoff.constraint = "6.94*[[['b','mu','nu']],[['b','jet','jet']]]"
 T2bbWWoff.conditionDescription =None
 T2bbWWoff.condition =None
