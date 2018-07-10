@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """
 .. module:: convert
@@ -14,10 +14,10 @@ argparser = argparse.ArgumentParser(description =
 'create info.txt, txname.txt, twiki.txt and sms.py')
 argparser.add_argument ('-utilsPath', '--utilsPath', 
 help = 'path to the package smodels_utils',\
-type = types.StringType)
+type = str )
 argparser.add_argument ('-smodelsPath', '--smodelsPath', 
 help = 'path to the package smodels_utils',\
-type = types.StringType)
+type = str )
 args = argparser.parse_args()
 
 if args.utilsPath:
@@ -42,7 +42,7 @@ info = MetaInfoInput('CMS-SUS-16-046')
 info.url = 'http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-046/index.html'
 info.sqrts = 13
 info.lumi = 35.9
-info.prettyName = 'Photon + MET'
+info.prettyName = 'Photon + Etmiss'
 info.private = False
 info.arxiv = 'http://arxiv.org/abs/1711.08008'
 info.contact = 'cms-phys-conveners-sus@cern.ch'

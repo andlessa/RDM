@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """
 .. module:: convert
@@ -62,7 +62,8 @@ dataset.setInfo(dataType = 'upperLimit', dataId = None)
 #+++++++ next txName block ++++++++++++++
 T2bbWWoff = dataset.addTxName('T2bbWWoff')
 T2bbWWoff.checked =''
-T2bbWWoff.constraint = "3.47*([[['b','mu','nu']],[['b','jet','jet']]]+[[['b','e','nu']],[['b','jet','jet']]])"
+T2bbWWoff.constraint = "3.47*([[['b','l','nu']],[['b','jet','jet']]])"
+#T2bbWWoff.constraint = "3.47*([[['b','mu','nu']],[['b','jet','jet']]]+[[['b','e','nu']],[['b','jet','jet']]])"
 T2bbWWoff.conditionDescription = None
 # T2bbWWoff.massConstraint = [['dm <= 76.']]*2
 T2bbWWoff.condition =None
@@ -86,29 +87,29 @@ T2bbWWoff_1.dataUrl = "https://cms-results.web.cern.ch/cms-results/public-result
 T2bbWWoff_1.figureUrl = "https://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-052/CMS-PAS-SUS-16-052_Figure_004.png"
 
 #+++++++ next txName block ++++++++++++++
-T6bbWWoffSemiLep = dataset.addTxName('T6bbWWoffSemiLep')
-T6bbWWoffSemiLep.checked =''
-T6bbWWoffSemiLep.constraint = "3.47*([[['b'],['mu','nu']],[['b'],['jet','jet']]]+[[['b'],['e','nu']],[['b'],['jet','jet']]])"
-T6bbWWoffSemiLep.conditionDescription = None
-#T6bbWWoffSemiLep.massConstraint = [['dm <= 76.']]*2
-T6bbWWoffSemiLep.condition =None
-T6bbWWoffSemiLep.source ='CMS'                                                                #+++++++ next mass plane block ++++++++++++++
-T6bbWWoffSemiLep_1 = T6bbWWoffSemiLep.addMassPlane([[x,x-.5*y,x-y]]*2)
+T6bbWWoff = dataset.addTxName('T6bbWWoff')
+T6bbWWoff.checked =''
+T6bbWWoff.constraint = "3.47*([[['b'],['mu','nu']],[['b'],['jet','jet']]]+[[['b'],['e','nu']],[['b'],['jet','jet']]])"
+T6bbWWoff.conditionDescription = None
+#T6bbWWoff.massConstraint = [['dm <= 76.']]*2
+T6bbWWoff.condition =None
+T6bbWWoff.source ='CMS'                                                                #+++++++ next mass plane block ++++++++++++++
+T6bbWWoff_1 = T6bbWWoff.addMassPlane([[x,x-.5*y,x-y]]*2)
 #----exclusion source----
-T6bbWWoffSemiLep_1.addSource( 'upperLimits', 'orig/CMS-PAS-SUS-16-052_Figure_005.root', 'canvas', objectName = 'cCONT_', index=2 )
-T6bbWWoffSemiLep_1.addSource( 'obsExclusion', 'orig/CMS-PAS-SUS-16-052_Figure_005.root',\
+T6bbWWoff_1.addSource( 'upperLimits', 'orig/CMS-PAS-SUS-16-052_Figure_005.root', 'canvas', objectName = 'cCONT_', index=2 )
+T6bbWWoff_1.addSource( 'obsExclusion', 'orig/CMS-PAS-SUS-16-052_Figure_005.root',\
                     'canvas', objectName = "cCONT_", index=6 )
-T6bbWWoffSemiLep_1.addSource( 'obsExclusionP1', 'orig/CMS-PAS-SUS-16-052_Figure_005.root',\
+T6bbWWoff_1.addSource( 'obsExclusionP1', 'orig/CMS-PAS-SUS-16-052_Figure_005.root',\
                     'canvas', objectName = "cCONT_", index=7 )
-T6bbWWoffSemiLep_1.addSource( 'obsExclusionM1', 'orig/CMS-PAS-SUS-16-052_Figure_005.root',\
+T6bbWWoff_1.addSource( 'obsExclusionM1', 'orig/CMS-PAS-SUS-16-052_Figure_005.root',\
                     'canvas', objectName = "cCONT_", index=8 )
-T6bbWWoffSemiLep_1.addSource( 'expExclusion', 'orig/CMS-PAS-SUS-16-052_Figure_005.root',\
+T6bbWWoff_1.addSource( 'expExclusion', 'orig/CMS-PAS-SUS-16-052_Figure_005.root',\
                     'canvas', objectName = "cCONT_", index=3 )
-T6bbWWoffSemiLep_1.addSource( 'expExclusionP1', 'orig/CMS-PAS-SUS-16-052_Figure_005.root',\
+T6bbWWoff_1.addSource( 'expExclusionP1', 'orig/CMS-PAS-SUS-16-052_Figure_005.root',\
                     'canvas', objectName = "cCONT_", index=4 )
-T6bbWWoffSemiLep_1.addSource( 'expExclusionM1', 'orig/CMS-PAS-SUS-16-052_Figure_005.root',\
+T6bbWWoff_1.addSource( 'expExclusionM1', 'orig/CMS-PAS-SUS-16-052_Figure_005.root',\
                     'canvas', objectName = "cCONT_", index=5 )
-T6bbWWoffSemiLep_1.dataUrl = "https://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-052/CMS-PAS-SUS-16-052_Figure_005.root"
-T6bbWWoffSemiLep_1.figureUrl = "https://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-052/CMS-PAS-SUS-16-052_Figure_005.png"
+T6bbWWoff_1.dataUrl = "https://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-052/CMS-PAS-SUS-16-052_Figure_005.root"
+T6bbWWoff_1.figureUrl = "https://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/SUS-16-052/CMS-PAS-SUS-16-052_Figure_005.png"
 
 databaseCreator.create()

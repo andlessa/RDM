@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """
 .. module:: convert
@@ -14,10 +14,10 @@ argparser = argparse.ArgumentParser(description =
 'create info.txt, txname.txt, twiki.txt and sms.py')
 argparser.add_argument ('-utilsPath', '--utilsPath', 
 help = 'path to the package smodels_utils',\
-type = types.StringType)
+type = str )
 argparser.add_argument ('-smodelsPath', '--smodelsPath', 
 help = 'path to the package smodels_utils',\
-type = types.StringType)
+type = str )
 args = argparser.parse_args()
 
 if args.utilsPath:

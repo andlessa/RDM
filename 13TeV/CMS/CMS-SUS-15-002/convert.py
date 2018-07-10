@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """
 .. module:: convert
@@ -15,7 +15,7 @@ argparser.add_argument ('-utilsPath', '--utilsPath',
 help = 'path to the package smodels_utils',\
 type = str )
 argparser.add_argument ('-smodelsPath', '--smodelsPath',
-help = 'path to the package smodels_utils',\
+help = 'path to smodels',\
 type = str )
 args = argparser.parse_args()
 
@@ -42,7 +42,7 @@ info = MetaInfoInput('CMS-SUS-15-002')
 info.url = 'http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-15-002/'
 info.sqrts = 13
 info.lumi = 2.2
-info.prettyName = 'multijets + MET, HT'
+info.prettyName = 'multijets + Etmiss, HT'
 info.private = False
 info.arxiv = ''
 info.contact = ''

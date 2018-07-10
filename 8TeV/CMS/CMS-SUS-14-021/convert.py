@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """
 .. module:: convert
@@ -63,7 +63,7 @@ T2bbWW.conditionDescription = None
 T2bbWW.condition =None
 T2bbWW.source = "CMS"
 T2bbWW.massConstraint = None
-T2bbWWoff = dataset.addTxName('T2bbWWoff')
+T2bbWWoff = dataset.addTxName('T2bbWWoffSemiLep')
 T2bbWWoff.checked = ''
 T2bbWWoff.constraint = "3.47*[[['b','l','nu']],[['b','jet','jet']]]"
 T2bbWWoff.conditionDescription ="None"

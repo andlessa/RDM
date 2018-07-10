@@ -1,5 +1,5 @@
 txName: T2bbWWoff
-constraint: 3.47*([[['b','mu','nu']],[['b','jet','jet']]]+[[['b','e','nu']],[['b','jet','jet']]])
+constraint: 3.47*([[['b','l','nu']],[['b','jet','jet']]])
 condition: None
 conditionDescription: None
 susyProcess: pp --> stop stop, stop  --> bottom W^* lsp
