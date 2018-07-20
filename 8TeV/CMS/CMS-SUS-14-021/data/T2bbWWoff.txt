@@ -1,8 +1,8 @@
-txName: T2bbWWoffSemiLep
+txName: T2bbWWoff
 constraint: 3.47*[[['b','l','nu']],[['b','jet','jet']]]
 condition: None
 conditionDescription: None
-susyProcess: pp --> stop stop, stop  --> bottom W^* lsp, W^* --> l nu
+susyProcess: pp --> stop stop, stop  --> bottom W^* lsp
 figureUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS14021/singleLeptonLimits.pdf
 dataUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS14021/singleLeptonLimitHistograms.root
 source: CMS
