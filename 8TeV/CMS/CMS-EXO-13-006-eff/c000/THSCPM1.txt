@@ -5,7 +5,7 @@ susyProcess: pp --> chargino^pm_1 chargino^pm_1, chargino^pm_1 chargino^pm_1 -->
 figureUrl: None
 dataUrl: None
 source: SModelS
-validated: N/A
+validated: True
 axes: [[x], [x]]
 finalState: ['HSCP', 'HSCP']
 efficiencyMap: [[[[5.0000E+01*GeV],[5.0000E+01*GeV]],2.14e-08],

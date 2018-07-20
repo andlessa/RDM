@@ -51,14 +51,15 @@ datasetNames = ['c000','c100','c200','c300']
 observedNs = [5,1,0,0] #Extracted from a fit of the data
 expectedBGs = [2.63,0.3377,0.0258,0.0045] #Extracted from a log fit of CMS BG
 bgErrors = [0.53,0.127,0.0036,0.001] #Estimated from the error between a log fit and a linear fit of the CMS BG
-obsUpperLimits = ['0.625*fb','0.346*fb','0.232*fb','0.233*fb']
-expUpperLimits = ['0.36*fb','0.232*fb','0.233*fb','0.232*fb']
+obsUpperLimits = ['0.624*fb','0.306*fb','0.24*fb','0.24*fb']
+expUpperLimits = ['0.436*fb','0.242*fb','0.241*fb','0.240*fb'] #I've artificially increase the expUL a bit, so the SR with the largest Mreco is selected
+
 for i,name in enumerate(datasetNames):
 #+++++++ dataset block ++++++++++++++
     dataset = DataSetInput(name)
     dataset.setInfo(dataType = 'efficiencyMap', dataId = name, 
                     observedN=observedNs[i], expectedBG=expectedBGs[i], bgError=bgErrors[i],
-					upperLimit = obsUpperLimits[i], expectedUpperLimit = expUpperLimits[i])
+                    upperLimit = obsUpperLimits[i], expectedUpperLimit = expUpperLimits[i])
 
     #+++++++ txnames ++++++++++++++++++++
     #+++++++ next txName block ++++++++++++++
