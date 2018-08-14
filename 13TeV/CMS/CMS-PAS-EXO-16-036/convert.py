@@ -44,7 +44,7 @@ info.lumi = 12.9
 info.prettyName ='hscp search'
 info.private = False
 info.contact ='cms-pag-conveners-exotica@cern.ch'
-info.comment ='Upper limits digitized from png plot.'
+info.comment ='Upper limits digitized from Track+TOF png plots. Used conservative gluino bounds (50% gluino-gluon probability) and curve for the cloud model for the squark R-hadron constraints.'
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput('data')
