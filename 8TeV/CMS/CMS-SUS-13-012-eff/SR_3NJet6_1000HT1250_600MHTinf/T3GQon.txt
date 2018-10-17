@@ -5,7 +5,7 @@ conditionDescription: None
 susyProcess: pp --> gluino squark, gluino squark --> quark squark squark, squark --> quark LSP
 dataUrl: None
 source: SModelS
-validated: TBD
+validated: N/A
 axes: [[x, y], [1000, x, y]];[[x, y], [1050, x, y]];[[x, y], [1100, x, y]];[[x, y], [1150, x, y]];[[x, y], [1200, x, y]];[[x, y], [1300, x, y]];[[x, y], [1400, x, y]];[[x, y], [1500, x, y]];[[x, y], [1600, x, y]];[[x, y], [1700, x, y]];[[x, y], [1800, x, y]];[[x, y], [1900, x, y]];[[x, y], [2000, x, y]];[[x, y], [200, x, y]];[[x, y], [250, x, y]];[[x, y], [300, x, y]];[[x, y], [350, x, y]];[[x, y], [400, x, y]];[[x, y], [450, x, y]];[[x, y], [500, x, y]];[[x, y], [550, x, y]];[[x, y], [600, x, y]];[[x, y], [650, x, y]];[[x, y], [700, x, y]];[[x, y], [750, x, y]];[[x, y], [800, x, y]];[[x, y], [850, x, y]];[[x, y], [900, x, y]];[[x, y], [950, x, y]]
 efficiencyMap: [[[[1.0000E+02*GeV,1.0000E+00*GeV],[1.0000E+03*GeV,1.0000E+02*GeV,1.0000E+00*GeV]],0.0017533],
 [[[1.0000E+02*GeV,4.1000E+01*GeV],[1.0000E+03*GeV,1.0000E+02*GeV,4.1000E+01*GeV]],0.0015526],

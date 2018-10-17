@@ -5,7 +5,7 @@ conditionDescription: None
 susyProcess: pp --> gluino gluino, gluino  --> bottom sbottom, sbottom --> bottom lsp
 dataUrl: None
 source: SModelS
-validated: TBD
+validated: N/A
 axes: [[x, 0.05*x + 0.95*y, y], [x, 0.05*x + 0.95*y, y]];[[x, 0.5*x + 0.5*y, y], [x, 0.5*x + 0.5*y, y]];[[x, 0.95*x + 0.05*y, y], [x, 0.95*x + 0.05*y, y]]
 efficiencyMap: [[[[1.0200E+03*GeV,1.4600E+02*GeV,1.0000E+02*GeV],[1.0200E+03*GeV,1.4600E+02*GeV,1.0000E+02*GeV]],0.018035],
 [[[1.0200E+03*GeV,1.9350E+02*GeV,1.5000E+02*GeV],[1.0200E+03*GeV,1.9350E+02*GeV,1.5000E+02*GeV]],0.020035],

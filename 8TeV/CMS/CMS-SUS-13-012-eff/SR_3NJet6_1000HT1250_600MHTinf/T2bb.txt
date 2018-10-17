@@ -5,7 +5,7 @@ conditionDescription: None
 susyProcess: pp --> sbottom sbottom, sbottom  --> bottom lsp
 dataUrl: None
 source: SModelS
-validated: TBD
+validated: N/A
 axes: [[x, y], [x, y]]
 efficiencyMap: [[[[7.6000E+02*GeV,5.4000E+02*GeV],[7.6000E+02*GeV,5.4000E+02*GeV]],0.0025239],
 [[[3.2000E+02*GeV,3.0000E+02*GeV],[3.2000E+02*GeV,3.0000E+02*GeV]],0.0001798],
