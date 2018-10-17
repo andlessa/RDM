@@ -6,7 +6,7 @@ susyProcess: pp --> stop stop, stop  --> charm lsp
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-26/fig_06.png
 dataUrl: https://www.hepdata.net/record/ins1672099?version=3&table=Table%2030
 source: ATLAS
-validated: WW
+validated: True
 axes: [[x, y], [x, y]]
 upperLimits: [[[[1.0000E+03*GeV,0.0000E+00*GeV],[1.0000E+03*GeV,0.0000E+00*GeV]],1.9000E-02*pb],
 [[[1.0000E+03*GeV,1.0000E+02*GeV],[1.0000E+03*GeV,1.0000E+02*GeV]],1.5000E-02*pb],
