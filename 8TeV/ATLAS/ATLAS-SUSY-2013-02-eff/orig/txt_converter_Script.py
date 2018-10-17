@@ -1,5 +1,6 @@
 import os, sys
 
+### this scripts helps converting the tables taken form hepdata to a 2/3 columns file as required by convert.py
 thisDirectory = os.getcwd()
 mapsInFolder = os.listdir(thisDirectory)
 
