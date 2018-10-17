@@ -1,6 +1,9 @@
--) add ATLAS-SUSY-2016-33 from philipps branch
--) check  ATLAS-SUSY-2013-02-eff
+-) check ATLAS-SUSY-2013-02-eff
 -) check CMS-SUS-13-012-eff. T5WW, T5ZZ do we have to whiten?
 -) update bibtex file
 -) update wiki pages
 -) update validation pages
+-) make T5 and T3GQon tarballs for future
+
+.) check ATLAS-SUSY-2016-19 (even older: ATLAS-SUSY-2017-03, ATLAS-SUSY-2016-26)
+.) add ATLAS-SUSY-2016-33 from philipps branch
