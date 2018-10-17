@@ -4,6 +4,7 @@
 -) update wiki pages
 -) update validation pages
 -) make T5 and T3GQon tarballs for future
+-) add "locked mode" to createWikiPage.py
 
 .) check ATLAS-SUSY-2016-19 (even older: ATLAS-SUSY-2017-03, ATLAS-SUSY-2016-26)
 .) add ATLAS-SUSY-2016-33 from philipps branch
