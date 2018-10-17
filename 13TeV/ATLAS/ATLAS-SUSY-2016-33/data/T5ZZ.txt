@@ -6,7 +6,7 @@ susyProcess: pp --> gluino gluino, gluino  --> quark antiquark neutralino_2, neu
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-33/fig_13a.png;https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-33/fig_14a.png;https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-33/fig_15.png
 dataUrl: https://www.hepdata.net/record/ins1675352?version=1&table=Cross%20section%20UL%206;https://www.hepdata.net/record/ins1675352?version=1&table=Cross%20section%20UL%201;https://www.hepdata.net/record/ins1675352?version=1&table=Cross%20section%20UL%203
 source: ATLAS
-validated: TBD
+validated: True
 axes: [[x, 0.5*x + 0.5*y, y], [x, 0.5*x + 0.5*y, y]];[[x, y, 1.0], [x, y, 1.0]];[[x, y + 100.0, y], [x, y + 100.0, y]]
 finalState: ['MET', 'MET']
 upperLimits: [[[[6.0000E+02*GeV,4.5000E+02*GeV,3.0000E+02*GeV],[6.0000E+02*GeV,4.5000E+02*GeV,3.0000E+02*GeV]],3.1500E+02*fb],
