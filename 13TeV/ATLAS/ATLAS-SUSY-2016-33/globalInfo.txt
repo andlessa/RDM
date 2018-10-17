@@ -7,5 +7,5 @@ arxiv: https://arxiv.org/abs/1805.11381
 publication: in process of being published
 contact: ATLAS collaboration
 private: False
-implementedBy: neuphi
+implementedBy: Wolfgang Waltenberger
 lastUpdate: 2018/10/17

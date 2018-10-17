@@ -62,18 +62,18 @@ T5ZZ.source = "ATLAS"
 T5ZZ_1 = T5ZZ.addMassPlane(2*[[x, 0.5*(x+y), y]])
 T5ZZ_1.figure = 'Fig.13a'
 T5ZZ_1.figureUrl ='https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-33/fig_13a.png'
-T5ZZ_1.dataUrl ='https://www.hepdata.net/record/ins1675352?version=1&table=Cross%20section%20UL%201'
+T5ZZ_1.dataUrl ='https://www.hepdata.net/record/ins1675352?version=1&table=Cross%20section%20UL%206'
 T5ZZ_1.setSources(dataLabels= ['expExclusion', 'obsExclusion', 'upperLimits'],
-                 dataFiles= ['orig/Exp_Excl_1.csv', 'orig/Obs_Excl_1.csv', 'orig/Obs_UL_1.csv'],
+                 dataFiles= ['orig/Exp_Excl_3.csv', 'orig/Obs_Excl_3.csv', 'orig/Obs_UL_6.csv'],
                  units = [ None, None, 'fb' ],
                  dataFormats= ['csv', 'csv', 'csv'])
 #+++++++ next mass plane block ++++++++++++++
 T5ZZ_2 = T5ZZ.addMassPlane(2*[[x, y, 1.]])
 T5ZZ_2.figure = 'Fig.14a'
 T5ZZ_2.figureUrl ='https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-33/fig_14a.png'
-T5ZZ_2.dataUrl = 'https://www.hepdata.net/record/ins1675352?version=1&table=Cross%20section%20UL%202'
+T5ZZ_2.dataUrl = 'https://www.hepdata.net/record/ins1675352?version=1&table=Cross%20section%20UL%201'
 T5ZZ_2.setSources(dataLabels= ['expExclusion', 'obsExclusion', 'upperLimits'],
-                 dataFiles= ['orig/Exp_Excl_2.csv', 'orig/Obs_Excl_2.csv', 'orig/Obs_UL_2.csv'],
+                 dataFiles= ['orig/Exp_Excl_5.csv', 'orig/Obs_Excl_5.csv', 'orig/Obs_UL_1.csv'],
                  units = [ None, None, 'fb' ],
                  dataFormats= ['csv', 'csv', 'csv'])
 #+++++++ next mass plane block ++++++++++++++
@@ -82,7 +82,7 @@ T5ZZ_3.figure = 'Fig.15'
 T5ZZ_3.figureUrl ='https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-33/fig_15.png'
 T5ZZ_3.dataUrl = 'https://www.hepdata.net/record/ins1675352?version=1&table=Cross%20section%20UL%203'
 T5ZZ_3.setSources(dataLabels= ['expExclusion', 'obsExclusion', 'upperLimits'],
-                 dataFiles= ['orig/Exp_Excl_3.csv', 'orig/Obs_Excl_3.csv', 'orig/Obs_UL_3.csv'],
+                 dataFiles= ['orig/Exp_Excl_7.csv', 'orig/Obs_Excl_7.csv', 'orig/Obs_UL_3.csv'],
                  units = [ None, None, 'fb' ],
                  dataFormats= ['csv', 'csv', 'csv'])
 

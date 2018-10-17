@@ -3,8 +3,8 @@ constraint: [[[jet,jet],[Z]],[[jet,jet],[Z]]]
 condition: None
 conditionDescription: None
 susyProcess: pp --> gluino gluino, gluino  --> quark antiquark neutralino_2, neutralino_2 --> Z lsp
-figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-33/fig_13a.png https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-33/fig_14a.png https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-33/fig_15.png
-dataUrl: https://www.hepdata.net/record/ins1675352?version=1&table=Cross%20section%20UL%201 https://www.hepdata.net/record/ins1675352?version=1&table=Cross%20section%20UL%202 https://www.hepdata.net/record/ins1675352?version=1&table=Cross%20section%20UL%203
+figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-33/fig_13a.png;https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-33/fig_14a.png;https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-33/fig_15.png
+dataUrl: https://www.hepdata.net/record/ins1675352?version=1&table=Cross%20section%20UL%206;https://www.hepdata.net/record/ins1675352?version=1&table=Cross%20section%20UL%201;https://www.hepdata.net/record/ins1675352?version=1&table=Cross%20section%20UL%203
 source: ATLAS
 validated: TBD
 axes: [[x, 0.5*x + 0.5*y, y], [x, 0.5*x + 0.5*y, y]];[[x, y, 1.0], [x, y, 1.0]];[[x, y + 100.0, y], [x, y + 100.0, y]]
