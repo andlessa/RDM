@@ -102,7 +102,7 @@ T1.dataUrl  = "http://hepdata.cedar.ac.uk/view/ins1298722/d188"
 
 #+++++++ dataset block ++++++++++++++                                                                                                                                       
 dataset = DataSetInput("SR6jtp")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "SR6jt+", observedN = 6, expectedBG = 4.9 , bgError = 1.6, upperLimit = '3.9922E-01*fb', expectedUpperLimit = '3.0218E-01*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "SR6jtp", observedN = 6, expectedBG = 4.9 , bgError = 1.6, upperLimit = '3.9922E-01*fb', expectedUpperLimit = '3.0218E-01*fb')
 #+++++++ next txName block ++++++++++++++                                                                                                                                     
 T1 = dataset.addTxName('T1')
 T1.constraint ="[[['jet','jet']],[['jet','jet']]]"
@@ -246,7 +246,7 @@ T1.dataUrl  = "http://hepdata.cedar.ac.uk/view/ins1298722/d155"
 
 #+++++++ dataset block ++++++++++++++                                                                                                                                        
 dataset = DataSetInput("SR4jlm")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "SR4jl-", observedN = 2169, expectedBG = 2120 , bgError = 110, upperLimit = '1.3292E+01*fb', expectedUpperLimit = '1.1561E+01*fb')
+dataset.setInfo(dataType = 'efficiencyMap', dataId = "SR4jlm", observedN = 2169, expectedBG = 2120 , bgError = 110, upperLimit = '1.3292E+01*fb', expectedUpperLimit = '1.1561E+01*fb')
 #+++++++ next txName block ++++++++++++++                                                                                                                                 
 T1 = dataset.addTxName('T1')
 T1.constraint ="[[['jet','jet']],[['jet','jet']]]"
