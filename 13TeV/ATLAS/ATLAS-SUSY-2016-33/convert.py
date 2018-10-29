@@ -86,6 +86,22 @@ T5ZZ_3.setSources(dataLabels= ['expExclusion', 'obsExclusion', 'upperLimits'],
                  units = [ None, None, 'fb' ],
                  dataFormats= ['csv', 'csv', 'csv'])
 
-
+# +++++++ next txName block ++++++++++++++
+T6ZZ = dataset.addTxName('T6ZZ')
+T6ZZ.checked = ''
+T6ZZ.constraint ="[[[jet],[Z]],[[jet],[Z]]]"
+T6ZZ.conditionDescription = None
+T6ZZ.condition = None
+T6ZZ.source = "ATLAS"
+#+++++++ next mass plane block ++++++++++++++
+T6ZZ_1 = T6ZZ.addMassPlane(2*[[x, y, 1.]])
+T6ZZ_1.figure = 'Fig.14b'
+T6ZZ_1.figureUrl = "https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-33/fig_14b.png"
+T6ZZ_1.dataUrl = 'https://www.hepdata.net/record/ins1675352?version=1&table=Cross%20section%20UL%202'
+T6ZZ_1.setSources(dataLabels= ['expExclusion', 'obsExclusion', 'upperLimits'],
+                 dataFiles= ['orig/Exp_Excl_4.csv', 'orig/Obs_Excl_4.csv', 
+                             'orig/Obs_UL_4.csv'],
+                 units = [ None, None, 'fb' ],
+                 dataFormats= ['csv', 'csv', 'csv'])
 
 databaseCreator.create()
