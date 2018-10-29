@@ -99,8 +99,8 @@ T6ZZ_1.figure = 'Fig.14b'
 T6ZZ_1.figureUrl = "https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-33/fig_14b.png"
 T6ZZ_1.dataUrl = 'https://www.hepdata.net/record/ins1675352?version=1&table=Cross%20section%20UL%202'
 T6ZZ_1.setSources(dataLabels= ['expExclusion', 'obsExclusion', 'upperLimits'],
-                 dataFiles= ['orig/Exp_Excl_4.csv', 'orig/Obs_Excl_4.csv', 
-                             'orig/Obs_UL_4.csv'],
+                 dataFiles= ['orig/Exp_Excl_2.csv', 'orig/Obs_Excl_2.csv', 
+                             'orig/Obs_UL_2.csv'],
                  units = [ None, None, 'fb' ],
                  dataFormats= ['csv', 'csv', 'csv'])
 

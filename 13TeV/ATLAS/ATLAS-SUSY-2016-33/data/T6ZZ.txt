@@ -2,7 +2,7 @@ txName: T6ZZ
 constraint: [[[jet],[Z]],[[jet],[Z]]]
 condition: None
 conditionDescription: None
-susyProcess: None
+susyProcess: pp --> squark squark, squark  --> quark neutralino_2, neutralino_2 --> Z lsp
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-33/fig_14b.png
 dataUrl: https://www.hepdata.net/record/ins1675352?version=1&table=Cross%20section%20UL%202
 source: ATLAS
