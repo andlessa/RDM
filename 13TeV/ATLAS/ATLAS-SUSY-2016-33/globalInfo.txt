@@ -9,3 +9,4 @@ contact: ATLAS collaboration
 private: False
 implementedBy: Wolfgang Waltenberger
 lastUpdate: 2018/10/29
+comment: For T6ZZ we assume that the validation was performed with the squarks of only one 'chirality'

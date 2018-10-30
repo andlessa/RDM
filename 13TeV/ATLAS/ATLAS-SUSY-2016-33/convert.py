@@ -46,6 +46,7 @@ info.private = False
 info.arxiv =  'https://arxiv.org/abs/1805.11381'
 info.contact = 'ATLAS collaboration'
 info.publication ='in process of being published'
+info.comment = "For T6ZZ we assume that the validation was performed with the squarks of only one 'chirality'"
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput('data')
