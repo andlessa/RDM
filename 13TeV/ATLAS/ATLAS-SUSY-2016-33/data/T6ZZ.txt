@@ -6,7 +6,7 @@ susyProcess: pp --> squark squark, squark  --> quark neutralino_2, neutralino_2 
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-33/fig_14b.png
 dataUrl: https://www.hepdata.net/record/ins1675352?version=1&table=Cross%20section%20UL%202
 source: ATLAS
-validated: TBD
+validated: True
 axes: [[x, y, 1.0], [x, y, 1.0]]
 finalState: ['MET', 'MET']
 upperLimits: [[[[6.0000E+02*GeV,5.3000E+02*GeV,1.0000E+00*GeV],[6.0000E+02*GeV,5.3000E+02*GeV,1.0000E+00*GeV]],7.0000E+00*fb],
