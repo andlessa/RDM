@@ -7,7 +7,7 @@ checked: NO
 figureUrl: http://hepdata.cedar.ac.uk/resource/1458270/figAuxiliaryFigure22b.png
 dataUrl: http://hepdata.cedar.ac.uk/view/ins1458270/d71/input
 source: ATLAS
-validated: False
+validated: True
 axes: [[x, y], [x, y]]
 efficiencyMap: [[[[4.0000E+02*GeV,0.0000E+00*GeV],[4.0000E+02*GeV,0.0000E+00*GeV]],0.0003988],
 [[[4.0000E+02*GeV,3.7500E+02*GeV],[4.0000E+02*GeV,3.7500E+02*GeV]],0.0],
