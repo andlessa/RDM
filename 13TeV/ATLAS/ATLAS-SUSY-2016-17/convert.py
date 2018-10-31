@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """
 .. module:: convert
@@ -14,10 +14,10 @@ argparser = argparse.ArgumentParser(description =
 'create info.txt, txname.txt, twiki.txt and sms.py')
 argparser.add_argument ('-utilsPath', '--utilsPath', 
 help = 'path to the package smodels_utils',\
-type = types.StringType)
+type = str )
 argparser.add_argument ('-smodelsPath', '--smodelsPath', 
 help = 'path to the package smodels_utils',\
-type = types.StringType)
+type = str )
 args = argparser.parse_args()
 
 if args.utilsPath:
@@ -87,11 +87,21 @@ T2tt_1.dataUrl='http://dx.doi.org/10.17182/hepdata.78219.v1/t59'
 T2tt_1.histoDataUrl='http://dx.doi.org/10.17182/hepdata.78219.v1/t59'
 T2tt_1.exclusionDataUrl='http://dx.doi.org/10.17182/hepdata.78219.v1/t33'
 T2tt_1.setSources(dataLabels=['expExclusion', 'obsExclusion', 'upperLimits'],
-                 dataFiles= [ 'orig/Exclusioncontour(exp)1.csv', 'orig/Exclusioncontour(obs)1.csv', 'orig/CrosssectionUpperLimits1.csv'],
+                 dataFiles= [ 'orig/exclusion_exp_T2tt.csv', 'orig/exclusion_obs_T2tt.csv', 'orig/CrosssectionUpperLimits1.csv'],
                  dataFormats= ['csv', 'csv', 'csv'], objectNames= [ None, None, '$\sigma$ [FB]'
  ], units = [ None , None, 'fb' ] )
-T2ttoff.addMassPlane(T2tt_1)
-T2bbWWoff.addMassPlane(T2tt_1)
+T2bbWWoff_1 = T2bbWWoff.addMassPlane(2*[[x,y]])
+T2bbWWoff_1.figure='Fig. 8'
+T2bbWWoff_1.figureUrl='hbbWWoffps://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-17/figaux_08.png'
+T2bbWWoff_1.dataUrl='hbbWWoffp://dx.doi.org/10.17182/hepdata.78219.v1/t59'
+T2bbWWoff_1.histoDataUrl='hbbWWoffp://dx.doi.org/10.17182/hepdata.78219.v1/t59'
+T2bbWWoff_1.exclusionDataUrl='hbbWWoffp://dx.doi.org/10.17182/hepdata.78219.v1/t33'
+T2bbWWoff_1.setSources(dataLabels=['expExclusion', 'obsExclusion', 'upperLimits'],
+                 dataFiles= [ 'orig/exclusion_exp_T2bbWWoff.csv', 'orig/exclusion_obs_T2bbWWoff.csv', 'orig/CrosssectionUpperLimits1.csv'],
+                 dataFormats= ['csv', 'csv', 'csv'], objectNames= [ None, None, '$\sigma$ [FB]'
+ ], units = [ None , None, 'fb' ] )
+T2ttoff.addMassPlane(T2bbWWoff_1)
+T2bbWWoff.addMassPlane(T2bbWWoff_1)
 
 #+++++++txName block++++++++++++++++++++
 T6bbWW=dataset.addTxName('T6bbWW')
