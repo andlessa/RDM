@@ -3,11 +3,12 @@ constraint: [[['W']],[['W']]]
 condition: None
 conditionDescription: None
 susyProcess: pp --> chargino^+_1 chargino^-_1, chargino^pm_1 --> W lsp lsp
-figureUrl: FIXME
+figureUrl: None
 dataUrl: None
 source: SModelS
-validated: N/A
+validated: TBD
 axes: [[x, y], [x, y]]
+finalState: ['MET', 'MET']
 efficiencyMap: [[[[5.2000E+02*GeV,1.0000E+02*GeV],[5.2000E+02*GeV,1.0000E+02*GeV]],7.03e-05],
 [[[6.0000E+02*GeV,4.4000E+02*GeV],[6.0000E+02*GeV,4.4000E+02*GeV]],0.0],
 [[[6.0000E+02*GeV,3.8000E+02*GeV],[6.0000E+02*GeV,3.8000E+02*GeV]],0.0],
