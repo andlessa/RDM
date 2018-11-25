@@ -1,4 +1,4 @@
- #!/usr/bin/env python
+#!/usr/bin/env python3
 
 """
 .. module:: convert
@@ -15,14 +15,19 @@ argparser.add_argument ('-utilsPath', '--utilsPath',
 help = 'path to the package smodels_utils',\
 type = str )
 argparser.add_argument ('-smodelsPath', '--smodelsPath',
-help = 'path to the package smodels_utils',\
+help = 'path to the package smodels',\
 type = str )
+argparser.add_argument ('-no', '--noUpdate',
+	        help = 'do not update the lastUpdate field.',\
+          action= "store_true" )
 argparser.add_argument ('-t', '--ntoys',
             help = 'number of toys to throw',\
-            type = int, default= 100  )
+            type = int, default= 100000  )
 args = argparser.parse_args()
 
-'''
+if args.noUpdate:
+    os.environ["SMODELS_NOUPDATE"]="1"
+
 if args.utilsPath:
     utilsPath = args.utilsPath
 else:
@@ -32,10 +37,9 @@ else:
     utilsPath = databaseRoot + utilsPath
 if args.smodelsPath:
     sys.path.append(os.path.abspath(args.smodelsPath))
-'''
-    
-utilsPath = '../../../../smodels-utils'
-    
+
+# utilsPath = '../../../../smodels-utils'
+
 sys.path.append(os.path.abspath(utilsPath))
 from smodels_utils.dataPreparation.inputObjects import MetaInfoInput,DataSetInput
 from smodels_utils.dataPreparation.databaseCreation import databaseCreator
@@ -60,7 +64,7 @@ info.implementedBy = 'Federico A.'
 def add ( dataset ):
     dataset_n = dataset._name.replace('SR_','')
 
-        
+
     #+++++++ next txName block ++++++++++++++
     T5WW = dataset.addTxName('T5WW')
     T5WW.checked = ' '
@@ -103,7 +107,7 @@ def add ( dataset ):
     T5WWoff.addMassPlane(T5WW_x05)
     T5WWoff.addMassPlane(T5WW_x005)
     T5WWoff.addMassPlane(T5WW_x095)
-    
+
     TChiZZ = dataset.addTxName('TChiZZ')
     TChiZZ.checked = ''
     TChiZZ.dataUrl = None
@@ -151,8 +155,8 @@ def add ( dataset ):
     T5bbbb_x05.addSource ( "efficiencyMap", "orig/T5bbbb_EM/cms_sus_13_012_T5bbbb_x05_EM_MAPS/MA5_EM_T5bbbb_x05_%s.dat" % dataset_n, "txt", objectName ="None", index = None )
     T5bbbb_x095 = T5bbbb.addMassPlane( [[x,0.95*x + 0.05*y,y]]*2 )
     T5bbbb_x095.addSource ( "efficiencyMap", "orig/T5bbbb_EM/cms_sus_13_012_T5bbbb_x095_EM_MAPS/MA5_EM_T5bbbb_x095_%s.dat" % dataset_n, "txt", objectName ="None", index = None )
-    
-    
+
+
     T5tttt = dataset.addTxName('T5tttt')
     T5tttt.checked = ''
     T5tttt.constraint ="[[['t'],['t']],[['t'],['t']]]"
@@ -167,7 +171,7 @@ def add ( dataset ):
     T5tttt_p177.addSource ( "efficiencyMap", "orig/T5tttt_EM/cms_sus_13_012_T5tttt_DiffGluStop177_EM_MAPS/MA5_EM_T5tttt_DiffGluStop177_%s.dat" % dataset_n, "txt", objectName ="None", index = None )
     T5tttt_m177 = T5tttt.addMassPlane( [[x, y+177,y]]*2 )
     T5tttt_m177.addSource ( "efficiencyMap", "orig/T5tttt_EM/cms_sus_13_012_T5tttt_DiffStopNeu177_EM_MAPS/MA5_EM_T5tttt_DiffStopNeu177_%s.dat" % dataset_n, "txt", objectName ="None", index = None )
-    
+
     T6bbWW = dataset.addTxName('T6bbWW')
     T6bbWW.checked = ''
     T6bbWW.constraint = "[[['b'],['W']],[['b'],['W']]]"
@@ -205,8 +209,8 @@ def add ( dataset ):
     T6bbWWoff_d10.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T6bbWW_DiffChargNeu10_EM_MAPS/MA5_EM_T6bbWW_DiffChargNeu10_%s.dat" % dataset_n, "txt", objectName ="None", index = None )
     T6bbWWoff_d77 = T6bbWWoff.addMassPlane( [[x, y+77 , y ]]*2  )
     T6bbWWoff_d77.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T6bbWW_DiffChargNeu77_EM_MAPS/MA5_EM_T6bbWW_DiffChargNeu77_%s.dat" % dataset_n, "txt", objectName ="None", index = None )
-    
-       
+
+
     T2 = dataset.addTxName('T2')
     T2.checked =''
     T2.constraint ="[[['jet']],[['jet']]]"
@@ -226,7 +230,7 @@ def add ( dataset ):
     T2qq.addSource('expExclusionP1',"orig/SUS13012_XsecLimits_T2qq.root", "root", objectName = "combined_expExclPlusOneSigmaProspino")
 
     T2qq.addSource('efficiencyMap',"orig/MA5_T2/MA5_EM_T2_Results_SR%s.dat"% dataset_n, "txt" , objectName ="None", index = None)
-    
+
     #T2qq.addSource('efficiencyMap',"orig/SUS13012_XsecLimits_T2qq.root", "root", objectName ="h_EffAcc_%s" % dataset )  ### old official CMS data
     TGQ = dataset.addTxName('T3GQ')
     TGQ.checked =''
@@ -239,23 +243,23 @@ def add ( dataset ):
     #for num in  ['200','300']:
         a = TGQ.addMassPlane( [ [x,y], [eval(num),x,y] ] )
         a.addSource('efficiencyMap',"orig/T3GQon_EM/TGQ_"+num+"_cms_sus_13_012/MA5_EM_TGQon_MAPS_SR%s.dat" % dataset_n, "txt", objectName ="None", index = None )
-    
 
-    T5 = dataset.addTxName('T5')                                                                                                                                              
-    T5.checked = ''                                                                                                                                                            
-    T5.constraint ="[[['jet'],['jet']],[['jet'],['jet']]]"                                                                                                                     
-    T5.conditionDescription ="None"                                                                                                                                           
-    T5.condition ="None"                                                                                                                                                      
-    T5.massConstraint = None                                                                                                                                                   
-    T5.source = 'SModelS'                                                                                                                                                      
-    T5.dataUrl = None                                                                                                                                                          
-    T5_x005 = T5.addMassPlane( [[x,0.05*x + 0.95*y,y]]*2 )                                                                                                                     
-    T5_x005.addSource ( "efficiencyMap", "orig/T5_EM/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM_T5_x005_%s.dat" % dataset_n, "txt", objectName ="None", index = None )                      
-    T5_x05 = T5.addMassPlane( [[x,0.5*x + 0.5*y,y]]*2 )                                                                                                                            
-    T5_x05.addSource ( "efficiencyMap", "orig/T5_EM/cms_sus_13_012_T5_x05_EM_MAPS/MA5_EM_T5_x05_%s.dat" % dataset_n, "txt", objectName ="None", index = None )                         
-    T5_x095 = T5.addMassPlane( [[x,0.95*x + 0.05*y,y]]*2 )                                                                                                                       
+
+    T5 = dataset.addTxName('T5')
+    T5.checked = ''
+    T5.constraint ="[[['jet'],['jet']],[['jet'],['jet']]]"
+    T5.conditionDescription ="None"
+    T5.condition ="None"
+    T5.massConstraint = None
+    T5.source = 'SModelS'
+    T5.dataUrl = None
+    T5_x005 = T5.addMassPlane( [[x,0.05*x + 0.95*y,y]]*2 )
+    T5_x005.addSource ( "efficiencyMap", "orig/T5_EM/cms_sus_13_012_T5_x005_EM_MAPS/MA5_EM_T5_x005_%s.dat" % dataset_n, "txt", objectName ="None", index = None )
+    T5_x05 = T5.addMassPlane( [[x,0.5*x + 0.5*y,y]]*2 )
+    T5_x05.addSource ( "efficiencyMap", "orig/T5_EM/cms_sus_13_012_T5_x05_EM_MAPS/MA5_EM_T5_x05_%s.dat" % dataset_n, "txt", objectName ="None", index = None )
+    T5_x095 = T5.addMassPlane( [[x,0.95*x + 0.05*y,y]]*2 )
     T5_x095.addSource ( "efficiencyMap", "orig/T5_EM/cms_sus_13_012_T5_x095_EM_MAPS/MA5_EM_T5_x095_%s.dat" % dataset_n, "txt", objectName ="None", index = None )
-    
+
     T5_DeltaGluSq_5 = T5.addMassPlane( [[x, x-5 ,y]]*2 )
     T5_DeltaGluSq_5.addSource ( "efficiencyMap", "orig/T5_EM/cms_sus_13_012_T5_DeltaGluSq_5/MA5_EM_T5_MAPS_SR%s.dat" % dataset_n, "txt", objectName ="None", index = None )
 
@@ -372,7 +376,7 @@ def add ( dataset ):
     T1qqqq.addSource('expExclusionM1', "orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName = "combined_expExclMinusOneSigmaProspino")
     T1qqqq.addSource('expExclusionP1', "orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName = "combined_expExclPlusOneSigmaProspino")
     T1qqqq.addSource('efficiencyMap',"orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName ="h_EffAcc_%s" % dataset_n )
-    
+
     #+++++++ next txName block ++++++++++++++
     T5ZZ = dataset.addTxName('T5ZZ')
     T5ZZ.checked = ' '
@@ -393,22 +397,22 @@ def add ( dataset ):
     #+++++++ next mass plane block ++++++++++++++
     T5ZZ_x095 = T5ZZ.addMassPlane([[x,0.95*x + 0.05*y,y]]*2)
     T5ZZ_x095.addSource('efficiencyMap',"orig/T5ZZ_EM/T5ZZ_x095/MA5_EM_T5ZZ_Glu095Neu005_%s.dat" % dataset_n, "txt")
-    
-    
+
+
     ### NEW MODELS -> DO NOT USE TGN, T6ZZtt, T6ttZZ, T6ttWW, ecc. (all the ones with T6xxxx) !!!!
 
-    #TGN = dataset.addTxName('TGN')                                                                                                                                              
-    #TGN.checked = ' '                                                                                                                                                             
-    #TGN.constraint = "[[['jet','jet']],[]]"                                                                                                            
-    #TGN.conditionDescription ="None"                                                                                                                                             
-    #TGN.condition ="None"                                                                                                                                                        
-    #TGN.massConstraint = None                                                                                                                                                    
-    #TGN.dataUrl = None                                                                                                                                                            
+    #TGN = dataset.addTxName('TGN')
+    #TGN.checked = ' '
+    #TGN.constraint = "[[['jet','jet']],[]]"
+    #TGN.conditionDescription ="None"
+    #TGN.condition ="None"
+    #TGN.massConstraint = None
+    #TGN.dataUrl = None
     #TGN.source = 'SModelS'
-    #+++++++ next mass plane block ++++++++++++++                                                                                                                             
-    #TGN_1 = TGN.addMassPlane([[x,y], [y]]) #[ [x,y], [eval(num),x,y] ]         
+    #+++++++ next mass plane block ++++++++++++++
+    #TGN_1 = TGN.addMassPlane([[x,y], [y]]) #[ [x,y], [eval(num),x,y] ]
     #TGN_1.addSource('efficiencyMap',"orig/TGN_EM/cms_sus_13_012_TGN_1_EM_MAPS/MA5_EM_TGN_1_%s.dat" % dataset_n, "txt")
-    
+
 
     T2bt = dataset.addTxName('T2bt')
     T2bt.checked = ' '
@@ -418,7 +422,7 @@ def add ( dataset ):
     T2bt.massConstraint = None
     T2bt.dataUrl = None
     T2bt.source = 'SModelS'
-    #+++++++ next mass plane block ++++++++++++++                                                                                                                                  
+    #+++++++ next mass plane block ++++++++++++++
 
     T2bt_1 = T2bt.addMassPlane([[x,y]]*2)
     T2bt_1.addSource('efficiencyMap',"orig/T2bt_EM/cms_sus_13_012_T2bt_1_EM_MAPS/MA5_EM_T2bt_1_%s.dat" % dataset_n, "txt")
@@ -432,23 +436,23 @@ def add ( dataset ):
     T6WW.massConstraint = None
     T6WW.dataUrl = None
     T6WW.source = 'SModelS'
-    #+++++++ next mass plane block ++++++++++++++                                                                                                                                
-    T6WW_x050 = T6WW.addMassPlane([[x,x*0.05 + (1-0.05)*y, y]]*2)                                                                                                             
+    #+++++++ next mass plane block ++++++++++++++
+    T6WW_x050 = T6WW.addMassPlane([[x,x*0.05 + (1-0.05)*y, y]]*2)
     T6WW_x050.addSource('efficiencyMap',"orig/T6WW_EM/cms_sus_13_012_T6WW_x050_EM_MAPS/MA5_EM_T6WW_x050_%s.dat" % dataset_n, "txt")
-    #+++++++ next mass plane block ++++++++++++++                                                                                                                                 
+    #+++++++ next mass plane block ++++++++++++++
     T6WW_x095 = T6WW.addMassPlane([[x,x*0.95 + (1-0.95)*y, y]]*2)
     T6WW_x095.addSource('efficiencyMap',"orig/T6WW_EM/cms_sus_13_012_T6WW_x095_EM_MAPS/MA5_EM_T6WW_x095_%s.dat" % dataset_n, "txt")
-    #+++++++ next mass plane block ++++++++++++++                                                                                                                             
+    #+++++++ next mass plane block ++++++++++++++
     T6WW_DeltaChNeu75 = T6WW.addMassPlane([[x, y+75, y]]*2)
     T6WW_DeltaChNeu75.addSource('efficiencyMap',"orig/T6WW_EM/cms_sus_13_012_T6WW_DeltaChNeu75_EM_MAPS/MA5_EM_T6WW_DeltaChNeu75_%s.dat" % dataset_n, "txt")
-    #+++++++ next mass plane block ++++++++++++++                                                                                                                             
+    #+++++++ next mass plane block ++++++++++++++
     T6WW_DeltaChNeu40 = T6WW.addMassPlane([[x, y+40, y]]*2)
     T6WW_DeltaChNeu40.addSource('efficiencyMap',"orig/T6WW_EM/cms_sus_13_012_T6WW_DeltaChNeu40_EM_MAPS/MA5_EM_T6WW_DeltaChNeu40_%s.dat" % dataset_n, "txt")
-    #+++++++ next mass plane block ++++++++++++++                                                                                                                             
+    #+++++++ next mass plane block ++++++++++++++
     T6WW_DeltaChNeu5 = T6WW.addMassPlane([[x, y+5, y]]*2)
     T6WW_DeltaChNeu5.addSource('efficiencyMap',"orig/T6WW_EM/cms_sus_13_012_T6WW_DeltaChNeu5_EM_MAPS/MA5_EM_T6WW_DeltaChNeu5_%s.dat" % dataset_n, "txt")
 
-    
+
     '''
     T6WWbb = dataset.addTxName('T6WWbb')
     T6WWbb.checked = ''
@@ -458,20 +462,20 @@ def add ( dataset ):
     T6WWbb.massConstraint = None
     T6WWbb.dataUrl = None
     T6WWbb.source = 'SModelS'
-    
-    #T6WWoffbb = dataset.addTxName('T6WWoffbb')                                                                                                                                 
-    #T6WWoffbb.checked = ''                                                                                                                                                         
-    #T6WWoffbb.constraint = "2.23*[[['jet','jet'],['b']],[['jet','jet'],['b']]]"                                                                                                  
+
+    #T6WWoffbb = dataset.addTxName('T6WWoffbb')
+    #T6WWoffbb.checked = ''
+    #T6WWoffbb.constraint = "2.23*[[['jet','jet'],['b']],[['jet','jet'],['b']]]"
     #T6WWoffbb.conditionDescription ="None"
     #T6WWoffbb.condition ="None"
     #T6WWoffbb.massConstraint = [['dm <= 76.','dm >= 5.0',]]*2
     #T6WWoffbb.dataUrl = None
     #T6WWoffbb.source = 'SModelS'
-    
-    #+++++++ next mass plane block ++++++++++++++                                                                                                                               
+
+    #+++++++ next mass plane block ++++++++++++++
     T6WWbb_x005 = T6WWbb.addMassPlane([[x, 0.05*x + (1-0.05)*y ,  y]]*2)
     T6WWbb_x005.addSource('efficiencyMap',"orig/T6WWbb_EM/cms_sus_13_012_T6WWbb_x005_EM_MAPS/MA5_EM_T6WWbb_x005_%s.dat" % dataset_n, "txt")
-    #+++++++ next mass plane block ++++++++++++++                                                                                                                               
+    #+++++++ next mass plane block ++++++++++++++
     T6WWbb_x075 = T6WWbb.addMassPlane([[x, 0.75*x + (1-0.75)*y ,  y]]*2)
     T6WWbb_x075.addSource('efficiencyMap',"orig/T6WWbb_EM/cms_sus_13_012_T6WWbb_x075_EM_MAPS/MA5_EM_T6WWbb_x075_%s.dat" % dataset_n, "txt")
     #+++++++ next mass plane block ++++++++++++++
@@ -480,19 +484,19 @@ def add ( dataset ):
     #+++++++ next mass plane block ++++++++++++++ NOTE : these overlaps with T6ZZoffbb hence not included for this topology
     #T6WWbb_DeltaStopSbot10 = T6WWoffbb.addMassPlane([[x, x-10 , y]]*2)
     #T6WWbb_DeltaStopSbot10.addSource('efficiencyMap',"orig/T6WWbb_EM/cms_sus_13_012_T6WWbb_DeltaStopSbot10_EM_MAPS/MA5_EM_T6WWbb_DeltaStopSbot10_%s.dat" % dataset_n, "txt")
-    #+++++++ next mass plane block ++++++++++++++                                                                                                                                
+    #+++++++ next mass plane block ++++++++++++++
     #T6WWbb_DeltaStopSbot40 = T6WWoffbb.addMassPlane([[x, x-40 , y]]*2)
     #T6WWbb_DeltaStopSbot40.addSource('efficiencyMap',"orig/T6WWbb_EM/cms_sus_13_012_T6WWbb_DeltaStopSbot40_EM_MAPS/MA5_EM_T6WWbb_DeltaStopSbot40_%s.dat" % dataset_n, "txt")
-    #+++++++ next mass plane block ++++++++++++++                                                                                                                                  
+    #+++++++ next mass plane block ++++++++++++++
     #T6WWbb_DeltaStopSbot75 = T6WWoffbb.addMassPlane([[x, x-75 , y]]*2)
     #T6WWbb_DeltaStopSbot75.addSource('efficiencyMap',"orig/T6WWbb_EM/cms_sus_13_012_T6WWbb_DeltaStopSbot75_EM_MAPS/MA5_EM_T6WWbb_DeltaStopSbot75_%s.dat" % dataset_n, "txt")
-    #+++++++ next mass plane block ++++++++++++++                                                                                                                            
+    #+++++++ next mass plane block ++++++++++++++
     T6WWbb_DeltaSbotNeu5 = T6WWbb.addMassPlane([[x, y+5 , y]]*2)
     T6WWbb_DeltaSbotNeu5.addSource('efficiencyMap',"orig/T6WWbb_EM/cms_sus_13_012_T6WWbb_DeltaSbotNeu5_EM_MAPS/MA5_EM_T6WWbb_DeltaSbotNeu5_%s.dat" % dataset_n, "txt")
 
 # *************************************************************
 
-    
+
     T6ZZbb = dataset.addTxName('T6ZZbb')
     T6ZZbb.checked = ''
     T6ZZbb.constraint ="[[['Z'],['b']],[['Z'],['b']]]"
@@ -503,21 +507,21 @@ def add ( dataset ):
     T6ZZbb.source = 'SModelS'
 
     T6ZZoffbb = dataset.addTxName('T6ZZoffbb')
-    T6ZZoffbb.checked = ''                                                                                                                                                   
-    T6ZZoffbb.constraint = "2.1*[[['jet','jet'],['b']],[['jet','jet'],['b']]]"    # using BR(z->hadrons)= 69.2                                                               
+    T6ZZoffbb.checked = ''
+    T6ZZoffbb.constraint = "2.1*[[['jet','jet'],['b']],[['jet','jet'],['b']]]"    # using BR(z->hadrons)= 69.2
     T6ZZoffbb.conditionDescription ="None"
     T6ZZoffbb.condition ="None"
     T6ZZoffbb.massConstraint = [['dm <= 85.','dm >= 5.0',]]*2
     T6ZZoffbb.dataUrl = None
     T6ZZoffbb.source = 'SModelS'
 
-    #+++++++ next mass plane block ++++++++++++++                                                                                                                             
+    #+++++++ next mass plane block ++++++++++++++
     T6ZZbb_x010 = T6WWbb.addMassPlane([[x, 0.1*x + (1-0.10)*y ,  y]]*2)
     T6ZZbb_x010.addSource('efficiencyMap',"orig/T6ZZbb_EM/cms_sus_13_012_T6ZZbb_x010_EM_MAPS/MA5_EM_T6ZZbb_x010_%s.dat" % dataset_n, "txt")
-    #+++++++ next mass plane block ++++++++++++++                                                                                                                               
+    #+++++++ next mass plane block ++++++++++++++
     T6ZZbb_X050 = T6ZZbb.addMassPlane([[x, 0.50*x + (1-0.50)*y ,  y]]*2)
     T6ZZbb_X050.addSource('efficiencyMap',"orig/T6ZZbb_EM/cms_sus_13_012_T6ZZbb_x050_EM_MAPS/MA5_EM_T6ZZbb_x050_%s.dat" % dataset_n, "txt")
-    #+++++++ next mass plane block ++++++++++++++                                                                                                                             
+    #+++++++ next mass plane block ++++++++++++++
     T6ZZoffbb_DeltaSbot2Sbot40 = T6ZZoffbb.addMassPlane([[x, x-40 , y]]*2)
     T6ZZoffbb_DeltaSbot2Sbot40.addSource('efficiencyMap',"orig/T6ZZbb_EM/cms_sus_13_012_T6ZZbb_DeltaSbot2Sbot40_EM_MAPS/MA5_EM_T6ZZbb_DeltaSbot2Sbot40_%s.dat" % dataset_n, "txt")
     #+++++++ next mass plane block ++++++++++++++
@@ -529,10 +533,10 @@ def add ( dataset ):
     #+++++++ next mass plane block ++++++++++++++
     T6ZZbb_DeltaSbot2Sbot95 = T6ZZbb.addMassPlane([[x, x-95 , y]]*2)
     T6ZZbb_DeltaSbot2Sbot95.addSource('efficiencyMap',"orig/T6ZZbb_EM/cms_sus_13_012_T6ZZbb_DeltaSbot2Sbot95_EM_MAPS/MA5_EM_T6ZZbb_DeltaSbot2Sbot95_%s.dat" % dataset_n, "txt")
-    
-    
+
+
 # *************************************************************
-    
+
     T6bbZZ = dataset.addTxName('T6bbZZ')
     T6bbZZ.checked = ''
     T6bbZZ.constraint ="[[['b'],['Z']],[['b'],['Z']]]"
@@ -541,37 +545,37 @@ def add ( dataset ):
     T6bbZZ.massConstraint = None
     T6bbZZ.dataUrl = None
     T6bbZZ.source = 'SModelS'
-    
+
     T6bbZZoff = dataset.addTxName('T6bbZZoff')
     T6bbZZoff.checked = ''
-    T6bbZZoff.constraint = "2.1*[[['b'],['jet','jet']],[['b'],['jet','jet']]]"    # using BR(z->hadrons)= 69.2                                                                    
+    T6bbZZoff.constraint = "2.1*[[['b'],['jet','jet']],[['b'],['jet','jet']]]"    # using BR(z->hadrons)= 69.2
     T6bbZZoff.conditionDescription ="None"
     T6bbZZoff.condition ="None"
     T6bbZZoff.massConstraint = [[ 'dm >= 5.0','dm <= 85.']]*2
     T6bbZZoff.dataUrl = None
     T6bbZZoff.source = 'SmodelS'
-    #+++++++ next mass plane block ++++++++++++++                                                                                                                                
+    #+++++++ next mass plane block ++++++++++++++
     T6bbZZ_x025= T6bbZZ.addMassPlane([[x, 0.25*x + (1-0.25)*y ,  y]]*2)
     T6bbZZ_x025.addSource('efficiencyMap',"orig/T6bbZZ_EM/cms_sus_13_012_T6bbZZ_x025_EM_MAPS/MA5_EM_T6bbZZ_x025_%s.dat" % dataset_n, "txt")
-    #+++++++ next mass plane block ++++++++++++++                                                                                                                              
+    #+++++++ next mass plane block ++++++++++++++
     T6bbZZ_X095 = T6bbZZ.addMassPlane([[x, 0.95*x + (1-0.95)*y ,  y]]*2)
     T6bbZZ_X095.addSource('efficiencyMap',"orig/T6bbZZ_EM/cms_sus_13_012_T6bbZZ_x095_EM_MAPS/MA5_EM_T6bbZZ_x095_%s.dat" % dataset_n, "txt")
     #+++++++ next mass plane block ++++++++++++++
     T6bbZZ_X050 = T6bbZZ.addMassPlane([[x, 0.50*x + (1-0.50)*y ,  y]]*2)
     T6bbZZ_X050.addSource('efficiencyMap',"orig/T6bbZZ_EM/cms_sus_13_012_T6bbZZ_x050_EM_MAPS/MA5_EM_T6bbZZ_x050_%s.dat" % dataset_n, "txt")
-    #+++++++ next mass plane block ++++++++++++++             
-    T6bbZZoff_DeltaN2LSP50 = T6bbZZoff.addMassPlane([[x, y + 50 ,  y]]*2) 
+    #+++++++ next mass plane block ++++++++++++++
+    T6bbZZoff_DeltaN2LSP50 = T6bbZZoff.addMassPlane([[x, y + 50 ,  y]]*2)
     T6bbZZoff_DeltaN2LSP50.addSource('efficiencyMap',"orig/T6bbZZ_EM/cms_sus_13_012_T6bbZZ_DeltaN2LSP50_EM_MAPS/MA5_EM_T6bbZZ_DeltaN2LSP50_%s.dat" % dataset_n, "txt")
     #+++++++ next mass plane block ++++++++++++++
-    T6bbZZoff_DeltaN2LSP5 = T6bbZZoff.addMassPlane([[x, y + 5 ,  y]]*2) 
+    T6bbZZoff_DeltaN2LSP5 = T6bbZZoff.addMassPlane([[x, y + 5 ,  y]]*2)
     T6bbZZoff_DeltaN2LSP5.addSource('efficiencyMap',"orig/T6bbZZ_EM/cms_sus_13_012_T6bbZZ_DeltaN2LSP5_EM_MAPS/MA5_EM_T6bbZZ_DeltaN2LSP5_%s.dat" % dataset_n, "txt")
     #+++++++ next mass plane block ++++++++++++++
-    T6bbZZoff_DeltaN2LSP75 = T6bbZZoff.addMassPlane([[x, y + 75 ,  y]]*2) 
+    T6bbZZoff_DeltaN2LSP75 = T6bbZZoff.addMassPlane([[x, y + 75 ,  y]]*2)
     T6bbZZoff_DeltaN2LSP75.addSource('efficiencyMap',"orig/T6bbZZ_EM/cms_sus_13_012_T6bbZZ_DeltaN2LSP75_EM_MAPS/MA5_EM_T6bbZZ_DeltaN2LSP75_%s.dat" % dataset_n, "txt")
-    
-    
+
+
 # *************************************************************
-  
+
     T6WWtt = dataset.addTxName('T6WWtt')
     T6WWtt.checked = ''
     T6WWtt.constraint ="[[['W'],['t']],[['W'],['t']]]"
@@ -583,7 +587,7 @@ def add ( dataset ):
 
     T6WWttoff = dataset.addTxName('T6WWttoff')
     T6WWttoff.checked = ''
-    T6WWttoff.constraint = "[[['W'],['b','W']],[['W'],['b','W']]]"                                                                      
+    T6WWttoff.constraint = "[[['W'],['b','W']],[['W'],['b','W']]]"
     T6WWttoff.conditionDescription ="None"
     T6WWttoff.condition ="None"
     T6WWttoff.massConstraint = [['dm >= 80.0','dm >= 85.']]*2
@@ -592,22 +596,22 @@ def add ( dataset ):
 
     T6WWofftt = dataset.addTxName('T6WWofftt')
     T6WWofftt.checked = ''
-    T6WWofftt.constraint = "2.23*[[['jet','jet'],['t']],[['jet','jet'],['t']]]"                                                                      
+    T6WWofftt.constraint = "2.23*[[['jet','jet'],['t']],[['jet','jet'],['t']]]"
     T6WWofftt.conditionDescription ="None"
     T6WWofftt.condition ="None"
     T6WWofftt.massConstraint = [['dm <= 80.0','dm >= 175.']]*2
     T6WWofftt.dataUrl = None
     T6WWofftt.source = 'SModelS'
-    #+++++++ next mass plane block ++++++++++++++                                                                                                                                 
+    #+++++++ next mass plane block ++++++++++++++
     T6WWtt_x025= T6WWtt.addMassPlane([[x, 0.25*x + (1-0.25)*y , y]]*2)
     T6WWtt_x025.addSource('efficiencyMap',"orig/T6WWtt_EM/cms_sus_13_012_T6WWtt_x025_EM_MAPS/MA5_EM_T6WWtt_x025_%s.dat" % dataset_n, "txt")
-    #+++++++ next mass plane block ++++++++++++++                                                                                                                           
+    #+++++++ next mass plane block ++++++++++++++
     T6WWtt_x050= T6WWtt.addMassPlane([[x, 0.50*x + (1-0.50)*y , y]]*2)
     T6WWtt_x050.addSource('efficiencyMap',"orig/T6WWtt_EM/cms_sus_13_012_T6WWtt_x050_EM_MAPS/MA5_EM_T6WWtt_x050_%s.dat" % dataset_n, "txt")
-    #+++++++ next mass plane block ++++++++++++++                                                                                                                              
+    #+++++++ next mass plane block ++++++++++++++
     T6WWtt_x075= T6WWtt.addMassPlane([[x, 0.75*x + (1-0.75)*y , y]]*2)
     T6WWtt_x075.addSource('efficiencyMap',"orig/T6WWtt_EM/cms_sus_13_012_T6WWtt_x075_EM_MAPS/MA5_EM_T6WWtt_x075_%s.dat" % dataset_n, "txt")
-    
+
     #+++++++ next mass plane block ++++++++++++++
     T6WWttoff_DeltaStopNeu90 = T6WWttoff.addMassPlane([[x, y+90 , y]]*2)
     T6WWttoff_DeltaStopNeu90.addSource('efficiencyMap',"orig/T6WWtt_EM/cms_sus_13_012_T6WWtt_DeltaStopNeutralino90_EM_MAPS/MA5_EM_T6WWtt_DeltaStopNeutralino90_%s.dat" % dataset_n, "txt")
@@ -618,19 +622,19 @@ def add ( dataset ):
     T6WWttoff_DeltaStopNeu165 = T6WWttoff.addMassPlane([[x, y+165 , y]]*2)
     T6WWttoff_DeltaStopNeu165.addSource('efficiencyMap',"orig/T6WWtt_EM/cms_sus_13_012_T6WWtt_DeltaStopNeutralino165_EM_MAPS/MA5_EM_T6WWtt_DeltaStopNeutralino165_%s.dat" % dataset_n, "txt")
 
-    #+++++++ next mass plane block ++++++++++++++                                                                             
+    #+++++++ next mass plane block ++++++++++++++
     T6WWofftt_DeltaSbottomStop5 = T6WWofftt.addMassPlane([[x, x-5 , y]]*2)
     T6WWofftt_DeltaSbottomStop5.addSource('efficiencyMap',"orig/T6WWtt_EM/cms_sus_13_012_T6WWtt_DeltaSbottomStop5_EM_MAPS/MA5_EM_T6WWtt_DeltaSbottomStop5_%s.dat" % dataset_n, "txt")
     #+++++++ next mass plane block ++++++++++++++
     T6WWofftt_DeltaSbottomStop40 = T6WWofftt.addMassPlane([[x, x-40 , y]]*2)
     T6WWofftt_DeltaSbottomStop40.addSource('efficiencyMap',"orig/T6WWtt_EM/cms_sus_13_012_T6WWtt_DeltaSbottomStop40_EM_MAPS/MA5_EM_T6WWtt_DeltaSbottomStop40_%s.dat" % dataset_n, "txt")
-    #+++++++ next mass plane block ++++++++++++++                                                                                
+    #+++++++ next mass plane block ++++++++++++++
     T6WWofftt_DeltaSbottomStop75 = T6WWofftt.addMassPlane([[x, x-75 , y]]*2)
     T6WWofftt_DeltaSbottomStop75.addSource('efficiencyMap',"orig/T6WWtt_EM/cms_sus_13_012_T6WWtt_DeltaSbottomStop75_EM_MAPS/MA5_EM_T6WWtt_DeltaSbottomStop75_%s.dat" % dataset_n, "txt")
 
-   
-# ********************************************************        
-    
+
+# ********************************************************
+
     T6ttWW = dataset.addTxName('T6ttWW')
     T6ttWW.checked = ''
     T6ttWW.constraint ="[[['t'],['W']],[['t'],['W']]]"
@@ -642,7 +646,7 @@ def add ( dataset ):
 
     T6ttWWoff = dataset.addTxName('T6ttWWoff')
     T6ttWWoff.checked = ''
-    T6ttWWoff.constraint = "[[['t'],['jet','jet']],[['t'],['jet','jet']]]"                                                                      
+    T6ttWWoff.constraint = "[[['t'],['jet','jet']],[['t'],['jet','jet']]]"
     T6ttWWoff.conditionDescription ="None"
     T6ttWWoff.condition ="None"
     T6ttWWoff.massConstraint = [[ 'dm >= 175.0','dm <= 80.']]*2
@@ -651,38 +655,38 @@ def add ( dataset ):
 
     T6ttoffWW = dataset.addTxName('T6ttoffWW')
     T6ttoffWW.checked = ''
-    T6ttoffWW.constraint = "[[['b','W'],['W']],[['b','W'],['W']]]"                                                                      
+    T6ttoffWW.constraint = "[[['b','W'],['W']],[['b','W'],['W']]]"
     T6ttoffWW.conditionDescription ="None"
     T6ttoffWW.condition ="None"
     T6ttoffWW.massConstraint = [[ 'dm >= 85.0','dm >= 80.']]*2
     T6ttoffWW.dataUrl = None
     T6ttoffWW.source = 'SModelS'
 
-    #+++++++ next mass plane block ++++++++++++++                                                                                                                              
+    #+++++++ next mass plane block ++++++++++++++
     T6ttWW_x025 = T6ttWW.addMassPlane([[x, 0.25*x + (1-0.25)*y , y]]*2)
     T6ttWW_x025.addSource('efficiencyMap',"orig/T6ttWW_EM/cms_sus_13_012_T6ttWW_x025_EM_MAPS/MA5_EM_T6ttWW_x025_%s.dat" % dataset_n, "txt")
-    #+++++++ next mass plane block ++++++++++++++                                                                                                                            
+    #+++++++ next mass plane block ++++++++++++++
     T6ttWW_x050 = T6ttWW.addMassPlane([[x, 0.50*x + (1-0.50)*y , y]]*2)
     T6ttWW_x050.addSource('efficiencyMap',"orig/T6ttWW_EM/cms_sus_13_012_T6ttWW_x050_EM_MAPS/MA5_EM_T6ttWW_x050_%s.dat" % dataset_n, "txt")
-    #+++++++ next mass plane block ++++++++++++++                                                                                                                              
+    #+++++++ next mass plane block ++++++++++++++
     T6ttWW_x075 = T6ttWW.addMassPlane([[x, 0.75*x + (1-0.75)*y , y]]*2)
     T6ttWW_x075.addSource('efficiencyMap',"orig/T6ttWW_EM/cms_sus_13_012_T6ttWW_x075_EM_MAPS/MA5_EM_T6ttWW_x075_%s.dat" % dataset_n, "txt")
-    
+
     #+++++++ next mass plane block ++++++++++++++
     T6ttoffWW_DeltaSbotCharg130 = T6ttoffWW.addMassPlane([[x , x - 130, y]]*2)
     T6ttoffWW_DeltaSbotCharg130.addSource('efficiencyMap',"orig/T6ttWW_EM/cms_sus_13_012_T6ttWW_DeltaSbotCharg130_EM_MAPS/MA5_EM_T6ttWW_DeltaSbotCharg130_%s.dat" % dataset_n, "txt")
-    #+++++++ next mass plane block ++++++++++++++                                                                                                                             
+    #+++++++ next mass plane block ++++++++++++++
     T6ttoffWW_DeltaSbotCharg165 = T6ttoffWW.addMassPlane([[x , x - 165, y]]*2)
     T6ttoffWW_DeltaSbotCharg165.addSource('efficiencyMap',"orig/T6ttWW_EM/cms_sus_13_012_T6ttWW_DeltaSbotCharg165_EM_MAPS/MA5_EM_T6ttWW_DeltaSbotCharg165_%s.dat" % dataset_n, "txt")
-    #+++++++ next mass plane block ++++++++++++++                                                                                                                             
+    #+++++++ next mass plane block ++++++++++++++
     T6ttWWoff_DeltaChargNeu5 = T6ttWWoff.addMassPlane([[x , y + 5 , y]]*2)
     T6ttWWoff_DeltaChargNeu5.addSource('efficiencyMap',"orig/T6ttWW_EM/cms_sus_13_012_T6ttWW_DeltaChargNeu5_EM_MAPS/MA5_EM_T6ttWW_DeltaChargNeu5_%s.dat" % dataset_n, "txt")
-    #+++++++ next mass plane block ++++++++++++++                                                                                                                           
+    #+++++++ next mass plane block ++++++++++++++
     T6ttWWoff_DeltaChargNeu40 = T6ttWWoff.addMassPlane([[x , y + 40 , y]]*2)
     T6ttWWoff_DeltaChargNeu40.addSource('efficiencyMap',"orig/T6ttWW_EM/cms_sus_13_012_T6ttWW_DeltaChargNeu40_EM_MAPS/MA5_EM_T6ttWW_DeltaChargNeu40_%s.dat" % dataset_n, "txt")
-    
 
-# ********************************************************                                                                                                                          
+
+# ********************************************************
     T6ZZtt = dataset.addTxName('T6ZZtt')
     T6ZZtt.checked = ''
     T6ZZtt.constraint ="[[['Z'],['t']],[['Z'],['t']]]"
@@ -691,7 +695,7 @@ def add ( dataset ):
     T6ZZtt.massConstraint = [['dm >= 90.0','dm >= 175.']]*2
     T6ZZtt.dataUrl = None
     T6ZZtt.source = 'SModelS'
-    
+
 #    T6ZZofftt = dataset.addTxName('T6ZZofftt')
 #    T6ZZofftt.checked = ''
 #    T6ZZofftt.constraint ="2.1*[[['jet','jet'],['t']],[['jet','jet'],['t']]]"
@@ -710,39 +714,39 @@ def add ( dataset ):
     T6ZZttoff.dataUrl = None
     T6ZZttoff.source = 'SModelS'
 
-    #+++++++ next mass plane block ++++++++++++++                                                                                                                         
+    #+++++++ next mass plane block ++++++++++++++
     T6ZZtt_x010 = T6ZZtt.addMassPlane([[x, 0.10*x + (1-0.10)*y , y]]*2)
     T6ZZtt_x010.addSource('efficiencyMap',"orig/T6ZZtt_EM/cms_sus_13_012_T6ZZtt_x0.1_EM_MAPS/MA5_EM_T6ZZtt_x0.1_%s.dat" % dataset_n, "txt")
-    #+++++++ next mass plane block ++++++++++++++                                                                                                                                  
+    #+++++++ next mass plane block ++++++++++++++
     #T6ZZofftt_x095 = T6ZZofftt.addMassPlane([[x, 0.95*x + (1-0.95)*y , y]]*2)
     #T6ZZofftt_x095.addSource('efficiencyMap',"orig/T6ZZtt_EM/cms_sus_13_012_T6ZZtt_x095_EM_MAPS/MA5_EM_T6ZZtt_x0.95_%s.dat" % dataset_n, "txt")
-    #+++++++ next mass plane block ++++++++++++++                                                                                                                                  
+    #+++++++ next mass plane block ++++++++++++++
     #T6ZZofftt_x050 = T6ZZofftt.addMassPlane([[x, 0.50*x + (1-0.50)*y , y]]*2)
     #T6ZZofftt_x050.addSource('efficiencyMap',"orig/T6ZZtt_EM/cms_sus_13_012_T6ZZtt_x050_EM_MAPS/MA5_EM_T6ZZtt_x050_%s.dat" % dataset_n, "txt")
-    #+++++++ next mass plane block ++++++++++++++                                                                                                                                  
+    #+++++++ next mass plane block ++++++++++++++
     T6ZZtt_x05 = T6ZZtt.addMassPlane([[x, 0.50*x + (1-0.50)*y , y]]*2)
     T6ZZtt_x05.addSource('efficiencyMap',"orig/T6ZZtt_EM/cms_sus_13_012_T6ZZtt_x0.5_EM_MAPS/MA5_EM_T6ZZtt_x0.5_%s.dat" % dataset_n, "txt")
 
-#    #+++++++ next mass plane block ++++++++++++++  same as T6WWofftt                                                                                                              
+#    #+++++++ next mass plane block ++++++++++++++  same as T6WWofftt
 #    T6ZZofftt_DeltaStop2Stop5 = T6ZZofftt.addMassPlane([[x, x-5 , y]]*2)
 #    T6ZZofftt_DeltaStop2Stop5.addSource('efficiencyMap',"orig/T6ZZtt_EM/cms_sus_13_012_T6ZZtt_DeltaStop2Stop5_EM_MAPS/MA5_EM_T6ZZtt_DeltaStop2Stop5_%s.dat" % dataset_n, "txt")
-#    #+++++++ next mass plane block ++++++++++++++                                                                                                                                 
+#    #+++++++ next mass plane block ++++++++++++++
 #    T6ZZofftt_DeltaStop2Stop45 = T6ZZofftt.addMassPlane([[x, x-45 , y]]*2)
 #    T6ZZofftt_DeltaStop2Stop45.addSource('efficiencyMap',"orig/T6ZZtt_EM/cms_sus_13_012_T6ZZtt_DeltaStop2Stop45_EM_MAPS/MA5_EM_T6ZZtt_DeltaStop2Stop45_%s.dat" % dataset_n, "txt")
-#    #+++++++ next mass plane block ++++++++++++++                                                                                                                                 
+#    #+++++++ next mass plane block ++++++++++++++
 #    T6ZZofftt_DeltaStop2Stop80 = T6ZZofftt.addMassPlane([[x, x-80 , y]]*2)
 #    T6ZZofftt_DeltaStop2Stop80.addSource('efficiencyMap',"orig/T6ZZtt_EM/cms_sus_13_012_T6ZZtt_DeltaStop2Stop80_EM_MAPS/MA5_EM_T6ZZtt_DeltaStop2Stop80_%s.dat" % dataset_n, "txt")
 
-    #+++++++ next mass plane block ++++++++++++++                                                                                                                                
+    #+++++++ next mass plane block ++++++++++++++
     T6ZZttoff_DeltaStopNeu90 = T6ZZttoff.addMassPlane([[x, y + 90 , y]]*2)
     T6ZZttoff_DeltaStopNeu90.addSource('efficiencyMap',"orig/T6ZZtt_EM/cms_sus_13_012_T6ZZtt_DeltaStopNeu90_EM_MAPS/MA5_EM_T6ZZtt_DeltaStopNeu90_%s.dat" % dataset_n, "txt")
-    #+++++++ next mass plane block ++++++++++++++                                                                                                                             
+    #+++++++ next mass plane block ++++++++++++++
     T6ZZttoff_DeltaStopNeu135 = T6ZZttoff.addMassPlane([[x, y + 135 , y]]*2)
     T6ZZttoff_DeltaStopNeu135.addSource('efficiencyMap',"orig/T6ZZtt_EM/cms_sus_13_012_T6ZZtt_DeltaStopNeu135_EM_MAPS/MA5_EM_T6ZZtt_DeltaStopNeu135_%s.dat" % dataset_n, "txt")
-    #+++++++ next mass plane block ++++++++++++++                                                                                                                                  
+    #+++++++ next mass plane block ++++++++++++++
     T6ZZttoff_DeltaStopNeu160 = T6ZZttoff.addMassPlane([[x, y + 160 , y]]*2)
     T6ZZttoff_DeltaStopNeu160.addSource('efficiencyMap',"orig/T6ZZtt_EM/cms_sus_13_012_T6ZZtt_DeltaStopNeu160_EM_MAPS/MA5_EM_T6ZZtt_DeltaStopNeu160_%s.dat" % dataset_n, "txt")
-   
+
 # **********************************************************
 
     T6ttZZ = dataset.addTxName('T6ttZZ')
@@ -772,10 +776,10 @@ def add ( dataset ):
     #T6ttoffZZ.dataUrl = None
     #T6ttoffZZ.source = 'SModelS'
 
-    #+++++++ next mass plane block ++++++++++++++                                                                                                                             
-    T6ttZZ_x050 = T6ttZZ.addMassPlane([[x, 0.50*x + (1-0.50)*y , y]]*2)    
+    #+++++++ next mass plane block ++++++++++++++
+    T6ttZZ_x050 = T6ttZZ.addMassPlane([[x, 0.50*x + (1-0.50)*y , y]]*2)
     T6ttZZ_x050.addSource('efficiencyMap',"orig/T6ttZZ_EM/cms_sus_13_012_T6ttZZ_x05_EM_MAPS/MA5_EM_T6ttZZ_x05_%s.dat" % dataset_n, "txt")
-    #+++++++ next mass plane block ++++++++++++++                                                                                                                               
+    #+++++++ next mass plane block ++++++++++++++
     T6ttZZ_x070 = T6ttZZ.addMassPlane([[x, 0.70*x + (1-0.70)*y , y]]*2)
     T6ttZZ_x070.addSource('efficiencyMap',"orig/T6ttZZ_EM/cms_sus_13_012_T6ttZZ_x070_EM_MAPS/MA5_EM_T6ttZZ_x070_%s.dat" % dataset_n, "txt")
     #+++++++ next mass plane block ++++++++++++++
@@ -784,19 +788,19 @@ def add ( dataset ):
     #+++++++ next mass plane block ++++++++++++++
 #    T6ttZZoff_DeltaNeu2LSP5 = T6ttZZoff.addMassPlane([[x, y+5 , y]]*2)
 #    T6ttZZoff_DeltaNeu2LSP5.addSource('efficiencyMap',"orig/T6ttZZ_EM/cms_sus_13_012_T6ttZZ_DeltaNeu2LSP5_EM_MAPS/MA5_EM_T6ttZZ_DeltaNeu2LSP5_%s.dat" % dataset_n, "txt")
-    #+++++++ next mass plane block ++++++++++++++                                                                                                                               
+    #+++++++ next mass plane block ++++++++++++++
 #    T6ttZZoff_DeltaNeu2LSP45 = T6ttZZoff.addMassPlane([[x, y+45 , y]]*2)
 #    T6ttZZoff_DeltaNeu2LSP45.addSource('efficiencyMap',"orig/T6ttZZ_EM/cms_sus_13_012_T6ttZZ_DeltaNeu2LSP45_EM_MAPS/MA5_EM_T6ttZZ_DeltaNeu2LSP45_%s.dat" % dataset_n, "txt")
     #+++++++ next mass plane block ++++++++++++++
 #    T6ttZZoff_DeltaNeu2LSP85 = T6ttZZoff.addMassPlane([[x, y+85 , y]]*2)
 #    T6ttZZoff_DeltaNeu2LSP85.addSource('efficiencyMap',"orig/T6ttZZ_EM/cms_sus_13_012_T6ttZZ_DeltaNeu2LSP85_EM_MAPS/MA5_EM_T6ttZZ_DeltaNeu2LSP85_%s.dat" % dataset_n, "txt")
-    #+++++++ next mass plane block ++++++++++++++                                                                                                                               
+    #+++++++ next mass plane block ++++++++++++++
     T6ttZZ_DeltaNeu2LSP95 = T6ttZZ.addMassPlane([[x, y+95 , y]]*2)
     T6ttZZ_DeltaNeu2LSP95.addSource('efficiencyMap',"orig/T6ttZZ_EM/cms_sus_13_012_T6ttZZ_DeltaNeu2LSP95_EM_MAPS/MA5_EM_T6ttZZ_DeltaNeu2LSP95_%s.dat" % dataset_n, "txt")
     '''
 
-    
-datasets = {"SR_3NJet6_500HT800_450MHT600": ( 454, 418, 66 ), 
+
+datasets = {"SR_3NJet6_500HT800_450MHT600": ( 454, 418, 66 ),
             "SR_3NJet6_1250HT1500_450MHTinf": ( 23, 17.6, 4.1 ),
             "SR_3NJet6_1250HT1500_300MHT450": ( 38, 42.8, 9.5 ),
             "SR_6NJet8_1000HT1250_200MHT300": ( 67, 70, 16 ),
@@ -838,7 +842,7 @@ for name, numbers in datasets.items():
     #+++++++ dataset block ++++++++++++++
     dataset = DataSetInput( name )
     name = name.replace('SR_','')
-    dataset.setInfo(dataType = 'efficiencyMap', dataId = name, 
+    dataset.setInfo(dataType = 'efficiencyMap', dataId = name,
             observedN = numbers[0], expectedBG = numbers[1], bgError = numbers[2] )
     add ( dataset )
 

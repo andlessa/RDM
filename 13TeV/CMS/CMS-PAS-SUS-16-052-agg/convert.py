@@ -16,7 +16,7 @@ argparser.add_argument ('-utilsPath', '--utilsPath',
 help = 'path to the package smodels_utils',\
 type = str)
 argparser.add_argument ('-smodelsPath', '--smodelsPath',
-help = 'path to the package smodels_utils',\
+help = 'path to the package smodels',\
 type = str)
 argparser.add_argument ('-no', '--noUpdate',
 help = 'do not update the lastUpdate field.',\
