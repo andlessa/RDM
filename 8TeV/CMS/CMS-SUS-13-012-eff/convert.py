@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 """
-.. module:: convert
+.. module:: convert.py
    :synopsis: used to create info.txt and the <txname>.txt files.
 
 """
@@ -12,17 +12,17 @@ import argparse
 argparser = argparse.ArgumentParser(description =
 'create info.txt, txname.txt, twiki.txt and sms.py')
 argparser.add_argument ('-utilsPath', '--utilsPath',
-help = 'path to the package smodels_utils',\
-type = str )
+          help = 'path to the package smodels_utils',\
+          type = str )
 argparser.add_argument ('-smodelsPath', '--smodelsPath',
-help = 'path to the package smodels',\
-type = str )
+          help = 'path to the package smodels',\
+          type = str )
 argparser.add_argument ('-no', '--noUpdate',
 	        help = 'do not update the lastUpdate field.',\
           action= "store_true" )
 argparser.add_argument ('-t', '--ntoys',
-            help = 'number of toys to throw',\
-            type = int, default= 100000  )
+          help = 'number of toys to throw',\
+          type = int, default= 100000  )
 args = argparser.parse_args()
 
 if args.noUpdate:
@@ -209,7 +209,6 @@ def add ( dataset ):
     T6bbWWoff_d10.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T6bbWW_DiffChargNeu10_EM_MAPS/MA5_EM_T6bbWW_DiffChargNeu10_%s.dat" % dataset_n, "txt", objectName ="None", index = None )
     T6bbWWoff_d77 = T6bbWWoff.addMassPlane( [[x, y+77 , y ]]*2  )
     T6bbWWoff_d77.addSource ( "efficiencyMap", "orig/cms_sus_13_012_T6bbWW_DiffChargNeu77_EM_MAPS/MA5_EM_T6bbWW_DiffChargNeu77_%s.dat" % dataset_n, "txt", objectName ="None", index = None )
-
 
     T2 = dataset.addTxName('T2')
     T2.checked =''

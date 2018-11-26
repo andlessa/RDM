@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 """
-.. module:: convert
+.. module:: convert.py
    :synopsis: used to create info.txt and the <txname>.txt files.
 
 """
@@ -10,19 +10,19 @@ import os
 import argparse
 
 argparser = argparse.ArgumentParser(description =
-'create info.txt, txname.txt, twiki.txt and sms.py')
+    'create info.txt, txname.txt, twiki.txt and sms.py')
 argparser.add_argument ('-utilsPath', '--utilsPath',
-help = 'path to the package smodels_utils',\
-type = str)
+    help = 'path to the package smodels_utils',\
+    type = str)
 argparser.add_argument ('-smodelsPath', '--smodelsPath',
-help = 'path to the package smodels_utils',\
-type = str)
+    help = 'path to the package smodels_utils',\
+    type = str)
 argparser.add_argument ('-no', '--noUpdate',
-        help = 'do not update the lastUpdate field.',\
-        action= "store_true" )
+    help = 'do not update the lastUpdate field.',\
+    action= "store_true" )
 argparser.add_argument ('-t', '--ntoys',
-            help = 'number of toys to throw [100000]',\
-            type = int, default=100000  )
+    help = 'number of toys to throw [100000]',\
+    type = int, default=100000  )
 args = argparser.parse_args()
 
 if args.noUpdate:
@@ -338,6 +338,7 @@ def add ( dataset ):
 
     dataset_n = dataset._name.replace('SR','').replace('6jt+','6jtp').replace('4jl-','4jlm')
 
+    w
     #### T2
     T2 = dataset.addTxName('T2')
     T2.checked =''
@@ -346,9 +347,11 @@ def add ( dataset ):
     T2.condition ="None"
     T2.source = 'SModelS'
     #+++++++ next mass plane block ++++++++++++++
+    t2FigureUrls = { "SR6jt": "28b", "SR6jl": "26b", "SR3j": "19b", "SR4jl": "22b", "SR4jt": "24b", "SR5j": "25b", "SR6jl" }
     T2qq = T2.addMassPlane([[x,y]]*2)
     T2qq.figure    = None
-    T2qq.figureUrl = None
+    if dataset in t2FigureUrls.keys():
+        T2qq.figureUrl = "https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-02/figaux_%s.png" % t2FigureUrls[dataset]
     T2qq.dataUrl   = None
     T2qq.addSource('obsExclusion',"orig/exclusion_T2.txt", "txt")
     T2qq.addSource('efficiencyMap',"orig/T2/MA5_EM_T2_Results_%s.dat"% dataset_n, "txt" , objectName ="None", index = None)
@@ -362,6 +365,7 @@ def add ( dataset ):
     T5.massConstraint = None
     T5.source = 'SModelS'
     T5.dataUrl = None
+    T5.validated = "N/A"
     T5_x005 = T5.addMassPlane( [[x,0.05*x + 0.95*y,y]]*2 )
     T5_x005.addSource ( "efficiencyMap", "orig/MA5_T5_TGQ/T5_X005_atlas_2013_02/MA5_EM_T5_MAPS_%s.dat" % dataset_n, "txt", objectName ="None", index = None )
     T5_x05 = T5.addMassPlane( [[x,0.5*x + 0.5*y,y]]*2 )
@@ -380,6 +384,7 @@ def add ( dataset ):
     TGQ.conditionDescription ="None"
     TGQ.condition ="None"
     TGQ.source = 'SModelS'
+    TGQ.validated = "N/A"
     TGQ.dataUrl = None
     for num in  [name.split('_')[1] for name in os.listdir('orig/MA5_T5_TGQ') if 'TGQ' in name]: # listing the gluino masses from the name in the directories
         a = TGQ.addMassPlane( [ [x,y], [eval(num),x,y] ] )
