@@ -6,7 +6,7 @@ susyProcess: pp --> gluino gluino, gluino  --> antitop stop, stop --> top lsp
 figureUrl: None
 dataUrl: None
 source: SModelS
-validated: TBD
+validated: N/A
 axes: [[x, 0.5*x + 0.5*y, y], [x, 0.5*x + 0.5*y, y]];[[x, x - 177, y], [x, x - 177, y]];[[x, y + 177, y], [x, y + 177, y]]
 finalState: ['MET', 'MET']
 efficiencyMap: [[[[1.0200E+03*GeV,5.1050E+02*GeV,1.0000E+00*GeV],[1.0200E+03*GeV,5.1050E+02*GeV,1.0000E+00*GeV]],0.012776],

@@ -62,25 +62,6 @@ info.supersedes = 'ATLAS-CONF-2013-047'
 
 ### T1: official maps from ATLAS (they provide 15 SRs , but in the recast (MA5) we have only 10 )
 
-"""
-#+++++++ dataset block ++++++++++++++
-dataset = DataSetInput("SR6jl")
-dataset.setInfo(dataType = 'efficiencyMap', dataId = "SR6jl", observedN = 121, expectedBG = 111 , bgError = 11, upperLimit = '1.9230E+00*fb', expectedUpperLimit = '1.5312E+00*fb')
-#+++++++ next txName block ++++++++++++++
-T1 = dataset.addTxName('T1')
-T1.constraint ="[[['jet','jet']],[['jet','jet']]]"
-T1.conditionDescription ="None"
-T1.condition ="None"
-T1.source = 'ATLAS'
-#+++++++ next mass plane block ++++++++++++++
-T1 = T1.addMassPlane([[x,y]]*2)
-T1.figure  = "figaux_42b"
-T1.addSource('efficiencyMap',"orig/T1_SR6jl.dat","txt")
-T1.addSource('obsExclusion',"orig/exclusion_T1.txt", "txt")
-T1.figureUrl  = "https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-02/figaux_42b.png"
-T1.dataUrl  = "http://hepdata.cedar.ac.uk/view/ins1298722/d185"
-"""
-
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput("SR6jm")
 dataset.setInfo(dataType = 'efficiencyMap', dataId = "SR6jm", observedN = 39, expectedBG = 33 , bgError = 6, upperLimit = '1.1173E+00*fb', expectedUpperLimit = '8.6116E-01*fb')
@@ -412,14 +393,56 @@ datasets = { "SR6jl" : ( 121,111 ,11 , '1.9230E+00*fb', '1.5312E+00*fb'),
 
              }
 
+dses = {}
 
 for name, numbers in datasets.items():
     #+++++++ dataset block ++++++++++++++
     dataset = DataSetInput( name )
+    dses[name] = dataset
     name = name.replace('SR_','')
     dataset.setInfo(dataType = 'efficiencyMap', dataId = name,
-                    observedN = numbers[0], expectedBG = numbers[1], bgError = numbers[2] , upperLimit = numbers[3] , expectedUpperLimit = numbers[4] )
+                    observedN = numbers[0], expectedBG = numbers[1], bgError = numbers[2],
+                    upperLimit = numbers[3] , expectedUpperLimit = numbers[4] )
     add ( dataset )
 
+T1 = dses["SR6jtp"].addTxName('T1')
+T1.constraint ="[[['jet','jet']],[['jet','jet']]]"
+T1.conditionDescription ="None"
+T1.condition ="None"
+T1.source = 'ATLAS'
+#+++++++ next mass plane block ++++++++++++++
+T1 = T1.addMassPlane([[x,y]]*2)
+T1.figure  = "figaux_45b"
+T1.addSource('efficiencyMap',"orig/T1_SR6jt+.dat","txt")
+T1.addSource('obsExclusion',"orig/exclusion_T1.txt", "txt")
+T1.figureUrl  = "https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-02/figaux_45b.png"
+T1.dataUrl  = "http://hepdata.cedar.ac.uk/view/ins1298722/d194"
+
+T1 = dses["SR6jl"].addTxName('T1')
+T1.constraint ="[[['jet','jet']],[['jet','jet']]]"
+T1.conditionDescription ="None"
+T1.condition ="None"
+T1.source = 'ATLAS'
+#+++++++ next mass plane block ++++++++++++++
+T1 = T1.addMassPlane([[x,y]]*2)
+T1.figure  = "figaux_42b"
+T1.addSource('efficiencyMap',"orig/T1_SR6jl.dat","txt")
+T1.addSource('obsExclusion',"orig/exclusion_T1.txt", "txt")
+T1.figureUrl  = "https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-02/figaux_42b.png"
+T1.dataUrl  = "http://hepdata.cedar.ac.uk/view/ins1298722/d185"
+
+#+++++++ next txName block ++++++++++++++
+T1 = dses["SR4jlm"].addTxName('T1')
+T1.constraint ="[[['jet','jet']],[['jet','jet']]]"
+T1.conditionDescription ="None"
+T1.condition ="None"
+T1.source = 'ATLAS'
+#+++++++ next mass plane block ++++++++++++++
+T1 = T1.addMassPlane([[x,y]]*2)
+T1.figure  = "figaux_37b"
+T1.addSource('efficiencyMap',"orig/T1_SR4jl-.dat","txt")
+T1.addSource('obsExclusion',"orig/exclusion_T1.txt", "txt")
+T1.figureUrl  = "https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-02/figaux_37b.png"
+T1.dataUrl  = "http://hepdata.cedar.ac.uk/view/ins1298722/d170"
 
 databaseCreator.create()

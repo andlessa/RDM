@@ -6,7 +6,7 @@ susyProcess: pp --> chargino^+_1 chargino^-_1, chargino^pm_1 --> W lsp lsp
 figureUrl: None
 dataUrl: None
 source: SModelS
-validated: TBD
+validated: N/A
 axes: [[x, y], [x, y]]
 finalState: ['MET', 'MET']
 efficiencyMap: [[[[5.2000E+02*GeV,1.0000E+02*GeV],[5.2000E+02*GeV,1.0000E+02*GeV]],0.0001968],

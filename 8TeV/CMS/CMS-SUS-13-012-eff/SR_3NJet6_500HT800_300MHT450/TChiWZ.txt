@@ -6,7 +6,7 @@ susyProcess: pp --> neutralino_2 chargino^pm_1, neutralino_2 chargino^pm_1 --> Z
 figureUrl: None
 dataUrl: None
 source: SModelS
-validated: TBD
+validated: N/A
 axes: [[x, y], [x, y]]
 finalState: ['MET', 'MET']
 efficiencyMap: [[[[8.0000E+01*GeV,4.0000E+01*GeV],[8.0000E+01*GeV,4.0000E+01*GeV]],3.32e-05],
