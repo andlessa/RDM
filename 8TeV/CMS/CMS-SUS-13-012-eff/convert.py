@@ -219,7 +219,7 @@ def add ( dataset ):
     #+++++++ next mass plane block ++++++++++++++
     T2qq = T2.addMassPlane([[x,y]]*2)
     T2qq.figure = "None"
-    T2qq.figureUrl = "None"
+    T2qq.figureUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13012/Fig_7a.pdf"
     T2qq.dataUrl = None
     T2qq.addSource('obsExclusion', "orig/SUS13012_XsecLimits_T2qq.root", "root", objectName = "combined_obsExclOneTimesProspino")
     T2qq.addSource('obsExclusionM1', "orig/SUS13012_XsecLimits_T2qq.root", "root", objectName = "combined_obsExclMinusSysErrProspino")
