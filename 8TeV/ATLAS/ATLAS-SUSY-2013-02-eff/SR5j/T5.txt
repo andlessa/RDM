@@ -3,6 +3,7 @@ constraint: [[['jet'],['jet']],[['jet'],['jet']]]
 condition: None
 conditionDescription: None
 susyProcess: pp --> gluino gluino, gluino  --> quark squark, squark --> quark lsp
+figureUrl: None
 dataUrl: None
 source: SModelS
 validated: N/A

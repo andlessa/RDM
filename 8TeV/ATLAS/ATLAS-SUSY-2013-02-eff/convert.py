@@ -346,7 +346,7 @@ def add ( dataset ):
     T2.condition ="None"
     T2.source = 'SModelS'
     #+++++++ next mass plane block ++++++++++++++
-    t2FigureUrls = { "6jt": "28b", "6jl": "26b", "3j": "19b", "4jl": "22b", "4jt": "24b", "5j": "25b" }
+    t2FigureUrls = { "6jt": "28b", "6jl": "26b", "3j": "19b", "4jl": "22b", "4jt": "24b", "5j": "25b", "4jlm": "23b", "2jm": "16b", "2jt": "17b" }
     T2qq = T2.addMassPlane([[x,y]]*2)
     T2qq.figure    = None
     if dataset_n in t2FigureUrls.keys():
