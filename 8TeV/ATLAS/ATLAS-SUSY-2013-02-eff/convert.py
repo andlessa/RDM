@@ -338,7 +338,6 @@ def add ( dataset ):
 
     dataset_n = dataset._name.replace('SR','').replace('6jt+','6jtp').replace('4jl-','4jlm')
 
-    w
     #### T2
     T2 = dataset.addTxName('T2')
     T2.checked =''
@@ -347,11 +346,11 @@ def add ( dataset ):
     T2.condition ="None"
     T2.source = 'SModelS'
     #+++++++ next mass plane block ++++++++++++++
-    t2FigureUrls = { "SR6jt": "28b", "SR6jl": "26b", "SR3j": "19b", "SR4jl": "22b", "SR4jt": "24b", "SR5j": "25b", "SR6jl" }
+    t2FigureUrls = { "6jt": "28b", "6jl": "26b", "3j": "19b", "4jl": "22b", "4jt": "24b", "5j": "25b" }
     T2qq = T2.addMassPlane([[x,y]]*2)
     T2qq.figure    = None
-    if dataset in t2FigureUrls.keys():
-        T2qq.figureUrl = "https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-02/figaux_%s.png" % t2FigureUrls[dataset]
+    if dataset_n in t2FigureUrls.keys():
+        T2qq.figureUrl = "https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2013-02/figaux_%s.png" % t2FigureUrls[dataset_n]
     T2qq.dataUrl   = None
     T2qq.addSource('obsExclusion',"orig/exclusion_T2.txt", "txt")
     T2qq.addSource('efficiencyMap',"orig/T2/MA5_EM_T2_Results_%s.dat"% dataset_n, "txt" , objectName ="None", index = None)
