@@ -22,7 +22,7 @@ argparser.add_argument ('-no', '--noUpdate',
     action= "store_true" )
 argparser.add_argument ('-t', '--ntoys',
     help = 'number of toys to throw [100000]',\
-    type = int, default=100000  )
+    type = int, default=200000  )
 args = argparser.parse_args()
 
 if args.noUpdate:
@@ -43,7 +43,7 @@ from smodels_utils.dataPreparation.inputObjects import MetaInfoInput,DataSetInpu
 from smodels_utils.dataPreparation.databaseCreation import databaseCreator
 from smodels_utils.dataPreparation.massPlaneObjects import x, y, z
 
-
+DataSetInput.ntoys = args.ntoys
 
 #+++++++ global info block ++++++++++++++
 info = MetaInfoInput('ATLAS-SUSY-2013-02')
