@@ -22,7 +22,7 @@ argparser.add_argument ('-no', '--noUpdate',
           action= "store_true" )
 argparser.add_argument ('-t', '--ntoys',
           help = 'number of toys to throw',\
-          type = int, default= 100000  )
+          type = int, default= 200000  )
 args = argparser.parse_args()
 
 if args.noUpdate:
