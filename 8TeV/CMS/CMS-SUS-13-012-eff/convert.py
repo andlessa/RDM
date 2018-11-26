@@ -139,7 +139,7 @@ def add ( dataset ):
     TChiWW.source = 'SModelS'
     TChiWW_1 = TChiWW.addMassPlane( [[x,y]]*2 )
     TChiWW_1.addSource ( "efficiencyMap", "orig/TChi_EM/cms_sus_13_012_TChiWW_1_EM_MAPS/MA5_EM_TChiWW_1_%s.dat" % dataset_n, "txt", objectName ="None", index = None )
-    TChiWW_1.figureUrl = "None"
+    # TChiWW_1.figureUrl = "None"
     TChiWW_1.dataUrl = None
     T5bbbb = dataset.addTxName('T5bbbb')
     T5bbbb.checked = ''
@@ -219,7 +219,7 @@ def add ( dataset ):
     #+++++++ next mass plane block ++++++++++++++
     T2qq = T2.addMassPlane([[x,y]]*2)
     T2qq.figure = "None"
-    T2qq.figureUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13012/Fig_7a.pdf"
+    # T2qq.figureUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13012/Fig_7a.pdf"
     T2qq.dataUrl = None
     T2qq.addSource('obsExclusion', "orig/SUS13012_XsecLimits_T2qq.root", "root", objectName = "combined_obsExclOneTimesProspino")
     T2qq.addSource('obsExclusionM1', "orig/SUS13012_XsecLimits_T2qq.root", "root", objectName = "combined_obsExclMinusSysErrProspino")
@@ -273,6 +273,7 @@ def add ( dataset ):
     T1tttt.condition ="None"
     T1tttt.massConstraint = None
     T1tttt.source = 'CMS'
+    T1tttt.dataUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13012/c_AccEffMap_T1tttt.tar"
     #+++++++ next txName block ++++++++++++++
     T1ttttoff = dataset.addTxName('T1ttttoff')
     T1ttttoff.constraint = "[[['b','W','b','W']],[['b','W','b','W']]]"
@@ -280,6 +281,7 @@ def add ( dataset ):
     T1ttttoff.condition = "None"
     T1ttttoff.massConstraint = [['dm <= 338.']]*2
     T1ttttoff.source = 'CMS'
+    T1ttttoff.dataUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13012/c_AccEffMap_T1tttt.tar"
     #+++++++ next mass plane block ++++++++++++++
     T1bbbb = dataset.addTxName('T1bbbb')
     T1bbbb.constraint ="[[['b','b']],[['b','b']]]"
@@ -315,7 +317,7 @@ def add ( dataset ):
     T2ttoff.dataUrl = None
     T1tttt_1 = T1tttt.addMassPlane([[x,y]]*2)
     T1tttt_1.figure = "Fig_7c"
-    T1tttt_1.figureUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13012/Fig_7c.pdf"
+    # T1tttt_1.figureUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13012/Fig_7c.pdf"
     T1tttt_1.dataUrl = None
     T1tttt_1.addSource('obsExclusion', "orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName = "combined_obsExclOneTimesProspino")
     T1tttt_1.addSource('obsExclusionM1', "orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName = "combined_obsExclMinusSysErrProspino")
@@ -326,7 +328,7 @@ def add ( dataset ):
     T1tttt_1.addSource('efficiencyMap',"orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName ="h_EffAcc_%s"% dataset_n )
     T1ttttoff_1 = T1ttttoff.addMassPlane([[x,y]]*2)
     T1ttttoff_1.figure = "Fig_7c"
-    T1ttttoff_1.figureUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13012/Fig_7c.pdf"
+    # T1ttttoff_1.figureUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13012/Fig_7c.pdf"
     T1ttttoff_1.dataUrl = None
     T1ttttoff_1.addSource('obsExclusion', "orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName = "combined_obsExclOneTimesProspino")
     T1ttttoff_1.addSource('obsExclusionM1', "orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName = "combined_obsExclMinusSysErrProspino")
@@ -337,24 +339,24 @@ def add ( dataset ):
     T1ttttoff_1.addSource('efficiencyMap',"orig/SUS13012_XsecLimits_T1tttt.root", "root", objectName ="h_EffAcc_%s" % dataset_n )
     T1bbbb_1 = T1bbbb.addMassPlane([[x,y]]*2)
     T1bbbb_1.figure = "Fig_7c"
-    T1bbbb_1.figureUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13012/Fig_7c.pdf"
+    # T1bbbb_1.figureUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13012/Fig_7c.pdf"
     T1bbbb_1.dataUrl = None
     T1bbbb_1.addSource('efficiencyMap',"orig/T1bbbb_EM/cms_sus_13_012_T1bbbb_1_EM_MAPS/MA5_EM_T1bbbb_1_%s.dat" % dataset_n, "txt", objectName ="None", index = None )
     T1btbt_1 = T1btbt.addMassPlane([[x,y]]*2)
     T1btbt_1.figure = "Fig_7c"
-    T1btbt_1.figureUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13012/Fig_7c.pdf"
+    # T1btbt_1.figureUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13012/Fig_7c.pdf"
     T1btbt_1.dataUrl = None
     T1btbt_1.addSource('efficiencyMap',"orig/T1btbt_EM/cms_sus_13_012_T1btbt_1_EM_MAPS/MA5_EM_T1btbt_1_%s.dat" % dataset_n, "txt", objectName ="None", index = None )
     T2bb_1 = T2bb.addMassPlane([[x,y]]*2)
     T2bb_1.addSource('efficiencyMap',"orig/T2bb_EM/cms_sus_13_012_T2bb_1_EM_MAPS/MA5_EM_T2bb_1_%s.dat" % dataset_n, "txt", objectName ="None", index = None )
     T2tt_1 = T2tt.addMassPlane([[x,y]]*2)
     T2tt_1.figure = None
-    T2tt_1.figureUrl = None
+    # T2tt_1.figureUrl = None
     T2tt_1.dataUrl = None
     T2tt_1.addSource('efficiencyMap',"orig/T2tt_EM/cms_sus_13_012_T2tt_1_EM_MAPS/MA5_EM_T2tt_1_%s.dat" % dataset_n, "txt", objectName ="None", index = None )
     T2ttoff_1 = T2ttoff.addMassPlane([[x,y]]*2)
-    T2ttoff_1.figure = "FIXME"
-    T2ttoff_1.figureUrl = "FIXME"
+    #T2ttoff_1.figure = "FIXME"
+    #T2ttoff_1.figureUrl = "FIXME"
     T2ttoff_1.dataUrl = None
     T2ttoff_1.addSource('efficiencyMap',"orig/T2tt_EM/cms_sus_13_012_T2tt_1_EM_MAPS/MA5_EM_T2tt_1_%s.dat" % dataset_n, "txt", objectName ="None", index = None )
     #+++++++ next txName block ++++++++++++++
@@ -363,10 +365,11 @@ def add ( dataset ):
     T1.conditionDescription ="None"
     T1.condition ="None"
     T1.source = 'CMS'
+    T1.dataUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13012/c_AccEffMap_T1qqqq.tar"
     #+++++++ next mass plane block ++++++++++++++
     T1qqqq = T1.addMassPlane([[x,y]]*2)
     T1qqqq.figure = "Fig_7b"
-    T1qqqq.figureUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13012/Fig_7b.pdf"
+    # T1qqqq.figureUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13012/Fig_7b.pdf"
     T1qqqq.dataUrl = None
     T1qqqq.addSource('obsExclusion', "orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName = "combined_obsExclOneTimesProspino")
     T1qqqq.addSource('obsExclusionM1', "orig/SUS13012_XsecLimits_T1qqqq.root", "root", objectName = "combined_obsExclMinusSysErrProspino")

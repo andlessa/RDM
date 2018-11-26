@@ -3,7 +3,7 @@ constraint: [[['W','b']],[['W','b']]]
 condition: None
 conditionDescription: None
 susyProcess: pp --> stop stop, stop  --> top^* lsp
-figureUrl: FIXME
+figureUrl: None
 dataUrl: None
 source: SModelS
 validated: TBD

@@ -3,7 +3,7 @@ constraint: [[['jet','jet']],[['jet','jet']]]
 condition: None
 conditionDescription: None
 susyProcess: pp --> gluino gluino, gluino  --> quark antiquark  lsp
-figureUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13012/Fig_7b.pdf
+figureUrl: None
 dataUrl: None
 source: CMS
 validated: True

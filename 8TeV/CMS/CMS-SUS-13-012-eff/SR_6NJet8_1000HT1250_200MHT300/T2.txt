@@ -3,7 +3,7 @@ constraint: [[['jet']],[['jet']]]
 condition: None
 conditionDescription: None
 susyProcess: pp --> squark squark, squark  --> quark lsp
-figureUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13012/Fig_7a.pdf
+figureUrl: None
 dataUrl: None
 source: SModelS
 validated: True

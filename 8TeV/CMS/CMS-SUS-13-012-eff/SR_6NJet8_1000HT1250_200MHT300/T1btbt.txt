@@ -3,7 +3,7 @@ constraint: [[['b','t']],[['b','t']]]
 condition: None
 conditionDescription: None
 susyProcess: pp --> gluino gluino, gluino  --> bottom top  lsp
-figureUrl: https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13012/Fig_7c.pdf
+figureUrl: None
 dataUrl: None
 source: SModelS
 validated: N/A
