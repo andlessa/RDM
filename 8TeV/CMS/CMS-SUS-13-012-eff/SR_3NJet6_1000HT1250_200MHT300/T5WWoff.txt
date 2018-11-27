@@ -6,7 +6,7 @@ susyProcess: pp --> gluino gluino, gluino  --> quark antiquark  chargino^pm_1, c
 figureUrl: None
 dataUrl: None
 source: SModelS
-validated: True
+validated: N/A
 axes: [[x, y + 10, y], [x, y + 10, y]];[[x, 0.5*x + 0.5*y, y], [x, 0.5*x + 0.5*y, y]];[[x, 0.05*x + 0.95*y, y], [x, 0.05*x + 0.95*y, y]];[[x, 0.95*x + 0.05*y, y], [x, 0.95*x + 0.05*y, y]]
 finalState: ['MET', 'MET']
 efficiencyMap: [[[[1.4400E+03*GeV,7.1000E+02*GeV,7.0000E+02*GeV],[1.4400E+03*GeV,7.1000E+02*GeV,7.0000E+02*GeV]],0.024229],
