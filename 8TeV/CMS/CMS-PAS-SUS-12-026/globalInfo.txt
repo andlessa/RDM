@@ -1,7 +1,7 @@
 id: CMS-PAS-SUS-12-026
 sqrts: 8*TeV
 lumi: 9.2/fb
-prettyName: >= 3 leptons (+jets) + Etmiss
+prettyName: >= 3 leptons (+jets) + MET
 url: https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS12026
 supersededBy: CMS-SUS-13-002
 comment: Only CDS entry http://cdsweb.cern.ch/record/1496879/files/SUS-12-026-pas.pdf

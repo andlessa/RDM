@@ -1,7 +1,7 @@
 id: CMS-SUS-16-041
 sqrts: 13*TeV
 lumi: 35.9/fb
-prettyName: Multileptons + jets + Etmiss
+prettyName: Multileptons + jets + MET
 url: http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-041/index.html
 arxiv: https://arxiv.org/abs/1710.09154
 publication: accepted in JHEP

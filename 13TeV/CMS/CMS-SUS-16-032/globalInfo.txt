@@ -1,7 +1,7 @@
 id: CMS-SUS-16-032
 sqrts: 13*TeV
 lumi: 35.9/fb
-prettyName: Sbottom and compressed stop (jets + Etmiss)
+prettyName: Sbottom and compressed stop (jets + MET)
 url: http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-032/index.html
 arxiv: https://arxiv.org/abs/1707.07274
 publication: Phys. Lett. B 778 (2018) 263, http://dx.doi.org/10.1016/j.physletb.2018.01.012
