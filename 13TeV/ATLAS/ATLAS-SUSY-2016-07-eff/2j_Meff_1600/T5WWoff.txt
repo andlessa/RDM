@@ -6,7 +6,7 @@ susyProcess: pp --> gluino gluino, gluino  --> quark antiquark  chargino^pm_1, c
 figureUrl: figaux_077c.png;figaux_077c.png
 dataUrl: 'https://www.hepdata.net/record/ins1641270?version=5&table=X-section U.L. & best SR 5  : Meff';'https://www.hepdata.net/record/ins1641270?version=5&table=X-section U.L. & best SR 6  : Meff'
 source: ATLAS
-validated: TBD
+validated: True
 axes: [[x, 0.5*x + 0.5*y, y], [x, 0.5*x + 0.5*y, y]]; [[x, y, 60.0], [x, y, 60.0]]
 finalState: ['MET', 'MET']
 efficiencyMap: [[[[1.4500E+03*GeV,1.3800E+03*GeV,6.1000E+02*GeV],[1.4500E+03*GeV,1.3800E+03*GeV,6.1000E+02*GeV]],0.065744],

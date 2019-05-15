@@ -6,7 +6,7 @@ susyProcess: pp --> gluino gluino, gluino  --> quark antiquark neutralino_2, neu
 figureUrl: figaux_079.png
 dataUrl: 'https://www.hepdata.net/record/ins1641270?version=5&table=X-section U.L. & best SR 7  : Meff'
 source: ATLAS
-validated: TBD
+validated: True
 axes: [[x, y, 1.0], [x, y, 1.0]]
 finalState: ['MET', 'MET']
 efficiencyMap: [[[[1.9000E+03*GeV,1.4000E+03*GeV,1.0000E+00*GeV],[1.9000E+03*GeV,1.4000E+03*GeV,1.0000E+00*GeV]],0.13033],
