@@ -8,6 +8,7 @@ dataUrl: http://cms-results.web.cern.ch/cms-results/public-results/publications/
 source: CMS
 validated: True
 axes: [[x, x - y], [x, x - y]]
+finalState: ['MET', 'MET']
 upperLimits: [[[[1.5625E+02*GeV,1.4375E+02*GeV],[1.5625E+02*GeV,1.4375E+02*GeV]],4.2998E+00*pb],
 [[[1.5625E+02*GeV,1.3875E+02*GeV],[1.5625E+02*GeV,1.3875E+02*GeV]],5.6404E+00*pb],
 [[[1.5625E+02*GeV,1.3375E+02*GeV],[1.5625E+02*GeV,1.3375E+02*GeV]],5.7862E+00*pb],

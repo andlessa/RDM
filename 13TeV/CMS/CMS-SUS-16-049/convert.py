@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """
 .. module:: convert
@@ -8,16 +8,15 @@
 import sys
 import os
 import argparse
-import types
 
 argparser = argparse.ArgumentParser(description =  
 'create info.txt, txname.txt, twiki.txt and sms.py')
 argparser.add_argument ('-utilsPath', '-utilsPath', 
 help = 'path to the package smodels_utils',\
-type = types.StringType)
+type = str )
 argparser.add_argument ('-smodelsPath', '-smodelsPath', 
 help = 'path to the package smodels_utils',\
-type = types.StringType)
+type = str )
 args = argparser.parse_args()
 
 if args.utilsPath:
@@ -79,9 +78,14 @@ T2tt_1.figureUrl='http://cms-results.web.cern.ch/cms-results/public-results/publ
 T2tt_1.dataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-049/CMS-SUS-16-049_Figure_007.root'
 T2tt_1.histoDataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-049/CMS-SUS-16-049_Figure_007.root'
 T2tt_1.exclusionDataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-049/CMS-SUS-16-049_Figure_007.root'
-T2tt_1.setSources(dataLabels=['expExclusion','expExclusionM1','expExclusionP1','obsExclusion','obsExclusionM1','obsExclusionP1','upperLimits'],
-                    dataFiles=['orig/CMS-SUS-16-049_Figure_007.root','orig/CMS-SUS-16-049_Figure_007.root','orig/CMS-SUS-16-049_Figure_007.root','orig/CMS-SUS-16-049_Figure_007.root','orig/CMS-SUS-16-049_Figure_007.root','orig/CMS-SUS-16-049_Figure_007.root','orig/CMS-SUS-16-049_Figure_007.root'],
-                    dataFormats=['root','root','root','root','root','root','root'],objectNames=['graph_smoothed_Exp;1','graph_smoothed_ExpM;1','graph_smoothed_ExpP;1','graph_smoothed_Obs;1','graph_smoothed_ObsM;1','graph_smoothed_ObsP;1','hXsec_obs_corrRemoved;1'],units=[None,None,None,None,None,None,'pb'])
+formats = [ 'root' ]*7
+objNames = ['graph_smoothed_Exp;1','graph_smoothed_ExpM;1','graph_smoothed_ExpP;1','graph_smoothed_Obs;1','graph_smoothed_ObsM;1','graph_smoothed_ObsP;1','hXsec_obs_corrRemoved;1']
+objNames2 = ['graph_smoothed_Exp;1','graph_smoothed_ExpM;1','graph_smoothed_ExpP;1','graph_smoothed_Obs;1','graph_smoothed_ObsM;1','graph_smoothed_ObsP;1','hXsec_obs_corr;1']
+units=[None]*6+["pb"]
+labels = ['expExclusion','expExclusionM1','expExclusionP1','obsExclusion','obsExclusionM1','obsExclusionP1','upperLimits']
+T2tt_1.setSources(dataLabels=labels,
+                    dataFiles=['orig/CMS-SUS-16-049_Figure_007.root']*7,
+                    dataFormats=formats,objectNames=objNames,units=units)
 T2ttoff.addMassPlane(T2tt_1)
 #+++++txName block +++++++++++++++++
 
@@ -101,9 +105,9 @@ T2cc_1.figureUrl='http://cms-results.web.cern.ch/cms-results/public-results/publ
 T2cc_1.dataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-049/CMS-SUS-16-049_Figure_012.root'
 T2cc_1.histoDataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-049/CMS-SUS-16-049_Figure_012.root'
 T2cc_1.exclusionDataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-049/CMS-SUS-16-049_Figure_012.root'
-T2cc_1.setSources(dataLabels=['expExclusion','expExclusionM1','expExclusionP1','obsExclusion','obsExclusionM1','obsExclusionP1','upperLimits'],
-                    dataFiles=['orig/CMS-SUS-16-049_Figure_012.root','orig/CMS-SUS-16-049_Figure_012.root','orig/CMS-SUS-16-049_Figure_012.root','orig/CMS-SUS-16-049_Figure_012.root','orig/CMS-SUS-16-049_Figure_012.root','orig/CMS-SUS-16-049_Figure_012.root','orig/CMS-SUS-16-049_Figure_012.root'],
-                    dataFormats=['root','root','root','root','root','root','root'],objectNames=['graph_smoothed_Exp;1','graph_smoothed_ExpM;1','graph_smoothed_ExpP;1','graph_smoothed_Obs;1','graph_smoothed_ObsM;1','graph_smoothed_ObsP_1;1','hXsec_obs_corr;1'],units=[None,None,None,None,None,None,'pb'])
+T2cc_1.setSources(dataLabels=labels,
+                    dataFiles=['orig/CMS-SUS-16-049_Figure_012.root']*7,
+                    dataFormats=formats,objectNames=objNames2,units=units)
 
 #+++++txName block +++++++++++++++++
 
@@ -123,9 +127,9 @@ T6bbWW_1.figureUrl='http://cms-results.web.cern.ch/cms-results/public-results/pu
 T6bbWW_1.dataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-049/CMS-SUS-16-049_Figure_008.root'
 T6bbWW_1.histoDataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-049/CMS-SUS-16-049_Figure_008.root'
 T6bbWW_1.exclusionDataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-049/CMS-SUS-16-049_Figure_008.root'
-T6bbWW_1.setSources(dataLabels=['expExclusion','expExclusionM1','expExclusionP1','obsExclusion','obsExclusionM1','obsExclusionP1','upperLimits'],
-                    dataFiles=['orig/CMS-SUS-16-049_Figure_008.root','orig/CMS-SUS-16-049_Figure_008.root','orig/CMS-SUS-16-049_Figure_008.root','orig/CMS-SUS-16-049_Figure_008.root','orig/CMS-SUS-16-049_Figure_008.root','orig/CMS-SUS-16-049_Figure_008.root','orig/CMS-SUS-16-049_Figure_008.root'],
-                    dataFormats=['root','root','root','root','root','root','root'],objectNames=['graph_smoothed_Exp;1','graph_smoothed_ExpM;1','graph_smoothed_ExpP;1','graph_smoothed_Obs;1','graph_smoothed_ObsM;1','graph_smoothed_ObsP;1','hXsec_obs_corr;1'],units=[None,None,None,None,None,None,'pb'])
+T6bbWW_1.setSources(dataLabels=labels,
+                    dataFiles=['orig/CMS-SUS-16-049_Figure_008.root']*7,
+                    dataFormats=formats,objectNames=objNames2,units=units)
 
 #+++++txName block +++++++++++++++++
 
@@ -146,11 +150,9 @@ T2ttC_1.figureUrl='http://cms-results.web.cern.ch/cms-results/public-results/pub
 T2ttC_1.dataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-049/CMS-SUS-16-049_Figure_010.root'
 T2ttC_1.histoDataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-049/CMS-SUS-16-049_Figure_010.root'
 T2ttC_1.exclusionDataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-049/CMS-SUS-16-049_Figure_010.root'
-T2ttC_1.setSources(dataLabels=['expExclusion','expExclusionM1','expExclusionP1','obsExclusion','obsExclusionM1','obsExclusionP1','upperLimits'],
-                    dataFiles=['orig/CMS-SUS-16-049_Figure_010.root','orig/CMS-SUS-16-049_Figure_010.root','orig/CMS-SUS-16-049_Figure_010.root','orig/CMS-SUS-16-049_Figure_010.root','orig/CMS-SUS-16-049_Figure_010.root','orig/CMS-SUS-16-049_Figure_010.root','orig/CMS-SUS-16-049_Figure_010.root'],
-                   dataFormats=['root','root','root','root','root','root','root'],objectNames=['graph_smoothed_Exp;1','graph_smoothed_ExpM;1','graph_smoothed_ExpP;1','graph_smoothed_Obs;1','graph_smoothed_ObsM;1',
-'graph_smoothed_ObsP;1','hXsec_obs_corr;1'],units=[None,None,None,None,None,None,'pb'])
-
+T2ttC_1.setSources(dataLabels=labels,
+                    dataFiles=['orig/CMS-SUS-16-049_Figure_010.root' ]*7,
+                    dataFormats=formats,objectNames=objNames2,units=units)
 
 #+++++txName block +++++++++++++++++
 
@@ -171,9 +173,8 @@ T6bbWWoff_1.figureUrl='http://cms-results.web.cern.ch/cms-results/public-results
 T6bbWWoff_1.dataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-049/CMS-SUS-16-049_Figure_011.root'
 T6bbWWoff_1.histoDataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-049/CMS-SUS-16-049_Figure_011.root'
 T6bbWWoff_1.exclusionDataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-049/CMS-SUS-16-049_Figure_011.root'
-T6bbWWoff_1.setSources(dataLabels=['expExclusion','expExclusionM1','expExclusionP1','obsExclusion','obsExclusionM1','obsExclusionP1','upperLimits'],
-                    dataFiles=['orig/CMS-SUS-16-049_Figure_011.root','orig/CMS-SUS-16-049_Figure_011.root','orig/CMS-SUS-16-049_Figure_011.root','orig/CMS-SUS-16-049_Figure_011.root','orig/CMS-SUS-16-049_Figure_011.root','orig/CMS-SUS-16-049_Figure_011.root','orig/CMS-SUS-16-049_Figure_011.root'],
-                   dataFormats=['root','root','root','root','root','root','root'],objectNames=['graph_smoothed_Exp;1','graph_smoothed_ExpM;1','graph_smoothed_ExpP;1','graph_smoothed_Obs;1','graph_smoothed_ObsM;1',
-'graph_smoothed_ObsP;1','hXsec_obs_corr;1'],units=[None,None,None,None,None,None,'pb'])
+T6bbWWoff_1.setSources(dataLabels=labels,
+                    dataFiles=['orig/CMS-SUS-16-049_Figure_011.root']*7,
+                    dataFormats=formats,objectNames=objNames2,units=units)
 
 databaseCreator.create()
