@@ -42,7 +42,7 @@ if args.smodelsPath:
 
 sys.path.append(os.path.abspath(utilsPath))
 from smodels_utils.dataPreparation import dataHandlerObjects
-dataHandlerObjects.allowTrimming = False
+dataHandlerObjects.allowTrimming = True
 from smodels_utils.dataPreparation.inputObjects import MetaInfoInput,DataSetInput
 from smodels_utils.dataPreparation.databaseCreation import databaseCreator
 from smodels_utils.dataPreparation.massPlaneObjects import x, y, z
@@ -58,7 +58,7 @@ info.private = False
 info.arxiv = '1704.07781'
 info.contact = 'cms-phys-conveners-sus@cern.ch'
 info.publication = 'Phys. Rev D 96 (2017) 032003, http://dx.doi.org/10.1103/PhysRevD.96.032003'
-info.comment = 'Moriond 2017. Not implemented: T5qqqqVV (Fig.12d) because decays to W and Z are summed over and T1tbtb because of fixed chargino mass (not specified).'
+info.comment = 'Moriond 2017. Not implemented: T5qqqqVV (Fig.12d) because decays to W and Z are summed over and T1tbtb because of fixed chargino mass (not specified). Added expected ULs (WW, june 2019).'
 
 
 #+++++++ dataset block ++++++++++++++
@@ -81,17 +81,11 @@ T1_1.figureUrl='http://cms-results.web.cern.ch/cms-results/public-results/public
 T1_1.dataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-033/CMS-SUS-16-033_Figure_012-c.root'
 T1_1.histoDataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-033/CMS-SUS-16-033_Figure_012-c.root'
 T1_1.exclusionDataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-033/CMS-SUS-16-033_Figure_012-c.root'
-objNames = ['ExpLim;1','ExpLimSdn;1','ExpLimSup;1','ObsLim;1','ObsLimSdn;1','ObsLimSup;1','MassScan2D;1']
-formats=['root']*7
-labels=['expExclusion','expExclusionM1','expExclusionP1','obsExclusion','obsExclusionM1','obsExclusionP1','upperLimits']
-names = ['ExpLim;1','ExpLimSdn;1','ExpLimSup;1','ObsLim;1','ObsLimSdn;1','ObsLimSup;1','MassScan2D;1']
-units = [None]*6+['pb']
-n=len(units)
-#objNames = ['ExpLim;1','ExpLimSdn;1','ExpLimSup;1','ObsLim;1','ObsLimSdn;1','ObsLimSup;1','MassScan2D;1','MassScan2DExp;1']
-#formats=['root']*8
-#labels=['expExclusion','expExclusionM1','expExclusionP1','obsExclusion','obsExclusionM1','obsExclusionP1','upperLimits','expectedUpperLimits']
-#names = ['ExpLim;1','ExpLimSdn;1','ExpLimSup;1','ObsLim;1','ObsLimSdn;1','ObsLimSup;1','MassScan2D;1','MassScan2DExp;1']
-#units = [None]*7+['pb']
+names = ['ExpLim;1','ExpLimSdn;1','ExpLimSup;1','ObsLim;1','ObsLimSdn;1','ObsLimSup;1','MassScan2D;1','MassScan2DExp;1']
+n=len(names)
+formats=['root']*n
+labels=['expExclusion','expExclusionM1','expExclusionP1','obsExclusion','obsExclusionM1','obsExclusionP1','upperLimits','expectedUpperLimits']
+units = [None]*(n-1)+['pb']
 T1_1.setSources(dataLabels=labels,
                     dataFiles=['orig/CMS-SUS-16-033_Figure_012-c.root']*n,
                     dataFormats=formats,objectNames=names,units=units )
@@ -164,9 +158,10 @@ T2_1.figureUrl='http://cms-results.web.cern.ch/cms-results/public-results/public
 T2_1.dataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-033/CMS-SUS-16-033_Figure_013-c.root'
 T2_1.histoDataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-033/CMS-SUS-16-033_Figure_013-c.root'
 T2_1.exclusionDataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-033/CMS-SUS-16-033_Figure_013-c.root'
+names2 = ['ExpLim2;1','ExpLimSdn2;1','ExpLimSup2;1','ObsLim2;1','ObsLimSdn2;1','ObsLimSup2;1','MassScan2D;1','MassScan2DExp;1']
 T2_1.setSources(dataLabels=labels,
                     dataFiles=['orig/CMS-SUS-16-033_Figure_013-c.root']*n,
-                    dataFormats=formats,objectNames=names,units=units )
+                    dataFormats=formats,objectNames=names2,units=units )
 
 #+++++txName block +++++++++++++++++
 
@@ -215,9 +210,10 @@ T2tt_1.figureUrl='http://cms-results.web.cern.ch/cms-results/public-results/publ
 T2tt_1.dataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-033/CMS-SUS-16-033_Figure_013-a.root'
 T2tt_1.histoDataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-033/CMS-SUS-16-033_Figure_013-a.root'
 T2tt_1.exclusionDataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-033/CMS-SUS-16-033_Figure_013-a.root'
+names3 = ['ExpLim2;1','ExpLimSdn2;1','ExpLimSup2;1','ObsLim2;1','ObsLimSdn2;1','ObsLimSup2;1','MassScan2DRemoved;1','MassScan2DExp;1']
 T2tt_1.setSources(dataLabels=labels,
                     dataFiles=['orig/CMS-SUS-16-033_Figure_013-a.root']*n,
-                    dataFormats=formats,objectNames=names,units=units )
+                    dataFormats=formats,objectNames=names3,units=units )
 
 T2ttoff.addMassPlane(T2tt_1)
 
