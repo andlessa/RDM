@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """
 .. module:: convert
@@ -8,17 +8,27 @@
 import sys
 import os
 import argparse
-import types
 
-argparser = argparse.ArgumentParser(description =  
+argparser = argparse.ArgumentParser(description =
 'create info.txt, txname.txt, twiki.txt and sms.py')
-argparser.add_argument ('-utilsPath', '--utilsPath', 
+argparser.add_argument ('-utilsPath', '--utilsPath',
 help = 'path to the package smodels_utils',\
-type = types.StringType)
-argparser.add_argument ('-smodelsPath', '--smodelsPath', 
+type = str )
+argparser.add_argument ('-smodelsPath', '--smodelsPath',
 help = 'path to the package smodels_utils',\
-type = types.StringType)
+type = str )
+argparser.add_argument ('-no', '--noUpdate',
+help = 'do not update the lastUpdate field.',\
+action= "store_true" )
+argparser.add_argument ('-r', '--resetValidation',
+help = 'reset the validation flag',\
+action= "store_true" )
 args = argparser.parse_args()
+
+if args.noUpdate:
+    os.environ["SMODELS_NOUPDATE"]="1"
+
+if args.resetValidation:                                                                  os.environ["SMODELS_RESETVALIDATION"]="1"
 
 if args.utilsPath:
     utilsPath = args.utilsPath
@@ -31,10 +41,11 @@ if args.smodelsPath:
     sys.path.append(os.path.abspath(args.smodelsPath))
 
 sys.path.append(os.path.abspath(utilsPath))
+from smodels_utils.dataPreparation import dataHandlerObjects
+dataHandlerObjects.allowTrimming = False
 from smodels_utils.dataPreparation.inputObjects import MetaInfoInput,DataSetInput
 from smodels_utils.dataPreparation.databaseCreation import databaseCreator
 from smodels_utils.dataPreparation.massPlaneObjects import x, y, z
-
 
 
 #+++++++ global info block ++++++++++++++
@@ -42,7 +53,7 @@ info = MetaInfoInput('CMS-SUS-16-033')
 info.url = 'http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-033/index.html'
 info.sqrts = 13
 info.lumi = 35.9
-info.prettyName = '0L + jets + Etmiss (using MHT)'
+info.prettyName = '0L + jets + MET (using MHT)'
 info.private = False
 info.arxiv = '1704.07781'
 info.contact = 'cms-phys-conveners-sus@cern.ch'
