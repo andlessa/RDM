@@ -119,7 +119,6 @@ for i,name in enumerate(datasetNames):
                     coordinates = [ { x: 0, y: 1, 'value': 2+i }, None ],
                     units = [ None, ('GeV', 'ns') ],
                     dataFormats=['txt','txt'])
-    """
     HSCPM3 = dataset.addTxName('THSCPM3')
     HSCPM3.checked =''
     HSCPM3.constraint = "[[['*']],[['*']]]"  ##Here '*' represents any (single) even particle
@@ -130,9 +129,11 @@ for i,name in enumerate(datasetNames):
     HSCPM3.dataUrl = None
     HSCPM3.source = 'SModelS'
     #+++++++ next mass plane block ++++++++++++++
-    plane = HSCPM3.addMassPlane([[(x,y)],[(x,y)]])
-    plane.setSources(dataLabels= ['efficiencyMap'],dataFiles=['orig/eff_HSCPM3_'+name+'.txt'], dataFormats=['txt'])
+    plane = HSCPM3.addMassPlane([[(x,y),z],[(x,y),z]])
+    plane.setSources(dataLabels= ['efficiencyMap'],
+            dataFiles=['orig/efficiencies_HSCPM3.txt'], dataFormats=['txt'])
     #+++++++ next txName block ++++++++++++++
+    """
     HSCPM5 = dataset.addTxName('THSCPM5')
     HSCPM5.checked =''
     HSCPM5.constraint = "[[['*'],['*']],[['*'],['*']]]" ##Here '*' represents any (single) even particle
@@ -171,6 +172,7 @@ for i,name in enumerate(datasetNames):
     #+++++++ next mass plane block ++++++++++++++
     plane = HSCPM8.addMassPlane([[x,y],[x,y]])
     plane.setSources(dataLabels= ['efficiencyMap'],dataFiles=['orig/eff_HSCPM8_'+name+'.txt'], dataFormats=['txt'])
+    """
     #+++++++ next txName block ++++++++++++++
     HSCPM2 = dataset.addTxName('THSCPM2b')
     HSCPM2.checked =''
@@ -182,8 +184,8 @@ for i,name in enumerate(datasetNames):
     HSCPM2.dataUrl = None
     HSCPM2.source = 'SModelS'
     #+++++++ next mass plane block ++++++++++++++
-    plane = HSCPM2.addMassPlane([['*'],[x]]) ##Here ['*'] represents a mass array with any length
-    plane.setSources(dataLabels= ['efficiencyMap'],dataFiles=['orig/effmap_M2_stau_8TeV_mre'+name+'.dat'], dataFormats=['txt'])
+    plane = HSCPM2.addMassPlane([['*'],[(x,y)]]) ##Here ['*'] represents a mass array with any length
+    plane.setSources(dataLabels= ['efficiencyMap'],dataFiles=['orig/efficiencies_HSCPM2.txt'], dataFormats=['txt'])
     #+++++++ next txName block ++++++++++++++
     HSCPM4 = dataset.addTxName('THSCPM4')
     HSCPM4.checked =''
@@ -195,8 +197,9 @@ for i,name in enumerate(datasetNames):
     HSCPM4.dataUrl = None
     HSCPM4.source = 'SModelS'
     #+++++++ next mass plane block ++++++++++++++
-    plane = HSCPM4.addMassPlane([['*'],[x,y]]) ##Here ['*'] represents a mass array with any length
-    plane.setSources(dataLabels= ['efficiencyMap'],dataFiles=['orig/eff_HSCPM4_'+name+'.txt'], dataFormats=['txt'])
+    plane = HSCPM4.addMassPlane([['*'],[(x,y),z]]) ##Here ['*'] represents a mass array with any length
+    plane.setSources(dataLabels= ['efficiencyMap'],dataFiles=['orig/efficiencies_HSCPM4.txt'], dataFormats=['txt'])
+    """
     #+++++++ next txName block ++++++++++++++
     HSCPM6 = dataset.addTxName('THSCPM6')
     HSCPM6.checked =''

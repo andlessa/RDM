@@ -28,14 +28,18 @@ def write ( topo, data ):
     outfile = "efficiencies_%s.txt" % ( topo )
     f=open(outfile,"w")
     f.write ( "#  " )
-    f.write ( "Mass(GeV)    " )
-    f.write ( "Width(GeV)   " )
-    f.write ( "   ".join ( SRs ) )
+    nmasses=len(data[0])-5
+    for i in range(nmasses):
+        f.write ( "Mass(GeV)  " )
+    f.write ( "Width(GeV) " )
+    f.write ( "  ".join ( SRs ) )
     f.write ( "\n" )
     for d in data:
-        line = "%.1f" % d[0]
-        for x in d[1:]:
-            line+="  %g" % x
+        line=""
+        for i in range(nmasses):
+            line += "   %.1f" % d[i]
+        for x in d[nmasses:]:
+            line+="   %g" % x
         line += "\n" 
         f.write ( line )
     f.close() 
