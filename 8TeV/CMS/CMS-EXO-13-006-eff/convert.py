@@ -82,6 +82,7 @@ for i,name in enumerate(datasetNames):
 
     #+++++++ txnames ++++++++++++++++++++
     #+++++++ next txName block ++++++++++++++
+    """
     HSCPM1 = dataset.addTxName('THSCPM1Disp')
     HSCPM1.checked =''
     HSCPM1.constraint = "[[],[]]"
@@ -101,6 +102,24 @@ for i,name in enumerate(datasetNames):
                     dataFormats=['txt','txt'])
     #+++++++ next txName block ++++++++++++++
     """
+    HSCPM1b = dataset.addTxName('THSCPM1b')
+    HSCPM1b.checked =''
+    HSCPM1b.constraint = "[[],[]]"
+    HSCPM1b.condition =None
+    HSCPM1b.finalState = ['HSCP','HSCP']
+    HSCPM1b.massConstraints = None
+    HSCPM1b.dataUrl = None
+    HSCPM1b.source = 'SModelS'
+    #+++++++ next mass plane block ++++++++++++++
+    #plane = HSCPM1.addMassPlane([[x],[x]])
+    # plane.setSources(dataLabels= ['efficiencyMap'],dataFiles=['orig/effmap_M1_stau_8TeV_mre'+name+'.dat'], dataFormats=['txt'])
+    plane = HSCPM1b.addMassPlane([[(x,y)],[(x,y)]])
+    plane.setSources(dataLabels= ['efficiencyMap','obsExclusion'],
+                    dataFiles=['orig/efficiencies_HSCPM1b.txt','orig/exclusion_line.txt'], 
+                    coordinates = [ { x: 0, y: 1, 'value': 2+i }, None ],
+                    units = [ None, ('GeV', 'ns') ],
+                    dataFormats=['txt','txt'])
+    """
     HSCPM3 = dataset.addTxName('THSCPM3')
     HSCPM3.checked =''
     HSCPM3.constraint = "[[['*']],[['*']]]"  ##Here '*' represents any (single) even particle
@@ -111,7 +130,7 @@ for i,name in enumerate(datasetNames):
     HSCPM3.dataUrl = None
     HSCPM3.source = 'SModelS'
     #+++++++ next mass plane block ++++++++++++++
-    plane = HSCPM3.addMassPlane([[x,y],[x,y]])
+    plane = HSCPM3.addMassPlane([[(x,y)],[(x,y)]])
     plane.setSources(dataLabels= ['efficiencyMap'],dataFiles=['orig/eff_HSCPM3_'+name+'.txt'], dataFormats=['txt'])
     #+++++++ next txName block ++++++++++++++
     HSCPM5 = dataset.addTxName('THSCPM5')
