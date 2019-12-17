@@ -1,0 +1,68 @@
+This is BibTeX, Version 0.99d (TeX Live 2017)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: RDM_LH2019.aux
+The style file: lesHouches.bst
+Database file #1: RDM_LH2019.bib
+Repeated entry---line 210 of file RDM_LH2019.bib
+ : @article{Garny:2017rxs
+ :                       ,
+I'm skipping whatever remains of this entry
+Warning--empty title in Aaij:2017vbb
+Warning--empty title in Aaij:2019wad
+Warning--empty title in Aaij:2015yra
+Warning--empty title in Aaij:2017uff
+Warning--empty title in Aaij:2017deq
+Warning--empty title in Blanke:2019pek
+Warning--empty title in Queiroz:2014pra
+Warning--empty title in Baker:2015qna
+Warning--empty title in Azatov:2018kzb
+Warning--empty title in Crivellin:2017zlb
+Warning--empty title in Buttazzo:2017ixm
+Warning--empty title in Marzocca:2018wcf
+Warning--empty title in Crivellin:2019dwb
+Warning--empty title in Garny:2017rxs
+Warning--empty title in DAgnolo:2017dbv
+Warning--empty title in Sirunyan:2018xtm
+Warning--empty title in Schwaller:2013baa
+You've used 17 entries,
+            2120 wiz_defined-function locations,
+            620 strings with 6363 characters,
+and the built_in function-call counts, 5193 in all, are:
+= -- 501
+> -- 161
+< -- 0
++ -- 60
+- -- 43
+* -- 453
+:= -- 700
+add.period$ -- 19
+call.type$ -- 17
+change.case$ -- 0
+chr.to.int$ -- 0
+cite$ -- 34
+duplicate$ -- 317
+empty$ -- 503
+format.name$ -- 43
+if$ -- 1347
+int.to.chr$ -- 0
+int.to.str$ -- 17
+missing$ -- 64
+newline$ -- 55
+num.names$ -- 17
+pop$ -- 73
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 224
+stack$ -- 0
+substring$ -- 146
+swap$ -- 148
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 17
+while$ -- 33
+width$ -- 19
+write$ -- 181
+(There was 1 error message)

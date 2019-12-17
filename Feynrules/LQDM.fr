@@ -1,0 +1,96 @@
+(* ****************************************************************** *)
+(* *****                                                        ***** *)
+(* *****  FeynRules model file: Simplified DM models with LQ    ***** *)
+(* *****                                                        ***** *)
+(* *****  Author: Benjamin Fuks                                 ***** *)
+(* *****                                                        ***** *)
+(* ****************************************************************** *)
+
+(* ************************** *)
+(* *****  Information   ***** *)
+(* ************************** *)
+M$ModelName = "LQDM";
+
+M$Information = { Authors->{"Benjamin Fuks"}, Emails->{"fuks@lpthe.jussieu.fr"},
+                  Institutions->{"LPTHE / Sorbonne U."},
+                  Date->"27.06.19", Version->"1.1",
+                  URLs->""};
+
+(* ************************** *)
+(* *****  Change  log   ***** *)
+(* ************************** *)
+
+(* 2019.06.23 v1.0 - First version          *)
+(* 2019.06.27 v1.1 - Gauge/mass eigenstates *)
+
+(* ************************** *)
+(* *****     Fields     ***** *)
+(* ************************** *)
+M$ClassesDescription = {
+  (* Dark sector *)
+  F[100] == { ClassName -> ChiP, SelfConjugate->False, Indices->{Index[Colour]},
+              Unphysical->True, QuantumNumbers -> {Y->-1/3},
+              Definitions->{ChiP[sp_,cc_]->chi1[sp,cc]}},
+  F[101] == { ClassName -> chi1, SelfConjugate->False, Indices->{Index[Colour]},
+              QuantumNumbers -> {Q->-1/3, LeptonNumber->1},
+              Mass -> {Mchi1, 500.}, Width -> {Wchi1,5.}, PDG -> 5000521,
+              ParticleName->{"~chi1"}, AntiParticleName->{"~chi1~"}},
+  F[102] == { ClassName -> chi0, SelfConjugate -> True,
+              Mass -> {Mchi0, 50.},  Width -> 0, PDG -> 5000522,
+              ParticleName->{"~chi0"}},
+
+  (* Leptoquarks  gauge eigenstate *)
+  S[200] == { ClassName -> S1, SelfConjugate->False, Indices->{Index[Colour]},
+              Unphysical->True, QuantumNumbers -> {Y->-1/3},
+              Definitions->{S1->LQ}},
+  S[201] == { ClassName -> LQ, SelfConjugate->False, Indices->{Index[Colour]},
+              QuantumNumbers -> {Q->-1/3, LeptonNumber->1},
+              Mass  -> {MLQ, 1000.}, Width -> {WLQ, 10.}, PDG -> 42}
+
+};
+
+(* ************************** *)
+(* *****   Parameters   ***** *)
+(* ************************** *)
+M$Parameters = {
+
+ lamL == { ParameterType -> External, ComplexParameter -> False,
+            TeX -> Subscript[\[Lambda],L], BlockName -> LQLAML,
+            Indices -> {Index[Generation], Index[Generation]},
+            InteractionOrder -> {QED,1},
+            Value -> {
+             lamL[1,1] -> 0.0 , lamL[1,2] -> 0.0 , lamL[1,3] -> 0.0 ,
+             lamL[2,1] -> 0.0 , lamL[2,2] -> 0.0 , lamL[2,3] -> 0.0 ,
+             lamL[3,1] -> 0.12, lamL[3,2] -> 0.12, lamL[3,3] -> 0.12}},
+ lamR == { ParameterType -> External, ComplexParameter -> False,
+            TeX -> Subscript[\[Lambda],R], BlockName -> LQLAMR,
+            Indices -> {Index[Generation], Index[Generation]},
+            InteractionOrder -> {QED,1},
+            Value -> {
+             lamR[1,1] -> 0.0, lamR[1,2] -> 0.0, lamR[1,3] -> 0.0 ,
+             lamR[2,1] -> 0.0, lamR[2,2] -> 0.0, lamR[2,3] -> 0.11,
+             lamR[3,1] -> 0.0, lamR[3,2] -> 0.0, lamR[3,3] -> 0.0}},
+ yDM  == { ParameterType -> External, ComplexParameter -> False,
+            TeX -> Subscript[y,DM], BlockName -> DMINPUTS,
+            InteractionOrder -> {QED,1},
+            Value -> 0.2},
+
+  UEps== { ParameterType->Internal, ComplexParameter->False,
+            Indices -> {Index[SU2D], Index[SU2D]},
+            Definitions -> { UEps[1,1]->0, UEps[1,2]->-1, UEps[2,1]-> 1, UEps[2,2]->0 },
+            Description -> "Epsilon in SU2 space (with upper indices)", TeX->Subscript[\[Epsilon],u]}
+};
+
+(* ************************** *)
+(* *****   Lagrangian   ***** *)
+(* ************************** *)
+
+Lkin := I ChiPbar.Ga[mu].DC[ChiP,mu] - Mchi1 ChiPbar.ChiP \
+      + I/2 chi0bar.Ga[mu].DC[chi0,mu] - 1/2 Mchi0 chi0bar.chi0 \
+      + DC[S1bar[cc],mu] DC[S1[cc],mu] - MLQ^2 S1bar[cc] S1[cc];
+
+Lint := lamR[ii, jj] CC[uRbar][sp, ii, cc].lR[sp, jj] S1bar[cc] \
+      + UEps[kk,ll] lamL[ii,jj] CC[QLbar][sp,kk,ii,cc].LL[sp,ll,jj] S1bar[cc] \
+      + yDM ChiPbar[sp, cc].chi0[sp] S1[cc];
+
+LNP := Lkin+Lint+HC[Lint];

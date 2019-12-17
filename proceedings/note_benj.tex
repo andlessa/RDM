@@ -1,0 +1,157 @@
+\documentclass[aps,onecolumn,amsmath,amsfonts,amssymb,nofootinbib,eqsecnum,%
+  secnumarabic,notitlepage]{revtex4-1}
+\usepackage[utf8]{inputenc}
+\usepackage{slashed,hyperref,color}
+\hypersetup{bookmarks=true, unicode=true, pdftoolbar=true, pdfmenubar=true,
+  pdffitwindow=false, pdfstartview={FitH}, pdftitle={DMsimp\_t},
+  pdfauthor={Benjamin Fuks}, pdfsubject={FR DMsimp\_t implementation},
+  pdfcreator={Benjamin Fuks},pdfproducer={Benjamin Fuks},
+  pdfkeywords={dark matter}, pdfnewwindow=true, colorlinks=true, linkcolor=blue,
+  citecolor=magenta, filecolor=magenta, urlcolor=cyan}
+
+%%%%%%%%%%%%%% Begin Commands %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Latin
+\def\ie{{\it i.e.}}
+
+%% environments
+\newcommand{\be}{\begin{equation*}}
+\newcommand{\ee}{\end{equation*}}
+\def\bsp#1\esp{\begin{split}#1\end{split}}
+\def\bpm{\begin{pmatrix}}
+\def\epm{\end{pmatrix}}
+
+%% Physics symbols
+\def\lag{{\cal L}}
+\def\sss{\scriptscriptstyle}
+\def\as{\alpha_{\sss s}}
+\def\gs{g_{\sss s}}
+\def\gL{g_{\sss w}}
+\def\gY{g_{\sss Y}}
+\def\gF{G_{\sss F}}
+\def\tw{\theta_{\sss W}}
+\def\ydm{y_{\sss \chi}}
+\def\dR{d_{\sss R}}
+\def\eR{\ell_{\sss R}}
+\def\Ll{L_{\sss L}}
+\def\QL{Q_{\sss L}}
+\def\QLbar{\bar Q_{\sss L}}
+\def\uR{u_{\sss R}}
+\def\uRbar{{\bar u}_{\sss R}}
+
+% Tools
+\newcommand{\ch}{{\sc\small CalcHep}}
+\newcommand{\fa}{{\sc\small FeynArts}}
+\newcommand{\fr}{{\sc \small FeynRules}}
+\newcommand{\ma}{{\sc\small MadAnalysis}~5}
+\newcommand{\maddm}{{\sc\small MadDM}}
+\newcommand{\mg}{{\sc\small MG5\_aMC}}
+\newcommand{\micromegas}{{\sc\small MicrOMEGAs}}
+\newcommand{\mthmtc}{{\sc\small Mathematica}}
+\newcommand{\nloct}{{\sc\small NLOCT}}
+\def\lqdm{{\tt LQDM}}
+%%%%%%%%%%%%%% End of Commands %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%% Begin Cover Page %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\title{Documentation on the \lqdm\ \fr\ implementation}
+
+\author{Benjamin~Fuks}
+\email{fuks@lpthe.jussieu.fr}
+\affiliation{Sorbonne Universit\'e, CNRS, Laboratoire de Physique Th\'eorique et
+  Hautes \'Energies, LPTHE, F-75005 Paris, France}
+\affiliation{Institut Universitaire de France, 103 boulevard Saint-Michel,
+  75005 Paris, France}
+
+\begin{abstract}
+This note contains information about the \lqdm\ model implementation in \fr, a
+model aiming to jointly explain flavour anomalies and dark matter. All \fr\
+model files are available from
+\url{https://phystev.cnrs.fr/wiki/2019:groups:bsm:rdm}, together with an
+illustrative \mthmtc\ notebooks and the generated \ch\ and UFO models.
+\end{abstract}
+
+\maketitle
+
+%%%%%%%%%%%%%% Begin Main Part %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+We consider a simplified model in which we supplement the Standard Model by one
+scalar leptoquark field $S_1$ and two extra fermionic fields, a Majorana
+fermion  $\chi_0$ and a Dirac fermion $\chi_1$. The $S_1$ and $\chi_1$ fields
+are electrically-charged coloured weak singlets lying in the
+$({\bf 3}, {\bf 1})_{-1/3}$ representation of the Standard Model gauge group. In
+contrast, $\chi_0$ is a dark matter candidate and therefore a non-coloured
+electroweak singlet. In our \fr\ implementation, we consider all potential
+interactions of the new sector with the Standard Model sector, the corresponding
+Lagrangian being written as
+\be\bsp
+ \lag = &\ \lag_{\rm SM} + \lag_{\rm kin}
+   + \bigg[
+    {\bf \lambda_{\sss R}}\ \uRbar^c\ \eR^{\phantom{c}} \ S_1^\dag
+  + {\bf \lambda_{\sss L}}\ \QLbar^c \!\cdot\! \Ll^{\phantom{c}} \ S_1^\dag
+  + \ydm \bar\chi_1\chi_0 S_1
+   + {\rm h.c.} \bigg]\ .
+\esp\label{eq:lag}\ee
+In this expression, all flavour indices are understood for simplicity and the
+dot stands for the $SU(2)$-invariant product of two fields lying in its
+fundamental representation. In addition,
+$\lag_{\rm SM}$ is the Standard Model Lagrangian and $\lag_{\rm kin}$ contains
+gauge-invariant kinetic and mass terms for all new fields, the $\chi_1$ state
+being assumed vector-like. The $\QL$ and $\Ll$ spinors stand for the $SU(2)_L$
+doublets of left-handed quarks and leptons respectively, whilst $\uR$ and $\eR$
+stand for the $SU(2)_L$ singlets of right-handed down-type quarks and charged
+leptons, respectively. As can be derived from the omitted flavour structure, the
+${\bf \lambda_{\sss L}}$ and ${\bf \lambda_{\sss R}}$ couplings are $3\times 3$
+matrices in the flavour space, that are considered real in the following.
+Moreover, in our
+conventions, the first index $i$ of any $\lambda_{ij}$ element refers to the
+quark generation whilst the second one $j$ refers to the lepton generation.
+
+
+The field content of the new physics sector of our simplified model is
+presented in table~\ref{tab:fields}, together with the corresponding
+representation under the gauge and Poincar\'e groups, the potential Majorana
+nature of the different particles, the adopted symbol in the \fr\
+implementation and the PDG identifier that has been chosen for
+each particle. The new physics coupling parameters are collected in
+table~\ref{tab:params}, in which we additionally include the name used in the
+\fr\ model and the Les Houches blocks in which the numerical values of
+the different parameters can be changed by the user when running tools like
+\mg\ or \micromegas.
+
+\begin{table}[h]
+\renewcommand{\arraystretch}{1.4}
+\setlength\tabcolsep{8pt}
+\begin{tabular}{c c c c c c}
+  Field & Spin & Repr. & Self-conj. & \fr\ name & PDG code\\
+  \hline\hline
+  $S_1$    & 0   & $({\bf 3}, {\bf 1})_{-1/3}$ & no  & {\tt LQ} & 42\\
+  $\chi_0$ & 1/2 & $({\bf 1}, {\bf 1})_0$      & yes & {\tt chi0} & 5000521\\
+  $\chi_1$ & 1/2 & $({\bf 3}, {\bf 1})_{-1/3}$ & no  & {\tt chi1} & 5000522\\
+\end{tabular}
+\caption{\it New particles supplementing the Standard Model, given
+  together with the representations under $SU(3)_c\times SU(2)_L \times U(1)_Y$.
+  We additionally indicate whether the particles are Majorana particles,
+  their name in the \fr\ implementation and the associated Particle Data Group
+  (PDG) identifier.}
+\label{tab:fields}
+\end{table}
+
+\begin{table}[h]
+\renewcommand{\arraystretch}{1.4}
+\setlength\tabcolsep{15pt}
+\begin{tabular}{c c c c}
+  Coupling & \fr\ name & Les Houches block\\
+  \hline\hline
+  $(\lambda_{\sss L})_{ij}$ & {\tt lamL} & {\tt LQLAML}\\
+  $(\lambda_{\sss R})_{ij}$ & {\tt lamR} & {\tt LQLAMR}\\
+  $\ydm$ & {\tt yDM} & {\tt DMINPUTS}\\
+\end{tabular}
+\caption{\it Couplings of the new particles, given together with the associated
+  \fr\ symbol and the Les Houches block of the parameter card.}
+\label{tab:params}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
+
