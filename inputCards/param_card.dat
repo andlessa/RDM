@@ -53,8 +53,8 @@ DECAY   6 1.508336e+00
 DECAY  23 2.495200e+00 
 DECAY  24 2.085000e+00 
 DECAY  25 4.070000e-03 
-DECAY  42 auto
-DECAY 5000521 auto
+DECAY  42 1.0
+DECAY 5000521 1.0
 ##  Not dependent paramater.
 ## Those values should be edited following analytical the 
 ## analytical expression. Some generator could simply ignore 
