@@ -24,6 +24,7 @@ import gzip
 FORMAT = '%(levelname)s in %(module)s.%(funcName)s(): %(message)s at %(asctime)s'
 logging.basicConfig(format=FORMAT,datefmt='%m/%d/%Y %I:%M:%S %p')
 logger = logging.getLogger("ufo2slha")
+#logger.setLevel("DEBUG")
 
 
 def getParticlesFromUFO(ufoFolder):
@@ -250,7 +251,7 @@ def generateEvents(parser):
     if parser.has_option('options','computeWidths'):
         computeWidths = parser.get('options','computeWidths')
         if computeWidths:
-            if isinstance(computeWidths,str) or isinstance(computeWidths,unicode):
+            if isinstance(computeWidths,str):
                 commandsFileF.write('compute_widths %s\n' %str(computeWidths))
             else:
                 commandsFileF.write('compute_widths all \n')
@@ -492,6 +493,8 @@ def runAll(parserDict):
     #Clean output:
     if parser.get("options","cleanOutFolders"):
         logger.info("Cleaning output")
+        if parser.get("options","keepLHE"):
+            shutil.copy(inputFile,slhaFile.replace('.slha','.lhe.gz'))
         if os.path.isdir(mg5outFolder):
             shutil.rmtree(mg5outFolder)
           
@@ -541,7 +544,7 @@ def main(parfile,verbose):
                 slhaFolder = newParser.get('slhaCreator','outputFolder')       
             firstRun = False
             
-        newParser.set('slhaCreator','outputFolder',slhaFolder)                
+        newParser.set('slhaCreator','outputFolder',slhaFolder)             
         parserDict = newParser.toDict(raw=False) #Must convert to dictionary for pickling
         p = pool.apply_async(runAll, args=(parserDict,))            
         children.append(p)
