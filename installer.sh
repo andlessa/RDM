@@ -12,9 +12,9 @@ if echo "$answer" | grep -iq "^y" ;then
 	cd $homeDIR
 	rm $madgraph;
 	echo "[installer] replacing MadGraph files with fixes";
-    cp ./madgraphFixes/mg5_configuration.txt MG5/input/;
-    cp ./madgraphFixes/madgraph_interface.py MG5/madgraph/interface/;
-    cp ./madgraphFixes/diagram_generation.py MG5/madgraph/core/;
+    cp ./madgraphfixes/mg5_configuration.txt MG5/input/;
+    cp ./madgraphfixes/madgraph_interface.py MG5/madgraph/interface/;
+    cp ./madgraphfixes/diagram_generation.py MG5/madgraph/core/;
 
 fi
 
