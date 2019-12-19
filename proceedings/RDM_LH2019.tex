@@ -490,25 +490,30 @@ Our model contains three new fields that are probed by several LHC searches, whi
 
 In each of the categories described above, we will consider both a) existing searches and b) novel searches (for instance, the aforementioned LQ + MET search of Ref~\cite{Sirunyan:2018xtm} only applies if the leptoquark decays to muons, but it is not applicable for e.g: electron decays).
 
-We note that the actual mechanism underlying the production of the dark matter abundance has phenomenological implications. Two distinct scenarios arise, depending on the size of $y_{DM}$ versus $\lambda_{L,R}$. For $y_{DM}$ comparable to the $S_1$ couplings to leptons and quarks all $S_1$ decay modes $b \nu, c \tau, t \tau, \chi_1 \chi_0$ have comparable branching fractions, hence all three kind of searches (LQ, MET, LQ + MET) are relevant, and the combination of all searches would allow to establish this model and measure its parameters. In the case of CDFO, we have seen from Figure~\ref{fig:CDFO_WIMP} that $y_{DM} \lesssim 10^{-2}$ and hence we would have only the signatures in LQ searches and in MET searches. However, if in the $\chi_1 \to \chi_0 l q$ decay one could resolve the final state lepton and quarks, one would have an additional handle to establish a link between the apparently uncorrelated signals in LQ and MET searches.
+We note that the actual mechanism underlying the production of the dark matter abundance has phenomenological implications. Two distinct scenarios arise, depending on the size of $y_{DM}$ versus $\lambda_{L,R}$. For $y_{DM}$ comparable to the $S_1$ couplings to leptons and quarks all $S_1$ decay modes $b \nu, c \tau, t \tau, \chi_1 \chi_0$ have comparable branching fractions,
+as shown in Figure~\ref{fig:xsecBRs}. In this scenario all three kind of searches (LQ, MET, LQ + MET) are relevant and can be used to constraint the model or, in the case of a signal,  would allow to establish this model and measure its parameters.
+Also shown in Figure~\ref{fig:xsecBRs} are the cross-sections for pair production of $\chi_1$ and single and pair production of $S_1$. As can be seen, the $\chi_1$ production is dominant, unless $m_{S_1} \ll m_{\chi_1}$. The $\chi_1$ channel, however, can be challenging to detect if $\chi_1$ and $\chi_0$ are nearly degenerate. Hence both LQ and MET searches can be relevant for constraining or detecting the model.
 
+
+In the case of CDFO, we have seen from Figure~\ref{fig:CDFO_WIMP} that $y_{DM} \lesssim 10^{-2}$ and hence we would have only the signatures in LQ searches and in MET searches. However, if in the $\chi_1 \to \chi_0 l q$ decay one could resolve the final state lepton and quarks, one would have an additional handle to establish a link between the apparently uncorrelated signals in LQ and MET searches.
 
 %=====================
 %    \                                           |
 %      \                                         |
 %        \                                       |
- \begin{figure}[!htp]
+\begin{figure}[!h]
 	\centering
-	\includegraphics[width=0.5\textwidth]{figures/brsBM.pdf}}
-	\includegraphics[width=0.5\textwidth]{figures/xsecsBM.pdf}}
-	\caption{Branching ratios (left) and production cross-sections at the 13~TeV  LHC (right) for $S_1$ and $\chi_1$ as a function of the $\chi_1$ mass. The mass difference between $\chi_1}$ and $\chi_0$ is kept as 50~GeV while all the other parameters are fixed and correpond to the best fit benchmark model listed in Table~\ref{tab:benchmark_points}: $\lambda_L = 0.16, \lambda_R = 2.0$ and $m_{S_1} = 1$~TeV.
-		\label{fig:anndiag}
+	\includegraphics[width=0.5\textwidth]{figures/brsBM1.pdf}
+	\includegraphics[width=0.45\textwidth]{figures/xsecsBM1.pdf}
+	\caption{Branching ratios (left) and production cross-sections at the 13~TeV  LHC (right) for $S_1$ and $\chi_1$ as a function of the $\chi_1$ mass. The mass difference between $\chi_1$ and $\chi_0$ is kept as 50~GeV, $y_{\chi} = 0.2$ and all the other parameters correpond to the best fit benchmark model listed in Table~\ref{tab:benchmark_points}: $\lambda_L = 0.16, \lambda_R = 2.0$ and $m_{S_1} = 1$~TeV.
+		\label{fig:xsecBRs}
 	}
 \end{figure}
 %                                      \         |
 %                                        \       |
 %                                          \     |
 %=====================
+
 
 
 
@@ -565,6 +570,23 @@ Since the $\chi_1$ particle is the lightest new particle with non-trivial SM qua
 
 However, if the SM decay products in the $\chi_1 \to \chi_0$ are soft enough to be reconstructed (but probably not to triggered on) the LHC sensitivity gets greatly enhanced, as shown in e.g: ~\cite{Schwaller:2013baa} for MSSM electroweakinos and soft-leptons. However, the mass gap can be small enough such that the soft decay products fail to pass the reconstruction thresholds, in which case the pair production of $\chi$ particles can only be constrained by  mono-jet searches. We stress that this is an unavoidable bound, that, for a given $\Delta$, sets a lower mass on the dark sector masses. We will thus ignore here the MET searches that also include resolved (soft or hard) leptons. \JZ{This last sentence needs to be revisited depending on what is available in MadAnalysis, CheckMATE or similar}.
 
+
+
+%=====================
+%    \                                           |
+%      \                                         |
+%        \                                       |
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.6\textwidth]{figures/T2bb_exclusion.pdf}
+	\caption{Region in the $m_{\chi_1} - m_{\chi_0}$ vs $m_{\chi_1}$ plane excluded by LHC MET searches. The remaining model parameters are $y_{\chi} = 0.2$, $\lambda_L = 0.16, \lambda_R = 2.0$ and $m_{S_1} = 1$~TeV. The shaded region corresponds to the parameter space excluded by ATLAS and CMS searches for final states containing one or more b-jets and missing energy. {\it The signal efficiencies are assumed to be the same as for sbottom pair production followed by $\tilde{b} \to b + \chi_1^0$ decays. We do not take into account possible effects due to the 3-body decay of $\chi_1$ ($\chi_1 \to b + \chi_0 + \nu$).}
+		\label{fig:T2bbexcl}
+	}
+\end{figure}
+%                                      \         |
+%                                        \       |
+%                                          \     |
+%=====================
 
 
 
