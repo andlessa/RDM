@@ -147,6 +147,7 @@
 \bibliographystyle{lesHouches}
 \begin{document}
 
+
 \title{A common solution to $R_D$ anomalies and Dark Matter}
 
 \author{G. B\'elanger$^1$, J. Bernigaud$^{2,3,4}$, A. Bharucha$^5$, B. Fuks$^6$, J. Heisig$^7$, A. Jueid$^1$, A. Goudelis$^6$, A. Lessa$^8$, D. Marzocca$^{9}$, M. Nardecchia$^{10}$, G. Polesello$^{11}$, P. Pani$^{12}$, D. Sengupta$^{14}$ and J. Zurita$^{3,4}$. }
@@ -278,6 +279,11 @@ The results of a scan in the two parameters of the model, for $m_{S_1} = 1.5 \te
   \caption{\it Left: flavor fit to the charged current anomalies for $m_{S_1}=1.5$ TeV ($1\sigma$ region). The gray lines represent the present status in the measurements of the two observables, compared with the SM point (blue point and contour). Right: Viable parameter space from the fit of flavor and precision observables as function of $\lambda / m_{S_1}$. Blue dashed lines are iso-lines of the branching ratio $B(S_1 \to c_R \tau_R)$ assuming $y_\chi \ll (\lambda_L)_{33}, (\lambda_R)_{23}$ and $m_{S_1} \gg m_t$. The black dot represents the best-fit point.}
 \label{fig:FlaFit}
 \end{figure}
+%%%%%%%%%%%
+
+
+
+
 
 From the figure we can establish two working points. We pick the first one to obtain the lowest possible  $BR (S_1 \to c \tau)$, which corresponds to  $(x,y) = (0.6,0.5)$. For the second one we do not want to pick extreme values of $\lambda_R$, as we could run into the regime of a ``fat" leptoquark, namely having a width comparable to its mass. So we restrict ourselves to the best fit point  $(0.16,2.0)$ that already gives a negligible branching fraction into the third generation states. We thus use these working points to generate concrete benchmarks by picking two values for the leptoquark mass: $m_{S_1}= 500$ GeV and $m_{S_1}= 1000$ GeV. We show the corresponding values of the couplings and branching ratios in Table~\ref{tab:benchmark_points}, where we have assumed a negligible coupling of $S_1$ to the dark sector. We note that the solution of the $\RD$ anomalies, being an off-shell interference with the SM amplitude, will not be affected by diluting the leptoquark visible decays, but it would rather loose the constraints coming from direct searches of $S_1$, which we discuss in detail in Section~\ref{sec:lhc}.
 \begin{table}[]
@@ -303,18 +309,26 @@ Having established the parameter space in the $\lambda_L, \lambda_R$ and $m_{S_1
 In this section we study how the measured relic density and the null results of direct detection impact on our model. We start by noting that the direct detection rate is suppressed at 1-loop \JZ{draw box diagrams}, however given the current $\sigma_{SI}$ exclusions this suppression might not be enough to discard this observable. For the relic density we consider two distinct scenarios. On one hand we study the (co)-annihilation case, as done in~\cite{Baker:2015qna}, while on the other hand we also consider the conversion-driven freeze-out (CDFO) scenario~\cite{Garny:2017rxs}, also known as co-scattering~\cite{DAgnolo:2017dbv}. The main idea behind this mechanism is that the self-annihilation of the dark matter candidate is negligible: the dark matter abundance arises instead from conversion processes within the dark sector. Hence, this scenario requires small/tiny interactions between the SM and the DM candidate ($y_{DM}$ in our case), thus rendering the $BR(S_1 \to \chi_1 \chi_0)$ negligible. This will thus affect the relevance of the collider signatures, that are discussed in detail in section~\ref{sec:lhc}
 
 \subsection{Direct Detection}
-The scattering of $\chi_0$ on a nucleon proceeds via a 1-loop diagram, which we show in figure~\ref{fig:dd_1loop}. The loop include two leptoquark masses and the $\chi_1$ mass, which are already heavy enough compared with the typical momentum transfer, so that would naively induce a mass suppression. 
-\JZ{What follows is highly speculative}
-We can obtain a rough estimate of the size of this contribution by first integrating out the $S_1$. We then would end with a 1-loop diagram with $\chi_1$ and a lepton propagating in the loop. The effective 4-fermion coupling of the $\chi_1-\chi_0 -l-q$ vertex would be $y_{DM} * \lambda{L,R} / m_{S_1}^2$, and hence the full diagram would scale as
+\JZ{Under study by GB, AG, DS, JB}
+
+The scattering of $\chi_0$ on a nucleon proceeds via 1-loop diagrams, which we show in figure~\ref{fig:dd_1loop}. In the first diagram the loop include two leptoquark masses and the $\chi_1$ mass, which are already heavy enough compared with the typical momentum transfer, so that would naively induce a mass suppression. In the second diagram one would have three leptoquark masses and a $\chi_1$ mass, so that would be more suppressed than the diagram with three $\chi_1$ and one $S_1$ in the loop.
+\JZ{What follows is highly speculative and must be taken as such, the final answer will come from the explicit calculation of Andreas and Aoife.}
+We can obtain a rough estimate of the size of these contributions by first integrating out the $S_1$. We then would end with 
+\begin{itemize}
+\item a 1-loop bubble with $\chi_1$ and a lepton propagating in the loop and two effective couplings.
+\item a \JZ{not sure about this one} tree level diagram with $\chi_0 g \to \chi_0 g$ via a $\chi_1$ exchange.
+\item a 1-loop triangle with $\chi_1$ running in the loop and one effective $\chi_1-\chi_1-\chi_0-\chi_0$ vertex.
+\end{itemize}
+Among the three possibilities, the third one is naively the less suppressed one since it has only one effective coupling less, and the lowest power in $m_{S_1}$.~\footnote{Of course one can also integrate out $\chi_1$ and directly write the $\chi_0 \bar{\chi_0} G^a_{\mu \nu} G^{a \, \mu \nu}$, but then one would lose the explicit couplings and massses}. Hence the diagram scales as 
 \be
-y_{DM}^4 \lambda_{L,R}^2 \lambda_{L,R}^2 m_{S_1}^{-8} \, .
-\ee
-On top of this strong suppression of the LQ mass, we also have to consider that we need specific quarks from the nucleon, and hence we will pay an additional price. Note that while the $\lambda_L$ coupling will let us access $b$ quarks inside the proton and $\lambda_R$ will give us access to $c_R$, the coupling to $u$ quarks proceeds via CKM mixing, so an additional chirality flip is needed, which then comes with a charm Yukawa ($y_c \sim 0.09$) thus giving an overall suppression of $y_c^2 \sim 8 \times 10^{-2}$. We can then focus only on bottom or charm quarks in the initial and final state, and then pay a form factor suppression of $f_{T q}^(n,p)$~\footnote{\JZ{A quick estimation from MSSM neutralinos gave me $f^{(n,p)}_{T,q} = 2/27 (1 - sum_{u,d,s} f^{(n,p)}_{T,q} ) \sim 2/27 (1-0.107) \sim 0.066 $}.} which is about 0.06 for bottom and charm quarks, thus leading to an overall suppression of $(0.066)^4 \sim 1.9 \times 10^{-5} $.
+\frac{1}{4 \pi m_{S_1}} y_{DM}^2 \alpha_s * \frac{8 \pi}{9 \alpha_s} m_P f_{T,G} \sim \frac{0.2}{m_{S_1}} y_{DM}^2 \, ,
+\ee 
+and thus the suppression is not very high: nowadays 1-loop EW corrections and 1-loop QCD corrections for WIMPS are relevant, and here we are at a similar level. \JZ{Here I tried to conclude that we need the calculation, but once we have the final result we can use this disgression as a ``a posteriori" justification.}
 \JZ{end of speculation}
 
 \begin{figure}[!t]
 \center
-\scalebox{0.9}{
+\scalebox{0.95}{
 \begin{tikzpicture}
 \node at (0,0) {\includegraphics[scale=0.43]{figures/directDetection.eps} };
 \node at (-2.6,2.3) {\scalebox{1.3}{$\chi_0$}};
@@ -326,14 +340,33 @@ On top of this strong suppression of the LQ mass, we also have to consider that 
 \node at (2.6,-2.2) {\scalebox{1.3}{$q$}};
 \node at (0,-1.4) {\scalebox{1.3}{$\ell$}};
 \end{tikzpicture}
+\begin{tikzpicture}
+\node at (0,0) {\includegraphics[scale=0.43]{figures/directDetection.eps} };
+\node at (-2.6,2.3) {\scalebox{1.3}{$\chi_0$}};
+\node at (2.6,2.3) {\scalebox{1.3}{$\chi_0$}};
+\node at (0,1.4) {\scalebox{1.3}{$\chi_1$}};
+\node at (-1.5,0) {\scalebox{1.3}{$S_1$}};
+\node at (1.5,0) {\scalebox{1.3}{$S_1$}};
+\node at (-2.4,-2.2) {\scalebox{1.3}{$g$}};
+\node at (2.6,-2.2) {\scalebox{1.3}{$g$}};
+\node at (0,-1.4) {\scalebox{1.3}{$S_1$}};
+\end{tikzpicture}
+\begin{tikzpicture}
+\node at (0,0) {\includegraphics[scale=0.43]{figures/directDetection.eps} };
+\node at (-2.6,2.3) {\scalebox{1.3}{$\chi_0$}};
+\node at (2.6,2.3) {\scalebox{1.3}{$\chi_0$}};
+\node at (0,1.4) {\scalebox{1.3}{$S_1$}};
+\node at (-1.5,0) {\scalebox{1.3}{$\chi_1$}};
+\node at (1.5,0) {\scalebox{1.3}{$\chi_1$}};
+\node at (-2.4,-2.2) {\scalebox{1.3}{$g$}};
+\node at (2.6,-2.2) {\scalebox{1.3}{$g$}};
+\node at (0,-1.4) {\scalebox{1.3}{$\chi_1$}};
+\end{tikzpicture}
 }
-\caption{Feynman diagram for the direct detection of dark matter in our model at the lowest order in perturbation theory.}
+\caption{Feynman diagrams for the direct detection of dark matter in our model at the lowest order in perturbation theory.
+\JZ{Need to change some lines for second and third diagram. Please use your imagination}.}
 \label{fig:dd_1loop}
 \end{figure}
-
-
-\JZ{Under study by GB, AG, DS, JB}
-
 \subsection{Relic Density}
 
 \JZ{Coannihilation done with Micromegas. CDFO: Under study by GB, JH, AL, AG, JB}
@@ -453,11 +486,29 @@ Exemplary $2\to4$ dark matter annihilation diagram.
 
 \section{LHC CONSTRAINTS}
 \label{sec:lhc}
-Our model contains three new fields that are probed by several LHC searches, which generically fall into two categories. On one hand, we have direct searches for leptoquarks ($S_1$), both for single and double production. On the other hand we have the full spectrum of missing energy searches targeting dark matter observables, in our case driven by pair production of $\chi_1$ via gauge interarctions . As a hybrid of both categories, the CMS search for leptoquark plus dark matter~\cite{Sirunyan:2018xtm}, inspired by the Coannihilation Codex~\cite{Baker:2015qna}, gives not only interesting constraints on the parameter space, but moreover it would allow to establish the connection between flavor anomalies and dark matter, in a post-discovery scenario. 
+Our model contains three new fields that are probed by several LHC searches, which generically fall into two categories. On one hand, we have direct searches for leptoquarks ($S_1$), both for single and double production. On the other hand we have the full spectrum of missing energy (MET) searches targeting dark matter observables, in our case driven by pair production of $\chi_1$ via gauge interactions . As a hybrid of both categories, the CMS search for leptoquark plus dark matter~\cite{Sirunyan:2018xtm}, inspired by the Coannihilation Codex~\cite{Baker:2015qna}, gives not only interesting constraints on the parameter space, but moreover it would allow to establish the connection between flavor anomalies and dark matter, in a post-discovery scenario. 
 
 In each of the categories described above, we will consider both a) existing searches and b) novel searches (for instance, the aforementioned LQ + MET search of Ref~\cite{Sirunyan:2018xtm} only applies if the leptoquark decays to muons, but it is not applicable for e.g: electron decays).
 
-We note that the actual mechanism underlying the production of the dark matter abundance has phenomenological implications. Two distinct scenarios arise, depending on the size of $y_{DM}$ versus $\lambda_{L,R}$. For $y_{DM}$ comparable to the $S_1$ couplings to leptons and quarks all $S_1$ decay modes $b \nu, c \tau, t \tau, \chi_1 \chi_0$ have comparable branching fractions, hence all three kind of searches (LQ, MET, LQ + MET) are relevant, and the combination of all searches would allow to establish this model and measure its parameters. In the case of CDFO, we have seen from Figure~\ref{fig:CDFO_WIMP} that $y_{DM} \lesssim 10^{-2}$ and hence we would have only the signatures in LQ searches and in MET searches. However, if in the $\chi_1 \to \chi_0 l q$ decay one could resolve the final state lepton and quarks, one would have an additional handle to make the link between apparently uncorrelated signals in LQ and MET searches.
+We note that the actual mechanism underlying the production of the dark matter abundance has phenomenological implications. Two distinct scenarios arise, depending on the size of $y_{DM}$ versus $\lambda_{L,R}$. For $y_{DM}$ comparable to the $S_1$ couplings to leptons and quarks all $S_1$ decay modes $b \nu, c \tau, t \tau, \chi_1 \chi_0$ have comparable branching fractions, hence all three kind of searches (LQ, MET, LQ + MET) are relevant, and the combination of all searches would allow to establish this model and measure its parameters. In the case of CDFO, we have seen from Figure~\ref{fig:CDFO_WIMP} that $y_{DM} \lesssim 10^{-2}$ and hence we would have only the signatures in LQ searches and in MET searches. However, if in the $\chi_1 \to \chi_0 l q$ decay one could resolve the final state lepton and quarks, one would have an additional handle to establish a link between the apparently uncorrelated signals in LQ and MET searches.
+
+
+%=====================
+%    \                                           |
+%      \                                         |
+%        \                                       |
+ \begin{figure}[!htp]
+	\centering
+	\includegraphics[width=0.5\textwidth]{figures/brsBM.pdf}}
+	\includegraphics[width=0.5\textwidth]{figures/xsecsBM.pdf}}
+	\caption{Branching ratios (left) and production cross-sections at the 13~TeV  LHC (right) for $S_1$ and $\chi_1$ as a function of the $\chi_1$ mass. The mass difference between $\chi_1}$ and $\chi_0$ is kept as 50~GeV while all the other parameters are fixed and correpond to the best fit benchmark model listed in Table~\ref{tab:benchmark_points}: $\lambda_L = 0.16, \lambda_R = 2.0$ and $m_{S_1} = 1$~TeV.
+		\label{fig:anndiag}
+	}
+\end{figure}
+%                                      \         |
+%                                        \       |
+%                                          \     |
+%=====================
 
 
 
@@ -478,10 +529,25 @@ Pair production of LQs at the LHC proceeds via gauge couplings, as shown in the 
 \label{fig:LQvisible}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Searches for visible decays of LQ pairs at ATLAS~\cite{Aad:2015caa,Aaboud:2019jcc,Aaboud:2019bye} and CMS~\cite{Sirunyan:2018nkj,Sirunyan:2018kzh,Sirunyan:2018vhk}, focus on both leptoquarks decaying in the same final state. In Ref.~\cite{Aaboud:2019bye} five different searches are described. The first one is a search for LQ decaying into the $b \tau b \tau$ final state, based on an existing di-Higgs search in the same final state~\cite{Aaboud:2018sfw}, albeit with different kinematics. The other four searches are reinterpretations of existing studies of supersymmetric particles: searches for stop pair production in the zero-lepton~\cite{Aaboud:2017ayj} and one-lepton channel~\cite{Aaboud:2017aeu} ($t \bar{t} +$ MET), stop decays into staus~\cite{Aaboud:2018kya} and a sbottom search~\cite{Aaboud:2017wqg} ($b\bar{b} + $ MET ). Among these searches, what is relevant for our model are the final states of $b \tau b \tau$, which correspond to the decay of both leptoquarks in the $t \tau$ final state, and the search for $b \bar{b} +$ MET  which covers the case where both leptoquarks decay into $b \nu$. For any choice of the coupling, and barring effects from the top mass, we would have that $BR (S_1 \to t \tau) \approx BR (S_1 \to b \nu$, in contrast to the ATLAS study where $BR(S_1 b \nu) = 1 - BR(S_1 \to t \tau)$ is assumed. Thus, in order to achieve an optimal coverage of the parameter space, one should also include the final state $b \nu t \tau$, which we dubbed the ``mixed" visible leptoquark search. We present in Fig~\ref{fig:LQpaircoverage} the corresponding branching ratios into $t \tau$ (solid red) and $b \nu$ (solid blue) for the scenario where only $\lambda_L$ is turned on, together with the reach in the $t \tau t \tau$ (dashed red), $b \nu b \nu$ (dashed blue) and our proposed search $t \tau b \nu$ (dashed green).
+%%%%%%%%%%
+ \begin{figure}[!htp]
+  \centering
+  \includegraphics[width=0.8\textwidth]{./figures/lq_exclusions_RD_compatible_plus_mixed.pdf} 
+%  \includegraphics[width=0.44\textwidth]{./figures/FlavorFit_S1.pdf} 
+  \caption{\it Coverage of the different LQ pair searches with decays into third generation fermions. We show in solid lines the branching ratio for the case where only $\lambda_L$ is non-zero, namely where the leptoquark decays exclusively into $b \nu$ (blue) and $t \tau$ (red). Note that both branching fractions should be equal if the top mass were negligible with respect to $m_{S_1}$. We also present in dashed lines the reach of the ATLAS search for $t \tau t \tau$ (red), $b \nu b \nu$ (blue), taken from~\cite{Aaboud:2019bye}, as well as our proposed search in the $t \tau b \nu$ channel (green). The latter final state provides the best coverage of the parameter space provided that $m_{S_1} \gtrsim$ 500 GeV. l}
+\label{fig:LQpaircoverage}
+\end{figure}
+%%%%%%%%%%%
+
+We thus see that above 500 GeV the mixed search has the best coverage, and thus we will adopt this search to carry out our projections for the HL-LHC~\footnote{\JZ{This last sentence is from Giacomo. I am not sure if for the proceedings we will do HL-LHC, but I agree with the philosophy of using only the best search for LQ pairs.}}. In view of these results we encourage the experimental collaborations to design a full-fledged analysis targeting the mixed decay. However it is clear from the fits to the charged-current flavor anomalies of Figure~\ref{fig:David} and from our benchmark points shown in Table~\ref{tab:benchmark_points} that the search based exclusively on the third generation final states is insufficient to cover the $\RD$-compatible parameter: since $\lambda_R$ is always larger than  $\lambda_L$,  $S_1$ decays predominantly into the $c \tau$ final state. Thus a search including this final state (in particular the $c \tau c \tau$ channel) would be needed. In view of the impressive results achieved in final states with two $c$-tagged quarks~\cite{} \JZ{Need citations from Giacomo}, this analysis should be feasible, however is outside the scope of this proceeding. \JZ{Does it mean that we want to do it for the paper?}.
+
 
 \subsubsection{LQ associated production (with lepton and/or jet)}
 \JZ{In charge: JZ, AB, DS, AJ} \\
 A single leptoquark can also be produced in association with a SM fermion, as shown in the right panel of Fig~\ref{fig:LQvisible}. For our particular choice of couplings, we expect that one can have some sensitivity if this fermion is a charged lepton, hence if $l_2=e, \mu, \tau$.
+
+\JZ{To the best of my understanding this is under study by David, Giacomo and others. At the current stage I would be happy to point out to their study within the same proceedings.}
 
 
 \subsection{Dark matter (missing energy) searches}
@@ -496,21 +562,6 @@ Since the $\chi_1$ particle is the lightest new particle with non-trivial SM qua
 \label{fig:MonoJet}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-%%%
- \begin{figure}[!htp]
-	\centering
-	\includegraphics[width=0.3\textwidth]{./figures/chi1ProductionA.png}
-		\includegraphics[width=0.3\textwidth]{./figures/chi1ProductionB.png}  
-	\includegraphics[width=0.3\textwidth]{./figures/chi1ProductionC.pdf}\\ 
-	\includegraphics[width=0.2\textwidth]{./figures/chi1DecA.png}
-\includegraphics[width=0.3\textwidth]{./figures/chi1DecB.png}  
-\includegraphics[width=0.3\textwidth]{./figures/chi1DecC.png}	
-	\caption{\it Production and decay channels for $\chi_1$.}
-\end{figure}
-%%%
-
 
 However, if the SM decay products in the $\chi_1 \to \chi_0$ are soft enough to be reconstructed (but probably not to triggered on) the LHC sensitivity gets greatly enhanced, as shown in e.g: ~\cite{Schwaller:2013baa} for MSSM electroweakinos and soft-leptons. However, the mass gap can be small enough such that the soft decay products fail to pass the reconstruction thresholds, in which case the pair production of $\chi$ particles can only be constrained by  mono-jet searches. We stress that this is an unavoidable bound, that, for a given $\Delta$, sets a lower mass on the dark sector masses. We will thus ignore here the MET searches that also include resolved (soft or hard) leptons. \JZ{This last sentence needs to be revisited depending on what is available in MadAnalysis, CheckMATE or similar}.
 
@@ -537,7 +588,14 @@ However, if the SM decay products in the $\chi_1 \to \chi_0$ are soft enough to 
 \section{CONCLUSIONS}
 The charged-current flavor anomalies hint at the present of leptoquarks near or at the TeV scale. Here we have studied the connection between these models and dark matter, which necessarily requires to add new particles and couplings. Employing a simplified model with only 6 parameters we have scanned the parameter space vis-a-vis the aformentioned flavor anomalies, relic density, direct detection and LHC constraints.
 
-We have seen that when taken all these constraints simultaneously .... \JZ{SOMETHING}. We thus encourage the LHC collaborations to ... \JZ{DO A NEW SEARCH THAT MIGHT BE IMPORTANT / CONVINCE ATLAS OF DOING THE LQ RESONANT + MET STUDY}. Naively rescaling our results for the HL-LHC we find that (HOPEFULLY) the parameter space favored by the flavor anomalies will be fully covered with just 1000 fb$^{-1}$ of data. \JZ{Maybe we will leave the projections for the paper.}
+We have seen that when taken all these constraints simultaneously one is left with two possible scenarios: either the dark sector couples to the leptoquark mediator with a similar strength than the one required from taking the $\RD$ anomaly at face-value, which then implies a traditional freeze-out scenario to account for the current abundance of dark matter, or the leptoquark couples faintly to the dark sector, which in turn implies that the dark matter abundance arises from the conversion-driven freeze-out (co-scattering) mechanism.  In the second scenario the leptoquark branching fraction into the dark sector is negligible, and thus the phenomenology will consist of seemingly disconnected leptoquark ``anomaly-inspired" and traditional missing energy + X signatures. In the latter case, depending on the ``compression" between the dark sector particles, one can resolve the leptons and quarks from the $S_1 \to \chi_1 \chi_0 \to l q \chi_0 \chi_0$ decay chain, which would then allow to establish a firm connection between both new physics signals. In the case where the branching fraction into the dark sector is non-negligilbe, then the strongest indication of the leptoquark-dark matter connection is through the pair production of leptoquarks with one decaying into the dark sector and another one into hard leptons and quarks. Since this search is only being conducted currently by the CMS collaboration, we urge ATLAS to undertake this key study for a comprehensive dark matter program going beyond the mere annihilation into singlet final states.
+
+Along this work we have pointed out the existence of two important holes in the campaign to optimal cover the leptoqaurk parameter space. On one side we have noted that for leptoquarks decaying into the third generation fermions (almost) exclusively, a search in the $b \nu t \tau$ should be added to the existing ones looking into $b \nu b \nu$ and $t \tau t \tau$, where one can benefit from a larger branching fraction, and devise cuts to keep the background under control, which we have demonstrated with a simple analysis. On the other side, noting that the solutions to the $\RD$ anomalies involve larger couplings connecting second generation quarks with third generation leptons, we advocate to study the $c \tau c \tau$ final state, and if possible and depending on the $c$-tagging efficiencies, also include the mixed cases, e.g $c \tau t \tau$ or $b \nu c \tau$ final states.  
+
+%.... \JZ{SOMETHING}. We thus encourage the LHC collaborations to ... \JZ{DO A NEW SEARCH THAT MIGHT BE IMPORTANT / CONVINCE ATLAS OF DOING THE LQ RESONANT + MET STUDY}. 
+
+Our results show that... \JZ{describe final parameter space allowed}.
+Naively rescaling our results for the HL-LHC we find that (\JZ{hopefully}) the parameter space favored by the flavor anomalies will be fully covered with just 1000 fb$^{-1}$ of data. \JZ{Maybe we will leave the projections for the paper?}
 
 
 \section*{ACKNOWLEDGEMENTS}
