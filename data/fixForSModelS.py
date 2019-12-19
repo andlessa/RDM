@@ -10,7 +10,7 @@ import glob
 # In[2]:
 
 
-for f in glob.glob('slha/*.slha'):
+for f in glob.glob('slha_BM1/*.slha'):
     with open(f,'r') as ff:
         data  = ff.readlines()
     for i,l in enumerate(data):
@@ -28,7 +28,7 @@ for f in glob.glob('slha/*.slha'):
         elif 'BLOCK QNUMBERS 42 #  lq' in l:
             data[i+5] = '      5 1 # Z2-parity\n'
         data[i] = l
-    with open(f.replace('slha/','smodels_slha/'),'w') as ff:
+    with open(f.replace('slha_BM1/','smodels_slha_BM1/'),'w') as ff:
         for l in data: ff.write(l)
 
 
