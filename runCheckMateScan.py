@@ -65,6 +65,9 @@ def RunCheckMate(parserDict):
     
     pars = parser.toDict(raw=False)["options"]
     outputFolder = os.path.abspath(parser.get("CheckMateParameters","OutputDirectory"))
+    if os.path.isfolder(outputFolder):
+        logger.info("Output folder %s found. Skipping." %outputFolder)
+        return "---- %s skipped" %outputFolder
     cardFile = getCheckMateCard(parser)
     logger.debug('Steering card %s created' %cardFile)
     
@@ -143,7 +146,7 @@ def main(parfile,verbose):
         parserDict = newParser.toDict(raw=False) #Must convert to dictionary for pickling
         p = pool.apply_async(RunCheckMate, args=(parserDict,))        
         children.append(p)
-#         time.sleep(10)
+        time.sleep(10)
             
       
     #Wait for jobs to finish:
