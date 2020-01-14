@@ -1,5 +1,5 @@
 // Reads an input LHE or an input SLHA file and generate events using Pythia 8.
-// It computes the rescaling factor for prompt decays for the ATLAS-SUSY-2018-32 slepton search.
+// It the given signal efficiency for the ATLAS-SUSY-2018-04 stau search.
 
 #include <iostream>
 #include "Pythia8/Pythia.h"

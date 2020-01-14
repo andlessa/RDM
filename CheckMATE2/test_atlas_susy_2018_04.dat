@@ -1,0 +1,21 @@
+## General Options
+[Parameters]
+Name: atlas_susy_2018_04_validation_120
+Analyses: atlas_susy_2018_04
+SLHAFile: /home/lessa/RDM/CheckMATE2/param_card_DS_120.slha
+InvisiblePIDs: 1000022
+RandomSeed: 123
+
+## Process Information
+
+[StauPairProd]
+Pythia8Card: /home/lessa/RDM/CheckMATE2/pythia8_stau.cfg
+MGcommand: import model MSSM_SLHA2;
+           generate p p > ta1+ ta1-, ta1+ > ta+ n1, ta1- > ta- n1; 
+MGparam: /home/lessa/RDM/CheckMATE2/param_card_DS_120.slha
+MGrun: /home/lessa/RDM/inputCards/run_card.dat
+Pythia8Rndm: 100
+MaxEvents: 41000
+XSect: 192.8 FB
+XSectErr: 20 %
+
