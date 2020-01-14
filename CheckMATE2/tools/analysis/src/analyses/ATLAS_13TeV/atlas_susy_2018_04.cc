@@ -70,16 +70,18 @@ void Atlas_susy_2018_04::analyze() {
 	  missingET->addMuons(muonsCombinedPlus);  // Adds muons to missing ET. This should almost always be done which is why this line is not commented out.
   
 	  //Event selection:
-	  countCutflowEvent("0_Total");
+	  countCutflowEvent("0) Total");
+	  if (taujets.size() < 2) return;
+	  if (taujets[0]->PT < 50.0 || taujets[1]->PT < 40.) return;
 	  if (nMediumTaus != 2 || (taujets[0]->Charge)*(taujets[1]->Charge) > 0) return;
-	  countCutflowEvent("1_two_medium_taus_(OS)");
+	  countCutflowEvent("1-3) GF+BC+ 2 medium OS taus");
 	  if (!bjets.empty()) return;
-	  countCutflowEvent("2_b-jet_veto");
+	  countCutflowEvent("4) b-jet veto");
 	  if (!electronsLoose.empty() || !muonsCombinedPlus.empty()) return;
-	  countCutflowEvent("3_light_lepton_veto");
+	  countCutflowEvent("5) light lepton veto");
 	  double mtautau = (taujets[0]->P4() + taujets[1]->P4()).M();
 	  if (mtautau < 120.) return;
-	  countCutflowEvent("4_Z/H-veto");
+	  countCutflowEvent("6) Z/H veto");
 
 	  double met = missingET->P4().Et();
 	  double deltaPhi = fabs(taujets[0]->P4().DeltaPhi(taujets[1]->P4()));
@@ -95,17 +97,17 @@ void Atlas_susy_2018_04::analyze() {
 	  //SR-lowMass
 	  //di-tau trigger:
 	  if (taujets[0]->PT > 95.0 && taujets[0]->PT > 75.0 && passTrigger){
-		  countCutflowEvent("lm_1_SRlowMassTrigger");
+		  countCutflowEvent("LowMass: 1) Trigger");
 		  if ((75. < met) && (met < 150.)){
-			  countCutflowEvent("lm_2_SRlowMassMET");
+			  countCutflowEvent("LowMass: 2) MET");
 			  if (nTightTaus == 2){
-				  countCutflowEvent("lm_3_SRlowMass2taus");
+				  countCutflowEvent("LowMass: 3) 2 tight taus");
 				  if (deltaPhi > 0.8){
-					  countCutflowEvent("lm_4_SRlowMassDeltaphi");
+					  countCutflowEvent("LowMass: 4) Deltaphi");
 					  if (deltaR < 3.2){
-						  countCutflowEvent("lm_5_SRlowMassDeltaR");
+						  countCutflowEvent("LowMass: 5) DeltaR");
 						  if (mT2tautau > 70.){
-							  countCutflowEvent("lm_6_SRlowMass");
+							  countCutflowEvent("LowMass: 6) mT2");
 							  countSignalEvent("SR-lowMass");
 						  }
 					  }
@@ -117,15 +119,15 @@ void Atlas_susy_2018_04::analyze() {
 	  //SR-highMass
 	  //di-tau+MET trigger:
 	  if (taujets[0]->PT > 75.0 && taujets[0]->PT > 40.0 && met > 150. && passTrigger){
-		  countCutflowEvent("hm_1_SRhighMassTrigger");
+		  countCutflowEvent("HighMass: 1) Trigger");
 		  if (nTightTaus >= 1){
-			  countCutflowEvent("hm_2_SRhighMass1tau");
+			  countCutflowEvent("HighMass: 2) 1 tight tau");
 			  if (deltaPhi > 0.8){
-				  countCutflowEvent("hm_3_SRhighMassDeltaphi");
+				  countCutflowEvent("HighMass: 3) Deltaphi");
 				  if (deltaR < 3.2){
-					  countCutflowEvent("hm_4_SRhighMassDeltaR");
+					  countCutflowEvent("HighMass: 4) DeltaR");
 					  if (mT2tautau > 70.){
-						  countCutflowEvent("hm_5_SRhighMass");
+						  countCutflowEvent("HighMass: 5) mT2");
 						  countSignalEvent("SR-highMass");
 					  }
 				  }

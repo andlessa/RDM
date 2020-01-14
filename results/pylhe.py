@@ -83,7 +83,7 @@ class LHEParticle(object):
         if hasattr(self,'mass'):        
             return self.mass
         else:
-            mass = np.sqrt(np.inner(self.fourMom(),self.fourMom()))
+            mass = np.sqrt(self.e**2 - np.inner(self.triMom(),self.triMom()))
             return mass 
         
     def pt(self):
