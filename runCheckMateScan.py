@@ -65,9 +65,10 @@ def RunCheckMate(parserDict):
     
     pars = parser.toDict(raw=False)["options"]
     outputFolder = os.path.abspath(parser.get("CheckMateParameters","OutputDirectory"))
-    if os.path.isfolder(outputFolder):
-        logger.info("Output folder %s found. Skipping." %outputFolder)
-        return "---- %s skipped" %outputFolder
+    resultFolder = os.path.join(outputFolder,parser.get("CheckMateParameters","Name"))
+    if os.path.isdir(resultFolder):
+        logger.info("Results folder %s found. Skipping." %resultFolder)
+        return "---- %s skipped" %resultFolder
     cardFile = getCheckMateCard(parser)
     logger.debug('Steering card %s created' %cardFile)
     

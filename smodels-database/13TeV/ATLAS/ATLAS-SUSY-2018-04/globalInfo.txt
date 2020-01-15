@@ -1,0 +1,11 @@
+id: ATLAS-SUSY-2018-04
+sqrts: 13*TeV
+lumi: 139/fb
+prettyName: hadronic tau + MET
+url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2018-04/
+arxiv: arXiv:1911.06660
+publication: pending
+contact: ATLAS collaboration
+private: False
+implementedBy: Andre Lessa
+lastUpdate: 2019/12/19
