@@ -1,3 +1,4 @@
 data/slha.tar.gz filter=lfs diff=lfs merge=lfs -text
 data/slha_BM1.tar.gz filter=lfs diff=lfs merge=lfs -text
 data/slha_BM2.tar.gz filter=lfs diff=lfs merge=lfs -text
+data/checkmate.tar.gz filter=lfs diff=lfs merge=lfs -text
