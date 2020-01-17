@@ -1,12 +1,66 @@
-# RDM
-Holds code and results for the RDM project
+# RDM: Dark Matter and R<sub>D anomalies
 
-## Analysis currently considered:
+This branch holds the main code for obtaining the constraints for the RDM Les Houches 2019 project.
+The searches used are:
 
- * Hadronic stau decays (139/fb) : [ATLAS-SUSY-2018-04](https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2018-04/) (?)
- * Sbottom decay with b-jets (36.1/fb): [ATLAS-SUSY-2016-28](https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-28/) (in SModels)
- * Mono-jet (36.1/fb) [ATLAS-EXOT-2016-27](https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/EXOT-2016-27/) (in MadAnalysis)
- * Sbottom decay with b-jets (3.2/fb): [ATLAS-SUSY-2015-01](https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2015-01/) (in SModels)
- * Sbottom decay with b-jets (35.9/fb): [CMS-SUS-16-032](http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-032/index.html) (in SModels)
- * Sbottom decay with mT2 (35.9/fb): [CMS-SUS-16-036](http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-036/index.html) (in SModels)
- * Sbottom decay with multi-jets (35.9/fb): [CMS-SUS-16-033](http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-033/index.html) (in SModels)
+ * Hadronic taus plus MET (139/fb) : [ATLAS-SUSY-2018-04](https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2018-04/) (added to CheckMATE2)
+ * b-jets plus MET (36.1/fb): [ATLAS-SUSY-2016-28](https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-28/) (added to SModels)
+
+
+## Basic Installation ##
+
+The following codes must be installed:
+
+  * [FastJet](http://fastjet.fr/)
+  * [Pythia8](http://lcgapp.cern.ch/project/simu/HepMC/)
+  * [MadGraph5](https://launchpad.net/mg5amcnlo/)
+  * [ufo2slha](https://github.com/andlessa/ufo2slha)
+  * [smodels](https://smodels.github.io/)
+  * [CheckMATE2](https://checkmate.hepforge.org/)
+
+The script installer.sh will try to fetch the appropriate tarballs and install them.
+
+
+### Creating SLHA files ###
+
+To create SLHA files from a UFO model run:
+
+```
+./ufo2slha/createSLHA.py -p <parameter_file>
+```
+
+For a parameter file example see [ufo2slha_LQ.ini](./ufo2slha_LQ.ini).
+The parameter file sets the parameters to be used and looped over.
+
+## Running ##
+
+### Sbottom Analysis ###
+
+The results for the b-jet analysis can be obtained running smodels over the set of modified files
+[data/smodels_slha_BM2.tar.gz](data/smodels_slha_BM2.tar.gz), where the chi1->b+nu+chi0 decay is artificially modified to chi1->b+chi0, so the T2bb resutls can be used.
+The output is stored in [data/smodels_output_BM2.tar.gz](data/smodels_output_BM2.tar.gz)
+
+### Stau Analysis ###
+
+The results for the tau + MET analysis can be obtained running CheckMATE2. The code
+
+```
+./runCheckMateScan.py -p <parameter_file>
+```
+
+runs CheckMATE using a set of SLHA files as parameter cards for MadGraph and Pythia.
+For a parameter file example see [checkmate_parameters.ini](./checkmate_parameters.ini).
+The output is stored in [data/checkmate_BM1.tar.gz](data/checkmate_BM1.tar.gz).
+
+
+## Plotting ##
+
+Plotting examples are available in the [results](results) folder.
+An example of the exclusion curve obtaining from recasting the tau analysis is shown below:
+
+![Alt text](results/TStauStau_exclusion_BM1.png?raw=true "ATLAS-SUSY-2018-04 exclusion")
+
+
+
+
+
