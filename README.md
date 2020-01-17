@@ -11,7 +11,7 @@ The searches used are:
 
 The following codes must be installed:
 
-  * [FastJet](http://fastjet.fr/)
+  * [Delphes](https://cp3.irmp.ucl.ac.be/projects/delphes)
   * [Pythia8](http://lcgapp.cern.ch/project/simu/HepMC/)
   * [MadGraph5](https://launchpad.net/mg5amcnlo/)
   * [ufo2slha](https://github.com/andlessa/ufo2slha)
