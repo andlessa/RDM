@@ -54,7 +54,7 @@ info.private = False
 # info.arxiv = 'https://arxiv.org/abs/....'
 info.comment = 'EPS 2017. https://cds.cern.ch/record/2273394, http://inspirehep.net/record/1609006'
 info.implementedBy = 'WW'
-info.contact = 'CMS'
+info.contact = 'cms-phys-conveners-sus@cern.ch'
 
 dataset = DataSetInput('data')
 dataset.setInfo(dataType = 'upperLimit', dataId = None)
