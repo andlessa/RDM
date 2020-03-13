@@ -6,7 +6,7 @@ susyProcess: pp --> slepton slepton, slepton  --> lepton lsp
 figureUrl: https://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-17-009/CMS-SUS-17-009_Figure_005-a.png
 dataUrl: https://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-17-009/CMS-SUS-17-009_Figure_005-a.root
 source: CMS
-validated: True
+validated: TBD
 axes: [[x, y], [x, y]]
 finalState: ['MET', 'MET']
 upperLimits: [[[[1.0000E+02*GeV,0.0000E+00*GeV],[1.0000E+02*GeV,0.0000E+00*GeV]],9.9547E+01*fb],
