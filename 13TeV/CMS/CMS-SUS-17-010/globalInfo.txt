@@ -1,7 +1,7 @@
 id: CMS-SUS-17-010
 sqrts: 13*TeV
 lumi: 35.9/fb
-prettyName: hadronic stop
+prettyName: 2L stop
 url: http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-17-010
 comment: http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-17-010
 private: False

@@ -41,7 +41,7 @@ info = MetaInfoInput('CMS-SUS-17-010')
 info.url = 'http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-17-010'
 info.sqrts = 13
 info.lumi = 35.9 
-info.prettyName = 'hadronic stop'
+info.prettyName = '2L stop'
 info.private = False
 info.comment = ''
 
