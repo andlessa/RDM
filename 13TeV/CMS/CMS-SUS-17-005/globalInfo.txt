@@ -1,0 +1,8 @@
+id: CMS-SUS-17-005
+sqrts: 13*TeV
+lumi: 35.9/fb
+prettyName: multijets + Etmiss, top tagging
+url: https://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-17-005/
+private: False
+implementedBy: Wolfgang Waltenberger
+lastUpdate: 2020/1/22

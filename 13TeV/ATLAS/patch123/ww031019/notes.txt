@@ -1,0 +1,47 @@
+
+
+	==> AMS !!
+
+	ATLAS-SUSY-2016-15
+
+
+
+	ATLAS-SUSY-2016-16
+
+		all (Eff)				-	table 91,92		µ? usable?
+								 	table 99,100	prob not usable
+								 	-> split up table data in multiple SR?
+
+									wenn man tables aufsplittet: sehr wenig daten pro SR
+
+									obs info p52-54
+		
+	
+	ATLAS-SUSY-2016-24
+
+		TSlepSlepAll (UL&Eff)	-	no good points for validation
+
+	
+	ATLAS-SUSY-2016-27
+		
+		all	(UL&Eff)			-	Empty Plots with nmssm
+
+	
+	ATLAS-SUSY-2017-01
+
+		TChiWH					-	k factor not a constant throughout plane
+
+	
+	ATLAS-SUSY-2017-02
+
+		TChiH					-	ugly plot done -> ugly; 1d FIXME fixed?
+
+
+
+ === NOTES ===
+
+
+
+
+
+ ==> NEXT MEETING	

@@ -1,0 +1,9 @@
+id: CMS-SUS-17-010
+sqrts: 13*TeV
+lumi: 35.9/fb
+prettyName: hadronic stop
+url: http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-17-010
+comment: http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-17-010
+private: False
+implementedBy: ck
+lastUpdate: 2020/3/11

@@ -1,0 +1,177 @@
+
+
+
+.)	add functionality to expres eg	expres.getModel(tx)
+									  .getModelAccuracy(tx) (..)
+
+.)	models can be combined, but losing option to upgrade / retrain individual performance (eg classification)
+	
+
+.)	denormalize?
+	maybe instead rescale by constant value to get close to ~1 range
+	( currently normalized by: v = v / |v|_p )
+
+
+.)	classification range? currently 0-2500GeV
+
+.)	delimiter for classification dynamic and saved per model?
+
+.) make testmodel more sensitive to mass poles, check whether to use intermediate or final mass for 3dim txs.
+
+( https://stackoverflow.com/questions/52785599/un-normalizing-pytorch-data )
+
+ATLAS-SUSY-2016-15:
+
+	d) needs new topo? 
+		you said to use T2tt but then UL masses would be very wrong + tops are created by gluino decay, not stop?
+
+		constraint -> mass difference between ~t and N1 is small i.e.: delta_m(~t,N1) = 5GeV
+
+
+
+
+
+=== NOTES ===
+
+smodels v.1.2.3
+
+
+2016-24:
+	write comments:	e.g.: validation/T2.comment
+
+	.) TChiWZ		comment: ATLAS gives data point here and here (0,100), no points in regional space, 
+					still interpolating over data points because blabla (left bottom corner) ... interpolate over data points
+
+	.) TSlepSlep	comment: "we see there are wild fluctuations in the original data that ATLAS smoothed out, we understand dip in 100/200 in mass plane, 						discrepancy stems from ATLAS smoothing their lines(data?)"
+
+					runFilecreater or slha creater to create more datapoints for tarball for x range > 450 for TSlepSlep (to 600-700GeV) pythia 8
+
+	.) TChiChipmSlepSlep 	(the most wrong one) run xsec for 1 file in pythia8 with 50k events (<-obsolete?)
+							might be TChiChipmSlepL <- yes it is, replace it!
+		
+							check ATLAS-SUSY-2013-12 8TeV  factor of 2. in constraint because analysis not sensitive to neutrinos (half of the time there are nus)
+
+							squark masses set to way too low masses! at least 1e5TeV!!
+
+	effmap: disregard neutrinos in tx constraint, *2 multiply necessary somewhere (not sure where)
+
+
+2016-27:
+
+	FOR ALL TXNAMES WITH NEAR MASSLESS FINAL STATES: copy mass plane with 0GeV and 1GeV so software can interpolate between them!!
+	-> do it eg for T5Gamma
+
+	update all validation plots with new gravitino tarballs
+
+	.) T5Gamma 			is fine
+
+	.) T5ZGamma			constraint as sum of 3 possibilities:   Z y, y y and Z Z
+						also add condition: Csim( constraint[Z,y], 2*constraint[y,y], 2*constraint[Z,Z] )
+
+	.) T6Gamma 			topology wrong: actual squarks produced: L: u,d,c,s,b,t	R: d,s,b
+						constraint: [jet,y][jet,y] (as i had) + [b,y][b,y]
+		
+	.) TChipChimGamma: 	rerun validation without k-factor and updated gravitino templates
+						run xsec computer on each individual tarball file with small script on pythia 8
+
+
+2016-27-eff:
+	
+	.) T5Gamma 			remove eff map
+						write into global.info comment line through the convert.py file something like: 
+						"eff map for T5Gamma were not implemented because it assumes specific branching ratios"
+
+
+2017-02:
+
+	.) TChiZ: 			try again
+
+
+
+if done set validation flag in info file to True
+
+
+
+=== // NOTES NOTES // ===
+
+2016-15	ul
+
+			T2tt: 	compared off region with 2016-17: for dm < 80 : T2bbWWoff, but tar file got removed? (remnants still in juhi branch)
+					also bug: source: 'CMS' instead of 'ATLAS' in T2bbWWoff.txt file ?
+
+			T2ttg: 	template done with stop_1 // stop_1 & stop_2 still no good points for validation plot?
+					approximate runtime für pythia8 50k events: ~2460min
+
+					pretty desc need to be added
+
+		eff
+
+			T2tt:	not very pretty
+
+			T2bb:	not very pretty
+
+			write comment that info for last eff-map could not be found
+
+
+
+2017-01	ul
+
+			TChiWH: pretty name not sure
+					chose most excluding UL map
+					validation UL map: weird area around [600/0] to [700/0]
+
+
+		eff
+
+			TChiWH: validation EM produced not pretty at all
+
+
+
+2017-02	ul
+			TChiZ:	
+
+
+2016-24	ul
+		eff
+
+2016-27	ul
+		eff
+
+
+
+
+
+
+
+// done section //
+
+
+
+
+2016-15:
+
+	.) T2tt: offshell region -> copy entry in convert.py for off shell txname T2ttoff
+		follow curve of fig_08.png to gain mass constraint like [massMin < dm < massMax] for W to be on shell (i think?)
+		^- just see how they did it on different result
+
+	.) T2ttg (name pending) copy T2tt but exchange ~t to ~g and have ~t as lsp
+
+2016-15-eff:
+	
+	.) SRDlow & SRDhigh = T2bb, the others should be T2tt & T2ttoff combined (same trick as on UL)
+
+	write comment for global.info file that information for last SR could not be found
+
+2017-01:
+
+	.)  TChipChipmWH: should be TChiWH
+		wrong topology! TChiWH already exists
+
+					
+
+	
+
+
+
+
+	

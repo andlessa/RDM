@@ -1,0 +1,11 @@
+id: CMS-SUS-19-006-2
+sqrts: 13*TeV
+lumi: 137/fb
+prettyName: 0L + jets + Etmiss
+url: http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-19-006/index.html
+arxiv: 1908.04722
+publication: JHEP 10 (2019) 244, http://dx.doi.org/10.1007/JHEP10(2019)244
+contact: cms-phys-conveners-sus@cern.ch
+private: False
+implementedBy: Rola Monzer
+lastUpdate: 2020/3/10

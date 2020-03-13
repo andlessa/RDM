@@ -39,82 +39,94 @@ info 				= MetaInfoInput('ATLAS-SUSY-2016-27')
 info.url 			= "https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-27/"
 info.sqrts 			= 13
 info.lumi			= 36.1
-info.prettyName 	= " "
+info.prettyName 	= "jets + photon + Etmiss"
 info.private		= False
 info.arxiv			= 'https://arxiv.org/abs/1802.03158'
-info.contact		= 'ATLAS collaboration'
-info.publication	= 'Phys. Rev. D 97, 092006 (2018)'
+info.contact		= 'atlas-phys-susy-conveners@cern.ch'
+info.publication	= 'https://journals.aps.org/prd/abstract/10.1103/PhysRevD.97.092006'
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput('data')
 dataset.setInfo(dataType = 'upperLimit', dataId = None)
 
-#+++++++ next txName block ++++++++++++++
-T5Gamma 						= dataset.addTxName('T5Gamma')
-T5Gamma.checked 				= 'No'
-T5Gamma.constraint 		 		= "[[['jet','jet'],['photon']],[['jet','jet'],['photon']]]"
-T5Gamma.conditionDescription	= None
-T5Gamma.condition 		 		= None
-T5Gamma.source 					= "ATLAS"
-#+++++++ next mass plane block ++++++++++++++
-T5Gamma_1						= T5Gamma.addMassPlane(2*[[x, y, 1.]])
-T5Gamma_1.figure    			= 'Fig.8'
-T5Gamma_1.figureUrl 			= 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-27/fig_08.png'
-T5Gamma_1.dataUrl   			= "https://www.hepdata.net/record/ins1654357?version=1&table=Cross section UL 1"
-T5Gamma_1.setSources(dataLabels	= ['expExclusion', 'obsExclusion', 'upperLimits'],
-				dataFiles		= ['orig/HEPData-ins1654357-v1-Exclusion_contour_(expected)_1.csv', 'orig/HEPData-ins1654357-v1-Exclusion_contour_(observed)_2.csv', 'orig/HEPData-ins1654357-v1-Cross_section_UL_1.csv'],
-				units 			= [ None, None, 'fb' ],
-				dataFormats 	= ['csv', 'csv', 'csv'])
+lsp_masses = [1.]
+#planes = []
 
 #+++++++ next txName block ++++++++++++++
-T6Gamma 					 	= dataset.addTxName('T6Gamma')
-T6Gamma.checked 			 	= 'No'
-T6Gamma.constraint 			 	= "[[['jet'],['photon']],[['jet'],['photon']]]"
-T6Gamma.conditionDescription 	= None
-T6Gamma.condition 			 	= None
-T6Gamma.source 				 	= "ATLAS"
+T5g 						= dataset.addTxName('T5g')
+T5g.checked 				= 'No'
+T5g.constraint 		 		= "[[['jet','jet'],['photon']],[['jet','jet'],['photon']]]"
+T5g.conditionDescription	= None
+T5g.condition 		 		= None
+T5g.source 					= "ATLAS"
 #+++++++ next mass plane block ++++++++++++++
-T6Gamma_1 						= T6Gamma.addMassPlane(2*[[x, y, 0.]])
-T6Gamma_1.figure    			= 'Fig.9'
-T6Gamma_1.figureUrl 			= 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-27/fig_09.png'
-T6Gamma_1.dataUrl   			= "https://www.hepdata.net/record/ins1654357?version=1&table=Cross section UL 2"
-T6Gamma_1.setSources(dataLabels = ['expExclusion', 'obsExclusion', 'upperLimits'],
-					dataFiles 	= ['orig/HEPData-ins1654357-v1-Exclusion_contour_(expected)_3.csv', 'orig/HEPData-ins1654357-v1-Exclusion_contour_(observed)_4.csv', 'orig/HEPData-ins1654357-v1-Cross_section_UL_2.csv'],
-					units 		= [ None, None, 'fb' ],
-					dataFormats = ['csv', 'csv', 'csv'])
+for lsp in lsp_masses:
+	p						= T5g.addMassPlane(2*[[x, y, lsp]])
+	p.figure    			= 'Fig.8'
+	p.figureUrl 			= 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-27/fig_08.png'
+	p.dataUrl   			= "https://www.hepdata.net/record/ins1654357?version=1&table=Cross section UL 1"
+	p.setSources(dataLabels	= ['expExclusion', 'obsExclusion', 'upperLimits'],
+				dataFiles	= ['orig/HEPData-ins1654357-v1-Exclusion_contour_(expected)_1.csv', 'orig/HEPData-ins1654357-v1-Exclusion_contour_(observed)_2.csv', 'orig/HEPData-ins1654357-v1-Cross_section_UL_1.csv'],
+				units 		= [ None, None, 'fb' ],
+				dataFormats	= ['csv', 'csv', 'csv'])
+#	planes.append(p)
 
 #+++++++ next txName block ++++++++++++++
-TChipChimGamma 							= dataset.addTxName('TChipChimGamma')
-TChipChimGamma.checked 					= 'No'
-TChipChimGamma.constraint 				= "[[['W'],['photon']],[['Z'],['photon']]]+[[['W'],['photon']],[['W'],['photon']]]+[[['W'],['photon']],[['higgs'],['photon']]]"
-TChipChimGamma.conditionDescription 	= None
-TChipChimGamma.condition 				= None
-TChipChimGamma.source 			    	= "ATLAS"
+T6g 					 	= dataset.addTxName('T6g')
+T6g.checked 			 	= 'No'
+T6g.constraint 			 	= "[[['jet'],['photon']],[['jet'],['photon']]]"#+[[['b'],['photon']],[['b'],['photon']]]"
+T6g.conditionDescription 	= None
+T6g.condition 			 	= None
+T6g.source 				 	= "ATLAS"
 #+++++++ next mass plane block ++++++++++++++
-TChipChimGamma_1 		   				= TChipChimGamma.addMassPlane(2*[[x, y, 0.]])
-TChipChimGamma_1.figure    				= 'Fig.10'
-TChipChimGamma_1.figureUrl 				= 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-27/fig_10.png'
-TChipChimGamma_1.dataUrl   				= "https://www.hepdata.net/record/ins1654357?version=1&table=Cross section UL 3"
-TChipChimGamma_1.setSources(dataLabels 	= ['expExclusion', 'obsExclusion', 'upperLimits'],
-							dataFiles	= ['orig/HEPData-ins1654357-v1-Exclusion_contour_(expected)_5.csv', 'orig/HEPData-ins1654357-v1-Exclusion_contour_(observed)_6.csv', 'orig/HEPData-ins1654357-v1-Cross_section_UL_3.csv'],
-							units		= [ None, None, 'fb' ],
-							dataFormats	= ['csv', 'csv', 'csv'])
+for lsp in lsp_masses:
+	p 						= T6g.addMassPlane(2*[[x, y, lsp]])
+	p.figure    			= 'Fig.9'
+	p.figureUrl 			= 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-27/fig_09.png'
+	p.dataUrl   			= "https://www.hepdata.net/record/ins1654357?version=1&table=Cross section UL 2"
+	p.setSources(dataLabels = ['expExclusion', 'obsExclusion', 'upperLimits'],
+				dataFiles 	= ['orig/HEPData-ins1654357-v1-Exclusion_contour_(expected)_3.csv', 'orig/HEPData-ins1654357-v1-Exclusion_contour_(observed)_4.csv', 'orig/HEPData-ins1654357-v1-Cross_section_UL_2.csv'],
+					units 	= [ None, None, 'fb' ],
+				dataFormats = ['csv', 'csv', 'csv'])
+#	planes.append(p)
 
 #+++++++ next txName block ++++++++++++++
-T5ZGamma 					  		= dataset.addTxName('T5ZGamma')
-T5ZGamma.checked 			  		= 'No'
-T5ZGamma.constraint 		  		= "[[['jet','jet'],['Z']],[['jet','jet'],['photon']]]"
-T5ZGamma.conditionDescription 		= None
-T5ZGamma.condition 			  		= None
-T5ZGamma.source 			  		= "ATLAS"
+TChipChimg 							= dataset.addTxName('TChipChimg')
+TChipChimg.checked 					= 'No'
+TChipChimg.constraint 				= "[[['W'],['photon']],[['Z'],['photon']]]+[[['W'],['photon']],[['W'],['photon']]]+[[['W'],['photon']],[['higgs'],['photon']]]"
+TChipChimg.conditionDescription 	= None
+TChipChimg.condition 				= None
+TChipChimg.source 			    	= "ATLAS"
 #+++++++ next mass plane block ++++++++++++++
-T5ZGamma_1 							= T5ZGamma.addMassPlane(2*[[x, y, 0.]])
-T5ZGamma_1.figure    				= 'Fig.11'
-T5ZGamma_1.figureUrl 				= 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-27/fig_11.png'
-T5ZGamma_1.dataUrl   				= "https://www.hepdata.net/record/ins1654357?version=1&table=Cross section UL 4"
-T5ZGamma_1.setSources(dataLabels	= ['expExclusion', 'obsExclusion', 'upperLimits'],
-						dataFiles	= ['orig/HEPData-ins1654357-v1-Exclusion_contour_(expected)_7.csv', 'orig/HEPData-ins1654357-v1-Exclusion_contour_(observed)_8.csv', 'orig/HEPData-ins1654357-v1-Cross_section_UL_4.csv'],
-						units		= [ None, None, 'fb' ],
-						dataFormats	= ['csv', 'csv', 'csv'])
+for lsp in lsp_masses:
+	p 		   				= TChipChimg.addMassPlane(2*[[x, y, lsp]])
+	p.figure    			= 'Fig.10'
+	p.figureUrl 			= 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-27/fig_10.png'
+	p.dataUrl   			= "https://www.hepdata.net/record/ins1654357?version=1&table=Cross section UL 3"
+	p.setSources(dataLabels = ['expExclusion', 'obsExclusion', 'upperLimits'],
+				dataFiles	= ['orig/HEPData-ins1654357-v1-Exclusion_contour_(expected)_5.csv', 'orig/HEPData-ins1654357-v1-Exclusion_contour_(observed)_6.csv', 'orig/HEPData-ins1654357-v1-Cross_section_UL_3.csv'],
+					units	= [ None, None, 'fb' ],
+				dataFormats	= ['csv', 'csv', 'csv'])
+#	planes.append(p)
+
+#+++++++ next txName block ++++++++++++++
+T5Zg 					  		= dataset.addTxName('T5Zg')
+T5Zg.checked 			  		= 'No'
+T5Zg.constraint 		  		= "[[['jet','jet'],['Z']],[['jet','jet'],['photon']]]+[[['jet','jet'],['photon']],[['jet','jet'],['photon']]]+[[['jet','jet'],['Z']],[['jet','jet'],['Z']]]"
+T5Zg.conditionDescription 		= None
+T5Zg.condition 			  		= "Csim([[['jet','jet'],['Z']],[['jet','jet'],['photon']]]+2.*[[['jet','jet'],['photon']],[['jet','jet'],['photon']]]+2.*[[['jet','jet'],['Z']],[['jet','jet'],['Z']]])"
+T5Zg.source 			  		= "ATLAS"
+#+++++++ next mass plane block ++++++++++++++
+for lsp in lsp_masses:
+	p 						= T5Zg.addMassPlane(2*[[x, y, lsp]])
+	p.figure    			= 'Fig.11'
+	p.figureUrl 			= 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-27/fig_11.png'
+	p.dataUrl   			= "https://www.hepdata.net/record/ins1654357?version=1&table=Cross section UL 4"
+	p.setSources(dataLabels	= ['expExclusion', 'obsExclusion', 'upperLimits'],
+				dataFiles	= ['orig/HEPData-ins1654357-v1-Exclusion_contour_(expected)_7.csv', 'orig/HEPData-ins1654357-v1-Exclusion_contour_(observed)_8.csv', 'orig/HEPData-ins1654357-v1-Cross_section_UL_4.csv'],
+					units	= [ None, None, 'fb' ],
+				dataFormats	= ['csv', 'csv', 'csv'])
+#	planes.append(p)
+
 
 databaseCreator.create()

@@ -1,0 +1,8 @@
+id: CMS-SUS-17-009
+sqrts: 13*TeV
+lumi: 35.9/fb
+prettyName: leptons + Etmiss
+url: https://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-17-009/
+private: False
+implementedBy: ck
+lastUpdate: 2020/3/11

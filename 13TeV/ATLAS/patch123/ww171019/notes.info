@@ -1,0 +1,31 @@
+
+
+	ssh tunnel:  key auf hepgpu01 server erstellen via ssh keygen?
+
+	2016-15
+
+		T2tt: unteres eck datapoints rausgenommen und neu validiert
+
+	2016-27
+
+		still no good points for validation
+
+		maybe remove every x-th point for other topos too? validation takes forever!
+
+		-> test if wolfangs trimmed topology TChipChimGamma works now
+
+	2016-27-eff
+
+		TChipChimGamma keyerror dataset
+
+	2017-01
+
+		test if k-factor still bugged
+
+	2016-15 eff
+
+		done: T2ttoff comment: no further offshell points given for efficiencies
+
+	=== NOTES ===
+
+

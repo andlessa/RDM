@@ -1,0 +1,8 @@
+id: CMS-SUS-18-002
+sqrts: 13*TeV
+lumi: 35.9/fb
+prettyName: photon, jets, b-jets+ Etmiss, top tagging
+url: https://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-18-002/
+private: False
+implementedBy: ck
+lastUpdate: 2020/3/11

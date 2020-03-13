@@ -1,0 +1,33 @@
+
+2016-15
+
+	extended tarball for T2bbffff -> nothing changed
+
+2016-16
+
+	help with topo and UL maps
+	cant implement, smodels keeps crashing
+
+	files: T6bbWW 	70 UL, 28 exp, 29 obs (fig 23, page 61 <- C1 = ~t - 10GeV)  <- is this simply T2bb?
+		   			60 UL, 16 exp, 17 obs (fig 20, page 58 <- whats the constraint) <- what topo is this 
+
+	fig 21, 22 ??
+
+	constraint for chargino?? sometimes they constrain N2 thats not in the original topology? (N2 = C1 degenerate though)
+
+2016-24
+
+	redid tarballs with all 3 slepton gens -> TSlepSlepAll validation error (screenshot)
+
+2016-27
+
+	validation error: no good points after tarball updates (only changed minor details)
+
+
+2017-01
+
+	validation error: k-factor not a constant throughout plane (screenshot)
+
+2017-02
+
+	validation error: FIXME cant handle: 1d problem (screenshot)
