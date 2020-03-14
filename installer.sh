@@ -2,6 +2,26 @@
 
 homeDIR="$( pwd )"
 
+echo "[Checking system dependencies]"
+PKG_OK=$(dpkg-query -W -f='${Status}' autoconf 2>/dev/null | grep -c "ok installed")
+if test $PKG_OK = "0" ; then
+  echo "autoconf not found. Install it with sudo apt-get install autoconf."
+  exit
+fi
+PKG_OK=$(dpkg-query -W -f='${Status}' libtool 2>/dev/null | grep -c "ok installed")
+if test $PKG_OK = "0" ; then
+  echo "libtool not found. Install it with sudo apt-get install libtool."
+  exit
+fi
+PKG_OK=$(dpkg-query -W -f='${Status}' gzip 2>/dev/null | grep -c "ok installed")
+if test $PKG_OK = "0" ; then
+  echo "gzip not found. Install it with sudo apt-get install gzip."
+  exit
+fi
+
+
+
+
 madgraph="MG5_aMC_v2.6.7.tar.gz"
 URL=https://launchpad.net/mg5amcnlo/2.0/2.6.x/+download/$madgraph
 echo -n "Install MadGraph (y/n)? "
@@ -64,7 +84,7 @@ if echo "$answer" | grep -iq "^y" ;then
   ./configure --with-rootsys=$ROOTSYS --with-delphes=$homeDIR/Delphes --with-pythia=$homeDIR/pythia8 --with-madgraph=$homeDIR/MG5
   echo "[installer] installing CheckMATE";
   make -j4
-	cd $homeDIR
+       cd $homeDIR
   echo "[installer] Adding new analyses to CheckMATE";
   cp -RT CheckMATE2_bak/* CheckMATE2/;
   rm -rf CheckMATE2_bak;
@@ -72,6 +92,7 @@ if echo "$answer" | grep -iq "^y" ;then
   echo "[installer] recompiling CheckMATE";
   make;
   cd $homeDIR
+
 fi
 
 

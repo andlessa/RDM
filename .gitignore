@@ -3,3 +3,6 @@
 *.pyo
 *.o
 *.lo
+Delphes
+MG5
+pythia8
