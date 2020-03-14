@@ -1,7 +1,7 @@
 id: ATLAS-SUSY-2016-14
 sqrts: 13*TeV
 lumi: 36.1/fb
-prettyName: 2 same-sign or 3 leptons + jets + MET
+prettyName: 2 same-sign or 3 leptons + jets + Etmiss
 url: http://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-14/
 arxiv: https://arxiv.org/abs/1706.03731
 publication: https://link.springer.com/article/10.1007/JHEP09(2017)084

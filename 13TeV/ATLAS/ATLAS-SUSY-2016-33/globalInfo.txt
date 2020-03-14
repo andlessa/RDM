@@ -1,7 +1,7 @@
 id: ATLAS-SUSY-2016-33
 sqrts: 13*TeV
 lumi: 36.1/fb
-prettyName: 2 OSSF leptons + MET
+prettyName: 2 OSSF leptons + Etmiss
 url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-33/
 arxiv: https://arxiv.org/abs/1805.11381
 publication: in process of being published
