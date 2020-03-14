@@ -41,7 +41,7 @@ info = MetaInfoInput('ATLAS-SUSY-2016-26')
 info.url = "https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-26/"
 info.sqrts = 13
 info.lumi = 36.1
-info.prettyName = ">=2 c jets + MET"
+info.prettyName = ">=2 c jets + Etmiss"
 info.private = False
 info.arxiv =  'https://arxiv.org/abs/1805.01649'
 info.contact = 'ATLAS collaboration'
