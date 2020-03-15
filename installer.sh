@@ -76,7 +76,6 @@ echo -n "Install CheckMATE (y/n)? "
 read answer
 if echo "$answer" | grep -iq "^y" ;then
   echo "[installer] getting CheckMATE";
-  mv CheckMATE2 CheckMATE2_bak
   git clone git@github.com:CheckMATE2/checkmate2.git CheckMATE2;
   cd CheckMATE2;
   rm -rf .git
@@ -86,14 +85,10 @@ if echo "$answer" | grep -iq "^y" ;then
   make -j4
        cd $homeDIR
   echo "[installer] Adding new analyses to CheckMATE";
-  cp -RT CheckMATE2_bak/* CheckMATE2/;
-  rm -rf CheckMATE2_bak;
+  cp -RT myCheckMateFiles/* CheckMATE2/;
   cd CheckMATE2;
   echo "[installer] recompiling CheckMATE";
   make;
   cd $homeDIR
 
 fi
-
-
-
