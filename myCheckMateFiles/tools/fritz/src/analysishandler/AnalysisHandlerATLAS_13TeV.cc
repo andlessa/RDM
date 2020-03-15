@@ -245,7 +245,8 @@ void AnalysisHandlerATLAS_13TeV::tagBJets() {
 void AnalysisHandlerATLAS_13TeV::tagTauJets() {
     Jet* cand = NULL; // currently tested jet candidate
     // pointer to the right efficiency functions
-    Eff_Fun_Ptr2 effFunLoose = NULL, effFunMedium = NULL, effFunTight = NULL, effFunMediumFlat = NULL, effFunTightFlat = NULL;
+    Eff_Fun_Ptr2 effFunLoose = NULL, effFunMedium = NULL, effFunTight = NULL,
+    effFunLooseFlat = NULL, effFunMediumFlat = NULL, effFunTightFlat = NULL;
     double prob = 0, pass_prob = 0;
     int prongs = 0;
 
@@ -254,6 +255,7 @@ void AnalysisHandlerATLAS_13TeV::tagTauJets() {
     stdTags.push_back(false); //loose
     stdTags.push_back(false); // medium
     stdTags.push_back(false); //tight
+    stdTags.push_back(false); //looseFlat
     stdTags.push_back(false); //mediumFlat
     stdTags.push_back(false); //tightFlat
 
@@ -266,6 +268,7 @@ void AnalysisHandlerATLAS_13TeV::tagTauJets() {
         effFunLoose = NULL;
         effFunMedium = NULL;
         effFunTight = NULL;
+        effFunLooseFlat = NULL;
         effFunMediumFlat = NULL;
         effFunTightFlat = NULL;
         cand = jets[j];
@@ -298,6 +301,7 @@ void AnalysisHandlerATLAS_13TeV::tagTauJets() {
                    effFunLoose = &AnalysisHandlerATLAS_13TeV::tauSigEffMultiLoose;
                    effFunMedium = &AnalysisHandlerATLAS_13TeV::tauSigEffMultiMedium;
                    effFunTight = &AnalysisHandlerATLAS_13TeV::tauSigEffMultiTight;
+                   effFunLooseFlat = &AnalysisHandlerATLAS_13TeV::tauSigEffMultiLooseFlat;
                    effFunMediumFlat = &AnalysisHandlerATLAS_13TeV::tauSigEffMultiMediumFlat;
                    effFunTightFlat = &AnalysisHandlerATLAS_13TeV::tauSigEffMultiTightFlat;
                }
@@ -305,6 +309,7 @@ void AnalysisHandlerATLAS_13TeV::tagTauJets() {
                    effFunLoose = &AnalysisHandlerATLAS_13TeV::tauSigEffSingleLoose;
                    effFunMedium = &AnalysisHandlerATLAS_13TeV::tauSigEffSingleMedium;
                    effFunTight = &AnalysisHandlerATLAS_13TeV::tauSigEffSingleTight;
+                   effFunLooseFlat = &AnalysisHandlerATLAS_13TeV::tauSigEffSingleLooseFlat;
                    effFunMediumFlat = &AnalysisHandlerATLAS_13TeV::tauSigEffSingleMediumFlat;
                    effFunTightFlat = &AnalysisHandlerATLAS_13TeV::tauSigEffSingleTightFlat;
                }
@@ -317,16 +322,15 @@ void AnalysisHandlerATLAS_13TeV::tagTauJets() {
                effFunLoose = &AnalysisHandlerATLAS_13TeV::tauBkgEffMultiLoose;
                effFunMedium = &AnalysisHandlerATLAS_13TeV::tauBkgEffMultiMedium;
                effFunTight = &AnalysisHandlerATLAS_13TeV::tauBkgEffMultiTight;
-               effFunMediumFlat = &AnalysisHandlerATLAS_13TeV::tauBkgEffMultiMedium;
-               effFunTightFlat = &AnalysisHandlerATLAS_13TeV::tauBkgEffMultiTight;
            }
            else {
                effFunLoose = &AnalysisHandlerATLAS_13TeV::tauBkgEffSingleLoose;
                effFunMedium = &AnalysisHandlerATLAS_13TeV::tauBkgEffSingleMedium;
                effFunTight = &AnalysisHandlerATLAS_13TeV::tauBkgEffSingleTight;
-               effFunMediumFlat = &AnalysisHandlerATLAS_13TeV::tauBkgEffSingleMedium;
-               effFunTightFlat = &AnalysisHandlerATLAS_13TeV::tauBkgEffSingleTight;
            }
+           effFunLooseFlat = effFunLoose;
+           effFunMediumFlat = effFunMedium;
+           effFunTightFlat = effFunTight;
        }
        // Now that we know the right function to use, lets tag
        // We only need to check "medium" if we passed "loose" etc.
@@ -342,12 +346,16 @@ void AnalysisHandlerATLAS_13TeV::tagTauJets() {
            }
        }
        //Additional tags for the flat efficiencies
-       pass_prob = (*effFunMediumFlat)(cand->PT, cand->Eta);
-       if (prob < pass_prob) {
+       pass_prob = (*effFunLooseFlat)(cand->PT, cand->Eta);
+       if(prob < pass_prob) {
            tauTags[3] = true;
-           pass_prob = (*effFunTightFlat)(cand->PT, cand->Eta);
-           if (prob < pass_prob)
+           pass_prob = (*effFunMediumFlat)(cand->PT, cand->Eta);
+           if (prob < pass_prob) {
                tauTags[4] = true;
+               pass_prob = (*effFunTightFlat)(cand->PT, cand->Eta);
+               if (prob < pass_prob)
+                   tauTags[5] = true;
+           }
        }
        jetTauTags[cand] = tauTags;
    }
@@ -697,24 +705,34 @@ double AnalysisHandlerATLAS_13TeV::tauSigEffMultiTight(double pt,
            (pt >= 80 + 2./C2)*C1*pow(2./C2,2)*exp(-2.);
 }
 
+double AnalysisHandlerATLAS_13TeV::tauSigEffSingleLooseFlat(double pt,
+                                                 double eta) {
+    double eff = 0.6;
+    return eff;
+}
 double AnalysisHandlerATLAS_13TeV::tauSigEffSingleMediumFlat(double pt,
                                                  double eta) {
-    double eff = 0.75;
+    double eff = 0.55;
     return eff;
 }
 double AnalysisHandlerATLAS_13TeV::tauSigEffSingleTightFlat(double pt,
                                                  double eta) {
-    double eff = 0.6;
+    double eff = 0.45;
+    return eff;
+}
+double AnalysisHandlerATLAS_13TeV::tauSigEffMultiLooseFlat(double pt,
+                                                 double eta) {
+    double eff = 0.5;
     return eff;
 }
 double AnalysisHandlerATLAS_13TeV::tauSigEffMultiMediumFlat(double pt,
                                                  double eta) {
-    double eff = 0.6;
+    double eff = 0.4;
     return eff;
 }
 double AnalysisHandlerATLAS_13TeV::tauSigEffMultiTightFlat(double pt,
                                                  double eta) {
-    double eff = 0.45;
+    double eff = 0.3;
     return eff;
 }
 

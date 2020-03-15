@@ -253,9 +253,11 @@ bool AnalysisBase::checkTauTag(Jet* candidate, std::string efficiency) {
         return true;
     else if (efficiency == "tight" && jetTauTags[candidate][2])
         return true;
-    else if (efficiency == "mediumFlat" && jetTauTags[candidate][3])
+    else if (efficiency == "looseFlat" && jetTauTags[candidate][3])
+            return true;
+    else if (efficiency == "mediumFlat" && jetTauTags[candidate][4])
         return true;
-    else if (efficiency == "tightFlat" && jetTauTags[candidate][4])
+    else if (efficiency == "tightFlat" && jetTauTags[candidate][5])
         return true;
     return false;
 }

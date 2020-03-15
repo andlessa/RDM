@@ -129,9 +129,13 @@ private:
     static double tauSigEffMultiTight(double pt,
                                       double eta);
     //! ATLAS flat tau efficiencies
+    static double tauSigEffSingleLooseFlat(double pt,
+                                      double eta);
     static double tauSigEffSingleMediumFlat(double pt,
                                       double eta);
     static double tauSigEffSingleTightFlat(double pt,
+                                      double eta);
+    static double tauSigEffMultiLooseFlat(double pt,
                                       double eta);
     static double tauSigEffMultiMediumFlat(double pt,
                                       double eta);
