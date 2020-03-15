@@ -254,8 +254,8 @@ void AnalysisHandlerATLAS_13TeV::tagTauJets() {
     stdTags.push_back(false); //loose
     stdTags.push_back(false); // medium
     stdTags.push_back(false); //tight
-    stdTags.push_back(false); //myMedium
-    stdTags.push_back(false); //myTight
+    stdTags.push_back(false); //mediumFlat
+    stdTags.push_back(false); //tightFlat
 
     // Stop if no taus are needed
     if(!doJetTauTags)
@@ -317,11 +317,15 @@ void AnalysisHandlerATLAS_13TeV::tagTauJets() {
                effFunLoose = &AnalysisHandlerATLAS_13TeV::tauBkgEffMultiLoose;
                effFunMedium = &AnalysisHandlerATLAS_13TeV::tauBkgEffMultiMedium;
                effFunTight = &AnalysisHandlerATLAS_13TeV::tauBkgEffMultiTight;
+               effFunMediumFlat = &AnalysisHandlerATLAS_13TeV::tauBkgEffMultiMedium;
+               effFunTightFlat = &AnalysisHandlerATLAS_13TeV::tauBkgEffMultiTight;
            }
            else {
                effFunLoose = &AnalysisHandlerATLAS_13TeV::tauBkgEffSingleLoose;
                effFunMedium = &AnalysisHandlerATLAS_13TeV::tauBkgEffSingleMedium;
                effFunTight = &AnalysisHandlerATLAS_13TeV::tauBkgEffSingleTight;
+               effFunMediumFlat = &AnalysisHandlerATLAS_13TeV::tauBkgEffSingleMedium;
+               effFunTightFlat = &AnalysisHandlerATLAS_13TeV::tauBkgEffSingleTight;
            }
        }
        // Now that we know the right function to use, lets tag
@@ -695,22 +699,22 @@ double AnalysisHandlerATLAS_13TeV::tauSigEffMultiTight(double pt,
 
 double AnalysisHandlerATLAS_13TeV::tauSigEffSingleMediumFlat(double pt,
                                                  double eta) {
-    const double eff = 0.75;
+    double eff = 0.75;
     return eff;
 }
 double AnalysisHandlerATLAS_13TeV::tauSigEffSingleTightFlat(double pt,
                                                  double eta) {
-    const double eff = 0.6;
+    double eff = 0.6;
     return eff;
 }
 double AnalysisHandlerATLAS_13TeV::tauSigEffMultiMediumFlat(double pt,
                                                  double eta) {
-    const double eff = 0.6;
+    double eff = 0.6;
     return eff;
 }
 double AnalysisHandlerATLAS_13TeV::tauSigEffMultiTightFlat(double pt,
                                                  double eta) {
-    const double eff = 0.45;
+    double eff = 0.45;
     return eff;
 }
 

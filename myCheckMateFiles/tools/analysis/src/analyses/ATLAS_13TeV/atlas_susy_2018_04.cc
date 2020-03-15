@@ -2,7 +2,7 @@
 // AUTHOR: Andre Lessa
 //  EMAIL: andre.lessa@ufabc.edu.br
 void Atlas_susy_2018_04::initialize() {
-  setAnalysisName("atlas_susy_2018_04");          
+  setAnalysisName("atlas_susy_2018_04");
   setInformation(""
     "# ATLAS\n"
     "# ATLAS-SUSY-2018-04\n"
@@ -10,7 +10,7 @@ void Atlas_susy_2018_04::initialize() {
     "# sqrt(s) = 13 TeV\n"
     "# int(L) = 139 fb^-1\n"
   "");
-  setLuminosity(139.0*units::INVFB);      
+  setLuminosity(139.0*units::INVFB);
   bookSignalRegions("SR-lowMass;SR-highMass");
   // You can also book cutflow regions with bookCutflowRegions("CR1;CR2;..."). Note that the regions are
   //  always ordered alphabetically in the cutflow output files.
@@ -44,14 +44,14 @@ void Atlas_susy_2018_04::analyze() {
 	  std::vector<Jet*> bjets;
 	  std::vector<Jet*> lightjets;
 	  for (int i = 0; i < jets.size(); i++){
-		if (!(checkTauTag(jets[i], "medium") || checkTauTag(jets[i], "tight") || checkBTag(jets[i], 0))){
+		if (!(checkTauTag(jets[i], "mediumFlat") || checkTauTag(jets[i], "tightFlat") || checkBTag(jets[i], 0))){
 			lightjets.push_back(jets[i]);
 		}
 		else if (fabs(jets[i]->Eta) < 2.5 && jets[i]->PT > 20.){
-			if(checkTauTag(jets[i], "tight") || checkTauTag(jets[i], "medium")){
+			if(checkTauTag(jets[i], "tightFlat") || checkTauTag(jets[i], "mediumFlat")){
 				taujets.push_back(jets[i]);
-				if (checkTauTag(jets[i], "tight")) ++nTightTaus;
-				if (checkTauTag(jets[i], "medium")) ++nMediumTaus;
+				if (checkTauTag(jets[i], "tightFlat")) ++nTightTaus;
+				if (checkTauTag(jets[i], "mediumFlat")) ++nMediumTaus;
 			}
 			else if(checkBTag(jets[i], 0) ) bjets.push_back(jets[i]);
 	    }
@@ -68,7 +68,7 @@ void Atlas_susy_2018_04::analyze() {
 	  lightjets       = overlapRemoval(lightjets, taujets, 0.2);
 
 	  missingET->addMuons(muonsCombinedPlus);  // Adds muons to missing ET. This should almost always be done which is why this line is not commented out.
-  
+
 	  //Event selection:
 	  countCutflowEvent("0) Total");
 	  if (taujets.size() < 2) return;
@@ -140,4 +140,4 @@ void Atlas_susy_2018_04::analyze() {
 
 void Atlas_susy_2018_04::finalize() {
   // Whatever should be done after the run goes here
-}       
+}
