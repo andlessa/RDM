@@ -1,4 +1,6 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
+
+"""Simple code for running CheckMATE over a set of SLHA files."""
 
 #Uses an input file to loop over input files and run CheckMATE over them.
 #The calculation goes through the following steps
@@ -7,9 +9,9 @@
 # 3) Move results to output folder
 
 #First tell the system where to find the modules:
-import sys,os,glob,shutil
+import sys,os,glob
 from ufo2slha.configParserWrapper import ConfigParserExt
-import logging,shutil
+import logging
 import subprocess
 import time,datetime
 import multiprocessing
@@ -23,23 +25,22 @@ logger = logging.getLogger(__name__)
 def getCheckMateCard(parser):
     """
     Create a process card using the user defined input.
-    
+
     :param parser: ConfigParser object with all the parameters needed
-    
+
     :return: The path to the process card
     """
-
-    cardFile = tempfile.mkstemp(suffix='.dat', prefix='checkmateCard_', 
+    cardFile = tempfile.mkstemp(suffix='.dat', prefix='checkmateCard_',
                                    dir=os.getcwd())
     os.close(cardFile[0])
     cardFile = os.path.abspath(cardFile[1])
-        
+
     cardF = open(cardFile,'w')
     cardF.write("[Parameters]\n")
     pars = parser.toDict(raw=False)["CheckMateParameters"]
     for key,val in pars.items():
         cardF.write("%s: %s\n" %(key,val))
-    
+
     process = parser.toDict(raw=False)["CheckMateProcess"]
     if not 'Name' in process:
         logger.error("The field 'Name' must be defined in [CheckMateProcess]")
@@ -49,20 +50,19 @@ def getCheckMateCard(parser):
         if key == 'Name': continue
         cardF.write("%s: %s\n" %(key,val))
     cardF.close()
-    
+
     return cardFile
 
 def RunCheckMate(parserDict):
     """
-    Runs CheckMATE using the parameters given in parser.
-   
-    :param parser: ConfigParser object with all the parameters needed
+    Run CheckMATE using the parameters given in parser.
+
+    :param parser: ConfigParser object with all the parameters needed.
     """
-    
     t0 = time.time()
     parser = ConfigParserExt()
-    parser.read_dict(parserDict)    
-    
+    parser.read_dict(parserDict)
+
     pars = parser.toDict(raw=False)["options"]
     outputFolder = os.path.abspath(parser.get("CheckMateParameters","OutputDirectory"))
     resultFolder = os.path.join(outputFolder,parser.get("CheckMateParameters","Name"))
@@ -71,7 +71,7 @@ def RunCheckMate(parserDict):
         return "---- %s skipped" %resultFolder
     cardFile = getCheckMateCard(parser)
     logger.debug('Steering card %s created' %cardFile)
-    
+
     #Create output dirs, if do not exist:
     try:
         os.makedirs(outputFolder)
@@ -85,9 +85,9 @@ def RunCheckMate(parserDict):
     output,errorMsg= run.communicate()
     logger.debug('CheckMATE error:\n %s \n' %errorMsg)
     logger.debug('CheckMATE output:\n %s \n' %output)
- 
+
     os.remove(cardFile)
- 
+
     logger.info("Done in %3.2f min" %((time.time()-t0)/60.))
     now = datetime.datetime.now()
 
@@ -95,8 +95,12 @@ def RunCheckMate(parserDict):
 
 
 def main(parfile,verbose):
-    
-    
+    """
+    Main function for submitting parallel jobs using the parameter file.
+
+    :param parfile: name of the parameter file.
+    :param verbose: level of debugging messages.
+    """
     level = args.verbose.lower()
     levels = { "debug": logging.DEBUG, "info": logging.INFO,
                "warn": logging.WARNING,
@@ -104,14 +108,14 @@ def main(parfile,verbose):
     if not level in levels:
         logger.error ( "Unknown log level ``%s'' supplied!" % level )
         sys.exit()
-    logger.setLevel(level = levels[level])    
+    logger.setLevel(level = levels[level])
 
-    parser = ConfigParserExt()   
-    ret = parser.read(args.parfile)
+    parser = ConfigParserExt()
+    ret = parser.read(parfile)
     if ret == []:
-        logger.error( "No such file or directory: '%s'" % args.parfile)
+        logger.error( "No such file or directory: '%s'" % parfile)
         sys.exit()
-            
+
     if not parser.has_option('options', 'input'):
         logger.error("An input file or folder must be defined.")
         return False
@@ -122,7 +126,8 @@ def main(parfile,verbose):
         elif "*" in input:
             inputFiles = [os.path.abspath(f) for f in glob.glob(input)]
         elif os.path.isdir(input):
-            inputFiles = [os.path.abspath(os.path.join(input,f)) for f in listdir(input) 
+            inputFiles = [os.path.abspath(os.path.join(input,f))
+                          for f in os.listdir(input)
                           if os.path.isfile(os.path.join(input, f))]
 
     parserList = []
@@ -130,7 +135,8 @@ def main(parfile,verbose):
         newParser = ConfigParserExt()
         newParser.read_dict(parser.toDict(raw=True))
         newParser.set("CheckMateParameters","SLHAFile",f)
-        newParser.set("CheckMateParameters","Name",os.path.splitext(os.path.basename(f))[0])
+        newParser.set("CheckMateParameters","Name",
+                       os.path.splitext(os.path.basename(f))[0])
         newParser.set("CheckMateProcess","MGparam",f)
         parserList.append(newParser)
 
@@ -143,22 +149,23 @@ def main(parfile,verbose):
     #Loop over parsers and submit jobs
     logger.info("Submitting %i jobs over %i cores" %(len(parserList),ncpus))
     for newParser in parserList:
-        logger.debug("Submitting job for file %s" %(newParser.get("CheckMateParameters","SLHAFile")))
+        logger.debug("Submitting job for file %s"
+                    %(newParser.get("CheckMateParameters","SLHAFile")))
         parserDict = newParser.toDict(raw=False) #Must convert to dictionary for pickling
-        p = pool.apply_async(RunCheckMate, args=(parserDict,))        
+        p = pool.apply_async(RunCheckMate, args=(parserDict,))
         children.append(p)
         time.sleep(10)
-            
-      
+
+
     #Wait for jobs to finish:
     output = [p.get() for p in children]
     for out in output:
         print(out)
-    
+
 
 if __name__ == "__main__":
 
-    import argparse    
+    import argparse
     ap = argparse.ArgumentParser( description=
             "Run CheckMATE over a set of input files to compute efficiencies for a given model." )
     ap.add_argument('-p', '--parfile', default='checkmate_parameters.ini',
@@ -170,10 +177,10 @@ if __name__ == "__main__":
     t0 = time.time()
 
     args = ap.parse_args()
-    
+
     t0 = time.time()
 
     args = ap.parse_args()
     output = main(args.parfile,args.verbose)
-            
+
     print("\n\nDone in %3.2f min" %((time.time()-t0)/60.))
