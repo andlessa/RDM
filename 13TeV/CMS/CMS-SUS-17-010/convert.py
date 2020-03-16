@@ -43,7 +43,10 @@ info.sqrts = 13
 info.lumi = 35.9 
 info.prettyName = '2L stop'
 info.private = False
-info.comment = ''
+info.arxiv       = '1807.07799'
+info.contact     = 'cms-phys-conveners-sus@cern.ch'
+info.publication = 'JHEP 1811 (2018) 079'
+info.comment     = ''
 
 
 #+++++++ dataset block ++++++++++++++
