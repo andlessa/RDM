@@ -1,0 +1,31 @@
+# ATLAS
+# ATLAS-SUSY-2018-04
+# 2 hadronic taus, etmiss, no b-jets
+# sqrt(s) = 13 TeV
+# int(L) = 139 fb^-1
+
+Inputfile:
+XSect:           7.4283 fb
+ Error:          1.48566 fb
+MCEvents:        100000
+ SumOfWeights:   100000
+ SumOfWeights2:  100000
+ NormEvents:     1032.53
+
+Cut                           Sum_W   Sum_W2  Acc      N_Norm   
+0) Total                      100000  100000  1        1032.53  
+1-3) GF+BC+ 2 medium OS taus  5067    5067    0.05067  52.3185  
+4) b-jet veto                 4919    4919    0.04919  50.7903  
+5) light lepton veto          4910    4910    0.0491   50.6974  
+6) Z/H veto                   4197    4197    0.04197  43.3354  
+HighMass: 1) Trigger          1123    1123    0.01123  11.5954  
+HighMass: 2) 1 tight tau      1070    1070    0.0107   11.0481  
+HighMass: 3) Deltaphi         1058    1058    0.01058  10.9242  
+HighMass: 4) DeltaR           974     974     0.00974  10.0569  
+HighMass: 5) mT2              611     611     0.00611  6.30878  
+LowMass: 1) Trigger           2933    2933    0.02933  30.2842  
+LowMass: 2) MET               1185    1185    0.01185  12.2355  
+LowMass: 3) 2 tight taus      734     734     0.00734  7.5788   
+LowMass: 4) Deltaphi          728     728     0.00728  7.51685  
+LowMass: 5) DeltaR            662     662     0.00662  6.83537  
+LowMass: 6) mT2               310     310     0.0031   3.20085  

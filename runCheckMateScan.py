@@ -96,7 +96,7 @@ def RunCheckMate(parserDict):
 
 def main(parfile,verbose):
     """
-    Main function for submitting parallel jobs using the parameter file.
+    Submit parallel jobs using the parameter file.
 
     :param parfile: name of the parameter file.
     :param verbose: level of debugging messages.
@@ -140,7 +140,7 @@ def main(parfile,verbose):
         newParser.set("CheckMateProcess","MGparam",f)
         parserList.append(newParser)
 
-    ncpus = parser.getint("options","ncpu")
+    ncpus = int(parser.get("options","ncpu"))
     if ncpus  < 0:
         ncpus =  multiprocessing.cpu_count()
 

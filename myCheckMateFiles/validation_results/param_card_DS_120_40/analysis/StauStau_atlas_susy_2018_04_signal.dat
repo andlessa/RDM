@@ -1,0 +1,17 @@
+# ATLAS
+# ATLAS-SUSY-2018-04
+# 2 hadronic taus, etmiss, no b-jets
+# sqrt(s) = 13 TeV
+# int(L) = 139 fb^-1
+
+Inputfile:
+XSect:           99.911 fb
+ Error:          19.9822 fb
+MCEvents:        100000
+ SumOfWeights:   100000
+ SumOfWeights2:  100000
+ NormEvents:     13887.6
+
+SR           Sum_W  Sum_W2  Acc      N_Norm   
+SR-highMass  13     13      0.00013  1.80539  
+SR-lowMass   14     14      0.00014  1.94427  
