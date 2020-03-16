@@ -46,7 +46,7 @@ info.prettyName = 'multijets + Etmiss, top tagging'
 info.private = False
 info.arxiv = ''
 info.contact = ''
-info.publication = ''
+info.publication = 'Phys. Rev. D 96 (2017), 012004'
 info.comment = ''
 
 
