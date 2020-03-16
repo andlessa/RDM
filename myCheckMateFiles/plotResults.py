@@ -31,6 +31,7 @@ effs = pd.concat([effOfficialLow,effOfficialHigh],
 effs['effATLAS'] = effs['effATLAS']/100.
 effs['effATLAS'] = effs['effATLAS'].replace({0.0 : np.nan})
 effs["effRecast"] = np.nan
+effs["r-value"] = np.nan
 
 # %% Get data from CheckMate results
 resultFolder = './validation_results'
@@ -50,6 +51,12 @@ for slhaFile in glob.glob(slhaFolder+'/*.slha'):
         effs.loc[(effs.index.isin([sr],level=0)) &
                  (effs['mstau'] == mstau) &
                 (effs['mlsp'] == mlsp),'effRecast'] = eff
+    resFile = os.path.join(resultFolder,resDir,
+                'result.txt')
+    with open(resFile,'r') as f:
+        r = eval(f.read().split('Result for r:')[1].split('\n')[0])
+        effs.loc[(effs['mstau'] == mstau) &
+                (effs['mlsp'] == mlsp),'r-value'] = r
 
 # %% Compute relative difference
 effs['relDiff'] = (effs.effRecast - effs.effATLAS)/effs.effATLAS
@@ -71,7 +78,7 @@ plt.show()
 
 # %% plot result Low mass
 fig = plt.figure(figsize=(12,8))
-plt.scatter(effs.loc['SR-lowMass']['mstau'],effs.loc['SR-lowMass']['mlsp'],
+ax = plt.scatter(effs.loc['SR-lowMass']['mstau'],effs.loc['SR-lowMass']['mlsp'],
     c=effs.loc['SR-lowMass']['relDiff'],cmap=cm,vmin=-1.0,vmax=1.0,s=70)
 plt.xlabel(r'$m_{\tilde{\tau}}$ (GeV)')
 plt.ylabel(r'$m_{\tilde{\chi}_1^0}$ (GeV)')
@@ -82,4 +89,14 @@ for index,row in effs.loc['SR-lowMass'].iterrows():
     if abs(row['relDiff']) > 0.15 and not np.isnan([row['relDiff']]):
         plt.annotate('%1.1f'%row['relDiff'],(row['mstau'],row['mlsp']),
                     fontsize=10)
+plt.show()
+
+# %% Plot exclusion curve
+fig = plt.figure(figsize=(12,8))
+ax = plt.scatter(effs.loc['SR-lowMass']['mstau'],effs.loc['SR-lowMass']['mlsp'],
+    c=effs.loc['SR-lowMass']['r-value'],cmap=cm,vmin=1.0,vmax=2.0,s=70)
+plt.xlabel(r'$m_{\tilde{\tau}}$ (GeV)')
+plt.ylabel(r'$m_{\tilde{\chi}_1^0}$ (GeV)')
+cb = plt.colorbar(ax)
+cb.set_label(r'$r$')
 plt.show()
