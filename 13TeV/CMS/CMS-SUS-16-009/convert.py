@@ -45,7 +45,7 @@ info.lumi = 2.3
 info.prettyName = 'multijets + Etmiss, top tagging'
 info.private = False
 info.arxiv = ''
-info.contact = ''
+info.contact = 'cms-phys-conveners-sus@cern.ch'
 info.publication = 'Phys. Rev. D 96 (2017), 012004'
 info.comment = ''
 
