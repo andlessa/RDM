@@ -85,7 +85,8 @@ if echo "$answer" | grep -iq "^y" ;then
   make -j4
        cd $homeDIR
   echo "[installer] Adding new analyses to CheckMATE";
-  cp -r myCheckMateFiles/* CheckMATE2/;
+  cp -r myCheckMateFiles/tools/* CheckMATE2/tools/;
+  cp -r myCheckMateFiles/data/* CheckMATE2/data/;
   cd CheckMATE2;
   echo "[installer] recompiling CheckMATE";
   make;

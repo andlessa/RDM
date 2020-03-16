@@ -6,11 +6,11 @@
 
 class Atlas_susy_2018_04 : public AnalysisBase {
   public:
-    Atlas_susy_2018_04() : AnalysisBase()  {}               
+    Atlas_susy_2018_04() : AnalysisBase()  {}
     ~Atlas_susy_2018_04() {}
-  
+
     void initialize();
-    void analyze();        
+    void analyze();
     void finalize();
 
   private:
