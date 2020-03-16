@@ -44,11 +44,12 @@ info.sqrts = 13
 info.lumi = 35.9
 info.prettyName = 'leptons + Etmiss'
 info.private = False
-info.arxiv = ''
+info.arxiv = '1806.05264'
 info.contact ='cms-phys-conveners-sus@cern.ch'
-info.publication = ''
+info.publication = 'Phys. Lett.B 790 (2019) 140'
 info.comment = ''
 
+  
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput('data')
@@ -74,13 +75,10 @@ TSlepSlep_1.setSources(dataLabels= ['obsExclusion', 'expExclusion','expExclusion
                     indices= [1,2,3,4,7,8,10,16])
 
 
-
  
  
  
- 
- 
-#+++++++ next txName block ++++++++++++++
+ #+++++++ next txName block ++++++++++++++
 TSelSel = dataset.addTxName('TSelSel')
 TSelSel.checked =""
 TSelSel.constraint ="[[['e+']],[['e-']]]"
@@ -96,7 +94,7 @@ TSelSel_1.figure = "Fig. 6a"
 TSelSel_1.figureUrl = "https://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-17-009/CMS-SUS-17-009_Figure_006-a.png"
 TSelSel_1.dataUrl = 'https://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-17-009/CMS-SUS-17-009_Figure_006-a.root'
 TSelSel_1.setSources(dataLabels= ['obsExclusion', 'expExclusion','expExclusionP1','expExclusionM1','obsExclusionP1','obsExclusionM1','upperLimits','expectedUpperLimits'],
-                 dataFiles= ['orig/CMS-SUS-17-009_Figure_006-a.root', 'orig/CMS-SUS-17-009_Figure_006-a.root','orig/CMS-SUS-17-009_Figure_006-a.root', 'orig/CMS-SUS-17-009_Figure_006-a.root','orig/CMS-SUS-17-009_Figure_005-b.root', 'orig/CMS-SUS-17-009_Figure_005-b.root','orig/CMS-SUS-17-009_Figure_005-b.root', 'orig/CMS-SUS-17-009_Figure_005-b.root'],
+                 dataFiles= ['orig/CMS-SUS-17-009_Figure_006-a.root', 'orig/CMS-SUS-17-009_Figure_006-a.root','orig/CMS-SUS-17-009_Figure_006-a.root', 'orig/CMS-SUS-17-009_Figure_006-a.root','orig/CMS-SUS-17-009_Figure_006-a.root', 'orig/CMS-SUS-17-009_Figure_006-a.root','orig/CMS-SUS-17-009_Figure_006-a.root', 'orig/CMS-SUS-17-009_Figure_006-a.root'],
                  dataFormats= ['root', 'root','root', 'root','root', 'root','root', 'root'],objectNames= ['gr_obs_smoothed;1','gr_exp_smoothed;1','gr_ep1s_smoothed;1','gr_em1s_smoothed;1','gr_op1s_smoothed;1','gr_om1s_smoothed;1','obs_xs0;1','exp_xs0;1'],units= [None,None,None,None,None,None,'fb','fb'],
                     indices= [1,2,3,4,7,8,10,16])
 
@@ -119,7 +117,7 @@ TSmuSmu_1.figure = "Fig. 7a"
 TSmuSmu_1.figureUrl = "https://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-17-009/CMS-SUS-17-009_Figure_007-a.png"
 TSmuSmu_1.dataUrl = 'https://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-17-009/CMS-SUS-17-009_Figure_007-a.root'
 TSmuSmu_1.setSources(dataLabels= ['obsExclusion', 'expExclusion','expExclusionP1','expExclusionM1','obsExclusionP1','obsExclusionM1','upperLimits','expectedUpperLimits'],
-                 dataFiles= ['orig/CMS-SUS-17-009_Figure_007-a.root', 'orig/CMS-SUS-17-009_Figure_007-a.root','orig/CMS-SUS-17-009_Figure_007-a.root', 'orig/CMS-SUS-17-009_Figure_007-a.root','orig/CMS-SUS-17-009_Figure_005-b.root', 'orig/CMS-SUS-17-009_Figure_005-b.root','orig/CMS-SUS-17-009_Figure_005-b.root', 'orig/CMS-SUS-17-009_Figure_005-b.root'],
+                 dataFiles= ['orig/CMS-SUS-17-009_Figure_007-a.root', 'orig/CMS-SUS-17-009_Figure_007-a.root','orig/CMS-SUS-17-009_Figure_007-a.root', 'orig/CMS-SUS-17-009_Figure_007-a.root','orig/CMS-SUS-17-009_Figure_007-a.root', 'orig/CMS-SUS-17-009_Figure_007-a.root','orig/CMS-SUS-17-009_Figure_007-a.root', 'orig/CMS-SUS-17-009_Figure_007-a.root'],
                  dataFormats= ['root', 'root','root', 'root','root', 'root','root', 'root'],objectNames= ['gr_obs_smoothed;1','gr_exp_smoothed;1','gr_ep1s_smoothed;1','gr_em1s_smoothed;1','gr_op1s_smoothed;1','gr_om1s_smoothed;1','obs_xs0;1','exp_xs0;1'],units= [None,None,None,None,None,None,'fb','fb'],
                     indices= [1,2,3,4,7,8,10,16]) 
  
