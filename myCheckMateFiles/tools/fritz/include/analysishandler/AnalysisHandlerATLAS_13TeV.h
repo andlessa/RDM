@@ -95,7 +95,7 @@ private:
 
     //! ATLAS electron identification efficiency, loose
     static double electronIDEffLoose(double pt,
-                                    double eta);    
+                                    double eta);
     //! ATLAS electron identification efficiency, medium
     static double electronIDEffMedium(double pt,
                                     double eta);
@@ -128,6 +128,21 @@ private:
     //! ATLAS tautagging signal efficiency, tight, >1 prong
     static double tauSigEffMultiTight(double pt,
                                       double eta);
+    //! ATLAS flat tau efficiencies
+    static double tauSigEffSingleLooseFlat(double pt,
+                                      double eta);
+    static double tauSigEffSingleMediumFlat(double pt,
+                                      double eta);
+    static double tauSigEffSingleTightFlat(double pt,
+                                      double eta);
+    static double tauSigEffMultiLooseFlat(double pt,
+                                      double eta);
+    static double tauSigEffMultiMediumFlat(double pt,
+                                      double eta);
+    static double tauSigEffMultiTightFlat(double pt,
+                                      double etas);
+
+
     //! ATLAS tautagging background efficiency, loose, 1 prong
     static double tauBkgEffSingleLoose(double pt,
                                        double eta);

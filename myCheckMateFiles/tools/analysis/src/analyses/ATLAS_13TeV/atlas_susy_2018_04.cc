@@ -1,8 +1,6 @@
 #include "atlas_susy_2018_04.h"
 // AUTHOR: Andre Lessa
 //  EMAIL: andre.lessa@ufabc.edu.br
-
-
 void Atlas_susy_2018_04::initialize() {
   setAnalysisName("atlas_susy_2018_04");
   setInformation(""
@@ -14,6 +12,7 @@ void Atlas_susy_2018_04::initialize() {
   "");
   setLuminosity(139.0*units::INVFB);
   ignore("towers");
+  ignore("tracks");
   bookSignalRegions("SR-lowMass;SR-highMass");
   // You can also book cutflow regions with bookCutflowRegions("CR1;CR2;..."). Note that the regions are
   //  always ordered alphabetically in the cutflow output files.
@@ -34,6 +33,7 @@ void Atlas_susy_2018_04::analyze() {
   // tracks, towers                                    calorimeter and tracker information. Usually not needed.
   // missingET                                         rec missing ET EXCLUDING muons.
 
+
 	  jets = filterPhaseSpace(jets, 20., -2.8, 2.8);
 	  electronsLoose = filterPhaseSpace(electronsLoose, 17., -2.47, 2.47);
 	  electronsLoose = filterIsolation(electronsLoose);
@@ -45,21 +45,15 @@ void Atlas_susy_2018_04::analyze() {
 	  std::vector<Jet*> taujets;
 	  std::vector<Jet*> bjets;
 	  std::vector<Jet*> lightjets;
-	  std::vector<bool> tauTags;
-
-
 	  for (int i = 0; i < jets.size(); i++){
-        //Replace tau tagging by flat efficiencies:
-        tauTags = getFlatTauTags(jets[i],tracks,true_tau);
-
-		if (!tauTags[1] || !tauTags[2] || checkBTag(jets[i], 0)){
+		if (!(checkTauTag(jets[i], "mediumFlat") || checkTauTag(jets[i], "tightFlat") || checkBTag(jets[i], 0))){
 			lightjets.push_back(jets[i]);
 		}
 		else if (fabs(jets[i]->Eta) < 2.5 && jets[i]->PT > 20.){
-			if (tauTags[1] || tauTags[2]){
+			if(checkTauTag(jets[i], "tightFlat") || checkTauTag(jets[i], "mediumFlat")){
 				taujets.push_back(jets[i]);
-				if (tauTags[2]) ++nTightTaus;
-				if (tauTags[1]) ++nMediumTaus;
+				if (checkTauTag(jets[i], "tightFlat")) ++nTightTaus;
+				if (checkTauTag(jets[i], "mediumFlat")) ++nMediumTaus;
 			}
 			else if(checkBTag(jets[i], 0) ) bjets.push_back(jets[i]);
 	    }
@@ -148,72 +142,4 @@ void Atlas_susy_2018_04::analyze() {
 
 void Atlas_susy_2018_04::finalize() {
   // Whatever should be done after the run goes here
-}
-
-
-
-// ! Tag jets using flat efficiencies. Return a list of zeros/ones for each
-// tau jet category. The flat efficiencies for 1-prong (single) and 3-prong (multi)
-// tau jets can be passed as arguments.
-std::vector<bool> Atlas_susy_2018_04::getFlatTauTags(Jet* cand,
-								std::vector<Track*> tracks,
-	   							std::vector<GenParticle*> true_tau){
-
-    const double DR_TAU_TRACK = 0.2;
-    const double PTMIN_TAU_TRACK = 1.0;
-
-    const double DR_TAU_TRUTH = 0.2;
-    const double ETAMAX_TAU_TRUTH = 2.5;
-    const double PTMIN_TAU_TRUTH = 10.0;
-
-	double looseEffSingle = 0.6;
-	double mediumEffSingle = 0.55;
-	double tightEffSingle = 0.45;
-	double looseEffMulti = 0.5;
-	double mediumEffMulti = 0.4;
-	double tightEffMulti = 0.3;
-
-    double prob = rand()/(RAND_MAX+1.);
-    int prongs = 0;
-
-    std::vector<bool> tauTags;
-    // These are the standard values for all candidates
-    tauTags.push_back(false); //loose
-    tauTags.push_back(false); // medium
-    tauTags.push_back(false); //tight
-
-    /* First, find the prong and the charge of the potential tau by
-    * looping over all tracks*/
-   cand->Charge = 0;
-   for(int t = 0; t < tracks.size(); t++) {
-       if(tracks[t]->PT < PTMIN_TAU_TRACK)
-           continue;
-       if(cand->P4().DeltaR(tracks[t]->P4()) < DR_TAU_TRACK) {
-           prongs += 1;
-           cand->Charge  += tracks[t]->Charge;
-       }
-   }
-   // If there are 0 or more than 3 prongs, all tags are 'false'
-   if(prongs == 0 || prongs > 3) {
-       return tauTags;
-   }
-   // If it's not, let's try to find an overlapping tau
-   for(int t = 0; t < true_tau.size(); t++) {
-       if(true_tau[t]->PT > PTMIN_TAU_TRUTH &&
-          fabs(true_tau[t]->Eta) < ETAMAX_TAU_TRUTH  &&
-          cand->P4().DeltaR(true_tau[t]->P4()) < DR_TAU_TRUTH) {
-           if(prongs > 1) {
-               if(prob < looseEffMulti) tauTags[0] = true;
-               if(prob < mediumEffMulti) tauTags[1] = true;
-               if(prob < tightEffMulti) tauTags[2] = true;
-           }
-           else {
-               if(prob < looseEffSingle) tauTags[0] = true;
-               if(prob < mediumEffSingle) tauTags[1] = true;
-               if(prob < tightEffSingle) tauTags[2] = true;
-           }
-           break;
-       }
-   }
-   return tauTags;
 }
