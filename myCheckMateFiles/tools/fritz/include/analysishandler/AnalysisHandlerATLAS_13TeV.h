@@ -128,19 +128,21 @@ private:
     //! ATLAS tautagging signal efficiency, tight, >1 prong
     static double tauSigEffMultiTight(double pt,
                                       double eta);
-    //! ATLAS flat tau efficiencies
-    static double tauSigEffSingleLooseFlat(double pt,
+    //! ATLAS new tau efficiencies
+    static double tauSigEffSingleLooseNew(double pt,
                                       double eta);
-    static double tauSigEffSingleMediumFlat(double pt,
+    static double tauSigEffSingleMediumNew(double pt,
                                       double eta);
-    static double tauSigEffSingleTightFlat(double pt,
+    static double tauSigEffSingleTightNew(double pt,
                                       double eta);
-    static double tauSigEffMultiLooseFlat(double pt,
+    static double tauSigEffMultiLooseNew(double pt,
                                       double eta);
-    static double tauSigEffMultiMediumFlat(double pt,
+    static double tauSigEffMultiMediumNew(double pt,
                                       double eta);
-    static double tauSigEffMultiTightFlat(double pt,
-                                      double etas);
+    static double tauSigEffMultiTightNew(double pt,
+                                      double eta);
+    static double getEffFromData(double effData,
+                                     double pt);
 
 
     //! ATLAS tautagging background efficiency, loose, 1 prong
