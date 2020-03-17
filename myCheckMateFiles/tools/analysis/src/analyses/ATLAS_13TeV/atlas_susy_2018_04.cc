@@ -46,14 +46,14 @@ void Atlas_susy_2018_04::analyze() {
 	  std::vector<Jet*> bjets;
 	  std::vector<Jet*> lightjets;
 	  for (int i = 0; i < jets.size(); i++){
-		if (!(checkTauTag(jets[i], "mediumFlat") || checkTauTag(jets[i], "tightFlat") || checkBTag(jets[i], 0))){
+		if (!(checkTauTag(jets[i], "mediumNew") || checkTauTag(jets[i], "tightNew") || checkBTag(jets[i], 0))){
 			lightjets.push_back(jets[i]);
 		}
 		else if (fabs(jets[i]->Eta) < 2.5 && jets[i]->PT > 20.){
-			if(checkTauTag(jets[i], "tightFlat") || checkTauTag(jets[i], "mediumFlat")){
+			if(checkTauTag(jets[i], "tightNew") || checkTauTag(jets[i], "mediumNew")){
 				taujets.push_back(jets[i]);
-				if (checkTauTag(jets[i], "tightFlat")) ++nTightTaus;
-				if (checkTauTag(jets[i], "mediumFlat")) ++nMediumTaus;
+				if (checkTauTag(jets[i], "tightNew")) ++nTightTaus;
+				if (checkTauTag(jets[i], "mediumNew")) ++nMediumTaus;
 			}
 			else if(checkBTag(jets[i], 0) ) bjets.push_back(jets[i]);
 	    }

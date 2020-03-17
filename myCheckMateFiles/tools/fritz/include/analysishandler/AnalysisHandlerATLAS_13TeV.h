@@ -141,7 +141,7 @@ private:
                                       double eta);
     static double tauSigEffMultiTightNew(double pt,
                                       double eta);
-    static double getEffFromData(double effData,
+    static double getEffFromData(vector<vector<double>> effData,
                                      double pt);
 
 
