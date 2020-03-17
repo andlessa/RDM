@@ -1,5 +1,0 @@
-Test: Calculation of r = signal/(95%CL limit on signal)
-Result: Allowed
-Result for r: 0.253274878693
-Analysis: atlas_susy_2018_04
-SR: SR-highMass

@@ -1,3 +1,0 @@
-analysis            sr           signal_normevents  signal_err_tot  
-atlas_susy_2018_04  SR-highMass  3.73511            0.924593234667  
-atlas_susy_2018_04  SR-lowMass   7.15234            1.61698433438   
