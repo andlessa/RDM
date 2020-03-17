@@ -14,6 +14,10 @@ class Atlas_susy_2018_04 : public AnalysisBase {
     void finalize();
 
   private:
+
+    std::vector<bool> getFlatTauTags(Jet* cand,
+                                    std::vector<Track*> tracks,
+		                            std::vector<GenParticle*> true_tau);
 };
 
 #endif
