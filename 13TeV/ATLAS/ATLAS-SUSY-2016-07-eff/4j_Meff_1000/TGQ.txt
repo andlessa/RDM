@@ -4,10 +4,10 @@ condition: None
 conditionDescription: None
 susyProcess: pp --> gluino squark, gluino squark --> quark quark antiquark lsp lsp
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-07/figaux_080a.png
-dataUrl: 'https://www.hepdata.net/record/ins1641270?version=5&table=X-section U.L. & best SR 12  : Meff';'https://www.hepdata.net/record/ins1641270?version=5&table=X-section U.L. & best SR 10  : Meff';'https://www.hepdata.net/record/ins1641270?version=5&table=X-section U.L. & best SR 11  : Meff'
+dataUrl: None
 source: SModelS
 validated: TBD
-axes: [[x, 695.0], [y, 695.0]]; [[x, 995.0], [y, 995.0]]; [[x, 0.0], [y, 0.0]]
+axes: [[x, 0.0], [y, 0.0]]; [[x, 695.0], [y, 695.0]]; [[x, 995.0], [y, 995.0]]
 finalState: ['MET', 'MET']
 efficiencyMap: [[[[9.0000E+02*GeV,2.5000E+02*GeV],[9.0000E+02*GeV,2.5000E+02*GeV]],0.018189],
 [[[4.0500E+03*GeV,2.0500E+03*GeV],[3.6500E+03*GeV,2.0500E+03*GeV]],0.060911],

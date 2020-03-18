@@ -4,7 +4,7 @@ condition: None
 conditionDescription: None
 susyProcess: pp --> gluino gluino, gluino  --> quark antiquark chargino^pm_1, chargino^pm_1 --> W lsp
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-07/figaux_077c.png
-dataUrl: 'https://www.hepdata.net/record/ins1641270?version=5&table=X-section U.L. & best SR 6  : Meff';'https://www.hepdata.net/record/ins1641270?version=5&table=X-section U.L. & best SR 5  : Meff%2BRJR'
+dataUrl: None
 source: SModelS
 validated: TBD
 axes: [[x, 0.5*x + 0.5*y, y], [x, 0.5*x + 0.5*y, y]]; [[x, y, 60.0], [x, y, 60.0]]

@@ -39,7 +39,7 @@ info = MetaInfoInput('ATLAS-SUSY-2016-24')
 info.url = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-24/'
 info.sqrts = 13
 info.lumi = 36.1
-info.prettyName = '2+ leptons (e,mu) + jets + Etmiss'
+info.prettyName = '2-3 leptons + Etmiss, EWino'
 info.private = False
 info.arxiv =  'https://arxiv.org/abs/1803.02762'
 info.contact = 'atlas-phys-susy-conveners@cern.ch'
@@ -65,8 +65,7 @@ TSlepSlepAll = {
 'sources'	 :{'expExcl'		: 'orig/HEPData-ins1658902-v1-Table_15.csv',
 			   'obsExcl'		: 'orig/HEPData-ins1658902-v1-Table_16.csv',
 			   'upLimit'		: 'orig/HEPData-ins1658902-v1-Table_79.csv'},
-#'constraint' : "[[['e+']],[['e-']]]+[[['mu+']],[['mu-']]]",
-'constraint' : "[[['l']],[['l']]]", #"[[['l+']],[['l-']]]"
+'constraint' : "[[['l']],[['l']]]",
 'massPlane'  : 2*[[x, y]]}
 
 TChiChipmSlepL = {

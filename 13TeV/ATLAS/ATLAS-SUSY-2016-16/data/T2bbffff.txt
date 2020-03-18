@@ -7,7 +7,7 @@ checked: False
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-16/fig_20.png
 dataUrl: https://www.hepdata.net/record/ins1639856?version=4&table=Table60
 source: ATLAS
-validated: TBD
+validated: True
 axes: [[x, y], [x, y]]
 finalState: ['MET', 'MET']
 upperLimits: [[[[2.5000E+02*GeV,2.0000E+02*GeV],[2.5000E+02*GeV,2.0000E+02*GeV]],1.4152E+01*pb],

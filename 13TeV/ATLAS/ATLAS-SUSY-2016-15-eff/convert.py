@@ -39,17 +39,43 @@ info = MetaInfoInput('ATLAS-SUSY-2016-15')
 info.url 		 = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-15/'
 info.sqrts 		 = 13
 info.lumi 		 = 36.1
-info.prettyName  = '0L stop'
+info.prettyName  = '0L stop + MET'
 info.private 	 = False
 info.arxiv 		 = 'https://arxiv.org/abs/1709.04183'
 info.contact 	 = 'atlas-phys-susy-conveners@cern.ch'
-info.publication = 'JHEP 12 (2017) 085'
+info.publication = 'https://link.springer.com/article/10.1007/JHEP12(2017)085'
 info.comment	 = 'Calculated obs and exp ULs replaced with official ATLAS data from https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-15/tab_14.png'
-'''
-obsN 	= [11.2, 	 9.6,	  11.,	   80.,		21.7,	 19.6,	  15.1,	  11.2,	  15.3,	  3.5,	  3.2,	  6.1]
-expN 	= [11.5, 	 9.6,	  8.7, 	   58.,		21.0,	 20.,	  15.8,	  13.9,	  12.3,	  6.7,	  3.0,	  6.4]
-bgErr 	= [2.9, 	 2.45,	  2.0, 	   20.,		5.8,	 5.7,	  4.15,	  4.25,	  4.05,	  2.3,	  0.6,	  1.9]
-'''
+
+
+obsN 	= [27, 11]
+expN 	= [25.1, 8.5]
+bgErr 	= [6.2, 1.5]
+SR	 	= ['SRDlow', 'SRDhigh']
+fig		= ['11a',	'11a']
+
+for i in range(len(obsN)):
+	#+++++++ dataset block ++++++++++++++
+	dataset = DataSetInput(SR[i])
+	dataset.setInfo(dataType = 'efficiencyMap', dataId = SR[i], observedN = obsN[i], expectedBG = expN[i], bgError = bgErr[i])
+	#+++++++ next txName block ++++++++++++++
+	T2bb 									= dataset.addTxName('T2bb')
+	T2bb.checked 							= 'False'
+	T2bb.constraint 						= '[[[b]],[[b]]]'
+	T2bb.conditionDescription 				= None
+	T2bb.condition 							= None
+	T2bb.source 							= 'ATLAS'
+	#+++++++ next mass plane block ++++++++++++++
+	T2bb_1 									= T2bb.addMassPlane(2*[[x, y]])
+	T2bb_1.figure 							= 'Fig.' + fig[i]
+	T2bb_1.figureUrl 						= 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-15/figaux_' + fig[i] + '.png'
+	T2bb_1.dataUrl 							= 'https://www.hepdata.net/record/ins1623207?version=7&table=Eff' + SR[i]
+	T2bb_1.setSources(dataLabels 			= ['expExclusion', 'obsExclusion', 'efficiencyMap'],
+								dataFiles 	= ['orig/ExpectedexclusioncontourdirectTT.csv', 'orig/ObservedexclusioncontourdirectTT.csv', 'orig/EffMap_T2bb_' + SR[i] + '.txt'],
+								coordinates = [ {x: 0, y: 1, 'value': None}, {x: 0, y: 1, 'value': None},  {x : 1, y: 0, 'value' :2} ],																	 
+								dataFormats	= ['csv', 'csv', 'txt'])
+
+
+
 obsN 	= [18, 	 	   9,	   11,	   206,		53,	 	 38,	  20,	  22,	  22,	  1,	  0,	  3]
 expN 	= [18.7, 	 9.3,	  8.6, 	   179.,	52.4,	 39.3,	  20.6,	  27.6,	  18.9,	  7.7,	  0.91,	  3.64]
 bgErr 	= [2.7, 	 2.2,	  2.1, 	   26.,		7.4,	 7.6,	  6.5,	  4.9,	  3.4,	  1.2,	  0.73,	  0.79]
@@ -111,14 +137,47 @@ for i in range(len(obsN)):
 
 
 
+
+
 databaseCreator.create()
 
 
+from shutil import move
+from os import remove
 ### manually replace ULs in dataInfo.txt
 ### taken from https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-15/tab_14.png
 
-from shutil import move
-from os import remove
+def replaceULs(UL_obs, UL_exp):
+
+	for sr, ul in UL_exp.items(): UL_exp[sr] = round(ul / 36.1, 3)
+
+	name = 'dataInfo.txt'
+	phrase_obs = 'upperLimit: '
+	phrase_exp = 'expectedUpperLimit: '
+	pos_obs = 5
+	pos_exp	= 6
+
+	for sr in SR:
+
+		path = sr + '/' + name
+		
+		with open(path) as file:
+			out = file.read()
+			lines = out.split('\n')
+			old_obs = lines[pos_obs].split(phrase_obs)[1]
+			old_exp = lines[pos_exp].split(phrase_exp)[1]
+			lines[pos_obs] = '{}{}*fb\t# official number taken from ATLAS (table 14) (calculated value: {})'.format(phrase_obs, UL_obs[sr], old_obs)
+			lines[pos_exp] = '{}{}*fb\t# official number taken from ATLAS (table 14) (calculated value: {})'.format(phrase_exp, UL_exp[sr], old_exp)
+			
+			with open(name, 'w') as temp:
+				for line in lines:
+					temp.write(line + '\n')
+
+		remove(path)
+		move(name, path)
+
+
+
 
 UL_obs = {'SRAT0' : 0.31, 
 		  'SRATW' : 0.27, 
@@ -131,7 +190,7 @@ UL_obs = {'SRAT0' : 0.31,
 		  'SRC3'  : 0.42,
 		  'SRC4'  : 0.10,
 		  'SRC5'  : 0.09,
-		  'SRE'   : 0.17,}
+		  'SRE'   : 0.17}
 
 UL_exp = {'SRAT0' : 11.5, 
 		  'SRATW' : 9.6, 
@@ -144,32 +203,16 @@ UL_exp = {'SRAT0' : 11.5,
 		  'SRC3'  : 12.3,
 		  'SRC4'  : 6.7,
 		  'SRC5'  : 3.0,
-		  'SRE'   : 6.4,}
+		  'SRE'   : 6.4}
 
-for sr, ul in UL_exp.items(): UL_exp[sr] = round(ul / 36.1, 3)
+replaceULs(UL_obs, UL_exp)
 
-name = 'dataInfo.txt'
-phrase_obs = 'upperLimit: '
-phrase_exp = 'expectedUpperLimit: '
-pos_obs = 5
-pos_exp	= 6
+SR = ['SRDlow', 'SRDhigh']
+UL_obs = {'SRDlow' : 0.5, 
+		  'SRDhigh' : 0.3}
 
-for sr in SR:
+UL_exp = {'SRDlow' : 16.4, 
+		  'SRDhigh' : 8.0}
 
-	path = sr + '/' + name
-	
-	with open(path) as file:
-		out = file.read()
-		lines = out.split('\n')
-		old_obs = lines[pos_obs].split(phrase_obs)[1]
-		old_exp = lines[pos_exp].split(phrase_exp)[1]
-		lines[pos_obs] = '{}{}*fb\t# official number taken from ATLAS (table 14) (calculated value: {})'.format(phrase_obs, UL_obs[sr], old_obs)
-		lines[pos_exp] = '{}{}*fb\t# official number taken from ATLAS (table 14) (calculated value: {})'.format(phrase_exp, UL_exp[sr], old_exp)
-		
-		with open(name, 'w') as temp:
-			for line in lines:
-				temp.write(line + '\n')
-
-	remove(path)
-	move(name, path)
+replaceULs(UL_obs, UL_exp)
 

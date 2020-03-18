@@ -45,7 +45,7 @@ info.prettyName 	= '2 leptons + Etmiss'
 info.private 		= False
 info.arxiv 			= 'arXiv:1908.08215'
 info.contact 		= 'atlas-phys-susy-conveners@cern.ch'
-info.publication 	= 'pending'
+info.publication 	= 'https://epjc.epj.org/articles/epjc/abs/2020/02/10052_2019_Article_7594/10052_2019_Article_7594.html'
 
 
 TChiWW = {

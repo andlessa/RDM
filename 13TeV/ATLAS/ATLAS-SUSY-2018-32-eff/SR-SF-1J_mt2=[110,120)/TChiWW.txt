@@ -2,10 +2,10 @@ txName: TChiWW
 constraint: [[['W']],[['W']]]
 condition: None
 conditionDescription: None
-susyProcess: pp --> chargino^+_1 chargino^-_1, chargino^pm_1 --> W lsp lsp
+susyProcess: pp --> chargino^pm_1 chargino^mp_1, chargino^pm_1 --> W lsp lsp
 checked: False
-figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2018-32/figaux_04a.png
-dataUrl: https://www.hepdata.net/record/ins1750597?version=1&table=Acceptance SR-SF-0J-[100,inf) for C1C1WW grid
+figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2018-32/figaux_10c.png;https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2018-32/figaux_10d.png
+dataUrl: https://www.hepdata.net/record/ins1750597?version=1&table=Acceptance SR-SF-1J-[110,120) for C1C1WW grid
 source: ATLAS
 validated: TBD
 axes: [[x, y], [x, y]]

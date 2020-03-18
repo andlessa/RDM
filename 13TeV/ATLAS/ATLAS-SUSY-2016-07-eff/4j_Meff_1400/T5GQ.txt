@@ -4,7 +4,7 @@ condition: None
 conditionDescription: None
 susyProcess: pp --> gluino squark, gluino --> quark quark, squark --> quark gluino
 figureUrl: None
-dataUrl: 'https://www.hepdata.net/record/ins1641270?version=5&table=X-section U.L. & best SR None  : Meff'
+dataUrl: None
 source: SModelS
 validated: TBD
 axes: [[x, y, 0.0], [y, 0.0]]; [[x, y, 695.0], [y, 695.0]]; [[x, y, 995.0], [y, 995.0]]

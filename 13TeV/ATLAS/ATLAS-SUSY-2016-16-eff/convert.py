@@ -66,9 +66,6 @@ SR3  = {'obsN'  :   [83,52,69,33],
 
 T2tt = {
 'name' 		 : 'T2tt',
-'info' 		 :{'figure' 		: 'Fig.20', 
-			   'figureUrl' 		: 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-16/fig_20.png', 
-			   'dataUrl' 		: 'https://www.hepdata.net/record/ins1639856?version=4&table=Table60'},
 'sources'	 :{'expExcl'		: 'orig/HEPData-ins1639856-v4-Table_16.csv',
 			   'obsExcl'		: 'orig/HEPData-ins1639856-v4-Table_17.csv',
 			   'effMap'			: 'orig/EffMap_T2tt_'},
@@ -78,9 +75,6 @@ T2tt = {
 
 T2ttoff = {
 'name' 		 : 'T2ttoff',
-'info' 		 :{'figure' 		: 'Fig.20', 
-			   'figureUrl' 		: 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-16/fig_20.png', 
-			   'dataUrl' 		: 'https://www.hepdata.net/record/ins1639856?version=4&table=Table60'},
 'sources'	 :{'expExcl'		: 'orig/HEPData-ins1639856-v4-Table_16.csv',
 			   'obsExcl'		: 'orig/HEPData-ins1639856-v4-Table_17.csv',
 			   'effMap'			: 'orig/EffMap_T2tt_'},
@@ -90,9 +84,6 @@ T2ttoff = {
 
 T2bbffff = {
 'name' 		 : 'T2bbffff',
-'info' 		 :{'figure' 		: 'Fig.20', 
-			   'figureUrl' 		: 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-16/fig_20.png', 
-			   'dataUrl' 		: 'https://www.hepdata.net/record/ins1639856?version=4&table=Table60'},
 'sources'	 :{'expExcl'		: 'orig/HEPData-ins1639856-v4-Table_16.csv',
 			   'obsExcl'		: 'orig/HEPData-ins1639856-v4-Table_17.csv',
 			   'effMap'			: 'orig/EffMap_T2tt_'},
@@ -120,9 +111,9 @@ for i in range(len(SR['SR'])):
 	newTx.massConstraint			= TX['massConstr']
 	#+++++++ next mass plane block ++++++++++++++
 	newPlane 						= newTx.addMassPlane(TX['massPlane'])
-	newPlane.figure 				= TX['info']['figure']
-	newPlane.figureUrl 				= TX['info']['figureUrl']
-	newPlane.dataUrl 				= TX['info']['dataUrl']
+	newPlane.figure 				= 'Fig14a;Fig14b'
+	newPlane.figureUrl 				= 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-16/figaux_14a.png;https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-16/figaux_14b.png'
+	newPlane.dataUrl 				= 'https://www.hepdata.net/record/ins1639856?version=4&table=Table87'
 	if TX != T2bbffff:
 		newPlane.setSources(dataLabels 	= ['expExclusion', 'obsExclusion', 'efficiencyMap'],
 						dataFiles 		= [TX['sources']['expExcl'], TX['sources']['obsExcl'], TX['sources']['effMap'] + SR['SR'][i] + '.txt'],

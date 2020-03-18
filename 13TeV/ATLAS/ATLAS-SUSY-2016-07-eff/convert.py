@@ -154,7 +154,7 @@ for topo in topos:
             if eIdx in rjrs:
                 meffrjr = "Meff+RJR"
                 meffrjrurl = "Meff%2BRJR"
-            Tx_1.dataUrl = dataBaseUrl.replace("@@NUM@@",str(eIdx) ).replace("@@MEFFRJR@@",meffrjrurl )
+            Tx_1.dataUrl = None # dataBaseUrl.replace("@@NUM@@",str(eIdx) ).replace("@@MEFFRJR@@",meffrjrurl )
             units = [ None, None, None ]
             if "60." in str(massPlanes[topo]):
                 units = [ ("GeV","X:60"), ("GeV","X:60" ), None ]
@@ -202,7 +202,7 @@ for topo in topos:
                     meffrjr = "Meff+RJR"
                     meffrjrurl = "Meff%2BRJR"
 
-                Tx_m.dataUrl = dataBaseUrl.replace("@@NUM@@",str(eIdx) ).replace("@@MEFFRJR@@",meffrjrurl )
+                Tx_m.dataUrl = None # dataBaseUrl.replace("@@NUM@@",str(eIdx) ).replace("@@MEFFRJR@@",meffrjrurl )
                 expCont = 'orig/Exclusioncontour(exp.)%d:%s.csv' % (eIdx,meffrjr)
                 obsCont = 'orig/Exclusioncontour(obs.)%d:%s.csv' % (eIdx,meffrjr)
                 units = [ None, None ]

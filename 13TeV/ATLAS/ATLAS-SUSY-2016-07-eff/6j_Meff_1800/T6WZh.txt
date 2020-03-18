@@ -4,7 +4,7 @@ condition: Csim([[[jet],[Z]],[[jet],[W]]]+[[[jet],[higgs]],[[jet],[W]]],2.*([[[j
 conditionDescription: None
 susyProcess: pp --> squark squark, squark  --> quark antiquark chargino^pm_1 neutralino_2, chargino^pm_1 --> W lsp, neutralino_2 --> Z|h lsp
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-07/figaux_078a.png
-dataUrl: 'https://www.hepdata.net/record/ins1641270?version=5&table=X-section U.L. & best SR 8  : Meff'
+dataUrl: None
 source: SModelS
 validated: TBD
 axes: [[x, y, 60.0], [x, y, 60.0]]

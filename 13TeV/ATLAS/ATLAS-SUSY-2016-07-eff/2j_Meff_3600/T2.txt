@@ -4,7 +4,7 @@ condition: None
 conditionDescription: None
 susyProcess: pp --> squark squark, squark  --> quark lsp
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-07/figaux_076a.png
-dataUrl: 'https://www.hepdata.net/record/ins1641270?version=5&table=X-section U.L. & best SR 1  : Meff%2BRJR'
+dataUrl: None
 source: SModelS
 validated: TBD
 axes: [[x, y], [x, y]]

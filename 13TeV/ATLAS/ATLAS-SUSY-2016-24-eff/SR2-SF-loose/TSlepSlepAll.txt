@@ -1,5 +1,5 @@
 txName: TSlepSlepAll
-constraint: [[['l']],[['l']]]
+constraint: [[['l+']],[['l-']]]
 condition: None
 conditionDescription: None
 susyProcess: pp --> slepton slepton, slepton  --> lepton lsp
