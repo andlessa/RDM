@@ -3,6 +3,7 @@ constraint: [[[q]],[[q],[q]]]
 condition: None
 conditionDescription: None
 susyProcess: pp --> gluino squark, gluino --> squark quark, squark --> quark LSP
+dataUrl: None
 source: SModelS
 validated: TBD
 axes: [[y, 0.0], [x, y, 0.0]]; [[y, 695.0], [x, y, 695.0]]; [[y, 995.0], [x, y, 995.0]]

@@ -4,7 +4,7 @@ condition: None
 conditionDescription: None
 susyProcess: pp --> squark squark, squark  --> quark lsp
 figureUrl: http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-033//CMS-SUS-16-033_Figure_013-c.png
-dataUrl: http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-033//CMS-SUS-16-033_Figure_013-c.root
+dataUrl: None
 source: SModelS
 validated: TBD
 axes: [[x, y], [x, y]]

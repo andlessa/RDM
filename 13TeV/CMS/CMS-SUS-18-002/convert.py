@@ -44,10 +44,13 @@ info.sqrts = 13
 info.lumi = 35.9
 info.prettyName = 'photon, jets, b-jets+ Etmiss, top tagging'
 info.private = False
-info.arxiv = ''
-info.contact = ''
-info.publication = ''
+info.arxiv = '1901.06726'
+info.contact = 'cms-phys-conveners-sus@cern.ch'
+info.publication = 'Eur. Phys. J. C 79 (2019) no.5,  444'
 info.comment = ''
+
+
+ 
 
 
 #+++++++ dataset block ++++++++++++++
@@ -74,7 +77,7 @@ for lsp in lsp_masses:
 				dataFiles	= ['orig/CMS-SUS-18-002_Figure_005-a.root', 'orig/CMS-SUS-18-002_Figure_005-a.root', 'orig/CMS-SUS-18-002_Figure_005-a.root', 'orig/CMS-SUS-18-002_Figure_005-a.root','orig/CMS-SUS-18-002_Figure_005-a.root', 'orig/CMS-SUS-18-002_Figure_005-a.root', 'orig/CMS-SUS-18-002_Figure_005-a.root', 'orig/CMS-SUS-18-002_Figure_005-a.root'],
 					units	= [ None, None,None, None,None, None, 'fb','fb' ],
 				dataFormats	= ['root', 'root', 'root', 'root','root', 'root', 'root', 'root'],objectNames= ['exp1up;1','exp1dn;1','obs_XsecUp;1','obs_XsecDn;1','exp;1', 'obs;1','obs_XsecLimit;1','exp_XsecLimit;1'],
-                    indices= [5,4,7,8,3, 6, 1, 2])
+                    indices= [5,4,7,8,3,6,1,2])
 
 
 
@@ -98,7 +101,7 @@ for lsp in lsp_masses:
 				dataFiles	= ['orig/CMS-SUS-18-002_Figure_005-b.root', 'orig/CMS-SUS-18-002_Figure_005-b.root', 'orig/CMS-SUS-18-002_Figure_005-b.root', 'orig/CMS-SUS-18-002_Figure_005-b.root','orig/CMS-SUS-18-002_Figure_005-b.root', 'orig/CMS-SUS-18-002_Figure_005-b.root', 'orig/CMS-SUS-18-002_Figure_005-b.root', 'orig/CMS-SUS-18-002_Figure_005-b.root'],
 					units	= [ None, None,None, None,None, None, 'fb','fb' ],
 				dataFormats	= ['root', 'root', 'root', 'root','root', 'root', 'root', 'root'],objectNames= ['exp1up;1','exp1dn;1','obs_XsecUp;1','obs_XsecDn;1','exp;1', 'obs;1','obs_XsecLimit;1','exp_XsecLimit;1'],
-                    indices= [5,4,7,8,3, 6, 1, 2])
+                    indices= [5,4,7,8,3,6,1,2])
 
 
 #+++++++ next txName block ++++++++++++++
@@ -118,7 +121,7 @@ for lsp in lsp_masses:
 				dataFiles	= ['orig/CMS-SUS-18-002_Figure_005-c.root', 'orig/CMS-SUS-18-002_Figure_005-c.root', 'orig/CMS-SUS-18-002_Figure_005-c.root','orig/CMS-SUS-18-002_Figure_005-c.root','orig/CMS-SUS-18-002_Figure_005-c.root', 'orig/CMS-SUS-18-002_Figure_005-c.root', 'orig/CMS-SUS-18-002_Figure_005-c.root','orig/CMS-SUS-18-002_Figure_005-c.root'],
 					units	= [ None, None,None, None,None, None, 'fb','fb' ],
 				dataFormats	= ['root', 'root', 'root', 'root','root', 'root', 'root', 'root'],objectNames= ['exp1up;1','exp1dn;1','obs_XsecUp;1','obs_XsecDn;1','exp;1', 'obs;1','obs_XsecLimit;1','exp_XsecLimit;1'],
-                    indices= [5,4,7,8,3, 6, 1, 2])
+                    indices= [5,4,7,8,3,6,1,2])
 
 
 #+++++++ next txName block ++++++++++++++
@@ -138,5 +141,5 @@ for lsp in lsp_masses:
 				dataFiles	= ['orig/CMS-SUS-18-002_Figure_005-d.root', 'orig/CMS-SUS-18-002_Figure_005-d.root', 'orig/CMS-SUS-18-002_Figure_005-d.root','orig/CMS-SUS-18-002_Figure_005-d.root','orig/CMS-SUS-18-002_Figure_005-d.root', 'orig/CMS-SUS-18-002_Figure_005-d.root', 'orig/CMS-SUS-18-002_Figure_005-d.root','orig/CMS-SUS-18-002_Figure_005-d.root'],
 					units	= [ None, None,None, None,None, None, 'fb', 'fb' ],
 				dataFormats	= ['root', 'root', 'root', 'root','root', 'root', 'root', 'root'],objectNames= ['exp1up;1','exp1dn;1','obs_XsecUp;1','obs_XsecDn;1','exp;1', 'obs;1','obs_XsecLimit;1','exp_XsecLimit;1'],
-                    indices= [5,4,7,8,3, 6, 1, 2])
+                    indices= [5,4,7,8,3,6,1,2])
 databaseCreator.create()

@@ -81,11 +81,11 @@ TChiWZ_1.figureUrl='http://cms-results.web.cern.ch/cms-results/public-results/pu
 TChiWZ_1.dataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-17-004/CMS-SUS-17-004_Figure_007.root'
 TChiWZ_1.histoDataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-17-004/CMS-SUS-17-004_Figure_007.root'
 TChiWZ_1.exclusionDataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-17-004/CMS-SUS-17-004_Figure_007.root'
-TChiWZ_1.setSources(dataLabels=['expExclusion','obsExclusion','upperLimits'],
-                    dataFiles=['orig/CMS-SUS-17-004_Figure_007.root','orig/CMS-SUS-17-004_Figure_007.root','orig/CMS-SUS-17-004_Figure_007.root'],
-                    indices=[4,7,2],
-                    dataFormats=['canvas','canvas','canvas'],objectNames=['TChiWZ;1','TChiWZ;1','TChiWZ;1'],units=[None,None,'pb'])
-
+TChiWZ_1.setSources(dataLabels=['expExclusion','expExclusionM1','expExclusionP1','obsExclusion','obsExclusionM1','obsExclusionP1','upperLimits'],
+                    dataFiles=['orig/CMS-SUS-17-004_Figure_007.root','orig/CMS-SUS-17-004_Figure_007.root','orig/CMS-SUS-17-004_Figure_007.root',
+'orig/CMS-SUS-17-004_Figure_007.root','orig/CMS-SUS-17-004_Figure_007.root','orig/CMS-SUS-17-004_Figure_007.root','orig/CMS-SUS-17-004_Figure_007.root'],
+indices=[4, 6, 5, 7, 9, 8, 2],dataFormats=['canvas','canvas','canvas','canvas','canvas','canvas','canvas'],objectNames=['TChiWZ;1','TChiWZ;1','TChiWZ;1',
+'TChiWZ;1','TChiWZ;1','TChiWZ;1','TChiWZ;1'],units=[None,None,None,None,None,None,'pb'])
 TChiWZoff.addMassPlane(TChiWZ_1)
  
  

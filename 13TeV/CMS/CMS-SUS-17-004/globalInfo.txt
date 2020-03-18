@@ -8,5 +8,5 @@ publication: JHEP 1803 (2018) 160, http://dx.doi:10.1007/JHEP03(2018)160
 contact: cms-phys-conveners-sus@cern.ch
 comment: Fig. 7 with chi02 -> chi10Z on one branch and chi+/-1 -> chi01 Wpm on the other branch, chargino mass are fixed equal to second lightest neutralino mass.
 private: False
-implementedBy: charan
-lastUpdate: 2020/3/10
+implementedBy: ck
+lastUpdate: 2020/3/16

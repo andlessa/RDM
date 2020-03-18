@@ -156,7 +156,7 @@ for topo in topos:
                 Tx_1.axes = "[[y, 0.0], [x, y, 0.0]]; [[y, 695.0], [x, y, 695.0]]; [[y, 995.0], [x, y, 995.0]]"
         if topo in [ "T5GQ" ]:
                 Tx_1.axes = "[[x, y, 0.0], [y, 0.0]]; [[x, y, 695.0], [y, 695.0]]; [[x, y, 995.0], [y, 995.0]]"
-        Tx_1.dataUrl=getDataUrl(topo)
+        Tx_1.dataUrl=None # getDataUrl(topo)
         Tx_1.histoDataUrl=getDataUrl(topo)
         Tx_1.exclusionDataUrl=getDataUrl(topo)
         names = ['ExpLim;1','ExpLimSdn;1','ExpLimSup;1','ObsLim;1','ObsLimSdn;1','ObsLimSup;1',dsname ]
