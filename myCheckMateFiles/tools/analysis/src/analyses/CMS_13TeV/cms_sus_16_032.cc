@@ -1,4 +1,5 @@
 #include "cms_sus_16_032.h"
+#include <algorithm>
 // AUTHOR: Andre Lessa
 //  EMAIL: andre.lessa@ufabc.edu.br
 void Cms_sus_16_032::initialize() {
@@ -68,7 +69,7 @@ void Cms_sus_16_032::analyze() {
       if (jets[i]->PT < 500. &&  checkBTag(jets[i], 1)){
           bjets.push_back(jets[i]);
       }
-      else if (jets[i]->PT > 500. &&  checkBTag(jets[i], 0){
+      else if (jets[i]->PT > 500. &&  checkBTag(jets[i], 0)){
           bjets.push_back(jets[i]);
       }
       else if (checkCTag(jets[i],0)){
@@ -88,32 +89,35 @@ void Cms_sus_16_032::analyze() {
   }
 
   //ISR system:
-  Jet* ISR;
-  if (bjets.size() and bjets[0] == jets[1])   ISR = jets[0]
-  else if (cjets.size() and cjets[0] == jets[1])   ISR = jets[0]
+  vector<Jet*> ISR;
+  if (bjets.size() and bjets[0] == jets[1])
+        ISR.push_back(jets[0]);
+  else if (cjets.size() and cjets[0] == jets[1])
+        ISR.push_back(jets[0]);
   else if (!bjets.size() and !cjets.size()){
-      if (jets[2]->PT > 50.) ISR = jets[0]+jets[1];
-      else ISR = jets[0];
+      ISR.push_back(jets[0]);
+      if (jets[2]->PT > 50.)
+        ISR.push_back(jets[1]);
   }
 
   //Muons and Electrons:
   vector<Electron*> electrons;
   vector<Muon*> muons;
-  electrons = filterIsolation(electronsLoose, 0)
+  electrons = filterIsolation(electronsLoose, 0);
   electrons = filterPhaseSpace(electrons, 10., -2.4, 2.4);
-  muons = filterIsolation(muonLoose, 0)
+  muons = filterIsolation(muonsLoose, 0);
   muons = filterPhaseSpace(muons, 10., -2.4, 2.4);
   //Taus:
   int ntaus = 0;
   for (int i = 0; i < tracks.size(); ++i){
-      if (track[i]->PT < 10.0 || fabs(track[i]->Eta) > 2.5)
+      if (tracks[i]->PT < 10.0 || fabs(tracks[i]->Eta) > 2.5)
         continue;
       double Iso = 0.;
       for (int j = 0; j < tracks.size(); ++j){
           if (i == j) continue;
-          if (tacks[i]->P4().DeltaR(tacks[j]->P4()) < 0.3)
+          if (tracks[i]->P4().DeltaR(tracks[j]->P4()) < 0.3)
             continue;
-          Iso += tacks[j]->PT;
+          Iso += tracks[j]->PT;
       }
       if (Iso < 0.1*tracks[i]->PT) ++ntaus;
   }
@@ -123,35 +127,35 @@ void Cms_sus_16_032::analyze() {
 
   //Kinematical variables
   double HT = 0., HTb = 0., HTc = 0.;
-  for (int i = 0; i < min(2,jets.size()); ++i){
+  for (int i = 0; i < min(2,int(jets.size())); ++i){
       HT += jets[i]->PT;
   }
-  for (int i = 0; i < min(2,bjets.size()); ++i){
+  for (int i = 0; i < min(2,int(bjets.size())); ++i){
       HTb += bjets[i]->PT;
   }
-  for (int i = 0; i < min(2,cjets.size()); ++i){
+  for (int i = 0; i < min(2,int(cjets.size())); ++i){
       HTc += cjets[i]->PT;
   }
   double deltaPhiMin = 0.;
   double deltaPhi, mT;
-  for (int i = 0; i < min(3,jets.size()); ++i){
+  for (int i = 0; i < min(3,int(jets.size())); ++i){
       deltaPhi = fabs(jets[i]->P4().DeltaPhi(missingET->P4()));
       if (i == 0) deltaPhiMin = deltaPhi;
       else deltaPhiMin = min(deltaPhiMin,deltaPhi);
   }
   double mTmin = 0.;
-  for (int i = 0; i < min(2,jets.size()); ++i){
+  for (int i = 0; i < min(2,int(jets.size())); ++i){
       deltaPhi = fabs(jets[i]->P4().DeltaPhi(missingET->P4()));
       mT = sqrt(2.*jets[i]->PT*missingET->P4().Et()*(1.-cos(deltaPhi)));
       if (i == 0) mTmin = mT;
-      else mTmin = min(mTmin,mT)
+      else mTmin = min(mTmin,mT);
   }
   double mCT = 0;
   if (jets.size() >= 2){
       deltaPhi = fabs(jets[0]->P4().DeltaPhi(jets[1]->P4()));
-      mCT = sqrt(2.*jets[0]->PT*jets[1]->PT*(1.+cos(deltaPhi)))
+      mCT = sqrt(2.*jets[0]->PT*jets[1]->PT*(1.+cos(deltaPhi)));
   }
-  double MET = missingET->P4().Et()
+  double MET = missingET->P4().Et();
 
   //Signal Regions
   //Event Pre-Selection:
@@ -163,10 +167,10 @@ void Cms_sus_16_032::analyze() {
       NCselection = false;
       Cselection = false;
   }
-  if (jets[1] < 30.0) {
+  if (jets[1]->PT < 30.0) {
       NCselection = false;
   }
-  if (jets.size() >=5 && jets[4] > 75.0) {
+  if (jets.size() >= 5 && jets[4]->PT > 75.0) {
       NCselection = false;
       Cselection = false;
   }
@@ -178,7 +182,7 @@ void Cms_sus_16_032::analyze() {
       NCselection = false;
       Cselection = false;
   }
-  if (deltaPhiMin < 0.4 {
+  if (deltaPhiMin < 0.4) {
       NCselection = false;
       Cselection = false;
   }
@@ -204,12 +208,18 @@ void Cms_sus_16_032::analyze() {
       if (cjets.size() > 0 && cjets[0]->PT == jets[0]->PT)
           Cselection = false;
       if ((bjets.size() > 0 && jets[1]->PT == bjets[0]->PT)
-          || (cjets.size() > 0 && jets[1]->PT == cjets[0]->PT){
+          || (cjets.size() > 0 && jets[1]->PT == cjets[0]->PT)){
               if (jets[1]->PT < 25.0) Cselection = false;
       }
       else if (jets[1]->PT < 50.0) Cselection = false;
-      if (ISR->PT < 250.0) Cselection = false;
-      if ((ISR->P4()+missingET->P4()).Et()/MET > 0.5)
+      double pTISR = 0.;
+      TLorentzVector p4 = missingET->P4();
+      for(int iISR = 0; iISR < ISR.size(); ++ iISR){
+          pTISR += ISR[iISR]->PT;
+          p4 += ISR[iISR]->P4();
+      }
+      if (pTISR < 250.0) Cselection = false;
+      if (p4.Et()/MET > 0.5)
           Cselection = false;
   }
 
@@ -224,7 +234,7 @@ void Cms_sus_16_032::analyze() {
           for (int imct = 0; imct < iht+4; ++imct){
               if (mCT < SR_MCT[imct]) continue;
               if (imct < iht+3 && mCT < SR_MCT[imct+1]) continue;
-              countSignalEvent("HT_xx_MCT_xx");
+              // countSignalEvent("HT_xx_MCT_xx");
           }
       }
   }
@@ -234,4 +244,9 @@ void Cms_sus_16_032::analyze() {
 
 void Cms_sus_16_032::finalize() {
   // Whatever should be done after the run goes here
+}
+
+//c-tagging check
+bool Cms_sus_16_032::checkCTag(Jet *jet, int ilevel) {
+  return false;
 }

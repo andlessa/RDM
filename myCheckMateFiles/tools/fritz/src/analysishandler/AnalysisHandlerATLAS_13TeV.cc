@@ -245,8 +245,7 @@ void AnalysisHandlerATLAS_13TeV::tagBJets() {
 void AnalysisHandlerATLAS_13TeV::tagTauJets() {
     Jet* cand = NULL; // currently tested jet candidate
     // pointer to the right efficiency functions
-    Eff_Fun_Ptr2 effFunLoose = NULL, effFunMedium = NULL, effFunTight = NULL,
-    effFunLooseNew = NULL, effFunMediumNew = NULL, effFunTightNew = NULL;
+    Eff_Fun_Ptr2 effFunLoose = NULL, effFunMedium = NULL, effFunTight = NULL;
     double prob = 0, pass_prob = 0;
     int prongs = 0;
 
@@ -255,9 +254,6 @@ void AnalysisHandlerATLAS_13TeV::tagTauJets() {
     stdTags.push_back(false); //loose
     stdTags.push_back(false); // medium
     stdTags.push_back(false); //tight
-    stdTags.push_back(false); //looseNew
-    stdTags.push_back(false); //mediumNew
-    stdTags.push_back(false); //tightNew
 
     // Stop if no taus are needed
     if(!doJetTauTags)
@@ -268,9 +264,6 @@ void AnalysisHandlerATLAS_13TeV::tagTauJets() {
         effFunLoose = NULL;
         effFunMedium = NULL;
         effFunTight = NULL;
-        effFunLooseNew = NULL;
-        effFunMediumNew = NULL;
-        effFunTightNew = NULL;
         cand = jets[j];
         prob = rand()/(RAND_MAX+1.);
         tauTags = stdTags;
@@ -301,17 +294,11 @@ void AnalysisHandlerATLAS_13TeV::tagTauJets() {
                    effFunLoose = &AnalysisHandlerATLAS_13TeV::tauSigEffMultiLoose;
                    effFunMedium = &AnalysisHandlerATLAS_13TeV::tauSigEffMultiMedium;
                    effFunTight = &AnalysisHandlerATLAS_13TeV::tauSigEffMultiTight;
-                   effFunLooseNew = &AnalysisHandlerATLAS_13TeV::tauSigEffMultiLooseNew;
-                   effFunMediumNew = &AnalysisHandlerATLAS_13TeV::tauSigEffMultiMediumNew;
-                   effFunTightNew = &AnalysisHandlerATLAS_13TeV::tauSigEffMultiTightNew;
                }
                else {
                    effFunLoose = &AnalysisHandlerATLAS_13TeV::tauSigEffSingleLoose;
                    effFunMedium = &AnalysisHandlerATLAS_13TeV::tauSigEffSingleMedium;
                    effFunTight = &AnalysisHandlerATLAS_13TeV::tauSigEffSingleTight;
-                   effFunLooseNew = &AnalysisHandlerATLAS_13TeV::tauSigEffSingleLooseNew;
-                   effFunMediumNew = &AnalysisHandlerATLAS_13TeV::tauSigEffSingleMediumNew;
-                   effFunTightNew = &AnalysisHandlerATLAS_13TeV::tauSigEffSingleTightNew;
                }
                break;
            }
@@ -328,9 +315,6 @@ void AnalysisHandlerATLAS_13TeV::tagTauJets() {
                effFunMedium = &AnalysisHandlerATLAS_13TeV::tauBkgEffSingleMedium;
                effFunTight = &AnalysisHandlerATLAS_13TeV::tauBkgEffSingleTight;
            }
-           effFunLooseNew = effFunLoose;
-           effFunMediumNew = effFunMedium;
-           effFunTightNew = effFunTight;
        }
        // Now that we know the right function to use, lets tag
        // We only need to check "medium" if we passed "loose" etc.
@@ -343,18 +327,6 @@ void AnalysisHandlerATLAS_13TeV::tagTauJets() {
                pass_prob = (*effFunTight)(cand->PT, cand->Eta);
                if (prob < pass_prob)
                    tauTags[2] = true;
-           }
-       }
-       //Additional tags for the new efficiencies
-       pass_prob = (*effFunLooseNew)(cand->PT, cand->Eta);
-       if(prob < pass_prob) {
-           tauTags[3] = true;
-           pass_prob = (*effFunMediumNew)(cand->PT, cand->Eta);
-           if (prob < pass_prob) {
-               tauTags[4] = true;
-               pass_prob = (*effFunTightNew)(cand->PT, cand->Eta);
-               if (prob < pass_prob)
-                   tauTags[5] = true;
            }
        }
        jetTauTags[cand] = tauTags;
@@ -388,6 +360,11 @@ void AnalysisHandlerATLAS_13TeV::linkObjects() {
 
         listOfAnalyses[a]->jetBTags = jetBTags;
         listOfAnalyses[a]->jetTauTags = jetTauTags;
+
+        listOfAnalyses[a]->true_b = true_b;
+        listOfAnalyses[a]->true_tau = true_tau;
+        listOfAnalyses[a]->true_c = true_c;
+
     }
 }
 
@@ -705,112 +682,6 @@ double AnalysisHandlerATLAS_13TeV::tauSigEffMultiTight(double pt,
            (pt >= 80 + 2./C2)*C1*pow(2./C2,2)*exp(-2.);
 }
 
-double AnalysisHandlerATLAS_13TeV::getEffFromData(vector<vector<double>> effData,
-                                                double pt){
-
-    int npts = effData.size();
-
-    double pTbinCenter, pTbinLow, pTbinHigh;
-    for (int i = 0; i < npts; ++i){
-         //Handle lower edge (do not extrapolate)
-         if (i == 0){
-             if (pt < effData[i][0]) return 0.0;
-             if (pt <= effData[i+1][0]) return effData[i][1];
-             continue;
-         }
-         //Handle higher edge (extrapolate)
-         if (i == npts-1){
-             if (pt >= effData[i-1][0]) return effData[i][1];
-             continue;
-         }
-
-          pTbinCenter = effData[i][1];
-          pTbinLow = (effData[i][0]+effData[i-1][0])/2.0;
-          pTbinHigh = (effData[i][0]+effData[i+1][0])/2.0;
-          if (pt > pTbinLow && pt <= pTbinHigh){
-              return effData[i][1];
-          }
-     }
-     return 0.0;
-}
-
-
-//1-prong loose tau tagging efficiency from ATL-PHYS-PUB-2015-045.pdf (Fig. 10a)
-double AnalysisHandlerATLAS_13TeV::tauSigEffSingleLooseNew(double pt,
-                                                 double eta) {
-
-    vector<vector<double>> effData = {{20.,0.602},{29.455,0.602},{49.704,0.61049},
-                            {69.676,0.62375},{99.634,0.63229},
-                            {139.856,0.63731},{189.51,0.63163},
-                            {249.427,0.62243},{329.316,0.60857},
-                            {439.442,0.58892},{500.,0.58892}};
-
-    // return 0.6; //Flat eff
-    return AnalysisHandlerATLAS_13TeV::getEffFromData(effData,pt);
-}
-//1-prong medium tau tagging efficiency from ATL-PHYS-PUB-2015-045.pdf (Fig. 10a)
-double AnalysisHandlerATLAS_13TeV::tauSigEffSingleMediumNew(double pt,
-                                                 double eta) {
-
-    vector<vector<double>> effData = {{20.0,0.54227},{29.457,0.54227},{49.706,0.54717},
-                            {69.678,0.56282},{99.636,0.57494},
-                            {139.581,0.58116},{189.511,0.58026},
-                            {249.428,0.56628},{329.873,0.54167},
-                            {439.444,0.51724},{500.0,0.51724}};
-
-    // return 0.55; //Flat eff
-    return AnalysisHandlerATLAS_13TeV::getEffFromData(effData,pt);
-}
-//1-prong tight tau tagging efficiency from ATL-PHYS-PUB-2015-045.pdf (Fig. 10a)
-double AnalysisHandlerATLAS_13TeV::tauSigEffSingleTightNew(double pt,
-                                                 double eta) {
-    vector<vector<double>> effData = {{20,0,0.43475},{29.737,0.43475},{49.71,0.43606},
-                            {69.404,0.44454},{99.362,0.45069},
-                            {139.584,0.45691},{189.238,0.45123},
-                            {249.432,0.43367},{329.6,0.40667},
-                            {439.448,0.37746},{500.0,0.37746}};
-
-    // return 0.45; //Flat eff
-    return AnalysisHandlerATLAS_13TeV::getEffFromData(effData,pt);
-}
-//3-prong loose tau tagging efficiency from ATL-PHYS-PUB-2015-045.pdf (Fig. 10b)
-double AnalysisHandlerATLAS_13TeV::tauSigEffMultiLooseNew(double pt,
-                                                 double eta) {
-
-    vector<vector<double>> effData = {{20.,0.50178},{29.411,0.50178},{49.671,0.50784},
-                            {69.654,0.5115},{99.635,0.54268},
-                            {139.609,0.57987},{189.839,0.57767},
-                            {249.774,0.55041},{329.964,0.5077},
-                            {439.564,0.44119},{500.,0.44119}};
-
-    // return 0.5; //Flat eff
-    return AnalysisHandlerATLAS_13TeV::getEffFromData(effData,pt);
-}
-//3-prong medium tau tagging efficiency from ATL-PHYS-PUB-2015-045.pdf (Fig. 10b)
-double AnalysisHandlerATLAS_13TeV::tauSigEffMultiMediumNew(double pt,
-                                                 double eta) {
-
-    vector<vector<double>> effData = {{20.0,0.4038},{29.659,0.4038},{49.919,0.40746},
-                            {69.62,0.40037},{99.322,0.42318},
-                            {140.129,0.46277},{189.804,0.46176},
-                            {249.462,0.4357},{329.652,0.39298},
-                            {439.531,0.33126},{500.0,0.33126}};
-
-    // return 0.4; //Flat eff
-    return AnalysisHandlerATLAS_13TeV::getEffFromData(effData,pt);
-}
-//3-prong tight tau tagging efficiency from ATL-PHYS-PUB-2015-045.pdf (Fig. 10b)
-double AnalysisHandlerATLAS_13TeV::tauSigEffMultiTightNew(double pt,
-                                                 double eta) {
-    vector<vector<double>> effData = {{20,0,0.30582},{29.352,0.30582},{49.609,0.29992},
-                            {69.309,0.28566},{99.289,0.31325},
-                            {139.816,0.34447},{189.489,0.33749},
-                            {249.426,0.31262},{329.338,0.26991},
-                            {439.495,0.21177},{500.0,0.21177}};
-
-    // return 0.3; //Flat eff
-    return AnalysisHandlerATLAS_13TeV::getEffFromData(effData,pt);
-}
 
 
 double AnalysisHandlerATLAS_13TeV::tauBkgEffSingleLoose(double pt,
