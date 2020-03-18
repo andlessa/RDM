@@ -94,7 +94,7 @@ plt.show()
 # %% Plot exclusion curve
 fig = plt.figure(figsize=(12,8))
 ax = plt.scatter(effs.loc['SR-lowMass']['mstau'],effs.loc['SR-lowMass']['mlsp'],
-    c=effs.loc['SR-lowMass']['r-value'],cmap=cm,vmin=1.0,vmax=2.0,s=70)
+    c=effs.loc['SR-lowMass']['r-value'],cmap=cm,vmin=0.0,vmax=2.0,s=70)
 plt.xlabel(r'$m_{\tilde{\tau}}$ (GeV)')
 plt.ylabel(r'$m_{\tilde{\chi}_1^0}$ (GeV)')
 cb = plt.colorbar(ax)

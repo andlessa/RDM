@@ -1,0 +1,6 @@
+Test: Calculation of r = signal/(95%CL limit on signal)
+Warning: Error is dominated by Monte Carlo Statistics!
+Result: Allowed
+Result for r: 0.0312526284599
+Analysis: atlas_susy_2018_04
+SR: SR-lowMass
