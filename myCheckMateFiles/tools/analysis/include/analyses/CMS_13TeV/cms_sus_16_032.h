@@ -14,7 +14,10 @@ class Cms_sus_16_032 : public AnalysisBase {
     void finalize();
 
   private:
-      bool checkCTag(Jet* jet, int ilevel);
+      bool tagBJet(Jet *cand);
+      bool tagCJet(Jet *cand);
+      double getEffFromData(vector<vector<double>> effData,
+                        double pt);
 };
 
 #endif
