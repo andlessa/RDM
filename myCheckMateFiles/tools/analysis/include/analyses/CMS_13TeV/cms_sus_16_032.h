@@ -14,7 +14,7 @@ class Cms_sus_16_032 : public AnalysisBase {
     void finalize();
 
   private:
-      bool tagBJet(Jet *cand);
+      bool tagBJet(Jet *cand, string efficiency);
       bool tagCJet(Jet *cand);
       double getEffFromData(vector<vector<double>> effData,
                         double pt);

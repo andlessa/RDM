@@ -15,8 +15,9 @@ SLHAFile: /home/lessa/RDM/CheckMATE2/param_card_DS_280_1.slha
 ## Process Information
 [StauPairProd]
 MGcommand: import model MSSM_SLHA2;
-           generate p p > ta1+ ta1-, ta1+ > ta+ n1, ta1- > ta- n1; 
-MaxEvents: 100000
+	   define stau = ta1+ ta1- ta2+ ta2-
+           generate p p > stau stau, ta1+ > ta+ n1, ta1- > ta- n1, ta2+ > ta+ n1, ta2- > ta- n1; 
+MaxEvents: 10000
 XSectErr: 20 %
 ## MGparam: /home/lessa/RDM/CheckMATE2/param_card_DS_120_1.slha
 ## XSect: 192.75 FB

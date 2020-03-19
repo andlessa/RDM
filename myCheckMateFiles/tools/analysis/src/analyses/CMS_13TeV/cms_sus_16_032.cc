@@ -11,10 +11,9 @@ void Cms_sus_16_032::initialize() {
   "");
   setLuminosity(35.9*units::INVFB);
   bookSignalRegions("HT_200_MCT_150;HT_200_MCT_250;HT_200_MCT_350;HT_200_MCT_450;HT_500_MCT_150;HT_500_MCT_250;HT_500_MCT_350;HT_500_MCT_450;HT_500_MCT_600;HT_1000_MCT_150;HT_1000_MCT_250;HT_1000_MCT_350;HT_1000_MCT_450;HT_1000_MCT_600;HT_1000_MCT_800;1b_ETmiss_250;1b_ETmiss_300;1b_ETmiss_500;1b_ETmiss_750;1b_ETmiss_1000;2b_ETmiss_250;2b_ETmiss_250_HT_100;2b_ETmiss_300;2b_ETmiss_300_HT_100;2b_ETmiss_500;2b_ETmiss_500_HT_100;1c_ETmiss_250;1c_ETmiss_300;1c_ETmiss_500;1c_ETmiss_750;1c_ETmiss_1000;2c_ETmiss_250;2c_ETmiss_250_HT_100;2c_ETmiss_300;2c_ETmiss_300_HT_100;2c_ETmiss_500;2c_ETmiss_500_HT_100;2c_ETmiss_750;2c_ETmiss_750_HT_100;0b_ETmiss_300;0b_ETmiss_500;0b_ETmiss_750;0b_ETmiss_1000;0b_ETmiss_1250;NSV_ETmiss_250;NSV_ETmiss_300;NSV_ETmiss_500;NSV_ETmiss_750;NSV_ETmiss_1000");
-  // You can also book cutflow regions with bookCutflowRegions("CR1;CR2;..."). Note that the regions are
-  //  always ordered alphabetically in the cutflow output files.
 
-  // You should initialize any declared variables here
+  bookCutflowRegions("NonComp_0_total;NonComp_1_MET;NonComp_2_Njet;NonComp_3_MET2;NonComp_4_JetReq;NonComp_5_LeptonVeto;NonComp_6_DeltaPhi;NonComp_7_MTmin;NonComp_8_Nb1;NonComp_9_Nb2;NonComp_10_MCT;");
+
 }
 
 void Cms_sus_16_032::analyze() {
@@ -65,36 +64,66 @@ void Cms_sus_16_032::analyze() {
   std::vector<Jet*> bjets;
   std::vector<Jet*> cjets;
   std::vector<Jet*> lightjets;
+  std::vector<bool> bTagsLoose,bTagsMedium;
+  std::vector<bool> cTagsMedium;
   for (int i = 0; i < jets.size(); ++i){
-      if (tagBJet(jets[i])){
-          bjets.push_back(jets[i]);
+      if (tagBJet(jets[i],"loose"))
+        bTagsLoose.push_back(true);
+      else  bTagsLoose.push_back(false);
+      if (tagBJet(jets[i],"medium"))
+        bTagsMedium.push_back(true);
+      else  bTagsMedium.push_back(false);
+      if (tagCJet(jets[i]) &&
+          !(bTagsMedium[i] || bTagsLoose[i]))
+         cTagsMedium.push_back(true);
+      else cTagsMedium.push_back(false);
+
+      if (jets[i]->PT < 500. && bTagsMedium[i]){
+         bjets.push_back(jets[i]);
+      }
+      else if (jets[i]->PT >= 500. && bTagsLoose[i]){
+         bjets.push_back(jets[i]);
       }
       else if (tagCJet(jets[i])){
-          cjets.push_back(jets[i]);
+         cjets.push_back(jets[i]);
       }
-      else lightjets.push_back(jets[i]);
+      else {
+         lightjets.push_back(jets[i]);
+      }
   }
 
   //SV (secondary vertex):
   int NSV = 0;
   double prob;
   double SVeff = 0.2;
-  for (int i = 0; true_b.size(); ++i){
-      if (true_b[i]->PT > 25) continue;
+  for (int i = 0; i< true_b.size(); ++i){
+      if (true_b[i]->PT > 25.0) continue;
       prob = rand()/(RAND_MAX+1.);
       if (prob < SVeff) ++NSV;
   }
 
   //ISR system:
   vector<Jet*> ISR;
-  if (bjets.size() and bjets[0] == jets[1])
-        ISR.push_back(jets[0]);
-  else if (cjets.size() and cjets[0] == jets[1])
-        ISR.push_back(jets[0]);
-  else if (!bjets.size() and !cjets.size()){
-      ISR.push_back(jets[0]);
-      if (jets[2]->PT > 50.)
-        ISR.push_back(jets[1]);
+  if (jets.size() == 1){
+      if (bjets.size()+cjets.size() == 0){
+          ISR.push_back(jets[0]); //1 jet (not b or c tagged)
+      }
+  }
+  else if (jets.size() > 1){
+      if ((jets[1]->PT >= 500 && bTagsLoose[1])
+        || (jets[1]->PT < 500 && bTagsMedium[1])){
+          if (!bTagsLoose[0])
+              ISR.push_back(jets[0]); // leading jet is not b-tagged, but sub-leading is
+      }
+      else if (cTagsMedium[1]){
+          if (!cTagsMedium[0])
+              ISR.push_back(jets[0]); // leading jet is not c-tagged, but sub-leading is
+      }
+      else {
+          ISR.push_back(jets[0]); // sub-leading is not b or c-tagged
+          if (jets[1]->PT > 50)
+            ISR.push_back(jets[1]); //sub-leading has pT > 50
+      }
   }
 
   //Muons and Electrons:
@@ -119,7 +148,7 @@ void Cms_sus_16_032::analyze() {
       if (Iso < 0.1*tracks[i]->PT) ++ntaus;
   }
 
-  //Kinematical variables
+  // //Kinematical variables
   missingET->addMuons(muonsCombined);  // Adds muons to missing ET.
   double HT = 0., HTb = 0., HTc = 0.;
   for (int i = 0; i < min(2,int(jets.size())); ++i){
@@ -155,46 +184,57 @@ void Cms_sus_16_032::analyze() {
   //Signal Regions
   //Event Pre-Selection:
   //Non-compressed region:
+  countCutflowEvent("NonComp_0_total");
   bool NCselection = true;
   //Compressed region
   bool Cselection = true;
+  if (MET > 200.) countCutflowEvent("NonComp_1_MET");
   if (jets.size() < 2) {
       NCselection = false;
       Cselection = false;
   }
-  if (jets[1]->PT < 30.0) {
-      NCselection = false;
-  }
-  if (jets.size() >= 5 && jets[4]->PT > 75.0) {
-      NCselection = false;
-      Cselection = false;
-  }
-  if (muons.size() > 0 || electrons.size() > 0 || ntaus > 0){
-      NCselection = false;
-      Cselection = false;
-  }
+  else if (NCselection) countCutflowEvent("NonComp_2_Njet");
   if (MET < 250.) {
       NCselection = false;
       Cselection = false;
   }
+  else if (NCselection) countCutflowEvent("NonComp_3_MET2");
+  if (jets.size() >= 5 && jets[4]->PT > 75.0) {
+      NCselection = false;
+      Cselection = false;
+  }
+  else if (jets.size() < 2 || jets[0]->PT < 100.0
+            || jets[1]->PT < 75.0) {
+        NCselection = false;
+  }
+  else if (NCselection) countCutflowEvent("NonComp_4_JetReq");
+  if (muons.size() > 0 || electrons.size() > 0 || ntaus > 0){
+      NCselection = false;
+      Cselection = false;
+  }
+  else if (NCselection) countCutflowEvent("NonComp_5_LeptonVeto");
   if (deltaPhiMin < 0.4) {
       NCselection = false;
       Cselection = false;
   }
+  else if (NCselection) countCutflowEvent("NonComp_6_DeltaPhi");
   //Noncompressed region specific selection:
   if (NCselection){
-      if (jets[0]->PT < 100.) NCselection = false;
-      if (jets[1]->PT < 75.) NCselection = false;
+      if (mTmin < 250.0) NCselection = false;
+      else if (NCselection) countCutflowEvent("NonComp_7_MTmin");
       if (bjets.size() < 2) NCselection = false;
       else if (bjets[0]->PT != jets[0]->PT)
           NCselection = false;
-      else if (bjets[1]->PT != jets[1]->PT)
-          NCselection = false;
-      if (mTmin < 250.0) NCselection = false;
+      else {
+          if (NCselection) countCutflowEvent("NonComp_8_Nb1");
+          if (bjets[1]->PT != jets[1]->PT) NCselection = false;
+          else if (NCselection) countCutflowEvent("NonComp_9_Nb2");
+      }
       if (mCT < 150.0) NCselection = false;
+      else if (NCselection) countCutflowEvent("NonComp_10_MCT");
   }
 
-  //Compressed region specific selection:
+  // //Compressed region specific selection:
   if (Cselection){
       if (jets[0]->PT < 100.) Cselection = false;
       if (jets[1]->PT < 25.) Cselection = false;
@@ -218,8 +258,8 @@ void Cms_sus_16_032::analyze() {
           Cselection = false;
   }
 
-  //Noncompressed signal regions:
-  std::string SR;
+  // //Noncompressed signal regions:
+  string SR;
   if (NCselection){
       vector<double> SR_HT = {200,500,1000};
       vector<double> SR_MCT = {150,250,350,450,600,800};
@@ -230,24 +270,23 @@ void Cms_sus_16_032::analyze() {
           for (int imct = 0; imct < iht+4; ++imct){
               if (mCT < SR_MCT[imct]) continue;
               if (imct < iht+3 && mCT < SR_MCT[imct+1]) continue;
-              SR = fmt::format("HT_{:.0f}_MCT_{:.0f}",
-                                SR_HT[iht], SR_MCT[imct]);
+              SR = "HT_"+to_string(int(SR_HT[iht]));
+              SR += "_MCT_"+to_string(int(SR_MCT[imct]));
               countSignalEvent(SR);
           }
       }
   }
 
-  //Compressed regions:
+  // //Compressed regions:
   if (Cselection){
       vector<double> SR_MET;
       if (bjets.size() == 1 && HTb < 100.){
           SR_MET = {250,300,500,750,1000};
           for (int i = 0; i < SR_MET.size(); ++i){
               if (MET < SR_MET[i]) continue;
-              if (i < SR_MET.size()-1 && MET >= SR_MET[iht+1])
+              if (i < SR_MET.size()-1 && MET >= SR_MET[i+1])
                   continue;
-              SR = fmt::format("1b_Etmiss_{:.0f}",
-                            SR_MET[iht]);
+              SR =  "1b_Etmiss_"+to_string(int(SR_MET[i]));
               countSignalEvent(SR);
               break;
           }
@@ -256,15 +295,10 @@ void Cms_sus_16_032::analyze() {
           SR_MET = {250,300,500};
           for (int i = 0; i < SR_MET.size(); ++i){
               if (MET < SR_MET[i]) continue;
-              if (i < SR_MET.size()-1 && MET >= SR_MET[iht+1])
+              if (i < SR_MET.size()-1 && MET >= SR_MET[i+1])
                   continue;
-
-              if (HTb > 100) {
-                  SR = fmt::format("2b_Etmiss_{:.0f}_HT_100",
-                            SR_MET[iht]);}
-              else {
-                  SR = fmt::format("2b_Etmiss_{:.0f}",
-                             SR_MET[iht]);}
+              SR =  "2b_Etmiss_"+to_string(int(SR_MET[i]));
+              if (HTb > 100) SR += "_HT_100";
               countSignalEvent(SR);
               break;
          }
@@ -273,10 +307,9 @@ void Cms_sus_16_032::analyze() {
           SR_MET = {250,300,500,750,1000};
           for (int i = 0; i < SR_MET.size(); ++i){
               if (MET < SR_MET[i]) continue;
-              if (i < SR_MET.size()-1 && MET >= SR_MET[iht+1])
+              if (i < SR_MET.size()-1 && MET >= SR_MET[i+1])
                   continue;
-              SR = fmt::format("1c_Etmiss_{:.0f}",
-                            SR_MET[iht]);
+              SR =  "1c_Etmiss_"+to_string(int(SR_MET[i]));
               countSignalEvent(SR);
               break;
           }
@@ -285,14 +318,10 @@ void Cms_sus_16_032::analyze() {
           SR_MET = {250,300,500,750};
           for (int i = 0; i < SR_MET.size(); ++i){
               if (MET < SR_MET[i]) continue;
-              if (i < SR_MET.size()-1 && MET >= SR_MET[iht+1])
+              if (i < SR_MET.size()-1 && MET >= SR_MET[i+1])
                   continue;
-              if (HTb > 100) {
-                  SR = fmt::format("2c_Etmiss_{:.0f}_HT_100",
-                            SR_MET[iht]);}
-              else {
-                  SR = fmt::format("2c_Etmiss_{:.0f}",
-                             SR_MET[iht]);}
+              SR =  "2c_Etmiss_"+to_string(int(SR_MET[i]));
+              if (HTc > 100) SR += "_HT_100";
               countSignalEvent(SR);
               break;
          }
@@ -301,10 +330,9 @@ void Cms_sus_16_032::analyze() {
           SR_MET = {300,500,750,1000,1250};
           for (int i = 0; i < SR_MET.size(); ++i){
               if (MET < SR_MET[i]) continue;
-              if (i < SR_MET.size()-1 && MET >= SR_MET[iht+1])
+              if (i < SR_MET.size()-1 && MET >= SR_MET[i+1])
                   continue;
-              SR = fmt::format("0b_Etmiss_{:.0f}",
-                            SR_MET[iht]);
+              SR =  "0b_Etmiss_"+to_string(int(SR_MET[i]));
               countSignalEvent(SR);
               break;
           }
@@ -313,10 +341,9 @@ void Cms_sus_16_032::analyze() {
           SR_MET = {250,300,500,750,1000};
           for (int i = 0; i < SR_MET.size(); ++i){
               if (MET < SR_MET[i]) continue;
-              if (i < SR_MET.size()-1 && MET >= SR_MET[iht+1])
+              if (i < SR_MET.size()-1 && MET >= SR_MET[i+1])
                   continue;
-              SR = fmt::format("NSV_Etmiss_{:.0f}",
-                            SR_MET[iht]);
+              SR =  "NSV_Etmiss_"+to_string(int(SR_MET[i]));
               countSignalEvent(SR);
               break;
           }
@@ -332,7 +359,7 @@ void Cms_sus_16_032::finalize() {
 
 //B-tagging based on CSVv2 algorithm
 //(from https://twiki.cern.ch/twiki/bin/view/CMSPublic/SUSMoriond2017ObjectsEfficiency)
-bool Cms_sus_16_032::tagBJet(Jet *cand) {
+bool Cms_sus_16_032::tagBJet(Jet *cand, string efficiency) {
 
     const double DR_B_TRUTH = 0.2;
     const double PTMIN_B_TRUTH = 10.0;
@@ -366,9 +393,9 @@ bool Cms_sus_16_032::tagBJet(Jet *cand) {
       if(true_b[b]->PT > PTMIN_B_TRUTH &&
         fabs(true_b[b]->Eta) < ETAMAX_B_TRUTH &&
          true_b[b]->P4().DeltaR(cand->P4()) < DR_B_TRUTH) {
-            if (cand->PT > 500.)
+            if (efficiency == "loose")
               eff = getEffFromData(bTagEffLoose,cand->PT);
-            else
+            else if (efficiency == "medium")
               eff = getEffFromData(bTagEffMedium,cand->PT);
             break;
       }
@@ -379,16 +406,18 @@ bool Cms_sus_16_032::tagBJet(Jet *cand) {
           if(true_c[c]->PT > PTMIN_B_TRUTH &&
              fabs(true_c[c]->Eta) < ETAMAX_B_TRUTH &&
              true_c[c]->P4().DeltaR(cand->P4()) < DR_B_TRUTH) {
-                 if (cand->PT > 500.) eff = 0.4 //loose mistagging
-                 else eff = 0.2 //medium mistagging
+                 if (efficiency == "loose")
+                    eff = 0.4 ;//loose mistagging
+                 else if (efficiency == "medium")
+                    eff = 0.2; //medium mistagging
                  break;
             }
       }
     }
     // If no b and no c overlap, use light jet Rej
     if (eff == 0.0){
-        if (cand->PT > 500.) eff = 0.1 // loose light jet mistagging
-        else eff = 0.02 // medium light jet mistagging
+        if (efficiency == "loose") eff = 0.1; // loose light jet mistagging
+        else if (efficiency == "medium") eff = 0.02; // medium light jet mistagging
     }
     if (prob < eff)  return true;
     else return false;
@@ -402,26 +431,6 @@ bool Cms_sus_16_032::tagCJet(Jet *cand) {
     const double PTMIN_C_TRUTH = 10.0;
     const double ETAMAX_C_TRUTH = 2.4;
 
-    vector<vector<double>> bTagEffLoose = {{30.0,35.0,0.7706},
-        {35.0,40.0,0.7815},{40.0,50.0,0.7925},{50.0,60.0,0.8055},
-        {60.0,70.0,0.8159},{70.0,80.0,0.8230},{80.0,90.0,0.8281},
-        {90.0,100.0,0.8298},{100.0,125.0,0.8326},{125.0,150.0,0.8391},
-        {150.0,175.0,0.8350},{175.0,200.0,0.8273},{200.0,225.0,0.8237},
-        {225.0,250.0,0.8192},{250.0,275.0,0.8149},{275.0,300.0,0.8156},
-        {300.0,350.0,0.8044},{350.0,400.0,0.7951},{400.0,450.0,0.7965},
-        {450.0,500.0,0.7929},{500.0,600.0,0.7900},{600.0,700.0,0.7811},
-        {700.0,800.0,0.7740},{800.0,1000.0,0.7899}};
-
-    vector<vector<double>> bTagEffMedium = {{30.0,35.0,0.5735},
-        {35.0,40.0,0.5872},{40.0,50.0,0.5999},{50.0,60.0,0.6159},
-        {60.0,70.0,0.6277},{70.0,80.0,0.6352},{80.0,90.0,0.6402},
-        {90.0,100.0,0.6415},{100.0,125.0,0.6429},{125.0,150.0,0.6457},
-        {150.0,175.0,0.6353},{175.0,200.0,0.6165},{200.0,225.0,0.6051},
-        {225.0,250.0,0.5938},{250.0,275.0,0.5871},{275.0,300.0,0.5771},
-        {300.0,350.0,0.5663},{350.0,400.0,0.5425},{400.0,450.0,0.5296},
-        {450.0,500.0,0.5085},{500.0,600.0,0.4840},{600.0,700.0,0.4820},
-        {700.0,800.0,0.4663},{800.0,1000.0,0.4663}};
-
     double prob = rand()/(RAND_MAX+1.);
     double eff = 0.0;
     /* Loop over cs and try to find an overlap.
@@ -430,7 +439,7 @@ bool Cms_sus_16_032::tagCJet(Jet *cand) {
         if(true_c[c]->PT > PTMIN_C_TRUTH &&
            fabs(true_c[c]->Eta) < ETAMAX_C_TRUTH &&
            true_c[c]->P4().DeltaR(cand->P4()) < DR_C_TRUTH) {
-               eff = 0.4//medium mistagging
+               eff = 0.4; //medium mistagging
                break;
           }
     }
@@ -440,16 +449,18 @@ bool Cms_sus_16_032::tagCJet(Jet *cand) {
           if(true_b[b]->PT > PTMIN_C_TRUTH &&
             fabs(true_b[b]->Eta) < ETAMAX_C_TRUTH &&
             true_b[b]->P4().DeltaR(cand->P4()) < DR_C_TRUTH) {
-                eff = 0.2 //b-jet mistagging
+                eff = 0.2; //b-jet mistagging
                 break;
           }
+       }
     }
     // If no b and no c overlap, use light jet Rej
     if (eff == 0.0){
-        eff = 0.2 // medium light jet mistagging
+        eff = 0.2; // medium light jet mistagging
     }
     if (prob < eff)  return true;
     else return false;
+
 }
 
 //Get efficiency for a given pT for a binned data set.
