@@ -66,9 +66,8 @@ T5tttt_1.setSources(dataLabels	= ['expExclusion', 'obsExclusion', 'upperLimits']
 					coordinates = [ {x: 0, y: 1, 'value': None}, {x: 0, y: 1, 'value': None},  {x : 1, y: 0, 'value' :2} ],
                  		units 	= [ None, None, 'fb' ],
                  	dataFormats	= ['csv', 'csv', 'csv'])
-T5tttt.addMassPlane(T5tttt_1)
 
-"""
+
 T2tt 							= dataset.addTxName('T2tt')
 T2tt.checked 					= 'False'
 T2tt.constraint 				= '[[[t]],[[t]]]'
@@ -105,7 +104,9 @@ T2tt_1.setSources(dataLabels	= ['expExclusion', 'obsExclusion', 'upperLimits'],
 
 T2ttoff.addMassPlane(T2tt_1)
 T2bbffff.addMassPlane(T2tt_1)
-"""
+
+
+
 
 databaseCreator.create()
 

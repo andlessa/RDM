@@ -1,7 +1,7 @@
 id: ATLAS-SUSY-2016-28
 sqrts: 13*TeV
 lumi: 36.1/fb
-prettyName: 2b
+prettyName: 2 b-jets + Etmiss
 url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-28/
 arxiv: https://arxiv.org/abs/1708.09266
 publication: https://link.springer.com/article/10.1007%2FJHEP11%282017%29195

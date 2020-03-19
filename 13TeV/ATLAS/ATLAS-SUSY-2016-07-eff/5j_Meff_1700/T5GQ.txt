@@ -6,7 +6,7 @@ susyProcess: pp --> gluino squark, gluino --> quark quark, squark --> quark glui
 figureUrl: None
 dataUrl: None
 source: SModelS
-validated: TBD
+validated: True
 axes: [[x, y, 0.0], [y, 0.0]]; [[x, y, 695.0], [y, 695.0]]; [[x, y, 995.0], [y, 995.0]]
 finalState: ['MET', 'MET']
 efficiencyMap: [[[[4.2500E+03*GeV,5.0000E+01*GeV,0.0000E+00*GeV],[5.0000E+01*GeV,0.0000E+00*GeV]],0.0007006],

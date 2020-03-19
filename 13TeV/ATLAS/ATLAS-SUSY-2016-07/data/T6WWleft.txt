@@ -6,7 +6,7 @@ susyProcess: pp --> squark_{L} squark_{L}, squark  --> quark chargino^pm_1, char
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-07/figaux_077a.png
 dataUrl: 'https://www.hepdata.net/record/ins1641270?version=5&table=X-section U.L. & best SR 3  : Meff%2BRJR';'https://www.hepdata.net/record/ins1641270?version=5&table=X-section U.L. & best SR 4  : Meff%2BRJR'
 source: ATLAS
-validated: False
+validated: TBD
 axes: [[x, 0.5*x + 0.5*y, y], [x, 0.5*x + 0.5*y, y]];[[x, y, 60.0], [x, y, 60.0]]
 finalState: ['MET', 'MET']
 upperLimits: [[[[4.2500E+02*GeV,3.2500E+02*GeV,2.2500E+02*GeV],[4.2500E+02*GeV,3.2500E+02*GeV,2.2500E+02*GeV]],3.3826E+03*fb],
