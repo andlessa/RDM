@@ -56,9 +56,9 @@ info.sqrts = 13
 info.lumi = 35.9
 info.prettyName = 'High momentum Higgs Boson+ Etmiss'
 info.private = False
-info.arxiv = ''
-info.contact = ''
-info.publication = ''
+info.arxiv = '1712.08501'
+info.contact = 'cms-phys-conveners-sus@cern.ch'
+info.publication = 'Phys. Rev. Lett.  120, no. 24, 241801 (2018)'
 info.comment = ''
 
 
@@ -84,7 +84,7 @@ T5HH.source="CMS"
 #+++++++ next mass plane block ++++++++++++++
 for lsp in lsp_masses:
 	plane 						= T5HH.addMassPlane(2*[[x,x-50,lsp]])	#2*[[x, 1.]])#[[x],[x]])#2*[[x]]
-	plane.figure 				= 'Fig. 7'
+	plane.figure 				= 'Fig. 3'
 	plane.figureUrl 			= 'http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-17-006/CMS-SUS-17-006_Figure_003.png'
 	plane.dataUrl 				= 'http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-17-006/CMS-SUS-17-006_Figure_003.root'
 	plane.setSources(dataLabels=['expectedUpperLimits','upperLimits'],
@@ -97,7 +97,8 @@ lsp_masses = [0., 1.]
  #+++++txName block +++++++++++++++++
 T5HZ=dataset.addTxName('T5HZ')
 T5HZ.checked=''
-T5HZ.constraint="[[['jet','jet'],['higgs']],[['jet','jet'],['Z']]]+[[['jet','jet'],['Z']],[['jet','jet'],['higgs']]]"
+T5HZ.constraint="[[['jet','jet'],['higgs']],[['jet','jet'],['Z']]]"
+#T5HZ.constraint="[[['jet','jet'],['higgs']],[['jet','jet'],['Z']]]+[[['jet','jet'],['Z']],[['jet','jet'],['higgs']]]"
 T5HZ.condition=None
 T5HZ.conditionDescription = None
 T5HZ.source="CMS"
@@ -109,7 +110,7 @@ T5HZ.source="CMS"
 #+++++++ next mass plane block ++++++++++++++
 for lsp in lsp_masses:
 	plane 						= T5HZ.addMassPlane(2*[[x,x-50,lsp]])	#2*[[x, 1.]])#[[x],[x]])#2*[[x]]
-	plane.figure 				= 'Fig. 7'
+	plane.figure 				= 'Fig. 3'
 	plane.figureUrl 			= 'http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-17-006/CMS-SUS-17-006_Figure_003.png'
 	plane.dataUrl 				= 'http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-17-006/CMS-SUS-17-006_Figure_003.root'
 	plane.setSources(dataLabels=['expectedUpperLimits','upperLimits'],

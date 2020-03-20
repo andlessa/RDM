@@ -100,9 +100,8 @@ TChipChimStauSnu_1.exclusionDataUrl='https://cms-results.web.cern.ch/cms-results
 TChipChimStauSnu_1.setSources(dataLabels=['expExclusionP1','expExclusionM1','expExclusion','obsExclusionM1','obsExclusionP1','obsExclusion','upperLimits'],
                     dataFiles=['orig/CMS-SUS-17-003_Figure_015.root','orig/CMS-SUS-17-003_Figure_015.root','orig/CMS-SUS-17-003_Figure_015.root','orig/CMS-SUS-17-003_Figure_015.root','orig/CMS-SUS-17-003_Figure_015.root','orig/CMS-SUS-17-003_Figure_015.root','orig/CMS-SUS-17-003_Figure_015.root'], dataFormats=['root','root','root','root','root','root','root'],
                         objectNames=['graph_smoothed_ExpP;1','graph_smoothed_ExpM;1','graph_smoothed_Exp;1','graph_smoothed_ObsM;1','graph_smoothed_ObsP;1','graph_smoothed_Obs;1','hXsec_exp_corr;1'],
-                    indices= [1,2,3, 6, 7, 8, 9],units=[None,None,None,None,None,None,'pb'])
-
+                    indices= [5,6,4,3,2,1,9],units=[None,None,None,None,None,None,'pb'])
 
 	
-
+	
 databaseCreator.create()

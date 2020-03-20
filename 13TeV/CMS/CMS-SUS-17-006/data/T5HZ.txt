@@ -3,8 +3,8 @@ constraint: [[['jet','jet'],['higgs']],[['jet','jet'],['Z']]]
 condition: None
 conditionDescription: None
 susyProcess: pp --> gluino gluino, gluino  --> quark antiquark neutralino_2, neutralino_2 --> H|Z lsp
-figureUrl: http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-17-006/CMS-SUS-17-006_Figure_003.png;http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-17-006/CMS-SUS-17-006_Figure_003.png
-dataUrl: http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-17-006/CMS-SUS-17-006_Figure_003.root;http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-17-006/CMS-SUS-17-006_Figure_003.root
+figureUrl: http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-17-006/CMS-SUS-17-006_Figure_003.png
+dataUrl: http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-17-006/CMS-SUS-17-006_Figure_003.root
 source: CMS
 validated: TBD
 axes: [[x, x - 50, 0.0], [x, x - 50, 0.0]];[[x, x - 50, 1.0], [x, x - 50, 1.0]]

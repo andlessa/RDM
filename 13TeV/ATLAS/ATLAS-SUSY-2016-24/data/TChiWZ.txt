@@ -4,7 +4,7 @@ condition: None
 conditionDescription: None
 susyProcess: pp --> neutralino_2 chargino^pm_1, neutralino_2 chargino^pm_1 --> Z W lsp lsp
 checked: False
-figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-24/fig_08d.png
+figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-24/figaux_32b.png
 dataUrl: https://www.hepdata.net/record/ins1658902?version=1&table=Table81
 source: ATLAS
 validated: TBD

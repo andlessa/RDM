@@ -45,53 +45,60 @@ info.arxiv =  'https://arxiv.org/abs/1803.02762'
 info.contact = 'atlas-phys-susy-conveners@cern.ch'
 info.publication = 'https://link.springer.com/article/10.1140/epjc/s10052-018-6423-7'
 
-TChipChimSlepSlepAll = {
-'name' 		 : 'TChipChimSlepSlepAll',
-'info' 		 :{'figure' 		: 'Fig.8a', 
-			   'figureUrl' 		: 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-24/fig_08a.png', 
+TChipChimSlepSlep = {
+'name' 		 : 'TChipChimSlepSlep',
+'info' 		 :{'figure' 		: 'figaux_31a', 
+			   'figureUrl' 		: 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-24/figaux_31a.png', 
 			   'dataUrl' 		: 'https://www.hepdata.net/record/ins1658902?version=1&table=Table78'},
 'sources'	 :{'expExcl'		: 'orig/HEPData-ins1658902-v1-Table_13.csv',
 			   'obsExcl'		: 'orig/HEPData-ins1658902-v1-Table_14.csv',
 			   'upLimit'		: 'orig/HEPData-ins1658902-v1-Table_78.csv'},
-#'constraint' : "0.5*([[['nu'],['L+']],[['nu'],['L-']]]+[[['nu'],['L-']],[['nu'],['L+']]])",
-'constraint' : "[[['nu'],['L+']],[['nu'],['L-']]]",
+'constraint' : "[[['nu'],['mu+']],[['nu'],['mu-']]],[[['nu'],['e+']],[['nu'],['e-']]]",
+'condDesc'	 : "[[['nu'],['mu+']],[['nu'],['mu-']]] > [[['nu'],['e+']],[['nu'],['e-']]]",
+'condition'	 : "Cgtr([[['nu'],['mu+']],[['nu'],['mu-']]],[[['nu'],['e+']],[['nu'],['e-']]])",
 'massPlane'  : 2*[[x, 0.5*(x+y), y]]}
 
-TSlepSlepAll = {
-'name' 		 : 'TSlepSlepAll',
-'info' 		 :{'figure' 		: 'Fig.8b', 
-			   'figureUrl' 		: 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-24/fig_08b.png', 
+TSlepSlep = {
+'name' 		 : 'TSlepSlep',
+'info' 		 :{'figure' 		: 'figaux_31b', 
+			   'figureUrl' 		: 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-24/figaux_31b.png', 
 			   'dataUrl' 		: 'https://www.hepdata.net/record/ins1658902?version=1&table=Table79'},
 'sources'	 :{'expExcl'		: 'orig/HEPData-ins1658902-v1-Table_15.csv',
 			   'obsExcl'		: 'orig/HEPData-ins1658902-v1-Table_16.csv',
 			   'upLimit'		: 'orig/HEPData-ins1658902-v1-Table_79.csv'},
-'constraint' : "[[['l']],[['l']]]",
+'constraint' : "[[['e+']],[['e-']]]+[[['mu+']],[['mu-']]]",
+'condDesc'	 : "[[['mu+']],[['mu-']]] > [[['e+']],[['e-']]]",
+'condition'	 : "Cgtr([[['mu+']],[['mu-']]],[[['e+']],[['e-']]])",
 'massPlane'  : 2*[[x, y]]}
 
-TChiChipmSlepL = {
-'name' 		 : 'TChiChipmSlepL',
-'info' 		 :{'figure' 		: 'Fig.8c', 
-			   'figureUrl' 		: 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-24/fig_08c.png', 
+TChiChipmSlepSlep = {
+'name' 		 : 'TChiChipmSlepSlep',
+'info' 		 :{'figure' 		: 'figaux_32a',
+			   'figureUrl' 		: 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-24/figaux_32a.png', 
 			   'dataUrl' 		: 'https://www.hepdata.net/record/ins1658902?version=1&table=Table80'},
 'sources'	 :{'expExcl'		: 'orig/HEPData-ins1658902-v1-Table_17.csv',
 			   'obsExcl'		: 'orig/HEPData-ins1658902-v1-Table_18.csv',
 			   'upLimit'		: 'orig/HEPData-ins1658902-v1-Table_80.csv'},
-#'constraint' : "0.5*([[['L+'],['L-']],[['L'],['nu']]] + [[['L+'],['L-']],[['nu'],['L']]] + [[['L-'],['L+']],[['L'],['nu']]] + [[['L-'],['L+']],[['nu'],['L']]])", #war auf 2.*
-'constraint' : "2.0*([[['L+'],['L-']],[['L'],['nu']]] + [[['L+'],['L-']],[['nu'],['L']]] + [[['L-'],['L+']],[['L'],['nu']]] + [[['L-'],['L+']],[['nu'],['L']]])",
+#'constraint' : "2.0*([[['L+'],['L-']],[['L'],['nu']]] + [[['L+'],['L-']],[['nu'],['L']]] + [[['L-'],['L+']],[['L'],['nu']]] + [[['L-'],['L+']],[['nu'],['L']]])"
+'constraint' : "[[['l+'],['l-']],[['l'],['nu']]] + [[['l+'],['l-']],[['nu'],['l']]] + [[['l-'],['l+']],[['l'],['nu']]] + [[['l-'],['l+']],[['nu'],['l']]]",
+'condDesc'	 :	None,
+'condition'	 :	None,
 'massPlane'  : 2*[[x, 0.5*(x+y), y]]}
 
 TChiWZ = {
 'name' 		 : 'TChiWZ',
-'info' 		 :{'figure' 		: 'Fig.8d', 
-			   'figureUrl' 		: 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-24/fig_08d.png', 
+'info' 		 :{'figure' 		: 'figaux_32b', 
+			   'figureUrl' 		: 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-24/figaux_32b.png', 
 			   'dataUrl' 		: 'https://www.hepdata.net/record/ins1658902?version=1&table=Table81'},
 'sources'	 :{'expExcl'		: 'orig/HEPData-ins1658902-v1-Table_19.csv',
 			   'obsExcl'		: 'orig/HEPData-ins1658902-v1-Table_20.csv',
 			   'upLimit'		: 'orig/HEPData-ins1658902-v1-Table_81.csv'},
 'constraint' : "[[['W']],[['Z']]]",
+'condDesc'	 :	None,
+'condition'	 :	None,
 'massPlane'  : 2*[[x, y]]}
 
-DATA = [TChipChimSlepSlepAll, TSlepSlepAll, TChiChipmSlepL, TChiWZ]
+DATA = [TChipChimSlepSlep, TSlepSlep, TChiChipmSlepSlep, TChiWZ]
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput('data')
@@ -102,8 +109,8 @@ for TX in DATA:
 	newTx 							= dataset.addTxName(TX['name'])
 	newTx.checked 					= 'False'
 	newTx.constraint 				= TX['constraint']
-	newTx.conditionDescription 		= None
-	newTx.condition 				= None
+	newTx.conditionDescription 		= TX['condDesc']
+	newTx.condition 				= TX['condition']
 	newTx.source 					= 'ATLAS'
 	#+++++++ next mass plane block ++++++++++++++
 	newPlane 						= newTx.addMassPlane(TX['massPlane'])

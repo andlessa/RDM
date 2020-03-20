@@ -3,6 +3,9 @@ sqrts: 13*TeV
 lumi: 35.9/fb
 prettyName: High momentum Higgs Boson+ Etmiss
 url: https://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-17-006/
+arxiv: 1712.08501
+publication: Phys. Rev. Lett.  120, no. 24, 241801 (2018)
+contact: cms-phys-conveners-sus@cern.ch
 private: False
-implementedBy: charan
-lastUpdate: 2020/2/5
+implementedBy: ck
+lastUpdate: 2020/3/19
