@@ -18,6 +18,7 @@ class Cms_sus_16_032 : public AnalysisBase {
       bool tagCJet(Jet *cand);
       double getEffFromData(vector<vector<double>> effData,
                         double pt);
+      // vector<TH1F*> hists;
 };
 
 #endif

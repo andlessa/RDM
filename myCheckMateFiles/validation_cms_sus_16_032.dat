@@ -2,36 +2,39 @@
 [Parameters]
 Analyses: cms_sus_16_032
 InvisiblePIDs: 1000022
-#Name: validation_cms_sus_16_032_stop_400
-#SLHAFile: /home/lessa/RDM/myCheckMateFiles/stop_400.slha
 
-#Name: validation_cms_sus_16_032_stop_550
-#SLHAFile: /home/lessa/RDM/myCheckMateFiles/stop_550.slha
+Name: validation_cms_sus_16_032_stop_400
+SLHAFile: /home/lessa/RDM/myCheckMateFiles/stop_400.slha
 
-Name: validation_cms_sus_16_032_sbottom_900
-SLHAFile: /home/lessa/RDM/myCheckMateFiles/sbottom_900.slha
+##Name: validation_cms_sus_16_032_stop_550
+##SLHAFile: /home/lessa/RDM/myCheckMateFiles/stop_550.slha
 
-#Name: validation_cms_sus_16_032_sbottom_1200
-#SLHAFile: /home/lessa/RDM/myCheckMateFiles/sbottom_1200.slha
+##Name: validation_cms_sus_16_032_sbottom_900
+##SLHAFile: /home/lessa/RDM/myCheckMateFiles/sbottom_900.slha
+
+##Name: validation_cms_sus_16_032_sbottom_1200
+##SLHAFile: /home/lessa/RDM/myCheckMateFiles/sbottom_1200.slha
 
 
 
 ## Process Information
 [SUSYPairProd]
 MGcommand: import model MSSM_SLHA2;
-           generate p p > b1 b1~, b1 > b n1, b1~ > b~ n1;
-##           generate p p > t1 t1~;
-MaxEvents: 1000
+##           generate p p > b1 b1~, b1 > b n1, b1~ > b~ n1;
+           generate p p > t1 t1~;
+MaxEvents: 100000
 XSectErr: 20 %
 
-#MGparam: /home/lessa/RDM/myCheckMateFiles/stop_400.slha
-#XSect: 1.835 PB
+MGparam: /home/lessa/RDM/myCheckMateFiles/stop_400.slha
+XSect: 1.835 PB
+##MGrun: /home/lessa/RDM/myCheckMateFiles/run_card.dat
+##Pythia8Card: /home/lessa/RDM/myCheckMateFiles/pythia_stop.cfg
 
-#MGparam: /home/lessa/RDM/myCheckFiles/stop_550.slha
-#XSect: 0.296 PB
+##MGparam: /home/lessa/RDM/myCheckMateFiles/stop_550.slha
+##XSect: 0.296 PB
 
-MGparam: /home/lessa/RDM/myCheckMateFiles/sbottom_900.slha
-XSect: 12.88 FB
+##MGparam: /home/lessa/RDM/myCheckMateFiles/sbottom_900.slha
+##XSect: 12.88 FB
 
-#MGparam: /home/lessa/RDM/myCheckMateFiles/sbottom_1200.slha
-#XSect: 1.60 FB
+##MGparam: /home/lessa/RDM/myCheckMateFiles/sbottom_1200.slha
+##XSect: 1.60 FB

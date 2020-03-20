@@ -1,5 +1,7 @@
 #include "cms_sus_16_032.h"
 #include <algorithm>
+#include <string>
+#include <iostream>
 // AUTHOR: Andre Lessa
 //  EMAIL: andre.lessa@ufabc.edu.br
 void Cms_sus_16_032::initialize() {
@@ -12,8 +14,18 @@ void Cms_sus_16_032::initialize() {
   setLuminosity(35.9*units::INVFB);
   bookSignalRegions("HT_200_MCT_150;HT_200_MCT_250;HT_200_MCT_350;HT_200_MCT_450;HT_500_MCT_150;HT_500_MCT_250;HT_500_MCT_350;HT_500_MCT_450;HT_500_MCT_600;HT_1000_MCT_150;HT_1000_MCT_250;HT_1000_MCT_350;HT_1000_MCT_450;HT_1000_MCT_600;HT_1000_MCT_800;1b_ETmiss_250;1b_ETmiss_300;1b_ETmiss_500;1b_ETmiss_750;1b_ETmiss_1000;2b_ETmiss_250;2b_ETmiss_250_HT_100;2b_ETmiss_300;2b_ETmiss_300_HT_100;2b_ETmiss_500;2b_ETmiss_500_HT_100;1c_ETmiss_250;1c_ETmiss_300;1c_ETmiss_500;1c_ETmiss_750;1c_ETmiss_1000;2c_ETmiss_250;2c_ETmiss_250_HT_100;2c_ETmiss_300;2c_ETmiss_300_HT_100;2c_ETmiss_500;2c_ETmiss_500_HT_100;2c_ETmiss_750;2c_ETmiss_750_HT_100;0b_ETmiss_300;0b_ETmiss_500;0b_ETmiss_750;0b_ETmiss_1000;0b_ETmiss_1250;NSV_ETmiss_250;NSV_ETmiss_300;NSV_ETmiss_500;NSV_ETmiss_750;NSV_ETmiss_1000");
 
-  bookCutflowRegions("NonComp_0_total;NonComp_1_MET;NonComp_2_Njet;NonComp_3_MET2;NonComp_4_JetReq;NonComp_5_LeptonVeto;NonComp_6_DeltaPhi;NonComp_7_MTmin;NonComp_8_Nb1;NonComp_9_Nb2;NonComp_10_MCT;");
+  bookCutflowRegions("Comp_00_total;Comp_01_MET;Comp_02_Njet;Comp_03_MET2;Comp_04_JetReq;Comp_05_LeptonVeto;Comp_06_DeltaPhi;Comp_07_pTISR;Comp_08_rISR;Comp_09_NSum;Comp_10_NSV0;");
 
+  // Book Histograms (hists must be defined in the corresponding .h file)
+  // TH1F *hNc = new TH1F("Nc","", 100, 0., 10.);
+  // TH1F *hHTc = new TH1F("HTc","", 100, 0., 1000.);
+  // TH1F *hNcCut = new TH1F("NcCut","", 100, 0., 10.);
+  // TH1F *hMET = new TH1F("MET","", 100, 0., 1000.);
+  //
+  // hists.push_back(hNc);
+  // hists.push_back(hHTc);
+  // hists.push_back(hNcCut);
+  // hists.push_back(hMET);
 }
 
 void Cms_sus_16_032::analyze() {
@@ -167,10 +179,11 @@ void Cms_sus_16_032::analyze() {
       if (i == 0) deltaPhiMin = deltaPhi;
       else deltaPhiMin = min(deltaPhiMin,deltaPhi);
   }
+  double MET = missingET->P4().Pt();
   double mTmin = 0.;
   for (int i = 0; i < min(2,int(jets.size())); ++i){
       deltaPhi = fabs(jets[i]->P4().DeltaPhi(missingET->P4()));
-      mT = sqrt(2.*jets[i]->PT*missingET->P4().Et()*(1.-cos(deltaPhi)));
+      mT = sqrt(2.*jets[i]->PT*MET*(1.-cos(deltaPhi)));
       if (i == 0) mTmin = mT;
       else mTmin = min(mTmin,mT);
   }
@@ -179,26 +192,47 @@ void Cms_sus_16_032::analyze() {
       deltaPhi = fabs(jets[0]->P4().DeltaPhi(jets[1]->P4()));
       mCT = sqrt(2.*jets[0]->PT*jets[1]->PT*(1.+cos(deltaPhi)));
   }
-  double MET = missingET->P4().Et();
+
+  TLorentzVector p4ISR(0.,0.,0.,0.);
+  for(int iISR = 0; iISR < ISR.size(); ++ iISR){;
+      p4ISR += ISR[iISR]->P4();
+  }
+  double pTISR = p4ISR.Pt();
+  double rISR = (p4ISR+missingET->P4()).Pt()/MET;
+
+  // hists[0]->Fill(pTISR);
+  // hists[1]->Fill(HTc);
+
 
   //Signal Regions
   //Event Pre-Selection:
   //Non-compressed region:
-  countCutflowEvent("NonComp_0_total");
+  countCutflowEvent("NonComp_00_total");
+  countCutflowEvent("Comp_00_total");
   bool NCselection = true;
   //Compressed region
   bool Cselection = true;
-  if (MET > 200.) countCutflowEvent("NonComp_1_MET");
+  if (MET < 200.) {
+      NCselection = false;
+      Cselection = false;
+  }
+  if (NCselection) countCutflowEvent("NonComp_01_MET");
+  if (Cselection) countCutflowEvent("Comp_01_MET");
+
   if (jets.size() < 2) {
       NCselection = false;
       Cselection = false;
   }
-  else if (NCselection) countCutflowEvent("NonComp_2_Njet");
+  if (NCselection) countCutflowEvent("NonComp_02_Njet");
+  if (Cselection) countCutflowEvent("Comp_02_Njet");
+
   if (MET < 250.) {
       NCselection = false;
       Cselection = false;
   }
-  else if (NCselection) countCutflowEvent("NonComp_3_MET2");
+  if (NCselection) countCutflowEvent("NonComp_03_MET2");
+  if (Cselection) countCutflowEvent("Comp_03_MET2");
+
   if (jets.size() >= 5 && jets[4]->PT > 75.0) {
       NCselection = false;
       Cselection = false;
@@ -207,28 +241,34 @@ void Cms_sus_16_032::analyze() {
             || jets[1]->PT < 75.0) {
         NCselection = false;
   }
-  else if (NCselection) countCutflowEvent("NonComp_4_JetReq");
+  if (NCselection) countCutflowEvent("NonComp_04_JetReq");
+  if (Cselection) countCutflowEvent("Comp_04_JetReq");
+
   if (muons.size() > 0 || electrons.size() > 0 || ntaus > 0){
       NCselection = false;
       Cselection = false;
   }
-  else if (NCselection) countCutflowEvent("NonComp_5_LeptonVeto");
+  if (NCselection) countCutflowEvent("NonComp_05_LeptonVeto");
+  if (Cselection) countCutflowEvent("Comp_05_LeptonVeto");
+
   if (deltaPhiMin < 0.4) {
       NCselection = false;
       Cselection = false;
   }
-  else if (NCselection) countCutflowEvent("NonComp_6_DeltaPhi");
+  if (NCselection) countCutflowEvent("NonComp_06_DeltaPhi");
+  if (Cselection) countCutflowEvent("Comp_06_DeltaPhi");
+
   //Noncompressed region specific selection:
   if (NCselection){
       if (mTmin < 250.0) NCselection = false;
-      else if (NCselection) countCutflowEvent("NonComp_7_MTmin");
+      else if (NCselection) countCutflowEvent("NonComp_07_MTmin");
       if (bjets.size() < 2) NCselection = false;
       else if (bjets[0]->PT != jets[0]->PT)
           NCselection = false;
       else {
-          if (NCselection) countCutflowEvent("NonComp_8_Nb1");
+          if (NCselection) countCutflowEvent("NonComp_08_Nb1");
           if (bjets[1]->PT != jets[1]->PT) NCselection = false;
-          else if (NCselection) countCutflowEvent("NonComp_9_Nb2");
+          else if (NCselection) countCutflowEvent("NonComp_09_Nb2");
       }
       if (mCT < 150.0) NCselection = false;
       else if (NCselection) countCutflowEvent("NonComp_10_MCT");
@@ -247,15 +287,15 @@ void Cms_sus_16_032::analyze() {
               if (jets[1]->PT < 25.0) Cselection = false;
       }
       else if (jets[1]->PT < 50.0) Cselection = false;
-      double pTISR = 0.;
-      TLorentzVector p4 = missingET->P4();
-      for(int iISR = 0; iISR < ISR.size(); ++ iISR){
-          pTISR += ISR[iISR]->PT;
-          p4 += ISR[iISR]->P4();
-      }
       if (pTISR < 250.0) Cselection = false;
-      if (p4.Et()/MET > 0.5)
-          Cselection = false;
+      if (Cselection) countCutflowEvent("Comp_07_pTISR");
+      if (rISR > 0.5) Cselection = false;
+      if (Cselection) countCutflowEvent("Comp_08_rISR");
+      if (bjets.size() + cjets.size() + NSV > 0){
+          if (Cselection) countCutflowEvent("Comp_09_NSum");
+          if (NSV == 0 && Cselection)
+            countCutflowEvent("Comp_10_NSV0");
+      }
   }
 
   // //Noncompressed signal regions:
@@ -273,6 +313,7 @@ void Cms_sus_16_032::analyze() {
               SR = "HT_"+to_string(int(SR_HT[iht]));
               SR += "_MCT_"+to_string(int(SR_MCT[imct]));
               countSignalEvent(SR);
+              break;
           }
       }
   }
@@ -286,7 +327,7 @@ void Cms_sus_16_032::analyze() {
               if (MET < SR_MET[i]) continue;
               if (i < SR_MET.size()-1 && MET >= SR_MET[i+1])
                   continue;
-              SR =  "1b_Etmiss_"+to_string(int(SR_MET[i]));
+              SR =  "1b_ETmiss_"+to_string(int(SR_MET[i]));
               countSignalEvent(SR);
               break;
           }
@@ -297,7 +338,7 @@ void Cms_sus_16_032::analyze() {
               if (MET < SR_MET[i]) continue;
               if (i < SR_MET.size()-1 && MET >= SR_MET[i+1])
                   continue;
-              SR =  "2b_Etmiss_"+to_string(int(SR_MET[i]));
+              SR =  "2b_ETmiss_"+to_string(int(SR_MET[i]));
               if (HTb > 100) SR += "_HT_100";
               countSignalEvent(SR);
               break;
@@ -309,7 +350,7 @@ void Cms_sus_16_032::analyze() {
               if (MET < SR_MET[i]) continue;
               if (i < SR_MET.size()-1 && MET >= SR_MET[i+1])
                   continue;
-              SR =  "1c_Etmiss_"+to_string(int(SR_MET[i]));
+              SR =  "1c_ETmiss_"+to_string(int(SR_MET[i]));
               countSignalEvent(SR);
               break;
           }
@@ -320,7 +361,7 @@ void Cms_sus_16_032::analyze() {
               if (MET < SR_MET[i]) continue;
               if (i < SR_MET.size()-1 && MET >= SR_MET[i+1])
                   continue;
-              SR =  "2c_Etmiss_"+to_string(int(SR_MET[i]));
+              SR =  "2c_ETmiss_"+to_string(int(SR_MET[i]));
               if (HTc > 100) SR += "_HT_100";
               countSignalEvent(SR);
               break;
@@ -332,7 +373,7 @@ void Cms_sus_16_032::analyze() {
               if (MET < SR_MET[i]) continue;
               if (i < SR_MET.size()-1 && MET >= SR_MET[i+1])
                   continue;
-              SR =  "0b_Etmiss_"+to_string(int(SR_MET[i]));
+              SR =  "0b_ETmiss_"+to_string(int(SR_MET[i]));
               countSignalEvent(SR);
               break;
           }
@@ -343,7 +384,7 @@ void Cms_sus_16_032::analyze() {
               if (MET < SR_MET[i]) continue;
               if (i < SR_MET.size()-1 && MET >= SR_MET[i+1])
                   continue;
-              SR =  "NSV_Etmiss_"+to_string(int(SR_MET[i]));
+              SR =  "NSV_ETmiss_"+to_string(int(SR_MET[i]));
               countSignalEvent(SR);
               break;
           }
@@ -354,6 +395,23 @@ void Cms_sus_16_032::analyze() {
 
 void Cms_sus_16_032::finalize() {
   // Whatever should be done after the run goes here
+
+  //Save histograms
+  // for (int i = 0; i < hists.size(); ++ i){
+  //       TH1F *h = hists[i];
+  //       string filename(h->GetName());
+  //       filename  += ".csv";
+  //       FILE* histoFile = fopen(filename.c_str(), "w");
+  //       double xbin,binContent;
+  //       fprintf(histoFile,"#   X,   Bin\n");
+  //       for (int j=1; j<=h->GetNbinsX();j++) {
+  //           xbin = h->GetXaxis()->GetBinCenter(j);
+  //           binContent = h->GetBinContent(j);
+  //           fprintf(histoFile,"%1.3e, %1.3e\n",xbin,binContent);
+  //       }
+  // }
+
+
 }
 
 
