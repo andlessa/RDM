@@ -1,2 +1,0 @@
-analysis            sr           o    b     db   s           ds              s95obs  s95exp  robscons        rexpcons        
-atlas_susy_2018_04  SR-highMass  7.0  10.2  3.3  4.35231336  0.877330875936  6.7     8.7     0.434849361711  0.334883991203  

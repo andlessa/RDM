@@ -8,3 +8,5 @@ MG5
 pythia8
 CheckMATE2/*
 CheckMATE2
+myCheckMateFiles/validation_slha/*slha
+myCheckMateFiles/validation_results/*

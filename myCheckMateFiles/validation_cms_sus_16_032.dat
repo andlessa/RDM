@@ -6,11 +6,11 @@ InvisiblePIDs: 1000022
 TotalResultFileColumns: analysis,sr,obs,bkg,bkgerr,signalsumofweights,s,ds,eff,s95obs,robs,robscons,likelihood
 
 
-##Name: validation_cms_sus_16_032_stop_400
-##SLHAFile: /home/lessa/RDM/myCheckMateFiles/stop_400.slha
+Name: validation_cms_sus_16_032_stop_400
+SLHAFile: /home/lessa/RDM/myCheckMateFiles/stop_400.slha
 
-Name: validation_cms_sus_16_032_stop_550
-SLHAFile: /home/lessa/RDM/myCheckMateFiles/stop_550.slha
+##Name: validation_cms_sus_16_032_stop_550
+##SLHAFile: /home/lessa/RDM/myCheckMateFiles/stop_550.slha
 
 ##Name: validation_cms_sus_16_032_sbottom_900
 ##SLHAFile: /home/lessa/RDM/myCheckMateFiles/sbottom_900.slha
@@ -23,16 +23,16 @@ SLHAFile: /home/lessa/RDM/myCheckMateFiles/stop_550.slha
 ## Process Information
 [SUSYPairProd]
 MGcommand: import model MSSM_SLHA2;
-##           generate p p > b1 b1~, b1 > b n1, b1~ > b~ n1;
+##           generate p p > b1 b1~;
            generate p p > t1 t1~;
-MaxEvents: 200000
+MaxEvents: 100000
 XSectErr: 0 %
 
-##MGparam: /home/lessa/RDM/myCheckMateFiles/stop_400.slha
-##XSect: 1.835 PB
+MGparam: /home/lessa/RDM/myCheckMateFiles/stop_400.slha
+XSect: 1.835 PB
 
-MGparam: /home/lessa/RDM/myCheckMateFiles/stop_550.slha
-XSect: 0.296 PB
+##MGparam: /home/lessa/RDM/myCheckMateFiles/stop_550.slha
+##XSect: 0.296 PB
 
 ##MGparam: /home/lessa/RDM/myCheckMateFiles/sbottom_900.slha
 ##XSect: 12.88 FB

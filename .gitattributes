@@ -5,3 +5,5 @@ data/checkmate.tar.gz filter=lfs diff=lfs merge=lfs -text
 data/checkmate_BM1.tar.gz filter=lfs diff=lfs merge=lfs -text
 data/smodels_output_BM2.tar.gz filter=lfs diff=lfs merge=lfs -text
 data/smodels_slha_BM2.tar.gz filter=lfs diff=lfs merge=lfs -text
+myCheckMateFiles/validation_slha.tar.gz filter=lfs diff=lfs merge=lfs -text
+myCheckMateFiles/validation_results.tar.gz filter=lfs diff=lfs merge=lfs -text
