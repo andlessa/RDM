@@ -9,6 +9,7 @@ import numpy as np
 import pandas as pd
 from matplotlib import pyplot as plt
 import seaborn as sns
+from getContour import getContour
 
 pd.options.mode.chained_assignment = None #Disable copy warnings
 #Define plotting style:
@@ -35,17 +36,30 @@ for slhaFile in glob.glob(slhaFolder+'/stop*.slha'):
                 'total_results.txt')
     if not os.path.isfile(resFile):
         continue
-    data = np.genfromtxt(resFile,names=True,usecols=(2,3,4,5,6,7,8,9,10))
+    data = np.genfromtxt(resFile,names=True,usecols=(2,3,4,5,6,7,8,9,10,11))
     recastData.append([mstop,mlsp,max(kfactor*data['robs'])])
+    ibest = np.argmax(data['rexp'])
+    robs = data['robs'][ibest]
+    s = data['s'][ibest]
+    # ds = data['ds'][ibest]
+    ds = 0.2*s
+    s95obs = data['s95obs'][ibest]
+    rcons = (s-1.64*ds)/s95obs
+    recastData.append([mstop,mlsp,robs])
 
 recastData = np.array(recastData)
 
+## %% Get exclusion contours for signal +- 20%
+contours = getContour(recastData[:,0],recastData[:,1],recastData[:,2],levels=[0.8,1.0,1.2])
 
 # %% plot result
 fig = plt.figure(figsize=(12,8))
 ax = plt.scatter(recastData[:,0],recastData[:,1],
     c=recastData[:,2],cmap=cm,vmin=0.0,vmax=2.0,s=70)
-plt.plot(offCurve['mstop'],offCurve['mlsp'],linewidth=4)
+for level,curves in contours.items():
+    for curve in curves:
+        plt.plot(curve[:,0],curve[:,1],label=level,linestyle='--',linewidth=4)
+plt.plot(offCurve['mstop'],offCurve['mlsp'],linewidth=4)        
 plt.xlabel(r'$m_{\tilde{\t}}$ (GeV)')
 plt.ylabel(r'$m_{\tilde{\chi}_1^0}$ (GeV)')
 cb = plt.colorbar(ax)

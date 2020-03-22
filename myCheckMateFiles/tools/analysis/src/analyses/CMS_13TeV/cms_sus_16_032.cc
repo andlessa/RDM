@@ -309,7 +309,7 @@ void Cms_sus_16_032::analyze() {
               continue;
           for (int imct = 0; imct < iht+4; ++imct){
               if (mCT < SR_MCT[imct]) continue;
-              if (imct < iht+3 && mCT < SR_MCT[imct+1]) continue;
+              if (imct < iht+3 && mCT >= SR_MCT[imct+1]) continue;
               SR = "HT_"+to_string(int(SR_HT[iht]));
               SR += "_MCT_"+to_string(int(SR_MCT[imct]));
               countSignalEvent(SR);
