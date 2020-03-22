@@ -16,6 +16,7 @@ import subprocess
 import time,datetime
 import multiprocessing
 import tempfile
+import pyslha
 
 FORMAT = '%(levelname)s in %(module)s.%(funcName)s() in %(lineno)s: %(message)s at %(asctime)s'
 logging.basicConfig(format=FORMAT,datefmt='%m/%d/%Y %I:%M:%S %p')
@@ -138,6 +139,20 @@ def main(parfile,verbose):
         newParser.set("CheckMateParameters","Name",
                        os.path.splitext(os.path.basename(f))[0])
         newParser.set("CheckMateProcess","MGparam",f)
+        if newParser.has_option("options","useSLHAxsecs"):
+            useSLHA = newParser.get("options","useSLHAxsecs")
+            if useSLHA:
+                unit = 'PB'
+                # try:
+                xsecs = pyslha.readSLHAFile(f).xsections[useSLHA].xsecs
+                xsecs = sorted(xsecs, key = lambda xsec: xsec.qcd_order,
+                                    reverse=True)
+                xsecs = xsecs[0]
+                if newParser.has_option("options","xsecUnit"):
+                    unit = newParser.get("options","xsecUnit")
+                newParser.set("CheckMateProcess","XSect", "%1.5g %s" %(xsecs.value,unit))
+                # except:
+                    # pass
         parserList.append(newParser)
 
     ncpus = int(parser.get("options","ncpu"))

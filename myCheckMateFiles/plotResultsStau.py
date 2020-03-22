@@ -18,11 +18,11 @@ sns.set_context('paper', font_scale=1.8)
 cm = plt.cm.get_cmap('RdYlBu')
 
 # %% Load data
-effOfficialHigh = pd.read_csv('./HEPData-ins1765529-v1-Eff_Acc_table_SRhigh.csv',
+effOfficialHigh = pd.read_csv('./ATLAS_data/HEPData-ins1765529-v1-Eff_Acc_table_SRhigh.csv',
                                 comment='#', delimiter=',', names=['mstau','mlsp','effATLAS'],
                                 skiprows=10)
 
-effOfficialLow = pd.read_csv('./HEPData-ins1765529-v1-Eff_Acc_table_SRlow.csv',
+effOfficialLow = pd.read_csv('./ATLAS_data/HEPData-ins1765529-v1-Eff_Acc_table_SRlow.csv',
                                 comment='#', delimiter=',', names=['mstau','mlsp','effATLAS'],
                                 skiprows=10)
 
