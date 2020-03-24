@@ -8,4 +8,4 @@ publication: https://link.springer.com/article/10.1140/epjc/s10052-018-6423-7
 contact: atlas-phys-susy-conveners@cern.ch
 private: False
 implementedBy: Philipp Neuhuber
-lastUpdate: 2020/3/20
+lastUpdate: 2020/3/24

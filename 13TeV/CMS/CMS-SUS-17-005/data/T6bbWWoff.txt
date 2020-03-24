@@ -1,12 +1,12 @@
 txName: T6bbWWoff
-constraint: 4.5*([[['b'],['l','nu']],[['b'],['q','q']]]+[[['b'],['l','nu']],[['b'],['L','nu']]])
+constraint: 5.06*([[['b'],['l','nu']],[['b'],['q','q']]]+[[['b'],['l','nu']],[['b'],['l','nu']]])
 condition: None
 conditionDescription: None
 susyProcess: pp --> stop stop, stop  --> bottom chargino_1^pm, chargino_1^pm --> W^* lsp
 figureUrl: http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-17-005/CMS-SUS-17-005_Figure_009-b.png
 dataUrl: http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-17-005/CMS-SUS-17-005_Figure_009-b.root
 source: CMS
-validated: TBD
+validated: True
 axes: [[x, x - 0.5*y, x - y], [x, x - 0.5*y, x - y]]
 finalState: ['MET', 'MET']
 upperLimits: [[[[2.5000E+02*GeV,2.4500E+02*GeV,2.4000E+02*GeV],[2.5000E+02*GeV,2.4500E+02*GeV,2.4000E+02*GeV]],1.3146E+00*pb],

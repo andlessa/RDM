@@ -53,15 +53,15 @@ lsp_masses = [1.]
 #planes = []
 
 #+++++++ next txName block ++++++++++++++
-T5g 						= dataset.addTxName('T5g')
-T5g.checked 				= 'No'
-T5g.constraint 		 		= "[[['jet','jet'],['photon']],[['jet','jet'],['photon']]]"
-T5g.conditionDescription	= None
-T5g.condition 		 		= None
-T5g.source 					= "ATLAS"
+T5gg 						= dataset.addTxName('T5gg')
+T5gg.checked 				= 'No'
+T5gg.constraint 		 		= "[[['jet','jet'],['photon']],[['jet','jet'],['photon']]]"
+T5gg.conditionDescription	= None
+T5gg.condition 		 		= None
+T5gg.source 					= "ATLAS"
 #+++++++ next mass plane block ++++++++++++++
 for lsp in lsp_masses:
-	p						= T5g.addMassPlane(2*[[x, y, lsp]])
+	p						= T5gg.addMassPlane(2*[[x, y, lsp]])
 	p.figure    			= 'Fig.8'
 	p.figureUrl 			= 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-27/fig_08.png'
 	p.dataUrl   			= "https://www.hepdata.net/record/ins1654357?version=1&table=Cross section UL 1"
@@ -72,15 +72,15 @@ for lsp in lsp_masses:
 #	planes.append(p)
 
 #+++++++ next txName block ++++++++++++++
-T6g 					 	= dataset.addTxName('T6g')
-T6g.checked 			 	= 'No'
-T6g.constraint 			 	= "[[['jet'],['photon']],[['jet'],['photon']]]"#+[[['b'],['photon']],[['b'],['photon']]]"
-T6g.conditionDescription 	= None
-T6g.condition 			 	= None
-T6g.source 				 	= "ATLAS"
+T6gg 					 	= dataset.addTxName('T6gg')
+T6gg.checked 			 	= 'No'
+T6gg.constraint 			 	= "[[['jet'],['photon']],[['jet'],['photon']]]"#+[[['b'],['photon']],[['b'],['photon']]]"
+T6gg.conditionDescription 	= None
+T6gg.condition 			 	= None
+T6gg.source 				 	= "ATLAS"
 #+++++++ next mass plane block ++++++++++++++
 for lsp in lsp_masses:
-	p 						= T6g.addMassPlane(2*[[x, y, lsp]])
+	p 						= T6gg.addMassPlane(2*[[x, y, lsp]])
 	p.figure    			= 'Fig.9'
 	p.figureUrl 			= 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-27/fig_09.png'
 	p.dataUrl   			= "https://www.hepdata.net/record/ins1654357?version=1&table=Cross section UL 2"
@@ -91,15 +91,15 @@ for lsp in lsp_masses:
 #	planes.append(p)
 
 #+++++++ next txName block ++++++++++++++
-TChipChimg 							= dataset.addTxName('TChipChimg')
-TChipChimg.checked 					= 'No'
-TChipChimg.constraint 				= "[[['W'],['photon']],[['Z'],['photon']]]+[[['W'],['photon']],[['W'],['photon']]]+[[['W'],['photon']],[['higgs'],['photon']]]"
-TChipChimg.conditionDescription 	= None
-TChipChimg.condition 				= None
-TChipChimg.source 			    	= "ATLAS"
+TChipChimgg 							= dataset.addTxName('TChipChimgg')
+TChipChimgg.checked 					= 'No'
+TChipChimgg.constraint 				= "[[['W'],['photon']],[['Z'],['photon']]]+[[['W'],['photon']],[['W'],['photon']]]+[[['W'],['photon']],[['higgs'],['photon']]]"
+TChipChimgg.conditionDescription 	= None
+TChipChimgg.condition 				= None
+TChipChimgg.source 			    	= "ATLAS"
 #+++++++ next mass plane block ++++++++++++++
 for lsp in lsp_masses:
-	p 		   				= TChipChimg.addMassPlane(2*[[x, y, lsp]])
+	p 		   				= TChipChimgg.addMassPlane(2*[[x, y, lsp]])
 	p.figure    			= 'Fig.10'
 	p.figureUrl 			= 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-27/fig_10.png'
 	p.dataUrl   			= "https://www.hepdata.net/record/ins1654357?version=1&table=Cross section UL 3"

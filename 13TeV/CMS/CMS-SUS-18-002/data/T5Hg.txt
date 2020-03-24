@@ -7,7 +7,7 @@ checked: No
 figureUrl: http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-18-002/CMS-SUS-18-002_Figure_005-a.png
 dataUrl: http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-18-002/CMS-SUS-18-002_Figure_005-a.root
 source: CMS
-validated: TBD
+validated: True
 axes: [[x, y, 1.0], [x, y, 1.0]]
 finalState: ['MET', 'MET']
 upperLimits: [[[[1.4022E+03*GeV,1.3472E+02*GeV,1.0000E+00*GeV],[1.4022E+03*GeV,1.3472E+02*GeV,1.0000E+00*GeV]],2.2942E+00*fb],

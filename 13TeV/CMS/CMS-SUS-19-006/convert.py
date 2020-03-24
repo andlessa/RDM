@@ -40,12 +40,12 @@ info             = MetaInfoInput('CMS-SUS-19-006')
 info.url         = 'http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-19-006/index.html'
 info.sqrts       = 13
 info.lumi        = 137
-info.prettyName  = '0L + multijets with MHT'
+info.prettyName  = '0L + jets, MHT'
 info.private     = False
-info.arxiv       = '1908.04722 '
+info.arxiv       = 'https://arxiv.org/abs/1908.04722'
 info.contact     = 'cms-phys-conveners-sus@cern.ch'
 info.publication = 'JHEP 10 (2019) 244'
-info.comment     = ''
+info.comment     = 'Observed and expected limits; dense grid.'
 
 
 #+++++++ dataset block ++++++++++++++

@@ -58,27 +58,28 @@ info.private = False
 info.arxiv = 'https://arxiv.org/abs/1712.02332'
 info.contact = 'smodels-users@lists.oeaw.ac.at'
 info.publication = 'Phys. Rev. D 97, 112001 (2018)'
+info.comment = 'Recast with MadAnalysis5, PAD code http://doi.org/10.7484/INSPIREHEP.DATA.56DC.PPE2'
 
 stats = getStatsEMBaked ()
 
 topos = []
-topos = [ "T1", "T2", "T6WWleft", "T5WW", "T5ZZ", "T5WZh", "T6WZh", "T5WWoff", "T6WWoffleft", "TGQ" ]
+topos = [ "T1", "T2", "T6WW", "T5WW", "T5ZZ", "T5WZh", "T6WZh", "T5WWoff", "T6WWoff", "TGQ" ]
 topos.append ( "T3GQ" )
 topos.append ( "T5GQ" )
-# topos = [ "T6WWoffleft" ]
-constraints = { "T2": "[[[q]],[[q]]]", "T1": "[[[q,q]],[[q,q]]]", "T6WWleft": "[[['q'],['W']],[['q'],['W']]]", "T6WWoffleft": "2.23 * [[['jet'],['jet','jet']],[['jet'],['jet','jet']]]", "T5WW": "[[['q','q'],['W']],[['q','q'],['W']]]", "T5ZZ": "[[['q','q'],['Z']],[['q','q'],['Z']]]", "T5WZh": "[[[q,q],[Z]],[[q,q],[W]]]+[[[q,q],[higgs]],[[q,q],[W]]]+[[[q,q],[higgs]],[[q,q],[higgs]]]+[[[q,q],[higgs]],[[q,q],[Z]]]", "T6WZh": "[[[jet],[Z]],[[jet],[W]]]+[[[jet],[higgs]],[[jet],[W]]]+[[[jet],[Z]],[[jet],[Z]]]+[[[jet],[higgs]],[[jet],[higgs]]]+[[[jet],[Z]],[[jet],[higgs]]]", "T5WWoff": "2.23*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]", "TGQ": "[[[q]],[[q,q]]]", "T3GQ": "[[[q]],[[q],[q]]]", "T5GQ": "[[[q],[q,q]],[[q,q]]]" }
+# topos = [ "T6WWoff" ]
+constraints = { "T2": "[[[q]],[[q]]]", "T1": "[[[q,q]],[[q,q]]]", "T6WW": "[[['q'],['W']],[['q'],['W']]]", "T6WWoff": "2.23 * [[['jet'],['jet','jet']],[['jet'],['jet','jet']]]", "T5WW": "[[['q','q'],['W']],[['q','q'],['W']]]", "T5ZZ": "[[['q','q'],['Z']],[['q','q'],['Z']]]", "T5WZh": "[[[q,q],[Z]],[[q,q],[W]]]+[[[q,q],[higgs]],[[q,q],[W]]]+[[[q,q],[higgs]],[[q,q],[higgs]]]+[[[q,q],[higgs]],[[q,q],[Z]]]", "T6WZh": "[[[jet],[Z]],[[jet],[W]]]+[[[jet],[higgs]],[[jet],[W]]]+[[[jet],[Z]],[[jet],[Z]]]+[[[jet],[higgs]],[[jet],[higgs]]]+[[[jet],[Z]],[[jet],[higgs]]]", "T5WWoff": "2.23*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]", "TGQ": "[[[q]],[[q,q]]]", "T3GQ": "[[[q]],[[q],[q]]]", "T5GQ": "[[[q],[q,q]],[[q,q]]]" }
 conditions = { "T5WZh": "Csim([[[q,q],[Z]],[[q,q],[W]]]+[[[q,q],[higgs]],[[q,q],[W]]],2.*([[[q,q],[W]],[[q,q],[W]]]))", "T6WZh": "Csim([[[jet],[Z]],[[jet],[W]]]+[[[jet],[higgs]],[[jet],[W]]],2.*([[[jet],[W]],[[jet],[W]]]))" }
-figure = { "T2": "Fig. 76a", "T1": "Fig. 76b", "T6WWleft": ('Fig. 77a', 'Fig. 77b' ), "T5WW": ( 'Fig. 77c', 'Fig. 77d' ), "T5ZZ": ('Fig.79', None) , "T5WZh": ('Fig. 78b', None ), "T6WZh":  ('Fig. 78a', None ), "T5WWoff": ( 'Fig. 77c', 'Fig. 77d' ), "T6WWoffleft": ('Fig. 77a', 'Fig. 77b' ), "TGQ": ('Fig. 80a', 'Fig. 80b', 'Fig. 80c' ), "T3GQ": None, "T5GQ": None }
+figure = { "T2": "Fig. 76a", "T1": "Fig. 76b", "T6WW": ('Fig. 77a', 'Fig. 77b' ), "T5WW": ( 'Fig. 77c', 'Fig. 77d' ), "T5ZZ": ('Fig.79', None) , "T5WZh": ('Fig. 78b', None ), "T6WZh":  ('Fig. 78a', None ), "T5WWoff": ( 'Fig. 77c', 'Fig. 77d' ), "T6WWoff": ('Fig. 77a', 'Fig. 77b' ), "TGQ": ('Fig. 80a', 'Fig. 80b', 'Fig. 80c' ), "T3GQ": None, "T5GQ": None }
 
 baseUrl = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-07/'
 figureUrl = { "T2": 'figaux_076a.png', "T1": 'figaux_076b.png',
-              "T6WWleft": ( 'figaux_077a.png', 'figaux_077b.png' ),
+              "T6WW": ( 'figaux_077a.png', 'figaux_077b.png' ),
               "T5WW": ( 'figaux_077c.png', 'figaux_077d.png' ),
               "T5WWoff": ( 'figaux_077c.png', 'figaux_077d.png' ),
               "T5WZh": ('figaux_078b.png', None),
               "T6WZh": ('figaux_078a.png', None ),
               "T5ZZ": ('figaux_079.png', None),
-              "T6WWoffleft": ( 'figaux_077a.png', 'figaux_077b.png' ),
+              "T6WWoff": ( 'figaux_077a.png', 'figaux_077b.png' ),
               "T3GQ": None,
               "T5GQ": None,
 #              "T3GQ": ( None, None, None ),
@@ -86,13 +87,13 @@ figureUrl = { "T2": 'figaux_076a.png', "T1": 'figaux_076b.png',
               "TGQ": ( 'figaux_080a.png', 'figaux_80b.png', 'figaux_80c.png' )
 }
 dataBaseUrl = "'https://www.hepdata.net/record/ins1641270?version=5&table=X-section U.L. & best SR @@NUM@@  : @@MEFFRJR@@'"
-exclusionIndex = { "T2": 1, "T1": 2, "T6WWleft": ( 3, 4 ), "T5WW": (5, 6 ),
-                   "T5ZZ": (7, None), "T6WWoffleft": ( 13, 14 ),
+exclusionIndex = { "T2": 1, "T1": 2, "T6WW": ( 3, 4 ), "T5WW": (5, 6 ),
+                   "T5ZZ": (7, None), "T6WWoff": ( 13, 14 ),
                    "T5WZh": (9,None), "T6WZh": (8, None ), "T5WWoff": ( 15, 16 ),
                    "TGQ": (10,11,12), "T3GQ": None, "T5GQ": None }
 massPlanes = { "T2": 2*[[x, y]], "T1": 2*[[x, y]],
-    "T6WWleft": ( 2*[[x, 0.5*(x+y), y]], 2*[[x, y, 60.]]),
-    "T6WWoffleft": ( 2*[[x, 0.5*(x+y), y]], 2*[[x, y, 60.]]),
+    "T6WW": ( 2*[[x, 0.5*(x+y), y]], 2*[[x, y, 60.]]),
+    "T6WWoff": ( 2*[[x, 0.5*(x+y), y]], 2*[[x, y, 60.]]),
     "T5WZh": (2*[[x, y, 60.]],None),
     "T6WZh": (2*[[x, y, 60.]], None ), "T5ZZ": (2*[[x, y, 1.]], None),
     "T5WW": ( 2*[[x, 0.5*(x+y), y]], 2*[[x, y, 60.]]),
@@ -130,8 +131,10 @@ for topo in topos:
         Tx.constraint = constraints[topo]
         Tx.conditionDescription = None
         Tx.condition = None
-        if topo in [ "T5WWoff", "T6WWoffleft" ]:
+        if topo in [ "T5WWoff", "T6WWoff" ]:
             Tx.massConstraint = [['dm >= 0.0','dm <= 76.']]*2
+        if topo in [ "T6WW", "T6WWoff" ]:
+            Tx.validationTarball = topo+"left.tar.gz"
         if topo in conditions.keys():
             Tx.condition = conditions[topo]
         Tx.source = "SModelS"

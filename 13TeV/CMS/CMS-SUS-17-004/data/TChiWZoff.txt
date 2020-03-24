@@ -6,7 +6,7 @@ susyProcess: pp --> neutralino_2 chargino^pm_1, neutralino_2 chargino^pm_1 --> Z
 figureUrl: http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-17-004/CMS-SUS-17-004_Figure_007.png
 dataUrl: http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-17-004/CMS-SUS-17-004_Figure_007.root
 source: CMS
-validated: TBD
+validated: True
 axes: [[x, y], [x, y]]
 finalState: ['MET', 'MET']
 upperLimits: [[[[1.0250E+02*GeV,2.7500E+01*GeV],[1.0250E+02*GeV,2.7500E+01*GeV]],1.4607E+00*pb],

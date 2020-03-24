@@ -6,7 +6,7 @@ susyProcess: pp --> smuon smuon, smuon --> muon lsp
 figureUrl: https://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-17-009/CMS-SUS-17-009_Figure_007-a.png
 dataUrl: https://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-17-009/CMS-SUS-17-009_Figure_007-a.root
 source: CMS
-validated: TBD
+validated: True
 axes: [[x, y], [x, y]]
 finalState: ['MET', 'MET']
 upperLimits: [[[[1.0000E+02*GeV,0.0000E+00*GeV],[1.0000E+02*GeV,0.0000E+00*GeV]],1.2106E+02*fb],

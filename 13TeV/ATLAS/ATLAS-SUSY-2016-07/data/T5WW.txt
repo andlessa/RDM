@@ -7,7 +7,7 @@ figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-07/fi
 dataUrl: 'https://www.hepdata.net/record/ins1641270?version=5&table=X-section U.L. & best SR 5  : Meff%2BRJR';'https://www.hepdata.net/record/ins1641270?version=5&table=X-section U.L. & best SR 6  : Meff%2BRJR'
 source: ATLAS
 validated: True
-axes: [[x, 0.5*x + 0.5*y, y], [x, 0.5*x + 0.5*y, y]];[[x, y, 60.0], [x, y, 60.0]]
+axes: [[x, 0.5*x + 0.5*y, y], [x, 0.5*x + 0.5*y, y]]; [[x, y, 60.0], [x, y, 60.0]]
 finalState: ['MET', 'MET']
 upperLimits: [[[[5.4500E+02*GeV,4.6500E+02*GeV,3.8500E+02*GeV],[5.4500E+02*GeV,4.6500E+02*GeV,3.8500E+02*GeV]],9.2330E+03*fb],
 [[[6.2500E+02*GeV,3.8500E+02*GeV,1.4500E+02*GeV],[6.2500E+02*GeV,3.8500E+02*GeV,1.4500E+02*GeV]],1.8999E+02*fb],

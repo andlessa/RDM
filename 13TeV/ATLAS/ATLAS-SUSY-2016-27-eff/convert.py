@@ -49,7 +49,7 @@ obsN 	= [0, 0]
 expN 	= [0.5, 0.48]
 bgErr 	= [0.28, 0.275]
 SR 		= ['SRyy-SL', 'SRyy-SH']
-TP		= ['T5g', 'T6g']
+TP		= ['T5gg', 'T6gg']
 DATA    = [['https://www.hepdata.net/record/ins1654357?version=1&table=Acceptance/Efficiency 1', 'https://www.hepdata.net/record/ins1654357?version=1&table=Acceptance/Efficiency 2'],
 		   ['https://www.hepdata.net/record/ins1654357?version=1&table=Acceptance/Efficiency 3', 'https://www.hepdata.net/record/ins1654357?version=1&table=Acceptance/Efficiency 4']]
 
@@ -60,30 +60,30 @@ for i in range(len(obsN)):
 	dataset = DataSetInput(SR[i])
 	dataset.setInfo(dataType = 'efficiencyMap', dataId = SR[i] + '-q', observedN = obsN[i], expectedBG = expN[i], bgError = bgErr[i])
 	#+++++++ next txName block ++++++++++++++
-	T6g 					 	= dataset.addTxName(TP[1])
-	T6g.checked 			 	= 'No'
-	T6g.constraint 			 	= "[[['jet'],['photon']],[['jet'],['photon']]]"
-	T6g.conditionDescription 	= None
-	T6g.condition 			 	= None
-	T6g.source 				 	= "ATLAS"
+	T6gg 					 	= dataset.addTxName(TP[1])
+	T6gg.checked 			 	= 'No'
+	T6gg.constraint 			 	= "[[['jet'],['photon']],[['jet'],['photon']]]"
+	T6gg.conditionDescription 	= None
+	T6gg.condition 			 	= None
+	T6gg.source 				 	= "ATLAS"
 	#+++++++ next mass plane block ++++++++++++++
-	T6g_1 						= T6g.addMassPlane(2*[[x, y, 1.]])
-	T6g_1.dataUrl   			= DATA[1][i]
-	T6g_1.setSources(dataLabels	= ['expExclusion', 'obsExclusion', 'efficiencyMap'],
-						dataFiles 	= ['orig/HEPData-ins1654357-v1-Exclusion_contour_(expected)_3.csv', 'orig/HEPData-ins1654357-v1-Exclusion_contour_(observed)_4.csv', 'orig/EffMap_' + TP[1].replace("g","Gamma") + '_' + SR[i] + '.txt'],																	 
+	T6gg_1 						= T6gg.addMassPlane(2*[[x, y, 1.]])
+	T6gg_1.dataUrl   			= DATA[1][i]
+	T6gg_1.setSources(dataLabels	= ['expExclusion', 'obsExclusion', 'efficiencyMap'],
+						dataFiles 	= ['orig/HEPData-ins1654357-v1-Exclusion_contour_(expected)_3.csv', 'orig/HEPData-ins1654357-v1-Exclusion_contour_(observed)_4.csv', 'orig/EffMap_' + TP[1].replace("gg","Gamma") + '_' + SR[i] + '.txt'],																	 
 						dataFormats	= ['csv', 'csv', 'txt'])
 
-	T5g 						= dataset.addTxName(TP[0])
-	T5g.checked 				= 'No'
-	T5g.constraint 		 		= "[[['jet','jet'],['photon']],[['jet','jet'],['photon']]]"
-	T5g.conditionDescription	= None
-	T5g.condition 		 		= None
-	T5g.source 					= "ATLAS"
+	T5gg 						= dataset.addTxName(TP[0])
+	T5gg.checked 				= 'No'
+	T5gg.constraint 		 		= "[[['jet','jet'],['photon']],[['jet','jet'],['photon']]]"
+	T5gg.conditionDescription	= None
+	T5gg.condition 		 		= None
+	T5gg.source 					= "ATLAS"
 	#+++++++ next mass plane block ++++++++++++++
-	T5g_1						= T5g.addMassPlane(2*[[x, y, 1.]])
-	T5g_1.dataUrl   			= DATA[0][i]
-	T5g_1.setSources(dataLabels	= ['expExclusion', 'obsExclusion', 'efficiencyMap'],
-						dataFiles 	= ['orig/HEPData-ins1654357-v1-Exclusion_contour_(expected)_1.csv', 'orig/HEPData-ins1654357-v1-Exclusion_contour_(observed)_2.csv', 'orig/EffMap_' + TP[0].replace("g","Gamma") + '_' + SR[i] + '.txt'],																	 
+	T5gg_1						= T5gg.addMassPlane(2*[[x, y, 1.]])
+	T5gg_1.dataUrl   			= DATA[0][i]
+	T5gg_1.setSources(dataLabels	= ['expExclusion', 'obsExclusion', 'efficiencyMap'],
+						dataFiles 	= ['orig/HEPData-ins1654357-v1-Exclusion_contour_(expected)_1.csv', 'orig/HEPData-ins1654357-v1-Exclusion_contour_(observed)_2.csv', 'orig/EffMap_' + TP[0].replace("gg","Gamma") + '_' + SR[i] + '.txt'],																	 
 						dataFormats	= ['csv', 'csv', 'txt'])
 
 
@@ -91,7 +91,7 @@ obsN 	= [6, 1]
 expN 	= [3.7, 2.05]
 bgErr 	= [1.1, 0.64]
 SR 		= ['SRyy-WL', 'SRyy-WH']
-TP		= 'TChipChimg'
+TP		= 'TChipChimgg'
 DATA    = ['https://www.hepdata.net/record/ins1654357?version=1&table=Acceptance/Efficiency 5', 'https://www.hepdata.net/record/ins1654357?version=1&table=Acceptance/Efficiency 6']
 
 for i in range(len(obsN)):
@@ -100,17 +100,17 @@ for i in range(len(obsN)):
 	dataset = DataSetInput(SR[i])
 	dataset.setInfo(dataType = 'efficiencyMap', dataId = SR[i], observedN = obsN[i], expectedBG = expN[i], bgError = bgErr[i])
 	#+++++++ next txName block ++++++++++++++
-	TChipChimg 							= dataset.addTxName(TP)
-	TChipChimg.checked 					= 'No'
-	TChipChimg.constraint 				= "[[['W'],['photon']],[['Z'],['photon']]]+[[['W'],['photon']],[['W'],['photon']]]+[[['W'],['photon']],[['higgs'],['photon']]]"
-	TChipChimg.conditionDescription 	= None
-	TChipChimg.condition 				= None
-	TChipChimg.source 			    	= "ATLAS"
+	TChipChimgg 							= dataset.addTxName(TP)
+	TChipChimgg.checked 					= 'No'
+	TChipChimgg.constraint 				= "[[['W'],['photon']],[['Z'],['photon']]]+[[['W'],['photon']],[['W'],['photon']]]+[[['W'],['photon']],[['higgs'],['photon']]]"
+	TChipChimgg.conditionDescription 	= None
+	TChipChimgg.condition 				= None
+	TChipChimgg.source 			    	= "ATLAS"
 	#+++++++ next mass plane block ++++++++++++++
-	TChipChimg_1 		   				= TChipChimg.addMassPlane(2*[[x, y, 1.]])
-	TChipChimg_1.dataUrl   				= DATA[i]
-	TChipChimg_1.setSources(dataLabels	= ['expExclusion', 'obsExclusion', 'efficiencyMap'],
-								dataFiles 	= ['orig/HEPData-ins1654357-v1-Exclusion_contour_(expected)_5.csv', 'orig/HEPData-ins1654357-v1-Exclusion_contour_(observed)_6.csv', 'orig/EffMap_' + TP.replace("g","Gamma") + '_' + SR[i] + '.txt'],																	 
+	TChipChimgg_1 		   				= TChipChimgg.addMassPlane(2*[[x, y, 1.]])
+	TChipChimgg_1.dataUrl   				= DATA[i]
+	TChipChimgg_1.setSources(dataLabels	= ['expExclusion', 'obsExclusion', 'efficiencyMap'],
+								dataFiles 	= ['orig/HEPData-ins1654357-v1-Exclusion_contour_(expected)_5.csv', 'orig/HEPData-ins1654357-v1-Exclusion_contour_(observed)_6.csv', 'orig/EffMap_' + TP.replace("gg","Gamma") + '_' + SR[i] + '.txt'],																	 
 								dataFormats	= ['csv', 'csv', 'txt'])
 
 

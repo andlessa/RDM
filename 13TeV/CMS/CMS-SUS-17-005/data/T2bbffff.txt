@@ -1,12 +1,12 @@
 txName: T2bbffff
-constraint: 4.5*([[['b','l','nu']],[['b','q','q']]]+[[['b','l','nu']],[['b','L','nu']]])
+constraint: 5.06*([[['b','l','nu']],[['b','q','q']]]+[[['b','l','nu']],[['b','l','nu']]])
 condition: None
 conditionDescription: None
 susyProcess: pp --> stop stop, stop  --> bottom f f lsp
 figureUrl: http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-17-005/CMS-SUS-17-005_Figure_009-a.png
 dataUrl: http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-17-005/CMS-SUS-17-005_Figure_009-a.root
 source: CMS
-validated: TBD
+validated: True
 axes: [[x, x - y], [x, x - y]]
 finalState: ['MET', 'MET']
 upperLimits: [[[[2.5000E+02*GeV,2.4000E+02*GeV],[2.5000E+02*GeV,2.4000E+02*GeV]],9.6758E-01*pb],

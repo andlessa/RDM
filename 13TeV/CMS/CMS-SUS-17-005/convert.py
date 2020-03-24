@@ -54,11 +54,11 @@ info = MetaInfoInput('CMS-SUS-17-005')
 info.url = 'https://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-17-005/'
 info.sqrts = 13
 info.lumi = 35.9
-info.prettyName = '1L + multijets + Etmiss, top tagging'
+info.prettyName = '1L compressed stop'
 info.private = False
-info.arxiv = ''
-info.contact = ''
-info.publication = ''
+info.arxiv = 'https://arxiv.org/abs/1805.05784'
+info.contact ='cms-phys-conveners-sus@cern.ch'
+info.publication = 'JHEP 1809 (2018) 065'
 info.comment = ''
 
 
@@ -71,7 +71,7 @@ dataset.setInfo(dataType = 'upperLimit', dataId = None)
 T2bbffff = dataset.addTxName('T2bbffff')
 T2bbffff.checked = ''
 #T2bbffff.constraint = "2.25*[[['b','q','q']],[['b','q','q']]]"
-T2bbffff.constraint = "4.5*([[['b','l','nu']],[['b','q','q']]]+[[['b','l','nu']],[['b','L','nu']]])"
+T2bbffff.constraint = "5.06*([[['b','l','nu']],[['b','q','q']]]+[[['b','l','nu']],[['b','l','nu']]])"
 T2bbffff.conditionDescription = None
 T2bbffff.condition = None
 T2bbffff.source = "CMS"
@@ -111,7 +111,7 @@ T2bbffff_2.setSources(dataLabels= ['obsExclusionM1','expExclusionM1', 'expExclus
 T6bbWWoff = dataset.addTxName('T6bbWWoff')
 T6bbWWoff.checked = ''
 #T6bbWWoff.constraint = "2.25*[[['b'],['q','q']],[['b'],['q','q']]]"
-T6bbWWoff.constraint = "4.5*([[['b'],['l','nu']],[['b'],['q','q']]]+[[['b'],['l','nu']],[['b'],['L','nu']]])"
+T6bbWWoff.constraint = "5.06*([[['b'],['l','nu']],[['b'],['q','q']]]+[[['b'],['l','nu']],[['b'],['l','nu']]])"
 T6bbWWoff.conditionDescription = None
 T6bbWWoff.condition = None
 T6bbWWoff.source = "CMS"

@@ -1,7 +1,7 @@
 txName: TChiChipmSlepSlep
-constraint: [[['l+'],['l-']],[['l'],['nu']]] + [[['l+'],['l-']],[['nu'],['l']]] + [[['l-'],['l+']],[['l'],['nu']]] + [[['l-'],['l+']],[['nu'],['l']]]
-condition: None
-conditionDescription: None
+constraint: 2.25*([[['e+'],['e-']],[['l'],['nu']]] + [[['mu+'],['mu-']],[['l'],['nu']]] + [[['e+'],['e-']],[['nu'],['l']]] + [[['mu+'],['mu-']],[['nu'],['l']]])
+condition: Cgtr([[['mu+'],['mu-']],[['l'],['nu']]] + [[['mu+'],['mu-']],[['nu'],['l']]],[[['e+'],['e-']],[['l'],['nu']]] + [[['e+'],['e-']],[['nu'],['l']]])
+conditionDescription: [[['mu+'],['mu-']],[['l'],['nu']]] + [[['mu+'],['mu-']],[['nu'],['l']]] > [[['e+'],['e-']],[['l'],['nu']]] + [[['e+'],['e-']],[['nu'],['l']]]
 susyProcess: pp --> neutralino_2 chargino^pm_1, neutralino_2 chargino^pm_1  --> lepton slepton ( neutrino sneutrino ) lepton sneutrino ( neutrino slepton ), slepton --> lepton lsp, sneutrino --> neutrino lsp
 checked: False
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-24/figaux_32a.png
@@ -9,6 +9,7 @@ dataUrl: https://www.hepdata.net/record/ins1658902?version=1&table=Table80
 source: ATLAS
 validated: TBD
 axes: [[x, 0.5*x + 0.5*y, y], [x, 0.5*x + 0.5*y, y]]
+validationTarball: TChiChipmSlepLNoTau.tar.gz
 finalState: ['MET', 'MET']
 upperLimits: [[[[1.0000E+03*GeV,5.0000E+02*GeV,0.0000E+00*GeV],[1.0000E+03*GeV,5.0000E+02*GeV,0.0000E+00*GeV]],6.7572E-01*fb],
 [[[1.0000E+03*GeV,5.5000E+02*GeV,1.0000E+02*GeV],[1.0000E+03*GeV,5.5000E+02*GeV,1.0000E+02*GeV]],6.1383E-01*fb],

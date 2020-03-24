@@ -6,7 +6,7 @@ susyProcess: pp --> gluino squark, gluino squark --> quark quark antiquark lsp l
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-07/figaux_080a.png
 dataUrl: None
 source: SModelS
-validated: True
+validated: N/A
 axes: [[x, 0.0], [y, 0.0]]; [[x, 695.0], [y, 695.0]]; [[x, 995.0], [y, 995.0]]
 finalState: ['MET', 'MET']
 efficiencyMap: [[[[9.0000E+02*GeV,2.5000E+02*GeV],[9.0000E+02*GeV,2.5000E+02*GeV]],0.028317],

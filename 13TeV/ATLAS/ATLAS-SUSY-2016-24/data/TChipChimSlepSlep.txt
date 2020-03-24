@@ -1,5 +1,5 @@
 txName: TChipChimSlepSlep
-constraint: [[['nu'],['mu+']],[['nu'],['mu-']]],[[['nu'],['e+']],[['nu'],['e-']]]
+constraint: 2.25*([[['nu'],['mu+']],[['nu'],['mu-']]]+[[['nu'],['e+']],[['nu'],['e-']]])
 condition: Cgtr([[['nu'],['mu+']],[['nu'],['mu-']]],[[['nu'],['e+']],[['nu'],['e-']]])
 conditionDescription: [[['nu'],['mu+']],[['nu'],['mu-']]] > [[['nu'],['e+']],[['nu'],['e-']]]
 susyProcess: pp --> chargino^pm_1 chargino^pm_1, chargino^pm_1 chargino^pm_1 --> lepton slepton lepton slepton, slepton --> lepton lsp
@@ -9,6 +9,7 @@ dataUrl: https://www.hepdata.net/record/ins1658902?version=1&table=Table78
 source: ATLAS
 validated: TBD
 axes: [[x, 0.5*x + 0.5*y, y], [x, 0.5*x + 0.5*y, y]]
+validationTarball: TChipChimSlepSlepAll.tar.gz
 finalState: ['MET', 'MET']
 upperLimits: [[[[1.5000E+02*GeV,7.5500E+01*GeV,1.0000E+00*GeV],[1.5000E+02*GeV,7.5500E+01*GeV,1.0000E+00*GeV]],8.5594E+02*fb],
 [[[1.5000E+02*GeV,1.0000E+02*GeV,5.0000E+01*GeV],[1.5000E+02*GeV,1.0000E+02*GeV,5.0000E+01*GeV]],5.5158E+03*fb],
