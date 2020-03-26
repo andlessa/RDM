@@ -1,5 +1,5 @@
 txName: T3GQ
-constraint: [[[q]],[[q],[q]]]
+constraint: [[[jet]],[[jet],[jet]]]
 condition: None
 conditionDescription: None
 susyProcess: pp --> gluino squark, gluino --> squark quark, squark --> quark LSP

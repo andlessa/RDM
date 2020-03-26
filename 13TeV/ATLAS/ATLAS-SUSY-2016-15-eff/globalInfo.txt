@@ -9,4 +9,4 @@ contact: atlas-phys-susy-conveners@cern.ch
 comment: Calculated obs and exp ULs replaced with official ATLAS data from https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-15/tab_14.png
 private: False
 implementedBy: Philipp Neuhuber
-lastUpdate: 2020/3/18
+lastUpdate: 2020/3/25

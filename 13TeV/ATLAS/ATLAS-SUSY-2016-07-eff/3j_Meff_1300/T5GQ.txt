@@ -1,5 +1,5 @@
 txName: T5GQ
-constraint: [[[q],[q,q]],[[q,q]]]
+constraint: [[[jet],[jet,jet]],[[jet,jet]]]
 condition: None
 conditionDescription: None
 susyProcess: pp --> gluino squark, gluino --> quark quark, squark --> quark gluino

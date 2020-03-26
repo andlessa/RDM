@@ -1,6 +1,6 @@
 txName: TChipChimSlepSlep
-constraint: 2.25*([[['nu'],['mu+']],[['nu'],['mu-']]]+[[['nu'],['e+']],[['nu'],['e-']]])
-condition: Cgtr([[['nu'],['mu+']],[['nu'],['mu-']]],[[['nu'],['e+']],[['nu'],['e-']]])
+constraint: 2.25*([[['nu'],['mu+']],[['nu'],['mu-']]] + [[['nu'],['e+']],[['nu'],['e-']]])
+condition: Cgtr([[['nu'],['mu+']],[['nu'],['mu-']]], [[['nu'],['e+']],[['nu'],['e-']]])
 conditionDescription: [[['nu'],['mu+']],[['nu'],['mu-']]] > [[['nu'],['e+']],[['nu'],['e-']]]
 susyProcess: pp --> chargino^pm_1 chargino^pm_1, chargino^pm_1 chargino^pm_1 --> lepton slepton lepton slepton, slepton --> lepton lsp
 checked: False

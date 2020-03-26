@@ -1,5 +1,5 @@
 txName: T5ZZ
-constraint: [[['q','q'],['Z']],[['q','q'],['Z']]]
+constraint: [[[jet,jet],[Z]],[[jet,jet],[Z]]]
 condition: None
 conditionDescription: None
 susyProcess: pp --> gluino gluino, gluino  --> quark antiquark neutralino_2, neutralino_2 --> Z lsp

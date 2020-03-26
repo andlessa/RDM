@@ -41,23 +41,23 @@ info 			= MetaInfoInput('ATLAS-SUSY-2018-06')
 info.url 		= 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2018-06/'
 info.sqrts 		= 13
 info.lumi 		= 139
-info.prettyName 	= '3 leptons EW-ino'
-info.private 		= False
-info.arxiv 		= 'arXiv:1912.08479'
-info.contact            = 'atlas-phys-susy-conveners@cern.ch'
+info.prettyName = '3 leptons EW-ino'
+info.private 	= False
+info.arxiv 		= 'https://arxiv.org/abs/1912.08479'
+info.contact    = 'atlas-phys-susy-conveners@cern.ch'
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput('data')
 dataset.setInfo(dataType = 'upperLimit', dataId = None)
 
 #+++++++ next txName block ++++++++++++++
-TChiWZ 					= dataset.addTxName('TChiWZ')
+TChiWZ                      = dataset.addTxName('TChiWZ')
 TChiWZ.checked 				= 'no'
-TChiWZ.constraint 				= "[[['W']],[['Z']]]"
-TChiWZ.conditionDescription 			= None
-TChiWZ.condition 				=  None
-TChiWZ.source 				= "ATLAS"
-TChiWZ.massConstraint			= None
+TChiWZ.constraint           = "[[['W']],[['Z']]]"
+TChiWZ.condition            = None
+TChiWZ.massConstraint       = None
+TChiWZ.conditionDescription = None
+TChiWZ.source               = "ATLAS"
 
 # off-shell part
 

@@ -1,6 +1,6 @@
 txName: T5WZh
-constraint: [[[q,q],[Z]],[[q,q],[W]]]+[[[q,q],[higgs]],[[q,q],[W]]]+[[[q,q],[higgs]],[[q,q],[higgs]]]+[[[q,q],[higgs]],[[q,q],[Z]]]
-condition: Csim([[[q,q],[Z]],[[q,q],[W]]]+[[[q,q],[higgs]],[[q,q],[W]]],2.*([[[q,q],[W]],[[q,q],[W]]]))
+constraint: [[[jet,jet],[Z]],[[jet,jet],[W]]]+[[[jet,jet],[higgs]],[[jet,jet],[W]]]+[[[jet,jet],[higgs]],[[jet,jet],[higgs]]]+[[[jet,jet],[higgs]],[[jet,jet],[Z]]]
+condition: Csim([[[jet,jet],[Z]],[[jet,jet],[W]]]+[[[jet,jet],[higgs]],[[jet,jet],[W]]],2.*([[[jet,jet],[W]],[[jet,jet],[W]]]))
 conditionDescription: None
 susyProcess: pp --> gluino gluino, gluino  --> quark quark antiquark antiquark chargino^pm_1 neutralino_2, chargino^pm_1 --> W lsp, neutralino_2 --> Z|h lsp
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-07/figaux_078b.png

@@ -1,5 +1,5 @@
 txName: T6WW
-constraint: [[['q'],['W']],[['q'],['W']]]
+constraint: [[[jet],[W]],[[jet],[W]]]
 condition: None
 conditionDescription: None
 susyProcess: pp --> squark squark, squark --> quark chargino^pm_1, chargino^pm_1 --> W lsp

@@ -8,6 +8,7 @@ dataUrl: None
 source: SModelS
 validated: TBD
 axes: [[x, y, 60.0], [x, y, 60.0]]
+validationTarball: T6WZhleft.tar.gz
 finalState: ['MET', 'MET']
 efficiencyMap: [[[[3.0000E+02*GeV,1.5000E+02*GeV,1.0000E+01*GeV],[3.0000E+02*GeV,1.5000E+02*GeV,1.0000E+01*GeV]],0.0],
 [[[1.8000E+03*GeV,1.7500E+03*GeV,1.4100E+03*GeV],[1.8000E+03*GeV,1.7500E+03*GeV,1.4100E+03*GeV]],0.0002048],

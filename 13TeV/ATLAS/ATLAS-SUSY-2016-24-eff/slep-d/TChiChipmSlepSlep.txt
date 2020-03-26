@@ -1,7 +1,7 @@
 txName: TChiChipmSlepSlep
-constraint: 2.25*([[['e+'],['e-']],[['l'],['nu']]] + [[['mu+'],['mu-']],[['l'],['nu']]] + [[['e+'],['e-']],[['nu'],['l']]] + [[['mu+'],['mu-']],[['nu'],['l']]])
-condition: Cgtr([[['mu+'],['mu-']],[['l'],['nu']]] + [[['mu+'],['mu-']],[['nu'],['l']]],[[['e+'],['e-']],[['l'],['nu']]] + [[['e+'],['e-']],[['nu'],['l']]])
-conditionDescription: [[['mu+'],['mu-']],[['l'],['nu']]] + [[['mu+'],['mu-']],[['nu'],['l']]] > [[['e+'],['e-']],[['l'],['nu']]] + [[['e+'],['e-']],[['nu'],['l']]]
+constraint: 2.25*([[['e+'],['e-']],[['l'],['nu']]] + [[['e-'],['e+']],[['l'],['nu']]] + [[['e+'],['e-']],[['nu'],['l']]] + [[['e-'],['e+']],[['nu'],['l']]] + [[['mu+'],['mu-']],[['l'],['nu']]] + [[['mu-'],['mu+']],[['l'],['nu']]] + [[['mu+'],['mu-']],[['nu'],['l']]] + [[['mu-'],['mu+']],[['nu'],['l']]])
+condition: Cgtr([[['mu+'],['mu-']],[['l'],['nu']]] + [[['mu-'],['mu+']],[['l'],['nu']]] + [[['mu+'],['mu-']],[['nu'],['l']]] + [[['mu-'],['mu+']],[['nu'],['l']]], [[['e+'],['e-']],[['l'],['nu']]] + [[['e-'],['e+']],[['l'],['nu']]] + [[['e+'],['e-']],[['nu'],['l']]] + [[['e-'],['e+']],[['nu'],['l']]])
+conditionDescription: [[['mu+'],['mu-']],[['l'],['nu']]] + [[['mu-'],['mu+']],[['l'],['nu']]] + [[['mu+'],['mu-']],[['nu'],['l']]] + [[['mu-'],['mu+']],[['nu'],['l']]] > [[['e+'],['e-']],[['l'],['nu']]] + [[['e-'],['e+']],[['l'],['nu']]] + [[['e+'],['e-']],[['nu'],['l']]] + [[['e-'],['e+']],[['nu'],['l']]]
 susyProcess: pp --> neutralino_2 chargino^pm_1, neutralino_2 chargino^pm_1  --> lepton slepton ( neutrino sneutrino ) lepton sneutrino ( neutrino slepton ), slepton --> lepton lsp, sneutrino --> neutrino lsp
 checked: No
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-24/figaux_25a.png; https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-24/figaux_25b.png

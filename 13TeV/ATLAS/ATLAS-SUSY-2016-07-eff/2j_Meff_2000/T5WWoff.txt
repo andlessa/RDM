@@ -1,5 +1,5 @@
 txName: T5WWoff
-constraint: 2.23*[[['jet','jet'],['jet','jet']],[['jet','jet'],['jet','jet']]]
+constraint: 2.23*[[[jet,jet],[jet,jet]],[[jet,jet],[jet,jet]]]
 condition: None
 conditionDescription: None
 susyProcess: pp --> gluino gluino, gluino  --> quark antiquark  chargino^pm_1, chargino^pm_1 --> W^* lsp

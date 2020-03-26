@@ -54,9 +54,9 @@ TChipChimSlepSlep = {
 'sources'	 :{'expExcl'		: 'orig/HEPData-ins1658902-v1-Table_13.csv',
 			   'obsExcl'		: 'orig/HEPData-ins1658902-v1-Table_14.csv',
 			   'upLimit'		: 'orig/HEPData-ins1658902-v1-Table_78.csv'},
-'constraint' : "2.25*([[['nu'],['mu+']],[['nu'],['mu-']]]+[[['nu'],['e+']],[['nu'],['e-']]])",
+'constraint' : "2.25*([[['nu'],['mu+']],[['nu'],['mu-']]] + [[['nu'],['e+']],[['nu'],['e-']]])",
 'condDesc'	 : "[[['nu'],['mu+']],[['nu'],['mu-']]] > [[['nu'],['e+']],[['nu'],['e-']]]",
-'condition'	 : "Cgtr([[['nu'],['mu+']],[['nu'],['mu-']]],[[['nu'],['e+']],[['nu'],['e-']]])",
+'condition'	 : "Cgtr([[['nu'],['mu+']],[['nu'],['mu-']]], [[['nu'],['e+']],[['nu'],['e-']]])",
 'massPlane'  : 2*[[x, 0.5*(x+y), y]]}
 
 TSlepSlep = {
@@ -68,9 +68,9 @@ TSlepSlep = {
 'sources'	 :{'expExcl'		: 'orig/HEPData-ins1658902-v1-Table_15.csv',
 			   'obsExcl'		: 'orig/HEPData-ins1658902-v1-Table_16.csv',
 			   'upLimit'		: 'orig/HEPData-ins1658902-v1-Table_79.csv'},
-'constraint' : "2.25*[[['e+']],[['e-']]]+[[['mu+']],[['mu-']]]",
+'constraint' : "2.25*([[['e+']],[['e-']]] + [[['mu+']],[['mu-']]])",
 'condDesc'	 : "[[['mu+']],[['mu-']]] > [[['e+']],[['e-']]]",
-'condition'	 : "Cgtr([[['mu+']],[['mu-']]],[[['e+']],[['e-']]])",
+'condition'	 : "Cgtr([[['mu+']],[['mu-']]], [[['e+']],[['e-']]])",
 'massPlane'  : 2*[[x, y]]}
 
 TChiChipmSlepSlep = {
@@ -82,14 +82,9 @@ TChiChipmSlepSlep = {
 'sources'	 :{'expExcl'		: 'orig/HEPData-ins1658902-v1-Table_17.csv',
 			   'obsExcl'		: 'orig/HEPData-ins1658902-v1-Table_18.csv',
 			   'upLimit'		: 'orig/HEPData-ins1658902-v1-Table_80.csv'},
-#'constraint' : "2.*([[['L+'],['L-']],[['L'],['nu']]] + [[['L+'],['L-']],[['nu'],['L']]] + [[['L-'],['L+']],[['L'],['nu']]] + [[['L-'],['L+']],[['nu'],['L']]])",
-#'constraint' : "2.*([[['e+'],['e-']],[['L'],['nu']]] + [[['e+'],['e-']],[['nu'],['L']]] + [[['mu+'],['mu-']],[['L'],['nu']]] + [[['mu+'],['mu-']],[['nu'],['L']]] + [[['t+'],['t-']],[['nu'],['L']]] + [[['t+'],['t-']],[['nu'],['L']]])",
-'constraint' : "2.25*([[['e+'],['e-']],[['l'],['nu']]] + [[['mu+'],['mu-']],[['l'],['nu']]] + [[['e+'],['e-']],[['nu'],['l']]] + [[['mu+'],['mu-']],[['nu'],['l']]])",
-'condDesc'	 : "[[['mu+'],['mu-']],[['l'],['nu']]] + [[['mu+'],['mu-']],[['nu'],['l']]] > [[['e+'],['e-']],[['l'],['nu']]] + [[['e+'],['e-']],[['nu'],['l']]]",
-'condition'	 : "Cgtr([[['mu+'],['mu-']],[['l'],['nu']]] + [[['mu+'],['mu-']],[['nu'],['l']]],[[['e+'],['e-']],[['l'],['nu']]] + [[['e+'],['e-']],[['nu'],['l']]])",
-#'constraint' : "2.0*([[['e+'],['e-']],[['l'],['nu']]] + [[['e+'],['e-']],[['nu'],['l']]] + [[['mu+'],['mu-']],[['l'],['nu']]] + [[['mu+'],['mu-']],[['nu'],['l']]] + [[['ta+'],['ta-']],[['l'],['nu']]] +  [[['ta+'],['ta-']],[['nu'],['l']]])",
-#'condDesc'	 : "[[['mu+'],['mu-']],[['l'],['nu']]] + [[['mu+'],['mu-']],[['nu'],['l']]] > [[['e+'],['e-']],[['l'],['nu']]] + [[['e+'],['e-']],[['nu'],['l']]],[[['e+'], ['e-']],[['l'],['nu']]] + [[['e+'],['e-']],[['nu'],['l']]] > [[['ta+'],['ta-']],[['l'],['nu']]] + [[['ta+'],['ta-']],[['nu'],['l']]]",
-#'condition'	 : "Cgtr([[['mu+'],['mu-']],[['l'],['nu']]] + [[['mu+'],['mu-']],[['nu'],['l']]],[[['e+'],['e-']],[['l'],['nu']]] + [[['e+'],['e-']],[['nu'],['l']]]);Cgtr([[['e+'],['e-']],[['l'],['nu']]] + [[['e+'],['e-']],[['nu'],['l']]],[[['ta+'],['ta-']],[['l'],['nu']]] + [[['ta+'],['ta-']],[['nu'],['l']]])",
+'constraint' : "2.25*([[['e+'],['e-']],[['l'],['nu']]] + [[['e-'],['e+']],[['l'],['nu']]] + [[['e+'],['e-']],[['nu'],['l']]] + [[['e-'],['e+']],[['nu'],['l']]] + [[['mu+'],['mu-']],[['l'],['nu']]] + [[['mu-'],['mu+']],[['l'],['nu']]] + [[['mu+'],['mu-']],[['nu'],['l']]] + [[['mu-'],['mu+']],[['nu'],['l']]])",
+'condDesc'	 : "[[['mu+'],['mu-']],[['l'],['nu']]] + [[['mu-'],['mu+']],[['l'],['nu']]] + [[['mu+'],['mu-']],[['nu'],['l']]] + [[['mu-'],['mu+']],[['nu'],['l']]] > [[['e+'],['e-']],[['l'],['nu']]] + [[['e-'],['e+']],[['l'],['nu']]] + [[['e+'],['e-']],[['nu'],['l']]] + [[['e-'],['e+']],[['nu'],['l']]]",
+'condition'	 : "Cgtr([[['mu+'],['mu-']],[['l'],['nu']]] + [[['mu-'],['mu+']],[['l'],['nu']]] + [[['mu+'],['mu-']],[['nu'],['l']]] + [[['mu-'],['mu+']],[['nu'],['l']]], [[['e+'],['e-']],[['l'],['nu']]] + [[['e-'],['e+']],[['l'],['nu']]] + [[['e+'],['e-']],[['nu'],['l']]] + [[['e-'],['e+']],[['nu'],['l']]])",
 'massPlane'  : 2*[[x, 0.5*(x+y), y]]}
 
 TChiWZ = {
@@ -120,7 +115,7 @@ for TX in DATA:
 	newTx.condition 				= TX['condition']
 	newTx.source 					= 'ATLAS'
 	if 'valTarball' in TX:
-		print('using ' + TX['valTarball'] + ' for ' + TX['name'])
+		print('validating ' + TX['valTarball'] + ' with ' + TX['name'])
 		newTx.validationTarball = TX['valTarball']
 	#+++++++ next mass plane block ++++++++++++++
 	newPlane 						= newTx.addMassPlane(TX['massPlane'])
@@ -134,6 +129,7 @@ for TX in DATA:
                  	dataFormats 	= ['csv', 'csv', 'csv'])
 
 databaseCreator.create()
+
 
 
 

@@ -59,7 +59,7 @@ for i in range(len(obsN)):
 	dataset.setInfo(dataType = 'efficiencyMap', dataId = SR[i], observedN = obsN[i], expectedBG = expN[i], bgError = bgErr[i])
 	#+++++++ next txName block ++++++++++++++
 	T2bb 									= dataset.addTxName('T2bb')
-	T2bb.checked 							= 'False'
+	T2bb.checked 							= 'N/A'
 	T2bb.constraint 						= '[[[b]],[[b]]]'
 	T2bb.conditionDescription 				= None
 	T2bb.condition 							= None
@@ -69,11 +69,10 @@ for i in range(len(obsN)):
 	T2bb_1.figure 							= 'Fig.' + fig[i]
 	T2bb_1.figureUrl 						= 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-15/figaux_' + fig[i] + '.png'
 	T2bb_1.dataUrl 							= 'https://www.hepdata.net/record/ins1623207?version=7&table=Eff' + SR[i]
-	T2bb_1.setSources(dataLabels 			= ['expExclusion', 'obsExclusion', 'efficiencyMap'],
-								dataFiles 	= ['orig/ExpectedexclusioncontourdirectTT.csv', 'orig/ObservedexclusioncontourdirectTT.csv', 'orig/EffMap_T2bb_' + SR[i] + '.txt'],
-								coordinates = [ {x: 0, y: 1, 'value': None}, {x: 0, y: 1, 'value': None},  {x : 1, y: 0, 'value' :2} ],																	 
-								dataFormats	= ['csv', 'csv', 'txt'])
-
+	T2bb_1.setSources(dataLabels 			= ['efficiencyMap'],
+								dataFiles 	= ['orig/EffMap_T2bb_' + SR[i] + '.txt'],
+								coordinates = [{x : 1, y: 0, 'value' :2}],																	 
+								dataFormats	= ['txt'])
 
 
 obsN 	= [18, 	 	   9,	   11,	   206,		53,	 	 38,	  20,	  22,	  22,	  1,	  0,	  3]

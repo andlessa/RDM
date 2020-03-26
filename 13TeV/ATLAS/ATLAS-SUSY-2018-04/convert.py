@@ -51,11 +51,11 @@ info                 = MetaInfoInput('ATLAS-SUSY-2018-04')
 info.url             = 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2018-04/'
 info.sqrts             = 13
 info.lumi             = 139.
-info.prettyName     = '2 hadronic taus'
+info.prettyName     = '2 hadronic taus (OS)'
 info.private         = False
-info.arxiv             = 'arXiv:1911.06660'
+info.arxiv             = 'https://arxiv.org/abs/1911.06660'
 info.contact         = 'atlas-phys-susy-conveners@cern.ch'
-info.publication     = ''
+info.publication     = 'Phys.Rev. D101 (2020) no.3, 032009'
 
 # +++++++ dataset block ++++++++++++++
 dataset = DataSetInput('data')
@@ -64,7 +64,7 @@ dataset.setInfo( dataType = 'upperLimit', dataId = None )
 # +++++++ next txName block ++++++++++++++
 TStauStau = dataset.addTxName("TStauStau" )
 TStauStau.checked              = 'no'
-TStauStau.constraint           = "[[['ta']],[['ta']]]"
+TStauStau.constraint           = "[[['ta+']],[['ta-']]]"
 TStauStau.conditionDescription = None
 TStauStau.condition            = None
 TStauStau.source               = 'ATLAS'

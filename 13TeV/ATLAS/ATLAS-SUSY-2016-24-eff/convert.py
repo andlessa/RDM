@@ -82,8 +82,6 @@ TChipChimSlepSlep = {
 'valTarball' : 'TChipChimSlepSlepAll.tar.gz',
 'sources'	 :{'expExcl': 'orig/HEPData-ins1658902-v1-Table_13.csv',
 			   'obsExcl': 'orig/HEPData-ins1658902-v1-Table_14.csv'},
-#'constraint' : "0.5*([[['nu'],['L+']],[['nu'],['L-']]]+[[['nu'],['L-']],[['nu'],['L+']]])", <- DOUBLE COUNTING??
-#'constraint' : "[[['nu'],['L+']],[['nu'],['L-']]]",
 'constraint' : "2.25*([[['nu'],['mu+']],[['nu'],['mu-']]]+[[['nu'],['e+']],[['nu'],['e-']]])",
 'condDesc'	 : "[[['nu'],['mu+']],[['nu'],['mu-']]] > [[['nu'],['e+']],[['nu'],['e-']]]",
 'condition'	 : "Cgtr([[['nu'],['mu+']],[['nu'],['mu-']]],[[['nu'],['e+']],[['nu'],['e-']]])",
@@ -104,14 +102,9 @@ TChiChipmSlepSlep = {
 'valTarball' : 'TChiChipmSlepLNoTau.tar.gz',
 'sources'	 :{'expExcl': 'orig/HEPData-ins1658902-v1-Table_17.csv',
 			   'obsExcl': 'orig/HEPData-ins1658902-v1-Table_18.csv'},
-#'constraint' : "2.0*([[['L+'],['L-']],[['L'],['nu']]] + [[['L+'],['L-']],[['nu'],['L']]] + [[['L-'],['L+']],[['L'],['nu']]] + [[['L-'],['L+']],[['nu'],['L']]])",
-#'constraint' : "2.0*([[['L+'],['L-']],[['L'],['nu']]] + [[['L+'],['L-']],[['nu'],['L']]])"
-'constraint' : "2.25*([[['e+'],['e-']],[['l'],['nu']]] + [[['mu+'],['mu-']],[['l'],['nu']]] + [[['e+'],['e-']],[['nu'],['l']]] + [[['mu+'],['mu-']],[['nu'],['l']]])",
-'condDesc'	 : "[[['mu+'],['mu-']],[['l'],['nu']]] + [[['mu+'],['mu-']],[['nu'],['l']]] > [[['e+'],['e-']],[['l'],['nu']]] + [[['e+'],['e-']],[['nu'],['l']]]",
-'condition'	 : "Cgtr([[['mu+'],['mu-']],[['l'],['nu']]] + [[['mu+'],['mu-']],[['nu'],['l']]],[[['e+'],['e-']],[['l'],['nu']]] + [[['e+'],['e-']],[['nu'],['l']]])",
-#'constraint' : "2.0*([[['e+'],['e-']],[['l'],['nu']]] + [[['e+'],['e-']],[['nu'],['l']]] + [[['mu+'],['mu-']],[['l'],['nu']]] + [[['mu+'],['mu-']],[['nu'],['l']]] + [[['ta+'],['ta-']],[['l'],['nu']]] +  [[['ta+'],['ta-']],[['nu'],['l']]])",
-#'condDesc'	 : "[[['mu+'],['mu-']],[['l'],['nu']]] + [[['mu+'],['mu-']],[['nu'],['l']]] > [[['e+'],['e-']],[['l'],['nu']]] + [[['e+'],['e-']],[['nu'],['l']]],[[['e+'], ['e-']],[['l'],['nu']]] + [[['e+'],['e-']],[['nu'],['l']]] > [[['ta+'],['ta-']],[['l'],['nu']]] + [[['ta+'],['ta-']],[['nu'],['l']]]",
-#'condition'	 : "Cgtr([[['mu+'],['mu-']],[['l'],['nu']]] + [[['mu+'],['mu-']],[['nu'],['l']]],[[['e+'],['e-']],[['l'],['nu']]] + [[['e+'],['e-']],[['nu'],['l']]]);Cgtr([[['e+'],['e-']],[['l'],['nu']]] + [[['e+'],['e-']],[['nu'],['l']]],[[['ta+'],['ta-']],[['l'],['nu']]] + [[['ta+'],['ta-']],[['nu'],['l']]])",
+'constraint' : "2.25*([[['e+'],['e-']],[['l'],['nu']]] + [[['e-'],['e+']],[['l'],['nu']]] + [[['e+'],['e-']],[['nu'],['l']]] + [[['e-'],['e+']],[['nu'],['l']]] + [[['mu+'],['mu-']],[['l'],['nu']]] + [[['mu-'],['mu+']],[['l'],['nu']]] + [[['mu+'],['mu-']],[['nu'],['l']]] + [[['mu-'],['mu+']],[['nu'],['l']]])",
+'condDesc'	 : "[[['mu+'],['mu-']],[['l'],['nu']]] + [[['mu-'],['mu+']],[['l'],['nu']]] + [[['mu+'],['mu-']],[['nu'],['l']]] + [[['mu-'],['mu+']],[['nu'],['l']]] > [[['e+'],['e-']],[['l'],['nu']]] + [[['e-'],['e+']],[['l'],['nu']]] + [[['e+'],['e-']],[['nu'],['l']]] + [[['e-'],['e+']],[['nu'],['l']]]",
+'condition'	 : "Cgtr([[['mu+'],['mu-']],[['l'],['nu']]] + [[['mu-'],['mu+']],[['l'],['nu']]] + [[['mu+'],['mu-']],[['nu'],['l']]] + [[['mu-'],['mu+']],[['nu'],['l']]], [[['e+'],['e-']],[['l'],['nu']]] + [[['e-'],['e+']],[['l'],['nu']]] + [[['e+'],['e-']],[['nu'],['l']]] + [[['e-'],['e+']],[['nu'],['l']]])",
 'massPlane'  : 2*[[x, 0.5*(x+y), y]]}
 
 TChiWZ = {
@@ -143,7 +136,7 @@ for TX, SR in DATA:
 			newTx.condition 				= TX['condition']
 			newTx.source 					= 'ATLAS'
 			if 'valTarball' in TX:
-				print('using ' + TX['valTarball'] + ' for ' + TX['name'])
+				print('validating ' + TX['valTarball'] + ' with ' + TX['name'])
 				newTx.validationTarball = TX['valTarball']
 			#+++++++ next mass plane block ++++++++++++++
 			newPlane 						= newTx.addMassPlane(TX['massPlane'])

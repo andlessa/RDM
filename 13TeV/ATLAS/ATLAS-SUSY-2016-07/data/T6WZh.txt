@@ -8,6 +8,7 @@ dataUrl: 'https://www.hepdata.net/record/ins1641270?version=5&table=X-section U.
 source: ATLAS
 validated: True
 axes: [[x, y, 60.0], [x, y, 60.0]]
+validationTarball: T6WZhleft.tar.gz
 finalState: ['MET', 'MET']
 upperLimits: [[[[8.0000E+02*GeV,1.9000E+02*GeV,6.0000E+01*GeV],[8.0000E+02*GeV,1.9000E+02*GeV,6.0000E+01*GeV]],9.6268E+01*fb],
 [[[8.0000E+02*GeV,3.6000E+02*GeV,6.0000E+01*GeV],[8.0000E+02*GeV,3.6000E+02*GeV,6.0000E+01*GeV]],4.8737E+01*fb],

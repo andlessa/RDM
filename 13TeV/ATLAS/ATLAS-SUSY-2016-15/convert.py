@@ -49,25 +49,6 @@ info.publication = 'https://link.springer.com/article/10.1007/JHEP12(2017)085'
 dataset = DataSetInput('data')
 dataset.setInfo(dataType = 'upperLimit', dataId = None)
 
-
-T5tttt 							= dataset.addTxName('T5tttt')
-T5tttt.checked 					= 'False'
-T5tttt.constraint 				= '[[[t],[t]],[[t],[t]]]'
-T5tttt.conditionDescription 	= None
-T5tttt.condition 				= None
-T5tttt.source 					= 'ATLAS'
-#+++++++ next mass plane block ++++++++++++++
-T5tttt_1 						= T5tttt.addMassPlane(2*[[x, y+1, y]])
-T5tttt_1.figure 				= 'Fig.13'
-T5tttt_1.figureUrl 				= 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-15/fig_13.png'
-T5tttt_1_dataUrl				= 'https://www.hepdata.net/record/ins1623207?version=7&table=X-section U.L. Gtc'
-T5tttt_1.setSources(dataLabels	= ['expExclusion', 'obsExclusion', 'upperLimits'],
-                 	dataFiles	= ['orig/ExpectedexclusioncontourGtc.csv', 'orig/ObservedexclusioncontourGtc.csv', 'orig/X-sectionU.L.Gtc.csv'],
-					coordinates = [ {x: 0, y: 1, 'value': None}, {x: 0, y: 1, 'value': None},  {x : 1, y: 0, 'value' :2} ],
-                 		units 	= [ None, None, 'fb' ],
-                 	dataFormats	= ['csv', 'csv', 'csv'])
-
-
 T2tt 							= dataset.addTxName('T2tt')
 T2tt.checked 					= 'False'
 T2tt.constraint 				= '[[[t]],[[t]]]'
@@ -93,9 +74,9 @@ T2bbffff.source					= 'ATLAS'
 T2bbffff.massConstraint			= [['dm < 80'], ['dm < 80']]
 #+++++++ next mass plane block ++++++++++++++
 T2tt_1 							= T2tt.addMassPlane(2*[[x, y]])
-T2tt_1.figure 					= 'Fig.8'
+T2tt_1.figure 					= 'figaux_12'
 T2tt_1.figureUrl 				= 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-15/figaux_12.png'
-T2tt_1_dataUrl					= 'https://www.hepdata.net/record/ins1623207?version=7&table=Observed exclusion contour directTT'
+T2tt_1_dataUrl					= 'https://www.hepdata.net/record/ins1623207?version=7&table=X-section U.L. direcTT'
 T2tt_1.setSources(dataLabels	= ['expExclusion', 'obsExclusion', 'upperLimits'],
                  	dataFiles	= ['orig/ExpectedexclusioncontourdirectTT.csv', 'orig/ObservedexclusioncontourdirectTT.csv', 'orig/X-sectionU.L.direcTT.csv'],
 					coordinates = [ {x: 0, y: 1, 'value': None}, {x: 0, y: 1, 'value': None},  {x : 1, y: 0, 'value' :2} ],

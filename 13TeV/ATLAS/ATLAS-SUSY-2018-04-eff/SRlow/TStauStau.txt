@@ -1,5 +1,5 @@
 txName: TStauStau
-constraint: [[['ta']],[['ta']]]
+constraint: [[['ta+']],[['ta-']]]
 condition: None
 conditionDescription: None
 susyProcess: pp --> stau stau, stau  --> tau lsp
