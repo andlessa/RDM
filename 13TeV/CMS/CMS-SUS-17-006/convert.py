@@ -54,9 +54,9 @@ info = MetaInfoInput('CMS-SUS-17-006')
 info.url = 'https://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-17-006/'
 info.sqrts = 13
 info.lumi = 35.9
-info.prettyName = 'High momentum Higgs Boson+ Etmiss'
+info.prettyName = 'jets + boosted H(bb) + Etmiss'
 info.private = False
-info.arxiv = '1712.08501'
+info.arxiv = 'https://arxiv.org/abs/1712.08501'
 info.contact = 'cms-phys-conveners-sus@cern.ch'
 info.publication = 'Phys. Rev. Lett.  120, no. 24, 241801 (2018)'
 info.comment = ''
@@ -97,13 +97,12 @@ lsp_masses = [0., 1.]
  #+++++txName block +++++++++++++++++
 T5HZ=dataset.addTxName('T5HZ')
 T5HZ.checked=''
-T5HZ.constraint="[[['jet','jet'],['higgs']],[['jet','jet'],['Z']]]"
-#T5HZ.constraint="[[['jet','jet'],['higgs']],[['jet','jet'],['Z']]]+[[['jet','jet'],['Z']],[['jet','jet'],['higgs']]]"
-T5HZ.condition=None
+#T5HZ.constraint="[[['jet','jet'],['higgs']],[['jet','jet'],['Z']]]"
+T5HZ.constraint="[[['jet','jet'],['higgs']],[['jet','jet'],['Z']]]+[[['jet','jet'],['higgs']],[['jet','jet'],['higgs']]]+[[['jet','jet'],['Z']],[['jet','jet'],['Z']]]"
+T5HZ.condition="Csim([[['jet','jet'],['higgs']],[['jet','jet'],['Z']]],2.0*([[['jet','jet'],['higgs']],[['jet','jet'],['higgs']]]),2.0*([[['jet','jet'],['Z']],[['jet','jet'],['Z']]]))"
 T5HZ.conditionDescription = None
 T5HZ.source="CMS"
 #T5HH.massConstraint=None
-
 
 
 

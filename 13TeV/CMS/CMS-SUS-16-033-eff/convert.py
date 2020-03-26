@@ -64,13 +64,13 @@ topos = [ "T1", "T2", "T1tttt", "T1ttttoff", "T1bbbb", "T2tt", "T2ttoff", "T2bb"
 topos.append ( "T3GQ" )
 topos.append ( "T5GQ" )
 
-constraints = { "T2": "[[[q]],[[q]]]", "T1": "[[[q,q]],[[q,q]]]", \
+constraints = { "T2": "[[[jet]],[[jet]]]", "T1": "[[[jet,jet]],[[jet,jet]]]", \
                 "T2bb": "[[[b]],[[b]]]", "T1bbbb": "[[[b,b]],[[b,b]]]", \
                 "T2tt": "[[[t]],[[t]]]", "T1tttt": "[[[t,t]],[[t,t]]]", \
                 "T2ttoff": "[[[W,b]],[[W,b]]]",
                 "T1ttttoff": "[[[b,b,W,W]],[[b,b,W,W]]]",
-                "T5GQ": "[[[q],[q,q]],[[q,q]]]",
-                "TGQ": "[[[q]],[[q,q]]]", "T3GQ": "[[[q]],[[q],[q]]]" }
+                "T5GQ": "[[[jet],[jet,jet]],[[jet,jet]]]",
+                "TGQ": "[[[jet]],[[jet,jet]]]", "T3GQ": "[[[jet]],[[jet],[jet]]]" }
 
 figures = { "T1": '12-c', "T1bbbb": '12-b', "T1tttt": '12-a', "T3GQ": "None", \
             "T1ttttoff": '12-a', "T5GQ": "None", "T2ttoff": "13-a",
