@@ -6,3 +6,4 @@ cms_sus_16_048      20   two soft opposite sign leptons		35.9	no
 
 
 cms_sus_16_032      49   third generation plus MET                           
+cms_sus_19_005      21   full Run 2 mT2 hadronic                         
