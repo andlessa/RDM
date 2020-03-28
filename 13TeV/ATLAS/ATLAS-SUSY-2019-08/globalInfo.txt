@@ -1,7 +1,7 @@
 id: ATLAS-SUSY-2019-08
 sqrts: 13*TeV
 lumi: 139.0/fb
-prettyName: 1L + higgs + Etmiss
+prettyName: 1L + higgs + Etmiss (EWino)
 url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2019-08/
 arxiv: arXiv:1909.09226
 contact: atlas-phys-susy-conveners@cern.ch

@@ -7,7 +7,7 @@ checked: no
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2018-16/figaux_44a.png
 dataUrl: https://www.hepdata.net/record/ins1767649?version=1&table=Figure 44ab
 source: ATLAS
-validated: TBD
+validated: False
 axes: [[x, x - y], [x, x - y]]
 finalState: ['MET', 'MET']
 upperLimits: [[[[1.0000E+02*GeV,6.0000E+01*GeV],[1.0000E+02*GeV,6.0000E+01*GeV]],1.1342E+00*fb],

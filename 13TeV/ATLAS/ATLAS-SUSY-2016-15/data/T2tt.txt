@@ -5,7 +5,7 @@ conditionDescription: None
 susyProcess: pp --> stop stop, stop  --> top lsp
 checked: False
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-15/figaux_12.png
-dataUrl: None
+dataUrl: https://www.hepdata.net/record/ins1623207?version=7&table=X-section U.L. direcTT
 source: ATLAS
 validated: True
 axes: [[x, y], [x, y]]

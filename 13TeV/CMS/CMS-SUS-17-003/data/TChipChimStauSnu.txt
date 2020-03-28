@@ -6,7 +6,7 @@ susyProcess: pp --> chargino^pm_1 chargino^pm_1, chargino^pm_1 --> neutrino stau
 figureUrl: https://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-17-003/CMS-SUS-17-003_Figure_015.png
 dataUrl: https://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-17-003/CMS-SUS-17-003_Figure_015.root
 source: CMS
-validated: TBD
+validated: True
 axes: [[x, 0.5*x + 0.5*y, y], [x, 0.5*x + 0.5*y, y]]
 finalState: ['MET', 'MET']
 upperLimits: [[[[1.0250E+02*GeV,5.2998E+01*GeV,3.4958E+00*GeV],[1.0250E+02*GeV,5.2998E+01*GeV,3.4958E+00*GeV]],3.9495E+00*pb],

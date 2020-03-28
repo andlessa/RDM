@@ -1,5 +1,5 @@
 txName: T6bbWWoff
-constraint: 1.69*([[['b'],['l','nu']],[['b'],['jet','jet']]]+[[['b'],['jet','jet']],[['b'],['jet','jet']]])
+constraint: 1.35*([[['b'],['l','nu']],[['b'],['jet','jet']]]+[[['b'],['jet','jet']],[['b'],['jet','jet']]])
 condition: None
 conditionDescription: None
 susyProcess: pp --> stop stop, stop  --> bottom chargino_1^pm, chargino_1^pm --> W^* lsp

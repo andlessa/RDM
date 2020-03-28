@@ -9,4 +9,4 @@ contact: smodels-users@lists.oeaw.ac.at
 comment: Recast with MadAnalysis5, PAD code http://doi.org/10.7484/INSPIREHEP.DATA.56DC.PPE2
 private: False
 implementedBy: Wolfgang Waltenberger
-lastUpdate: 2020/3/25
+lastUpdate: 2020/3/27

@@ -6,7 +6,7 @@ susyProcess: pp --> gluino gluino, gluino  --> quark antiquark neutralino_2, neu
 figureUrl: http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-17-006/CMS-SUS-17-006_Figure_003.png
 dataUrl: http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-17-006/CMS-SUS-17-006_Figure_003.root
 source: CMS
-validated: TBD
+validated: True
 axes: [[x, x - 50, 0.0], [x, x - 50, 0.0]]; [[x, x - 50, 1.0], [x, x - 50, 1.0]]
 finalState: ['MET', 'MET']
 upperLimits: [[[[7.5000E+02*GeV,7.0000E+02*GeV,0.0000E+00*GeV],[7.5000E+02*GeV,7.0000E+02*GeV,0.0000E+00*GeV]],2.3657E-02*pb],

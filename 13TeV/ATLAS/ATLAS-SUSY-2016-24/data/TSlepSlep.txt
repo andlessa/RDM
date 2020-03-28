@@ -7,7 +7,7 @@ checked: False
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-24/figaux_31b.png
 dataUrl: https://www.hepdata.net/record/ins1658902?version=1&table=Table79
 source: ATLAS
-validated: TBD
+validated: True
 axes: [[x, y], [x, y]]
 validationTarball: TSlepSlepAll.tar.gz
 finalState: ['MET', 'MET']

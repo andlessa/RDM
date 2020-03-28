@@ -76,7 +76,7 @@ T2bbffff.massConstraint			= [['dm < 80'], ['dm < 80']]
 T2tt_1 							= T2tt.addMassPlane(2*[[x, y]])
 T2tt_1.figure 					= 'figaux_12'
 T2tt_1.figureUrl 				= 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-15/figaux_12.png'
-T2tt_1_dataUrl					= 'https://www.hepdata.net/record/ins1623207?version=7&table=X-section U.L. direcTT'
+T2tt_1.dataUrl					= 'https://www.hepdata.net/record/ins1623207?version=7&table=X-section U.L. direcTT'
 T2tt_1.setSources(dataLabels	= ['expExclusion', 'obsExclusion', 'upperLimits'],
                  	dataFiles	= ['orig/ExpectedexclusioncontourdirectTT.csv', 'orig/ObservedexclusioncontourdirectTT.csv', 'orig/X-sectionU.L.direcTT.csv'],
 					coordinates = [ {x: 0, y: 1, 'value': None}, {x: 0, y: 1, 'value': None},  {x : 1, y: 0, 'value' :2} ],

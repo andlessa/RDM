@@ -55,10 +55,10 @@ info.sqrts = 13
 info.lumi = 35.9
 info.prettyName = '0L + jets + Etmiss (using MHT)'
 info.private = False
-info.arxiv = '1704.07781'
+info.arxiv = 'https://arxiv.org/abs/1704.07781'
 info.contact = 'smodels-users@lists.oeaw.ac.at'
 info.publication = 'Phys. Rev D 96 (2017) 032003, http://dx.doi.org/10.1103/PhysRevD.96.032003'
-info.comment = 'Recast with MadAnalysis5, PAD code http://doi.org/10.7484/INSPIREHEP.DATA.77YH.NBR3'
+info.comment = 'Recast with MadAnalysis5, PAD code http://doi.org/10.7484/INSPIREHEP.DATA.77YH.NBR3 (aggregate regions)'
 
 topos = [ "T1", "T2", "T1tttt", "T1ttttoff", "T1bbbb", "T2tt", "T2ttoff", "T2bb", "TGQ" ]# 
 topos.append ( "T3GQ" )

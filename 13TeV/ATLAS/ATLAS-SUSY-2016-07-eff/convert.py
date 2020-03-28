@@ -133,7 +133,7 @@ for topo in topos:
         Tx.condition = None
         if topo in [ "T5WWoff", "T6WWoff" ]:
             Tx.massConstraint = [['dm >= 0.0','dm <= 76.']]*2
-        if topo in [ "T6WW", "T6WWoff" ]:
+        if topo in [ "T6WZh", "T6WW", "T6WWoff" ]:
             Tx.validationTarball = topo+"left.tar.gz"
         if topo in conditions.keys():
             Tx.condition = conditions[topo]
