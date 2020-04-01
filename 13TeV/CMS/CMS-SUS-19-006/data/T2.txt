@@ -6,7 +6,7 @@ susyProcess: pp --> squark squark, squark  --> quark lsp
 figureUrl: http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-19-006/CMS-SUS-19-006_Figure_014-c.png
 dataUrl: https://doi.org/10.17182/hepdata.90835.v1/t60
 source: CMS
-validated: TBD
+validated: True
 axes: [[x, y], [x, y]]
 finalState: ['MET', 'MET']
 upperLimits: [[[[5.0586E+02*GeV,6.2313E+00*GeV],[5.0586E+02*GeV,6.2313E+00*GeV]],6.0564E-02*pb],

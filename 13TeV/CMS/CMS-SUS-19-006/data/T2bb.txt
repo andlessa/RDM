@@ -6,7 +6,7 @@ susyProcess: pp --> sbottom sbottom, sbottom  --> bottom lsp
 figureUrl: http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-19-006/CMS-SUS-19-006_Figure_014-b.png
 dataUrl: https://doi.org/10.17182/hepdata.90835.v1/t53
 source: CMS
-validated: TBD
+validated: True
 axes: [[x, y], [x, y]]
 finalState: ['MET', 'MET']
 upperLimits: [[[[3.0664E+02*GeV,5.9969E+00*GeV],[3.0664E+02*GeV,5.9969E+00*GeV]],1.7011E-01*pb],

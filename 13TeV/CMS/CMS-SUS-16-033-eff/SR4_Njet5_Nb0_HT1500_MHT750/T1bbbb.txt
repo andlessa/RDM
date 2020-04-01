@@ -6,7 +6,7 @@ susyProcess: pp --> gluino gluino, gluino  --> bottom antibottom  lsp
 figureUrl: http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-033//CMS-SUS-16-033_Figure_012-b.png
 dataUrl: None
 source: SModelS
-validated: TBD
+validated: True
 axes: [[x, y], [x, y]]
 finalState: ['MET', 'MET']
 efficiencyMap: [[[[1.8000E+03*GeV,1.6100E+03*GeV],[1.8000E+03*GeV,1.6100E+03*GeV]],0.0002006],

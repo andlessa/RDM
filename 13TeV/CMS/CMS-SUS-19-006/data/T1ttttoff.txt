@@ -5,7 +5,7 @@ susyProcess: pp --> gluino gluino, gluino  --> top^* antitop^* lsp
 figureUrl: http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-19-006/CMS-SUS-19-006_Figure_013-a.png
 dataUrl: https://doi.org/10.17182/hepdata.90835.v1/t18
 source: CMS
-validated: TBD
+validated: True
 axes: [[x, y], [x, y]]
 finalState: ['MET', 'MET']
 upperLimits: [[[[6.0742E+02*GeV,2.7583E+02*GeV],[6.0742E+02*GeV,2.7583E+02*GeV]],1.6683E-01*pb],

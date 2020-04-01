@@ -6,7 +6,7 @@ susyProcess: pp --> sbottom sbottom, sbottom  --> bottom lsp
 figureUrl: http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-033//CMS-SUS-16-033_Figure_013-b.png
 dataUrl: None
 source: SModelS
-validated: TBD
+validated: True
 axes: [[x, y], [x, y]]
 finalState: ['MET', 'MET']
 efficiencyMap: [[[[7.0000E+02*GeV,6.0000E+01*GeV],[7.0000E+02*GeV,6.0000E+01*GeV]],0.0078334],

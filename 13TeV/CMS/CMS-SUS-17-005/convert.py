@@ -70,29 +70,30 @@ dataset.setInfo(dataType = 'upperLimit', dataId = None)
 #+++++++ next txName block ++++++++++++++
 T2bbffff = dataset.addTxName('T2bbffff')
 T2bbffff.checked = ''
-#T2bbffff.constraint = "2.25*[[['b','q','q']],[['b','q','q']]]"
+T2bbffff.constraint = "3.375*[[['b','l','nu']],[['b','jet','jet']]]"
 #T2bbffff.constraint = "5.06*([[['b','l','nu']],[['b','q','q']]]+[[['b','l','nu']],[['b','l','nu']]])"
-T2bbffff.constraint = "1.35*([[['b','l','nu']],[['b','jet','jet']]]+[[['b','jet','jet']],[['b','jet','jet']]])"
+#T2bbffff.constraint = "1.69*([[['b','l','nu']],[['b','jet','jet']]]+[[['b','jet','jet']],[['b','jet','jet']]])"
 T2bbffff.conditionDescription = None
 T2bbffff.condition = None
 T2bbffff.source = "CMS"
 
-""" thats the 7b MVA approach that is actually doing worse
+
 #+++++++ next mass plane block ++++++++++++++
 T2bbffff_1 = T2bbffff.addMassPlane(2*[[x, x-y]])
-T2bbffff_1.figure = 'Fig.7-b'
-T2bbffff_1.figureUrl = 'http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-17-005/CMS-SUS-17-005_Figure_007-b.png'
-T2bbffff_1.dataUrl = 'http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-17-005/CMS-SUS-17-005_Figure_007-b.root'
-T2bbffff_1.histoDataUrl = 'http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-17-005/CMS-SUS-17-005_Figure_007-b.root'
-T2bbffff_1.dataUrl = 'http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-17-005/CMS-SUS-17-005_Figure_007-b.root'
-T2bbffff_1.exclusionDataUrl = 'http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-17-005/CMS-SUS-17-005_Figure_007-b.root'
+T2bbffff_1.figure = 'Fig.7-a'
+T2bbffff_1.figureUrl = 'http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-17-005/CMS-SUS-17-005_Figure_007-a.png'
+T2bbffff_1.dataUrl = 'http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-17-005/CMS-SUS-17-005_Figure_007-a.root'
+T2bbffff_1.histoDataUrl = 'http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-17-005/CMS-SUS-17-005_Figure_007-a.root'
+T2bbffff_1.dataUrl = 'http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-17-005/CMS-SUS-17-005_Figure_007-a.root'
+T2bbffff_1.exclusionDataUrl = 'http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-17-005/CMS-SUS-17-005_Figure_007-a.root'
 T2bbffff_1.setSources(dataLabels= ['obsExclusionM1','expExclusionM1', 'expExclusionP1','obsExclusion', 'expExclusion','upperLimits','expectedUpperLimits','obsExclusionP1'],
-                 dataFiles= ['orig/CMS-SUS-17-005_Figure_007-b.root', 'orig/CMS-SUS-17-005_Figure_007-b.root','orig/CMS-SUS-17-005_Figure_007-b.root',
-                 'orig/CMS-SUS-17-005_Figure_007-b.root','orig/CMS-SUS-17-005_Figure_007-b.root', 'orig/CMS-SUS-17-005_Figure_007-b.root','orig/CMS-SUS-17-005_Figure_007-b.root',
-                 'orig/CMS-SUS-17-005_Figure_007-b.root'],
+                 dataFiles= ['orig/CMS-SUS-17-005_Figure_007-a.root', 'orig/CMS-SUS-17-005_Figure_007-a.root','orig/CMS-SUS-17-005_Figure_007-a.root',
+                 'orig/CMS-SUS-17-005_Figure_007-a.root','orig/CMS-SUS-17-005_Figure_007-a.root', 'orig/CMS-SUS-17-005_Figure_007-a.root','orig/CMS-SUS-17-005_Figure_007-a.root',
+                 'orig/CMS-SUS-17-005_Figure_007-a.root'],
                  dataFormats= ['root','root','root','root','root','root','root','root'],objectNames= ['contour_ObsMinus1','contour_ExpMinus1','contour_ExpPlus1','contour_Obs','contour_Exp','xsecUL_Obs','xsecUL_Exp','contour_ObsPlus1'])
-"""
 
+
+"""
 #+++++++ next mass plane block ++++++++++++++
 T2bbffff_2 = T2bbffff.addMassPlane(2*[[x, x-y]])
 T2bbffff_2.figure = 'Fig.9-a'
@@ -106,19 +107,19 @@ T2bbffff_2.setSources(dataLabels= ['obsExclusionM1','expExclusionM1', 'expExclus
                  'orig/CMS-SUS-17-005_Figure_009-a.root','orig/CMS-SUS-17-005_Figure_009-a.root',
                  'orig/CMS-SUS-17-005_Figure_009-a.root','orig/CMS-SUS-17-005_Figure_009-a.root','orig/CMS-SUS-17-005_Figure_009-a.root'],
                  dataFormats= ['root','root','root','root','root','root','root','root'],objectNames= ['contour_ObsMinus1','contour_ExpMinus1','contour_ExpPlus1','contour_Obs','contour_Exp','xsecUL_Obs','xsecUL_Exp','contour_ObsPlus1'])
-
+"""
 
 #+++++++ next txName block ++++++++++++++
 T6bbWWoff = dataset.addTxName('T6bbWWoff')
 T6bbWWoff.checked = ''
-#T6bbWWoff.constraint = "2.25*[[['b'],['q','q']],[['b'],['q','q']]]"
+T6bbWWoff.constraint = "3.375*[[['b'],['l','nu']],[['b'],['jet','jet']]]"
 #T6bbWWoff.constraint = "5.06*([[['b'],['l','nu']],[['b'],['q','q']]]+[[['b'],['l','nu']],[['b'],['l','nu']]])"
-T6bbWWoff.constraint = "1.35*([[['b'],['l','nu']],[['b'],['jet','jet']]]+[[['b'],['jet','jet']],[['b'],['jet','jet']]])"
+#T6bbWWoff.constraint = "1.69*([[['b'],['l','nu']],[['b'],['jet','jet']]]+[[['b'],['jet','jet']],[['b'],['jet','jet']]])"
 T6bbWWoff.conditionDescription = None
 T6bbWWoff.condition = None
 T6bbWWoff.source = "CMS"
 
-"""
+
 #+++++++ next mass plane block ++++++++++++++
 T6bbWWoff_1 = T6bbWWoff.addMassPlane(2*[[x,x - 0.5*y, x-y]])
 T6bbWWoff_1.figure = 'Fig.8'
@@ -132,8 +133,8 @@ T6bbWWoff_1.setSources(dataLabels= ['obsExclusionM1','expExclusionM1', 'expExclu
                  'orig/CMS-SUS-17-005_Figure_008.root','orig/CMS-SUS-17-005_Figure_008.root', 'orig/CMS-SUS-17-005_Figure_008.root','orig/CMS-SUS-17-005_Figure_008.root',
                  'orig/CMS-SUS-17-005_Figure_008.root'],
                  dataFormats= ['root','root','root','root','root','root','root','root'],objectNames= ['contour_ObsMinus1','contour_ExpMinus1','contour_ExpPlus1','contour_Obs','contour_Exp','xsecUL_Obs','xsecUL_Exp','contour_ObsPlus1'])
-"""
 
+"""
 #+++++++ next mass plane block ++++++++++++++
 T6bbWWoff_2 = T6bbWWoff.addMassPlane(2*[[x,x-0.5*y, x-y]])
 T6bbWWoff_2.figure = 'Fig.9-b'
@@ -147,5 +148,5 @@ T6bbWWoff_2.setSources(dataLabels= ['obsExclusionM1','expExclusionM1', 'expExclu
                  'orig/CMS-SUS-17-005_Figure_009-b.root','orig/CMS-SUS-17-005_Figure_009-b.root', 'orig/CMS-SUS-17-005_Figure_009-b.root','orig/CMS-SUS-17-005_Figure_009-b.root',
                  'orig/CMS-SUS-17-005_Figure_009-b.root'],
                  dataFormats= ['root','root','root','root','root','root','root','root'],objectNames= ['contour_ObsMinus1','contour_ExpMinus1','contour_ExpPlus1','contour_Obs','contour_Exp','xsecUL_Obs','xsecUL_Exp','contour_ObsPlus1'])
-
+"""
 databaseCreator.create()

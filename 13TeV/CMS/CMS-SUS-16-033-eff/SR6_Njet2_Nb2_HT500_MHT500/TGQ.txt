@@ -5,7 +5,7 @@ conditionDescription: None
 susyProcess: pp --> gluino squark, gluino squark --> quark quark antiquark lsp lsp
 dataUrl: None
 source: SModelS
-validated: TBD
+validated: N/A
 axes: [[x, 0.0], [y, 0.0]]; [[x, 695.0], [y, 695.0]]; [[x, 995.0], [y, 995.0]]
 finalState: ['MET', 'MET']
 efficiencyMap: [[[[9.0000E+02*GeV,2.5000E+02*GeV],[9.0000E+02*GeV,2.5000E+02*GeV]],0.0039272],

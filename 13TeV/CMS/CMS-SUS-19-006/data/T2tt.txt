@@ -6,7 +6,7 @@ susyProcess: pp --> stop stop, stop  --> top lsp
 figureUrl: http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-19-006/CMS-SUS-19-006_Figure_014-a.png
 dataUrl: https://doi.org/10.17182/hepdata.90835.v1/t46
 source: CMS
-validated: TBD
+validated: True
 axes: [[x, y], [x, y]]
 finalState: ['MET', 'MET']
 upperLimits: [[[[1.8613E+02*GeV,4.5906E+00*GeV],[1.8613E+02*GeV,4.5906E+00*GeV]],9.5035E+01*pb],
