@@ -7,7 +7,7 @@ checked: False
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-16/figaux_14a.png;https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-16/figaux_14b.png
 dataUrl: https://www.hepdata.net/record/ins1639856?version=4&table=Table87
 source: ATLAS
-validated: TBD
+validated: True
 axes: [[x, y], [x, y]]
 finalState: ['MET', 'MET']
 efficiencyMap: [[[[2.5000E+02*GeV,2.0000E+02*GeV],[2.5000E+02*GeV,2.0000E+02*GeV]],0.00024287],
@@ -24,7 +24,6 @@ efficiencyMap: [[[[2.5000E+02*GeV,2.0000E+02*GeV],[2.5000E+02*GeV,2.0000E+02*GeV
 [[[4.5000E+02*GeV,4.0000E+02*GeV],[4.5000E+02*GeV,4.0000E+02*GeV]],0.00089145],
 [[[4.5000E+02*GeV,4.3000E+02*GeV],[4.5000E+02*GeV,4.3000E+02*GeV]],0.00029164],
 [[[5.0000E+02*GeV,4.5000E+02*GeV],[5.0000E+02*GeV,4.5000E+02*GeV]],0.0013767],
-[[[5.5000E+02*GeV,4.7000E+02*GeV],[5.5000E+02*GeV,4.7000E+02*GeV]],0.00090479],
 [[[5.0000E+02*GeV,4.8000E+02*GeV],[5.0000E+02*GeV,4.8000E+02*GeV]],0.00013468],
 [[[5.5000E+02*GeV,5.0000E+02*GeV],[5.5000E+02*GeV,5.0000E+02*GeV]],0.002071],
 [[[5.5000E+02*GeV,5.3000E+02*GeV],[5.5000E+02*GeV,5.3000E+02*GeV]],0.0003826]]

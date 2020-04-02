@@ -7,7 +7,7 @@ checked: No
 figureUrl: None
 dataUrl: https://www.hepdata.net/record/ins1654357?version=1&table=Acceptance/Efficiency 6
 source: ATLAS
-validated: TBD
+validated: False
 axes: [[x, y, 1.0], [x, y, 1.0]]
 finalState: ['MET', 'MET']
 efficiencyMap: [[[[3.0000E+02*GeV,1.0000E+02*GeV,1.0000E+00*GeV],[3.0000E+02*GeV,1.0000E+02*GeV,1.0000E+00*GeV]],0.00050274],

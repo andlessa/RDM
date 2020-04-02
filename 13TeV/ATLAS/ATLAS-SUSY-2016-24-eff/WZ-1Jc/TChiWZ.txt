@@ -7,7 +7,7 @@ checked: No
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-24/figaux_27e.png; https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-24/figaux_27f.png
 dataUrl: https://www.hepdata.net/record/ins1658902?version=1&table=Table67; https://www.hepdata.net/record/ins1658902?version=1&table=Table68
 source: ATLAS
-validated: TBD
+validated: True
 axes: [[x, y], [x, y]]
 finalState: ['MET', 'MET']
 efficiencyMap: [[[[3.7500E+02*GeV,2.5000E+01*GeV],[3.7500E+02*GeV,2.5000E+01*GeV]],0.0005087],

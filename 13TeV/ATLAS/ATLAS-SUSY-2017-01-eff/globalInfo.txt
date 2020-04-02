@@ -6,7 +6,7 @@ url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2017-01/
 arxiv: arXiv:1812.09432
 publication: https://journals.aps.org/prd/abstract/10.1103/PhysRevD.100.012006
 contact: atlas-phys-susy-conveners@cern.ch
-comment: Calculated obs and exp ULs replaced with official ATLAS data taken from https://arxiv.org/pdf/1812.09432.pdf Table 17
+comment: Each SR has their observed and expected upper limits in datainfo.txt replaced with the upper limits provided by ATLAS (arxiv.org/pdf/1812.09432 Table 17).
 private: False
 implementedBy: Philipp Neuhuber
-lastUpdate: 2020/2/6
+lastUpdate: 2020/3/29

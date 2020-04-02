@@ -46,6 +46,7 @@ info.private 		= False
 info.arxiv 			= 'https://arxiv.org/abs/1806.04030'
 info.contact 		= 'atlas-phys-susy-conveners@cern.ch'
 info.publication 	= 'https://journals.aps.org/prd/abstract/10.1103/PhysRevD.98.092002'
+info.comment		= 'Low-mass results (figaux 2) have been added to the upper limit map of the high-mass analysis (figaux 3) for higgsino masses <= 300GeV.'
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput('data')
@@ -62,19 +63,28 @@ TChiH.condition 			= None
 TChiH.source 				= "ATLAS"
 #+++++++ next mass plane block ++++++++++++++
 for lsp in lsp_masses:
-	plane 						= TChiH.addMassPlane(2*[[x, lsp]])	#2*[[x, 1.]])#[[x],[x]])#2*[[x]]
-	plane.figure 				= 'Fig.2'
-	plane.figureUrl 			= 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2017-02/figaux_02.png'
-	plane.dataUrl 				= 'https://www.hepdata.net/record/ins1677389?version=1&table=Table5'
-	plane.setSources(dataLabels = ['upperLimits'],
-					units 		= ['fb'],
-					dataFiles 	= ['orig/HEPData-ins1677389-v1-Table_6_addedG.csv'],
-          			coordinates = [ { x: 0, "value": 2 } ],
-					dataFormats	= ['csv'])
+	plane 						= TChiH.addMassPlane(2*[[x, y]])
+	plane.figure 				= 'figaux_04'
+	plane.figureUrl 			= 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2017-02/figaux_04.png'
+	plane.dataUrl 				= 'https://www.hepdata.net/record/ins1677389?version=1&table=Table3'
+	plane.setSources(dataLabels = ['upperLimits', 'expectedUpperLimits'],
+					units 		= ['fb', 'fb'],
+					dataFiles 	= ['orig/HEPData-ins1677389-v1-Table_3_addedG_obs.csv', 'orig/HEPData-ins1677389-v1-Table_3_addedG_exp.csv'],
+          			coordinates = [{ x: 0, y: 1, "value": 2 }, { x: 0, y: 1, "value": 2 }],
+					dataFormats	= ['csv', 'csv'])
 
-#plane.setSources(dataLabels = ['expExclusion', 'obsExclusion', 'upperLimits'],
-#				units 		= [None, None, 'fb'],
-#				dataFiles 	= ['orig/HEPData-ins1677389-v1-Table_3_exp.csv', 'orig/HEPData-ins1677389-v1-Table_3_obs.csv', 'orig/HEPData-ins1677389-v1-Table_6_addedG.csv'],
-#				dataFormats	= ['csv', 'csv', 'csv'])
+'''
+
+for lsp in lsp_masses:
+	plane 						= TChiH.addMassPlane(2*[[x, lsp]])
+	plane.figure 				= 'figaux_04'
+	plane.figureUrl 			= 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2017-02/figaux_04.png'
+	plane.dataUrl 				= 'https://www.hepdata.net/record/ins1677389?version=1&table=Table3'
+	plane.setSources(dataLabels = ['upperLimits', 'expectedUpperLimits'],
+					units 		= ['fb', 'fb'],
+					dataFiles 	= ['orig/HEPData-ins1677389-v1-Table_3_addedG_obs.csv', 'orig/HEPData-ins1677389-v1-Table_3_addedG_exp.csv'],
+          			coordinates = [{ x: 0, "value": 2 }, { x: 0, "value": 2 }],
+					dataFormats	= ['csv', 'csv'])
+'''
 
 databaseCreator.create()

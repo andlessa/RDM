@@ -7,7 +7,7 @@ checked: False
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2018-32/figaux_03a.png
 dataUrl: https://www.hepdata.net/record/ins1750597?version=1&table=xsec upper limits 1
 source: ATLAS
-validated: TBD
+validated: True
 axes: [[x, y], [x, y]]
 finalState: ['MET', 'MET']
 upperLimits: [[[[1.2500E+02*GeV,1.0000E+00*GeV],[1.2500E+02*GeV,1.0000E+00*GeV]],6.0054E+03*fb],

@@ -1,13 +1,13 @@
 txName: TChipChimSlepSlep
-constraint: 2.25*([[['nu'],['mu+']],[['nu'],['mu-']]] + [[['nu'],['e+']],[['nu'],['e-']]])
-condition: Cgtr([[['nu'],['mu+']],[['nu'],['mu-']]], [[['nu'],['e+']],[['nu'],['e-']]])
-conditionDescription: [[['nu'],['mu+']],[['nu'],['mu-']]] > [[['nu'],['e+']],[['nu'],['e-']]]
+constraint: 2.25*([[['mu+'],['nu']],[['mu-'],['nu']]] + [[['nu'],['mu+']],[['nu'],['mu-']]] + [[['mu+'],['nu']],[['nu'],['mu-']]] + [[['e+'],['nu']],[['e-'],['nu']]] + [[['nu'],['e+']],[['nu'],['e-']]] + [[['e+'],['nu']],[['nu'],['e-']]] + [[['nu'],['mu+']],[['nu'],['e-']]] + [[['nu'],['mu+']],[['e-'],['nu']]] + [[['mu+'],['nu']],[['e-'],['nu']]] + [[['mu+'],['nu']],[['nu'],['e-']]] + [[['nu'],['mu-']],[['nu'],['e+']]] + [[['nu'],['mu-']],[['e+'],['nu']]] + [[['mu-'],['nu']],[['e+'],['nu']]] + [[['mu-'],['nu']],[['nu'],['e+']]])
+condition: Cgtr([[['mu+'],['nu']],[['mu-'],['nu']]] + [[['nu'],['mu+']],[['nu'],['mu-']]] + [[['mu+'],['nu']],[['nu'],['mu-']]], [[['e+'],['nu']],[['e-'],['nu']]] + [[['nu'],['e+']],[['nu'],['e-']]] + [[['e+'],['nu']],[['nu'],['e-']]]); Cgtr(2.*( [[['mu+'],['nu']],[['mu-'],['nu']]] + [[['nu'],['mu+']],[['nu'],['mu-']]] + [[['mu+'],['nu']],[['nu'],['mu-']]] ), [[['nu'],['mu+']],[['nu'],['e-']]] + [[['nu'],['mu+']],[['e-'],['nu']]] + [[['mu+'],['nu']],[['e-'],['nu']]] + [[['mu+'],['nu']],[['nu'],['e-']]] + [[['nu'],['mu-']],[['nu'],['e+']]] + [[['nu'],['mu-']],[['e+'],['nu']]] + [[['mu-'],['nu']],[['e+'],['nu']]] + [[['mu-'],['nu']],[['nu'],['e+']]])
+conditionDescription: [[['mu+'],['nu']],[['mu-'],['nu']]] + [[['nu'],['mu+']],[['nu'],['mu-']]] + [[['mu+'],['nu']],[['nu'],['mu-']]] >= [[['e+'],['nu']],[['e-'],['nu']]] + [[['nu'],['e+']],[['nu'],['e-']]] + [[['e+'],['nu']],[['nu'],['e-']]], 2*([[['mu+'],['nu']],[['mu-'],['nu']]] + [[['nu'],['mu+']],[['nu'],['mu-']]] + [[['mu+'],['nu']],[['nu'],['mu-']]]) >= [[['nu'],['mu+']],[['nu'],['e-']]] + [[['nu'],['mu+']],[['e-'],['nu']]] + [[['mu+'],['nu']],[['e-'],['nu']]] + [[['mu+'],['nu']],[['nu'],['e-']]] + [[['nu'],['mu-']],[['nu'],['e+']]] + [[['nu'],['mu-']],[['e+'],['nu']]] + [[['mu-'],['nu']],[['e+'],['nu']]] + [[['mu-'],['nu']],[['nu'],['e+']]]
 susyProcess: pp --> chargino^pm_1 chargino^pm_1, chargino^pm_1 chargino^pm_1 --> lepton slepton lepton slepton, slepton --> lepton lsp
 checked: False
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-24/figaux_31a.png
 dataUrl: https://www.hepdata.net/record/ins1658902?version=1&table=Table78
 source: ATLAS
-validated: TBD
+validated: True
 axes: [[x, 0.5*x + 0.5*y, y], [x, 0.5*x + 0.5*y, y]]
 validationTarball: TChipChimSlepSlepAll.tar.gz
 finalState: ['MET', 'MET']

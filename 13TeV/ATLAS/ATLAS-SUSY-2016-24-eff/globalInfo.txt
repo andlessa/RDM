@@ -7,5 +7,5 @@ arxiv: https://arxiv.org/abs/1803.02762
 publication: https://link.springer.com/article/10.1140/epjc/s10052-018-6423-7
 contact: atlas-phys-susy-conveners@cern.ch
 private: False
-implementedBy: PPhilipp Neuhuber
-lastUpdate: 2020/3/24
+implementedBy: Philipp Neuhuber
+lastUpdate: 2020/4/1

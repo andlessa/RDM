@@ -7,7 +7,7 @@ checked: False
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2018-32/figaux_15c.png;https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2018-32/figaux_15d.png
 dataUrl: https://www.hepdata.net/record/ins1750597?version=1&table=Acceptance SR-SF-1J-[220,260) for C1C1WW grid
 source: ATLAS
-validated: TBD
+validated: False
 axes: [[x, y], [x, y]]
 finalState: ['MET', 'MET']
 efficiencyMap: [[[[1.0000E+02*GeV,1.0000E+00*GeV],[1.0000E+02*GeV,1.0000E+00*GeV]],0.0],

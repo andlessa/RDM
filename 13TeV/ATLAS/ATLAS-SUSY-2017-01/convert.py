@@ -46,6 +46,7 @@ info.private 		= False
 info.arxiv 			= 'arXiv:1812.09432'
 info.contact 		= 'atlas-phys-susy-conveners@cern.ch'
 info.publication 	= 'https://journals.aps.org/prd/abstract/10.1103/PhysRevD.100.012006'
+info.comment		= 'Only 0lbb part of analysis used (for mass > 350GeV), 1lbb will follow with database update. Full-luminosity result available in ATLAS-SUSY-2019-08.'
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput('data')
@@ -59,8 +60,8 @@ TChiWH.condition 				= None
 TChiWH.source 					= "ATLAS"
 #+++++++ next mass plane block ++++++++++++++
 TChiWH_1 						= TChiWH.addMassPlane(2*[[x, y]])
-TChiWH_1.figure 				= 'Fig.12a'
-TChiWH_1.figureUrl 				= 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2017-01/fig_12a.png'
+TChiWH_1.figure 				= 'figaux_13'
+TChiWH_1.figureUrl 				= 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2017-01/figaux_13.png'
 TChiWH_1.dataUrl 				= 'https://www.hepdata.net/record/ins1711261?version=1&table=Upper limit 0lbb'
 TChiWH_1.setSources(dataLabels 	= ['expExclusion', 'obsExclusion', 'upperLimits'],
 					units 		= [None, None, 'pb'],

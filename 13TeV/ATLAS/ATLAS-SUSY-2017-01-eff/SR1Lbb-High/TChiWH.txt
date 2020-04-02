@@ -7,7 +7,7 @@ checked: No
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2017-01/fig_15f.png
 dataUrl: https://www.hepdata.net/record/ins1711261?version=1&table=Efficiency 1lbb SR1Lbb-High
 source: ATLAS
-validated: TBD
+validated: False
 axes: [[x, y], [x, y]]
 finalState: ['MET', 'MET']
 efficiencyMap: [[[[1.5000E+02*GeV,0.0000E+00*GeV],[1.5000E+02*GeV,0.0000E+00*GeV]],0.0],

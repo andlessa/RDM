@@ -4,10 +4,10 @@ condition: None
 conditionDescription: None
 susyProcess: pp --> neutralino_2 chargino^pm_1, neutralino_2 chargino^pm_1 --> H W lsp lsp
 checked: NO
-figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2017-01/fig_12a.png
+figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2017-01/figaux_13.png
 dataUrl: https://www.hepdata.net/record/ins1711261?version=1&table=Upper limit 0lbb
 source: ATLAS
-validated: TBD
+validated: True
 axes: [[x, y], [x, y]]
 finalState: ['MET', 'MET']
 upperLimits: [[[[5.5000E+02*GeV,5.0000E+01*GeV],[5.5000E+02*GeV,5.0000E+01*GeV]],1.6200E-02*pb],

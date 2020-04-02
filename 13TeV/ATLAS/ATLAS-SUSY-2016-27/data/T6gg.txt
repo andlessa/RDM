@@ -7,7 +7,7 @@ checked: No
 figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-27/fig_09.png
 dataUrl: https://www.hepdata.net/record/ins1654357?version=1&table=Cross section UL 2
 source: ATLAS
-validated: TBD
+validated: True
 axes: [[x, y, 1.0], [x, y, 1.0]]
 finalState: ['MET', 'MET']
 upperLimits: [[[[8.0000E+02*GeV,1.0000E+01*GeV,1.0000E+00*GeV],[8.0000E+02*GeV,1.0000E+01*GeV,1.0000E+00*GeV]],7.9610E+00*fb],

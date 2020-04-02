@@ -82,30 +82,52 @@ TChipChimSlepSlep = {
 'valTarball' : 'TChipChimSlepSlepAll.tar.gz',
 'sources'	 :{'expExcl': 'orig/HEPData-ins1658902-v1-Table_13.csv',
 			   'obsExcl': 'orig/HEPData-ins1658902-v1-Table_14.csv'},
-'constraint' : "2.25*([[['nu'],['mu+']],[['nu'],['mu-']]]+[[['nu'],['e+']],[['nu'],['e-']]])",
-'condDesc'	 : "[[['nu'],['mu+']],[['nu'],['mu-']]] > [[['nu'],['e+']],[['nu'],['e-']]]",
-'condition'	 : "Cgtr([[['nu'],['mu+']],[['nu'],['mu-']]],[[['nu'],['e+']],[['nu'],['e-']]])",
-'massPlane'  : 2*[[x, 0.5*(x+y), y]]}
+'constraint' : "[[['mu+'],['nu']],[['mu-'],['nu']]] + [[['nu'],['mu+']],[['nu'],['mu-']]] + [[['mu+'],['nu']],[['nu'],['mu-']]] + [[['e+'],['nu']],[['e-'],['nu']]] + [[['nu'],['e+']],[['nu'],['e-']]] + [[['e+'],['nu']],[['nu'],['e-']]] + [[['nu'],['mu+']],[['nu'],['e-']]] + [[['nu'],['mu+']],[['e-'],['nu']]] + [[['mu+'],['nu']],[['e-'],['nu']]] + [[['mu+'],['nu']],[['nu'],['e-']]] + [[['nu'],['mu-']],[['nu'],['e+']]] + [[['nu'],['mu-']],[['e+'],['nu']]] + [[['mu-'],['nu']],[['e+'],['nu']]] + [[['mu-'],['nu']],[['nu'],['e+']]]",
+'condDesc'   : "[[['mu+'],['nu']],[['mu-'],['nu']]] + [[['nu'],['mu+']],[['nu'],['mu-']]] + [[['mu+'],['nu']],[['nu'],['mu-']]] >= [[['e+'],['nu']],[['e-'],['nu']]] + [[['nu'],['e+']],[['nu'],['e-']]] + [[['e+'],['nu']],[['nu'],['e-']]], 2*([[['mu+'],['nu']],[['mu-'],['nu']]] + [[['nu'],['mu+']],[['nu'],['mu-']]] + [[['mu+'],['nu']],[['nu'],['mu-']]]) >= [[['nu'],['mu+']],[['nu'],['e-']]] + [[['nu'],['mu+']],[['e-'],['nu']]] + [[['mu+'],['nu']],[['e-'],['nu']]] + [[['mu+'],['nu']],[['nu'],['e-']]] + [[['nu'],['mu-']],[['nu'],['e+']]] + [[['nu'],['mu-']],[['e+'],['nu']]] + [[['mu-'],['nu']],[['e+'],['nu']]] + [[['mu-'],['nu']],[['nu'],['e+']]]",
+'condition'  : "Cgtr([[['mu+'],['nu']],[['mu-'],['nu']]] + [[['nu'],['mu+']],[['nu'],['mu-']]] + [[['mu+'],['nu']],[['nu'],['mu-']]], [[['e+'],['nu']],[['e-'],['nu']]] + [[['nu'],['e+']],[['nu'],['e-']]] + [[['e+'],['nu']],[['nu'],['e-']]]); Cgtr(2.*( [[['mu+'],['nu']],[['mu-'],['nu']]] + [[['nu'],['mu+']],[['nu'],['mu-']]] + [[['mu+'],['nu']],[['nu'],['mu-']]] ), [[['nu'],['mu+']],[['nu'],['e-']]] + [[['nu'],['mu+']],[['e-'],['nu']]] + [[['mu+'],['nu']],[['e-'],['nu']]] + [[['mu+'],['nu']],[['nu'],['e-']]] + [[['nu'],['mu-']],[['nu'],['e+']]] + [[['nu'],['mu-']],[['e+'],['nu']]] + [[['mu-'],['nu']],[['e+'],['nu']]] + [[['mu-'],['nu']],[['nu'],['e+']]])",
+'massPlane'  : 2*[[x, 0.5*(x+y), y]],
+'scales'	 : [1., 1., 2.25]}
 
 TSlepSlep = {
 'name' 		 : 'TSlepSlep',
-'valTarball' : 'TSlepSlepAll.tar.gz',
 'sources'	 :{'expExcl': 'orig/HEPData-ins1658902-v1-Table_15.csv',
 			   'obsExcl': 'orig/HEPData-ins1658902-v1-Table_16.csv'},
-'constraint' : "2.25*[[['e+']],[['e-']]]+[[['mu+']],[['mu-']]]",
+'constraint' : "[[['e+']],[['e-']]]+[[['mu+']],[['mu-']]]",
 'condDesc'	 : "[[['mu+']],[['mu-']]] > [[['e+']],[['e-']]]",
 'condition'	 : "Cgtr([[['mu+']],[['mu-']]],[[['e+']],[['e-']]])",
-'massPlane'  : 2*[[x, y]]}
+'massPlane'  : 2*[[x, y]],
+'scales'	 : [1., 1., 1.5]}
+
+TSelSel = {
+'name' 		 : 'TSelSel',
+'sources'	 :{'expExcl': 'orig/HEPData-ins1658902-v1-Table_15.csv',
+			   'obsExcl': 'orig/HEPData-ins1658902-v1-Table_16.csv'},
+'constraint' : "[[['e+']],[['e-']]]",
+'condDesc'	 : None,
+'condition'	 : None,
+'massPlane'  : 2*[[x, y]],
+'scales'	 : [1., 1., 1.5]}
+
+TSmuSmu = {
+'name' 		 : 'TSmuSmu',
+'sources'	 :{'expExcl': 'orig/HEPData-ins1658902-v1-Table_15.csv',
+			   'obsExcl': 'orig/HEPData-ins1658902-v1-Table_16.csv'},
+'constraint' : "[[['mu+']],[['mu-']]]",
+'condDesc'	 : None,
+'condition'	 : None,
+'massPlane'  : 2*[[x, y]],
+'scales'	 : [1., 1., 1.5]}
 
 TChiChipmSlepSlep = {
 'name' 		 : 'TChiChipmSlepSlep',
 'valTarball' : 'TChiChipmSlepLNoTau.tar.gz',
 'sources'	 :{'expExcl': 'orig/HEPData-ins1658902-v1-Table_17.csv',
 			   'obsExcl': 'orig/HEPData-ins1658902-v1-Table_18.csv'},
-'constraint' : "2.25*([[['e+'],['e-']],[['l'],['nu']]] + [[['e-'],['e+']],[['l'],['nu']]] + [[['e+'],['e-']],[['nu'],['l']]] + [[['e-'],['e+']],[['nu'],['l']]] + [[['mu+'],['mu-']],[['l'],['nu']]] + [[['mu-'],['mu+']],[['l'],['nu']]] + [[['mu+'],['mu-']],[['nu'],['l']]] + [[['mu-'],['mu+']],[['nu'],['l']]])",
+'constraint' : "[[['e+'],['e-']],[['l'],['nu']]] + [[['e-'],['e+']],[['l'],['nu']]] + [[['e+'],['e-']],[['nu'],['l']]] + [[['e-'],['e+']],[['nu'],['l']]] + [[['mu+'],['mu-']],[['l'],['nu']]] + [[['mu-'],['mu+']],[['l'],['nu']]] + [[['mu+'],['mu-']],[['nu'],['l']]] + [[['mu-'],['mu+']],[['nu'],['l']]]",
 'condDesc'	 : "[[['mu+'],['mu-']],[['l'],['nu']]] + [[['mu-'],['mu+']],[['l'],['nu']]] + [[['mu+'],['mu-']],[['nu'],['l']]] + [[['mu-'],['mu+']],[['nu'],['l']]] > [[['e+'],['e-']],[['l'],['nu']]] + [[['e-'],['e+']],[['l'],['nu']]] + [[['e+'],['e-']],[['nu'],['l']]] + [[['e-'],['e+']],[['nu'],['l']]]",
 'condition'	 : "Cgtr([[['mu+'],['mu-']],[['l'],['nu']]] + [[['mu-'],['mu+']],[['l'],['nu']]] + [[['mu+'],['mu-']],[['nu'],['l']]] + [[['mu-'],['mu+']],[['nu'],['l']]], [[['e+'],['e-']],[['l'],['nu']]] + [[['e-'],['e+']],[['l'],['nu']]] + [[['e+'],['e-']],[['nu'],['l']]] + [[['e-'],['e+']],[['nu'],['l']]])",
-'massPlane'  : 2*[[x, 0.5*(x+y), y]]}
+'massPlane'  : 2*[[x, 0.5*(x+y), y]],
+'scales'	 : [1., 1., 2.25]}
 
 TChiWZ = {
 'name' 		 : 'TChiWZ',
@@ -114,9 +136,10 @@ TChiWZ = {
 'constraint' : "[[['W']],[['Z']]]",
 'condDesc'	 :	None,
 'condition'	 :	None,
-'massPlane'  : 2*[[x, y]]}
+'massPlane'  : 2*[[x, y]],
+'scales'	 : [1., 1., 1.]}
 
-DATA = [([TChipChimSlepSlep, TSlepSlep], SF),
+DATA = [([TChipChimSlepSlep, TSelSel, TSmuSmu], SF),
 		(TChipChimSlepSlep, DF),
 		(TChiChipmSlepSlep, SLEP),
 		(TChiWZ, SR2),
@@ -145,7 +168,8 @@ for TX, SR in DATA:
 			newPlane.dataUrl 				= 'https://www.hepdata.net/record/ins1658902?version=1&table=Table' + SR['URL'][i][0] + '; ' + 'https://www.hepdata.net/record/ins1658902?version=1&table=Table' + SR['URL'][i][1]
 			newPlane.setSources(dataLabels 	= ['expExclusion', 'obsExclusion', 'efficiencyMap'],
 							dataFiles 		= [TX['sources']['expExcl'], TX['sources']['obsExcl'], 'orig/EffMap_' + TX['name'] + '_' + SR['SR'][i] + '.txt'],
-							dataFormats		= ['csv', 'csv', 'txt'])
+							dataFormats		= ['csv', 'csv', 'txt'],
+							scales		 	= TX['scales'])
 		else:
 			for n in range(len(TX)):
 				#+++++++ next txName block ++++++++++++++
@@ -159,15 +183,117 @@ for TX, SR in DATA:
 					print('using ' + TX[n]['valTarball'] + ' for ' + TX[n]['name'])
 					newTx.validationTarball = TX[n]['valTarball']
 				#+++++++ next mass plane block ++++++++++++++
+				if TX[n]['name'] == 'TSelSel' or TX[n]['name'] == 'TSmuSmu': efftxname = 'TSlepSlep'
+				else: efftxname = TX[n]['name']
 				newPlane1 						= newTx.addMassPlane(TX[n]['massPlane'])
 				newPlane1.figure 				= 'Aux. Fig ' + SR['Fig'][i]
 				newPlane1.figureUrl 			= 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-24/figaux_' + SR['Fig'][i][0:3] + '.png' + '; ' + 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-24/figaux_' + SR['Fig'][i][5:8] + '.png'
-				newPlane1.dataUrl 				= 'https://www.hepdata.net/record/ins1658902?version=1&table=Table' + SR['URL'][n][i][0] + '; ' + 'https://www.hepdata.net/record/ins1658902?version=1&table=Table' + SR['URL'][n][i][1]
+				newPlane1.dataUrl 				= None#'https://www.hepdata.net/record/ins1658902?version=1&table=Table' + SR['URL'][n][i][0] + '; ' + 'https://www.hepdata.net/record/ins1658902?version=1&table=Table' + SR['URL'][n][i][1]
 				newPlane1.setSources(dataLabels = ['expExclusion', 'obsExclusion', 'efficiencyMap'],
-								dataFiles 		= [TX[n]['sources']['expExcl'], TX[n]['sources']['obsExcl'], 'orig/EffMap_' + TX[n]['name'] + '_' + SR['SR'][i] + '.txt'],
-								dataFormats		= ['csv', 'csv', 'txt'])
+								dataFiles 		= [TX[n]['sources']['expExcl'], TX[n]['sources']['obsExcl'], 'orig/EffMap_' + efftxname + '_' + SR['SR'][i] + '.txt'],
+								dataFormats		= ['csv', 'csv', 'txt'],
+								scales		 	= TX[n]['scales'])
 
 databaseCreator.create()
+
+
+
+
+
+from shutil import move
+from os import remove
+### manually replace ULs in dataInfo.txt
+### taken from https://arxiv.org/pdf/1803.02762.pdf table 15, p29
+
+def replaceULs(UL_obs, UL_exp):
+
+	
+	name = 'dataInfo.txt'
+	phrase_obs = 'upperLimit: '
+	phrase_exp = 'expectedUpperLimit: '
+	pos_obs = 5
+	pos_exp	= 6
+
+	for key in UL_obs:
+
+		sr = key
+
+		path = sr + '/' + name
+		
+		with open(path) as file:
+			out = file.read()
+			lines = out.split('\n')
+			old_obs = lines[pos_obs].split(phrase_obs)[1]
+			old_exp = lines[pos_exp].split(phrase_exp)[1]
+
+			#ratio_obs = round(UL_obs[sr] / float(old_obs[:-3]), 3)
+			#ratio_exp = round(UL_exp[sr] / float(old_exp[:-3]), 3)
+			#print(ratio_obs, ratio_exp)
+
+			lines[pos_obs] = '{}{}*fb\t# official number taken from ATLAS (calculated value: {})'.format(phrase_obs, UL_obs[sr], old_obs)
+			lines[pos_exp] = '{}{}*fb\t# official number taken from ATLAS (calculated value: {})'.format(phrase_exp, UL_exp[sr], old_exp)
+			
+			with open(name, 'w') as temp:
+				for line in lines:
+					temp.write(line + '\n')
+
+		remove(path)
+		move(name, path)
+
+
+UL_obs = {'SR2-SF-loose' : 2.02,
+		  'SR2-SF-tight' : 0.29,
+		  'SR2-DF-100'   : 0.88,
+		  'SR2-DF-150'	 : 0.32,
+	 	  'SR2-DF-200'	 : 0.33,
+		  'SR2-DF-300'	 : 0.18,
+		  'SR2-low'		 : 0.43,
+		  'SR2-int'		 : 0.13, 
+		  'SR2-high'	 : 0.09,
+		  'WZ-0Ja'		 : 0.35, 
+		  'WZ-0Jb'		 : 0.10, 
+		  'WZ-0Jc'		 : 0.13, 
+		  'WZ-1Ja'		 : 0.09, 
+		  'WZ-1Jb'		 : 0.16, 
+		  'WZ-1Jc'		 : 0.20,
+		  'slep-a'		 : 0.19,
+		  'slep-b'		 : 0.14,
+		  'slep-c'		 : 0.29, 
+		  'slep-d'		 : 0.08, 
+		  'slep-e'		 : 0.09}
+
+
+# S_obs/S_exp
+
+UL_exp = {'SR2-SF-loose' : 73./53.,
+		  'SR2-SF-tight' : 10.5/12.,
+		  'SR2-DF-100'   : 32./27.,
+		  'SR2-DF-150'	 : 11.4/12.,
+	 	  'SR2-DF-200'	 : 12.0/10.3,
+		  'SR2-DF-300'	 : 6.6/5.6,
+		  'SR2-low'		 : 15.7/12.,
+		  'SR2-int'		 : 4.5/5.6, 
+		  'SR2-high'	 : 3.1/3.1,
+		  'WZ-0Ja'		 : 12.8/14., 
+		  'WZ-0Jb'		 : 3.7/4.6, 
+		  'WZ-0Jc'		 : 4.8/4.1, 
+		  'WZ-1Ja'		 : 3.2/4.5, 
+		  'WZ-1Jb'		 : 5.6/4.3, 
+		  'WZ-1Jc'		 : 7.2/4.2,
+		  'slep-a'		 : 6.8/4.7,
+		  'slep-b'		 : 5.2/5.1,
+		  'slep-c'		 : 10.5/6.8, 
+		  'slep-d'		 : 3.0/3.6, 
+		  'slep-e'		 : 3.3/3.6}
+
+
+# <sigma*eps> / (S_obs/S_exp)
+
+for sr, ul in UL_exp.items(): UL_exp[sr] = round(UL_obs[sr] / ul, 3)
+
+replaceULs(UL_obs, UL_exp)
+
+
 
 
 

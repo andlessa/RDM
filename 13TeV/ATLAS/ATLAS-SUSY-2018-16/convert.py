@@ -65,7 +65,7 @@ TChiWZoffqq_1.figureUrl 				= 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PA
 TChiWZoffqq_1.dataUrl 				= 'https://www.hepdata.net/record/ins1767649?version=1&table=Figure 41ab'
 TChiWZoffqq_1.exclusionDataUrl			= 'https://www.hepdata.net/record/ins1767649?version=1&table=Figure 14c Observed'
 TChiWZoffqq_1.setSources(dataLabels 	= ['expExclusion', 'obsExclusion','upperLimits','expectedUpperLimits' ],
-					units 		= [None, None,'fb','fb'],
+					units 		= [None, None,'pb','pb'],
 					dataFiles 	= ['orig/Figure14cExpected.csv','orig/Figure14cObserved.csv','orig/Figure41ab-obs.csv', 'orig/Figure41ab-exp.csv'],
 					dataFormats	= ['csv','csv','csv','csv'])
 
@@ -84,7 +84,7 @@ TSlepSlep_1.figureUrl 				= 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPE
 TSlepSlep_1.dataUrl 				= 'https://www.hepdata.net/record/ins1767649?version=1&table=Figure 44ab'
 TSlepSlep_1.exclusionDataUrl			= 'https://www.hepdata.net/record/ins1767649?version=1&table=Figure 16a Observed'
 TSlepSlep_1.setSources(dataLabels 	= ['expExclusion', 'obsExclusion','upperLimits','expectedUpperLimits' ],
-					units 		= [None, None,'fb','fb'],
+					units 		= [None, None,'pb','pb'],
 					dataFiles 	= ['orig/Figure16aExpected.csv','orig/Figure16aObserved.csv','orig/Figure44ab-obs.csv', 'orig/Figure44ab-exp.csv'],
 					dataFormats	= ['csv','csv','csv','csv'])
 

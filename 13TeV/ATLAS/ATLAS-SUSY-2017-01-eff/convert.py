@@ -46,7 +46,8 @@ info.private 		= False
 info.arxiv 			= 'arXiv:1812.09432'
 info.contact 		= 'atlas-phys-susy-conveners@cern.ch'
 info.publication 	= 'https://journals.aps.org/prd/abstract/10.1103/PhysRevD.100.012006'
-info.comment	 	= 'Calculated obs and exp ULs replaced with official ATLAS data taken from https://arxiv.org/pdf/1812.09432.pdf Table 17'
+info.comment	 	= 'Each SR has their observed and expected upper limits in datainfo.txt replaced with the upper limits provided by ATLAS (arxiv.org/pdf/1812.09432 Table 17).'
+	
 
 
 SR   = {'obsN' 	: [7, 1, 5, 7, 6], 

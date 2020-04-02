@@ -59,7 +59,7 @@ info.private = False
 info.arxiv = 'https://arxiv.org/abs/1805.05784'
 info.contact ='cms-phys-conveners-sus@cern.ch'
 info.publication = 'JHEP 1809 (2018) 065'
-info.comment = ''
+info.comment = 'using 1l cut and count analysis'
 
 
 

@@ -41,7 +41,7 @@ info 				= MetaInfoInput('ATLAS-SUSY-2018-32')
 info.url 			= 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2018-32/'
 info.sqrts 			= 13
 info.lumi 			= 139
-info.prettyName 	= '2 leptons + Etmiss'
+info.prettyName 	= '2 OS leptons + Etmiss'
 info.private 		= False
 info.arxiv 			= 'arXiv:1908.08215'
 info.contact 		= 'atlas-phys-susy-conveners@cern.ch'
@@ -57,33 +57,40 @@ TChiWW = {
 			   'obsExcl'		: 'orig/HEPData-ins1750597-v1-Exclusion_contour_(obs)_1.csv',
 			   'upLimit'		: 'orig/HEPData-ins1750597-v1-xsec_upper_limits_1.csv'},
 'constraint' : "[[['W']],[['W']]]",
+'condDesc'	 : None,
+'condition'	 : None,
 'massPlane'  : 2*[[x, y]]}
 
 
-TChipChimSlepSlepAll = {
-'name' 		 : 'TChipChimSlepSlepAll',
+TChipChimSlepSlep = {
+'name' 		 : 'TChipChimSlepSlep',
+'valTarball' : 'TChipChimSlepSlepAll.tar.gz',
 'info' 		 :{'figure' 		: 'Fig.7b', 
 			   'figureUrl' 		: 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2018-32/fig_07b.png', 
 			   'dataUrl' 		: 'https://www.hepdata.net/record/ins1750597?version=1&table=xsec upper limits 2'},
 'sources'	 :{'expExcl'		: 'orig/HEPData-ins1750597-v1-Exclusion_contour_(exp)_2.csv',
 			   'obsExcl'		: 'orig/HEPData-ins1750597-v1-Exclusion_contour_(exp)_2.csv',
 			   'upLimit'		: 'orig/HEPData-ins1750597-v1-xsec_upper_limits_2.csv'},
-#'constraint' : "0.5*([[['nu'],['L+']],[['nu'],['L-']]]+[[['nu'],['L-']],[['nu'],['L+']]])",
-'constraint' : "[[['nu'],['L+']],[['nu'],['L-']]]",
+'constraint' : "2.25*([[['mu+'],['nu']],[['mu-'],['nu']]] + [[['nu'],['mu+']],[['nu'],['mu-']]] + [[['mu+'],['nu']],[['nu'],['mu-']]] + [[['e+'],['nu']],[['e-'],['nu']]] + [[['nu'],['e+']],[['nu'],['e-']]] + [[['e+'],['nu']],[['nu'],['e-']]] + [[['nu'],['mu+']],[['nu'],['e-']]] + [[['nu'],['mu+']],[['e-'],['nu']]] + [[['mu+'],['nu']],[['e-'],['nu']]] + [[['mu+'],['nu']],[['nu'],['e-']]] + [[['nu'],['mu-']],[['nu'],['e+']]] + [[['nu'],['mu-']],[['e+'],['nu']]] + [[['mu-'],['nu']],[['e+'],['nu']]] + [[['mu-'],['nu']],[['nu'],['e+']]])",
+'condDesc'   : "[[['mu+'],['nu']],[['mu-'],['nu']]] + [[['nu'],['mu+']],[['nu'],['mu-']]] + [[['mu+'],['nu']],[['nu'],['mu-']]] >= [[['e+'],['nu']],[['e-'],['nu']]] + [[['nu'],['e+']],[['nu'],['e-']]] + [[['e+'],['nu']],[['nu'],['e-']]], 2*([[['mu+'],['nu']],[['mu-'],['nu']]] + [[['nu'],['mu+']],[['nu'],['mu-']]] + [[['mu+'],['nu']],[['nu'],['mu-']]]) >= [[['nu'],['mu+']],[['nu'],['e-']]] + [[['nu'],['mu+']],[['e-'],['nu']]] + [[['mu+'],['nu']],[['e-'],['nu']]] + [[['mu+'],['nu']],[['nu'],['e-']]] + [[['nu'],['mu-']],[['nu'],['e+']]] + [[['nu'],['mu-']],[['e+'],['nu']]] + [[['mu-'],['nu']],[['e+'],['nu']]] + [[['mu-'],['nu']],[['nu'],['e+']]]",
+'condition'  : "Cgtr([[['mu+'],['nu']],[['mu-'],['nu']]] + [[['nu'],['mu+']],[['nu'],['mu-']]] + [[['mu+'],['nu']],[['nu'],['mu-']]], [[['e+'],['nu']],[['e-'],['nu']]] + [[['nu'],['e+']],[['nu'],['e-']]] + [[['e+'],['nu']],[['nu'],['e-']]]); Cgtr(2.*( [[['mu+'],['nu']],[['mu-'],['nu']]] + [[['nu'],['mu+']],[['nu'],['mu-']]] + [[['mu+'],['nu']],[['nu'],['mu-']]] ), [[['nu'],['mu+']],[['nu'],['e-']]] + [[['nu'],['mu+']],[['e-'],['nu']]] + [[['mu+'],['nu']],[['e-'],['nu']]] + [[['mu+'],['nu']],[['nu'],['e-']]] + [[['nu'],['mu-']],[['nu'],['e+']]] + [[['nu'],['mu-']],[['e+'],['nu']]] + [[['mu-'],['nu']],[['e+'],['nu']]] + [[['mu-'],['nu']],[['nu'],['e+']]])",
 'massPlane'  : 2*[[x, 0.5*(x+y), y]]}
 
-TSlepSlepAll = {
-'name' 		 : 'TSlepSlepAll',
+TSlepSlep = {
+'name' 		 : 'TSlepSlep',
+#'valTarball' : 'TSlepSlepAll.tar.gz',
 'info' 		 :{'figure' 		: 'Fig.7c', 
 			   'figureUrl' 		: 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2018-32/fig_07c.png', 
 			   'dataUrl' 		: 'https://www.hepdata.net/record/ins1750597?version=1&table=xsec upper limits 3'},
 'sources'	 :{'expExcl'		: 'orig/HEPData-ins1750597-v1-Exclusion_contour_(exp)_3.csv',
 			   'obsExcl'		: 'orig/HEPData-ins1750597-v1-Exclusion_contour_(obs)_3.csv',
 			   'upLimit'		: 'orig/HEPData-ins1750597-v1-xsec_upper_limits_3.csv'},
-'constraint' : "[[['l']],[['l']]]",
+'constraint' : "[[['e+']],[['e-']]] + [[['mu+']],[['mu-']]]",
+'condDesc'	 : "[[['mu+']],[['mu-']]] > [[['e+']],[['e-']]]",
+'condition'	 : "Cgtr([[['mu+']],[['mu-']]], [[['e+']],[['e-']]])",
 'massPlane'  : 2*[[x, y]]}
 
-DATA = [TChiWW, TChipChimSlepSlepAll, TSlepSlepAll]
+DATA = [TChiWW, TChipChimSlepSlep, TSlepSlep]
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput('data')
@@ -94,9 +101,12 @@ for TX in DATA:
 	newTx 							= dataset.addTxName(TX['name'])
 	newTx.checked 					= 'False'
 	newTx.constraint 				= TX['constraint']
-	newTx.conditionDescription 		= None
-	newTx.condition 				= None
+	newTx.conditionDescription 		= TX['condDesc']
+	newTx.condition 				= TX['condition']
 	newTx.source 					= 'ATLAS'
+	if 'valTarball' in TX:
+		print('validating ' + TX['valTarball'] + ' with ' + TX['name'])
+		newTx.validationTarball = TX['valTarball']
 	#+++++++ next mass plane block ++++++++++++++
 	newPlane 						= newTx.addMassPlane(TX['massPlane'])
 	newPlane.figure 				= TX['info']['figure']
