@@ -1,0 +1,12 @@
+id: CMS-SUS-17-004
+sqrts: 13*TeV
+lumi: 35.9/fb
+prettyName: EW-ino combination
+url: http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-17-004/index.html
+arxiv: https://arxiv.org/abs/1801.03957
+publication: JHEP 1803 (2018) 160, http://dx.doi:10.1007/JHEP03(2018)160
+contact: cms-phys-conveners-sus@cern.ch
+comment: Fig. 7 with chi02 -> chi10Z on one branch and chi+/-1 -> chi01 Wpm on the other branch, chargino mass are fixed equal to second lightest neutralino mass.
+private: False
+implementedBy: ck
+lastUpdate: 2020/3/16

@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """
 .. module:: convert
@@ -8,16 +8,15 @@
 import sys
 import os
 import argparse
-import types
 
 argparser = argparse.ArgumentParser(description =  
 'create info.txt, txname.txt, twiki.txt and sms.py')
 argparser.add_argument ('-utilsPath', '--utilsPath', 
 help = 'path to the package smodels_utils',\
-type = types.StringType)
+type = str )
 argparser.add_argument ('-smodelsPath', '--smodelsPath', 
 help = 'path to the package smodels_utils',\
-type = types.StringType)
+type = str )
 args = argparser.parse_args()
 
 if args.utilsPath:
@@ -79,9 +78,15 @@ T2tt_1.figureUrl='http://cms-results.web.cern.ch/cms-results/public-results/publ
 T2tt_1.dataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-051/CMS-SUS-16-051_Figure_006.root'
 T2tt_1.histoDataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-051/CMS-SUS-16-051_Figure_006.root'
 T2tt_1.exclusionDataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-051/CMS-SUS-16-051_Figure_006.root'
-T2tt_1.setSources(dataLabels=['expExclusion','expExclusionM1','expExclusionP1','obsExclusion','obsExclusionM1','obsExclusionP1','upperLimits'],
-                    dataFiles=['orig/CMS-SUS-16-051_Figure_005.root','orig/CMS-SUS-16-051_Figure_005.root','orig/CMS-SUS-16-051_Figure_005.root','orig/CMS-SUS-16-051_Figure_005.root','orig/CMS-SUS-16-051_Figure_005.root','orig/CMS-SUS-16-051_Figure_005.root','orig/CMS-SUS-16-051_Figure_005.root'],
-                    dataFormats=['root','root','root','root','root','root','root'],objectNames=['gExp;1','gExp1m;1','gExp1p;1','gObs;1','gObs1m;1','gObs1p;1','hObsXsec;1'],units=[None,None,None,None,None,None,'pb'])
+
+labels = ['expExclusion','expExclusionM1','expExclusionP1','obsExclusion','obsExclusionM1','obsExclusionP1','upperLimits', 'expectedUpperLimits' ]
+formats = ['root']*8
+objNames = ['gExp;1','gExp1m;1','gExp1p;1','gObs;1','gObs1m;1','gObs1p;1','hObsXsec;1','hExpXsec;1']
+units=[None]*7+['pb']
+
+T2tt_1.setSources(dataLabels=labels,
+                    dataFiles=['orig/CMS-SUS-16-051_Figure_005.root']*8,
+                    dataFormats=formats, objectNames=objNames, units=units )
 
 T2ttoff.addMassPlane(T2tt_1)
 
@@ -105,9 +110,9 @@ T6bbWW_1.figureUrl='http://cms-results.web.cern.ch/cms-results/public-results/pu
 T6bbWW_1.dataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-051/CMS-SUS-16-051_Figure_006.root'
 T6bbWW_1.histoDataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-051/CMS-SUS-16-051_Figure_006.root'
 T6bbWW_1.exclusionDataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-051/CMS-SUS-16-051_Figure_006.root'
-T6bbWW_1.setSources(dataLabels=['expExclusion','expExclusionM1','expExclusionP1','obsExclusion','obsExclusionM1','obsExclusionP1','upperLimits'],
-                    dataFiles=['orig/CMS-SUS-16-051_Figure_006.root','orig/CMS-SUS-16-051_Figure_006.root','orig/CMS-SUS-16-051_Figure_006.root','orig/CMS-SUS-16-051_Figure_006.root','orig/CMS-SUS-16-051_Figure_006.root','orig/CMS-SUS-16-051_Figure_006.root','orig/CMS-SUS-16-051_Figure_006.root'],
-                    dataFormats=['root','root','root','root','root','root','root'],objectNames=['gExp;1','gExp1m;1','gExp1p;1','gObs;1','gObs1m;1','gObs1p;1','hObsXsec;1'],units=[None,None,None,None,None,None,'pb'])
+T6bbWW_1.setSources(dataLabels=labels,
+                    dataFiles=['orig/CMS-SUS-16-051_Figure_006.root']*8,
+                    dataFormats=formats,objectNames=objNames,units=units)
 
 
 

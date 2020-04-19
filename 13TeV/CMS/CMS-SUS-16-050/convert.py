@@ -54,7 +54,7 @@ info.arxiv = 'https://arxiv.org/abs/1710.11188'
 info.comment = 'no charm tagging is performed in analyses, therefore we apply the T5tctc result also to up quarks' ## LHCP 2017. root files do not contain limit curves. root files Figure_009-c.root and Figure_009-d.root are swapped!'
 info.implementedBy = 'WW'
 info.supersedes = "CMS-PAS-SUS-16-050"
-info.contact = 'CMS collaboration, cms-phys-conveners-sus@cern.ch'
+info.contact = 'cms-phys-conveners-sus@cern.ch'
 
 dataset = DataSetInput('data')
 dataset.setInfo(dataType = 'upperLimit', dataId = None)

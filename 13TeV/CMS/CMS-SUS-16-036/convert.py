@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """
 .. module:: convert
@@ -10,14 +10,14 @@ import os
 import argparse
 import types
 
-argparser = argparse.ArgumentParser(description =  
+argparser = argparse.ArgumentParser(description =
 'create info.txt, txname.txt, twiki.txt and sms.py')
-argparser.add_argument ('-utilsPath', '--utilsPath', 
+argparser.add_argument ('-utilsPath', '--utilsPath',
 help = 'path to the package smodels_utils',\
-type = types.StringType)
-argparser.add_argument ('-smodelsPath', '--smodelsPath', 
+type = str )
+argparser.add_argument ('-smodelsPath', '--smodelsPath',
 help = 'path to the package smodels_utils',\
-type = types.StringType)
+type = str )
 args = argparser.parse_args()
 
 if args.utilsPath:
@@ -71,9 +71,13 @@ T1bbbb_1.figureUrl='http://cms-results.web.cern.ch/cms-results/public-results/pu
 T1bbbb_1.dataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-036/CMS-SUS-16-036_Figure_006-a.root'
 T1bbbb_1.histoDataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-036/CMS-SUS-16-036_Figure_006-a.root'
 T1bbbb_1.exclusionDataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-036/CMS-SUS-16-036_Figure_006-a.root'
-T1bbbb_1.setSources(dataLabels=['expExclusion','expExclusionM1','expExclusionP1','obsExclusion','obsExclusionM1','obsExclusionP1','upperLimits'],
-                    dataFiles=['orig/CMS-SUS-16-036_Figure_006-a.root','orig/CMS-SUS-16-036_Figure_006-a.root','orig/CMS-SUS-16-036_Figure_006-a.root','orig/CMS-SUS-16-036_Figure_006-a.root','orig/CMS-SUS-16-036_Figure_006-a.root','orig/CMS-SUS-16-036_Figure_006-a.root','orig/CMS-SUS-16-036_Figure_006-a.root'],
-                    dataFormats=['root','root','root','root','root','root','root'],objectNames=['ExpLim;1','ExpLim_1Sdn;1','ExpLim_1Sup;1','ObsLim;1','ObsLim_1Sdn;1','ObsLim_1Sup;1','ObsXS_2D;1'],units=[None,None,None,None,None,None,'pb'])
+labels = ['expExclusion','expExclusionM1','expExclusionP1','obsExclusion','obsExclusionM1','obsExclusionP1','upperLimits','expectedUpperLimits']
+formats=["root"]*8
+objNames = ['ExpLim;1','ExpLim_1Sdn;1','ExpLim_1Sup;1','ObsLim;1','ObsLim_1Sdn;1','ObsLim_1Sup;1','ObsXS_2D;1', 'ExpXS_2D;1' ]
+units = [None]*7+['pb']
+T1bbbb_1.setSources(dataLabels=labels,
+                    dataFiles=['orig/CMS-SUS-16-036_Figure_006-a.root']*8,
+                    dataFormats=formats,objectNames=objNames,units=units )
 
 #+++++++txName block++++++++++++++++++++
 T1tttt=dataset.addTxName('T1tttt')
@@ -99,9 +103,9 @@ T1tttt_1.figureUrl='http://cms-results.web.cern.ch/cms-results/public-results/pu
 T1tttt_1.dataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-036/CMS-SUS-16-036_Figure_006-b.root'
 T1tttt_1.histoDataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-036/CMS-SUS-16-036_Figure_006-b.root'
 T1tttt_1.exclusionDataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-036/CMS-SUS-16-036_Figure_006-b.root'
-T1tttt_1.setSources(dataLabels=['expExclusion','expExclusionM1','expExclusionP1','obsExclusion','obsExclusionM1','obsExclusionP1','upperLimits'],
-                    dataFiles=['orig/CMS-SUS-16-036_Figure_006-b.root','orig/CMS-SUS-16-036_Figure_006-b.root','orig/CMS-SUS-16-036_Figure_006-b.root','orig/CMS-SUS-16-036_Figure_006-b.root','orig/CMS-SUS-16-036_Figure_006-b.root','orig/CMS-SUS-16-036_Figure_006-b.root','orig/CMS-SUS-16-036_Figure_006-b.root'],
-                    dataFormats=['root','root','root','root','root','root','root'],objectNames=['ExpLim;1','ExpLim_1Sdn;1','ExpLim_1Sup;1','ObsLim;1','ObsLim_1Sdn;1','ObsLim_1Sup;1','ObsXS_2D;1'],units=[None,None,None,None,None,None,'pb'])
+T1tttt_1.setSources(dataLabels=labels,
+                    dataFiles=['orig/CMS-SUS-16-036_Figure_006-b.root']*8,
+                    dataFormats=formats,objectNames=objNames,units=units )
 T1ttttoff.addMassPlane(T1tttt_1)
 
 #+++++txName block +++++++++++++++++
@@ -121,9 +125,9 @@ T1_1.figureUrl='http://cms-results.web.cern.ch/cms-results/public-results/public
 T1_1.dataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-036/CMS-SUS-16-036_Figure_006-c.root'
 T1_1.histoDataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-036/CMS-SUS-16-036_Figure_006-c.root'
 T1_1.exclusionDataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-036/CMS-SUS-16-036_Figure_006-c.root'
-T1_1.setSources(dataLabels=['expExclusion','expExclusionM1','expExclusionP1','obsExclusion','obsExclusionM1','obsExclusionP1','upperLimits'],
-                    dataFiles=['orig/CMS-SUS-16-036_Figure_006-c.root','orig/CMS-SUS-16-036_Figure_006-c.root','orig/CMS-SUS-16-036_Figure_006-c.root','orig/CMS-SUS-16-036_Figure_006-c.root','orig/CMS-SUS-16-036_Figure_006-c.root','orig/CMS-SUS-16-036_Figure_006-c.root','orig/CMS-SUS-16-036_Figure_006-c.root'],
-                    dataFormats=['root','root','root','root','root','root','root'],objectNames=['ExpLim;1','ExpLim_1Sdn;1','ExpLim_1Sup;1','ObsLim;1','ObsLim_1Sdn;1','ObsLim_1Sup;1','ObsXS_2D;1'],units=[None,None,None,None,None,None,'pb'])
+T1_1.setSources(dataLabels=labels,
+                    dataFiles=['orig/CMS-SUS-16-036_Figure_006-c.root']*8,
+                    dataFormats=formats,objectNames=objNames,units=units )
 
 #+++++txName block +++++++++++++++++
 
@@ -142,9 +146,9 @@ T2_1.figureUrl='http://cms-results.web.cern.ch/cms-results/public-results/public
 T2_1.dataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-036/CMS-SUS-16-036_Figure_007-c.root'
 T2_1.histoDataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-036/CMS-SUS-16-036_Figure_007-c.root'
 T2_1.exclusionDataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-036/CMS-SUS-16-036_Figure_007-c.root'
-T2_1.setSources(dataLabels=['expExclusion','expExclusionM1','expExclusionP1','obsExclusion','obsExclusionM1','obsExclusionP1','upperLimits'],
-                    dataFiles=['orig/CMS-SUS-16-036_Figure_007-c.root','orig/CMS-SUS-16-036_Figure_007-c.root','orig/CMS-SUS-16-036_Figure_007-c.root','orig/CMS-SUS-16-036_Figure_007-c.root','orig/CMS-SUS-16-036_Figure_007-c.root','orig/CMS-SUS-16-036_Figure_007-c.root','orig/CMS-SUS-16-036_Figure_007-c.root'],
-                    dataFormats=['root','root','root','root','root','root','root'],objectNames=['ExpLim;1','ExpLim_1Sdn;1','ExpLim_1Sup;1','ObsLim;1','ObsLim_1Sdn;1','ObsLim_1Sup;1','ObsXS_2D;1'],units=[None,None,None,None,None,None,'pb'])
+T2_1.setSources(dataLabels=labels,
+                    dataFiles=['orig/CMS-SUS-16-036_Figure_007-c.root' ]*8,
+                    dataFormats=formats,objectNames=objNames, units=units )
 
 #+++++txName block +++++++++++++++++
 
@@ -163,9 +167,9 @@ T2bb_1.figureUrl='http://cms-results.web.cern.ch/cms-results/public-results/publ
 T2bb_1.dataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-036/CMS-SUS-16-036_Figure_007-a.root'
 T2bb_1.histoDataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-036/CMS-SUS-16-036_Figure_007-a.root'
 T2bb_1.exclusionDataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-036/CMS-SUS-16-036_Figure_007-a.root'
-T2bb_1.setSources(dataLabels=['expExclusion','expExclusionM1','expExclusionP1','obsExclusion','obsExclusionM1','obsExclusionP1','upperLimits'],
-                    dataFiles=['orig/CMS-SUS-16-036_Figure_007-a.root','orig/CMS-SUS-16-036_Figure_007-a.root','orig/CMS-SUS-16-036_Figure_007-a.root','orig/CMS-SUS-16-036_Figure_007-a.root','orig/CMS-SUS-16-036_Figure_007-a.root','orig/CMS-SUS-16-036_Figure_007-a.root','orig/CMS-SUS-16-036_Figure_007-a.root'],
-                    dataFormats=['root','root','root','root','root','root','root'],objectNames=['ExpLim;1','ExpLim_1Sdn;1','ExpLim_1Sup;1','ObsLim;1','ObsLim_1Sdn;1','ObsLim_1Sup;1','ObsXS_2D;1'],units=[None,None,None,None,None,None,'pb'])
+T2bb_1.setSources(dataLabels=labels,
+                    dataFiles=['orig/CMS-SUS-16-036_Figure_007-a.root']*8,
+                    dataFormats=formats,objectNames=objNames,units=units )
 
 
 #+++++txName block +++++++++++++++++
@@ -193,9 +197,9 @@ T2tt_1.figureUrl='http://cms-results.web.cern.ch/cms-results/public-results/publ
 T2tt_1.dataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-036/CMS-SUS-16-036_Figure_007-b.root'
 T2tt_1.histoDataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-036/CMS-SUS-16-036_Figure_007-b.root'
 T2tt_1.exclusionDataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-036/CMS-SUS-16-036_Figure_007-b.root'
-T2tt_1.setSources(dataLabels=['expExclusion','expExclusionM1','expExclusionP1','obsExclusion','obsExclusionM1','obsExclusionP1','upperLimits'],
-                    dataFiles=['orig/CMS-SUS-16-036_Figure_007-b.root','orig/CMS-SUS-16-036_Figure_007-b.root','orig/CMS-SUS-16-036_Figure_007-b.root','orig/CMS-SUS-16-036_Figure_007-b.root','orig/CMS-SUS-16-036_Figure_007-b.root','orig/CMS-SUS-16-036_Figure_007-b.root','orig/CMS-SUS-16-036_Figure_007-b.root'],
-                    dataFormats=['root','root','root','root','root','root','root'],objectNames=['ExpLim;1','ExpLim_1Sdn;1','ExpLim_1Sup;1','ObsLim;1','ObsLim_1Sdn;1','ObsLim_1Sup;1','ObsXS_2D;1'],units=[None,None,None,None,None,None,'pb'])
+T2tt_1.setSources(dataLabels=labels,
+                  dataFiles=['orig/CMS-SUS-16-036_Figure_007-b.root']*8,
+                  dataFormats=formats,objectNames=objNames,units=units )
 
 T2ttoff.addMassPlane(T2tt_1)
 #+++++txName block +++++++++++++++++
@@ -215,10 +219,9 @@ T6bbWW_1.figureUrl='http://cms-results.web.cern.ch/cms-results/public-results/pu
 T6bbWW_1.dataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-036/CMS-SUS-16-036_Figure_008-a.root'
 T6bbWW_1.histoDataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-036/CMS-SUS-16-036_Figure_008-a.root'
 T6bbWW_1.exclusionDataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-036/CMS-SUS-16-036_Figure_008-a.root'
-T6bbWW_1.setSources(dataLabels=['expExclusion','expExclusionM1','expExclusionP1','obsExclusion','obsExclusionM1','obsExclusionP1','upperLimits'],
-                    dataFiles=['orig/CMS-SUS-16-036_Figure_008-a.root','orig/CMS-SUS-16-036_Figure_008-a.root','orig/CMS-SUS-16-036_Figure_008-a.root','orig/CMS-SUS-16-036_Figure_008-a.root','orig/CMS-SUS-16-036_Figure_008-a.root','orig/CMS-SUS-16-036_Figure_008-a.root','orig/CMS-SUS-16-036_Figure_008-a.root'],
-                    dataFormats=['root','root','root','root','root','root','root'],objectNames=['ExpLim;1','ExpLim_1Sdn;1','ExpLim_1Sup;1','ObsLim;1','ObsLim_1Sdn;1','ObsLim_1Sup;1','ObsXS_2D;1'],units=[None,None,None,None,None,None,'pb'])
-
+T6bbWW_1.setSources(dataLabels=labels,
+                    dataFiles=['orig/CMS-SUS-16-036_Figure_008-a.root']*8,
+                    dataFormats=formats,objectNames=objNames,units=units )
 
 #+++++txName block +++++++++++++++++
 
@@ -237,8 +240,7 @@ T2cc_1.figureUrl='http://cms-results.web.cern.ch/cms-results/public-results/publ
 T2cc_1.dataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-036/CMS-SUS-16-036_Figure_008-b.root'
 T2cc_1.histoDataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-036/CMS-SUS-16-036_Figure_008-b.root'
 T2cc_1.exclusionDataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-036/CMS-SUS-16-036_Figure_008-b.root'
-T2cc_1.setSources(dataLabels=['expExclusion','expExclusionM1','expExclusionP1','obsExclusion','obsExclusionM1','obsExclusionP1','upperLimits'],
-                    dataFiles=['orig/CMS-SUS-16-036_Figure_008-c.root','orig/CMS-SUS-16-036_Figure_008-c.root','orig/CMS-SUS-16-036_Figure_008-c.root','orig/CMS-SUS-16-036_Figure_008-c.root','orig/CMS-SUS-16-036_Figure_008-c.root','orig/CMS-SUS-16-036_Figure_008-c.root','orig/CMS-SUS-16-036_Figure_008-c.root'],
-                    dataFormats=['root','root','root','root','root','root','root'],objectNames=['ExpLim;1','ExpLim_1Sdn;1','ExpLim_1Sup;1','ObsLim;1','ObsLim_1Sdn;1','ObsLim_1Sup;1','ObsXS_2D;1'],units=[None,None,None,None,None,None,'pb'])
-
+T2cc_1.setSources(dataLabels=labels,
+                    dataFiles=['orig/CMS-SUS-16-036_Figure_008-c.root']*8,
+                    dataFormats=formats,objectNames=objNames,units=units )
 databaseCreator.create()

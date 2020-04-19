@@ -60,7 +60,7 @@ info.private = False
 # info.arxiv = 'https://arxiv.org/abs/1704.07781'
 info.comment = 'https://cds.cern.ch/record/2273394, http://inspirehep.net/record/1609006'
 info.implementedBy = 'WW'
-info.contact = 'SModelS'
+info.contact = 'smodels-users@lists.oeaw.ac.at'
 # info.combinableWith = "CMS-PAS-SUS-16-050" ## FIXME can be combined with a lot, since it vetoes > 2 jets!
 
 max_datasets = None
