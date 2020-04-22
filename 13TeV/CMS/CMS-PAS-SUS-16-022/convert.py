@@ -42,6 +42,7 @@ info.url = 'http://cms-results.web.cern.ch/cms-results/public-results/preliminar
 info.sqrts = 13
 info.lumi = 12.9
 info.prettyName = '>= 3 leptons'
+info.supersededBy = "CMS-SUS-16-041"
 info.comment = 'https://cds.cern.ch/record/2205165'
 
 
