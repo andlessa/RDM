@@ -47,7 +47,7 @@ info.private = False
 info.arxiv = 'https://arxiv.org/abs/1710.09154'
 info.contact = 'cms-phys-conveners-sus@cern.ch'
 info.supersedes = 'CMS-PAS-SUS-16-022'
-info.publication = 'Submitted to J. High Energy Phys.'
+info.publication = 'JHEP 02 (2018) 067'
 info.comment = 'Moriond 2017. Omitted the gluino -> q qbar W/Z decay simplified model since the branching ratio information for the gluino to the chargino or neutralino2 was not provided.'
 
 
