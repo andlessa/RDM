@@ -40,7 +40,7 @@ SRsC = ['1b_ETmiss_250', '2b_ETmiss_500', '2b_ETmiss_500_HT_100', '1c_ETmiss_250
 
 
 # %% Get data from CheckMate results
-resultFolder = './validation_results'
+resultFolder = './validation_results/cms_sus_16_032'
 slhaFolder = './validation_slha/'
 recastData = []
 for slhaFile in glob.glob(slhaFolder+'/stop*.slha'):
@@ -77,7 +77,7 @@ for level,curves in contours.items():
         if len(curve) != max(npts): continue
         plt.plot(curve[:,0],curve[:,1],label=level,linestyle='--',linewidth=4)
 plt.plot(offCurve['mstop'],offCurve['mlsp'],linewidth=4,
-        color='black',label='ATLAS')
+        color='black',label='CMS-SUS-16-032')
 plt.xlabel(r'$m_{\tilde{\t}}$ (GeV)')
 plt.ylabel(r'$m_{\tilde{\chi}_1^0}$ (GeV)')
 cb = plt.colorbar(ax)
@@ -86,4 +86,5 @@ for pt in recastData:
         plt.annotate('%1.1f'%pt[2],(pt[0],pt[1]),
                     fontsize=10)
 cb.set_label("r")
+plt.savefig("cms_sus_16_032_Stop.png")
 plt.show()

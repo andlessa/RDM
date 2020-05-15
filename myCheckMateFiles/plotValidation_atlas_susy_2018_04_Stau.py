@@ -34,7 +34,7 @@ effs["effRecast"] = np.nan
 effs["r-value"] = np.nan
 
 # %% Get data from CheckMate results
-resultFolder = './validation_results'
+resultFolder = './validation_results/atlas_susy_2018_04'
 slhaFolder = './validation_slha/'
 for slhaFile in glob.glob(slhaFolder+'/*.slha'):
     slhaData = pyslha.readSLHAFile(slhaFile)
@@ -99,4 +99,5 @@ plt.xlabel(r'$m_{\tilde{\tau}}$ (GeV)')
 plt.ylabel(r'$m_{\tilde{\chi}_1^0}$ (GeV)')
 cb = plt.colorbar(ax)
 cb.set_label(r'$r$')
+plt.savefig("atlas_susy_2018_04_Stau.png")
 plt.show()
