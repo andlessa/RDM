@@ -6,3 +6,4 @@ utilsPath.pyc
 */*/*/validation/*pdf
 */*/*/.db*.pcl
 *~
+.DS_Store

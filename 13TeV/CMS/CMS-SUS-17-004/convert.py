@@ -47,6 +47,7 @@ info.arxiv = 'https://arxiv.org/abs/1801.03957'
 info.contact = 'cms-phys-conveners-sus@cern.ch'
 info.publication = 'JHEP 1803 (2018) 160, http://dx.doi:10.1007/JHEP03(2018)160'
 info.comment = 'Fig. 7 with chi02 -> chi10Z on one branch and chi+/-1 -> chi01 Wpm on the other branch, chargino mass are fixed equal to second lightest neutralino mass.'
+info.supersedes = "CMS-PAS-SUS-17-004"
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput('data')

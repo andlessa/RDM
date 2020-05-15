@@ -48,6 +48,7 @@ info.arxiv = ''
 info.contact = ''
 info.publication = ''
 info.comment = 'TChiHH, TChiZZ mass planes not provided. TChiWH/Z not implemented as BR(Chi20->H Chi10) = BR(Chi20->Chi10 Z)=0.5 provided for a single mass plane.'
+info.supersededBy = 'CMS-SUS-17-004'
 
 
 #+++++++ dataset block ++++++++++++++
