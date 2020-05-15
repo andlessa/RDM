@@ -6,14 +6,19 @@
 
 class Cms_sus_19_005 : public AnalysisBase {
   public:
-    Cms_sus_19_005() : AnalysisBase()  {}               
+    Cms_sus_19_005() : AnalysisBase()  {}
     ~Cms_sus_19_005() {}
-  
+
     void initialize();
-    void analyze();        
+    void analyze();
     void finalize();
 
   private:
+    bool tagBJet(Jet *cand, string efficiency);
+    bool tagCJet(Jet *cand);
+    double getEffFromData(vector<vector<double>> effData,
+                          double pt);
+    std::vector<Jet*> getPseudoJets(std::vector<Jet*> jets);
 };
 
 #endif
