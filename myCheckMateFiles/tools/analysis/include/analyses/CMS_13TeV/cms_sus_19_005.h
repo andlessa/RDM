@@ -14,11 +14,10 @@ class Cms_sus_19_005 : public AnalysisBase {
     void finalize();
 
   private:
-    bool tagBJet(Jet *cand, string efficiency);
-    bool tagCJet(Jet *cand);
+    bool tagBJetMedium(Jet *cand);
     double getEffFromData(vector<vector<double>> effData,
                           double pt);
-    std::vector<Jet*> getPseudoJets(std::vector<Jet*> jets);
+    std::vector<TLorentzVector> getPseudoJets(std::vector<Jet*> jets);
 };
 
 #endif
