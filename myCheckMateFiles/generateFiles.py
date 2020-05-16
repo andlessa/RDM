@@ -4,6 +4,7 @@
 
 import os
 import numpy as np
+import tarfile
 
 #
 # T2bbf = open('/home/lessa/smodels-database/13TeV/CMS/CMS-SUS-16-032/data/T2bb.txt','r')
@@ -44,11 +45,19 @@ import numpy as np
 #             fnew.write(l)
 
 
-T2ttf = open('/home/lessa/smodels-database/13TeV/CMS/CMS-SUS-19-006/data/T2tt.txt','r')
-T2tt = eval(T2ttf.read().split("upperLimits:")[-1].split("expectedUpperLimits:")[0],
-                {'GeV':1.0,'fb':1.0,'pb' : 1e3})
-T2ttf.close()
-masses = np.array([pt[0][0] for pt in T2tt])
+# T2ttf = open('/home/lessa/smodels-database/13TeV/CMS/CMS-SUS-19-006/data/T2tt.txt','r')
+# T2tt = eval(T2ttf.read().split("upperLimits:")[-1].split("expectedUpperLimits:")[0],
+                # {'GeV':1.0,'fb':1.0,'pb' : 1e3})
+# T2ttf.close()
+tf = tarfile.open('/home/lessa/smodels-utils/slha/T2tt.tar.gz','r:gz')
+fname = tf.next()
+masses = []
+while (fname):
+    mstop,mlsp = fname.name.split('_')[1:3]
+    masses.append([eval(mstop),eval(mlsp)])
+    fname = tf.next()
+
+masses = np.array(masses)
 
 template = 'T2tt.slha'
 ftemplate = open(template, 'r')
