@@ -43,7 +43,7 @@ SRsC = ['1b_ETmiss_250', '2b_ETmiss_500', '2b_ETmiss_500_HT_100', '1c_ETmiss_250
 resultFolder = './validation_results/cms_sus_16_032'
 slhaFolder = './validation_slha/'
 recastData = []
-for slhaFile in glob.glob(slhaFolder+'/stop*.slha'):
+for slhaFile in glob.glob(slhaFolder+'/T2cc*.slha'):
     slhaData = pyslha.readSLHAFile(slhaFile)
     mstop = slhaData.blocks['MASS'][1000006]
     mlsp = slhaData.blocks['MASS'][1000022]
