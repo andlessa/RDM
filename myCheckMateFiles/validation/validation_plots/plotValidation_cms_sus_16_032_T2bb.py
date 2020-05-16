@@ -105,9 +105,10 @@ ax = plt.scatter(recastData[:,0],recastData[:,1],
     c=recastData[:,2],cmap=cm,vmin=0.0,vmax=2.0,s=70)
 cb = plt.colorbar(ax)
 for level,curves in contours.items():
+    if level != 1.0: continue
     for i,curve in enumerate(curves):
         if i == 0:
-            plt.plot(curve[:,0],curve[:,1],label='r = '+str(level),
+            plt.plot(curve[:,0],curve[:,1],label='Recast (r = %s)' %str(level),
                 linestyle='--',linewidth=4)
         else:
             plt.plot(curve[:,0],curve[:,1],
@@ -117,12 +118,12 @@ plt.plot(offCurve['msb'],offCurve['mlsp'],linewidth=4,
 plt.xlabel(r'$m_{\tilde{b}}$ (GeV)')
 plt.ylabel(r'$m_{\tilde{\chi}_1^0}$ (GeV)')
 # for pt in recastData:
-    # if pt[2] < 1.0:
+    # if 0.5 < pt[2] < 0.9:
         # plt.annotate('%1.1f'%pt[2],(pt[0],pt[1]),
                     # fontsize=10)
 cb.set_label("r")
 plt.legend()
-plt.title("Combined Exclusion")
+plt.title(r'$\tilde{b} \tilde{b}, \tilde{b} \to b + \tilde{\chi}_1^0$ (Combined Exclusion)')
 plt.savefig("cms_sus_16_032_T2bb.png")
 plt.show()
 

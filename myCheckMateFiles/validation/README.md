@@ -25,7 +25,7 @@ using the data stored in [validation_slha.tar.gz](./validation_slha.tar.gz) and 
 
 * ATLAS-SUSY-2018-04:
 
-![Alt text](validation_plots/atlas_susy_2018_04_Stau.png?raw=true "Validation Plot")
+![Alt text](validation_plots/atlas_susy_2018_04_StauEffs.png?raw=true "Validation Plot")
 
 * CMS-SUS-16-032:
 

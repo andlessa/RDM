@@ -59,7 +59,7 @@ for level,curves in contours.items():
     if level != 1.0: continue
     for i,curve in enumerate(sorted(curves, key = lambda c: len(c),reverse=True)):
         if i == 0:
-            plt.plot(curve[:,0],curve[:,1],label='r = '+str(level),
+            plt.plot(curve[:,0],curve[:,1],label='Recast (r = %s)' %str(level),
                 linestyle='--',linewidth=4)
         else:
             plt.plot(curve[:,0],curve[:,1],

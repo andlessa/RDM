@@ -62,34 +62,32 @@ for slhaFile in glob.glob(slhaFolder+'/*.slha'):
 effs['relDiff'] = (effs.effRecast - effs.effATLAS)/effs.effATLAS
 
 # %% plot result High mass
-fig = plt.figure(figsize=(12,8))
-ax = plt.scatter(effs.loc['SR-highMass']['mstau'],effs.loc['SR-highMass']['mlsp'],
-    c=effs.loc['SR-highMass']['relDiff'],cmap=cm,vmin=-1.0,vmax=1.0,s=70)
-plt.xlabel(r'$m_{\tilde{\tau}}$ (GeV)')
-plt.ylabel(r'$m_{\tilde{\chi}_1^0}$ (GeV)')
-plt.title('SR-HighMass')
-cb = plt.colorbar(ax)
+fig, axes = plt.subplots(nrows=1, ncols=2, figsize=(18,8))
+ax = axes[0].scatter(effs.loc['SR-highMass']['mstau'],effs.loc['SR-highMass']['mlsp'],
+    c=effs.loc['SR-highMass']['relDiff'],cmap=cm,vmin=-1.0,vmax=1.0,s=120)
 for index,row in effs.loc['SR-highMass'].iterrows():
-    if abs(row['relDiff']) > 0.15 and not np.isnan([row['relDiff']]):
-        plt.annotate('%1.1f'%row['relDiff'],(row['mstau'],row['mlsp']),
-                    fontsize=10)
-cb.set_label(r'$\Delta\epsilon/\epsilon_{ATLAS}$')
-plt.show()
+    if abs(row['relDiff']) > 0.3 and not np.isnan([row['relDiff']]):
+        axes[0].annotate('%1.1f'%row['relDiff'],(row['mstau'],row['mlsp']+3.),
+                    fontsize=11)
+axes[0].set_xlabel(r'$m_{\tilde{\tau}}$ (GeV)')
+axes[0].set_ylabel(r'$m_{\tilde{\chi}_1^0}$ (GeV)')
+axes[0].set_title(r'$\tilde{\tau} \tilde{\tau}, \tilde{\tau} \to \tau + \tilde{\chi}_1^0$ (SR-HighMass Efficiencies)')
 
-# %% plot result Low mass
-fig = plt.figure(figsize=(12,8))
-ax = plt.scatter(effs.loc['SR-lowMass']['mstau'],effs.loc['SR-lowMass']['mlsp'],
-    c=effs.loc['SR-lowMass']['relDiff'],cmap=cm,vmin=-1.0,vmax=1.0,s=70)
-plt.xlabel(r'$m_{\tilde{\tau}}$ (GeV)')
-plt.ylabel(r'$m_{\tilde{\chi}_1^0}$ (GeV)')
-plt.title('SR-LowMass')
-cb = plt.colorbar(ax)
-cb.set_label(r'$\Delta\epsilon/\epsilon_{ATLAS}$')
+ax = axes[1].scatter(effs.loc['SR-lowMass']['mstau'],effs.loc['SR-lowMass']['mlsp'],
+    c=effs.loc['SR-lowMass']['relDiff'],cmap=cm,vmin=-1.0,vmax=1.0,s=120)
 for index,row in effs.loc['SR-lowMass'].iterrows():
-    if abs(row['relDiff']) > 0.15 and not np.isnan([row['relDiff']]):
-        plt.annotate('%1.1f'%row['relDiff'],(row['mstau'],row['mlsp']),
-                    fontsize=10)
-plt.show()
+    if abs(row['relDiff']) > 0.3 and not np.isnan([row['relDiff']]):
+        axes[1].annotate('%1.1f'%row['relDiff'],(row['mstau'],row['mlsp']+3.),
+                    fontsize=11)
+axes[1].set_xlabel(r'$m_{\tilde{\tau}}$ (GeV)')
+# axes[1].set_ylabel(r'$m_{\tilde{\chi}_1^0}$ (GeV)')
+axes[1].set_title(r'$\tilde{\tau} \tilde{\tau}, \tilde{\tau} \to \tau + \tilde{\chi}_1^0$ (SR-lowMass Efficiencies)')
+
+cb = fig.colorbar(ax, ax=axes.ravel().tolist())
+cb.set_label(r'$\Delta\epsilon/\epsilon_{ATLAS}$')
+plt.savefig("atlas_susy_2018_04_StauEffs.png")
+
+
 
 # %% Plot exclusion curve
 fig = plt.figure(figsize=(12,8))
@@ -99,5 +97,6 @@ plt.xlabel(r'$m_{\tilde{\tau}}$ (GeV)')
 plt.ylabel(r'$m_{\tilde{\chi}_1^0}$ (GeV)')
 cb = plt.colorbar(ax)
 cb.set_label(r'$r$')
+plt.title(r'$\tilde{\tau} \tilde{\tau}, \tilde{\tau} \to \tau + \tilde{\chi}_1^0$ (Best SR)')
 plt.savefig("atlas_susy_2018_04_Stau.png")
 plt.show()

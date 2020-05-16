@@ -1,4 +1,4 @@
-# CheckMATE Recasting:
+# CheckMATE Recasting
 
 This folder contains the files for the CheckMATE recasting of the following analyses:
 
@@ -6,8 +6,9 @@ This folder contains the files for the CheckMATE recasting of the following anal
  * b-jets plus MET (35.9/fb): [CMS-SUS-16-032](http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-032/index.html)
  * Hadronic MT2 (137/fb): [CMS-SUS-16-032](http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-19-005/index.html)
 
+The CMS-SUS-16-32 recasting *does not* include the disappearing track search.
 
-## Usage and Installation##
+## Usage and Installation ##
 
 The files in the [tools](./tools) and [data](./data) folders have to be copied to CheckMATE's folder
 and CheckMATE has to be recompiled:

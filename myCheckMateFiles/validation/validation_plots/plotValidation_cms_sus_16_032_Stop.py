@@ -72,10 +72,11 @@ fig = plt.figure(figsize=(12,8))
 ax = plt.scatter(recastData[:,0],recastData[:,1],
     c=recastData[:,2],cmap=cm,vmin=0.0,vmax=2.0,s=70)
 for level,curves in contours.items():
+    if level != 1.0: continue
     npts = [len(c) for c in curves]
     for curve in curves:
         if len(curve) != max(npts): continue
-        plt.plot(curve[:,0],curve[:,1],label=level,linestyle='--',linewidth=4)
+        plt.plot(curve[:,0],curve[:,1],label='Recast (r = %s)' %str(level),linestyle='--',linewidth=4)
 plt.plot(offCurve['mstop'],offCurve['mlsp'],linewidth=4,
         color='black',label='CMS-SUS-16-032')
 plt.xlabel(r'$m_{\tilde{\t}}$ (GeV)')
@@ -86,5 +87,6 @@ for pt in recastData:
         plt.annotate('%1.1f'%pt[2],(pt[0],pt[1]),
                     fontsize=10)
 cb.set_label("r")
+plt.title(r'$\tilde{t} \tilde{t}, \tilde{t} \to c + \tilde{\chi}_1^0$ (Combined Exclusion)')
 plt.savefig("cms_sus_16_032_Stop.png")
 plt.show()
