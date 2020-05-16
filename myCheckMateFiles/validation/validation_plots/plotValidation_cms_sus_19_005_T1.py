@@ -19,19 +19,18 @@ sns.set_context('paper', font_scale=1.8)
 cm = plt.cm.get_cmap('RdYlBu')
 
 # %% Load data
-offCurve = np.genfromtxt('./CMS_data/CMS-SUS-19-005_Figure_013-c.csv',
-                        delimiter=',', names=['mst','mlsp'])
+offCurve = np.genfromtxt('./CMS_data/CMS-SUS-19-005_Figure_011-a.csv',
+                        delimiter=',', names=['mg','mlsp'])
 
 # %% Get data from CheckMate results
-resultFolder = './validation_results/cms_sus_19_005'
-slhaFolder = './validation_slha/'
+resultFolder = '../validation_results/cms_sus_19_005'
+slhaFolder = '../validation_slha/'
 recastData = []
 srRecast = []
-for slhaFile in glob.glob(slhaFolder+'/T2tt*.slha'):
+for slhaFile in glob.glob(slhaFolder+'T1*.slha'):
     slhaData = pyslha.readSLHAFile(slhaFile)
-    mst = slhaData.blocks['MASS'][1000006]
+    mg = slhaData.blocks['MASS'][1000021]
     mlsp = slhaData.blocks['MASS'][1000022]
-    if (mst-mlsp) < 175.0: continue
     resDir = os.path.splitext(os.path.basename(slhaFile))[0]
     resFile = os.path.join(resultFolder,resDir,'evaluation',
                 'total_results.txt')
@@ -43,7 +42,7 @@ for slhaFile in glob.glob(slhaFolder+'/T2tt*.slha'):
     ibest = np.argmax(data['rexp'])
     bestSR = data['sr'][ibest]
     robs = data['robs'][ibest]
-    recastData.append([mst,mlsp,robs])
+    recastData.append([mg,mlsp,robs])
 
 recastData = np.array(recastData)
 
@@ -58,16 +57,16 @@ ax = plt.scatter(recastData[:,0],recastData[:,1],
 cb = plt.colorbar(ax)
 for level,curves in contours.items():
     if level != 1.0: continue
-    for i,curve in enumerate(curves):
+    for i,curve in enumerate(sorted(curves, key = lambda c: len(c),reverse=True)):
         if i == 0:
-            plt.plot(curve[:,0],curve[:,1],label='Recast (r = %s)' %str(level),
+            plt.plot(curve[:,0],curve[:,1],label='r = '+str(level),
                 linestyle='--',linewidth=4)
         else:
             plt.plot(curve[:,0],curve[:,1],
                 linestyle='--',linewidth=4)
-plt.plot(offCurve['mst'],offCurve['mlsp'],linewidth=4,
+plt.plot(offCurve['mg'],offCurve['mlsp'],linewidth=4,
             color='black',label='CMS-SUS-19-005')
-plt.xlabel(r'$m_{\tilde{t}}$ (GeV)')
+plt.xlabel(r'$m_{\tilde{g}}$ (GeV)')
 plt.ylabel(r'$m_{\tilde{\chi}_1^0}$ (GeV)')
 # for pt in recastData:
     # if pt[2] < 1.0:
@@ -75,6 +74,6 @@ plt.ylabel(r'$m_{\tilde{\chi}_1^0}$ (GeV)')
                     # fontsize=10)
 cb.set_label("r")
 plt.legend()
-plt.title(r'$\tilde{t} \tilde{t}, \tilde{t} \to t + \tilde{\chi}_1^0$ (Best SR Exclusion)')
-plt.savefig("cms_sus_19_005_T2tt.png")
+plt.title(r'$\tilde{g} \tilde{g}, \tilde{g} \to \bar{q} q + \tilde{\chi}_1^0$ (Best SR Exclusion)')
+plt.savefig("cms_sus_19_005_T1.png")
 plt.show()

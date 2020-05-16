@@ -19,18 +19,19 @@ sns.set_context('paper', font_scale=1.8)
 cm = plt.cm.get_cmap('RdYlBu')
 
 # %% Load data
-offCurve = np.genfromtxt('./CMS_data/CMS-SUS-19-005_Figure_014-c.csv',
+offCurve = np.genfromtxt('./CMS_data/CMS-SUS-19-005_Figure_013-c.csv',
                         delimiter=',', names=['mst','mlsp'])
 
 # %% Get data from CheckMate results
-resultFolder = './validation_results/cms_sus_19_005'
-slhaFolder = './validation_slha/'
+resultFolder = '../validation_results/cms_sus_19_005'
+slhaFolder = '../validation_slha/'
 recastData = []
 srRecast = []
-for slhaFile in glob.glob(slhaFolder+'T2cc*.slha'):
+for slhaFile in glob.glob(slhaFolder+'/T2tt*.slha'):
     slhaData = pyslha.readSLHAFile(slhaFile)
     mst = slhaData.blocks['MASS'][1000006]
     mlsp = slhaData.blocks['MASS'][1000022]
+    if (mst-mlsp) < 175.0: continue
     resDir = os.path.splitext(os.path.basename(slhaFile))[0]
     resFile = os.path.join(resultFolder,resDir,'evaluation',
                 'total_results.txt')
@@ -74,6 +75,6 @@ plt.ylabel(r'$m_{\tilde{\chi}_1^0}$ (GeV)')
                     # fontsize=10)
 cb.set_label("r")
 plt.legend()
-plt.title(r'$\tilde{t} \tilde{t}, \tilde{t} \to c + \tilde{\chi}_1^0$ (Best SR Exclusion)')
-plt.savefig("cms_sus_19_005_T2cc.png")
+plt.title(r'$\tilde{t} \tilde{t}, \tilde{t} \to t + \tilde{\chi}_1^0$ (Best SR Exclusion)')
+plt.savefig("cms_sus_19_005_T2tt.png")
 plt.show()

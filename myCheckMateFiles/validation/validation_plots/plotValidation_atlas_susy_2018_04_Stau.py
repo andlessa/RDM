@@ -34,8 +34,8 @@ effs["effRecast"] = np.nan
 effs["r-value"] = np.nan
 
 # %% Get data from CheckMate results
-resultFolder = './validation_results/atlas_susy_2018_04'
-slhaFolder = './validation_slha/'
+resultFolder = '../validation_results/atlas_susy_2018_04'
+slhaFolder = '../validation_slha/'
 for slhaFile in glob.glob(slhaFolder+'/*.slha'):
     slhaData = pyslha.readSLHAFile(slhaFile)
     mstau = slhaData.blocks['MASS'][1000013]

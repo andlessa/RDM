@@ -23,8 +23,8 @@ offCurve = np.genfromtxt('./CMS_data/CMS-SUS-19-005_Figure_013-b.csv',
                         delimiter=',', names=['msb','mlsp'])
 
 # %% Get data from CheckMate results
-resultFolder = './validation_results/cms_sus_19_005'
-slhaFolder = './validation_slha/'
+resultFolder = '../validation_results/cms_sus_19_005'
+slhaFolder = '../validation_slha/'
 recastData = []
 srRecast = []
 for slhaFile in glob.glob(slhaFolder+'/T2bb*.slha'):
