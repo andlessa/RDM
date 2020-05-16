@@ -31,6 +31,7 @@ for slhaFile in glob.glob(slhaFolder+'/T2tt*.slha'):
     slhaData = pyslha.readSLHAFile(slhaFile)
     mst = slhaData.blocks['MASS'][1000006]
     mlsp = slhaData.blocks['MASS'][1000022]
+    if (mst-mlsp) < 175.0: continue
     resDir = os.path.splitext(os.path.basename(slhaFile))[0]
     resFile = os.path.join(resultFolder,resDir,'evaluation',
                 'total_results.txt')
