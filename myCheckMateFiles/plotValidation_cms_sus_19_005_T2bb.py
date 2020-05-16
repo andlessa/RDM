@@ -27,7 +27,7 @@ resultFolder = './validation_results/cms_sus_19_005'
 slhaFolder = './validation_slha/'
 recastData = []
 srRecast = []
-for slhaFile in glob.glob(slhaFolder+'/sbottom*.slha'):
+for slhaFile in glob.glob(slhaFolder+'/T2bb*.slha'):
     slhaData = pyslha.readSLHAFile(slhaFile)
     msb = slhaData.blocks['MASS'][1000005]
     mlsp = slhaData.blocks['MASS'][1000022]
@@ -54,7 +54,7 @@ contours = getContour(recastData[:,0],recastData[:,1],recastData[:,2],levels=[0.
 fig = plt.figure(figsize=(12,8))
 ax = plt.scatter(recastData[:,0],recastData[:,1],
     c=recastData[:,2],cmap=cm,vmin=0.0,vmax=2.0,s=70)
-cb = plt.colorbar(ax)plt.title("Best SR Exclusion")
+cb = plt.colorbar(ax)
 for level,curves in contours.items():
     if level != 1.0: continue
     for i,curve in enumerate(curves):
@@ -75,5 +75,5 @@ plt.ylabel(r'$m_{\tilde{\chi}_1^0}$ (GeV)')
 cb.set_label("r")
 plt.legend()
 plt.title(r'$\tilde{b} \tilde{b}, \tilde{b} \to b + \tilde{\chi}_1^0$ (Best SR Exclusion)')
-plt.savefig("cms_sus_19_005_Sbottom.png")
+plt.savefig("cms_sus_19_005_T2bb.png")
 plt.show()

@@ -17,13 +17,13 @@ if txname == "T2bb":
     T2bbf.close()
     masses = np.array([pt[0][0] for pt in T2bb])
 
-    template = 'sbottom_900.slha'
+    template = 'T2bb_900.slha'
     ftemplate = open(template, 'r')
     data = ftemplate.readlines()
     ftemplate.close()
     slhaFolder = './validation_slha/'
     for msb,mlsp in masses:
-        newfile = os.path.join(slhaFolder,'sbottom_%i_%i.slha' %(int(msb),int(mlsp)))
+        newfile = os.path.join(slhaFolder,'T2bb_%i_%i.slha' %(int(msb),int(mlsp)))
         with open(newfile,'w') as fnew:
             data[53] = '      1000005 %1.6e # ~b_1\n' %msb
             data[67] = '      1000022 %1.6e # ~chi_10\n' %mlsp

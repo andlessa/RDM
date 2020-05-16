@@ -65,7 +65,7 @@ resultFolder = './validation_results/cms_sus_16_032'
 slhaFolder = './validation_slha/'
 recastData = []
 srRecast = []
-for slhaFile in glob.glob(slhaFolder+'/sbottom*.slha'):
+for slhaFile in glob.glob(slhaFolder+'/T2bb*.slha'):
     slhaData = pyslha.readSLHAFile(slhaFile)
     msb = slhaData.blocks['MASS'][1000005]
     mlsp = slhaData.blocks['MASS'][1000022]
@@ -123,7 +123,7 @@ plt.ylabel(r'$m_{\tilde{\chi}_1^0}$ (GeV)')
 cb.set_label("r")
 plt.legend()
 plt.title("Combined Exclusion")
-plt.savefig("cms_sus_16_032_Sbottom.png")
+plt.savefig("cms_sus_16_032_T2bb.png")
 plt.show()
 
 
