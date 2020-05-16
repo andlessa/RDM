@@ -54,12 +54,12 @@ contours = getContour(recastData[:,0],recastData[:,1],recastData[:,2],levels=[0.
 fig = plt.figure(figsize=(12,8))
 ax = plt.scatter(recastData[:,0],recastData[:,1],
     c=recastData[:,2],cmap=cm,vmin=0.0,vmax=2.0,s=70)
-cb = plt.colorbar(ax)
+cb = plt.colorbar(ax)plt.title("Best SR Exclusion")
 for level,curves in contours.items():
     if level != 1.0: continue
     for i,curve in enumerate(curves):
         if i == 0:
-            plt.plot(curve[:,0],curve[:,1],label='r = '+str(level),
+            plt.plot(curve[:,0],curve[:,1],label='Recast (r = %s)' %str(level),
                 linestyle='--',linewidth=4)
         else:
             plt.plot(curve[:,0],curve[:,1],
@@ -74,6 +74,6 @@ plt.ylabel(r'$m_{\tilde{\chi}_1^0}$ (GeV)')
                     # fontsize=10)
 cb.set_label("r")
 plt.legend()
-plt.title("Best SR Exclusion")
+plt.title(r'$\tilde{b} \tilde{b}, \tilde{b} \to b + \tilde{\chi}_1^0$ (Best SR Exclusion)')
 plt.savefig("cms_sus_19_005_Sbottom.png")
 plt.show()

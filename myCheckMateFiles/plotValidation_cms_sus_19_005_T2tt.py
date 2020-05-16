@@ -60,7 +60,7 @@ for level,curves in contours.items():
     if level != 1.0: continue
     for i,curve in enumerate(curves):
         if i == 0:
-            plt.plot(curve[:,0],curve[:,1],label='r = '+str(level),
+            plt.plot(curve[:,0],curve[:,1],label='Recast (r = %s)' %str(level),
                 linestyle='--',linewidth=4)
         else:
             plt.plot(curve[:,0],curve[:,1],
@@ -75,6 +75,6 @@ plt.ylabel(r'$m_{\tilde{\chi}_1^0}$ (GeV)')
                     # fontsize=10)
 cb.set_label("r")
 plt.legend()
-plt.title("Best SR Exclusion")
+plt.title(r'$\tilde{t} \tilde{t}, \tilde{t} \to t + \tilde{\chi}_1^0$ (Best SR Exclusion)')
 plt.savefig("cms_sus_19_005_T2tt.png")
 plt.show()
