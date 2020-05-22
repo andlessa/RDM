@@ -4,7 +4,10 @@ This branch holds the main code for obtaining the constraints for the RDM Les Ho
 The searches used are:
 
  * Hadronic taus plus MET (139/fb) : [ATLAS-SUSY-2018-04](https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2018-04/) (added to CheckMATE2)
- * b-jets plus MET (35.9/fb): [CMS-SUS-16-036](http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-036/index.html) and [CMS-SUS-16-032](http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-032/index.html) (SModels and CheckMATE)
+ * b-jets plus MET (35.9/fb): [CMS-SUS-16-036](http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-036/index.html) (SModels)
+ * b-jets plus MET (35.9/fb): [CMS-SUS-16-032](http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-032/index.html) (SModels and CheckMATE)
+ * Hadronic MT2 (137/fb): [CMS-SUS-19-005](http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-19-005/index.html)
+
 
 More information about the CheckMATE implementation and validation can be found [here](./myCheckMateFiles/README.md)
 
