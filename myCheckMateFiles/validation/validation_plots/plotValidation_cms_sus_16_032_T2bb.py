@@ -89,8 +89,9 @@ for slhaFile in glob.glob(slhaFolder+'/T2bb*.slha'):
         print('SR not found')
         continue
     robs = data['robs'][ibest]
+    robscons = (data['s'][ibest]-1.64*data['ds'][ibest])/data['s95obs'][ibest]
     rComb = getCombinedR(data,cov,SRs,deltas_rel=0.2)
-    recastData.append([msb,mlsp,rComb,robs])
+    recastData.append([msb,mlsp,rComb,robs,robscons])
     srRecast.append([msb,mlsp,bestSR])
 
 recastData = np.array(recastData)
@@ -111,6 +112,7 @@ for level,curves in contours.items():
             plt.plot(curve[:,0],curve[:,1],label='Recast (r = %s)' %str(level),
                 linestyle='--',linewidth=4)
         else:
+            # continue
             plt.plot(curve[:,0],curve[:,1],
                 linestyle='--',linewidth=4)
 plt.plot(offCurve['msb'],offCurve['mlsp'],linewidth=4,
@@ -139,6 +141,7 @@ ax = plt.scatter(recastData[:,0],recastData[:,1],
     c=recastData[:,3],cmap=cm,vmin=0.0,vmax=2.0,s=70)
 cb = plt.colorbar(ax)
 for level,curves in contoursBest.items():
+    if level != 1.0: continue
     for curve in curves:
         plt.plot(curve[:,0],curve[:,1],label='r = '+str(level),
         linestyle='--',linewidth=4)

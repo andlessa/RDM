@@ -22,6 +22,11 @@ In this scenario we have BR(&chi;<sub>0</sub> + c + &tau;) ~ 100%, so the most r
  * Soft OS leptons (35.9/fb): [CMS-SUS-16-048](http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-048/index.html)
  
 The ATLAS analysis dominate over most of parameter space, while the CMS ones are mostly relevant in the compressed region.
+However, since the mono-jet searches have equal or better coverage than the CMS analyses, 
+we only include the [ATLAS-SUSY-2018-04](https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2018-04/)
+result in the final exclusion curve:
+
+![Alt text](BM1_exclusionAll.png?raw=true "BM1 exclusion")
 
 
 ### BM2 ###
@@ -33,4 +38,7 @@ In this scenario we have BR(&chi;<sub>0</sub> + b + &nu;) ~ 50%, so the most rel
  
 The hadronic MT2 analysis dominate over most of parameter space, while the b-jet plut MET is mostly relevant in the compressed region, due to the
 tagging of soft b-jets using a secondary vertex algorithm.
+The results obtained with SModelS include the combination of distinct signal regions.
 
+
+![Alt text](BM2_exclusionAll.png?raw=true "BM2 exclusion")
