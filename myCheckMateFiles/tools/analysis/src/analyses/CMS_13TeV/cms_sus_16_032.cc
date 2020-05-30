@@ -110,7 +110,7 @@ void Cms_sus_16_032::analyze() {
   double SVeff = 0.2;
   double dR;
   for (int i = 0; i< true_b.size(); ++i){
-      //CMS-SUS-16-049 claims the SV tagging has 20% efficiency is valid for the 10 GeV-20 GeV range:
+      //CMS-SUS-16-049 claims the  20% SV tagging efficiency is valid for the 10 GeV-20 GeV range:
       if (true_b[i]->PT > 25.0 || true_b[i]->PT < 10.0) continue;
       dR = 1.0;
       for (int j = 0; j < bjets.size(); ++j){
