@@ -7,7 +7,7 @@ for the two main benchmark scenarios:
  * BM2: (&lambda;<sub>L</sub>)<sub>33</sub> = 0.6, (&lambda;<sub>R</sub>)<sub>23</sub> = 0.5, m<sub>S<sub>1</sub></sub> = 1 TeV
 
 The first benchmark (BM1) has the &chi;<sub>1</sub> decaying almost 100% to &chi;<sub>0</sub> + c + &tau;, while BM2 has
-&chi;<sub>1</sub> decaying to &chi;<sub>0</sub> + b  + &nu; (40-60%), to &chi;<sub>0</sub> + t  + &tau (0-30%) and to &chi;<sub>0</sub> + c  + &tau; (30%).
+&chi;<sub>1</sub> decaying to &chi;<sub>0</sub> + b  + &nu; (40-60%), to &chi;<sub>0</sub> + t  + &tau; (0-30%) and to &chi;<sub>0</sub> + c  + &tau; (30%).
 In both benchmarks the &chi;<sub>1</sub> and &chi;<sub>0</sub> masses are free parameters.
 
 
