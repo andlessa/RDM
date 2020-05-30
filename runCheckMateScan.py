@@ -9,7 +9,7 @@
 # 3) Move results to output folder
 
 #First tell the system where to find the modules:
-import sys,os,glob
+import sys,os,glob,shutil
 from ufo2slha.configParserWrapper import ConfigParserExt
 import logging
 import subprocess
@@ -68,8 +68,13 @@ def RunCheckMate(parserDict):
     outputFolder = os.path.abspath(parser.get("CheckMateParameters","OutputDirectory"))
     resultFolder = os.path.join(outputFolder,parser.get("CheckMateParameters","Name"))
     if os.path.isdir(resultFolder):
-        logger.info("Results folder %s found. Skipping." %resultFolder)
-        return "---- %s skipped" %resultFolder
+        logger.info("Results folder %s found." %resultFolder)
+        if parser.get("CheckMateParameters","OutputExists") == 'overwrite':
+            logger.info("Overwriting")
+            shutil.rmtree(resultFolder)
+        else:
+            logger.info("Skipping" %resultFolder)
+            return "---- %s skipped" %resultFolder
     cardFile = getCheckMateCard(parser)
     logger.debug('Steering card %s created' %cardFile)
 

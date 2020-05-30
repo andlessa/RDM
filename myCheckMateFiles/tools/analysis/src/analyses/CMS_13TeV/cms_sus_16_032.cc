@@ -108,8 +108,21 @@ void Cms_sus_16_032::analyze() {
   int NSV = 0;
   double prob;
   double SVeff = 0.2;
+  double dR;
   for (int i = 0; i< true_b.size(); ++i){
-      if (true_b[i]->PT > 25.0) continue;
+      //CMS-SUS-16-049 claims the SV tagging has 20% efficiency is valid for the 10 GeV-20 GeV range:
+      if (true_b[i]->PT > 25.0 || true_b[i]->PT < 10.0) continue;
+      dR = 1.0;
+      for (int j = 0; j < bjets.size(); ++j){
+          dR = std::min(dR,true_b[i]->P4().DeltaR(bjets[j]->P4()));
+      }
+      for (int j = 0; j < cjets.size(); ++j){
+          dR = std::min(dR,true_b[i]->P4().DeltaR(cjets[j]->P4()));
+      }
+      for (int j = 0; j < lightjets.size(); ++j){
+          dR = std::min(dR,true_b[i]->P4().DeltaR(lightjets[j]->P4()));
+      }
+      if (dR < 0.4) continue;
       prob = rand()/(RAND_MAX+1.);
       if (prob < SVeff) ++NSV;
   }
