@@ -1,0 +1,285 @@
+#!/usr/bin/env python3
+
+"""
+Simple code for computing the combined upper limit for a given signal over several signal regions (bins).
+
+It assumes the simplified likelihood framework, using
+the covariant matrix for all signal regions.
+"""
+
+from simplifiedLikelihoods import Data, UpperLimitComputer
+import sys, os
+import numpy as np
+
+def addCombinedRTo(checkmateOutput):
+    """
+    Compute the combined limit for CMS-SUS-16-032 using the
+    data from CheckMate output (total_results.txt). Add the result as a new line
+    in the output with the combined r-value assuming zero signal uncertainty (robs)
+    and 20% uncertainty (robscons).
+
+    :param checkmateOutput: CheckMate output file (total_results.txt)
+    :param deltas_rel: Relative uncertainty for the number of signal events.
+
+    :return: True if succesful, False otherwise
+    """
+
+    # Specify the ordering of the signal regions as used in the covariance matrix for CMS-SUS-16-032
+    SRsNC = ['HT_200_MCT_150', 'HT_1000_MCT_150', 'HT_1000_MCT_250', 'HT_1000_MCT_350',
+     'HT_1000_MCT_450', 'HT_1000_MCT_600', 'HT_1000_MCT_800', 'HT_200_MCT_250',
+     'HT_200_MCT_350', 'HT_200_MCT_450', 'HT_500_MCT_150', 'HT_500_MCT_250', 'HT_500_MCT_350',
+     'HT_500_MCT_450', 'HT_500_MCT_600']
+
+    SRsC = ['1b_ETmiss_250', '2b_ETmiss_500', '2b_ETmiss_500_HT_100', '1c_ETmiss_250',
+     '1c_ETmiss_300', '1c_ETmiss_500', '1c_ETmiss_750', '1c_ETmiss_1000', '2c_ETmiss_250',
+     '2c_ETmiss_250_HT_100', '2c_ETmiss_300', '1b_ETmiss_300', '2c_ETmiss_300_HT_100',
+     '2c_ETmiss_500', '2c_ETmiss_500_HT_100', '2c_ETmiss_750', '2c_ETmiss_750_HT_100',
+     'NSV_ETmiss_250', 'NSV_ETmiss_300', 'NSV_ETmiss_500', 'NSV_ETmiss_750', 'NSV_ETmiss_1000',
+     '1b_ETmiss_500', '0b_ETmiss_300', '0b_ETmiss_500', '0b_ETmiss_750', '0b_ETmiss_1000',
+     '0b_ETmiss_1250', '1b_ETmiss_750', '1b_ETmiss_1000', '2b_ETmiss_250',
+     '2b_ETmiss_250_HT_100', '2b_ETmiss_300', '2b_ETmiss_300_HT_100']
+
+    # Get covariance matrix for non-compressed signal regions:
+    covNC = CovarianceHandler(filename = './CMS_data/CMS-SUS-16-032_Figure-aux_003.root',
+                            histoname = 'Canvas_1/Cov', max_datasets=None,
+                            aggregate = None , triangular=True)
+    # Get covariance matrix for compressed signal regions:
+    covC = CovarianceHandler(filename = './CMS_data/CMS-SUS-16-032_Figure-aux_004.root',
+                            histoname = 'Canvas_1/Cov', max_datasets=None,
+                            aggregate = None , triangular=True)
+    # Get singal regions info
+    SRs = np.genfromtxt('./CMS_data/cms_sus_16_032_SRs.txt',names=True,dtype=None,encoding='utf-8')
+    SRdict = dict([[pt['sr'],pt] for pt in SRs])
+
+    if not os.path.isfile(checkmateOutput):
+        print("Files %s not found" %checkmateOutput)
+        return False
+
+    # Get CMS-SUS-16-032 data:
+    data = np.genfromtxt(checkmateOutput,names=True,
+            dtype=None,encoding=None)
+    cmsData = [pt for pt in data if pt['analysis'] == 'cms_sus_16_032']
+    ibestAna = np.argmax([pt['rexp'] for pt in cmsData])
+    bestSR = [pt['sr'] for pt in cmsData][ibestAna]
+    if bestSR in SRsNC:
+        cov = covNC
+        SRs = SRsNC
+    elif bestSR in SRsC:
+        cov = covC
+        SRs = SRsC
+
+    rComb = getCombinedR(cmsData,cov,SRs,deltas_rel=0.0,SRdict=SRdict)
+    rCombCons = getCombinedR(cmsData,cov,SRs,deltas_rel=0.2,SRdict=SRdict)
+
+    data = np.genfromtxt(checkmateOutput,names=True,
+            dtype=None,encoding=None)
+    ilast = max([i for i,pt in enumerate(data) if pt['analysis'] == 'cms_sus_16_032'])
+    pt = data[ilast].copy()
+    for name in data.dtype.names:
+        if name == 'sr':
+            val = 'Combined'
+        elif name == 'robs':
+            val = rComb
+        elif name == 'robscons':
+            val = rCombCons
+        elif name == 'analysis':
+            val = 'cms_sus_16_032'
+        else:
+            val = 0.0
+        pt[name] = val
+
+    dataNew = np.insert(data,ilast+1,pt)
+    header='     '.join(list(dataNew.dtype.names))
+    fmt = ['%-30s' if 'U' in str(val[0]) else '%-1.3e' for key,val in dataNew.dtype.fields.items()]
+    np.savetxt(checkmateOutput,dataNew,fmt=tuple(fmt),header=header,delimiter='  ')
+
+    return True
+
+
+def getCombinedR(data,cov,orderSRs,deltas_rel=0.,SRdict=None):
+    """
+    Compute a combined r-value using the covariance matrix.
+
+    :param data: 2-d numpy array with number of observed events (obs),
+                 number of signal events (s),
+                 number of expected background events (bkg) for each
+                 signal region (sr)
+    :param cov: covariace matrix (CovarianceHandler object)
+    :param orderSRs: lists of SR strings in the same order used
+                     for the covariance matrix
+    :param deltas_rel: Relative uncertainty for the number of signal events.
+    :param SR_dict: Optional dictionary containing the number of observed events ('obs') and
+                    expected events ('bkg') for each signal region. If not defined, this information
+                    will assume to be defined in data.
+
+    :return: Combined r-value (sum(nsig)/ul_combined)
+    """
+    nobs = [0]*len(orderSRs)
+    nsig = [0]*len(orderSRs)
+    bg = [0]*len(orderSRs)
+    # Get ordered data for the specified SRs
+    for pt in data:
+        if not pt['sr'] in orderSRs:
+            continue
+        i = orderSRs.index(pt['sr'])
+        nsig[i] = pt['s']
+        if SRdict is None:
+            nobs[i] = pt['obs']
+            bg[i] = pt['bkg']
+        else:
+            nobs[i] = SRdict[pt['sr']]['obs']
+            bg[i] = SRdict[pt['sr']]['bkg']
+
+    #Compute the combined upper limit
+    ul = getCombinedUpperLimitFor(nobs, bg, nsig,
+                    cov.covariance, deltas_rel)
+
+    #Compute the new r-value:
+    r = sum(nsig)/ul
+
+    return r
+
+
+def getCombinedUpperLimitFor(nobs, bg, nsig, cov, deltas_rel=0.2):
+    """
+    Get combined upper limit.
+
+    :param nobs: list of observed events in each signal region. The list
+                    should obey the ordering in the covariance matrix.
+    :param bg: list of expected BG events in each signal region. The list
+                    should obey the ordering in the covariance matrix.
+    :param nsig: list of signal events in each signal region. The list
+                    should be consistent with the covariance matrix.
+    :param deltas_rel: relative uncertainty in signal (float). Default value is 20%.
+    :returns: upper limit on the number of signal events summed over all signal regions
+    """
+    computer = UpperLimitComputer(ntoys=10000)
+
+    ret = computer.ulSigma(Data(observed=nobs, backgrounds=bg, covariance=cov,
+                                 third_moment=None, nsignal=nsig, deltas_rel=deltas_rel),
+                           marginalize=False, expected=False)
+
+    return ret
+
+
+
+class CovarianceHandler:
+    """Basic class to handle convariance matrices."""
+
+    def __init__ ( self, filename, histoname, max_datasets=None,
+                   aggregate = None , triangular=False):
+        """Load the covariance matrix from ROOT file."""
+        import ROOT
+        f=ROOT.TFile(filename)
+        h=self.getHistogram(f, histoname)
+        xaxis = h.GetXaxis()
+        self.n=h.GetNbinsX()+1
+        if max_datasets:
+            self.n=min(max_datasets+1,self.n)
+        self.datasetOrder = []
+        self.covariance = []
+        self.blinded_regions = []
+        for i in range ( 1, self.n ):
+            if i in self.blinded_regions:
+                continue
+            self.datasetOrder.append(xaxis.GetBinLabel(i))
+            row = []
+            for j in range ( 1, self.n ):
+                if j in self.blinded_regions:
+                    continue
+                el = h.GetBinContent(i,j)
+                if i==j and el < 1e-4:
+                   print( "variance in the covariance matrix at position %d has a very small (%g) value" % (i,el) )
+                   el = 1e-4
+                row.append(el)
+            self.covariance.append(row)
+
+        if aggregate != None:
+            ## aggregate the stuff
+            self.aggregateThis(aggregate)
+
+        if triangular:
+            c = np.array(self.covariance)
+            if (np.triu(c) == c).all() or (np.tril(c) == c).all():
+                self.covariance = c + c.transpose() - np.diag(np.diag(c))
+                self.covariance = self.covariance.tolist()
+        self.checkCovarianceMatrix()
+
+    def computeAggCov(self, agg1, agg2 ):
+        """Compute the covariance between agg1 and agg2."""
+        C=0.
+        for i in agg1:
+            for j in agg2:
+                C+=self.covariance[i-1][j-1]
+        return C
+
+    def checkCovarianceMatrix( self ):
+        """Quick check if the covariance matrix is invertible."""
+        from simplifiedLikelihoods import Data
+        n=len(self.covariance)
+        m=Data( [0.]*n, [0.]*n, self.covariance )
+        # print( "Check %d-dim covariance matrix for positive definiteness." % n)
+        try:
+            I=(m.covariance)**(-1)
+        except Exception as e:
+            print( "Inversion failed. %s" % e)
+            sys.exit()
+        try:
+            from scipy import stats
+            l=stats.multivariate_normal.logpdf([0.]*n,mean=[0.]*n,cov=m.covariance)
+        except Exception as e:
+            import numpy
+            print( "computation of logpdf failed: %s" % e )
+            print( "the diagonal reads: %s " % ( numpy.diag ( m.covariance ) ) )
+            sys.exit()
+
+    def getHistogram( self, f, histoname ):
+        """Retrieve histogram.
+
+        :param f: filehandle
+        """
+        h=f.Get ( histoname )
+        if h: return h
+        if not "/" in histoname:
+            print( "cannot find %s in %s" % (histoname, f.GetName()))
+            sys.exit()
+        tokens = histoname.split("/")
+        if not len(tokens)==2:
+            print("cannot interpret histoname %s in %s" % \
+                            ( histoname, f.name ) )
+            sys.exit()
+        c= f.Get ( tokens[0] )
+        if not c:
+            print( "cannot retrieve %s from %s" % \
+                            ( histoname, f.name ) )
+            sys.exit()
+        if c.ClassName() == "TCanvas":
+            h=c.GetPrimitive ( tokens[1] )
+            if h: return h
+            print( "cannot retrieve %s from %s" % \
+                            ( histoname, f.name ) )
+            sys.exit()
+        print( "cannot interpret %s in %s" % \
+                        ( histoname, f.name ) )
+        sys.exit()
+
+if __name__ == "__main__":
+
+    import argparse
+    ap = argparse.ArgumentParser( description=
+            "Compute combined limit and add to checkmate output" )
+    ap.add_argument('-f', '--file', required = True,
+            help='CheckMate output file (total_result.txt)')
+    ap.add_argument('-v', '--verbose', default='error',
+            help='verbose level (debug, info, warning or error). Default is error')
+
+
+    import time
+
+    args = ap.parse_args()
+    t0 = time.time()
+    r = addCombinedRTo(os.path.abspath(args.file))
+    if r:
+        print("\n\nDone %s in %3.2f min" %(args.file,(time.time()-t0)/60.))
+    else:
+        print("Error reading %s" %args.parfile)

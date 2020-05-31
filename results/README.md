@@ -38,7 +38,9 @@ In this scenario we have BR(&chi;<sub>0</sub> + b + &nu;) ~ 50%, so the most rel
  
 The hadronic MT2 analysis dominate over most of parameter space, while the b-jet plut MET is mostly relevant in the compressed region, due to the
 tagging of soft b-jets using a secondary vertex algorithm.
-The results obtained with SModelS include the combination of distinct signal regions.
+Although the [CMS-SUS-16-032](http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-032/index.html) results do include
+the combination of results through the covariance matrix provided by CMS, the [CMS-SUS-19-005](http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-19-005/index.html)
+rely only on the best (expected) signal region, so the limits are weaker than the ones obtained by a simple rescaling of the T2bb limits.
 
 
 ![Alt text](BM2_exclusionAll.png?raw=true "BM2 exclusion")
