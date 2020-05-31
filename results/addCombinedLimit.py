@@ -82,6 +82,8 @@ def addCombinedRTo(checkmateOutput):
             val = rComb
         elif name == 'robscons':
             val = rCombCons
+        elif name == 'rexp':
+            val = rComb
         elif name == 'analysis':
             val = 'cms_sus_16_032'
         else:
