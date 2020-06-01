@@ -10,8 +10,14 @@ the covariant matrix for all signal regions.
 from simplifiedLikelihoods import Data, UpperLimitComputer
 import sys, os
 import numpy as np
+import logging
+import multiprocessing
+FORMAT = '%(levelname)s in %(module)s.%(funcName)s() in %(lineno)s: %(message)s at %(asctime)s'
+logging.basicConfig(format=FORMAT,datefmt='%m/%d/%Y %I:%M:%S %p')
+logger = logging.getLogger(__name__)
 
-def addCombinedRTo(checkmateOutput):
+
+def addCombinedRTo(checkmateOutput,deltas_rel=0.2):
     """
     Compute the combined limit for CMS-SUS-16-032 using the
     data from CheckMate output (total_results.txt). Add the result as a new line
@@ -58,9 +64,12 @@ def addCombinedRTo(checkmateOutput):
     # Get CMS-SUS-16-032 data:
     data = np.genfromtxt(checkmateOutput,names=True,
             dtype=None,encoding=None)
-    cmsData = [pt for pt in data if pt['analysis'] == 'cms_sus_16_032']
+
+    cmsData = data[np.where(data['analysis'] == 'cms_sus_16_032')]
+    #Remove combined line, if exists:
+    cmsData = np.delete(cmsData,np.where(cmsData['sr'] == 'Combined'))
     ibestAna = np.argmax([pt['rexp'] for pt in cmsData])
-    bestSR = [pt['sr'] for pt in cmsData][ibestAna]
+    bestSR = cmsData[ibestAna]['sr']
     if bestSR in SRsNC:
         cov = covNC
         SRs = SRsNC
@@ -68,22 +77,23 @@ def addCombinedRTo(checkmateOutput):
         cov = covC
         SRs = SRsC
 
-    rComb = getCombinedR(cmsData,cov,SRs,deltas_rel=0.0,SRdict=SRdict)
-    rCombCons = getCombinedR(cmsData,cov,SRs,deltas_rel=0.2,SRdict=SRdict)
-
-    data = np.genfromtxt(checkmateOutput,names=True,
-            dtype=None,encoding=None)
+    robsComb = getCombinedR(cmsData,cov,SRs,deltas_rel=0.0,SRdict=SRdict,expected=False)
+    #Reproduce CheckMATE computation of conservative robs using an estimate of the signal
+    #uncertainty effect:
+    robsconComb = robsComb*(1.0-1.64*deltas_rel)
     ilast = max([i for i,pt in enumerate(data) if pt['analysis'] == 'cms_sus_16_032'])
     pt = data[ilast].copy()
     for name in data.dtype.names:
         if name == 'sr':
             val = 'Combined'
         elif name == 'robs':
-            val = rComb
+            val = robsComb
         elif name == 'robscons':
-            val = rCombCons
+            val = robsconComb
         elif name == 'rexp':
-            val = rComb
+            val = robsComb
+        elif name == 'rexpcons':
+            val = robsconComb
         elif name == 'analysis':
             val = 'cms_sus_16_032'
         else:
@@ -98,7 +108,7 @@ def addCombinedRTo(checkmateOutput):
     return True
 
 
-def getCombinedR(data,cov,orderSRs,deltas_rel=0.,SRdict=None):
+def getCombinedR(data,cov,orderSRs,deltas_rel=0.,SRdict=None, expected=False):
     """
     Compute a combined r-value using the covariance matrix.
 
@@ -134,7 +144,7 @@ def getCombinedR(data,cov,orderSRs,deltas_rel=0.,SRdict=None):
 
     #Compute the combined upper limit
     ul = getCombinedUpperLimitFor(nobs, bg, nsig,
-                    cov.covariance, deltas_rel)
+                    cov.covariance, deltas_rel, expected)
 
     #Compute the new r-value:
     r = sum(nsig)/ul
@@ -142,7 +152,7 @@ def getCombinedR(data,cov,orderSRs,deltas_rel=0.,SRdict=None):
     return r
 
 
-def getCombinedUpperLimitFor(nobs, bg, nsig, cov, deltas_rel=0.2):
+def getCombinedUpperLimitFor(nobs, bg, nsig, cov, deltas_rel=0.2, expected=False):
     """
     Get combined upper limit.
 
@@ -159,7 +169,7 @@ def getCombinedUpperLimitFor(nobs, bg, nsig, cov, deltas_rel=0.2):
 
     ret = computer.ulSigma(Data(observed=nobs, backgrounds=bg, covariance=cov,
                                  third_moment=None, nsignal=nsig, deltas_rel=deltas_rel),
-                           marginalize=False, expected=False)
+                           marginalize=False, expected=expected)
 
     return ret
 
@@ -271,17 +281,56 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser( description=
             "Compute combined limit and add to checkmate output" )
     ap.add_argument('-f', '--file', required = True,
-            help='CheckMate output file (total_result.txt)')
+            help='CheckMate output file (total_result.txt) or folder containing total_result.txt files')
+    ap.add_argument('-n', '--ncpu', required = False, default = 1, type = int,
+            help='Number of jobs to run (if running over multiple files)')
     ap.add_argument('-v', '--verbose', default='error',
             help='verbose level (debug, info, warning or error). Default is error')
 
+    args = ap.parse_args()
+    level = args.verbose.lower()
+    levels = { "debug": logging.DEBUG, "info": logging.INFO,
+               "warn": logging.WARNING,
+               "warning": logging.WARNING, "error": logging.ERROR }
+    if not level in levels:
+        logger.error ( "Unknown log level ``%s'' supplied!" % level )
+        sys.exit()
+    logger.setLevel(level = levels[level])
+
+
 
     import time
-
-    args = ap.parse_args()
     t0 = time.time()
-    r = addCombinedRTo(os.path.abspath(args.file))
-    if r:
-        print("\n\nDone %s in %3.2f min" %(args.file,(time.time()-t0)/60.))
-    else:
-        print("Error reading %s" %args.parfile)
+
+    #Get number of files:
+    if os.path.isfile(args.file):
+        files = [os.path.abspath(args.file)]
+    elif os.path.isdir(args.file):
+        files = []
+        for root, dirs, fnames in os.walk(args.file):
+            for f in fnames:
+                if f == 'total_results.txt':
+                     files.append(os.path.abspath(os.path.join(root, f)))
+                     break
+    if not files:
+        logger.warning("No files found.")
+        sys.exit()
+
+    ncpus = args.ncpu
+    if ncpus  < 0:
+        ncpus =  multiprocessing.cpu_count()
+    ncpus = min(ncpus,len(files))
+
+    pool = multiprocessing.Pool(processes=ncpus)
+    children = []
+    #Loop over parsers and submit jobs
+    logger.info("Submitting %i jobs over %i cores" %(len(files),ncpus))
+    for f in files:
+        logger.debug("Submitting job for file %s" %f)
+        p = pool.apply_async(addCombinedRTo, args=(f,))
+        children.append(p)
+        time.sleep(0.01)
+
+    #Wait for jobs to finish:
+    output = [p.get() for p in children]
+    print("Done in %3.2f min" %((time.time()-t0)/60.))
