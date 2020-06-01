@@ -47,7 +47,14 @@ The output is stored in [data/smodels_output_BM2.tar.gz](data/smodels_output_BM2
 ### Sbottom Analysis (CheckMATE) ###
 
 The results for the BM2 benchmark using CheckMATE can be obtained running CheckMATE over the set of BM2 SLHA files
-[data/slha_BM2.tar.gz](data/slha_BM2.tar.gz).
+[data/slha_BM2.tar.gz](data/slha_BM2.tar.gz):
+
+The results for the tau + MET analysis can be obtained running CheckMATE2. The code
+
+```
+./runCheckMateScan.py -p <parameter_file>
+```
+
 The output is stored in [data/checkmate_BM2.tar.gz](data/checkmate_BM2.tar.gz).
 The result for the combination of signal regions for the  [CMS-SUS-16-032](http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-032/index.html)
 analysis can be obtained running:
