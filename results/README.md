@@ -22,7 +22,10 @@ In this scenario we have BR(&chi;<sub>0</sub> + c + &tau;) ~ 100%, so the most r
  * Soft OS leptons (35.9/fb): [CMS-SUS-16-048](http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-048/index.html)
  
 The ATLAS analysis dominate over most of parameter space, while the CMS ones are mostly relevant in the compressed region.
-However, since the mono-jet searches have equal or better coverage than the CMS analyses, 
+The [ATLAS-SUSY-2018-04](https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2018-04/)
+and [CMS-SUS-19-005](http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-19-005/index.html) analyses have been implemented
+in CheckMATE (see [validation](../myCheckMateFiles/validation) ).
+However, since the mono-jet searches have equal or better coverage than the CMS analyses,
 we only include the [ATLAS-SUSY-2018-04](https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2018-04/)
 result in the final exclusion curve:
 
@@ -46,7 +49,7 @@ The hadronic MT2 analyses are relevant for large mass differences, while the b-j
 The above curves are approximate, because they rely on the assumption that the &chi;<sub>0</sub> + b + &nu; decay presents the same
 kinematics as the sbottom to bottom + neutralino (T2bb) decay. The [CMS-SUS-19-005](http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-19-005/index.html)
 and [CMS-SUS-16-032](http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-032/index.html) analyses have been implemented
-in CheckMATE (see [validation](./validation) ). Furthermore the [CMS-SUS-16-032](http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-032/index.html) 
+in CheckMATE (see [validation](../myCheckMateFiles/validation) ). Furthermore the [CMS-SUS-16-032](http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-032/index.html) 
 analysis has provided covariance matrices to allow for a combination of signal regions. This greatly improves the sensitivity of the analysis
 and it performs better than the [CMS-SUS-19-005](http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-19-005/index.html) (using the
 best signal region only).

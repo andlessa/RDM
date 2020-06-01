@@ -1,15 +1,15 @@
 # RDM: Dark Matter and R<sub>D anomalies
 
 This branch holds the main code for obtaining the constraints for the RDM Les Houches 2019 project.
-The searches used are:
+The searches used for obtaining the exclusion curves are:
 
- * Hadronic taus plus MET (139/fb) : [ATLAS-SUSY-2018-04](https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2018-04/) (added to CheckMATE2)
- * b-jets plus MET (35.9/fb): [CMS-SUS-16-036](http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-036/index.html) (SModels)
- * b-jets plus MET (35.9/fb): [CMS-SUS-16-032](http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-032/index.html) (SModels and CheckMATE)
+ * Hadronic taus plus MET (139/fb) : [ATLAS-SUSY-2018-04](https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2018-04/)
+ * b-jets plus MET (35.9/fb): [CMS-SUS-16-032](http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-032/index.html)
  * Hadronic MT2 (137/fb): [CMS-SUS-19-005](http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-19-005/index.html)
 
 
 More information about the CheckMATE implementation and validation can be found [here](./myCheckMateFiles/README.md)
+and more details about the results can be found in [results](./results).
 
 ## Basic Installation ##
 
@@ -38,11 +38,26 @@ The parameter file sets the parameters to be used and looped over.
 
 ## Running ##
 
-### Sbottom Analysis ###
+### Sbottom Analysis (SModelS) ###
 
-The results for the b-jet analysis can be obtained running smodels over the set of modified files
+The results for the BM2 benchmark using SModelS can be obtained running smodels over the set of modified files
 [data/smodels_slha_BM2.tar.gz](data/smodels_slha_BM2.tar.gz), where the chi1->b+nu+chi0 decay is artificially modified to chi1->b+chi0, so the T2bb resutls can be used.
 The output is stored in [data/smodels_output_BM2.tar.gz](data/smodels_output_BM2.tar.gz)
+
+### Sbottom Analysis (CheckMATE) ###
+
+The results for the BM2 benchmark using CheckMATE can be obtained running CheckMATE over the set of BM2 SLHA files
+[data/slha_BM2.tar.gz](data/slha_BM2.tar.gz).
+The output is stored in [data/checkmate_BM2.tar.gz](data/checkmate_BM2.tar.gz).
+The result for the combination of signal regions for the  [CMS-SUS-16-032](http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-032/index.html)
+analysis can be obtained running:
+
+
+```
+./results/addCombinedLimit.py -f <checkmate output folder>
+```
+
+A line will then be added to CheckMATE output (total_results.txt) with the result for the combination of signal regions (label as Combined).
 
 ### Stau Analysis ###
 
@@ -57,12 +72,9 @@ For a parameter file example see [checkmate_parameters.ini](./checkmate_paramete
 The output is stored in [data/checkmate_BM1.tar.gz](data/checkmate_BM1.tar.gz).
 
 
-## Plotting ##
+## Plotting and Results ##
 
-Plotting examples are available in the [results](results) folder.
-An example of the exclusion curve obtaining from recasting the tau analysis is shown below:
-
-![Alt text](results/TStauStau_exclusion_BM1.png?raw=true "ATLAS-SUSY-2018-04 exclusion")
+The exclusion curves for the distinct benchmarks as well as plotting examples are available in the [results](results) folder.
 
 
 
