@@ -10,7 +10,6 @@ import pandas as pd
 from matplotlib import pyplot as plt
 import seaborn as sns
 from getContour import getContour
-from getCombinedLimit import  getCombinedR, CovarianceHandler
 
 pd.options.mode.chained_assignment = None #Disable copy warnings
 #Define plotting style:
@@ -22,22 +21,6 @@ cm = plt.cm.get_cmap('RdYlBu')
 # %% Load data
 offCurve = np.genfromtxt('./CMS_data/CMS-SUS-16-032_Figure_006.csv',
                         delimiter=',', names=['mstop','mlsp'])
-
-# %% Get covariance matrix for compressed signal regions:
-covC = CovarianceHandler(filename = './CMS_data/CMS-SUS-16-032_Figure-aux_004.root',
-                        histoname = 'Canvas_1/Cov', max_datasets=None,
-                        aggregate = None , triangular=True)
-
-SRsC = ['1b_ETmiss_250', '2b_ETmiss_500', '2b_ETmiss_500_HT_100', '1c_ETmiss_250',
- '1c_ETmiss_300', '1c_ETmiss_500', '1c_ETmiss_750', '1c_ETmiss_1000', '2c_ETmiss_250',
- '2c_ETmiss_250_HT_100', '2c_ETmiss_300', '1b_ETmiss_300', '2c_ETmiss_300_HT_100',
- '2c_ETmiss_500', '2c_ETmiss_500_HT_100', '2c_ETmiss_750', '2c_ETmiss_750_HT_100',
- 'NSV_ETmiss_250', 'NSV_ETmiss_300', 'NSV_ETmiss_500', 'NSV_ETmiss_750', 'NSV_ETmiss_1000',
- '1b_ETmiss_500', '0b_ETmiss_300', '0b_ETmiss_500', '0b_ETmiss_750', '0b_ETmiss_1000',
- '0b_ETmiss_1250', '1b_ETmiss_750', '1b_ETmiss_1000', '2b_ETmiss_250',
- '2b_ETmiss_250_HT_100', '2b_ETmiss_300', '2b_ETmiss_300_HT_100']
-
-
 
 # %% Get data from CheckMate results
 resultFolder = '../validation_results/cms_sus_16_032'
@@ -58,9 +41,8 @@ for slhaFile in glob.glob(slhaFolder+'/T2cc*.slha'):
     ibest = np.argmax(data['rexp'])
     bestSR = data['sr'][ibest]
     robs = data['robs'][ibest]
-    rComb = getCombinedR(data,covC,SRsC,deltas_rel=0.2)
-    s = data['s'][ibest]
-    recastData.append([mstop,mlsp,rComb,robs])
+    robscons = (1.0-1.64*0.2)*robs
+    recastData.append([mstop,mlsp,robs,robscons])
 
 recastData = np.array(recastData)
 
