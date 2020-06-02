@@ -1,6 +1,6 @@
 # RDM: Dark Matter and R<sub>D anomalies
 
-This branch holds the main code for obtaining the constraints for the RDM Les Houches 2019 project.
+This branch holds the main code for obtaining the constraints for the RDM Les Houches 2019 proceedings.
 The searches used are:
 
  * Hadronic taus plus MET (139/fb) : [ATLAS-SUSY-2018-04](https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2018-04/) (added to CheckMATE2)
