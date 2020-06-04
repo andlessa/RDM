@@ -9,6 +9,7 @@ import numpy as np
 import pandas as pd
 from matplotlib import pyplot as plt
 import seaborn as sns
+from getContour import getContour
 
 pd.options.mode.chained_assignment = None #Disable copy warnings
 #Define plotting style:
@@ -88,15 +89,41 @@ cb.set_label(r'$\Delta\epsilon/\epsilon_{ATLAS}$')
 plt.savefig("atlas_susy_2018_04_StauEffs.png")
 
 
+## %% Get exclusion contours for signal +- 20%
+contours = getContour(effs.loc['SR-lowMass']['mstau'],effs.loc['SR-lowMass']['mlsp'],effs.loc['SR-lowMass']['r-value'],levels=[1.0])
+
+# %% Load data
+offCurveComb = np.genfromtxt('./ATLAS_data/HEPData-ins1765529-v1-Exclusion_contour_1_Obs.csv',
+                        delimiter=',', names=True, skip_header=10)
+offCurveLow = np.genfromtxt('./ATLAS_data/HEPData-ins1765529-v1-Exclusion_contour_aux_1_Obs.csv',
+                        delimiter=',', names=True, skip_header=10)
+offCurveHigh = np.genfromtxt('./ATLAS_data/HEPData-ins1765529-v1-Exclusion_contour_aux_2_Obs.csv',
+                        delimiter=',', names=True, skip_header=10)
 
 # %% Plot exclusion curve
 fig = plt.figure(figsize=(12,8))
 ax = plt.scatter(effs.loc['SR-lowMass']['mstau'],effs.loc['SR-lowMass']['mlsp'],
     c=effs.loc['SR-lowMass']['r-value'],cmap=cm,vmin=0.0,vmax=2.0,s=70)
+for level,curves in contours.items():
+    if level != 1.0: continue
+    npts = [len(c) for c in curves]
+    for curve in curves:
+        if len(curve) != max(npts): continue
+        plt.plot(curve[:,0],curve[:,1],label='Recast (r = %s)' %str(level),linestyle='--',linewidth=4)
+
+plt.plot(offCurveComb['MSTAU_GeV'],offCurveComb['MNEUTRALINO1_GeV'],linewidth=4,
+        color='black',label='ATLAS-SUSY-2018-04 (Combined)')
+plt.plot(offCurveLow['MSTAU_GeV'],offCurveLow['MNEUTRALINO1_GeV'],linewidth=4,
+        color='black',label='ATLAS-SUSY-2018-04 (Low Mass)', linestyle='-.')
+plt.plot(offCurveHigh['MSTAU_GeV'],offCurveHigh['MNEUTRALINO1_GeV'],linewidth=4,
+        color='black',label='ATLAS-SUSY-2018-04 (High Mass)', linestyle='--')
+
+
 plt.xlabel(r'$m_{\tilde{\tau}}$ (GeV)')
 plt.ylabel(r'$m_{\tilde{\chi}_1^0}$ (GeV)')
 cb = plt.colorbar(ax)
 cb.set_label(r'$r$')
+plt.legend()
 plt.title(r'$\tilde{\tau} \tilde{\tau}, \tilde{\tau} \to \tau + \tilde{\chi}_1^0$ (Best SR)')
 plt.savefig("atlas_susy_2018_04_Stau.png")
 plt.show()

@@ -2,6 +2,7 @@
 [Parameters]
 Analyses: atlas_susy_2018_04
 InvisiblePIDs: 1000022
+TotalResultFileColumns: analysis,sr,obs,bkg,bkgerr,signalsumofweights,s,ds,eff,s95obs,robs,robscons,likelihood
 ## Name: validation_atlas_susy_2018_04_120_1
 ## SLHAFile: /home/lessa/RDM/CheckMATE2/param_card_DS_120_1.slha
 Name: validation_atlas_susy_2018_04_280_1
