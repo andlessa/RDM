@@ -42,14 +42,19 @@ def getCheckMateCard(parser):
     for key,val in pars.items():
         cardF.write("%s: %s\n" %(key,val))
 
-    process = parser.toDict(raw=False)["CheckMateProcess"]
-    if not 'Name' in process:
-        logger.error("The field 'Name' must be defined in [CheckMateProcess]")
-        return False
-    cardF.write("\n[%s]\n" %process['Name'])
-    for key,val in process.items():
-        if key == 'Name': continue
-        cardF.write("%s: %s\n" %(key,val))
+    #Get tags of processes:
+    processTags = [tag for tag in parser.sections()
+                    if (tag.lower() != 'options' and  tag.lower() != 'checkmateparameters')]
+
+    for pTag in processTags:
+        process = parser.toDict(raw=False)[pTag]
+        if not 'Name' in process:
+            logger.error("The field 'Name' must be defined in %s" %pTag)
+            return False
+        cardF.write("\n[%s]\n" %process['Name'])
+        for key,val in process.items():
+            if key == 'Name': continue
+            cardF.write("%s: %s\n" %(key,val))
     cardF.close()
 
     return cardFile
@@ -124,17 +129,20 @@ def main(parfile,verbose):
 
     if not parser.has_option('options', 'input'):
         logger.error("An input file or folder must be defined.")
-        return False
+        sys.exit()
     else:
-        input = parser.get('options','input')
-        if os.path.isfile(input):
-            inputFiles = [os.path.abspath(input)]
-        elif "*" in input:
-            inputFiles = [os.path.abspath(f) for f in glob.glob(input)]
-        elif os.path.isdir(input):
-            inputFiles = [os.path.abspath(os.path.join(input,f))
-                          for f in os.listdir(input)
-                          if os.path.isfile(os.path.join(input, f))]
+        inputF = parser.get('options','input')
+        if os.path.isfile(inputF):
+            inputFiles = [os.path.abspath(inputF)]
+        elif "*" in inputF:
+            inputFiles = [os.path.abspath(f) for f in glob.glob(inputF)]
+        elif os.path.isdir(inputF):
+            inputFiles = [os.path.abspath(os.path.join(inputF,f))
+                          for f in os.listdir(inputF)
+                          if os.path.isfile(os.path.join(inputF, f))]
+        else:
+            logger.error("Input format %s not accepted" %inputF)
+            sys.exit()
 
     parserList = []
     for f in inputFiles:
@@ -143,27 +151,45 @@ def main(parfile,verbose):
         newParser.set("CheckMateParameters","SLHAFile",f)
         newParser.set("CheckMateParameters","Name",
                        os.path.splitext(os.path.basename(f))[0])
-        newParser.set("CheckMateProcess","MGparam",f)
+
+        #Get tags of processes:
+        processTags = [tag for tag in newParser.sections()
+                        if (tag.lower() != 'options' and  tag.lower() != 'checkmateparameters')]
+
+        #Get xsec dictionary:
+        useSLHA = False
+        unit = 'PB'
+        if newParser.has_option("options","xsecUnit"):
+            unit = newParser.get("options","xsecUnit")
         if newParser.has_option("options","useSLHAxsecs"):
             useSLHA = newParser.get("options","useSLHAxsecs")
-            if useSLHA:
-                unit = 'PB'
-                # try:
-                xsecs = pyslha.readSLHAFile(f).xsections[useSLHA].xsecs
+            if not isinstance(useSLHA,dict):
+                logger.error("useSLHAxsecs should be defined as dictionary with a key for each CheckMate process.")
+                sys.exit()
+
+            xsecsAll = pyslha.readSLHAFile(f).xsections
+            for pTag,xsecTuple in useSLHA.items():
+                if not xsecTuple in xsecsAll: continue
+                xsecs = xsecsAll[xsecTuple].xsecs
                 xsecs = sorted(xsecs, key = lambda xsec: xsec.qcd_order,
-                                    reverse=True)
-                xsecs = xsecs[0]
-                if newParser.has_option("options","xsecUnit"):
-                    unit = newParser.get("options","xsecUnit")
-                newParser.set("CheckMateProcess","XSect", "%1.5g %s" %(xsecs.value,unit))
-                # except:
-                    # pass
+                                reverse=True)
+                useSLHA[pTag] = xsecs[0]
+
+        for pTag in processTags:
+            pName = newParser.get(pTag,"Name")
+            newParser.set(pTag,"MGparam",f)
+            if useSLHA:
+                if pTag in useSLHA:
+                    newParser.set(pTag,"XSect", "%1.5g %s" %(useSLHA[pTag].value,unit))
+                if pName in useSLHA:
+                    newParser.set(pTag,"XSect", "%1.5g %s" %(useSLHA[pName].value,unit))
+
         parserList.append(newParser)
 
     ncpus = int(parser.get("options","ncpu"))
     if ncpus  < 0:
         ncpus =  multiprocessing.cpu_count()
-
+    ncpus = min(ncpus,len(parserList))
     pool = multiprocessing.Pool(processes=ncpus)
     children = []
     #Loop over parsers and submit jobs
