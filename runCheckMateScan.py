@@ -159,6 +159,7 @@ def main(parfile,verbose):
         #Get xsec dictionary:
         useSLHA = False
         unit = 'PB'
+        xsecDict = {}
         if newParser.has_option("options","xsecUnit"):
             unit = newParser.get("options","xsecUnit")
         if newParser.has_option("options","useSLHAxsecs"):
@@ -173,16 +174,16 @@ def main(parfile,verbose):
                 xsecs = xsecsAll[xsecTuple].xsecs
                 xsecs = sorted(xsecs, key = lambda xsec: xsec.qcd_order,
                                 reverse=True)
-                useSLHA[pTag] = xsecs[0]
+                xsecDict[pTag] = xsecs[0]
 
         for pTag in processTags:
             pName = newParser.get(pTag,"Name")
             newParser.set(pTag,"MGparam",f)
             if useSLHA:
-                if pTag in useSLHA:
-                    newParser.set(pTag,"XSect", "%1.5g %s" %(useSLHA[pTag].value,unit))
-                if pName in useSLHA:
-                    newParser.set(pTag,"XSect", "%1.5g %s" %(useSLHA[pName].value,unit))
+                if pTag in xsecDict:
+                    newParser.set(pTag,"XSect", "%1.5g %s" %(xsecDict[pTag].value,unit))
+                if pName in xsecDict:
+                    newParser.set(pTag,"XSect", "%1.5g %s" %(xsecDict[pName].value,unit))
 
         parserList.append(newParser)
 
