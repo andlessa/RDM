@@ -15,7 +15,7 @@ are:
 The CMS-SUS-16-32 analysis provided the covariance matrices (see [CMS_data](./validation_plots/CMS_data)), which are used
 for computing the exclusion curve in the validation plots.
 Although ATLAS-SUSY-2018-04 has provided likelihoods for computing a combined Stau limit, these *are not* used, thus the validation
-is only made at the efficiency level.
+compares the official exclusions for both signal regions.
 
 ## Validation Plots ##
 
@@ -25,7 +25,7 @@ using the data stored in [validation_slha.tar.gz](./validation_slha.tar.gz) and 
 
 * ATLAS-SUSY-2018-04:
 
-![Alt text](validation_plots/atlas_susy_2018_04_StauEffs.png?raw=true "Validation Plot")
+![Alt text](validation_plots/atlas_susy_2018_04_Stau.png?raw=true "Validation Plot")
 
 * CMS-SUS-16-032:
 
