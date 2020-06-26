@@ -55,7 +55,7 @@ if echo "$answer" | grep -iq "^y" ;then
 
 	#Clean up
 	cd $homeDIR;
-	rm -rf hepMC_tmp; rm $hepmc;
+	rm -rf hepMC_tmp; rm $hepmc; rm -rf HepMC-2.06.09;
 fi
 
 
@@ -101,7 +101,7 @@ if echo "$answer" | grep -iq "^y" ;then
   cd CheckMATE2;
   rm -rf .git
   autoreconf -i -f;
-  ./configure --with-rootsys=$ROOTSYS --with-delphes=$homeDIR/Delphes --with-pythia=$homeDIR/pythia8 --with-madgraph=$homeDIR/MG5 --with-hepmc=$homedir/HepMC
+  ./configure --with-rootsys=$ROOTSYS --with-delphes=$homeDIR/Delphes --with-pythia=$homeDIR/pythia8 --with-madgraph=$homeDIR/MG5 --with-hepmc=$homeDIR/HepMC
   echo "[installer] installing CheckMATE";
   make -j4
        cd $homeDIR
