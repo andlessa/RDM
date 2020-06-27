@@ -64,7 +64,7 @@ def RunAll(parserDict):
 
     #Run CutLang
     logger.info('Running CutLang')
-    adlFile = os.path.abspath(parser.get("CutLang","analysisFile"))
+    adlfile = os.path.abspath(parser.get("CutLang","analysisFile"))
     cutlangexe = os.path.abspath(parser.get("CutLang","cutlangexe"))
     cutlangRun = RunCutLang(rootfile,adlfile,cutlangexe)
     if not cutlangRun:
@@ -168,15 +168,15 @@ def RunCutLang(rootfile,adlfile,cutlangexe):
         logger.error("CutLang script %s not found." %cutlangexe)
         return None
 
-    if not os.path.isfile(adlFile):
-        logger.error("ADL file %s not found." %adlFile)
+    if not os.path.isfile(adlfile):
+        logger.error("ADL file %s not found." %adlfile)
         return None
 
     cutLangFolder = os.path.dirname(cutlangexe)
     cutlang_script = os.path.basename(cutlangexe)
 
     #Run CutLang
-    run = subprocess.Popen('%s %s %s -i %s' %(cutlang_script,rootfile,ftype,adlFile)
+    run = subprocess.Popen('./%s %s %s -i %s' %(cutlang_script,rootfile,ftype,adlfile)
                        ,shell=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE,
                        cwd=cutLangFolder)
     output,errorMsg= run.communicate()
