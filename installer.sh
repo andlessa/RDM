@@ -114,3 +114,18 @@ if echo "$answer" | grep -iq "^y" ;then
   cd $homeDIR
 
 fi
+
+
+echo -n "Install CutLang (y/n)? "
+read answer
+if echo "$answer" | grep -iq "^y" ;then
+  echo "[installer] getting CutLang";
+  git clone git@github.com:unelg/CutLang.git CutLang;
+  cd CutLang;
+  rm -rf .git;
+  rm -rf ADLLHCanalyses;
+  echo "[installer] getting ADLLHCanalyses";
+  git clone git@github.com:ADL4HEP/ADLLHCanalyses.git ADLLHCanalyses;
+  rm -rf ADLLHCanalyses/.git
+  cd $homeDIR
+fi
