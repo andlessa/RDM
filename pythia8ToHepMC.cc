@@ -41,7 +41,7 @@ int run(const string & infile, int nevents, const string & cfgfile, const string
   HepMC::IO_GenEvent ascii_io(outname, std::ios::out);
 
   // Generator. Shorthand for the event.
-  Pythia pythia; //Set printBanner to false
+  Pythia pythia("",false); //Set printBanner to false
   pythia.readFile( cfgfile );
   if ( infile.find(".slha") != std::string::npos ){
     cout << "Using SLHA file " << infile << " as input" << endl;

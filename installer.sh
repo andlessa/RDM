@@ -122,6 +122,10 @@ if echo "$answer" | grep -iq "^y" ;then
   echo "[installer] getting CutLang";
   git clone git@github.com:unelg/CutLang.git CutLang;
   cd CutLang;
+  cd CLA;
+  echo "[installer] compiling CutLang";  
+  make;
+  cd ..;
   rm -rf .git;
   rm -rf ADLLHCanalyses;
   echo "[installer] getting ADLLHCanalyses";
