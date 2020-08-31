@@ -46,8 +46,8 @@ info.private = False
 info.arxiv = 'https://arxiv.org/abs/1801.03957'
 info.contact = 'cms-phys-conveners-sus@cern.ch'
 info.publication = 'JHEP 1803 (2018) 160, http://dx.doi:10.1007/JHEP03(2018)160'
-info.comment = 'Fig. 7 with chi02 -> chi10Z on one branch and chi+/-1 -> chi01 Wpm on the other branch, chargino mass are fixed equal to second lightest neutralino mass.'
-info.supersedes = "CMS-PAS-SUS-17-004"
+info.comment = 'Uses Fig. 8a for WZ topology instead of Fig. 7'
+info.implementedBy = 'Sabine'
 
 #+++++++ dataset block ++++++++++++++
 dataset = DataSetInput('data')
@@ -77,14 +77,15 @@ TChiWZoff.source="CMS"
 #++++++next mass plane block+++++++++
 
 TChiWZ_1 = TChiWZ.addMassPlane(2*[[x,y]])
-TChiWZ_1.figure='Fig. 7'
-TChiWZ_1.figureUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-17-004/CMS-SUS-17-004_Figure_007.png'
-TChiWZ_1.dataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-17-004/CMS-SUS-17-004_Figure_007.root'
-TChiWZ_1.histoDataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-17-004/CMS-SUS-17-004_Figure_007.root'
-TChiWZ_1.exclusionDataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-17-004/CMS-SUS-17-004_Figure_007.root'
+TChiWZ_1.figure='Fig. 8'
+TChiWZ_1.figureUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-17-004/CMS-SUS-17-004_Figure_008-a.png'
+TChiWZ_1.dataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-17-004/CMS-SUS-17-004_Figure_008-a.root'
+TChiWZ_1.histoDataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-17-004/CMS-SUS-17-004_Figure_008-a.root'
+TChiWZ_1.exclusionDataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-17-004/CMS-SUS-17-004_Figure_008-a.root'
 TChiWZ_1.setSources(dataLabels=['expExclusion','expExclusionM1','expExclusionP1','obsExclusion','obsExclusionM1','obsExclusionP1','upperLimits'],
-                    dataFiles=['orig/CMS-SUS-17-004_Figure_007.root','orig/CMS-SUS-17-004_Figure_007.root','orig/CMS-SUS-17-004_Figure_007.root',
-'orig/CMS-SUS-17-004_Figure_007.root','orig/CMS-SUS-17-004_Figure_007.root','orig/CMS-SUS-17-004_Figure_007.root','orig/CMS-SUS-17-004_Figure_007.root'],
+                    dataFiles=['orig/CMS-SUS-17-004_Figure_008-a.root','orig/CMS-SUS-17-004_Figure_008-a.root',
+                    'orig/CMS-SUS-17-004_Figure_008-a.root','orig/CMS-SUS-17-004_Figure_008-a.root','orig/CMS-SUS-17-004_Figure_008-a.root',
+                    'orig/CMS-SUS-17-004_Figure_008-a.root','orig/CMS-SUS-17-004_Figure_008-a.root'],
 indices=[4, 6, 5, 7, 9, 8, 2],dataFormats=['canvas','canvas','canvas','canvas','canvas','canvas','canvas'],objectNames=['TChiWZ;1','TChiWZ;1','TChiWZ;1',
 'TChiWZ;1','TChiWZ;1','TChiWZ;1','TChiWZ;1'],units=[None,None,None,None,None,None,'pb'])
 TChiWZoff.addMassPlane(TChiWZ_1)
@@ -109,7 +110,7 @@ TChiWH_1.figure='Fig. 8-b'
 TChiWH_1.figureUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-17-004/CMS-SUS-17-004_Figure_008-b.png'
 TChiWH_1.dataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-17-004/CMS-SUS-17-004_Figure_008-b.root'
 TChiWH_1.histoDataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-17-004/CMS-SUS-17-004_Figure_008-b.root'
-TChiWH_1.exclusionDataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-17-004/CMS-SUS-17-004_Figure_008-c.root'
+TChiWH_1.exclusionDataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-17-004/CMS-SUS-17-004_Figure_008-b.root'
 TChiWH_1.setSources(dataLabels=['expExclusion','expExclusionM1','expExclusionP1','obsExclusion','obsExclusionM1','obsExclusionP1','upperLimits'],
                     dataFiles=['orig/CMS-SUS-17-004_Figure_008-b.root','orig/CMS-SUS-17-004_Figure_008-b.root','orig/CMS-SUS-17-004_Figure_008-b.root','orig/CMS-SUS-17-004_Figure_008-b.root',
                     'orig/CMS-SUS-17-004_Figure_008-b.root','orig/CMS-SUS-17-004_Figure_008-b.root','orig/CMS-SUS-17-004_Figure_008-b.root'],
