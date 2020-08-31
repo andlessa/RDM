@@ -1,13 +1,13 @@
 txName: TStauStau
-constraint: [[['ta+']],[['ta-']]]
+constraint: [[['ta']],[['ta']]]
 condition: None
 conditionDescription: None
 susyProcess: pp --> stau stau, stau  --> tau lsp
 checked: no
-figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2018-04/fig_07a.png
+figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2018-04/figaux_01a.png
 dataUrl: https://www.hepdata.net/record/ins1765529?version=1&table=X-section U.L 1
 source: ATLAS
-validated: False
+validated: True
 axes: [[x, y], [x, y]]
 finalState: ['MET', 'MET']
 efficiencyMap: [[[[8.0000E+01*GeV,1.0000E+00*GeV],[8.0000E+01*GeV,1.0000E+00*GeV]],1.9785e-06],
