@@ -23,7 +23,7 @@ Creating and uploading the official databases:
 
 Done via smodels-utils/bin/publishDatabasePickle.py
 
-e.g. if you want to build the fastlim-free version, then prepare the upload.
+e.g. if you want to build the fastlim-free version, then prepare the upload, plus define it as "latest" database.
 will assume that smodels.github.io is checked out at the same directory level as 
 smodels-utils.
 
