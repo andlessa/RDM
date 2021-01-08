@@ -1,0 +1,17 @@
+#: table_doi: 10.17182/hepdata.86565.v1/t12
+#: name: Table 11
+#: description: Upper cross-section limit in sbottom R-hadron search.
+#: data_file: data11.yaml
+#: data_license:   
+#: keyword reactions: P P --> SBOTTOM+ SBOTTOM-
+#: keyword observables: SIG | CLS
+#: keyword phrases: Proton-Proton Scattering | Supersymmetry | SUSY | LLP
+#: keyword cmenergies: 13000.0
+#: SQRT(S) [GEV],13000.0
+#TRUE MASS [GEV],EXP LIMIT (FULLDET) [FB],error +,error -
+600,2.016,0.872,-0.409
+800,1.341,0.632,-0.251
+1000,1.075,0.448,-0.205
+1200,0.954,0.394,-0.180
+1400,0.913,0.358,-0.157
+

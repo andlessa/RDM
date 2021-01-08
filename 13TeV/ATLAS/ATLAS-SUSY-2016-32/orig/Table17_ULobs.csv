@@ -1,0 +1,36 @@
+#: table_doi: 10.17182/hepdata.86565.v1/t18
+#: name: Table 17
+#: description: Upper cross-section limit in meta-stable gluino R-hadron search.
+#: data_file: data17.yaml
+#: data_license:   
+#: keyword reactions: P P --> GLUINO GLUINO
+#: keyword observables: SIG | CLS
+#: keyword phrases: Proton-Proton Scattering | Supersymmetry | SUSY | LLP
+#: keyword cmenergies: 13000.0
+#: SQRT(S) [GEV],13000.0
+#WIDTH [GEV],TRUE MASS [GEV],OBS LIMIT [FB]
+6.582e-17,1000,2.270
+6.582e-17,1200,2.090
+6.582e-17,1400,1.889
+6.582e-17,1600,2.069
+6.582e-17,1800,1.994
+6.582e-17,2000,1.959
+6.582e-17,2200,2.085
+6.582e-17,2400,2.127
+2.194e-17,1000,1.207
+2.194e-17,1200,1.149
+2.194e-17,1400,1.162
+2.194e-17,1600,1.105
+2.194e-17,1800,1.109
+2.194e-17,2000,1.175
+2.194e-17,2200,1.170
+2.194e-17,2400,1.299
+1.316e-17,1000,1.187
+1.316e-17,1200,1.130
+1.316e-17,1400,1.012
+1.316e-17,1600,1.074
+1.316e-17,1800,1.090
+1.316e-17,2000,1.065
+1.316e-17,2200,1.198
+1.316e-17,2400,1.276
+

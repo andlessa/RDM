@@ -1,0 +1,78 @@
+#: table_doi: 10.17182/hepdata.86565.v1/t4
+#: name: Table 3
+#: description: Expected and observed events in the 16 discovery regions along with the according control regions.
+#: data_file: data3.yaml
+#: data_license:   
+#: keyword reactions: P P --> GLUINO GLUINO | P P --> SQUARK+ SQUARK- | P P --> STAU+ STAU- | P P --> CHI+ CHI-
+#: keyword observables: N
+#: keyword phrases: Proton-Proton Scattering | Supersymmetry | SUSY | LLP
+#: keyword cmenergies: 13000.0
+#: SQRT(S) [GEV],13000.0
+TOF MASS [GEV],DE/DX MASS [GEV],SEARCH,BACKGROUND,error +,error -
+CR,CR,Rhad-MSagno,9,3,-3
+350,300,Rhad-MSagno,8,3,-3
+550,450,Rhad-MSagno,1.8,0.6,-0.6
+700,600,Rhad-MSagno,0.7,0.3,-0.3
+850,750,Rhad-MSagno,0.4,0.1,-0.1
+CR,CR,Rhad-FullDet,22,5,-5
+350,300,Rhad-FullDet,11,2,-2
+550,450,Rhad-FullDet,2.8,0.7,-0.7
+700,600,Rhad-FullDet,1.4,0.4,-0.4
+850,750,Rhad-FullDet,0.95,0.2,-0.2
+CR,CR,1Cand-FullDet,124,11,-11
+175,,1Cand-FullDet,240,20,-20
+375,,1Cand-FullDet,17,2,-2
+600,,1Cand-FullDet,2.2,0.2,-0.2
+825,,1Cand-FullDet,0.48,0.07,-0.07
+CR,CR,2Cand-FullDet,34,6,-6
+175,,2Cand-FullDet,1.5,0.3,-0.3
+375,,2Cand-FullDet,0.06,0.01,-0.01
+600,,2Cand-FullDet,0.007,0.002,-0.002
+825,,2Cand-FullDet,0.0017,0.0009,-0.0009
+
+#: SQRT(S) [GEV],13000.0
+TOF MASS [GEV],DE/DX MASS [GEV],SEARCH,DATA,error +,error -
+CR,CR,Rhad-MSagno,9,4.0,-2.9
+350,300,Rhad-MSagno,8,4.0,-2.8
+550,450,Rhad-MSagno,4,3.1,-1.9
+700,600,Rhad-MSagno,2,2.6,-1.3
+850,750,Rhad-MSagno,2,2.6,-1.3
+CR,CR,Rhad-FullDet,22,5.7,-4.6
+350,300,Rhad-FullDet,14,4.8,-3.7
+550,450,Rhad-FullDet,6,3.6,-2.4
+700,600,Rhad-FullDet,2,2.6,-1.3
+850,750,Rhad-FullDet,2,2.6,-1.3
+CR,CR,1Cand-FullDet,124,12.1,-11.1
+175,,1Cand-FullDet,227,16.0,-15.0
+375,,1Cand-FullDet,16,5.1,-4.0
+600,,1Cand-FullDet,1,2.3,-0.8
+825,,1Cand-FullDet,0,0,0
+CR,CR,2Cand-FullDet,34,6.9,-5.8
+175,,2Cand-FullDet,0,0,0
+375,,2Cand-FullDet,0,0,0
+600,,2Cand-FullDet,0,0,0
+825,,2Cand-FullDet,0,0,0
+
+#: SQRT(S) [GEV],13000.0
+TOF MASS [GEV],DE/DX MASS [GEV],SEARCH,SIGNIFICANCE
+CR,CR,Rhad-MSagno,
+350,300,Rhad-MSagno,
+550,450,Rhad-MSagno,1.59
+700,600,Rhad-MSagno,1.24
+850,750,Rhad-MSagno,1.92
+CR,CR,Rhad-FullDet,
+350,300,Rhad-FullDet,0.77
+550,450,Rhad-FullDet,1.4
+700,600,Rhad-FullDet,0.57
+850,750,Rhad-FullDet,0.93
+CR,CR,1Cand-FullDet,
+175,,1Cand-FullDet,
+375,,1Cand-FullDet,
+600,,1Cand-FullDet,
+825,,1Cand-FullDet,
+CR,CR,2Cand-FullDet,
+175,,2Cand-FullDet,
+375,,2Cand-FullDet,
+600,,2Cand-FullDet,
+825,,2Cand-FullDet,
+

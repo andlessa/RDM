@@ -1,0 +1,17 @@
+#: table_doi: 10.17182/hepdata.86565.v1/t13
+#: name: Table 12
+#: description: Upper cross-section limit in stop R-hadron search.
+#: data_file: data12.yaml
+#: data_license:   
+#: keyword reactions: P P --> STOP+ STOP-
+#: keyword observables: SIG | CLS
+#: keyword phrases: Proton-Proton Scattering | Supersymmetry | SUSY | LLP
+#: keyword cmenergies: 13000.0
+#: SQRT(S) [GEV],13000.0
+#TRUE MASS [GEV],OBS LIMIT (FULLDET) [FB]
+600,2.352
+800,1.490
+1000,0.791
+1200,0.671
+1400,0.632
+

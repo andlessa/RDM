@@ -1,0 +1,33 @@
+#: table_doi: 10.17182/hepdata.86565.v1/t14
+#: name: Table 13
+#: description: Upper cross-section limit in stau search.
+#: data_file: data13.yaml
+#: data_license:   
+#: keyword reactions: P P --> STAU+ STAU-
+#: keyword observables: SIG | CLS
+#: keyword phrases: Proton-Proton Scattering | Supersymmetry | SUSY | LLP
+#: keyword cmenergies: 13000.0
+#: SQRT(S) [GEV],13000.0
+#TRUE MASS [GEV],OBS LIMIT [FB]
+287,0.458
+318,0.427
+349,0.409
+380,0.404
+411,0.375
+442,0.372
+473,0.373
+504,0.352
+536,0.333
+567,0.271
+598,0.273
+629,0.269
+660,0.273
+692,0.274
+723,0.244
+754,0.253
+785,0.227
+817,0.213
+848,0.221
+879,0.219
+911,0.211
+

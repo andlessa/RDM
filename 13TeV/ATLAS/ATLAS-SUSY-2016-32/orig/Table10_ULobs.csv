@@ -1,0 +1,26 @@
+#: table_doi: 10.17182/hepdata.86565.v1/t11
+#: name: Table 10
+#: description: Upper cross-section limit in gluino R-hadron search.
+#: data_file: data10.yaml
+#: data_license:   
+#: keyword reactions: P P --> GLUINO GLUINO
+#: keyword observables: SIG | CLS
+#: keyword phrases: Proton-Proton Scattering | Supersymmetry | SUSY | LLP
+#: keyword cmenergies: 13000.0
+#: SQRT(S) [GEV],13000.0
+#TRUE MASS [GEV],OBS LIMIT (FULLDET) [FB]
+400,5.637
+600,3.322
+800,1.950
+1000,1.111
+1200,0.840
+1400,0.750
+1600,0.793
+1800,0.878
+2000,0.984
+2200,1.113
+2400,1.169
+2600,1.202
+2800,1.408
+3000,1.455
+
