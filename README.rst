@@ -21,15 +21,15 @@ The above will update the smodels-database folder (subtree) in smodels:master.
 Creating and uploading the official databases:
 =================================================
 
-# Done via smodels-utils/bin/publishDatabasePickle.py
-#
-# e.g. if you want to build the fastlim-free version, then prepare the upload.
-# will assume that smodels.github.io is checked out at the same directory level as 
-# smodels-utils.
+Done via smodels-utils/bin/publishDatabasePickle.py
+
+e.g. if you want to build the fastlim-free version, then prepare the upload.
+will assume that smodels.github.io is checked out at the same directory level as 
+smodels-utils.
 
 .. code-block::
 
    publishDatabasePickle.py -f ~/git/smodels-database -b -r -l
    
- # json files will go to smodels.github.io/database
- # database pickle files will go to /eos/project-s/smodels/www/database
+ #. json files will go to smodels.github.io/database
+ #. database pickle files will go to /eos/project-s/smodels/www/database
