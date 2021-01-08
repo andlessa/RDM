@@ -31,5 +31,5 @@ smodels-utils.
 
    publishDatabasePickle.py -f ~/git/smodels-database -b -r -l
    
- #. json files will go to smodels.github.io/database
- #. database pickle files will go to /eos/project-s/smodels/www/database
+#. json files will go to smodels.github.io/database
+#. database pickle files will go to /eos/project-s/smodels/www/database
