@@ -77,10 +77,16 @@ plane_1.setSources(dataLabels= ['efficiencyMap'],
                     dataFiles=['./orig/CMS-EXO-19-001_Figure_003.txt'],
                     coordinates = [{x: 0, y:1, 'value' : 2}],
                     dataFormats=['txt'])
+
+
 plane_2 = T3Disp.addMassPlane([[(x,y),0.0]]*2)
 plane_2.setSources(dataLabels= ['efficiencyMap'],
                     dataFiles=['./orig/CMS-EXO-19-001_Figure_003.txt'],
                     coordinates = [{x: 0, y:1, 'value' : 2}],
                     dataFormats=['txt'])
+plane_2.addSource(dataLabel= 'obsExclusion',
+                    dataFile='./orig/CMS-EXO-19-001_Figure_004.csv',
+                    coordinateMap = {x: 1, y: 2, 'value' : None},
+                    dataFormat='csv')
 
 databaseCreator.create()
