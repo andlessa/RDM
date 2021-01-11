@@ -8,6 +8,7 @@ source: ATLAS
 validated: TBD
 axes: [[x], [x]]
 finalState: ['HSCP', 'HSCP']
+intermediateState: None
 upperLimits: [[[[2.8700E+02*GeV],[2.8700E+02*GeV]],4.5800E-01*fb],
 [[[3.1800E+02*GeV],[3.1800E+02*GeV]],4.2700E-01*fb],
 [[[3.4900E+02*GeV],[3.4900E+02*GeV]],4.0900E-01*fb],

@@ -10,19 +10,20 @@ import os
 import argparse
 
 argparser = argparse.ArgumentParser(description =
-'create info.txt, txname.txt, twiki.txt and sms.py')
+    'create info.txt, txname.txt, twiki.txt and sms.py')
 argparser.add_argument ('-utilsPath', '--utilsPath',
-help = 'path to the package smodels_utils',\
-type = str )
+    help = 'path to the package smodels_utils',\
+    type = str, default = '~/smodels-utils' )
 argparser.add_argument ('-smodelsPath', '--smodelsPath',
-help = 'path to the package smodels_utils',\
-type = str )
+    help = 'path to the package smodels_utils',\
+    type = str, default = '~/smodels' )
 argparser.add_argument ('-no', '--noUpdate',
-help = 'do not update the lastUpdate field.',\
-action= "store_true" )
+    help = 'do not update the lastUpdate field.',\
+    action= "store_true" )
 argparser.add_argument ('-r', '--resetValidation',
-help = 'reset the validation flag',\
-action= "store_true" )
+    help = 'reset the validation flag',\
+    action= "store_true" )
+
 args = argparser.parse_args()
 
 if args.noUpdate:
@@ -31,17 +32,10 @@ if args.noUpdate:
 if args.resetValidation:
     os.environ["SMODELS_RESETVALIDATION"]="1"
 
-if args.utilsPath:
-    utilsPath = args.utilsPath
-else:
-    databaseRoot = '../../../'
-    sys.path.append(os.path.abspath(databaseRoot))
-    from utilsPath import utilsPath
-    utilsPath = databaseRoot + utilsPath
-if args.smodelsPath:
-    sys.path.append(os.path.abspath(args.smodelsPath))
+utilsPath = args.utilsPath
+sys.path.append(os.path.abspath(os.path.expanduser(utilsPath)))
+sys.path.append(os.path.abspath(os.path.expanduser(args.smodelsPath)))
 
-sys.path.append(os.path.abspath(utilsPath))
 from smodels_utils.dataPreparation.inputObjects import MetaInfoInput,DataSetInput
 from smodels_utils.dataPreparation.dataHandlerObjects import hbar
 from smodels_utils.dataPreparation.databaseCreation import databaseCreator

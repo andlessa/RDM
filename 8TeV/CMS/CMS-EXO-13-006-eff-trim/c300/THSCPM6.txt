@@ -8,6 +8,7 @@ source: SModelS
 validated: TBD
 axes: 
 finalState: ['MET', 'HSCP']
+intermediateState: None
 efficiencyMap: [[['*',[1.0500E+02*GeV,1.0300E+02*GeV,1.0000E+02*GeV]],0.0],
 [['*',[1.1000E+02*GeV,1.0500E+02*GeV,1.0000E+02*GeV]],0.0],
 [['*',[1.2000E+02*GeV,1.0500E+02*GeV,1.0000E+02*GeV]],0.0],

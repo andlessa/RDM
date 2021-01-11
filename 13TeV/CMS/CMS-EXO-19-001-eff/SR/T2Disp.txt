@@ -8,6 +8,7 @@ source: CMS
 validated: TBD
 axes: [[(x, y), 0.0], [(x, y), 0.0]]; [[(x, y), 10.0], [(x, y), 10.0]]
 finalState: ['MET', 'MET']
+intermediateState: None
 efficiencyMap: [[[[(1.0000E+03*GeV,6.2202E-16*GeV),1.0000E+01*GeV],[(1.0000E+03*GeV,6.2202E-16*GeV),1.0000E+01*GeV]],0.013502],
 [[[(1.1500E+03*GeV,6.2202E-16*GeV),1.0000E+01*GeV],[(1.1500E+03*GeV,6.2202E-16*GeV),1.0000E+01*GeV]],0.018803],
 [[[(1.3000E+03*GeV,6.2202E-16*GeV),1.0000E+01*GeV],[(1.3000E+03*GeV,6.2202E-16*GeV),1.0000E+01*GeV]],0.026184],

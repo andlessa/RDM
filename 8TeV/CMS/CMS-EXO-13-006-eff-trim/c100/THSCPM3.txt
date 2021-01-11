@@ -8,6 +8,7 @@ source: SModelS
 validated: TBD
 axes: [[x, (y, w)], [x, (y, w)]]
 finalState: ['HSCP', 'HSCP']
+intermediateState: None
 efficiencyMap: [[[[5.5000E+01*GeV,(5.0000E+01*GeV,0.0000E+00*GeV)],[5.5000E+01*GeV,(5.0000E+01*GeV,0.0000E+00*GeV)]],0.0],
 [[[5.5000E+01*GeV,(5.0000E+01*GeV,1.0000E+06*GeV)],[5.5000E+01*GeV,(5.0000E+01*GeV,1.0000E+06*GeV)]],0.0],
 [[[6.0000E+01*GeV,(5.0000E+01*GeV,0.0000E+00*GeV)],[6.0000E+01*GeV,(5.0000E+01*GeV,0.0000E+00*GeV)]],0.0],
