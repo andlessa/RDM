@@ -5,7 +5,7 @@ susyProcess: pp --> gluino gluino, gluino  --> g lsp
 figureUrl: None
 dataUrl: None
 source: CMS
-validated: TBD
+validated: True
 axes: [[(x, y), 0.0], [(x, y), 0.0]]; [[(x, y), 10.0], [(x, y), 10.0]]
 finalState: ['MET', 'MET']
 intermediateState: None
