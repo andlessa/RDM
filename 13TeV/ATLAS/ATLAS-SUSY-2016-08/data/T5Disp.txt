@@ -7,7 +7,7 @@ figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-08/fi
 dataUrl: None
 source: ATLAS
 validated: TBD
-axes: [[(x, 6.6e-16), y], [(x, 6.6e-16), y]]; [[(x, y), 100.0], [(x, y), 100.0]]; [[(x, y), x - 100.0], [(x, y), x - 100.0]]
+axes: [[(x, 6.582119514e-16), y], [(x, 6.582119514e-16), y]]; [[(x, y), 100.0], [(x, y), 100.0]]; [[(x, y), x - 100.0], [(x, y), x - 100.0]]
 finalState: ['MET', 'MET']
 intermediateState: None
 upperLimits: [[[[(1.1000E+03*GeV,2.1946E-17*GeV),1.0000E+02*GeV],[(1.1000E+03*GeV,2.1946E-17*GeV),1.0000E+02*GeV]],3.0810E+00*fb],
