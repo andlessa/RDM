@@ -72,9 +72,10 @@ HSCPM1.dataUrl = 'https://www.hepdata.net/record/86565?version=1&table=Table13'
 HSCPM1.source = 'ATLAS'
 #+++++++ next mass plane block ++++++++++++++
 plane = HSCPM1.addMassPlane([[x],[x]])
-plane.setSources(dataLabels=['upperLimits','expectedUpperLimits'],
-                    dataFiles=['orig/Table13_ULobs.csv','orig/Table13_ULexp.csv'],
-                    dataFormats=['csv','csv'],units=['fb','fb'])
+plane.setSources(dataLabels=['upperLimits','expectedUpperLimits','obsExclusion'],
+                    dataFiles=['orig/Table13_ULobs.csv','orig/Table13_ULexp.csv','orig/Stau_ExclusionObs.csv'],
+                    dataFormats=['csv','csv','csv'],units=['fb','fb',None],
+                    coordinates = [{x : 0, 'value' : 1},{x : 0, 'value' : 1},{x : 0, 'value' : None}])
 
 #+++++++ next txName block ++++++++++++++
 RHadGM1 = dataset.addTxName('TRHadGM1')
@@ -111,9 +112,10 @@ RHadQM1.dataUrl = 'https://www.hepdata.net/record/86565?version=1&table=Table11'
 RHadQM1.source = 'ATLAS'
 #+++++++ next mass plane block ++++++++++++++
 plane = RHadQM1.addMassPlane([[x],[x]])
-plane.setSources(dataLabels=['upperLimits','expectedUpperLimits'],
-                    dataFiles=['orig/Table11_ULobs.csv','orig/Table11_ULexp.csv'],
-                    dataFormats=['csv','csv'],units=['fb','fb'])
+plane.setSources(dataLabels=['upperLimits','expectedUpperLimits','obsExclusion'],
+                    dataFiles=['orig/Table11_ULobs.csv','orig/Table11_ULexp.csv','orig/Sbottom_ExclusionObs.csv'],
+                    dataFormats=['csv','csv','csv'],units=['fb','fb',None],
+                    coordinates = [{x : 0, 'value' : 1},{x : 0, 'value' : 1},{x : 0, 'value' : None}])
 
 #+++++++ next txName block ++++++++++++++
 RHadQM1 = dataset.addTxName('TRHadUM1')
@@ -126,9 +128,10 @@ RHadQM1.dataUrl = 'https://www.hepdata.net/record/86565?version=1&table=Table12'
 RHadQM1.source = 'ATLAS'
 #+++++++ next mass plane block ++++++++++++++
 plane = RHadQM1.addMassPlane([[x],[x]])
-plane.setSources(dataLabels=['upperLimits','expectedUpperLimits'],
-                    dataFiles=['orig/Table12_ULobs.csv','orig/Table12_ULexp.csv'],
-                    dataFormats=['csv','csv'],units=['fb','fb'])
+plane.setSources(dataLabels=['upperLimits','expectedUpperLimits','obsExclusion'],
+                    dataFiles=['orig/Table12_ULobs.csv','orig/Table12_ULexp.csv','orig/Stop_ExclusionObs.csv'],
+                    dataFormats=['csv','csv','csv'],units=['fb','fb',None],
+                    coordinates = [{x : 0, 'value' : 1},{x : 0, 'value' : 1},{x : 0, 'value' : None}])
 
 
 databaseCreator.create()

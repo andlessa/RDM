@@ -64,34 +64,34 @@ T5Disp.conditionDescription = None
 T5Disp.condition = None
 T5Disp.source = "ATLAS"
 #+++++++ next mass plane block ++++++++++++++
-labels = [ 'expExclusion','obsExclusion','upperLimits', 'expectedUpperLimits' ]
-units = [ ("GeV","ns"), ("GeV","ns"), 'pb', 'pb' ]
-formats = [ 'csv', 'csv', 'csv', 'csv' ]
+labels = [ 'expExclusion','obsExclusion','upperLimits']
+units = [ ("GeV","GeV"), ("GeV","GeV"), 'fb']
+formats = [ 'csv', 'csv', 'csv' ]
+coordinates = [{x : 1, y : 0, 'value' : None}, {x : 1, y : 0, 'value' : None}, {x : 1, y : 0, 'value' : 2}]
 T5Disp_1 = T5Disp.addMassPlane(2*[[(x,y), 100.]])
 T5Disp_1.figure = 'Figaux. 9a'
 T5Disp_1.figureUrl ='https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-08/figaux_09a.png'
 
 T5Disp_1.setSources(dataLabels= labels,
-                 dataFiles= ['orig/exp9.csv','orig/obs9.csv',
-                             'orig/mchi100.csv','orig/mchi100exp.csv'],
-                 units = units, dataFormats= formats )
+                 dataFiles= ['orig/Table9_Exp_converted.csv','orig/Table9_Obs_converted.csv',
+                             'orig/Table19_converted.csv'],
+                 units = units, dataFormats= formats,  coordinates =  coordinates)
 
 T5Disp_2 = T5Disp.addMassPlane(2*[[(x,y), x-100.]])
 T5Disp_2.figure = 'Figaux. 9b'
 T5Disp_2.figureUrl ='https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-08/figaux_09b.png'
 T5Disp_2.setSources(dataLabels= labels,
-                 dataFiles= ['orig/exp12.csv','orig/obs12.csv',
-                             'orig/mDelta100.csv','orig/mDelta100exp.csv'],
-                 units = units, dataFormats= formats )
+                  dataFiles= ['orig/Table9_Exp_converted.csv','orig/Table9_Obs_converted.csv',
+                              'orig/Table19_converted.csv'],
+                  units = units, dataFormats= formats,  coordinates =  coordinates)
 
-ns=1.
-units = [ ("GeV","GeV"), ("GeV","GeV"), 'pb', 'pb' ]
-T5Disp_3 = T5Disp.addMassPlane(2*[[(x,hbar/(1.*ns)),y]])
+T5Disp_3 = T5Disp.addMassPlane(2*[[(x,6.6e-16),y]])
 T5Disp_3.figure = 'Figaux. 9c'
 T5Disp_3.figureUrl ='https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-08/figaux_09c.png'
+coordinates = [{x : 0, y : 1, 'value' : None}, {x : 0, y : 1, 'value' : None}, {x : 0, y : 1, 'value' : 2}]
 T5Disp_3.setSources(dataLabels= labels,
-                 dataFiles= ['orig/exp15.csv','orig/obs15.csv',
-                             'orig/mTau.csv','orig/mTauExp.csv' ],
-                 units = units, dataFormats= formats )
+                  dataFiles= ['orig/Table15_Exp_converted.csv','orig/Table15_Obs_converted.csv',
+                              'orig/Table21_converted.csv'],
+                  units = units, dataFormats= formats,  coordinates =  coordinates)
 
 databaseCreator.create()
