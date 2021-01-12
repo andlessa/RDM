@@ -43,7 +43,7 @@ from smodels_utils.dataPreparation.databaseCreation import databaseCreator
 from smodels_utils.dataPreparation.massPlaneObjects import x, y, z, w
 
 #+++++++ global info block ++++++++++++++
-info = MetaInfoInput('ATLAS-SUSY-2016-32-trim')
+info = MetaInfoInput('ATLAS-SUSY-2016-32')
 info.url = 'http://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-32/index.html'
 info.sqrts = 13
 info.lumi = 31.6
@@ -118,8 +118,9 @@ for idataset,name in enumerate(datasetNames):
                     dataFiles=[dataFile],
                     coordinates = txnames[tx]['coordinates'],
                     dataFormats=['txt'])
-        #++++++ add axes for validation (only for THSCPM1b) ++++
-        if 'validation axes' in txnames[tx]:
-            plane.axes = txnames[tx]['validation axes']
+        #++++++ exclusion (only for THSCPM1b) ++++
+        if tx == 'THSCPM1b':
+            plane.addSource(dataLabel='obsExclusion',dataFile='orig/Stau_ExclusionObs.csv',
+                            coordinateMap = {x : 0, w: 1, 'value' : None}, dataFormat = 'csv')
 
 databaseCreator.create()
