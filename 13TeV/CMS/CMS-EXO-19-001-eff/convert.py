@@ -72,6 +72,7 @@ T3Disp.finalState = ['MET','MET']
 T3Disp.figureUrl = 'http://cms-results.web.cern.ch/cms-results/public-results/publications/EXO-19-001/CMS-EXO-19-001_Figure_003.pdf'
 T3Disp.source = 'CMS'
 T3Disp.setParticlesFromFile(particlesFile)
+#Add plane for interpolation
 plane_1 = T3Disp.addMassPlane([[(x,y),10.0]]*2)
 plane_1.setSources(dataLabels= ['efficiencyMap'],
                     dataFiles=['./orig/CMS-EXO-19-001_Figure_003.txt'],

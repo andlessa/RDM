@@ -82,7 +82,7 @@ T5Disp_2.figure = 'Figaux. 9b'
 T5Disp_2.figureUrl ='https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-08/figaux_09b.png'
 T5Disp_2.setSources(dataLabels= labels,
                   dataFiles= ['orig/Table12_Exp_converted.csv','orig/Table12_Obs_converted.csv',
-                              'orig/Table19_converted.csv'],
+                              'orig/Table20_converted.csv'],
                   units = units, dataFormats= formats,  coordinates =  coordinates)
 
 T5Disp_3 = T5Disp.addMassPlane(2*[[(x,6.6e-16),y]])
@@ -91,7 +91,7 @@ T5Disp_3.figureUrl ='https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-
 coordinates = [{x : 0, y : 1, 'value' : None}, {x : 0, y : 1, 'value' : None}, {x : 0, y : 1, 'value' : 2}]
 T5Disp_3.setSources(dataLabels= labels,
                   dataFiles= ['orig/Table15_Exp_converted.csv','orig/Table15_Obs_converted.csv',
-                              'orig/Table21_converted.csv'],
+                              'orig/Table21_13_14_converted.csv'],
                   units = units, dataFormats= formats,  coordinates =  coordinates)
 
 databaseCreator.create()
