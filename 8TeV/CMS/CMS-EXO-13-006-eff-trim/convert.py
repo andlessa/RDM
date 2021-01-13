@@ -123,7 +123,8 @@ for idataset,name in enumerate(datasetNames):
                     coordinates = txnames[tx]['coordinates'],
                     dataFormats=['txt'])
         #++++++ add axes for validation (only for THSCPM1b) ++++
-        if 'validation axes' in txnames[tx]:
-            plane.axes = txnames[tx]['validation axes']
+        if tx == 'THSCPM1b':
+            plane.addSource(dataLabel='obsExclusion',dataFile='orig/Stau_ExclusionObs.csv',
+                            coordinateMap = {x : 0, w: 1, 'value' : None}, dataFormat = 'csv')
 
 databaseCreator.create()

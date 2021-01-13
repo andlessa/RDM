@@ -1,13 +1,14 @@
 txName: TRHadQM1
 constraint: [[],[]]
 condition: None
-susyProcess: pp --> stop stop, stop stop --> stop stop
+susyProcess: pp --> squark squark, squark squark --> squark squark
 figureUrl: None
 dataUrl: None
 source: CMS
-validated: True
+validated: TBD
 axes: [[x], [x]]
 finalState: ['RHadronQ', 'RHadronQ']
+intermediateState: None
 upperLimits: [[[[1.0097E+02*GeV],[1.0097E+02*GeV]],1.8663E-02*pb],
 [[[2.0088E+02*GeV],[2.0088E+02*GeV]],8.7282E-03*pb],
 [[[2.9937E+02*GeV],[2.9937E+02*GeV]],6.7618E-03*pb],

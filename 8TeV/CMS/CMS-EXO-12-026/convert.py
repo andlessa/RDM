@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """
 .. module:: convert
@@ -10,27 +10,34 @@ import os
 import argparse
 import types
 
-argparser = argparse.ArgumentParser(description =  
-'create info.dat, txname.dat, twiki.dat and sms.py')
-argparser.add_argument ('-utilsPath', '--utilsPath', 
-help = 'path to the package smodels_utils',\
-type = types.StringType)
-argparser.add_argument ('-smodelsPath', '--smodelsPath', 
-help = 'path to the package smodels_utils',\
-type = types.StringType)
+
+argparser = argparse.ArgumentParser(description =
+    'create info.txt, txname.txt, twiki.txt and sms.py')
+argparser.add_argument ('-utilsPath', '--utilsPath',
+    help = 'path to the package smodels_utils',\
+    type = str, default = os.path.expanduser('~/smodels-utils') )
+argparser.add_argument ('-smodelsPath', '--smodelsPath',
+    help = 'path to the package smodels_utils',\
+    type = str, default = os.path.expanduser('~/smodels') )
+argparser.add_argument ('-no', '--noUpdate',
+    help = 'do not update the lastUpdate field.',\
+    action= "store_true" )
+argparser.add_argument ('-r', '--resetValidation',
+    help = 'reset the validation flag',\
+    action= "store_true" )
+
 args = argparser.parse_args()
 
-if args.utilsPath:
-    utilsPath = args.utilsPath
-else:
-    databaseRoot = '../../../'
-    sys.path.append(os.path.abspath(databaseRoot))
-    from utilsPath import utilsPath
-    utilsPath = databaseRoot + utilsPath
-if args.smodelsPath:
-    sys.path.append(os.path.abspath(args.smodelsPath))
+if args.noUpdate:
+    os.environ["SMODELS_NOUPDATE"]="1"
 
-sys.path.append(os.path.abspath(utilsPath))
+if args.resetValidation:
+    os.environ["SMODELS_RESETVALIDATION"]="1"
+
+utilsPath = args.utilsPath
+sys.path.append(os.path.abspath(os.path.expanduser(utilsPath)))
+sys.path.append(os.path.abspath(os.path.expanduser(args.smodelsPath)))
+
 from smodels_utils.dataPreparation.inputObjects import MetaInfoInput,DataSetInput
 from smodels_utils.dataPreparation.databaseCreation import databaseCreator
 from smodels_utils.dataPreparation.massPlaneObjects import x, y, z
@@ -66,6 +73,8 @@ plane = HSCPM1.addMassPlane([[x],[x]])
 plane.setSources(dataLabels=['upperLimits'],
                     dataFiles=['orig/CMS-EXO-12-026_Figure_008-d_stau.dat'],
                     dataFormats=['txt'],units=['pb'])
+plane.addSource(dataLabel='obsExclusion',dataFile='orig/Stau_ExclusionObs.csv',
+                            coordinateMap = {x : 0, 'value' : None}, dataFormat = 'csv')
 
 
 #+++++++ next txName block ++++++++++++++
@@ -82,6 +91,9 @@ plane = RHadGM1.addMassPlane([[x],[x]])
 plane.setSources(dataLabels=['upperLimits'],
                     dataFiles=['orig/CMS-EXO-12-026_Figure_008-d_gluino50.dat'],
                     dataFormats=['txt'],units=['pb'])
+plane.addSource(dataLabel='obsExclusion',dataFile='orig/Gluino_ExclusionObs.csv',
+                            coordinateMap = {x : 0, 'value' : None}, dataFormat = 'csv')
+
 
 #+++++++ next txName block ++++++++++++++
 RHadQM1 = dataset.addTxName('TRHadQM1')
@@ -97,7 +109,8 @@ plane = RHadQM1.addMassPlane([[x],[x]])
 plane.setSources(dataLabels=['upperLimits'],
                     dataFiles=['orig/CMS-EXO-12-026_Figure_008-d_stop.dat'],
                     dataFormats=['txt'],units=['pb'])
+plane.addSource(dataLabel='obsExclusion',dataFile='orig/Stop_ExclusionObs.csv',
+                            coordinateMap = {x : 0, 'value' : None}, dataFormat = 'csv')
 
 
 databaseCreator.create()
-

@@ -1,0 +1,5 @@
+#artificial exclusion curve (1D)
+#OBS LIMIT [GEV],WIDTH [GeV]
+339,1e-17
+339,1e-18
+339,1e-20
