@@ -81,7 +81,7 @@ T5Disp_2 = T5Disp.addMassPlane(2*[[(x,y), x-100.]])
 T5Disp_2.figure = 'Figaux. 9b'
 T5Disp_2.figureUrl ='https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-08/figaux_09b.png'
 T5Disp_2.setSources(dataLabels= labels,
-                  dataFiles= ['orig/Table9_Exp_converted.csv','orig/Table9_Obs_converted.csv',
+                  dataFiles= ['orig/Table12_Exp_converted.csv','orig/Table12_Obs_converted.csv',
                               'orig/Table19_converted.csv'],
                   units = units, dataFormats= formats,  coordinates =  coordinates)
 
