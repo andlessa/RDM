@@ -5,7 +5,7 @@ susyProcess: pp --> gluino gluino, gluino gluino --> gluino gluino
 figureUrl: None
 dataUrl: None
 source: ATLAS
-validated: TBD
+validated: True
 axes: [[(x, 0.0)], [(x, 0.0)]]; [[(x, y)], [(x, y)]]
 finalState: ['RHadronG', 'RHadronG']
 intermediateState: None

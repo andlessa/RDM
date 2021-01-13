@@ -94,10 +94,10 @@ plane.setSources(dataLabels=['upperLimits','expectedUpperLimits','obsExclusion']
                     coordinates = [{x: 1, y:0, 'value': 2},{x: 1, y:0, 'value': 2},{x: 1, y:0, 'value': None}])
 #Add mass plane with stable limit in order to allow for interpolation:
 planeStable = RHadGM1.addMassPlane([[(x, 0.0)]]*2)
-planeStable.setSources(dataLabels=['upperLimits','expectedUpperLimits'],
-                    dataFiles=['orig/Table10_ULobs.csv','orig/Table10_ULexp.csv'],
-                    dataFormats=['csv','csv'],units=['fb','fb'],
-                    coordinates = [{x: 0, 'value': 1},{x: 0, 'value': 2}])
+planeStable.setSources(dataLabels=['upperLimits','expectedUpperLimits','obsExclusion'],
+                    dataFiles=['orig/Table10_ULobs.csv','orig/Table10_ULexp.csv','orig/Gluino_ExclusionObs.csv'],
+                    dataFormats=['csv','csv','csv'],units=['fb','fb',None],
+                    coordinates = [{x: 0, 'value': 1},{x: 0, 'value': 2},{x : 0, 'value' : None}])
 
 
 

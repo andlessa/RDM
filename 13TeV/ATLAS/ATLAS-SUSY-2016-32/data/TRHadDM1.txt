@@ -5,7 +5,7 @@ susyProcess: pp --> sbottom sbottom, sbottom sbottom --> sbottom sbottom
 figureUrl: None
 dataUrl: None
 source: ATLAS
-validated: TBD
+validated: True
 axes: [[x], [x]]
 finalState: ['RHadronD', 'RHadronD']
 intermediateState: None
