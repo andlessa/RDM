@@ -5,7 +5,7 @@ susyProcess: pp --> squark squark, squark squark --> quark quark lsp lsp, lsp --
 figureUrl: None
 dataUrl: None
 source: SModelS
-validated: TBD
+validated: N/A
 axes: 
 finalState: ['MET', 'HSCP']
 intermediateState: None

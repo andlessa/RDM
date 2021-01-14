@@ -5,8 +5,8 @@ susyProcess: pp --> lsp stau, stau lsp --> stau lsp
 figureUrl: None
 dataUrl: None
 source: SModelS
-validated: TBD
-axes: [['*'], [(x, w)]]
+validated: N/A
+axes: [['*'], [(x, y)]]
 finalState: ['MET', 'HSCP']
 intermediateState: None
 efficiencyMap: [[['*',[(5.0000E+01*GeV,0.0000E+00*GeV)]],0.0],

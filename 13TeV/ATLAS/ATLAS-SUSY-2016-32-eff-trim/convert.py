@@ -64,28 +64,31 @@ expectedBGs = [1.5,0.06,0.007,0.0017,240.,17.,2.2,0.48]
 bgErrors = [0.3,0.01,0.002,0.0009,20.,2.,0.2,0.07]
 #SR Upper limits from arxiv:1902.01636 (Table 5).
 obsUpperLimits = ['0.09*fb','0.08*fb','0.08*fb','0.08*fb','1.26*fb','0.24*fb','0.10*fb','0.08*fb']
+#Assume expected UL = observed UL (otherwise they will be overwritten)
+expUpperLimits = ['0.09*fb','0.08*fb','0.08*fb','0.08*fb','1.26*fb','0.24*fb','0.10*fb','0.08*fb']
+
 
 
 #Txname data:
 txnames = {
-    'THSCPM1b' : {'constraint' : "[[],[]]", 'finalState' : ['HSCP','HSCP'], 'massPlane' : [[(x,w)]]*2,
-                        'coordinates' : [{x: 0, w:2, 'value' : 3}]},
-    'THSCPM2b' : {'constraint' : "[['*'],[]]", 'finalState' : ['MET','HSCP'], 'massPlane' : [['*'],[(x,w)]],
-                        'coordinates' : [{x: 0, w:2, 'value' : 3}]},
+    'THSCPM1b' : {'constraint' : "[[],[]]", 'finalState' : ['HSCP','HSCP'], 'massPlane' : [[(x,y)]]*2,
+                        'coordinates' : {x: 0, y:2, 'value' : 3}},
+    'THSCPM2b' : {'constraint' : "[['*'],[]]", 'finalState' : ['MET','HSCP'], 'massPlane' : [['*'],[(x,y)]],
+                        'coordinates' : {x: 0, y:2, 'value' : 3}},
     'THSCPM3' : {'constraint' : "[[['*']],[['*']]]", 'finalState' : ['HSCP','HSCP'], 'massPlane' : [[x,(y,w)]]*2,
-                        'coordinates' : [{x: 1, y:0, w: 3, 'value' : 4}]},
+                        'coordinates' : {x: 1, y:0, w: 3, 'value' : 4}},
     'THSCPM4' : {'constraint' : "[[*],[['*']]]", 'finalState' : ['MET','HSCP'], 'massPlane' : [['*'],[x,(y,w)]],
-                        'coordinates' : [{x: 1, y:0, w: 3, 'value' : 4}]},
+                        'coordinates' : {x: 1, y:0, w: 3, 'value' : 4}},
     'THSCPM5' : {'constraint' :"[[['*'],['*']],[['*'],['*']]]", 'finalState' : ['HSCP','HSCP'], 'massPlane' : [[x,y,z]]*2,
-                        'coordinates' : [{x: 2, y:1, z: 0, 'value' : 5}]},
+                        'coordinates' : {x: 2, y:1, z: 0, 'value' : 5}},
     'THSCPM6' : {'constraint' : "[[*],[['*'],[ '*']]]", 'finalState' : ['MET','HSCP'], 'massPlane' : [['*'],[x,y,z]],
-                        'coordinates' : [{x: 2, y:1, z: 0, 'value' : 5}]},
+                        'coordinates' : {x: 2, y:1, z: 0, 'value' : 5}},
    'THSCPM7' : {'constraint' :  "[[['*'],['*']],[['*']]]", 'finalState' : ['HSCP','HSCP'], 'massPlane' : [[x,y,z],[x,z]],
-                        'coordinates' : [{x: 2, y:1, z: 0, 'value' : 5}]},
+                        'coordinates' : {x: 2, y:1, z: 0, 'value' : 5}},
     'THSCPM8' : {'constraint' : "[[['*','*']],[['*','*']]]", 'finalState' : ['HSCP','HSCP'], 'massPlane' : [[x,(y,w)]]*2,
-                        'coordinates' : [{x: 1, y:0, w: 3, 'value' : 4}]},
+                        'coordinates' : {x: 1, y:0, w: 3, 'value' : 4}},
    'THSCPM9' : {'constraint' : "[[*],[['*','*']]]", 'finalState' : ['MET','HSCP'], 'massPlane' : [['*'],[x,(y,w)]],
-                        'coordinates' : [{x: 1, y:0, w: 3, 'value' : 4}]}
+                        'coordinates' : {x: 1, y:0, w: 3, 'value' : 4}}
 }
 
 
@@ -94,7 +97,7 @@ for idataset,name in enumerate(datasetNames):
     dataset = DataSetInput(name)
     dataset.setInfo(dataType = 'efficiencyMap', dataId = name,
             observedN=observedNs[idataset], expectedBG=expectedBGs[idataset], bgError=bgErrors[idataset],
-            upperLimit = obsUpperLimits[idataset])
+            upperLimit = obsUpperLimits[idataset], expectedUpperLimit = expUpperLimits[idataset])
 
     #+++++++ txnames ++++++++++++++++++++
     for tx in txnames:
@@ -110,17 +113,17 @@ for idataset,name in enumerate(datasetNames):
         Txname.setParticlesFromFile(particlesFile)
         #+++++++ next mass plane block ++++++++++++++
         plane = Txname.addMassPlane(txnames[tx]['massPlane'])
-        if not w  in txnames[tx]['coordinates'][0]:
+        if not (tx in ['THSCPM1b','THSCPM2b','THSCPM3','THSCPM4','THSCPM8','THSCPM9']):
             dataFile = 'orig/%s_eff_mutrig_%s_noWidth.dat' %(tx,name) #Use maps without width info
         else:
             dataFile = 'orig/%s_eff_mutrig_%s_trimmedwidth.dat' %(tx,name)
-        plane.setSources(dataLabels= ['efficiencyMap'],
-                    dataFiles=[dataFile],
-                    coordinates = txnames[tx]['coordinates'],
-                    dataFormats=['txt'])
+        plane.addSource(dataLabel = 'efficiencyMap',
+                    dataFile = dataFile,
+                    coordinateMap = txnames[tx]['coordinates'],
+                    dataFormat = 'txt')
         #++++++ exclusion (only for THSCPM1b) ++++
         if tx == 'THSCPM1b':
             plane.addSource(dataLabel='obsExclusion',dataFile='orig/Stau_ExclusionObs.csv',
-                            coordinateMap = {x : 0, w: 1, 'value' : None}, dataFormat = 'csv')
+                            coordinateMap = {x : 0, y: 1, 'value' : None}, dataFormat = 'csv')
 
 databaseCreator.create()
