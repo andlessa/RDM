@@ -103,6 +103,9 @@ for idataset,name in enumerate(datasetNames):
 
     #+++++++ txnames ++++++++++++++++++++
     for tx in txnames:
+        #Skip txnames with a single HSCP for the SR requiring 2 candidates
+        if 'SR2FULL' in name and 'MET' in txnames[tx]['finalState']:
+            continue
         #+++++++ next txName block ++++++++++++++
         Txname = dataset.addTxName(tx)
         Txname.checked =''
