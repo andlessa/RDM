@@ -6,7 +6,7 @@ figureUrl: None
 dataUrl: None
 source: SModelS
 validated: TBD
-axes: [[(x, w)], [(x, w)]]
+axes: [[(x, y)], [(x, y)]]
 finalState: ['HSCP', 'HSCP']
 intermediateState: None
 efficiencyMap: [[[[(4.5000E+01*GeV,0.0000E+00*GeV)],[(4.5000E+01*GeV,0.0000E+00*GeV)]],0.0],

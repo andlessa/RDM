@@ -9,4 +9,6 @@ contact: atlas-phys-susy-conveners@cern.ch
 comment: Search for long-lived charged particles. The full-detector limits were considered for all topologies, except for the limits on meta-stable gluinos, which include the MS-agnostic limits.
 private: False
 implementedBy: Andre Lessa
-lastUpdate: 2021/1/13
+lastUpdate: 2021/1/15
+Leff_inner: 0.001
+Leff_outer: 12.0
