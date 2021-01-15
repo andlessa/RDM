@@ -96,16 +96,16 @@ plane.addSource(dataLabel='obsExclusion',dataFile='orig/Gluino_ExclusionObs.csv'
 
 
 #+++++++ next txName block ++++++++++++++
-RHadQM1 = dataset.addTxName('TRHadQM1')
-RHadQM1.checked =''
-RHadQM1.constraint = "[[],[]]"
-RHadQM1.condition =None
-RHadQM1.finalState = ['RHadronQ','RHadronQ']
-RHadQM1.massConstraints = None
-RHadQM1.dataUrl = 'http://cms-results.web.cern.ch/cms-results/public-results/publications/EXO-12-026/CMS-EXO-12-026_Figure_008-d.png'
-RHadQM1.source = 'CMS'
+RHadUM1 = dataset.addTxName('TRHadUM1')
+RHadUM1.checked =''
+RHadUM1.constraint = "[[],[]]"
+RHadUM1.condition =None
+RHadUM1.finalState = ['RHadronU','RHadronU']
+RHadUM1.massConstraints = None
+RHadUM1.dataUrl = 'http://cms-results.web.cern.ch/cms-results/public-results/publications/EXO-12-026/CMS-EXO-12-026_Figure_008-d.png'
+RHadUM1.source = 'CMS'
 #+++++++ next mass plane block ++++++++++++++
-plane = RHadQM1.addMassPlane([[x],[x]])
+plane = RHadUM1.addMassPlane([[x],[x]])
 plane.setSources(dataLabels=['upperLimits'],
                     dataFiles=['orig/CMS-EXO-12-026_Figure_008-d_stop.dat'],
                     dataFormats=['txt'],units=['pb'])
