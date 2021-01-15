@@ -5,7 +5,7 @@ susyProcess: pp --> lsp stau, stau lsp --> stau lsp
 figureUrl: None
 dataUrl: None
 source: SModelS
-validated: TBD
+validated: N/A
 axes: [['*'], [(x, y)]]
 finalState: ['MET', 'HSCP']
 intermediateState: None
