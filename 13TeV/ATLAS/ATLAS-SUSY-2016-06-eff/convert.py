@@ -48,6 +48,7 @@ info.sqrts = 13
 info.lumi = 36.1
 info.prettyName = "disappearing track"
 info.private = False
+info.source = "Based on the recasting implemented by A. Belyaev, S. Prestel, F. Rojas-Abbate and J. Zurita (arxiv 2008.08581)"
 info.arxiv =  'https://arxiv.org/abs/1712.02118'
 info.contact = 'ATLAS collaboration'
 info.publication ='JHEP 06 (2018) 022'
@@ -63,7 +64,7 @@ dataset.setInfo(dataType = 'efficiencyMap', dataId = 'SR_EW',
 TDTM1F = dataset.addTxName('TDTM1F')
 TDTM1F.setParticlesFromFile(particlesFile)
 TDTM1F.checked = ''
-TDTM1F.constraint ="[[['pion']],[['pion']]]"
+TDTM1F.constraint ="[[['pi+']],[['pi-']]]"
 TDTM1F.intermediateState = [['C1+'],['C1-']]
 TDTM1F.finalState = ['MET','MET']
 TDTM1F.conditionDescription = None
@@ -78,6 +79,10 @@ TDTM1F_1 = TDTM1F.addMassPlane(2*[[(x,y), x-0.15]])
 TDTM1F_1.setSources(dataLabels= labels,
                  dataFiles= ['./orig/C1C1_eff.txt'],
                  dataFormats= formats, coordinates = [{x : 0, y: 2, 'value' : 3}] )
+TDTM1F_1.addSource(dataLabel='obsExclusion',
+                    dataFile='orig/HEPData-ins1641262-v4-Exclusion_contour_EW_2_obs_conv.txt',
+                    coordinateMap = {x : 0, y: 1, 'value' : None}, dataFormat = 'txt')
+
 
 #Add second plane for interpolation (assume 0.5 GeV is still safe)
 TDTM1F_2 = TDTM1F.addMassPlane(2*[[(x,y), x-0.5]])
