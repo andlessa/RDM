@@ -7,6 +7,7 @@ arxiv: http://arxiv.org/abs/1906.06441
 publication: http://arxiv.org/abs/1906.06441.pdf
 contact: CMS collaboration
 comment: Search for displaced jets plust MET. The data was digitized from the figures in the publication.
+type: displaced
 private: False
 implementedBy: Andre Lessa
 lastUpdate: 2021/1/11

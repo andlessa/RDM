@@ -52,6 +52,7 @@ info.prettyName ='displaced vertices'
 info.private = False
 info.arxiv = 'http://arxiv.org/abs/1906.06441'
 info.contact ='CMS collaboration'
+info.type = 'displaced'
 info.publication ='http://arxiv.org/abs/1906.06441.pdf'
 info.comment ='Search for displaced jets plust MET. The data was digitized from the figures in the publication.'
 particlesFile = os.path.abspath('../../../databaseParticles.py')

@@ -47,6 +47,7 @@ info.url = "https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-08/"
 info.sqrts = 13
 info.lumi = 32.8
 info.prettyName = "displaced vertices"
+info.type = 'displaced'
 info.private = False
 info.arxiv =  'https://arxiv.org/abs/1710.04901'
 info.contact = 'ATLAS collaboration'

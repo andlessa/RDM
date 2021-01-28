@@ -125,6 +125,7 @@ RHadronQ = MultiParticle(label='RHadronQ', particles = [RHadronUp,RHadronUp.char
 gluino = Particle(label='gluino', Z2parity = -1, eCharge = 0, colordim = 8, spin = 1./2.)
 chargino = Particle(label='C1+', Z2parity = -1, eCharge = 1, colordim = 1, spin = 1./2.)
 charginoBar = Particle(label='C1-', Z2parity = -1, eCharge = -1, colordim = 1, spin = 1./2.)
+C1 = MultiParticle(label='C1', particles = [chargino,charginoBar])
 
 #Define list of inclusive final states:
 SMfinalStates = [eList,muList,taList,lpList,lmList,lList,WList,
@@ -133,7 +134,7 @@ SMfinalStates = [eList,muList,taList,lpList,lmList,lList,WList,
 SMfinalStates +=  SMList
 #Define list of BSM final states:
 BSMfinalStates = [MET,HSCP,RHadronU,RHadronD,RHadronG,RHadronQ,anyOdd,
-                  gluino,chargino,charginoBar]
+                  gluino,chargino,charginoBar,C1]
 
 allFinalStates = SMfinalStates + BSMfinalStates
 #Avoid double counting:
