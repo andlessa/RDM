@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """
 .. module:: convert
@@ -72,7 +72,7 @@ T1tttt_1.dataUrl ='https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS13
 T1tttt_1.exclusionDataUrl = 'https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSUS13002'
 T1tttt_1.setSources(dataLabels= ['expExclusion', 'expExclusionM1', 'expExclusionP1', 'expectedUpperLimits', 'obsExclusion', 'obsExclusionM1', 'obsExclusionP1', 'upperLimits'],
                  dataFiles= ['orig/contours_T1tttt.root', 'orig/contours_T1tttt.root', 'orig/contours_T1tttt.root', 'orig/Limit_T1tttt.root', 'orig/contours_T1tttt.root', 'orig/contours_T1tttt.root', 'orig/contours_T1tttt.root', 'orig/Limit_T1tttt.root'],
-                 dataFormats= ['root', 'root', 'root', 'root', 'root', 'root', 'root', 'root'],objectNames= ['Expected', 'Expected1m', 'Expected1p', 'hrExp', 'Observed', 'Observed1m', 'Observed1p', 'hrObs'],units= [None, None, None, None, None, None, None, 'fb'])
+                 dataFormats= ['root', 'root', 'root', 'root', 'root', 'root', 'root', 'root'],objectNames= ['Expected', 'Expected1m', 'Expected1p', 'hrExp', 'Observed', 'Observed1m', 'Observed1p', 'hrObs'],units= [None, None, None, 'fb', None, None, None, 'fb'])
 
 
 
