@@ -6,7 +6,7 @@ susyProcess: pp --> H^pm H_0, H^pm_1 H_0 --> pion^pm H_0 H_0
 figureUrl: None
 dataUrl: None
 source: Recasting (F. Rojas and S. Belyaev)
-validated: TBD
+validated: N/A
 axes: [[(x, y), x - 0.5], [x - 0.5]]; [[(x, y), x], [x]]
 finalState: ['MET', 'MET']
 intermediateState: [['Hpm'], []]

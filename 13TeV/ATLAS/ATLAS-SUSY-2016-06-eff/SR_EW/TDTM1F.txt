@@ -6,7 +6,7 @@ susyProcess: pp --> chargino^pm_1 chargino^mp_1, chargino^pm_1 --> pion^pm lsp
 figureUrl: None
 dataUrl: None
 source: Recasting (F. Rojas and S. Belyaev)
-validated: TBD
+validated: True
 axes: [[(x, y), x - 0.5], [(x, y), x - 0.5]]; [[(x, y), x], [(x, y), x]]
 finalState: ['MET', 'MET']
 intermediateState: [['C1+'], ['C1-']]
