@@ -126,6 +126,10 @@ gluino = Particle(label='gluino', Z2parity = -1, eCharge = 0, colordim = 8, spin
 chargino = Particle(label='C1+', Z2parity = -1, eCharge = 1, colordim = 1, spin = 1./2.)
 charginoBar = Particle(label='C1-', Z2parity = -1, eCharge = -1, colordim = 1, spin = 1./2.)
 C1 = MultiParticle(label='C1', particles = [chargino,charginoBar])
+Hp = Particle(label='H+', Z2parity = -1, eCharge = 1, colordim = 1, spin = 0.)
+Hm = Particle(label='H-', Z2parity = -1, eCharge = -1, colordim = 1, spin = 0.)
+Hpm = MultiParticle(label='Hpm', particles = [Hp,Hm])
+
 
 #Define list of inclusive final states:
 SMfinalStates = [eList,muList,taList,lpList,lmList,lList,WList,
@@ -134,7 +138,7 @@ SMfinalStates = [eList,muList,taList,lpList,lmList,lList,WList,
 SMfinalStates +=  SMList
 #Define list of BSM final states:
 BSMfinalStates = [MET,HSCP,RHadronU,RHadronD,RHadronG,RHadronQ,anyOdd,
-                  gluino,chargino,charginoBar,C1]
+                  gluino,chargino,charginoBar,C1,Hp,Hm,Hpm]
 
 allFinalStates = SMfinalStates + BSMfinalStates
 #Avoid double counting:

@@ -8,6 +8,6 @@ publication: JHEP 06 (2018) 022
 contact: ATLAS collaboration
 private: False
 implementedBy: Andre Lessa
-lastUpdate: 2021/1/27
+lastUpdate: 2021/2/1
 source: Based on the recasting implemented by A. Belyaev, S. Prestel, F. Rojas-Abbate and J. Zurita (arxiv 2008.08581)
 type: displaced

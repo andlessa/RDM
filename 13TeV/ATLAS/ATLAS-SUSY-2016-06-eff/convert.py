@@ -65,7 +65,7 @@ dataset.setInfo(dataType = 'efficiencyMap', dataId = 'SR_EW',
 TDTM1F = dataset.addTxName('TDTM1F')
 TDTM1F.setParticlesFromFile(particlesFile)
 TDTM1F.checked = ''
-TDTM1F.constraint ="[[['pion']],[['pion']]]"
+TDTM1F.constraint ="[['*'],['*']]"
 TDTM1F.intermediateState = [['C1+'],['C1-']]
 TDTM1F.finalState = ['MET','MET']
 TDTM1F.conditionDescription = None
@@ -75,7 +75,7 @@ TDTM1F.source = "Recasting (F. Rojas and S. Belyaev)"
 #+++++++ next mass plane block ++++++++++++++
 labels = [ 'efficiencyMap' ]
 formats = [ 'txt']
-TDTM1F_1 = TDTM1F.addMassPlane(2*[[(x,y), x-0.15]])
+TDTM1F_1 = TDTM1F.addMassPlane(2*[[(x,y), x]])
 
 TDTM1F_1.setSources(dataLabels= labels,
                  dataFiles= ['./orig/C1C1_eff.txt'],
@@ -96,7 +96,7 @@ TDTM1F_2.setSources(dataLabels= labels,
 TDTM2F = dataset.addTxName('TDTM2F')
 TDTM2F.setParticlesFromFile(particlesFile)
 TDTM2F.checked = ''
-TDTM2F.constraint ="[[['pion']],[]]"
+TDTM2F.constraint ="[['*'],[]]"
 TDTM2F.intermediateState = [['C1'],[]]
 TDTM2F.finalState = ['MET','MET']
 TDTM2F.conditionDescription = None
@@ -104,20 +104,74 @@ TDTM2F.condition = None
 TDTM2F.source = "Recasting (F. Rojas and S. Belyaev)"
 
 #+++++++ next mass plane block ++++++++++++++
-TDTM2F_1 = TDTM2F.addMassPlane([[(x,y), x-0.15],[x-0.15]])
+TDTM2F_1 = TDTM2F.addMassPlane([[(x,y), x],[x]])
 
 TDTM2F_1.setSources(dataLabels= labels,
-                 dataFiles= ['./orig/C1N1_eff.txt'],
-                 dataFormats= formats, coordinates = [{x : 0, y: 2, 'value' : 3}] )
-#Add second plane for interpolation (assume 0.5 GeV is still safe)
-TDTM2F_2 = TDTM2F.addMassPlane([[(x,y), x-0.5],[x-0.5]])
-TDTM2F_2.setSources(dataLabels= labels,
                  dataFiles= ['./orig/C1N1_eff.txt'],
                  dataFormats= formats, coordinates = [{x : 0, y: 2, 'value' : 3}] )
 TDTM2F_1.addSource(dataLabel='obsExclusion',
                     dataFile='orig/HEPData-ins1641262-v4-Exclusion_contour_EW_2_obs_conv.txt',
                     coordinateMap = {x : 0, y: 1, 'value' : None}, dataFormat = 'txt')
-                 
+
+#Add second plane for interpolation (assume 0.5 GeV is still safe)
+TDTM2F_2 = TDTM2F.addMassPlane([[(x,y), x-0.5],[x-0.5]])
+TDTM2F_2.setSources(dataLabels= labels,
+                 dataFiles= ['./orig/C1N1_eff.txt'],
+                 dataFormats= formats, coordinates = [{x : 0, y: 2, 'value' : 3}] )
+
+
+
+#+++++++ next txName block ++++++++++++++
+TDTM1S = dataset.addTxName('TDTM1S')
+TDTM1S.setParticlesFromFile(particlesFile)
+TDTM1S.checked = ''
+TDTM1S.constraint ="[['*'],['*']]"
+TDTM1S.intermediateState = [['H+'],['H-']]
+TDTM1S.finalState = ['MET','MET']
+TDTM1S.conditionDescription = None
+TDTM1S.condition = None
+TDTM1S.source = "Recasting (F. Rojas and S. Belyaev)"
+
+#+++++++ next mass plane block ++++++++++++++
+labels = [ 'efficiencyMap' ]
+formats = [ 'txt']
+TDTM1S_1 = TDTM1S.addMassPlane(2*[[(x,y), x]])
+
+TDTM1S_1.setSources(dataLabels= labels,
+                 dataFiles= ['./orig/HcHc_eff.txt'],
+                 dataFormats= formats, coordinates = [{x : 0, y: 2, 'value' : 3}] )
+
+
+#Add second plane for interpolation (assume 0.5 GeV is still safe)
+TDTM1S_2 = TDTM1S.addMassPlane(2*[[(x,y), x-0.5]])
+TDTM1S_2.setSources(dataLabels= labels,
+                 dataFiles= ['./orig/HcHc_eff.txt'],
+                 dataFormats= formats, coordinates = [{x : 0, y: 2, 'value' : 3}] )
+
+
+#+++++++ next txName block ++++++++++++++
+TDTM2S = dataset.addTxName('TDTM2S')
+TDTM2S.setParticlesFromFile(particlesFile)
+TDTM2S.checked = ''
+TDTM2S.constraint ="[['*'],[]]"
+TDTM2S.intermediateState = [['Hpm'],[]]
+TDTM2S.finalState = ['MET','MET']
+TDTM2S.conditionDescription = None
+TDTM2S.condition = None
+TDTM2S.source = "Recasting (F. Rojas and S. Belyaev)"
+
+#+++++++ next mass plane block ++++++++++++++
+TDTM2S_1 = TDTM2S.addMassPlane([[(x,y), x],[x]])
+
+TDTM2S_1.setSources(dataLabels= labels,
+                 dataFiles= ['./orig/HcH0_eff.txt'],
+                 dataFormats= formats, coordinates = [{x : 0, y: 2, 'value' : 3}] )
+
+#Add second plane for interpolation (assume 0.5 GeV is still safe)
+TDTM2S_2 = TDTM2S.addMassPlane([[(x,y), x-0.5],[x-0.5]])
+TDTM2S_2.setSources(dataLabels= labels,
+                 dataFiles= ['./orig/HcH0_eff.txt'],
+                 dataFormats= formats, coordinates = [{x : 0, y: 2, 'value' : 3}] )
 
 
 
