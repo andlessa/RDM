@@ -57,6 +57,7 @@ dataset.setInfo(dataType = 'upperLimit', dataId = None)
 
 #+++++++ next txName block ++++++++++++++
 T2tt = dataset.addTxName('T2tt')
+T2tt.validationTarball = "T2ttNLO.tar.gz"
 T2tt.checked = ''
 T2tt.constraint = "[[['t']],[['t']]]"
 T2tt.conditionDescription = None
@@ -65,6 +66,7 @@ T2tt.source = "CMS"
 
 #+++++++ next txName block ++++++++++++++
 T2ttoff=dataset.addTxName('T2ttoff')
+T2ttoff.validationTarball = "T2ttoffNLO.tar.gz"
 T2ttoff.checked=''
 T2ttoff.constraint="[[['b','W']],[['b','W']]]"
 T2ttoff.condition=None
