@@ -175,6 +175,7 @@ T2bb_1.setSources(dataLabels=labels,
 #+++++txName block +++++++++++++++++
 
 T2tt=dataset.addTxName('T2tt')
+T2tt.validationTarball = "T2ttNLO.tar.gz"
 T2tt.checked=''
 T2tt.constraint="[[['t']],[['t']]]"
 T2tt.condition=None
@@ -183,6 +184,7 @@ T2tt.massConstraint=[['dm>169'],['dm>169']]
 T2tt.source="CMS"
 
 T2ttoff=dataset.addTxName('T2ttoff')
+T2ttoff.validationTarball = "T2ttoffNLO.tar.gz"
 T2ttoff.checked=''
 T2ttoff.constraint="[[['b','W']],[['b','W']]]"
 T2ttoff.condition=None
@@ -205,6 +207,7 @@ T2ttoff.addMassPlane(T2tt_1)
 #+++++txName block +++++++++++++++++
 
 T6bbWW=dataset.addTxName('T6bbWW')
+T6bbWW.validationTarball = "T6bbWWNLO.tar.gz"
 T6bbWW.checked=''
 T6bbWW.constraint="[[['b'],['W']],[['b'],['W']]]"
 T6bbWW.condition=None
