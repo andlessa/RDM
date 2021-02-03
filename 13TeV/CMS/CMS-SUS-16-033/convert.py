@@ -188,6 +188,7 @@ T2bb_1.setSources(dataLabels=labels,
 #+++++txName block +++++++++++++++++
 
 T2tt=dataset.addTxName('T2tt')
+T2tt.validationTarball = "T2ttNLO.tar.gz"
 T2tt.checked=''
 T2tt.constraint="[[['t']],[['t']]]"
 T2tt.condition=None
@@ -196,6 +197,7 @@ T2tt.massConstraint=[['dm>169'],['dm>169']]
 T2tt.source="CMS"
 
 T2ttoff=dataset.addTxName('T2ttoff')
+T2ttoff.validationTarball = "T2ttoffNLO.tar.gz"
 T2ttoff.checked=''
 T2ttoff.constraint="[[['b','W']],[['b','W']]]"
 T2ttoff.condition=None
@@ -210,7 +212,7 @@ T2tt_1.figureUrl='http://cms-results.web.cern.ch/cms-results/public-results/publ
 T2tt_1.dataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-033/CMS-SUS-16-033_Figure_013-a.root'
 T2tt_1.histoDataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-033/CMS-SUS-16-033_Figure_013-a.root'
 T2tt_1.exclusionDataUrl='http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-033/CMS-SUS-16-033_Figure_013-a.root'
-names3 = ['ExpLim2;1','ExpLimSdn2;1','ExpLimSup2;1','ObsLim2;1','ObsLimSdn2;1','ObsLimSup2;1','MassScan2DRemoved;1','MassScan2DExp;1']
+names3 = ['ExpLim;1','ExpLimSdn;1','ExpLimSup;1','ObsLim2;1','ObsLimSdn2;1','ObsLimSup2;1','MassScan2DRemoved;1','MassScan2DExp;1']
 T2tt_1.setSources(dataLabels=labels,
                     dataFiles=['orig/CMS-SUS-16-033_Figure_013-a.root']*n,
                     dataFormats=formats,objectNames=names3,units=units )
