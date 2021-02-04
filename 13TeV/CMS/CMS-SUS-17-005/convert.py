@@ -69,6 +69,7 @@ dataset.setInfo(dataType = 'upperLimit', dataId = None)
 
 #+++++++ next txName block ++++++++++++++
 T2bbffff = dataset.addTxName('T2bbffff')
+T2bbffff.validationTarball = "T2bbffffNLO.tar.gz"
 T2bbffff.checked = ''
 T2bbffff.constraint = "3.375*[[['b','l','nu']],[['b','jet','jet']]]"
 #T2bbffff.constraint = "5.06*([[['b','l','nu']],[['b','q','q']]]+[[['b','l','nu']],[['b','l','nu']]])"
@@ -111,6 +112,7 @@ T2bbffff_2.setSources(dataLabels= ['obsExclusionM1','expExclusionM1', 'expExclus
 
 #+++++++ next txName block ++++++++++++++
 T6bbWWoff = dataset.addTxName('T6bbWWoff')
+T6bbWWoff.validationTarball = "T6bbWWoffNLO.tar.gz"
 T6bbWWoff.checked = ''
 T6bbWWoff.constraint = "3.375*[[['b'],['l','nu']],[['b'],['jet','jet']]]"
 #T6bbWWoff.constraint = "5.06*([[['b'],['l','nu']],[['b'],['q','q']]]+[[['b'],['l','nu']],[['b'],['l','nu']]])"
