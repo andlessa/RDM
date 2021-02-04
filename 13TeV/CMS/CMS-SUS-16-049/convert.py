@@ -55,6 +55,7 @@ dataset.setInfo(dataType = 'upperLimit', dataId = None)
 #+++++txName block +++++++++++++++++
 
 T2tt=dataset.addTxName('T2tt')
+T2tt.validationTarball = "T2ttNLO.tar.gz"
 T2tt.checked=''
 T2tt.constraint="[[['t']],[['t']]]"
 T2tt.condition=None
@@ -63,6 +64,7 @@ T2tt.massConstraint=[['dm > 169.']]*2  #Use only on-shell region to avoid interp
 T2tt.source="CMS"
 
 T2ttoff=dataset.addTxName('T2ttoff')
+T2ttoff.validationTarball = "T2ttoffNLO.tar.gz"
 T2ttoff.checked=''
 T2ttoff.constraint="[[['b','W']],[['b','W']]]"
 T2ttoff.condition=None
@@ -113,6 +115,7 @@ T2cc_1.setSources(dataLabels=labels,
 #+++++txName block +++++++++++++++++
 
 T6bbWW=dataset.addTxName('T6bbWW')
+T6bbWW.validationTarball = "T6bbWWNLO.tar.gz"
 T6bbWW.checked=''
 T6bbWW.constraint="[[['b'],['W']],[['b'],['W']]]"
 T6bbWW.condition=None
@@ -158,6 +161,7 @@ T2ttC_1.setSources(dataLabels=labels,
 #+++++txName block +++++++++++++++++
 
 T6bbWWoff=dataset.addTxName('T6bbWWoff')
+T6bbWWoff.validationTarball = "T6bbWWoffNLO.tar.gz"
 T6bbWWoff.checked=''
 T6bbWWoff.constraint="2.23*([[['b'],['jet','jet']],[['b'],['jet','jet']]])"
 T6bbWWoff.condition = None
