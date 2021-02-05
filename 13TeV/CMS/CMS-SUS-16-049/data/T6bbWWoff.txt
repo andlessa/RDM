@@ -7,6 +7,7 @@ figureUrl: http://cms-results.web.cern.ch/cms-results/public-results/publication
 dataUrl: http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-049/CMS-SUS-16-049_Figure_011.root
 source: CMS
 validated: True
+validationTarball: T6bbWWoffNLO.tar.gz
 axes: [[x, x - 0.5*y, x - y], [x, x - 0.5*y, x - y]]
 finalState: ['MET', 'MET']
 upperLimits: [[[[2.5625E+02*GeV,2.5000E+02*GeV,2.4375E+02*GeV],[2.5625E+02*GeV,2.5000E+02*GeV,2.4375E+02*GeV]],1.1596E+00*pb],

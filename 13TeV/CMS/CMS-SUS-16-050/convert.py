@@ -60,6 +60,7 @@ dataset = DataSetInput('data')
 dataset.setInfo(dataType = 'upperLimit', dataId = None)
 
 T2tt = dataset.addTxName('T2tt')
+T2tt.validationTarball = "T2ttNLO.tar.gz"
 T2tt.checked=''
 T2tt.constraint = "[[['t']],[['t']]]"
 T2tt.conditionDescription = None
@@ -83,6 +84,7 @@ T2tt_1.dataUrl = "http://cms-results.web.cern.ch/cms-results/public-results/publ
 T2tt_1.figureUrl = "http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-050/CMS-SUS-16-050_Figure_008.png"
 
 T2ttoff = dataset.addTxName('T2ttoff')
+T2ttoff.validationTarball = "T2ttoffNLO.tar.gz"
 T2ttoff.checked =''
 T2ttoff.constraint = "[[['b','W']],[['b','W']]]"
 T2ttoff.conditionDescription =None

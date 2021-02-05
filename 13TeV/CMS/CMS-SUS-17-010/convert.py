@@ -55,6 +55,7 @@ dataset.setInfo(dataType = 'upperLimit', dataId = None)
 
 #+++++++ next txName block ++++++++++++++
 T2tt = dataset.addTxName('T2tt')
+T2tt.validationTarball = "T2ttNLO.tar.gz"
 T2tt.checked =''
 T2tt.constraint = "[[['t']],[['t']]]"
 T2tt.conditionDescription = None
@@ -62,6 +63,7 @@ T2tt.condition = None
 T2tt.source = "CMS"
 T2tt.massConstraint = None
 T2ttoff = dataset.addTxName('T2ttoff')
+T2ttoff.validationTarball = "T2ttoffNLO.tar.gz"
 T2ttoff.checked =''
 T2ttoff.constraint ="[[['b','W']],[['b','W']]]"
 T2ttoff.conditionDescription = None
@@ -89,6 +91,7 @@ T2ttoff.addMassPlane(T2tt_1)
 
 #+++++++ next txName block ++++++++++++++
 T6bbWW = dataset.addTxName('T6bbWW')
+T6bbWW.validationTarball = "T6bbWWNLO.tar.gz"
 T6bbWW.checked = ''
 T6bbWW.constraint ="[[['b'],['W']],[['b'],['W']]]"
 T6bbWW.conditionDescription = None

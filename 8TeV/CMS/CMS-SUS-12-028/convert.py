@@ -55,6 +55,7 @@ info.supersededBy =""
 dataset = DataSetInput('data')
 dataset.setInfo(dataType = 'upperLimit', dataId = None)
 
+
 #+++++++ next txName block ++++++++++++++
 T1tttt = dataset.addTxName('T1tttt')
 T1tttt.checked =""
@@ -70,9 +71,14 @@ T1tttt_1.dataUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS1
 T1tttt_1.histoDataUrl ="https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/T1tttt.pdf"
 T1tttt_1.dataUrl ="https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/T1tttt.root"
 T1tttt_1.exclusionDataUrl ="https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/T1tttt.root"
-T1tttt_1.setSources(dataLabels= ['expectedUpperLimits', 'obsExclusion', 'upperLimits'],
-                 dataFiles= ['orig/T1tttt.root', 'orig/T1tttt.root', 'orig/T1tttt.root'],
-                 dataFormats= ['root', 'root', 'root'],objectNames= ['ExpectedUpperLimit', 'UpperLimit_graph', 'UpperLimit'])
+
+labels = ['expectedUpperLimits', 'obsExclusion', 'upperLimits', 'expExclusion' ]
+dfs = [ 'root' ]*4
+obNames = ['ExpectedUpperLimit', 'UpperLimit_graph', 'UpperLimit', 'ExpectedUpperLimit_graph' ]
+
+T1tttt_1.setSources(dataLabels= labels,
+                 dataFiles= ['orig/T1tttt.root' ] * 4,
+                 dataFormats= dfs,objectNames= obNames )
 
 #+++++++ next txName block ++++++++++++++
 T2tt = dataset.addTxName('T2tt')
@@ -89,9 +95,13 @@ T2tt_1.dataUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS120
 T2tt_1.histoDataUrl ="https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/T2tt.pdf"
 T2tt_1.dataUrl ="https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/T2tt.root"
 T2tt_1.exclusionDataUrl ="https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/T2tt.root"
-T2tt_1.setSources(dataLabels= ['expectedUpperLimits', 'obsExclusion', 'upperLimits'],
-                 dataFiles= ['orig/T2tt.root', 'orig/T2tt_exc.dat', 'orig/T2tt.root'],
-                 dataFormats= ['root', 'txt', 'root'],objectNames= ['ExpectedUpperLimit', 'None', 'UpperLimit'])
+#T2tt_1.setSources(dataLabels= ['expectedUpperLimits', 'obsExclusion', 'upperLimits'],
+#                 dataFiles= ['orig/T2tt.root', 'orig/T2tt_exc.dat', 'orig/T2tt.root'],
+#                 dataFormats= ['root', 'txt', 'root'],objectNames= ['ExpectedUpperLimit', 'None', 'UpperLimit'])
+T2tt_1.setSources(dataLabels= labels,
+     dataFiles= ['orig/T2tt.root', 'orig/T2tt_exc.dat', 'orig/T2tt.root', 'orig/T2tt.root'],
+     dataFormats= ['root', 'txt', 'root', 'root' ],
+     objectNames= ['ExpectedUpperLimit', 'None', 'UpperLimit', 'ExpectedUpperLimit_graph' ]  )
 
 #+++++++ next txName block ++++++++++++++
 T1bbbb = dataset.addTxName('T1bbbb')
@@ -108,9 +118,12 @@ T1bbbb_1.dataUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS1
 T1bbbb_1.histoDataUrl ="https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/t1bbbb.pdf"
 T1bbbb_1.dataUrl ="https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/T1bbbb.root"
 T1bbbb_1.exclusionDataUrl ="https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/T1bbbb.root"
-T1bbbb_1.setSources(dataLabels= ['expectedUpperLimits', 'obsExclusion', 'upperLimits'],
-                 dataFiles= ['orig/T1bbbb.root', 'orig/T1bbbb.root', 'orig/T1bbbb.root'],
-                 dataFormats= ['root', 'root', 'root'],objectNames= ['ExpectedUpperLimit', 'UpperLimit_graph', 'UpperLimit'])
+#T1bbbb_1.setSources(dataLabels= ['expectedUpperLimits', 'obsExclusion', 'upperLimits'],
+#                 dataFiles= ['orig/T1bbbb.root', 'orig/T1bbbb.root', 'orig/T1bbbb.root'],
+#                 dataFormats= ['root', 'root', 'root'],objectNames= ['ExpectedUpperLimit', 'UpperLimit_graph', 'UpperLimit'])
+T1bbbb_1.setSources(dataLabels= labels,
+                 dataFiles= ['orig/T1bbbb.root' ] * 4,
+                 dataFormats= dfs,objectNames= obNames )
 
 #+++++++ next txName block ++++++++++++++
 T2 = dataset.addTxName('T2')
@@ -127,9 +140,14 @@ T2_1.dataUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028
 T2_1.histoDataUrl ="https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/t2.pdf"
 T2_1.dataUrl ="https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/T2.root"
 T2_1.exclusionDataUrl ="https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/T2.root"
-T2_1.setSources(dataLabels= ['expectedUpperLimits', 'obsExclusion', 'upperLimits'],
-                 dataFiles= ['orig/T2.root', 'orig/T2.root', 'orig/T2.root'],
-                 dataFormats= ['root', 'root', 'root'],objectNames= ['T2_ExpectedUpperLimit', 'UpperLimit_xs0p8', 'T2_UpperLimit'])
+#T2_1.setSources(dataLabels= ['expectedUpperLimits', 'obsExclusion', 'upperLimits'],
+#                 dataFiles= ['orig/T2.root', 'orig/T2.root', 'orig/T2.root'],
+#                 dataFormats= ['root', 'root', 'root'],objectNames= ['T2_ExpectedUpperLimit', 'UpperLimit_xs0p8', 'T2_UpperLimit'])
+
+T2_1.setSources(dataLabels= labels,
+                 dataFiles= ['orig/T2.root' ] * 4,
+                 dataFormats= dfs,objectNames= ['T2_ExpectedUpperLimit', 'UpperLimit_xs0p8', 'T2_UpperLimit', 'ExpectedUpperLimit_xs0p8']  )
+
 
 #+++++++ next txName block ++++++++++++++
 T1 = dataset.addTxName('T1')
@@ -146,9 +164,12 @@ T1_1.dataUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028
 T1_1.histoDataUrl ="https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/t1.pdf"
 T1_1.dataUrl ="https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/T1.root"
 T1_1.exclusionDataUrl ="https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/T1.root"
-T1_1.setSources(dataLabels= ['expectedUpperLimits', 'obsExclusion', 'upperLimits'],
-                 dataFiles= ['orig/T1.root', 'orig/T1.root', 'orig/T1.root'],
-                 dataFormats= ['root', 'root', 'root'],objectNames= ['ExpectedUpperLimit', 'UpperLimit_graph', 'UpperLimit'])
+#T1_1.setSources(dataLabels= ['expectedUpperLimits', 'obsExclusion', 'upperLimits'],
+#                 dataFiles= ['orig/T1.root', 'orig/T1.root', 'orig/T1.root'],
+#                 dataFormats= ['root', 'root', 'root'],objectNames= ['ExpectedUpperLimit', 'UpperLimit_graph', 'UpperLimit'])
+T1_1.setSources(dataLabels= labels,
+                 dataFiles= ['orig/T1.root' ] * 4,
+                 dataFormats= dfs,objectNames= obNames )
 
 #+++++++ next txName block ++++++++++++++
 T2bb = dataset.addTxName('T2bb')
@@ -165,10 +186,13 @@ T2bb_1.dataUrl = "https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS120
 T2bb_1.histoDataUrl ="https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/t2bb.pdf"
 T2bb_1.dataUrl ="https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/T2bb.root"
 T2bb_1.exclusionDataUrl ="https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsSUS12028/T2bb.root"
-T2bb_1.setSources(dataLabels= ['expectedUpperLimits', 'obsExclusion', 'upperLimits'],
-                 dataFiles= ['orig/T2bb.root', 'orig/T2bb.root', 'orig/T2bb.root'],
-                 dataFormats= ['root', 'root', 'root'],objectNames= ['ExpectedUpperLimit', 'UpperLimit_graph', 'UpperLimit'])
+#T2bb_1.setSources(dataLabels= ['expectedUpperLimits', 'obsExclusion', 'upperLimits'],
+#                 dataFiles= ['orig/T2bb.root', 'orig/T2bb.root', 'orig/T2bb.root'],
+#                 dataFormats= ['root', 'root', 'root'],objectNames= ['ExpectedUpperLimit', 'UpperLimit_graph', 'UpperLimit'])
 
+T2bb_1.setSources(dataLabels= labels,
+                 dataFiles= ['orig/T2bb.root' ] * 4,
+                 dataFormats= dfs,objectNames= obNames )
 
 
 databaseCreator.create()

@@ -7,6 +7,7 @@ figureUrl: http://cms-results.web.cern.ch/cms-results/public-results/publication
 dataUrl: http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-050/CMS-SUS-16-050_Figure_008.root
 source: CMS
 validated: True
+validationTarball: T2ttoffNLO.tar.gz
 axes: [[x, y], [x, y]]
 upperLimits: [[[[1.5000E+02*GeV,1.2500E+01*GeV],[1.5000E+02*GeV,1.2500E+01*GeV]],2.0502E+02*pb],
 [[[1.5000E+02*GeV,2.5000E+01*GeV],[1.5000E+02*GeV,2.5000E+01*GeV]],4.0187E+02*pb],

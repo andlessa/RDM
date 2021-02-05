@@ -7,6 +7,7 @@ figureUrl: http://cms-results.web.cern.ch/cms-results/public-results/publication
 dataUrl: http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-17-010/
 source: CMS
 validated: True
+validationTarball: T2ttoffNLO.tar.gz
 axes: [[x, y], [x, y]]
 finalState: ['MET', 'MET']
 upperLimits: [[[[1.4375E+02*GeV,-1.2500E+01*GeV],[1.4375E+02*GeV,-1.2500E+01*GeV]],1.1108E+02*pb],
