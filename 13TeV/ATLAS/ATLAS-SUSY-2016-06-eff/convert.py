@@ -85,8 +85,8 @@ TDTM1F_1.addSource(dataLabel='obsExclusion',
                     coordinateMap = {x : 0, y: 1, 'value' : None}, dataFormat = 'txt')
 
 
-#Add second plane for interpolation (assume 0.5 GeV is still safe)
-TDTM1F_2 = TDTM1F.addMassPlane(2*[[(x,y), x-0.5]])
+#Add second plane for interpolation (assume 1.0 GeV is still safe)
+TDTM1F_2 = TDTM1F.addMassPlane(2*[[(x,y), x-1.0]])
 TDTM1F_2.setSources(dataLabels= labels,
                  dataFiles= ['./orig/C1C1_eff.txt'],
                  dataFormats= formats, coordinates = [{x : 0, y: 2, 'value' : 3}] )
@@ -113,8 +113,8 @@ TDTM2F_1.addSource(dataLabel='obsExclusion',
                     dataFile='orig/HEPData-ins1641262-v4-Exclusion_contour_EW_2_obs_conv.txt',
                     coordinateMap = {x : 0, y: 1, 'value' : None}, dataFormat = 'txt')
 
-#Add second plane for interpolation (assume 0.5 GeV is still safe)
-TDTM2F_2 = TDTM2F.addMassPlane([[(x,y), x-0.5],[x-0.5]])
+#Add second plane for interpolation (assume 1.0 GeV is still safe)
+TDTM2F_2 = TDTM2F.addMassPlane([[(x,y), x-1.0],[x-1.0]])
 TDTM2F_2.setSources(dataLabels= labels,
                  dataFiles= ['./orig/C1N1_eff.txt'],
                  dataFormats= formats, coordinates = [{x : 0, y: 2, 'value' : 3}] )
@@ -142,8 +142,8 @@ TDTM1S_1.setSources(dataLabels= labels,
                  dataFormats= formats, coordinates = [{x : 0, y: 2, 'value' : 3}] )
 
 
-#Add second plane for interpolation (assume 0.5 GeV is still safe)
-TDTM1S_2 = TDTM1S.addMassPlane(2*[[(x,y), x-0.5]])
+#Add second plane for interpolation (assume 1.0 GeV is still safe)
+TDTM1S_2 = TDTM1S.addMassPlane(2*[[(x,y), x-1.0]])
 TDTM1S_2.setSources(dataLabels= labels,
                  dataFiles= ['./orig/HcHc_eff.txt'],
                  dataFormats= formats, coordinates = [{x : 0, y: 2, 'value' : 3}] )
@@ -167,8 +167,8 @@ TDTM2S_1.setSources(dataLabels= labels,
                  dataFiles= ['./orig/HcH0_eff.txt'],
                  dataFormats= formats, coordinates = [{x : 0, y: 2, 'value' : 3}] )
 
-#Add second plane for interpolation (assume 0.5 GeV is still safe)
-TDTM2S_2 = TDTM2S.addMassPlane([[(x,y), x-0.5],[x-0.5]])
+#Add second plane for interpolation (assume 1.0 GeV is still safe)
+TDTM2S_2 = TDTM2S.addMassPlane([[(x,y), x-1.0],[x-1.0]])
 TDTM2S_2.setSources(dataLabels= labels,
                  dataFiles= ['./orig/HcH0_eff.txt'],
                  dataFormats= formats, coordinates = [{x : 0, y: 2, 'value' : 3}] )
