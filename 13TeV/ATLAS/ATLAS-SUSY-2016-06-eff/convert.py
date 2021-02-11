@@ -63,6 +63,7 @@ dataset.setInfo(dataType = 'efficiencyMap', dataId = 'SR_EW',
 
 #+++++++ next txName block ++++++++++++++
 TDTM1F = dataset.addTxName('TDTM1F')
+TDTM1F.validationTarball = "TDTM1M2F.tar.gz"
 TDTM1F.setParticlesFromFile(particlesFile)
 TDTM1F.checked = ''
 TDTM1F.constraint ="[['*'],['*']]"
@@ -94,6 +95,7 @@ TDTM1F_2.setSources(dataLabels= labels,
 
 #+++++++ next txName block ++++++++++++++
 TDTM2F = dataset.addTxName('TDTM2F')
+TDTM2F.validationTarball = "TDTM1M2F.tar.gz"
 TDTM2F.setParticlesFromFile(particlesFile)
 TDTM2F.checked = ''
 TDTM2F.constraint ="[['*'],[]]"
