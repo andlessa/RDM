@@ -26,7 +26,6 @@ fi
 
 
 
-
 madgraph="MG5_aMC_v2.6.7.tar.gz"
 URL=https://launchpad.net/mg5amcnlo/2.0/2.6.x/+download/$madgraph
 echo -n "Install MadGraph (y/n)? "
@@ -43,6 +42,28 @@ if echo "$answer" | grep -iq "^y" ;then
 
 fi
 
+#Get HepMC tarball
+hepmc="HepMC-2.06.09.tar.gz"
+echo -n "Install HepMC (y/n)? "
+read answer
+if echo "$answer" | grep -iq "^y" ;then
+	mkdir hepMC_tmp
+	URL=http://lcgapp.cern.ch/project/simu/HepMC/download/$hepmc
+	echo "[installer] getting HepMC"; wget $URL 2>/dev/null || curl -O $URL; tar -zxf $hepmc -C hepMC_tmp;
+	mkdir HepMC-2.06.09; mkdir HepMC-2.06.09/build; mkdir HepMC;
+	echo "Installing HepMC in ./HepMC";
+	cd HepMC-2.06.09/build;
+	../../hepMC_tmp/HepMC-2.06.09/configure --prefix=$homeDIR/HepMC --with-momentum=GEV --with-length=MM;
+	make;
+	make check;
+	make install;
+
+	#Clean up
+	cd $homeDIR;
+	rm -rf hepMC_tmp; rm $hepmc; rm -rf HepMC-2.06.09;
+fi
+
+
 #Get pythia tarball
 pythia="pythia8244.tgz"
 URL=http://home.thep.lu.se/~torbjorn/pythia8/$pythia
@@ -54,7 +75,7 @@ if echo "$answer" | grep -iq "^y" ;then
 		echo "[installer] getting Pythia"; wget $URL 2>/dev/null || curl -O $URL; tar -zxf $pythia -C pythia8 --strip-components 1;
 		echo "Installing Pythia in pythia8";
 		cd pythia8;
-		./configure --with-root=$ROOTSYS --prefix=$homeDIR/pythia8 --with-gzip
+		./configure --with-hepmc2=$homeDIR/HepMC --with-root=$ROOTSYS --prefix=$homeDIR/pythia8 --with-gzip
 		make -j4; make install;
 		cd $homeDIR
 		rm $pythia;
@@ -85,7 +106,7 @@ if echo "$answer" | grep -iq "^y" ;then
   cd CheckMATE2;
   rm -rf .git
   autoreconf -i -f;
-  ./configure --with-rootsys=$ROOTSYS --with-delphes=$homeDIR/Delphes --with-pythia=$homeDIR/pythia8 --with-madgraph=$homeDIR/MG5
+  ./configure --with-rootsys=$ROOTSYS --with-delphes=$homeDIR/Delphes --with-pythia=$homeDIR/pythia8 --with-madgraph=$homeDIR/MG5 --with-hepmc=$homeDIR/HepMC
   echo "[installer] installing CheckMATE";
   make -j4
        cd $homeDIR
@@ -96,8 +117,8 @@ if echo "$answer" | grep -iq "^y" ;then
   echo "[installer] recompiling CheckMATE";
   make;
   cd $homeDIR
-
 fi
+
 
 
 echo -n "Install MadAnalysis (y/n)? "
@@ -109,4 +130,23 @@ if echo "$answer" | grep -iq "^y" ;then
   bzr branch lp:~ma5dev/madanalysis5/v1.9_beta;
   mv v1.9_beta MadAnalysis5
   echo "[installer] done";
+fi
+
+
+echo -n "Install CutLang (y/n)? "
+read answer
+if echo "$answer" | grep -iq "^y" ;then
+  echo "[installer] getting CutLang";
+  git clone git@github.com:unelg/CutLang.git CutLang;
+  cd CutLang;
+  cd CLA;
+  echo "[installer] compiling CutLang";  
+  make;
+  cd ..;
+  rm -rf .git;
+  rm -rf ADLLHCanalyses;
+  echo "[installer] getting ADLLHCanalyses";
+  git clone git@github.com:ADL4HEP/ADLLHCanalyses.git ADLLHCanalyses;
+  rm -rf ADLLHCanalyses/.git
+  cd $homeDIR
 fi

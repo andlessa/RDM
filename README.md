@@ -16,10 +16,11 @@ and more details about the results can be found in [results](./results).
 The following codes must be installed:
 
   * [Delphes](https://cp3.irmp.ucl.ac.be/projects/delphes)
-  * [Pythia8](http://lcgapp.cern.ch/project/simu/HepMC/)
+  * [Pythia8](http://home.thep.lu.se/Pythia/)
+  * [HepMC](http://lcgapp.cern.ch/project/simu/HepMC/) (optional)
   * [MadGraph5](https://launchpad.net/mg5amcnlo/)
   * [ufo2slha](https://github.com/andlessa/ufo2slha)
-  * [smodels](https://smodels.github.io/)
+  * [smodels](https://smodels.github.io/) (optional)
   * [CheckMATE2](https://checkmate.hepforge.org/)
 
 The script installer.sh will try to fetch the appropriate tarballs and install them.
