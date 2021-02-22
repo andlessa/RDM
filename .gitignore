@@ -8,5 +8,10 @@ MG5
 pythia8
 CheckMATE2/*
 CheckMATE2
+CheckMATE3/*
+CheckMATE3
+HepMC
+MadAnalysis5
+checkmateCard_*.dat
 myCheckMateFiles/validation_slha/*slha
 myCheckMateFiles/validation_results/*
