@@ -101,7 +101,7 @@ def RunCheckMate(parserDict):
     logger.debug('CheckMATE error:\n %s \n' %errorMsg)
     logger.debug('CheckMATE output:\n %s \n' %output)
 
-    os.remove(cardFile)
+    # os.remove(cardFile)
 
     logger.info("Done in %3.2f min" %((time.time()-t0)/60.))
 

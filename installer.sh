@@ -26,8 +26,8 @@ fi
 
 
 
-madgraph="MG5_aMC_v2.6.7.tar.gz"
-URL=https://launchpad.net/mg5amcnlo/2.0/2.6.x/+download/$madgraph
+madgraph="MG5_aMC_v2.9.2.tar.gz"
+URL=https://launchpad.net/mg5amcnlo/2.0/2.9.x/+download/$madgraph
 echo -n "Install MadGraph (y/n)? "
 read answer
 if echo "$answer" | grep -iq "^y" ;then
@@ -37,8 +37,8 @@ if echo "$answer" | grep -iq "^y" ;then
 	rm $madgraph;
 	echo "[installer] replacing MadGraph files with fixes";
     cp ./madgraphfixes/mg5_configuration.txt MG5/input/;
-    cp ./madgraphfixes/madgraph_interface.py MG5/madgraph/interface/;
-    cp ./madgraphfixes/diagram_generation.py MG5/madgraph/core/;
+#    cp ./madgraphfixes/madgraph_interface.py MG5/madgraph/interface/;
+#    cp ./madgraphfixes/diagram_generation.py MG5/madgraph/core/;
 
 fi
 
@@ -134,13 +134,6 @@ if echo "$answer" | grep -iq "^y" ;then
   ./configure --with-rootsys=$ROOTSYS --with-delphes=$homeDIR/Delphes --with-pythia=$homeDIR/pythia8 --with-madgraph=$homeDIR/MG5 --with-hepmc=$homeDIR/HepMC
   echo "[installer] installing CheckMATE3";
   make -j4
-  cd $homeDIR
-  echo "[installer] Adding new analyses to CheckMATE3";
-  cp -r myCheckMateFiles/tools/* CheckMATE3/tools/;
-  cp -r myCheckMateFiles/data/* CheckMATE3/data/;
-  cd CheckMATE3;
-  echo "[installer] recompiling CheckMATE";
-  make;
   cd $homeDIR
 fi
 
