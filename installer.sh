@@ -18,6 +18,11 @@ if test $PKG_OK = "0" ; then
   echo "gzip not found. Install it with sudo apt-get install gzip."
   exit
 fi
+PKG_OK=$(dpkg-query -W -f='${Status}' bzr 2>/dev/null | grep -c "ok installed")
+if test $PKG_OK = "0" ; then
+  echo "bzr not found. Install it with sudo apt-get install bzr."
+  exit
+fi
 
 
 
@@ -92,4 +97,16 @@ if echo "$answer" | grep -iq "^y" ;then
   make;
   cd $homeDIR
 
+fi
+
+
+echo -n "Install MadAnalysis (y/n)? "
+madana=v1.9_beta
+URL=https://code.launchpad.net/~ma5dev/madanalysis5/$madana
+read answer
+if echo "$answer" | grep -iq "^y" ;then
+  echo "[installer] getting MadAnalysis";
+  bzr branch lp:~ma5dev/madanalysis5/v1.9_beta;
+  mv v1.9_beta MadAnalysis5
+  echo "[installer] done";
 fi
