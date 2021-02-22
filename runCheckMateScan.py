@@ -70,6 +70,7 @@ def RunCheckMate(parserDict):
     parser.read_dict(parserDict)
 
     pars = parser.toDict(raw=False)["options"]
+
     outputFolder = os.path.abspath(parser.get("CheckMateParameters","OutputDirectory"))
     resultFolder = os.path.join(outputFolder,parser.get("CheckMateParameters","Name"))
     if os.path.isdir(resultFolder):
@@ -90,9 +91,12 @@ def RunCheckMate(parserDict):
         pass
 
     #Run CheckMate
+    checkmatePath = os.path.abspath(pars['checkmateFolder'])
+    checkmateBin = os.path.join(checkmatePath,'bin')
     logger.info('Running checkmate with steering card: %s ' %cardFile)
-    run = subprocess.Popen('./%s/bin/CheckMATE %s' %(pars['checkmateFolder'],cardFile)
-                       ,shell=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+    logger.debug('Running: python2 ./CheckMATE %s at %s' %(cardFile,checkmateBin))
+    run = subprocess.Popen('python2 ./CheckMATE %s' %(cardFile)
+                       ,shell=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE,cwd=checkmateBin)
     output,errorMsg= run.communicate()
     logger.debug('CheckMATE error:\n %s \n' %errorMsg)
     logger.debug('CheckMATE output:\n %s \n' %output)
@@ -100,6 +104,20 @@ def RunCheckMate(parserDict):
     os.remove(cardFile)
 
     logger.info("Done in %3.2f min" %((time.time()-t0)/60.))
+
+    #Remove parton level events:
+    if pars['cleanUp'] is True:
+        mg5folder = os.path.join(resultFolder,'mg5amcatnlo')
+        if os.path.isdir(mg5folder):
+            logger.debug('Removing data from: %s \n' %mg5folder)
+            for f in os.listdir(mg5folder):
+                file_path = os.path.join(mg5folder, f)
+                if os.path.isdir(file_path):
+                    shutil.rmtree(file_path)
+        analysisfolder = os.path.join(resultFolder,'analysis')
+        if os.path.isfile(os.path.join(analysisfolder,'analysisstdout_atlas_1712_02118_ew.log')):
+            os.remove(os.path.join(analysisfolder,'analysisstdout_atlas_1712_02118_ew.log'))
+
     now = datetime.datetime.now()
 
     return "Finished running CheckMATE at %s" %(now.strftime("%Y-%m-%d %H:%M"))
@@ -151,7 +169,8 @@ def main(parfile,verbose):
         newParser.set("CheckMateParameters","SLHAFile",f)
         newParser.set("CheckMateParameters","Name",
                        os.path.splitext(os.path.basename(f))[0])
-
+        newParser.set("CheckMateParameters","OutputDirectory",
+                       os.path.abspath(parser.get("CheckMateParameters","OutputDirectory")))
         #Get tags of processes:
         processTags = [tag for tag in newParser.sections()
                         if (tag.lower() != 'options' and  tag.lower() != 'checkmateparameters')]

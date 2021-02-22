@@ -43,24 +43,24 @@ if echo "$answer" | grep -iq "^y" ;then
 fi
 
 #Get HepMC tarball
-hepmc="HepMC-2.06.09.tar.gz"
+hepmc="hepmc2.06.11.tgz"
 echo -n "Install HepMC (y/n)? "
 read answer
 if echo "$answer" | grep -iq "^y" ;then
 	mkdir hepMC_tmp
-	URL=http://lcgapp.cern.ch/project/simu/HepMC/download/$hepmc
+	URL=http://hepmc.web.cern.ch/hepmc/releases/$hepmc
 	echo "[installer] getting HepMC"; wget $URL 2>/dev/null || curl -O $URL; tar -zxf $hepmc -C hepMC_tmp;
-	mkdir HepMC-2.06.09; mkdir HepMC-2.06.09/build; mkdir HepMC;
+	mkdir HepMC-2.06.11; mkdir HepMC-2.06.11/build; mkdir HepMC;
 	echo "Installing HepMC in ./HepMC";
-	cd HepMC-2.06.09/build;
-	../../hepMC_tmp/HepMC-2.06.09/configure --prefix=$homeDIR/HepMC --with-momentum=GEV --with-length=MM;
+	cd HepMC-2.06.11/build;
+	../../hepMC_tmp/HepMC-2.06.11/configure --prefix=$homeDIR/HepMC --with-momentum=GEV --with-length=MM;
 	make;
 	make check;
 	make install;
 
 	#Clean up
 	cd $homeDIR;
-	rm -rf hepMC_tmp; rm $hepmc; rm -rf HepMC-2.06.09;
+	rm -rf hepMC_tmp; rm $hepmc; rm -rf HepMC-2.06.11;
 fi
 
 
@@ -89,12 +89,13 @@ echo -n "Install Delphes (y/n)? "
 read answer
 if echo "$answer" | grep -iq "^y" ;then
 	echo "[installer] getting Delphes";
-  git clone https://github.com/delphes/delphes.git Delphes;
+  git clone --branch 3.4.2 https://github.com/delphes/delphes.git Delphes;
   cd Delphes;
+  cp ../Makefile_Delphes ./Makefile;
   export PYTHIA8=$homeDIR/pythia8;
   echo "[installer] installing Delphes";
   make HAS_PYTHIA8=true;
-	cd $homeDIR;
+  cd $homeDIR;
 fi
 
 
@@ -109,7 +110,7 @@ if echo "$answer" | grep -iq "^y" ;then
   ./configure --with-rootsys=$ROOTSYS --with-delphes=$homeDIR/Delphes --with-pythia=$homeDIR/pythia8 --with-madgraph=$homeDIR/MG5 --with-hepmc=$homeDIR/HepMC
   echo "[installer] installing CheckMATE";
   make -j4
-       cd $homeDIR
+  cd $homeDIR
   echo "[installer] Adding new analyses to CheckMATE";
   cp -r myCheckMateFiles/tools/* CheckMATE2/tools/;
   cp -r myCheckMateFiles/data/* CheckMATE2/data/;
@@ -119,6 +120,29 @@ if echo "$answer" | grep -iq "^y" ;then
   cd $homeDIR
 fi
 
+echo -n "Install CheckMATE3 (y/n)? "
+read answer
+if echo "$answer" | grep -iq "^y" ;then
+  echo "[installer] -----> CheckMATE3 must be installed with python2 and a ROOT version compiled with python2!";
+  echo "[installer] -----> Make sure ROOT_INCLUDE_PATH has been set and points to Delphes/external.";
+  echo "[installer] -----> Make sure ROOTSYS points to a python2-compiled ROOT version.\n\n";
+  echo "[installer] getting CheckMATE3";
+  git clone --branch v3.0beta git@github.com:CheckMATE2/checkmate2.git CheckMATE3;
+  cd CheckMATE3;
+  rm -rf .git
+  autoreconf -i -f;
+  ./configure --with-rootsys=$ROOTSYS --with-delphes=$homeDIR/Delphes --with-pythia=$homeDIR/pythia8 --with-madgraph=$homeDIR/MG5 --with-hepmc=$homeDIR/HepMC
+  echo "[installer] installing CheckMATE3";
+  make -j4
+  cd $homeDIR
+  echo "[installer] Adding new analyses to CheckMATE3";
+  cp -r myCheckMateFiles/tools/* CheckMATE3/tools/;
+  cp -r myCheckMateFiles/data/* CheckMATE3/data/;
+  cd CheckMATE3;
+  echo "[installer] recompiling CheckMATE";
+  make;
+  cd $homeDIR
+fi
 
 
 echo -n "Install MadAnalysis (y/n)? "
