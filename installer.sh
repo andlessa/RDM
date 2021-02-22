@@ -37,6 +37,8 @@ if echo "$answer" | grep -iq "^y" ;then
 	rm $madgraph;
 	echo "[installer] replacing MadGraph files with fixes";
     cp ./madgraphfixes/mg5_configuration.txt MG5/input/;
+	echo "[installer] copying model folder to MG5/models";    
+	cp -r ./Feynrules/LQDM_UFO/ ./MG5/models;
 #    cp ./madgraphfixes/madgraph_interface.py MG5/madgraph/interface/;
 #    cp ./madgraphfixes/diagram_generation.py MG5/madgraph/core/;
 
@@ -123,9 +125,6 @@ fi
 echo -n "Install CheckMATE3 (y/n)? "
 read answer
 if echo "$answer" | grep -iq "^y" ;then
-  echo "[installer] -----> CheckMATE3 must be installed with python2 and a ROOT version compiled with python2!";
-  echo "[installer] -----> Make sure ROOT_INCLUDE_PATH has been set and points to Delphes/external.";
-  echo "[installer] -----> Make sure ROOTSYS points to a python2-compiled ROOT version.\n\n";
   echo "[installer] getting CheckMATE3";
   git clone --branch v3.0beta git@github.com:CheckMATE2/checkmate2.git CheckMATE3;
   cd CheckMATE3;
