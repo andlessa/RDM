@@ -14,8 +14,12 @@ class Cms_sus_16_032 : public AnalysisBase {
     void finalize();
 
   private:
-      bool tagBJet(Jet *cand, string efficiency);
-      bool tagCJet(Jet *cand);
+      bool tagBJet(Jet *cand, string efficiency,
+                        std::vector<GenParticle*> gen_b,
+                        std::vector<GenParticle*> gen_c);
+      bool tagCJet(Jet *cand,
+                        std::vector<GenParticle*> gen_b,
+                        std::vector<GenParticle*> gen_c);
       double getEffFromData(vector<vector<double>> effData,
                         double pt);
       // vector<TH1F*> hists;
