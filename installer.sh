@@ -39,8 +39,8 @@ if echo "$answer" | grep -iq "^y" ;then
     cp ./madgraphfixes/mg5_configuration.txt MG5/input/;
 	echo "[installer] copying model folder to MG5/models";    
 	cp -r ./Feynrules/LQDM_UFO/ ./MG5/models;
-#    cp ./madgraphfixes/madgraph_interface.py MG5/madgraph/interface/;
-#    cp ./madgraphfixes/diagram_generation.py MG5/madgraph/core/;
+    cp ./madgraphfixes/madgraph_interface.py MG5/madgraph/interface/;
+    cp ./madgraphfixes/diagram_generation.py MG5/madgraph/core/;
 
 fi
 

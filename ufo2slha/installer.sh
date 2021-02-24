@@ -17,8 +17,8 @@ fi
 	tar -zxf $madgraph -C MG5 --strip-components 1;
 	cd $homeDIR
 	echo "[installer] replacing MadGraph files with fixes";
-    cp ./madgraphFixes/mg5_configuration.txt MG5/input/;
-    cp ./madgraphFixes/diagram_generation.py MG5/madgraph/core/;
+#    cp ./madgraphFixes/mg5_configuration.txt MG5/input/;
+#    cp ./madgraphFixes/diagram_generation.py MG5/madgraph/core/;
 fi
 
 

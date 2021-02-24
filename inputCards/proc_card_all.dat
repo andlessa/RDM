@@ -38,13 +38,4 @@ define vl = ve vm vt ve~ vm~ vt~
 define allsm = g u c d s u~ c~ d~ s~ a ve vm vt e- mu- ve~ vm~ vt~ e+ mu+ t b t~ b~ z w+ h w- ta- ta+
 import model ../../Feynrules/LQDM_UFO
 add process p p > ~chi1~ ~chi1 @ 0
-add process p p > lq~ lq @ 1
-add process p p > lq l @ 2
-add process p p > lq ta @ 3
-add process p p > lq vl @ 4
-add process p p > lq j @ 5
-add process p p > lq~ l @ 6
-add process p p > lq~ ta @ 7
-add process p p > lq~ vl @ 8
-add process p p > lq~ j @ 9
 output /home/lessa/RDM/outputDir/MG5_output/proc-LQ 

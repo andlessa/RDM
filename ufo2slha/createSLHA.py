@@ -1,8 +1,8 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 #Uses an input SLHA file to compute cross-sections using MadGraph and the UFO model files
 #The calculation goes through the following steps
-# 1) Run MadGraph using the options set in the input file 
+# 1) Run MadGraph using the options set in the input file
 # (the proc_card.dat, parameter_card.dat and run_card.dat...).
 # Madgraph is used to compute the widths and cross-sections
 # 2) Run slhaCreator to extract the information of the MadGraph output
@@ -20,6 +20,7 @@ import itertools
 import multiprocessing
 from collections import OrderedDict
 import gzip
+import shutil
 
 FORMAT = '%(levelname)s in %(module)s.%(funcName)s(): %(message)s at %(asctime)s'
 logging.basicConfig(format=FORMAT,datefmt='%m/%d/%Y %I:%M:%S %p')
@@ -32,11 +33,12 @@ def getParticlesFromUFO(ufoFolder):
     Uses the information in the UFO file to collect the all the particle objects.
     Returns a list of particle objects containing information about each particle
     in the model.
-    
+
     :param ufoFolder: path to the UFO folder
     :return: List of Particle objects with the particles in the model
-    """    
-        
+    """
+
+    ufoFolder = os.path.abspath(ufoFolder)
     sys.path.append(ufoFolder)
     from importlib import import_module
     mod = import_module('particles', package=ufoFolder)
@@ -44,23 +46,22 @@ def getParticlesFromUFO(ufoFolder):
     for objStr in dir(mod):
         obj = getattr(mod,objStr)
         if 'Particle' in str(type(obj)):
-            allParticles.append(obj)    
-    
-    return allParticles
+            allParticles.append(obj)
 
+    return allParticles
 
 def getProcessString(finalStates,initialStates = ['p','p']):
     """
     Generate a process string (e.g. p p > finalStates) given
     the list of final and initial states.
-    
+
     :param finalStates: list of final state strings or PDGs (e.g. ['Z', 'Z'] or [23,23)
     :param initialStates: list of final state strings (e.g. ['p', 'p'])
-    
+
     :return: Process string (e.g. p p > Z Z or p p > 23 23)
     """
-    
-    pStr = ' '.join(initialStates) + ' > ' + ' '.join([str(fs) for fs in finalStates])    
+
+    pStr = ' '.join(initialStates) + ' > ' + ' '.join([str(fs) for fs in finalStates])
     return pStr
 
 def defineProcesses(xsecPDGList,ufoFolder,initialStates=['p','p']):
@@ -68,13 +69,13 @@ def defineProcesses(xsecPDGList,ufoFolder,initialStates=['p','p']):
     Given a list of PDGs, generates all process strings with pair of final
     states including these particles. Automatically includes the charge conjugation particles,
     if the anti-particle exists in the model.
-    
+
     :param xsecPDGList: list of PDGs of final states particles (e.g. [PDG1,PDG2,...])
     :param ufoFolder: path to the UFO folder.
-    
-    :return: list of process strings (e.g. ['p p > PDG1 PDG1', 'p p > PDG1 -PDG1', 'p p > -PDG1 -PDG1', 'p p > PDG1 PDG2',...]) 
+
+    :return: list of process strings (e.g. ['p p > PDG1 PDG1', 'p p > PDG1 -PDG1', 'p p > -PDG1 -PDG1', 'p p > PDG1 PDG2',...])
     """
-    
+
     #First collect all PDGs appearing in the model (including anti-particles):
     particles = getParticlesFromUFO(ufoFolder)
     modelPDGs = [particle.pdg_code for particle in particles]
@@ -87,7 +88,7 @@ def defineProcesses(xsecPDGList,ufoFolder,initialStates=['p','p']):
         if -pdg in modelPDGs:
             finalStates.append(-pdg)
         if (not pdg in modelPDGs) and (not -pdg in modelPDGs):
-            logger.info('Particle PDG %i not found in model and will be ignored.' %pdg)            
+            logger.info('Particle PDG %i not found in model and will be ignored.' %pdg)
     finalStates = list(set(finalStates))
     twoBodyFS = itertools.product(finalStates,finalStates)
     processes = []
@@ -95,32 +96,32 @@ def defineProcesses(xsecPDGList,ufoFolder,initialStates=['p','p']):
         fs = sorted(fs)
         proc = getProcessString(fs, initialStates)
         if not proc in processes:
-            processes.append(proc) 
-    
+            processes.append(proc)
+
     return processes
 
 def getProcessCard(parser):
     """
     Create a process card using the user defined input.
     If a proccard has been defined and it already exists, it will use it instead.
-    
+
     :param parser: ConfigParser object with all the parameters needed
-    
+
     :return: The path to the process card
-    
+
     """
-    
+
     pars = parser.toDict(raw=False)["MadGraphPars"]
-    
+
     if 'proccard'in pars:
-        processCard = pars['proccard']     
+        processCard = pars['proccard']
         if os.path.isfile(processCard):
             logger.debug('Process card found.')
             #Make sure the output folder defined in processCard matches the one defined in processFolder:
             pcF = open(processCard,'r')
             cardLines = pcF.readlines()
             pcF.close()
-            outFolder = [l for l in cardLines if 'output' in l and 'output' == l.strip()[:6]]            
+            outFolder = [l for l in cardLines if 'output' in l and 'output' == l.strip()[:6]]
             if outFolder:
                 outFolder = outFolder[0]
                 outFolder = outFolder.split('output')[1].replace('\n','').strip()
@@ -137,78 +138,78 @@ def getProcessCard(parser):
             if not outFolder:
                 pcF = open(processCard,'a')
                 pcF.write('output %s \n' %os.path.abspath(pars['processFolder']))
-                
+
             return processCard
-        
+
     else:
-        processCard = tempfile.mkstemp(suffix='.dat', prefix='processCard_', 
+        processCard = tempfile.mkstemp(suffix='.dat', prefix='processCard_',
                                    dir=pars['MG5path'])
         os.close(processCard[0])
         processCard = processCard[1]
-        
+
     processCardF = open(processCard,'w')
     processCardF.write('import model sm \n')
     processCardF.write('define p = g u c d s u~ c~ d~ s~ \n')
-    processCardF.write('import model %s \n' %os.path.abspath(parser.get('options','modelFolder')))     
+    processCardF.write('import model %s \n' %os.path.abspath(parser.get('options','modelFolder')))
     xsecPDGList = parser.get('options','computeXsecsFor')
     ufoFolder =  parser.get('options','modelFolder')
     processes = defineProcesses(xsecPDGList, ufoFolder)
     for iproc,proc in enumerate(processes):
         processCardF.write('add process %s @ %i \n' %(proc,iproc))
-    
+
     l = 'output %s\n' %os.path.abspath(pars['processFolder'])
     processCardF.write(l)
     processCardF.write('quit\n')
     processCardF.close()
-    
+
     return processCard
 
 def generateProcesses(parser):
     """
     Runs the madgraph process generation.
     This step just need to be performed once for a given
-    model and set of processes, since it is independent of the 
+    model and set of processes, since it is independent of the
     numerical values of the model parameters.
-    
+
     :param parser: ConfigParser object with all the parameters needed
-    
+
     :return: True if successful. Otherwise False.
     """
-    
-    
+
+
     #Get process card:
     processCard = os.path.abspath(getProcessCard(parser))
     pars = parser.toDict(raw=False)["MadGraphPars"]
-    
+
     #Generate process
     logger.info('Generating process using %s' %processCard)
     run = subprocess.Popen('./bin/mg5_aMC -f %s' %processCard,shell=True,
                                 stdout=subprocess.PIPE,stderr=subprocess.PIPE,
                                 cwd=pars['MG5path'])
-         
+
     output,errorMsg = run.communicate()
     logger.debug('MG5 process error:\n %s \n' %errorMsg)
     logger.debug('MG5 process output:\n %s \n' %output)
     logger.info("Finished process generation")
-        
+
     return True
 
 def generateEvents(parser):
-    
+
     """
     Runs the madgraph process generation.
     This step just need to be performed once for a given
-    model and set of processes, since it is independent of the 
+    model and set of processes, since it is independent of the
     numerical values of the model parameters.
-    
+
     :param parser: ConfigParser object with all the parameters needed
-    
+
     :return: True if successful. Otherwise False.
     """
-    
+
     pars = parser.toDict(raw=False)["MadGraphPars"]
     ncpu = max(1,parser.get("MadGraphPars","ncores"))
-        
+
     if not 'mg5out' in pars:
         logger.error('MG5 output folder not defined.')
         return False
@@ -216,11 +217,11 @@ def generateEvents(parser):
         outputFolder = pars['mg5out']
     if not 'processFolder' in pars:
         logger.error('MG5 process folder not defined.')
-        return False        
+        return False
     else:
         processFolder = pars['processFolder']
-        
-    
+
+
     if not os.path.isdir(processFolder):
         logger.error('Process folder %s not found. Maybe something went wrong with the process generation?' %processFolder)
         return False
@@ -228,14 +229,21 @@ def generateEvents(parser):
         if os.path.isdir(outputFolder):
             logger.info('outputFolder %s found. It will be replaced' %outputFolder)
             shutil.rmtree(outputFolder)
-            
+
         shutil.copytree(processFolder,outputFolder)
-        if 'runcard' in pars and os.path.isfile(pars['runcard']):    
-            shutil.copyfile(pars['runcard'],os.path.join(outputFolder,'Cards/run_card.dat'))
-        if 'paramcard' in pars and os.path.isfile(pars['paramcard']):
-            shutil.copyfile(pars['paramcard'],os.path.join(outputFolder,'Cards/param_card.dat'))    
-         
-    #Generate commands file:       
+        if 'runcard' in pars:
+            if os.path.isfile(pars['runcard']):
+                shutil.copyfile(pars['runcard'],os.path.join(outputFolder,'Cards/run_card.dat'))
+            else:
+                logger.warning('Run card file %s not found. Using default' %pars['runcard'])
+
+        if 'paramcard' in pars:
+            if os.path.isfile(pars['paramcard']):
+                shutil.copyfile(pars['paramcard'],os.path.join(outputFolder,'Cards/param_card.dat'))
+            else:
+                logger.warning('Parameters file %s not found. Using default' %pars['paramcard'])
+
+    #Generate commands file:
     commandsFile = tempfile.mkstemp(suffix='.txt', prefix='MG5_commands_', dir=outputFolder)
     os.close(commandsFile[0])
     commandsFileF = open(commandsFile[1],'w')
@@ -243,7 +251,7 @@ def generateEvents(parser):
     comms = parser.toDict(raw=False)["MadGraphSet"]
     #Set a low number of events, since it does not affect the total cross-section value
     #(can be overridden by the user, if the user defines a different number in the input card)
-    commandsFileF.write('set nevents 10 \n') 
+    commandsFileF.write('set nevents 10 \n')
     for key,val in comms.items():
         commandsFileF.write('set %s %s\n' %(key,val))
 
@@ -260,33 +268,31 @@ def generateEvents(parser):
     commandsFileF.write('done\n')
 
     commandsFileF.close()
-    commandsFile = commandsFile[1]      
-    
+    commandsFile = commandsFile[1]
+
     logger.info("Generating MG5 events with command file %s" %commandsFile)
     logger.info("Generating MG5 events")
     run = subprocess.Popen('./bin/generate_events --multicore --nb_core=%s < %s' %(ncpu,commandsFile),
                            shell=True,stdout=subprocess.PIPE,
                            stderr=subprocess.PIPE,cwd=outputFolder)
-      
+
     output,errorMsg= run.communicate()
     logger.debug('MG5 event error:\n %s \n' %errorMsg)
     logger.debug('MG5 event output:\n %s \n' %output)
-      
-    logger.info("Finished event generation")
-    
-    return True
-    
 
+    logger.info("Finished event generation")
+
+    return True
 
 def Run_MG5(parser):
     """
     Runs MadGraph5 using the parameters given in parser
-   
+
     :param parser: ConfigParser object with all the parameters needed
     """
-    
+
     pars = parser.toDict(raw=False)["MadGraphPars"]
- 
+
     #Get MG5 output folder
     if not 'mg5out' in pars or not pars['mg5out']:
         mg5out = tempfile.mkdtemp(dir='./',prefix='MG5out_')
@@ -298,7 +304,7 @@ def Run_MG5(parser):
     parser.set("MadGraphPars",'mg5out',os.path.abspath(os.path.expanduser(mg5out)))
     parser.set("MadGraphPars",'mg5path',os.path.abspath(os.path.expanduser(pars['MG5path'])))
     parser.set("MadGraphPars",'processFolder',os.path.abspath(os.path.expanduser(pars['processFolder'])))
-    
+
     #Checks
     if not os.path.isdir(pars['MG5path']):
         logger.error("MadGraph folder %s not found" %pars['MG5path'])
@@ -306,73 +312,76 @@ def Run_MG5(parser):
     elif not os.path.isfile(os.path.join(pars['MG5path'],'bin/mg5_aMC')):
         logger.error("MadGraph binary not found in %s/bin" %pars['mg5path'])
         return False
-    
+
     #Run process generation (if required)
     if os.path.isdir(pars['processFolder']):
         logger.info('Process folder found. Will skip the process generation')
     else:
-        generateProcesses(parser)      
-    
+        generateProcesses(parser)
+
     #Finally generate events and compute widths:
     generateEvents(parser)
-      
+
     return parser.get("MadGraphPars",'mg5out')
-   
 
 def getSLHAFile(parser,inputLHE):
     """
     Uses the LHE file generated by MadGraph
     to generate an SLHA file which includes the XSECTION blocks.
-    
+
     :param parser: ConfigParser object with all the parameters needed
-    :param inputLHE: Path to the MadGraph LHE file.  
-    
+    :param inputLHE: Path to the MadGraph LHE file.
+
     :return: Path to the slha file
     """
-    
+
     pars = parser.toDict(raw=False)["slhaCreator"]
-    
+
     #Use MadGraph banner reader:
     madgraphPath = parser.get('MadGraphPars','MG5path')
     sys.path.append(madgraphPath)
     from madgraph.various.banner import Banner
-        
+
     slhaFolder = pars['outputFolder']
     #Create output dirs, if do not exist:
     try:
         os.makedirs(slhaFolder)
     except:
-        pass    
-    
+        pass
+
     if not 'slhaout' in pars or not pars['slhaout']:
         slhaFile = tempfile.mkstemp(dir=slhaFolder, suffix='.slha')
         os.close(slhaFile[0])
         slhaFile = slhaFile[1]
     else:
-        slhaFile = os.path.join(slhaFolder,pars['slhaout'])        
+        slhaFile = os.path.join(slhaFolder,pars['slhaout'])
     logger.debug('Creating SLHA file %s' %slhaFile)
-    
-    
-    lheFile = inputLHE   
+
+
+    lheFile = inputLHE
     if not os.path.isfile(lheFile):
         logger.error("File %s not found" %lheFile)
         return False
-    
-    if lheFile[-3:] == '.gz':
-        f = gzip.open(lheFile, 'r')
-    else: 
-        f = open(lheFile,'r')
+
+    if os.path.splitext(lheFile)[-1] == '.gz':
+        bannerFile = lheFile.replace('.gz','')
+        with gzip.open(lheFile, 'r') as f:
+            with open(bannerFile, 'wb') as f_out:
+                shutil.copyfileobj(f, f_out)
+    else:
+        bannerFile = lheFile
+
     banner = Banner()
-    banner.read_banner(f)
-    f.close()
+    banner.read_banner(bannerFile)
+
     #Check if input file is MG5 banner or SLHA file
     if not 'mggenerationinfo' in banner or not 'mg5proccard' in banner or not 'init' in banner or not 'slha' in banner:
         logger.error("Input file %s does not contain required data " %lheFile)
         return False
-       
+
     #Collect necessary info:
-    slhaData = banner['slha']    
-    
+    slhaData = banner['slha']
+
     #Get generated processes:
     finalStatesDict = {}
     for l in banner['mg5proccard'].split('\n'):
@@ -392,18 +401,18 @@ def getSLHAFile(parser,inputLHE):
         finalStates = finalStates.strip().split()
         iproc = eval(iproc)
         #Store the process ID with its final states:
-        if not iproc in finalStatesDict:        
+        if not iproc in finalStatesDict:
             finalStatesDict[iproc] = finalStates
         else:
             logger.error("Error reading processes. Process ID %i appears more than once." %iproc)
             return False
-    
+
     #Get total cross-section,number of events
     xsecTotal = banner.get_cross()
     if xsecTotal <= 0.:
         logger.error("Total cross-section is zero?")
         return False
-    
+
     #Get sqrts and cross-section for each process:
     info = banner['init'].split('\n')[0].split()
     sqrts = eval(info[2]) + eval(info[3])
@@ -427,13 +436,13 @@ def getSLHAFile(parser,inputLHE):
     #Check:
     if abs(xsecTotal - sum([x['xsec (pb)'] for x in processXsecs.values()]))/xsecTotal > 0.001:
         logger.error("Total cross-section does not agree with sum of subprocesses")
-        return False 
-    
+        return False
+
     #Write SLHA file:
     slhaF = open(slhaFile,'w')
     slhaF.write(slhaData)
     slhaF.write('\n\n')
-    processXsecs = OrderedDict(sorted(processXsecs.items(), 
+    processXsecs = OrderedDict(sorted(processXsecs.items(),
                                       key=lambda proc: proc[1]['xsec (pb)'],reverse=True))
     for procID in processXsecs:
         finalStates = finalStatesDict[procID]
@@ -444,34 +453,33 @@ def getSLHAFile(parser,inputLHE):
         xsecLine += " ".join([str(pdg) for pdg in pdgInitial])
         xsecLine += " %i " %len(finalStates)
         xsecLine += " ".join([str(pdg) for pdg in finalStates])
-        slhaF.write(xsecLine+' '+comment+' \n')        
-        slhaF.write("  0  0  0  0  0  0  %1.4e ufo2slha 1.0\n" %xsec)    
+        slhaF.write(xsecLine+' '+comment+' \n')
+        slhaF.write("  0  0  0  0  0  0  %1.4e ufo2slha 1.0\n" %xsec)
     slhaF.close()
-    
-    logger.info("Finished SLHA creation")
-    
-    return slhaFile
 
+    logger.info("Finished SLHA creation")
+
+    return slhaFile
 
 def runAll(parserDict):
     """
     Runs Madgraph, Pythia and the SLHA creator for a given set of options.
     :param parserDict: a dictionary with the parser options.
     """
-    
-    t0 = time.time() 
-    
+
+    t0 = time.time()
+
     parser = ConfigParserExt()
     parser.read_dict(parserDict)
-    
+
     #Run MadGraph and get path to the LHE file
     if parser.get('options','runMG'):
-        mg5outFolder = Run_MG5(parser) 
+        mg5outFolder = Run_MG5(parser)
         inputFile = os.path.join(mg5outFolder,"Events/run_01/unweighted_events.lhe.gz")
     else:
         if not parser.has_option("slhaCreator","inputFile") or not parser.get("slhaCreator","inputFile"):
             inputFile = None
-        else:      
+        else:
             inputFile = parser.get("slhaCreator","inputFile")
 
     #Create SLHA file
@@ -489,7 +497,7 @@ def runAll(parserDict):
                 return False
             else:
                 logger.debug("File %s created" %slhaFile)
-                
+
     #Clean output:
     if parser.get("options","cleanOutFolders"):
         logger.info("Cleaning output")
@@ -497,15 +505,14 @@ def runAll(parserDict):
             shutil.copy(inputFile,slhaFile.replace('.slha','.lhe.gz'))
         if os.path.isdir(mg5outFolder):
             shutil.rmtree(mg5outFolder)
-          
+
     logger.info("Done in %3.2f min" %((time.time()-t0)/60.))
     now = datetime.datetime.now()
-    
+
     return "Finished run at %s" %(now.strftime("%Y-%m-%d %H:%M"))
 
-
 def main(parfile,verbose):
-   
+
     level = verbose
     levels = { "debug": logging.DEBUG, "info": logging.INFO,
                "warn": logging.WARNING,
@@ -513,52 +520,57 @@ def main(parfile,verbose):
     if not level in levels:
         logger.error ( "Unknown log level ``%s'' supplied!" % level )
         sys.exit()
-    logger.setLevel(level = levels[level])    
+    logger.setLevel(level = levels[level])
 
-    parser = ConfigParserExt()   
+    parser = ConfigParserExt(comment_prefixes=(';','#'), inline_comment_prefixes=(';','#'))
     ret = parser.read(parfile)
     if ret == []:
         logger.error( "No such file or directory: '%s'" % args.parfile)
         sys.exit()
-            
-    #Get a list of parsers (in case loops have been defined)    
+
+    #Get a list of parsers (in case loops have been defined)
     parserList = parser.expandLoops()
 
-    ncpus = parser.getint("options","ncpu")
+    ncpus = int(parser.get("options","ncpu"))
     if ncpus  < 0:
         ncpus =  multiprocessing.cpu_count()
 
     pool = multiprocessing.Pool(processes=ncpus)
     children = []
-    #Loop over model parameters and submit jobs
-    firstRun = True
+    #Loop over model parameters and create parsers
+    newParsers = {}
     for newParser in parserList:
-        if firstRun:
-            if newParser.get('options','runMG') and not os.path.isdir(newParser.get('MadGraphPars','processFolder')):
-                generateProcesses(newParser)
-                
-            if not newParser.has_option('slhaCreator','outputFolder') or not newParser.get('slhaCreator','outputFolder'):
-                slhaFolder = tempfile.mkdtemp(dir='./', prefix='slha_')
-                logger.info('SLHA output folder not defined. Files will saved to %s' %slhaFolder)
-            else:
-                slhaFolder = newParser.get('slhaCreator','outputFolder')       
-            firstRun = False
-            
-        newParser.set('slhaCreator','outputFolder',slhaFolder)             
+        if not newParser.has_option('slhaCreator','outputFolder') or not newParser.get('slhaCreator','outputFolder'):
+            slhaFolder = tempfile.mkdtemp(dir='./', prefix='slha_')
+            logger.info('SLHA output folder not defined. Files will saved to %s' %slhaFolder)
+        else:
+            slhaFolder = newParser.get('slhaCreator','outputFolder')
+
+        newParser.set('slhaCreator','outputFolder',slhaFolder)
         parserDict = newParser.toDict(raw=False) #Must convert to dictionary for pickling
-        p = pool.apply_async(runAll, args=(parserDict,))            
+        newParsers[parserDict['slhaCreator']['slhaout']] = parserDict
+
+    #Submit jobs
+    firstRun = True
+    for parserDict in newParsers.values():
+        if firstRun:
+            if parserDict['options']['runMG'] and not os.path.isdir(parserDict['MadGraphPars']['processFolder']):
+                os.makedirs(parserDict['MadGraphPars']['processFolder'])
+                generateProcesses(newParser)
+        firstRun = False
+        p = pool.apply_async(runAll, args=(parserDict,))
         children.append(p)
-        
+
 #     Wait for jobs to finish:
     output = [p.get() for p in children]
     return output
 
-    
+
 
 
 if __name__ == "__main__":
-    
-    import argparse    
+
+    import argparse
     ap = argparse.ArgumentParser( description=
             "Run MadGraph and Pythia in order to compute efficiencies for a given model." )
     ap.add_argument('-p', '--parfile', default='slha_parameters.ini',
@@ -571,5 +583,5 @@ if __name__ == "__main__":
 
     args = ap.parse_args()
     output = main(args.parfile,args.verbose)
-            
+
     print("\n\nDone in %3.2f min" %((time.time()-t0)/60.))

@@ -117,6 +117,9 @@ def RunCheckMate(parserDict):
         analysisfolder = os.path.join(resultFolder,'analysis')
         if os.path.isfile(os.path.join(analysisfolder,'analysisstdout_atlas_1712_02118_ew.log')):
             os.remove(os.path.join(analysisfolder,'analysisstdout_atlas_1712_02118_ew.log'))
+        if os.path.isfile(os.path.join(analysisfolder,'analysisstdout_atlas_1712_02118_strong.log')):
+            os.remove(os.path.join(analysisfolder,'analysisstdout_atlas_1712_02118_strong.log'))
+
 
     now = datetime.datetime.now()
 
