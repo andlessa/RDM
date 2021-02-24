@@ -101,26 +101,26 @@ if echo "$answer" | grep -iq "^y" ;then
 fi
 
 
-echo -n "Install CheckMATE (y/n)? "
-read answer
-if echo "$answer" | grep -iq "^y" ;then
-  echo "[installer] getting CheckMATE";
-  git clone git@github.com:CheckMATE2/checkmate2.git CheckMATE2;
-  cd CheckMATE2;
-  rm -rf .git
-  autoreconf -i -f;
-  ./configure --with-rootsys=$ROOTSYS --with-delphes=$homeDIR/Delphes --with-pythia=$homeDIR/pythia8 --with-madgraph=$homeDIR/MG5 --with-hepmc=$homeDIR/HepMC
-  echo "[installer] installing CheckMATE";
-  make -j4
-  cd $homeDIR
-  echo "[installer] Adding new analyses to CheckMATE";
-  cp -r myCheckMateFiles/tools/* CheckMATE2/tools/;
-  cp -r myCheckMateFiles/data/* CheckMATE2/data/;
-  cd CheckMATE2;
-  echo "[installer] recompiling CheckMATE";
-  make;
-  cd $homeDIR
-fi
+#echo -n "Install CheckMATE (y/n)? "
+#read answer
+#if echo "$answer" | grep -iq "^y" ;then
+#  echo "[installer] getting CheckMATE";
+#  git clone git@github.com:CheckMATE2/checkmate2.git CheckMATE2;
+#  cd CheckMATE2;
+#  rm -rf .git
+#  autoreconf -i -f;
+#  ./configure --with-rootsys=$ROOTSYS --with-delphes=$homeDIR/Delphes --with-pythia=$homeDIR/pythia8 --with-madgraph=$homeDIR/MG5 --with-hepmc=$homeDIR/HepMC
+#  echo "[installer] installing CheckMATE";
+#  make -j4
+#  cd $homeDIR
+#  echo "[installer] Adding new analyses to CheckMATE";
+#  cp -r myCheckMateFiles/tools/* CheckMATE2/tools/;
+#  cp -r myCheckMateFiles/data/* CheckMATE2/data/;
+#  cd CheckMATE2;
+#  echo "[installer] recompiling CheckMATE";
+#  make;
+#  cd $homeDIR
+#fi
 
 echo -n "Install CheckMATE3 (y/n)? "
 read answer
@@ -133,6 +133,13 @@ if echo "$answer" | grep -iq "^y" ;then
   ./configure --with-rootsys=$ROOTSYS --with-delphes=$homeDIR/Delphes --with-pythia=$homeDIR/pythia8 --with-madgraph=$homeDIR/MG5 --with-hepmc=$homeDIR/HepMC
   echo "[installer] installing CheckMATE3";
   make -j4
+  cd $homeDIR
+  echo "[installer] Adding new analyses to CheckMATE";
+  cp -r myCheckMateFiles/tools/* CheckMATE3/tools/;
+  cp -r myCheckMateFiles/data/* CheckMATE3/data/;
+  cd CheckMATE3;
+  echo "[installer] recompiling CheckMATE";
+  make;
   cd $homeDIR
 fi
 

@@ -45,6 +45,8 @@ void AnalysisHandlerCMS_13TeV::bookAnalysis(std::string analysisName,
         a = new Cms_sus_16_025();
     else if(analysisName == "cms_sus_16_048")
         a = new Cms_sus_16_048();
+    else if(analysisName == "cms_pas_exo_16_022")
+        a = new Cms_pas_exo_16_022();
     else if(analysisName == "cms_sus_16_032")
         a = new Cms_sus_16_032();
     else if(analysisName == "cms_sus_19_005")
@@ -313,10 +315,6 @@ void AnalysisHandlerCMS_13TeV::linkObjects() {
 
         listOfAnalyses[a]->jetBTags = jetBTags;
         listOfAnalyses[a]->jetTauTags = jetTauTags;
-
-        listOfAnalyses[a]->true_b = true_b;
-        listOfAnalyses[a]->true_tau = true_tau;
-        listOfAnalyses[a]->true_c = true_c;
     }
 }
 
@@ -801,7 +799,7 @@ double AnalysisHandlerCMS_13TeV::tauBkgEffMultiTight(double pt,
 double AnalysisHandlerCMS_13TeV::bSigEff(double pt,
                                      double eta,
                                      double eff) {
-//    ATLAS definition
+//    ATLAS definition 
     const double y0 = 0.5523;
     const double x0 = 47.6071;
     const double A = 0.2102;
@@ -816,23 +814,23 @@ double AnalysisHandlerCMS_13TeV::bSigEff(double pt,
 //	  const double c2 = -1.314e-4;
 //	  const double c3 = 7.268e-7;
 //	  const double c4 = -1.523e-9;
-//
+//	  
 //	  const double d0 = 0.79;
 //	  const double d1 = -3.17e-4;
 //	  const double d2 = 1.24e-7;
-//
+//	  
 //	  return (pt>175)*( d0 + d1*pow(pt,1) + d2*pow(pt,2) ) + (pt<=175)*( c0 + c1*pow(pt,1) + c2*pow(pt,2) + c3*pow(pt,3) + c4*pow(pt,4));
-////	CMS Tight
+////	CMS Tight	     
 //    const double c0 = 0.127;
 //	  const double c1 = 0.01578;
 //	  const double c2 = -2.126e-4;
 //	  const double c3 = 1.273e-6;
 //	  const double c4 = -2.88e-9;
-//
+//	  
 //	  const double d0 = 0.634;
 //	  const double d1 = -6.74e-4;
 //	  const double d2 = 2.69e-7;
-//
+//	  
 //	  return (pt>160)*( d0 + d1*pow(pt,1) + d2*pow(pt,2) ) + (pt<=160)*( c0 + c1*pow(pt,1) + c2*pow(pt,2) + c3*pow(pt,3) + c4*pow(pt,4));
 }
 
@@ -846,7 +844,7 @@ double AnalysisHandlerCMS_13TeV::bBkgCJetRej(double eff) {
     return pow(10,(A*(eff+c*pow(eff,2)+d*pow(eff,3)+
                           f*pow(eff,4)+g*pow(eff,5))));
 
-
+	  
 }
 
 double AnalysisHandlerCMS_13TeV::bBkgCJetEff(double pt,
@@ -946,3 +944,4 @@ const AnalysisHandlerCMS_13TeV::muonDetector AnalysisHandlerCMS_13TeV::detMap[53
         {cscla, endla, endla, endla, endla, endla, endla, trans, barla, barla, barla, barla, barla, trans, endla, endla, endla, endla, endla, endla, cscla}};
 const double AnalysisHandlerCMS_13TeV::etaProj[21] = {-2.005, -1.955, -1.709, -1.411, -1.238, -1.163, -1.113, -0.965, -0.817, -0.519, 0.519, 0.817, 0.965, 1.113, 1.163, 1.238, 1.411, 1.709, 1.955, 2.005, 2.500};
 const double AnalysisHandlerCMS_13TeV::phiProj[53] = {3.142, 3.009, 2.948, 2.849, 2.629, 2.529, 2.471, 2.210, 2.174, 2.065, 1.855, 1.745, 1.695, 1.436, 1.386, 1.276, 1.066, 0.957, 0.916, 0.657, 0.596, 0.496, 0.277, 0.178, 0.142, -0.142, -0.178, -0.277, -0.496, -0.596, -0.657, -0.916, -0.957, -1.018, -1.066, -1.276, -1.357, -1.386, -1.436, -1.695, -1.745, -1.797, -1.855, -2.065, -2.134, -2.174, -2.210, -2.471, -2.529, -2.629, -2.849, -2.948, -3.009};
+
