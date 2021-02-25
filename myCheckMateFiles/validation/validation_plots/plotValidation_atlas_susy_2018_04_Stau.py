@@ -113,11 +113,11 @@ contoursHigh = getContour(rData[:,0],rData[:,1],rData[:,2],levels=[1.0])
 contoursLow = getContour(rData[:,0],rData[:,1],rData[:,3],levels=[1.0])
 
 # %% Load data
-offCurveComb = np.genfromtxt('./ATLAS_data/HEPData-ins1765529-v1-Exclusion_contour_1_Obs.csv',
+offCurveComb = np.genfromtxt('./ATLAS_data/HEPData-ins1765529-v2-Exclusion_contour_1_Obs.csv',
                         delimiter=',', names=True, skip_header=10)
-offCurveLow = np.genfromtxt('./ATLAS_data/HEPData-ins1765529-v1-Exclusion_contour_aux_1_Obs.csv',
+offCurveLow = np.genfromtxt('./ATLAS_data/HEPData-ins1765529-v2-Exclusion_contour_aux_1_Obs.csv',
                         delimiter=',', names=True, skip_header=10)
-offCurveHigh = np.genfromtxt('./ATLAS_data/HEPData-ins1765529-v1-Exclusion_contour_aux_2_Obs.csv',
+offCurveHigh = np.genfromtxt('./ATLAS_data/HEPData-ins1765529-v2-Exclusion_contour_aux_2_Obs.csv',
                         delimiter=',', names=True, skip_header=10)
 
 # %% Plot exclusion curve
