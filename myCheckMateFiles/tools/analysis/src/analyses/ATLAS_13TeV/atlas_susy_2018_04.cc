@@ -48,16 +48,10 @@ void Atlas_susy_2018_04::analyze() {
 	  std::vector<Jet*> lightjets;
 	  std::vector<bool> tauTags;
 
-      //For CheckMATE3 generator level particles are stored in true_particles
-      std::vector<GenParticle*> gen_tau; //!< generator level taus
-      for(int i = 0; i < true_particles.size(); i++) {
-          if (abs(true_particles[i]->PID)  == 15){
-             gen_tau.push_back(true_particles[i]);}
-      }
 
 	  for (int i = 0; i < jets.size(); i++){
         //Recompute tau tagging:
-        tauTags = getTauTags(jets[i],tracks,gen_tau);
+        tauTags = getTauTags(jets[i],tracks,true_particles);
 
 		if (!(tauTags[1] || tauTags[2] || checkBTag(jets[i], 0))){
 			lightjets.push_back(jets[i]);
@@ -164,7 +158,7 @@ void Atlas_susy_2018_04::finalize() {
 // tau jets can be passed as arguments.
 std::vector<bool> Atlas_susy_2018_04::getTauTags(Jet* cand,
 								std::vector<Track*> tracks,
-	   							std::vector<GenParticle*> gen_tau){
+	   							std::vector<GenParticle*> true_particles){
 
     const double DR_TAU_TRACK = 0.2;
     const double PTMIN_TAU_TRACK = 1.0;
@@ -175,6 +169,13 @@ std::vector<bool> Atlas_susy_2018_04::getTauTags(Jet* cand,
 
     double prob = rand()/(RAND_MAX+1.);
     int prongs = 0;
+
+    //For CheckMATE3 generator level particles are stored in true_particles
+    std::vector<GenParticle*> gen_tau; //!< generator level taus
+    for(int i = 0; i < true_particles.size(); i++) {
+        if (abs(true_particles[i]->PID)  == 15){
+           gen_tau.push_back(true_particles[i]);}
+    }
 
     std::vector<bool> tauTags;
     // These are the standard values for all candidates
