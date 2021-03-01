@@ -1,0 +1,30 @@
+## General Options
+[Parameters]
+Analyses: atlas_susy_2018_04
+InvisiblePIDs: 1000022
+TotalResultFileColumns: analysis,sr,obs,bkg,bkgerr,signalsumofweights,s,ds,eff,s95obs,robs,robscons,likelihood
+## Name: validation_atlas_susy_2018_04_120_1
+## SLHAFile: /home/lessa/RDM/CheckMATE2/param_card_DS_120_1.slha
+Name: validation_atlas_susy_2018_04_280_1
+SLHAFile: /home/lessa/RDM/CheckMATE2/param_card_DS_280_1.slha
+## Name: validation_atlas_susy_2018_04_280_200
+## SLHAFile: /home/lessa/RDM/CheckMATE2/param_card_DS_280_200.slha
+## Name: validation_atlas_susy_2018_04_450_1
+## SLHAFile: /home/lessa/RDM/CheckMATE2/param_card_DS_450_1.slha
+
+
+## Process Information
+[StauPairProd]
+MGcommand: import model MSSM_SLHA2;
+	   define stau = ta1+ ta1- ta2+ ta2-
+           generate p p > stau stau, ta1+ > ta+ n1, ta1- > ta- n1, ta2+ > ta+ n1, ta2- > ta- n1; 
+MaxEvents: 10000
+XSectErr: 20 %
+## MGparam: /home/lessa/RDM/CheckMATE2/param_card_DS_120_1.slha
+## XSect: 192.75 FB
+MGparam: /home/lessa/RDM/CheckMATE2/param_card_DS_280_1.slha
+XSect: 8.26 FB
+## MGparam: /home/lessa/RDM/CheckMATE2/param_card_DS_280_200.slha
+## XSect: 8.26 FB
+## MGparam: /home/lessa/RDM/CheckMATE2/param_card_DS_450_1.slha
+## XSect: 1.123 FB
