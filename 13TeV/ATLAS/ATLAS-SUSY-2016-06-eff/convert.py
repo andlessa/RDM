@@ -91,6 +91,9 @@ TDTM1F_2 = TDTM1F.addMassPlane(2*[[(x,y), x-1.0]])
 TDTM1F_2.setSources(dataLabels= labels,
                  dataFiles= ['./orig/C1C1_eff.txt'],
                  dataFormats= formats, coordinates = [{x : 0, y: 2, 'value' : 3}] )
+TDTM1F_2.addSource(dataLabel='obsExclusion',
+                    dataFile='orig/HEPData-ins1641262-v4-Exclusion_contour_EW_2_obs_conv.txt',
+                    coordinateMap = {x : 0, y: 1, 'value' : None}, dataFormat = 'txt')
 
 
 #+++++++ next txName block ++++++++++++++
@@ -120,6 +123,9 @@ TDTM2F_2 = TDTM2F.addMassPlane([[(x,y), x-1.0],[x-1.0]])
 TDTM2F_2.setSources(dataLabels= labels,
                  dataFiles= ['./orig/C1N1_eff.txt'],
                  dataFormats= formats, coordinates = [{x : 0, y: 2, 'value' : 3}] )
+TDTM2F_2.addSource(dataLabel='obsExclusion',
+                    dataFile='orig/HEPData-ins1641262-v4-Exclusion_contour_EW_2_obs_conv.txt',
+                    coordinateMap = {x : 0, y: 1, 'value' : None}, dataFormat = 'txt')
 
 
 
