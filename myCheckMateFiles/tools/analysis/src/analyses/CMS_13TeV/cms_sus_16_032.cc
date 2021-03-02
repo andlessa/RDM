@@ -70,20 +70,6 @@ void Cms_sus_16_032::analyze() {
   // - Many advanced kinematical functions like mT2 are implemented. Check the manual for more information.
   // - If you need output to be stored in other files than the cutflow/signal files we provide, check the manual for how to do this conveniently.
 
-
-  //For CheckMATE3 generator level particles are stored in true_particles
-  std::vector<GenParticle*> gen_b; //!< generator level taus
-  for(int i = 0; i < true_particles.size(); i++) {
-      if (abs(true_particles[i]->PID)  == 5){
-         gen_b.push_back(true_particles[i]);}
-  }
-  std::vector<GenParticle*> gen_c; //!< generator level taus
-  for(int i = 0; i < true_particles.size(); i++) {
-      if (abs(true_particles[i]->PID)  == 4){
-         gen_c.push_back(true_particles[i]);}
-  }
-
-
   //Basic object definitions:
   //Jets:
   jets = filterPhaseSpace(jets, 25., -2.4, 2.4);
@@ -93,13 +79,13 @@ void Cms_sus_16_032::analyze() {
   std::vector<bool> bTagsLoose,bTagsMedium;
   std::vector<bool> cTagsMedium;
   for (int i = 0; i < jets.size(); ++i){
-      if (tagBJet(jets[i],"loose",gen_b,gen_c))
+      if (tagBJet(jets[i],"loose"))
         bTagsLoose.push_back(true);
       else  bTagsLoose.push_back(false);
-      if (tagBJet(jets[i],"medium",gen_b,gen_c))
+      if (tagBJet(jets[i],"medium"))
         bTagsMedium.push_back(true);
       else  bTagsMedium.push_back(false);
-      if (tagCJet(jets[i],gen_b,gen_c) &&
+      if (tagCJet(jets[i]) &&
           !(bTagsMedium[i] || bTagsLoose[i]))
          cTagsMedium.push_back(true);
       else cTagsMedium.push_back(false);
@@ -110,7 +96,7 @@ void Cms_sus_16_032::analyze() {
       else if (jets[i]->PT >= 500. && bTagsLoose[i]){
          bjets.push_back(jets[i]);
       }
-      else if (tagCJet(jets[i],gen_b,gen_c)){
+      else if (tagCJet(jets[i])){
          cjets.push_back(jets[i]);
       }
       else {
@@ -123,19 +109,18 @@ void Cms_sus_16_032::analyze() {
   double prob;
   double SVeff = 0.2;
   double dR;
-
-  for (int i = 0; i< gen_b.size(); ++i){
+  for (int i = 0; i< true_b.size(); ++i){
       //CMS-SUS-16-049 claims the  20% SV tagging efficiency is valid for the 10 GeV-20 GeV range:
-      if (gen_b[i]->PT > 25.0 || gen_b[i]->PT < 10.0) continue;
+      if (true_b[i]->PT > 25.0 || true_b[i]->PT < 10.0) continue;
       dR = 1.0;
       for (int j = 0; j < bjets.size(); ++j){
-          dR = std::min(dR,gen_b[i]->P4().DeltaR(bjets[j]->P4()));
+          dR = std::min(dR,true_b[i]->P4().DeltaR(bjets[j]->P4()));
       }
       for (int j = 0; j < cjets.size(); ++j){
-          dR = std::min(dR,gen_b[i]->P4().DeltaR(cjets[j]->P4()));
+          dR = std::min(dR,true_b[i]->P4().DeltaR(cjets[j]->P4()));
       }
       for (int j = 0; j < lightjets.size(); ++j){
-          dR = std::min(dR,gen_b[i]->P4().DeltaR(lightjets[j]->P4()));
+          dR = std::min(dR,true_b[i]->P4().DeltaR(lightjets[j]->P4()));
       }
       if (dR < 0.4) continue;
       prob = rand()/(RAND_MAX+1.);
@@ -445,9 +430,7 @@ void Cms_sus_16_032::finalize() {
 
 //B-tagging based on CSVv2 algorithm
 //(from https://twiki.cern.ch/twiki/bin/view/CMSPublic/SUSMoriond2017ObjectsEfficiency)
-bool Cms_sus_16_032::tagBJet(Jet *cand, string efficiency,
-                                std::vector<GenParticle*> gen_b,
-                                std::vector<GenParticle*> gen_c) {
+bool Cms_sus_16_032::tagBJet(Jet *cand, string efficiency) {
 
     const double DR_B_TRUTH = 0.2;
     const double PTMIN_B_TRUTH = 10.0;
@@ -477,10 +460,10 @@ bool Cms_sus_16_032::tagBJet(Jet *cand, string efficiency,
     double eff = 0.0;
     /* Loop over bs and try to find an overlap.
     * If there is one, use b signal efficiency*/
-    for(int b = 0; b < gen_b.size(); b++) {
-      if(gen_b[b]->PT > PTMIN_B_TRUTH &&
-        fabs(gen_b[b]->Eta) < ETAMAX_B_TRUTH &&
-         gen_b[b]->P4().DeltaR(cand->P4()) < DR_B_TRUTH) {
+    for(int b = 0; b < true_b.size(); b++) {
+      if(true_b[b]->PT > PTMIN_B_TRUTH &&
+        fabs(true_b[b]->Eta) < ETAMAX_B_TRUTH &&
+         true_b[b]->P4().DeltaR(cand->P4()) < DR_B_TRUTH) {
             if (efficiency == "loose")
               eff = getEffFromData(bTagEffLoose,cand->PT);
             else if (efficiency == "medium")
@@ -490,10 +473,10 @@ bool Cms_sus_16_032::tagBJet(Jet *cand, string efficiency,
     }
     // If no b overlap, test with truth c's and maybe use c-efficiency
     if (eff == 0.0) {
-      for(int c = 0; c < gen_c.size(); c++) {
-          if(gen_c[c]->PT > PTMIN_B_TRUTH &&
-             fabs(gen_c[c]->Eta) < ETAMAX_B_TRUTH &&
-             gen_c[c]->P4().DeltaR(cand->P4()) < DR_B_TRUTH) {
+      for(int c = 0; c < true_c.size(); c++) {
+          if(true_c[c]->PT > PTMIN_B_TRUTH &&
+             fabs(true_c[c]->Eta) < ETAMAX_B_TRUTH &&
+             true_c[c]->P4().DeltaR(cand->P4()) < DR_B_TRUTH) {
                  if (efficiency == "loose")
                     eff = 0.4 ;//loose mistagging
                  else if (efficiency == "medium")
@@ -513,9 +496,7 @@ bool Cms_sus_16_032::tagBJet(Jet *cand, string efficiency,
 
 //B-tagging based on CSVv2 algorithm
 //(from https://twiki.cern.ch/twiki/bin/view/CMSPublic/SUSMoriond2017ObjectsEfficiency)
-bool Cms_sus_16_032::tagCJet(Jet *cand,
-                                std::vector<GenParticle*> gen_b,
-                                std::vector<GenParticle*> gen_c) {
+bool Cms_sus_16_032::tagCJet(Jet *cand) {
 
     const double DR_C_TRUTH = 0.2;
     const double PTMIN_C_TRUTH = 10.0;
@@ -525,20 +506,20 @@ bool Cms_sus_16_032::tagCJet(Jet *cand,
     double eff = 0.0;
     /* Loop over cs and try to find an overlap.
     * If there is one, use c signal efficiency*/
-    for(int c = 0; c < gen_c.size(); c++) {
-        if(gen_c[c]->PT > PTMIN_C_TRUTH &&
-           fabs(gen_c[c]->Eta) < ETAMAX_C_TRUTH &&
-           gen_c[c]->P4().DeltaR(cand->P4()) < DR_C_TRUTH) {
+    for(int c = 0; c < true_c.size(); c++) {
+        if(true_c[c]->PT > PTMIN_C_TRUTH &&
+           fabs(true_c[c]->Eta) < ETAMAX_C_TRUTH &&
+           true_c[c]->P4().DeltaR(cand->P4()) < DR_C_TRUTH) {
                eff = 0.4; //medium mistagging
                break;
           }
     }
     // If no c overlap, test with truth b's and maybe use b-efficiency
     if (eff == 0.0) {
-        for(int b = 0; b < gen_b.size(); b++) {
-          if(gen_b[b]->PT > PTMIN_C_TRUTH &&
-            fabs(gen_b[b]->Eta) < ETAMAX_C_TRUTH &&
-            gen_b[b]->P4().DeltaR(cand->P4()) < DR_C_TRUTH) {
+        for(int b = 0; b < true_b.size(); b++) {
+          if(true_b[b]->PT > PTMIN_C_TRUTH &&
+            fabs(true_b[b]->Eta) < ETAMAX_C_TRUTH &&
+            true_b[b]->P4().DeltaR(cand->P4()) < DR_C_TRUTH) {
                 eff = 0.2; //b-jet mistagging
                 break;
           }

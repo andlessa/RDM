@@ -140,6 +140,9 @@ class AnalysisBase {
     std::vector<Photon*> photonsMedium; //!< Container of 'photonsLoose'  that pass medium efficiency cut
     std::vector<Track*> tracks; //!< Container of all reconstructed tracks.
     std::vector<Tower*> towers; //!< Container of all calorimeter towers.
+    std::vector<GenParticle*> true_tau; //!< true visible hadronic taus
+    std::vector<GenParticle*> true_b; //!< true bs
+    std::vector<GenParticle*> true_c; //!< true cs
     ETMiss* missingET; //!< Reconstructed missingET vector excluding muons.
     MissingET* GenMissingET;
      /** @} */

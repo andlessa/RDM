@@ -16,7 +16,7 @@ class Atlas_susy_2018_04 : public AnalysisBase {
   private:
     vector<bool> getTauTags(Jet* cand,
                                     std::vector<Track*> tracks,
-		                            std::vector<GenParticle*> true_particles);
+		                            std::vector<GenParticle*> true_tau);
 
     double getEffFromData(vector<vector<double>> effData,
                                     double pt);

@@ -14,9 +14,7 @@ class Cms_sus_19_005 : public AnalysisBase {
     void finalize();
 
   private:
-    bool tagBJetMedium(Jet *cand,
-                        std::vector<GenParticle*> gen_b,
-                        std::vector<GenParticle*> gen_c);
+    bool tagBJetMedium(Jet *cand);
     double getEffFromData(vector<vector<double>> effData,
                           double pt);
     std::vector<TLorentzVector> getPseudoJets(std::vector<Jet*> jets);

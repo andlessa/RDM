@@ -315,6 +315,10 @@ void AnalysisHandlerCMS_13TeV::linkObjects() {
 
         listOfAnalyses[a]->jetBTags = jetBTags;
         listOfAnalyses[a]->jetTauTags = jetTauTags;
+
+        listOfAnalyses[a]->true_b = true_b;
+        listOfAnalyses[a]->true_tau = true_tau;
+        listOfAnalyses[a]->true_c = true_c;
     }
 }
 
