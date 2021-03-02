@@ -114,8 +114,8 @@ fi
 #  make -j4
 #  cd $homeDIR
 #  echo "[installer] Adding new analyses to CheckMATE";
-#  cp -r myCheckMateFiles/tools/* CheckMATE2/tools/;
-#  cp -r myCheckMateFiles/data/* CheckMATE2/data/;
+#  cp -r myCheckMate2Files/tools/* CheckMATE2/tools/;
+#  cp -r myCheckMate2Files/data/* CheckMATE2/data/;
 #  cd CheckMATE2;
 #  echo "[installer] recompiling CheckMATE";
 #  make;
@@ -135,8 +135,8 @@ if echo "$answer" | grep -iq "^y" ;then
   make -j4
   cd $homeDIR
   echo "[installer] Adding new analyses to CheckMATE";
-  cp -r myCheckMateFiles/tools/* CheckMATE3/tools/;
-  cp -r myCheckMateFiles/data/* CheckMATE3/data/;
+  cp -r myCheckMate3Files/tools/* CheckMATE3/tools/;
+  cp -r myCheckMate3Files/data/* CheckMATE3/data/;
   cd CheckMATE3;
   echo "[installer] recompiling CheckMATE";
   make;

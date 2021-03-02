@@ -239,7 +239,7 @@ if __name__ == "__main__":
             "Run CheckMATE over a set of input files to compute efficiencies for a given model." )
     ap.add_argument('-p', '--parfile', default='checkmate_parameters.ini',
             help='path to the parameters file. Default is checkmate_parameters.ini')
-    ap.add_argument('-v', '--verbose', default='error',
+    ap.add_argument('-v', '--verbose', default='info',
             help='verbose level (debug, info, warning or error). Default is error')
 
 
