@@ -45,6 +45,7 @@
 #include "atlas_1712_02118_ew.h"
 #include "atlas_1712_02118_strong.h"
 #include "atlas_susy_2018_04.h"
+#include "atlas_exot_2018_06.h"
 //@extraheader@
 #include "AnalysisBase.h"
 
@@ -104,7 +105,7 @@ private:
 
     //! ATLAS electron identification efficiency, loose
     static double electronIDEffLoose(double pt,
-                                    double eta);    
+                                    double eta);
     //! ATLAS electron identification efficiency, medium
     static double electronIDEffMedium(double pt,
                                     double eta);

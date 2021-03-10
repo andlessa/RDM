@@ -79,7 +79,7 @@ libanalyses_la_SOURCES +=	\
              include/analyses/ATLAS_13TeV/atlas_conf_2016_054.h src/analyses/ATLAS_13TeV/atlas_conf_2016_054.cc \
              include/analyses/ATLAS_13TeV/atlas_conf_2016_076.h src/analyses/ATLAS_13TeV/atlas_conf_2016_076.cc \
              include/analyses/ATLAS_13TeV/atlas_conf_2016_078.h src/analyses/ATLAS_13TeV/atlas_conf_2016_078.cc \
-             include/analyses/ATLAS_13TeV/atlas_conf_2016_076.h src/analyses/ATLAS_13TeV/atlas_conf_2016_096.cc 
+             include/analyses/ATLAS_13TeV/atlas_conf_2016_076.h src/analyses/ATLAS_13TeV/atlas_conf_2016_096.cc
 # ATLAS_14TeV_HighLumi
 libanalyses_la_SOURCES +=	\
              include/analyses/ATLAS_14TeV_HighLumi/atl_phys_pub_2014_010_sbottom.h src/analyses/ATLAS_14TeV_HighLumi/atl_phys_pub_2014_010_sbottom.cc \
@@ -102,7 +102,7 @@ libanalyses_la_SOURCES +=	\
              include/analyses/CMS_8TeV/cms_smp_12_006.h src/analyses/CMS_8TeV/cms_smp_12_006.cc \
              include/analyses/CMS_8TeV/cms_sus_12_019.h src/analyses/CMS_8TeV/cms_sus_12_019.cc \
              include/analyses/CMS_8TeV/cms_sus_13_016.h src/analyses/CMS_8TeV/cms_sus_13_016.cc \
-             include/analyses/CMS_8TeV/cms_exo_14_014.h src/analyses/CMS_8TeV/cms_exo_14_014.cc 
+             include/analyses/CMS_8TeV/cms_exo_14_014.h src/analyses/CMS_8TeV/cms_exo_14_014.cc
 # CMS_13TeV
 libanalyses_la_SOURCES +=	\
              include/analyses/CMS_13TeV/cms_pas_sus_15_011.h src/analyses/CMS_13TeV/cms_pas_sus_15_011.cc
@@ -138,14 +138,14 @@ libanalyses_la_SOURCES += include/analyses/ATLAS_13TeV/atlas_1712_02118_ew.h src
 libanalyses_la_SOURCES += include/analyses/ATLAS_13TeV/atlas_1712_02118_strong.h src/analyses/ATLAS_13TeV/atlas_1712_02118_strong.cc
 
 libanalyses_la_SOURCES += include/analyses/ATLAS_13TeV/atlas_susy_2018_04.h src/analyses/ATLAS_13TeV/atlas_susy_2018_04.cc
+libanalyses_la_SOURCES += include/analyses/ATLAS_13TeV/atlas_exot_2018_06.h src/analyses/ATLAS_13TeV/atlas_exot_2018_06.cc
 libanalyses_la_SOURCES += include/analyses/CMS_13TeV/cms_sus_16_032.h src/analyses/CMS_13TeV/cms_sus_16_032.cc
 libanalyses_la_SOURCES += include/analyses/CMS_13TeV/cms_sus_19_005.h src/analyses/CMS_13TeV/cms_sus_19_005.cc
 #@@extraanalysis@@
 
 libanalyses_la_LDFLAGS = -avoid-version -shared
-#-module 
+#-module
 libanalyses_la_LIBADD =  -L@ROOTLIBDIR@ @ROOTGLIBS@ @ROOTLIBS@ -L@DELPHESLIBDIR@ @DELPHESLIBS@
 
 ROOTSYS = @ROOTSYSTEM@:
 LD_RUN_PATH = @ROOTLIBDIR@:@DELPHESLIBDIR@
-

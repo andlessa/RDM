@@ -101,12 +101,11 @@ def RunCheckMate(parserDict):
     logger.debug('CheckMATE error:\n %s \n' %errorMsg)
     logger.debug('CheckMATE output:\n %s \n' %output)
 
-    os.remove(cardFile)
-
     logger.info("Done in %3.2f min" %((time.time()-t0)/60.))
 
     #Remove parton level events:
     if 'cleanUp' in pars and pars['cleanUp'] is True:
+        os.remove(cardFile)
         mg5folder = os.path.join(resultFolder,'mg5amcatnlo')
         if os.path.isdir(mg5folder):
             logger.debug('Removing data from: %s \n' %mg5folder)
