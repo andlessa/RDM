@@ -21,9 +21,9 @@ The following codes must be installed:
   * [MadGraph5](https://launchpad.net/mg5amcnlo/)
   * [ufo2slha](https://github.com/andlessa/ufo2slha)
   * [smodels](https://smodels.github.io/) (optional)
-  * [CheckMATE2](https://checkmate.hepforge.org/)
+  * [CheckMATE3](https://checkmate.hepforge.org/)
 
-The script installer.sh will try to fetch the appropriate tarballs and install them.
+The script installer.sh will try to fetch the appropriate tarballs and install them. The required versions of smodels and ufo2slha are already included in this repository.
 
 
 ### Creating SLHA files ###
@@ -83,8 +83,3 @@ The output is stored in [data/checkmate_BM1.tar.gz](data/checkmate_BM1.tar.gz).
 ## Plotting and Results ##
 
 The exclusion curves for the distinct benchmarks as well as plotting examples are available in the [results](results) folder.
-
-
-
-
-

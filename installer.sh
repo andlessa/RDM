@@ -26,7 +26,7 @@ fi
 
 
 
-madgraph="MG5_aMC_v2.9.2.tar.gz"
+madgraph="MG5_aMC_v2.9.3.tar.gz"
 URL=https://launchpad.net/mg5amcnlo/2.0/2.9.x/+download/$madgraph
 echo -n "Install MadGraph (y/n)? "
 read answer
@@ -37,7 +37,7 @@ if echo "$answer" | grep -iq "^y" ;then
 	rm $madgraph;
 	echo "[installer] replacing MadGraph files with fixes";
     cp ./madgraphfixes/mg5_configuration.txt MG5/input/;
-	echo "[installer] copying model folder to MG5/models";    
+	echo "[installer] copying model folder to MG5/models";
 	cp -r ./Feynrules/LQDM_UFO/ ./MG5/models;
     cp ./madgraphfixes/madgraph_interface.py MG5/madgraph/interface/;
     cp ./madgraphfixes/diagram_generation.py MG5/madgraph/core/;
@@ -68,7 +68,7 @@ fi
 
 #Get pythia tarball
 pythia="pythia8244.tgz"
-URL=http://home.thep.lu.se/~torbjorn/pythia8/$pythia
+URL=https://pythia.org/download/pythia82/$pythia
 echo -n "Install Pythia (y/n)? "
 read answer
 if echo "$answer" | grep -iq "^y" ;then
@@ -91,7 +91,7 @@ echo -n "Install Delphes (y/n)? "
 read answer
 if echo "$answer" | grep -iq "^y" ;then
 	echo "[installer] getting Delphes";
-  git clone --branch 3.4.2 https://github.com/delphes/delphes.git Delphes;
+  git clone --depth 1 --branch 3.4.2 https://github.com/delphes/delphes.git Delphes;
   cd Delphes;
   cp ../Makefile_Delphes ./Makefile;
   export PYTHIA8=$homeDIR/pythia8;
@@ -142,34 +142,34 @@ if echo "$answer" | grep -iq "^y" ;then
   make;
   cd $homeDIR
 fi
-
-
-echo -n "Install MadAnalysis (y/n)? "
-madana=v1.9_beta
-URL=https://code.launchpad.net/~ma5dev/madanalysis5/$madana
-read answer
-if echo "$answer" | grep -iq "^y" ;then
-  echo "[installer] getting MadAnalysis";
-  bzr branch lp:~ma5dev/madanalysis5/v1.9_beta;
-  mv v1.9_beta MadAnalysis5
-  echo "[installer] done";
-fi
-
-
-echo -n "Install CutLang (y/n)? "
-read answer
-if echo "$answer" | grep -iq "^y" ;then
-  echo "[installer] getting CutLang";
-  git clone git@github.com:unelg/CutLang.git CutLang;
-  cd CutLang;
-  cd CLA;
-  echo "[installer] compiling CutLang";  
-  make;
-  cd ..;
-  rm -rf .git;
-  rm -rf ADLLHCanalyses;
-  echo "[installer] getting ADLLHCanalyses";
-  git clone git@github.com:ADL4HEP/ADLLHCanalyses.git ADLLHCanalyses;
-  rm -rf ADLLHCanalyses/.git
-  cd $homeDIR
-fi
+#
+#
+# echo -n "Install MadAnalysis (y/n)? "
+# madana=v1.9_beta
+# URL=https://code.launchpad.net/~ma5dev/madanalysis5/$madana
+# read answer
+# if echo "$answer" | grep -iq "^y" ;then
+#   echo "[installer] getting MadAnalysis";
+#   bzr branch lp:~ma5dev/madanalysis5/v1.9_beta;
+#   mv v1.9_beta MadAnalysis5
+#   echo "[installer] done";
+# fi
+#
+#
+# echo -n "Install CutLang (y/n)? "
+# read answer
+# if echo "$answer" | grep -iq "^y" ;then
+#   echo "[installer] getting CutLang";
+#   git clone git@github.com:unelg/CutLang.git CutLang;
+#   cd CutLang;
+#   cd CLA;
+#   echo "[installer] compiling CutLang";
+#   make;
+#   cd ..;
+#   rm -rf .git;
+#   rm -rf ADLLHCanalyses;
+#   echo "[installer] getting ADLLHCanalyses";
+#   git clone git@github.com:ADL4HEP/ADLLHCanalyses.git ADLLHCanalyses;
+#   rm -rf ADLLHCanalyses/.git
+#   cd $homeDIR
+# fi

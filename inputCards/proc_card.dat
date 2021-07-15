@@ -35,5 +35,5 @@ define l- = e- mu-
 define vl = ve vm vt
 define vl~ = ve~ vm~ vt~
 import model ../../Feynrules/LQDM_UFO
-add process p p > ~chi1 ~chi1~ @ 0
+add process p p > -5000521 5000521 @ 0
 output /home/lessa/RDM/outputDir/MG5_output/proc-LQ 
