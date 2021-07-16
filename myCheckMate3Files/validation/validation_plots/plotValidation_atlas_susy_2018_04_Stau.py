@@ -2,6 +2,7 @@
 
 """Plot validation results."""
 
+
 # %% Imports
 import os,glob
 import pyslha
@@ -51,8 +52,8 @@ for slhaFile in glob.glob(slhaFolder+'/*.slha'):
     recastDataLow.append([mstau,mlsp,data[ilow]])
     recastDataHigh.append([mstau,mlsp,data[ihigh]])
     rData.append([mstau,mlsp,data[ihigh]['robs'][0],data[ilow]['robs'][0]])
-recastDataLow = np.array(recastDataLow)
-recastDataHigh = np.array(recastDataHigh)
+recastDataLow = np.array(recastDataLow,dtype=object)
+recastDataHigh = np.array(recastDataHigh,dtype=object)
 rData = np.array(rData)
 
 # %% Compute relative difference
@@ -66,7 +67,7 @@ for pt in recastDataLow:
     if effOff:
         diff = (pt[2]['eff']-effOff)/effOff
     effsDiffLow.append([pt[0],pt[1],diff])
-effsDiffLow = np.array(effsDiffLow)
+effsDiffLow = np.array(effsDiffLow,dtype=object)
 effsDiffHigh = []
 for pt in recastDataHigh:
     diff = 0.0
@@ -77,7 +78,7 @@ for pt in recastDataHigh:
     if effOff:
         diff = (pt[2]['eff']-effOff)/effOff
     effsDiffHigh.append([pt[0],pt[1],diff])
-effsDiffHigh = np.array(effsDiffHigh)
+effsDiffHigh = np.array(effsDiffHigh,dtype=object)
 
 # %% plot result High mass
 fig, axes = plt.subplots(nrows=1, ncols=2, figsize=(18,8))

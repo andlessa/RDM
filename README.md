@@ -8,7 +8,7 @@ The searches used for obtaining the exclusion curves are:
  * Hadronic MT2 (137/fb): [CMS-SUS-19-005](http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-19-005/index.html)
 
 
-More information about the CheckMATE implementation and validation can be found [here](./myCheckMateFiles/README.md)
+More information about the CheckMATE implementation and validation can be found [here](./myCheckMateFiles3/README.md)
 and more details about the results can be found in [results](./results).
 
 ## Basic Installation ##
