@@ -8,7 +8,7 @@ the covariant matrix for all signal regions.
 """
 
 from simplifiedLikelihoods import Data, UpperLimitComputer
-import sys
+import sys,os
 import numpy as np
 
 
@@ -21,33 +21,42 @@ def getCombinedR(data,cov,orderSRs,deltas_rel=0.):
                  number of expected background events (bkg) for each
                  signal region (sr)
     :param cov: covariace matrix (CovarianceHandler object)
-    :param orderSRs: lists of SR strings in the same order used
-                     for the covariance matrix
+    :param orderSRs: dictionary with the bin labels as keys and the SR labels as values
+                     according to the order defined in the covariance matrix.
     :param deltas_rel: Relative uncertainty for the number of signal events.
 
     :return: Combined r-value (sum(nsig)/ul_combined)
     """
-    nobs = [0]*len(orderSRs)
-    nsig = [0]*len(orderSRs)
-    bg = [0]*len(orderSRs)
+
+    #Get bin order and set the dataset order according to the bin order
+    bins = cov.datasetOrder
+    order = [orderSRs[b] for b in bins]
+
+    nobs = [0]*len(order)
+    nsig = [0]*len(order)
+    bg = [0]*len(order)
     # Get ordered data for the specified SRs
     for pt in data:
-        if not pt['sr'] in orderSRs:
+        if not pt['sr'] in order:
             continue
-        i = orderSRs.index(pt['sr'])
-        nobs[i] = pt['obs']
+        i = order.index(pt['sr'])
+        nobs[i] = int(pt['obs'])
         nsig[i] = pt['s']
         bg[i] = pt['bkg']
 
+    #In case no SRs are found:
+    if sum(nsig) == 0 or sum(bg) == 0:
+        return 0.0,0.0
+
     #Compute the combined upper limit
-    ul = getCombinedUpperLimitFor(nobs, bg, nsig,
+    ulObs,ulExp = getCombinedUpperLimitFor(nobs, bg, nsig,
                     cov.covariance, deltas_rel)
 
     #Compute the new r-value:
-    r = sum(nsig)/ul
+    robs = sum(nsig)/ulObs
+    rexp = sum(nsig)/ulExp
 
-    return r
-
+    return robs,rexp
 
 def getCombinedUpperLimitFor(nobs, bg, nsig, cov, deltas_rel=0.2):
     """
@@ -64,13 +73,16 @@ def getCombinedUpperLimitFor(nobs, bg, nsig, cov, deltas_rel=0.2):
     """
     computer = UpperLimitComputer(ntoys=10000)
 
-    ret = computer.ulSigma(Data(observed=nobs, backgrounds=bg, covariance=cov,
+    ulObs = computer.ulSigma(Data(observed=nobs, backgrounds=bg, covariance=cov,
                                  third_moment=None, nsignal=nsig, deltas_rel=deltas_rel),
                            marginalize=False, expected=False)
 
-    return ret
+    ulExp = computer.ulSigma(Data(observed=nobs, backgrounds=bg, covariance=cov,
+                                 third_moment=None, nsignal=nsig, deltas_rel=deltas_rel),
+                           marginalize=False, expected=True)
 
 
+    return ulObs,ulExp
 
 class CovarianceHandler:
     """Basic class to handle convariance matrices."""
@@ -171,3 +183,89 @@ class CovarianceHandler:
         print( "cannot interpret %s in %s" % \
                         ( histoname, f.name ) )
         sys.exit()
+
+
+def addCombined(filename,analysis,covmatrix,histoname,orderSRs,label='Combined'):
+    """
+    Reads the output from CheckMATE (total_results.txt) and adds one line corresponding to the combined limit
+
+    :param filename: path to the total_resuts.txt file
+    :param analyis: analysis label for which the combined limit will be computed
+    :param covmatrix: path to the covariance matrix (ROOT file)
+    """
+
+
+    if not os.path.isfile(filename):
+        print('File %s not found' %filename)
+        return False
+
+    #Load results
+    data = np.genfromtxt(filename,names=True,
+                dtype=None,encoding=None)
+
+    #Select the desired analysis
+    delete_rows = np.where(data['analysis'] != analysis)
+    if len(delete_rows) == len(data):
+        print("Analysis %s not found in data" %analysis)
+        return False
+    data = np.delete(data,delete_rows,axis=0)
+
+    #Get convariance matrix
+    if not os.path.isfile(covmatrix):
+        print('File %s not found' %covmatrix)
+        return False
+
+    cov = CovarianceHandler(covmatrix, histoname)
+
+    #Compute observed and expected r:
+    robs,rexp = getCombinedR(data,cov,orderSRs, deltas_rel=0.0)
+    robscons = (1.0-1.64*0.2)*robs
+
+    combPt = [0.]*len(data.dtype.names)
+    combPt[data.dtype.names.index('robs')] = robs
+    combPt[data.dtype.names.index('rexp')] = rexp
+    if 'robscons' in data.dtype.names:
+        combPt[data.dtype.names.index('robscons')] = robscons
+    combPt[data.dtype.names.index('analysis')] = analysis
+    combPt[data.dtype.names.index('sr')] = label
+
+    data = np.append(data, np.array([tuple(combPt)], dtype=data.dtype))
+
+    #Add combined result to total_results.txt:
+    analysisSize = str(max([len(pt['analysis']) for pt in data])+2)
+    srsSize = str(max([len(pt['sr']) for pt in data])+2)
+    other = 9
+    header = ''
+    fmt = []
+    for name in data.dtype.names:
+        if name == 'analysis':
+            header += '%-'+analysisSize+'s'
+            fmt.append('%-'+analysisSize+'s')
+        elif name == 'sr':
+            header += '%-'+srsSize+'s'
+            fmt.append('%-'+srsSize+'s')
+        else:
+            l = max(other,len(name))+2
+            header += '%-'+str(l)+'s'
+            fmt.append('%1.3e'+' '*(l-10))
+
+    header = header %data.dtype.names
+
+    np.savetxt(filename,data,header=header,fmt = fmt)
+    return True
+
+
+if __name__ == "__main__":
+
+    filename='../validation_results/cms_sus_16_032/T2bb_1075_850/evaluation/total_results.txt'
+    analysis = 'cms_sus_16_032'
+    orderSRs = {'1' : 'HT_200_MCT_150', '2' : 'HT_200_MCT_250', '3' : 'HT_200_MCT_350', '4' : 'HT_200_MCT_450',
+                '5' : 'HT_500_MCT_150', '6' : 'HT_500_MCT_250', '7' : 'HT_500_MCT_350', '8' : 'HT_500_MCT_450',
+                '9' : 'HT_500_MCT_600', '10' : 'HT_1000_MCT_150', '11' : 'HT_1000_MCT_250', '12' : 'HT_1000_MCT_350',
+                '13' : 'HT_1000_MCT_450', '14' : 'HT_1000_MCT_600', '15' : 'HT_1000_MCT_800'}
+
+    histoname = 'Canvas_1/Cov'
+    covmatrix = './CMS_data/CMS-SUS-16-032_Figure-aux_003.root'
+    label = 'Combined_noncomp'
+
+    addCombined(filename,analysis,covmatrix,histoname,orderSRs,label)

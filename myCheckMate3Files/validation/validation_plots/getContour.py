@@ -16,6 +16,10 @@ def getContour(xpts,ypts,zpts,levels):
     x = copy.deepcopy(xpts)
     y = copy.deepcopy(ypts)
     z = copy.deepcopy(zpts)
+    if max([len(x),len(y),len(z)]) != min([len(x),len(y),len(z)]):
+        print('Error: input arrays must have the same length (x has %i entries, y has %i entries and z has %i entries)' %(len(x),len(y),len(z)))
+        return []
+
     CS = plt.tricontour(x,y,z,levels=levels)
     levelPts = {}
     for il,level in enumerate(CS.levels):

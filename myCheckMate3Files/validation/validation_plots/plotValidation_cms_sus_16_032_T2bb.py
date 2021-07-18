@@ -43,11 +43,12 @@ for slhaFile in glob.glob(slhaFolder+'/T2bb*.slha'):
     ibest = np.argmax(data['rexp'])
     bestSR = data['sr'][ibest]
     robs = data['robs'][ibest]
-    robscons = (1.0-1.64*0.2)*robs
+    robscons = data['robscons'][ibest]
     recastData.append([msb,mlsp,robs,robscons])
     srRecast.append([msb,mlsp,bestSR])
 
 recastData = np.array(recastData)
+
 
 ## %% Get exclusion contours for combined results (signal +- 20%)
 contours = getContour(recastData[:,0],recastData[:,1],recastData[:,2],levels=[0.8,1.0,1.2])
@@ -62,12 +63,13 @@ for level,curves in contours.items():
     if level != 1.0: continue
     for i,curve in enumerate(curves):
         if i == 0:
-            plt.plot(curve[:,0],curve[:,1],label='Recast (r = %s)' %str(level),
+            p = plt.plot(curve[:,0],curve[:,1],label='Recast (r = %s)' %str(level),
                 linestyle='--',linewidth=4)
+            color = p[0].get_color()
         else:
             # continue
             plt.plot(curve[:,0],curve[:,1],
-                linestyle='--',linewidth=4)
+                linestyle='--',linewidth=4,color=color)
 plt.plot(offCurve['msb'],offCurve['mlsp'],linewidth=4,
             color='black',label='CMS-SUS-16-032')
 plt.xlabel(r'$m_{\tilde{b}}$ (GeV)')
@@ -105,7 +107,7 @@ for slhaFile in glob.glob(slhaFolder+'/T2bb*.slha'):
     ibest = np.argmax(data['rexp'])
     bestSR = data['sr'][ibest]
     robs = data['robs'][ibest]
-    robscons = (1.0-1.64*0.2)*robs
+    robscons = data['robscons'][ibest]
     recastDataTrim.append([msb,mlsp,robs,robscons])
     srRecastTrim.append([msb,mlsp,bestSR])
 
