@@ -43,9 +43,13 @@ for slhaFile in glob.glob(slhaFolder+'/T2tt*.slha'):
     ibest = np.argmax(data['rexp'])
     bestSR = data['sr'][ibest]
     robs = data['robs'][ibest]
-    recastData.append([mst,mlsp,robs])
+    robscons = data['robscons'][ibest]
+    recastData.append([mst,mlsp,robs,robscons])
 
 recastData = np.array(recastData)
+
+## %%
+print(recastData.shape)
 
 ## %% Get exclusion contours for combined results (signal +- 20%)
 contours = getContour(recastData[:,0],recastData[:,1],recastData[:,2],levels=[0.8,1.0,1.2])

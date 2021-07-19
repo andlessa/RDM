@@ -8,10 +8,28 @@ import tarfile
 import itertools
 
 
-txname = "T1"
+txname = "T2bb_comp"
+
+if txname == "T2bb_comp":
+    sb_masses = np.linspace(300.,600.,31)
+    deltam = np.linspace(5.,40.0,8)
+    template = 'T2bb_900.slha'
+    ftemplate = open(template, 'r')
+    data = ftemplate.readlines()
+    ftemplate.close()
+    slhaFolder = './validation_slha/'
+    for msb in sb_masses:
+        for dm in deltam:
+            mlsp = max(10,msb - dm)
+            newfile = os.path.join(slhaFolder,'T2bbcomp_%i_%i.slha' %(int(msb),int(mlsp)))
+            with open(newfile,'w') as fnew:
+                data[53] = '      1000005 %1.6e # ~b_1\n' %msb
+                data[67] = '      1000022 %1.6e # ~chi_10\n' %mlsp
+                for l in data:
+                    fnew.write(l)
 
 
-if txname == "T2bb":
+if "T2bb" in txname:
     T2bbf = open('/home/lessa/smodels-database/13TeV/CMS/CMS-SUS-16-032/data/T2bb.txt','r')
     T2bb = eval(T2bbf.read().split("upperLimits:")[-1],{'GeV':1.0,'fb':1.0,'pb' : 1e3})
     T2bbf.close()

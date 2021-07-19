@@ -68,15 +68,15 @@ for slhaFile in glob.glob(slhaFolder+'/T2bb*.slha'):
 
 recastData = np.array(recastData)
 
-#### --------------------Best SR:
-## %% Get exclusion contours for combined results (signal +- 20%)
-contours = getContour(recastData[:,0],recastData[:,1],recastData[:,2],levels=[0.8,1.0,1.2])
+##  %% --------------------Best SR:
+## Get exclusion contours for combined results (signal +- 20%)
+contours = getContour(recastData[:,0],recastData[:,1],recastData[:,3],levels=[0.8,1.0,1.2])
 
 
 # %% plot result
 fig = plt.figure(figsize=(12,8))
 ax = plt.scatter(recastData[:,0],recastData[:,1],
-    c=recastData[:,2],cmap=cm,vmin=0.0,vmax=2.0,s=70)
+    c=recastData[:,3],cmap=cm,vmin=0.0,vmax=2.0,s=70)
 cb = plt.colorbar(ax)
 for level,curves in contours.items():
     if level != 1.0: continue
@@ -100,13 +100,12 @@ plt.ylabel(r'$m_{\tilde{\chi}_1^0}$ (GeV)')
 cb.set_label("r")
 plt.legend()
 plt.title(r'$\tilde{b} \tilde{b}, \tilde{b} \to b + \tilde{\chi}_1^0$ (Best SR Exclusion)')
-plt.savefig("cms_sus_16_032_T2bb.png")
+plt.savefig("cms_sus_16_032_T2bb_best.png")
 plt.show()
 
 
-
-#### --------------------Combined SR:
-## %% Get exclusion contours for combined results (signal +- 20%)
+## %% --------------------Combined SR:
+## Get exclusion contours for combined results (signal +- 20%)
 contours = getContour(recastData[:,0],recastData[:,1],recastData[:,5],levels=[0.8,1.0,1.2])
 
 

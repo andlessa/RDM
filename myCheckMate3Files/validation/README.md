@@ -8,9 +8,9 @@ while the CheckMATE output for each file/analysis is stored in [validation_resul
 The main steering cards for running CheckMATE (using [runCheckMateScan.py](../../runCheckMateScan.py) )
 are:
 
- * [validation_atlas_susy_2018_04.dat](validation_atlas_susy_2018_04.dat)
- * [validation_cms_sus_16_032.dat](validation_cms_sus_16_032.dat)
- * [validation_cms_sus_19_005.dat](validation_cms_sus_19_005.dat)
+ * [validation_atlas_susy_2018_04.ini](validation_atlas_susy_2018_04.ini)
+ * [validation_cms_sus_16_032.ini](validation_cms_sus_16_032.ini)
+ * [validation_cms_sus_19_005.ini](validation_cms_sus_19_005.ini)
 
 The CMS-SUS-16-32 analysis provided the covariance matrices (see [CMS_data](./validation_plots/CMS_data)), which are used
 for computing the exclusion curve in the validation plots.
@@ -29,7 +29,7 @@ using the data stored in [validation_slha.tar.gz](./validation_slha.tar.gz) and 
 
 * CMS-SUS-16-032:
 
-![Alt text](validation_plots/cms_sus_16_032_Stop.png?raw=true "Validation Plot")
+![Alt text](validation_plots/cms_sus_16_032_T2cc.png?raw=true "Validation Plot")
 
 ![Alt text](validation_plots/cms_sus_16_032_T2bb.png?raw=true "Validation Plot")
 
@@ -43,4 +43,3 @@ using the data stored in [validation_slha.tar.gz](./validation_slha.tar.gz) and 
 ![Alt text](validation_plots/cms_sus_19_005_T2cc.png?raw=true "Validation Plot")
 
 ![Alt text](validation_plots/cms_sus_19_005_T1.png?raw=true "Validation Plot")
-

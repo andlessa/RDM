@@ -42,7 +42,8 @@ for slhaFile in glob.glob(slhaFolder+'T2cc*.slha'):
     ibest = np.argmax(data['rexp'])
     bestSR = data['sr'][ibest]
     robs = data['robs'][ibest]
-    recastData.append([mst,mlsp,robs])
+    robscons = data['robscons'][ibest]
+    recastData.append([mst,mlsp,robs,robscons])
 
 recastData = np.array(recastData)
 

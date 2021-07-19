@@ -185,13 +185,17 @@ class CovarianceHandler:
         sys.exit()
 
 
-def addCombined(filename,analysis,covmatrix,histoname,orderSRs,label='Combined'):
+def addCombined(filename,analysis,covmatrix,histoname,orderSRs,label='Combined',write=True):
     """
     Reads the output from CheckMATE (total_results.txt) and adds one line corresponding to the combined limit
 
     :param filename: path to the total_resuts.txt file
     :param analyis: analysis label for which the combined limit will be computed
     :param covmatrix: path to the covariance matrix (ROOT file)
+    :param histoname: name of the covariance matrix histogram in the ROOT file
+    :param orderSRs: dictionary with the covariance matrix bin label as keys and SR label as values
+    :param label: label for the combined SR
+    :param write: if True, add result to the input file.
     """
 
 
@@ -219,9 +223,8 @@ def addCombined(filename,analysis,covmatrix,histoname,orderSRs,label='Combined')
 
     #Compute observed and expected r:
     robs,rexp = getCombinedR(data,cov,orderSRs, deltas_rel=0.0)
-    robscons,_ = getCombinedR(data,cov,orderSRs, deltas_rel=0.8)
-    # robscons = (1.0-1.64*0.2)*robs
-    print(robs,rexp,robscons)
+    # robscons,_ = getCombinedR(data,cov,orderSRs, deltas_rel=0.8) #Does not work!
+    robscons = (1.0-1.64*0.2)*robs
 
 
     combPt = [0.]*len(data.dtype.names)
@@ -284,4 +287,4 @@ if __name__ == "__main__":
     covmatrix = './CMS_data/CMS-SUS-16-032_Figure-aux_004.root'
     label = 'Combined_comp'
 
-    addCombined(filename,analysis,covmatrix,histoname,orderSRs,label)
+    addCombined(filename,analysis,covmatrix,histoname,orderSRs,label,write=False)

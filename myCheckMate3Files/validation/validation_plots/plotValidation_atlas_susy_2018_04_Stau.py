@@ -51,7 +51,8 @@ for slhaFile in glob.glob(slhaFolder+'/*.slha'):
     ihigh = np.where(data['sr'] == 'SR-highMass')[0]
     recastDataLow.append([mstau,mlsp,data[ilow]])
     recastDataHigh.append([mstau,mlsp,data[ihigh]])
-    rData.append([mstau,mlsp,data[ihigh]['robs'][0],data[ilow]['robs'][0]])
+    rData.append([mstau,mlsp,data[ihigh]['robs'][0],data[ilow]['robs'][0],
+                    data[ihigh]['robscons'][0],data[ilow]['robscons'][0]])
 recastDataLow = np.array(recastDataLow,dtype=object)
 recastDataHigh = np.array(recastDataHigh,dtype=object)
 rData = np.array(rData)
