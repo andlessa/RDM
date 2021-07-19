@@ -219,7 +219,10 @@ def addCombined(filename,analysis,covmatrix,histoname,orderSRs,label='Combined')
 
     #Compute observed and expected r:
     robs,rexp = getCombinedR(data,cov,orderSRs, deltas_rel=0.0)
-    robscons = (1.0-1.64*0.2)*robs
+    robscons,_ = getCombinedR(data,cov,orderSRs, deltas_rel=0.8)
+    # robscons = (1.0-1.64*0.2)*robs
+    print(robs,rexp,robscons)
+
 
     combPt = [0.]*len(data.dtype.names)
     combPt[data.dtype.names.index('robs')] = robs
@@ -257,7 +260,7 @@ def addCombined(filename,analysis,covmatrix,histoname,orderSRs,label='Combined')
 
 if __name__ == "__main__":
 
-    filename='../validation_results/cms_sus_16_032/T2bb_1075_850/evaluation/total_results.txt'
+    filename='./total_results.txt'
     analysis = 'cms_sus_16_032'
     orderSRs = {'1' : 'HT_200_MCT_150', '2' : 'HT_200_MCT_250', '3' : 'HT_200_MCT_350', '4' : 'HT_200_MCT_450',
                 '5' : 'HT_500_MCT_150', '6' : 'HT_500_MCT_250', '7' : 'HT_500_MCT_350', '8' : 'HT_500_MCT_450',
@@ -267,5 +270,18 @@ if __name__ == "__main__":
     histoname = 'Canvas_1/Cov'
     covmatrix = './CMS_data/CMS-SUS-16-032_Figure-aux_003.root'
     label = 'Combined_noncomp'
+
+    addCombined(filename,analysis,covmatrix,histoname,orderSRs,label)
+
+    orderSRs = {'1' : '1b_ETmiss_250', '2' : '1b_ETmiss_300', '3' : '1b_ETmiss_500', '4' : '1b_ETmiss_750', '5' : '1b_ETmiss_1000',
+     '6' : '2b_ETmiss_250', '7' : '2b_ETmiss_250_HT_100', '8' : '2b_ETmiss_300', '9' : '2b_ETmiss_300_HT_100', '10' : '2b_ETmiss_500', '11' : '2b_ETmiss_500_HT_100',
+     '12' : '1c_ETmiss_250', '13' : '1c_ETmiss_300', '14' : '1c_ETmiss_500', '15' : '1c_ETmiss_750', '16' : '1c_ETmiss_1000',
+     '17' : '2c_ETmiss_250', '18' : '2c_ETmiss_250_HT_100', '19' : '2c_ETmiss_300', '20' : '2c_ETmiss_300_HT_100', '21' : '2c_ETmiss_500', '22' : '2c_ETmiss_500_HT_100', '23' : '2c_ETmiss_750', '24' : '2c_ETmiss_750_HT_100',
+     '25' : 'NSV_ETmiss_250', '26' : 'NSV_ETmiss_300', '27' : 'NSV_ETmiss_500', '28' : 'NSV_ETmiss_750', '29' : 'NSV_ETmiss_1000',
+     '30' : '0b_ETmiss_300', '31' : '0b_ETmiss_500', '32' : '0b_ETmiss_750', '33' : '0b_ETmiss_1000', '34' : '0b_ETmiss_1250'}
+    #File and histogram containing the covariance matrix
+    histoname = 'Canvas_1/Cov'
+    covmatrix = './CMS_data/CMS-SUS-16-032_Figure-aux_004.root'
+    label = 'Combined_comp'
 
     addCombined(filename,analysis,covmatrix,histoname,orderSRs,label)

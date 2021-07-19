@@ -26,14 +26,25 @@ covmatrix = './CMS_data/CMS-SUS-16-032_Figure-aux_003.root'
 label = 'Combined_noncomp'
 
 
-# %% Loop over files and add the combination for the non-compressed SRs
+# %% Get all filenames:
 folder = '../validation_results/cms_sus_16_032/'
+filenames = []
 for subdir in os.listdir(folder):
     filename = os.path.abspath(os.path.join(folder,subdir,'evaluation','total_results.txt'))
     if not os.path.isfile(filename):
         print('File %s not found' %filename)
         continue
-    addCombined(filename,analysis,covmatrix,histoname,orderSRs,label)
+    filenames.append(filename)
+filenames = sorted(filenames)
+
+# %% Loop over files and add the combination for the non-compressed SRs
+icount = 0
+itot = len(filenames)
+for f in filenames:
+    addCombined(f,analysis,covmatrix,histoname,orderSRs,label)
+    icount += 1
+    if (100*icount/float(itot)) > 1 and not int(100*icount/float(itot))%10:
+        print('%1.1f%% of files done' %(100*icount/float(itot)))
 
 
 
@@ -43,7 +54,7 @@ orderSRs = {'1' : '1b_ETmiss_250', '2' : '1b_ETmiss_300', '3' : '1b_ETmiss_500',
  '6' : '2b_ETmiss_250', '7' : '2b_ETmiss_250_HT_100', '8' : '2b_ETmiss_300', '9' : '2b_ETmiss_300_HT_100', '10' : '2b_ETmiss_500', '11' : '2b_ETmiss_500_HT_100',
  '12' : '1c_ETmiss_250', '13' : '1c_ETmiss_300', '14' : '1c_ETmiss_500', '15' : '1c_ETmiss_750', '16' : '1c_ETmiss_1000',
  '17' : '2c_ETmiss_250', '18' : '2c_ETmiss_250_HT_100', '19' : '2c_ETmiss_300', '20' : '2c_ETmiss_300_HT_100', '21' : '2c_ETmiss_500', '22' : '2c_ETmiss_500_HT_100', '23' : '2c_ETmiss_750', '24' : '2c_ETmiss_750_HT_100',
- '25' : 'NSV_ETmiss_250', '26' 'NSV_ETmiss_300': , '27' : 'NSV_ETmiss_500', '28' : 'NSV_ETmiss_750', '29' : 'NSV_ETmiss_1000',
+ '25' : 'NSV_ETmiss_250', '26' : 'NSV_ETmiss_300', '27' : 'NSV_ETmiss_500', '28' : 'NSV_ETmiss_750', '29' : 'NSV_ETmiss_1000',
  '30' : '0b_ETmiss_300', '31' : '0b_ETmiss_500', '32' : '0b_ETmiss_750', '33' : '0b_ETmiss_1000', '34' : '0b_ETmiss_1250'}
 #File and histogram containing the covariance matrix
 histoname = 'Canvas_1/Cov'
@@ -51,11 +62,11 @@ covmatrix = './CMS_data/CMS-SUS-16-032_Figure-aux_004.root'
 label = 'Combined_comp'
 
 
-# %% Loop over files and add the combination for the non-compressed SRs
-folder = '../validation_results/cms_sus_16_032/'
-for subdir in os.listdir(folder):
-    filename = os.path.abspath(os.path.join(folder,subdir,'evaluation','total_results.txt'))
-    if not os.path.isfile(filename):
-        print('File %s not found' %filename)
-        continue
-    addCombined(filename,analysis,covmatrix,histoname,orderSRs,label)
+# %% Loop over files and add the combination for the compressed SRs
+icount = 0
+itot = len(filenames)
+for f in filenames:
+    addCombined(f,analysis,covmatrix,histoname,orderSRs,label)
+    icount += 1
+    if not int(100*icount/float(itot))%100:
+        print('%1.1f%% of files done' %(100*icount/float(itot)))
