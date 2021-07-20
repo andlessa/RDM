@@ -61,11 +61,11 @@ for level,curves in contours.items():
     if level != 1.0: continue
     for i,curve in enumerate(curves):
         if i == 0:
-            plt.plot(curve[:,0],curve[:,1],label='Recast (r = %s)' %str(level),
+            p = plt.plot(curve[:,0],curve[:,1],label='Recast (r = %s)' %str(level),
                 linestyle='--',linewidth=4)
         else:
             plt.plot(curve[:,0],curve[:,1],
-                linestyle='--',linewidth=4)
+                linestyle='--',linewidth=4,color=p[0].get_color())
 plt.plot(offCurve['msb'],offCurve['mlsp'],linewidth=4,
             color='black',label='CMS-SUS-19-005')
 plt.xlabel(r'$m_{\tilde{b}}$ (GeV)')

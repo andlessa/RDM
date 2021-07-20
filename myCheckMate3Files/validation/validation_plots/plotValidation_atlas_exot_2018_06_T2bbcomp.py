@@ -19,19 +19,18 @@ sns.set_context('paper', font_scale=1.8)
 cm = plt.cm.get_cmap('RdYlBu')
 
 # %% Load data
-offCurve = np.genfromtxt('./CMS_data/CMS-SUS-19-005_Figure_013-c.csv',
+offCurve = np.genfromtxt('./ATLAS_data/ATLAS-EXOT-2018-06_fig_08a.csv',
                         delimiter=',', names=['mst','mlsp'])
 
 # %% Get data from CheckMate results
-resultFolder = '../validation_results/cms_sus_19_005'
+resultFolder = '../validation_results/atlas_exot_2018_06'
 slhaFolder = '../validation_slha/'
 recastData = []
 srRecast = []
-for slhaFile in glob.glob(slhaFolder+'/T2tt*.slha'):
+for slhaFile in glob.glob(slhaFolder+'T2bbcomp*.slha'):
     slhaData = pyslha.readSLHAFile(slhaFile)
-    mst = slhaData.blocks['MASS'][1000006]
+    msb = slhaData.blocks['MASS'][1000005]
     mlsp = slhaData.blocks['MASS'][1000022]
-    if (mst-mlsp) < 175.0: continue
     resDir = os.path.splitext(os.path.basename(slhaFile))[0]
     resFile = os.path.join(resultFolder,resDir,'evaluation',
                 'total_results.txt')
@@ -44,10 +43,9 @@ for slhaFile in glob.glob(slhaFolder+'/T2tt*.slha'):
     bestSR = data['sr'][ibest]
     robs = data['robs'][ibest]
     robscons = data['robscons'][ibest]
-    recastData.append([mst,mlsp,robs,robscons])
+    recastData.append([msb,mlsp,robs,robscons])
 
 recastData = np.array(recastData)
-
 
 ## %% Get exclusion contours for combined results (signal +- 20%)
 contours = getContour(recastData[:,0],recastData[:,1],recastData[:,2],levels=[0.8,1.0,1.2])
@@ -62,15 +60,14 @@ for level,curves in contours.items():
     if level != 1.0: continue
     for i,curve in enumerate(curves):
         if i == 0:
-            p = plt.plot(curve[:,0],curve[:,1],label='Recast (r = %s)' %str(level),
+            plt.plot(curve[:,0],curve[:,1],label='Recast (r = %s)' %str(level),
                 linestyle='--',linewidth=4)
         else:
             plt.plot(curve[:,0],curve[:,1],
-                linestyle='--',linewidth=4,color=p[0].get_color())
-
-plt.plot(offCurve['mst'],offCurve['mlsp'],linewidth=4,
-            color='black',label='CMS-SUS-19-005')
-plt.xlabel(r'$m_{\tilde{t}}$ (GeV)')
+                linestyle='--',linewidth=4)
+plt.plot(offCurve['msb'],offCurve['mlsp'],linewidth=4,
+            color='black',label='ATLAS-EXOT-2018-06')
+plt.xlabel(r'$m_{\tilde{b}}$ (GeV)')
 plt.ylabel(r'$m_{\tilde{\chi}_1^0}$ (GeV)')
 # for pt in recastData:
     # if pt[2] < 1.0:
@@ -78,6 +75,6 @@ plt.ylabel(r'$m_{\tilde{\chi}_1^0}$ (GeV)')
                     # fontsize=10)
 cb.set_label("r")
 plt.legend()
-plt.title(r'$\tilde{t} \tilde{t}, \tilde{t} \to t + \tilde{\chi}_1^0$ (Best SR Exclusion)')
-plt.savefig("cms_sus_19_005_T2tt.png")
+plt.title(r'$\tilde{t} \tilde{b}, \tilde{b} \to b + \tilde{\chi}_1^0$ (Best SR Exclusion)')
+plt.savefig("atlas_exot_2018_06_T2cc.png")
 plt.show()
