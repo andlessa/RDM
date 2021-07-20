@@ -20,7 +20,7 @@ cm = plt.cm.get_cmap('RdYlBu')
 
 # %% Load data
 offCurve = np.genfromtxt('./ATLAS_data/ATLAS-EXOT-2018-06_fig_08a.csv',
-                        delimiter=',', names=['mst','mlsp'])
+                        delimiter=',', names=['msb','mlsp'])
 
 # %% Get data from CheckMate results
 resultFolder = '../validation_results/atlas_exot_2018_06'
@@ -76,5 +76,5 @@ plt.ylabel(r'$m_{\tilde{\chi}_1^0}$ (GeV)')
 cb.set_label("r")
 plt.legend()
 plt.title(r'$\tilde{t} \tilde{b}, \tilde{b} \to b + \tilde{\chi}_1^0$ (Best SR Exclusion)')
-plt.savefig("atlas_exot_2018_06_T2cc.png")
+plt.savefig("atlas_exot_2018_06_T2bb.png")
 plt.show()
