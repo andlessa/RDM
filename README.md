@@ -45,19 +45,22 @@ The topologies from &chi;<sub>1</sub> production and decay are not present in SM
 However this requires modifying the SLHA files so the decay entries for  &chi;<sub>1</sub> -> &chi;<sub>0</sub> + b  + &nu; do not include the neutrino.
 This can be done running [data/fixForSModelS.py](data/fixForSModelS.py) over the folder of original SLHA files.
 
+In order to obtain the SModelS results for the modified files run (in the [./smodels](./smodels) folder):
 
-### Sbottom Analysis (CheckMATE) ###
+```
+./runSModelS.py -p ../smodels_parameters.ini -f <input_folder> -o <output_folder>
+```
 
-The results for the BM2 benchmark using CheckMATE can be obtained running CheckMATE over the set of BM2 SLHA files
-[data/slha_BM2.tar.gz](data/slha_BM2.tar.gz):
 
-The results for the tau + MET analysis can be obtained running CheckMATE2. The code
+### CheckMATE ###
+
+The results using CheckMATE can be obtained running
 
 ```
 ./runCheckMateScan.py -p <parameter_file>
 ```
+where an example of the parameter_file can be found in [checkmate_parameters.ini](checkmate_parameters.ini).
 
-The output is stored in [data/checkmate_BM2.tar.gz](data/checkmate_BM2.tar.gz).
 The result for the combination of signal regions for the  [CMS-SUS-16-032](http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-032/index.html)
 analysis can be obtained running:
 
