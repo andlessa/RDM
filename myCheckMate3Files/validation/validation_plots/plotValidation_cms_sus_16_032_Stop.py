@@ -91,7 +91,7 @@ cb = plt.colorbar(ax)
         # plt.annotate('%1.1f'%pt[2],(pt[0],pt[1]),
                     # fontsize=10)
 cb.set_label("r")
-plt.title(r'$\tilde{t} \tilde{t}, \tilde{t} \to c + \tilde{\chi}_1^0$ (Best Exclusion)')
+plt.title(r'$\tilde{t} \tilde{t}, \tilde{t} \to c + \tilde{\chi}_1^0$ (Best Exclusion, $r_{cons}$)')
 plt.savefig("cms_sus_16_032_T2cc_best.png")
 plt.show()
 
@@ -120,6 +120,6 @@ cb = plt.colorbar(ax)
         # plt.annotate('%1.1f'%pt[2],(pt[0],pt[1]),
                     # fontsize=10)
 cb.set_label("r")
-plt.title(r'$\tilde{t} \tilde{t}, \tilde{t} \to c + \tilde{\chi}_1^0$ (Combined Exclusion)')
+plt.title(r'$\tilde{t} \tilde{t}, \tilde{t} \to c + \tilde{\chi}_1^0$ (Combined Exclusion, $r_{cons}$)')
 plt.savefig("cms_sus_16_032_T2cc.png")
 plt.show()
