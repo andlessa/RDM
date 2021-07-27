@@ -1,0 +1,90 @@
+#: table_doi: 10.17182/hepdata.86565.v1/t17
+#: name: Table 16
+#: description: Acceptance x efficiency, acceptance and efficiency for the full range of simulated masses in the MS-agnostic R-hadron search.
+#: data_file: data16.yaml
+#: data_license:   
+#: keyword reactions: P P --> GLUINO GLUINO | P P --> SBOTTOM+ SBOTTOM- | P P --> STOP+ STOP-
+#: keyword observables: ACC | EFF
+#: keyword phrases: Proton-Proton Scattering | Supersymmetry | SUSY | LLP
+#: keyword cmenergies: 13000.0
+#: SQRT(S) [GEV],13000.0
+PARTICLE,SIMULATED MASS [GEV],ACC X EFF,error +,error -
+gluino,400,0.044,0.003,-0.003
+gluino,600,0.086,0.004,-0.004
+gluino,800,0.106,0.005,-0.005
+gluino,1000,0.114,0.005,-0.005
+gluino,1200,0.129,0.006,-0.006
+gluino,1400,0.148,0.007,-0.007
+gluino,1600,0.143,0.007,-0.007
+gluino,1800,0.134,0.007,-0.007
+gluino,2000,0.126,0.006,-0.006
+gluino,2200,0.114,0.004,-0.004
+gluino,2400,0.106,0.004,-0.004
+gluino,2600,0.101,0.004,-0.004
+gluino,2800,0.090,0.004,-0.004
+gluino,3000,0.090,0.004,-0.004
+sbottom,600,0.063,0.003,-0.003
+sbottom,800,0.083,0.004,-0.004
+sbottom,1000,0.087,0.004,-0.004
+sbottom,1200,0.093,0.004,-0.004
+sbottom,1400,0.093,0.004,-0.004
+stop,600,0.095,0.005,-0.005
+stop,800,0.117,0.005,-0.005
+stop,1000,0.128,0.005,-0.005
+stop,1200,0.139,0.005,-0.005
+stop,1400,0.146,0.005,-0.005
+
+#: SQRT(S) [GEV],13000.0
+PARTICLE,SIMULATED MASS [GEV],ACC,error +,error -
+gluino,400,0.43,0.01,-0.01
+gluino,600,0.50,0.01,-0.01
+gluino,800,0.52,0.01,-0.01
+gluino,1000,0.53,0.01,-0.01
+gluino,1200,0.55,0.01,-0.01
+gluino,1400,0.56,0.01,-0.01
+gluino,1600,0.55,0.01,-0.01
+gluino,1800,0.56,0.01,-0.01
+gluino,2000,0.56,0.01,-0.01
+gluino,2200,0.57,0.01,-0.01
+gluino,2400,0.55,0.01,-0.01
+gluino,2600,0.58,0.01,-0.01
+gluino,2800,0.56,0.01,-0.01
+gluino,3000,0.56,0.01,-0.01
+sbottom,600,0.48,0.01,-0.01
+sbottom,800,0.52,0.01,-0.01
+sbottom,1000,0.55,0.01,-0.01
+sbottom,1200,0.55,0.01,-0.01
+sbottom,1400,0.57,0.01,-0.01
+stop,600,0.58,0.01,-0.01
+stop,800,0.63,0.01,-0.01
+stop,1000,0.66,0.01,-0.01
+stop,1200,0.68,0.01,-0.01
+stop,1400,0.70,0.01,-0.01
+
+#: SQRT(S) [GEV],13000.0
+PARTICLE,SIMULATED MASS [GEV],EFF,error +,error -
+gluino,400,0.102,0.007,-0.007
+gluino,600,0.173,0.009,-0.009
+gluino,800,0.20,0.01,-0.01
+gluino,1000,0.21,0.01,-0.01
+gluino,1200,0.24,0.01,-0.01
+gluino,1400,0.26,0.01,-0.01
+gluino,1600,0.26,0.01,-0.01
+gluino,1800,0.24,0.01,-0.01
+gluino,2000,0.22,0.01,-0.01
+gluino,2200,0.198,0.008,-0.008
+gluino,2400,0.193,0.008,-0.008
+gluino,2600,0.175,0.008,-0.008
+gluino,2800,0.161,0.008,-0.008
+gluino,3000,0.160,0.008,-0.008
+sbottom,600,0.131,0.007,-0.007
+sbottom,800,0.160,0.009,-0.009
+sbottom,1000,0.159,0.008,-0.008
+sbottom,1200,0.168,0.008,-0.008
+sbottom,1400,0.164,0.008,-0.008
+stop,600,0.164,0.009,-0.009
+stop,800,0.186,0.009,-0.009
+stop,1000,0.194,0.008,-0.008
+stop,1200,0.206,0.008,-0.008
+stop,1400,0.209,0.008,-0.008
+

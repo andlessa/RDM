@@ -1,0 +1,13 @@
+id: CMS-EXO-19-001
+sqrts: 13*TeV
+lumi: 137.0/fb
+prettyName: displaced vertices
+url: http://cms-results.web.cern.ch/cms-results/public-results/publications/EXO-19-001/index.html
+arxiv: http://arxiv.org/abs/1906.06441
+publication: http://arxiv.org/abs/1906.06441.pdf
+contact: CMS collaboration
+comment: Search for displaced jets plust MET. The data was digitized from the figures in the publication.
+type: displaced
+private: False
+implementedBy: Andre Lessa
+lastUpdate: 2021/1/11
