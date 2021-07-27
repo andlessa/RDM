@@ -219,7 +219,7 @@ def addCombined(filename,analysis,covmatrix,histoname,orderSRs,label='Combined',
         print('File %s not found' %covmatrix)
         return False
 
-    cov = CovarianceHandler(covmatrix, histoname)
+    cov = CovarianceHandler(covmatrix, histoname, triangular=True)
 
     #Compute observed and expected r:
     robs,rexp = getCombinedR(data,cov,orderSRs, deltas_rel=0.0)
