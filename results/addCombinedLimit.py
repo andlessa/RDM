@@ -69,6 +69,9 @@ def addCombinedRTo(checkmateOutput,deltas_rel=0.2):
     data = np.delete(data,np.where((data['analysis'] == 'cms_sus_16_032') & (data['sr'] == 'Combined_comp')))
     data = np.delete(data,np.where((data['analysis'] == 'cms_sus_16_032') & (data['sr'] == 'Combined_noncomp')))
     cmsData = data[np.where(data['analysis'] == 'cms_sus_16_032')]
+    # If the analysis is not found, return
+    if len(cmsData) == 0:
+        return False
 
     #Add combination of non-compressed signal regions:
     cov = covNC
@@ -90,9 +93,9 @@ def addCombinedRTo(checkmateOutput,deltas_rel=0.2):
 
 
     ilast = max([i for i,pt in enumerate(data) if pt['analysis'] == 'cms_sus_16_032'])
-    pt_NC = cmsData[ilast].copy()
-    pt_C = cmsData[ilast].copy()
-    for name in cmsData.dtype.names:
+    pt_NC = data[ilast].copy()
+    pt_C = data[ilast].copy()
+    for name in data.dtype.names:
         if name == 'sr':
             pt_NC[name] = 'Combined_noncomp'
             pt_C[name]= 'Combined_comp'
