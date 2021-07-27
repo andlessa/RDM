@@ -48,6 +48,6 @@ using the data stored in [validation_slha.tar.gz](./validation_slha.tar.gz) and 
 * ATLAS-EXOT-2018-06:
 
 
-![Alt text](validation_plots/atlas_exot_2018_06_T2bbcomp.png?raw=true "Validation Plot")
+![Alt text](validation_plots/atlas_exot_2018_06_T2bb.png?raw=true "Validation Plot")
 
 ![Alt text](validation_plots/atlas_exot_2018_06_T2cc.png?raw=true "Validation Plot")

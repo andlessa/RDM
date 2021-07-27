@@ -1,6 +1,6 @@
 # RDM: Dark Matter and R<sub>D anomalies
 
-This branch holds the main code for obtaining the constraints for the RDM Les Houches 2019 project.
+This branch holds the main code for obtaining the constraints for the RDM 2021 paper.
 The searches used for obtaining the exclusion curves are:
 
  * Hadronic taus plus MET (139/fb) : [ATLAS-SUSY-2018-04](https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2018-04/)
@@ -39,11 +39,12 @@ The parameter file sets the parameters to be used and looped over.
 
 ## Running ##
 
-### Sbottom Analysis (SModelS) ###
+### SModelS ###
 
-The results for the BM2 benchmark using SModelS can be obtained running smodels over the set of modified files
-[data/smodels_slha_BM2.tar.gz](data/smodels_slha_BM2.tar.gz), where the chi1->b+nu+chi0 decay is artificially modified to chi1->b+chi0, so the T2bb resutls can be used.
-The output is stored in [data/smodels_output_BM2.tar.gz](data/smodels_output_BM2.tar.gz)
+The topologies from &chi;<sub>1</sub> production and decay are not present in SModelS. However, the  &chi;<sub>1</sub> decay to &chi;<sub>0</sub> + b  + &nu; can be approximated by a T2bb topology (sbottom production and decay to b + MET).
+However this requires modifying the SLHA files so the decay entries for  &chi;<sub>1</sub> -> &chi;<sub>0</sub> + b  + &nu; do not include the neutrino.
+This can be done running [data/fixForSModelS.py](data/fixForSModelS.py) over the folder of original SLHA files.
+
 
 ### Sbottom Analysis (CheckMATE) ###
 
