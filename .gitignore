@@ -13,5 +13,9 @@ CheckMATE3
 HepMC
 MadAnalysis5
 checkmateCard_*.dat
-myCheckMateFiles/validation_slha/*slha
-myCheckMateFiles/validation_results/*
+myCheckMate3Files/validation/validation_slha
+myCheckMate3Files/validation/validation_results
+myCheckMate2Files/validation/validation_slha
+myCheckMate2Files/validation/validation_results
+Feynrules/LQDM_UFO/py3_model.pkl
+*.ipynb_checkpoints
