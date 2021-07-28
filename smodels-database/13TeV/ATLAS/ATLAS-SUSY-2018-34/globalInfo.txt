@@ -1,0 +1,12 @@
+id: ATLAS-SUSY-2018-34
+sqrts: 13*TeV
+lumi: 139.0/fb
+prettyName: b-jets + Etmiss
+url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2018-34/
+arxiv: https://arxiv.org/abs/2101.12527
+publication: https://link.springer.com/article/10.1007/JHEP05(2021)093
+contact: atlas-phys-susy-conveners@cern.ch
+comment: Only T2bb upper limits implemented. Values digitized by hand.
+private: False
+implementedBy: Andre Lessa
+lastUpdate: 2021/7/27
