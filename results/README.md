@@ -26,7 +26,7 @@ The latest searches containing one b-jet plus MET in the final state are listed 
 #### b or c-jets plus MET ####
 
   * <ins>**b-jets or c-jets plus MET (35.9/fb)**</ins>: [CMS-SUS-16-032](http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-032/) (arXiv:1707.07274)
-  * <ins>b-jet plus MET (139/fb)</ins>: [ATLAS-SUSY-2018-34](https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2018-34/) (arXiv:2101.12527)
+  * <ins>*b-jet plus MET (139/fb)*</ins>: [ATLAS-SUSY-2018-34](https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2018-34/) (arXiv:2101.12527)
 
 #### tau plus MET ####  
   * <ins>**Tau plus MET (139/fb)**</ins>: [ATLAS-SUSY-2018-04](https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2018-04/) (arXiv:1911.06660)
