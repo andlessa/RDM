@@ -12,6 +12,9 @@ are:
  * [validation_cms_sus_16_032.ini](validation_cms_sus_16_032.ini)
  * [validation_cms_sus_19_005.ini](validation_cms_sus_19_005.ini)
 
+ * [validation_atlas_exot_2018_06.ini](validation_atlas_exot_2018_06.ini)
+
+
 The CMS-SUS-16-32 analysis provided the covariance matrices (see [CMS_data](./validation_plots/CMS_data)), which are used
 for computing the exclusion curve in the validation plots.
 The calculation of the combined results can be done running:
@@ -20,7 +23,7 @@ The calculation of the combined results can be done running:
 ./addCombinedLimit.py -f <results folder>
 ``
 
-where results_folder is the folder containing the CheckMATE results. The combination of signal regions will be added to the total_results.txt file as a new signal region and can be used to compute the exclusion curve.
+where results_folder is the folder containing the CheckMATE results. The combination of signal regions will be added to the total_results.txt file as a new signal regions and can be used to compute the exclusion curve.
 
 
 Although ATLAS-SUSY-2018-04 has provided likelihoods for computing a combined Stau limit, these *are not* used, thus the validation
