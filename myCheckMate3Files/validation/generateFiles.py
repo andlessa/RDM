@@ -8,7 +8,7 @@ import tarfile
 import itertools
 
 
-txname = "T2bb_comp"
+txname = "T2"
 
 if txname == "T2bb_comp":
     sb_masses = np.linspace(300.,600.,31)
@@ -139,5 +139,24 @@ if txname == "T1":
         with open(newfile,'w') as fnew:
             data[66] = '      1000021 %1.6e # ~g\n' %mg
             data[67] = '      1000022 %1.6e # ~chi_10\n' %mlsp
+            for l in data:
+                fnew.write(l)
+
+if txname == "T2":
+    template = 'T2.slha'
+    mlspV = np.linspace(0,100,31)
+    msqV = np.linspace(400,2000,33)
+    ftemplate = open(template, 'r')
+    data = ftemplate.readlines()
+    ftemplate.close()
+    slhaFolder = './validation_slha/'
+    for msq,mlsp in itertools.product(msqV,mlspV):
+        if mlsp > msq: continue
+        if mlsp == 0.0: mlsp = 10.0
+        newfile = os.path.join(slhaFolder,'T2_%i_%i.slha' %(int(msq),int(mlsp)))
+        with open(newfile,'w') as fnew:
+            for i in range(68,76):
+                data[i] = data[i].replace('MSQUARK','%1.6e' %msq)
+            data[90] = data[90].replace('MLSP','%1.6e' %mlsp)
             for l in data:
                 fnew.write(l)
