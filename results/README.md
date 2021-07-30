@@ -1,12 +1,11 @@
 # RDM Results
 
-This folder contains the results for the RDM model. The modified version of CheckMATE has been used to identify the most relevant analyses
-for the two main benchmark scenarios:
+This folder contains the results for the RDM model. The recasting tools SModelS and CheckMATE (with new analyses added) have been used to identify the most relevant analyses for the two main benchmark scenarios:
 
  * BS1': (&lambda;<sub>L</sub>)<sub>33</sub> = 0.875, (&lambda;<sub>R</sub>)<sub>33</sub> = 0.375, m<sub>S<sub>1</sub></sub> = 1.25 TeV
  * BS2': (&lambda;<sub>L</sub>)<sub>33</sub> = 0.3, (&lambda;<sub>R</sub>)<sub>23</sub> = 1.25, m<sub>S<sub>1</sub></sub> = 1.25 TeV
 
- The first benchmark (BS1') has the &chi;<sub>1</sub> decaying to &chi;<sub>0</sub> + b  + &nu; (40-80%), to &chi;<sub>0</sub> + t  + &tau; (0-30%) and to &chi;<sub>0</sub> + c  + &tau; (0-30%), while BS2' has &chi;<sub>1</sub> decaying almost 100% to &chi;<sub>0</sub> + c + &tau;.
+The first benchmark (BS1') has the &chi;<sub>1</sub> decaying to &chi;<sub>0</sub> + b  + &nu; (40-80%), to &chi;<sub>0</sub> + t  + &tau; (0-30%) and to &chi;<sub>0</sub> + c  + &tau; (0-30%), while BS2' has &chi;<sub>1</sub> decaying almost 100% to &chi;<sub>0</sub> + c + &tau;.
 In both benchmarks the &chi;<sub>1</sub> and &chi;<sub>0</sub> masses are free parameters.
 
 
@@ -16,7 +15,7 @@ In both benchmarks the &chi;<sub>1</sub> and &chi;<sub>0</sub> masses are free p
 
 MET searches for final states containing b's, c's, tau's, multijets and monojet searches can be used to test the pair production of &chi;<sub>1</sub>.
 
-The latest searches containing one b-jet plus MET in the final state are listed below. The following notation is used:
+The latest searches containing jets, b-jets or taus plus MET in the final state are listed below. The following notation is used:
 
  * <ins>underlined</ins>: the search is included in the paper
  * **bold**: the search can be re-interpreted using CheckMATE
@@ -38,16 +37,20 @@ The latest searches containing one b-jet plus MET in the final state are listed 
 
 #### Multijets plus MET ####
 
-* <ins>*Multijets plus MET (139/fb)*</ins>: [ATLAS-SUSY-2018-22](https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2018-22/) (arXiv:2010.14293)
+* <ins>**Multijets plus MET (139/fb)**</ins>: [ATLAS-SUSY-2018-22](https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2018-22/) (arXiv:2010.14293) (only the CONF-NOTE version of this search, [CONF-2019-040](https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2019-040/) is implemented in CheckMATE)
 * *Multijets plus MET (137/fb)*: [CMS-SUS-19-006](http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-19-006/index.html) (arXiv:1908.04722)
 * **Hadronic MT2 (137/fb)**: [CMS-SUS-19-005](http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-19-005/index.html) (arXiv:1909.03460)
 * *Hadronic MT2 (35.9/fb)*: [CMS-SUS-16-036](http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-036/index.html) (arXiv:1705.04650)
 
 
 
+### BS1' Results ###
+
+The exclusion obtained by SModelS relies on the assumption that the efficiencies for  &chi;<sub>1</sub> &chi;<sub>1</sub> production followed by &chi;<sub>1</sub> &#8594; &chi;<sub>0</sub> + b  + &nu;  are the same as for sbottom production followed by a decay to bottom plus MET.
 
 
-### BS1' ###
+
+
 
 --------Everything below needs to be updated-----------------
 

@@ -31,8 +31,8 @@ def main(inputFolder,outputFolder):
         for i,l in enumerate(data):
             if '3    5  16  5000522' in l:
                 l = l.replace('3    5  16  5000522','2    5  5000522')
-            # elif '3    4  15  5000522' in l:
-                # l = l.replace('3    4  15  5000522','2    15  5000522')
+            elif '3    4  15  5000522' in l:
+                l = l.replace('3    4  15  5000522','2    15  5000522')
 
             elif 'XSECTION' in l:
                 if '~chi1~ ~chi1' in l:

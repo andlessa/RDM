@@ -51,6 +51,8 @@ for slhaFile in glob.glob(slhaFolder+'/T2_*.slha'):
 
 recastData = np.array(recastData)
 
+## %%
+print(recastData[:,0])
 
 ##  %% --------------------Best SR:
 ## Get exclusion contours for combined results (signal +- 20%)
