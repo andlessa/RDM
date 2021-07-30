@@ -144,7 +144,7 @@ if txname == "T1":
 
 if txname == "T2":
     template = 'T2.slha'
-    mlspV = np.linspace(0,100,31)
+    mlspV = np.linspace(0,1000,31)
     msqV = np.linspace(400,2000,33)
     ftemplate = open(template, 'r')
     data = ftemplate.readlines()
@@ -154,9 +154,10 @@ if txname == "T2":
         if mlsp > msq: continue
         if mlsp == 0.0: mlsp = 10.0
         newfile = os.path.join(slhaFolder,'T2_%i_%i.slha' %(int(msq),int(mlsp)))
+        newdata = data[:]
         with open(newfile,'w') as fnew:
             for i in range(68,76):
-                data[i] = data[i].replace('MSQUARK','%1.6e' %msq)
-            data[90] = data[90].replace('MLSP','%1.6e' %mlsp)
-            for l in data:
+                newdata[i] = newdata[i].replace('MSQUARK','%1.6e' %msq)
+            newdata[90] = newdata[90].replace('MLSP','%1.6e' %mlsp)
+            for l in newdata:
                 fnew.write(l)

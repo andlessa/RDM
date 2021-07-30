@@ -28,9 +28,9 @@ resultFolder = '../validation_results/atlas_conf_2019_040'
 slhaFolder = '../validation_slha/'
 recastData = []
 srRecast = []
-for slhaFile in glob.glob(slhaFolder+'/T2bb*.slha'):
+for slhaFile in glob.glob(slhaFolder+'/T2_*.slha'):
     slhaData = pyslha.readSLHAFile(slhaFile)
-    msb = slhaData.blocks['MASS'][1000005]
+    msq = slhaData.blocks['MASS'][1000001]
     mlsp = slhaData.blocks['MASS'][1000022]
     resDir = os.path.splitext(os.path.basename(slhaFile))[0]
     resFile = os.path.join(resultFolder,resDir,'evaluation',
@@ -46,10 +46,11 @@ for slhaFile in glob.glob(slhaFolder+'/T2bb*.slha'):
     robs = data['robs'][ibest]
     robscons = data['robscons'][ibest]
 
-    recastData.append([msb,mlsp,robs,robscons])
-    srRecast.append([msb,mlsp,bestSR])
+    recastData.append([msq,mlsp,robs,robscons])
+    srRecast.append([msq,mlsp,bestSR])
 
 recastData = np.array(recastData)
+
 
 ##  %% --------------------Best SR:
 ## Get exclusion contours for combined results (signal +- 20%)
