@@ -52,7 +52,7 @@ for slhaFile in glob.glob(slhaFolder+'/T2_*.slha'):
 recastData = np.array(recastData)
 
 ## %%
-print(recastData[:,0])
+print(recastData.shape)
 
 ##  %% --------------------Best SR:
 ## Get exclusion contours for combined results (signal +- 20%)
@@ -75,9 +75,9 @@ for level,curves in contours.items():
             # continue
             plt.plot(curve[:,0],curve[:,1],
                 linestyle='--',linewidth=4,color=color)
-plt.plot(offCurve['msb'],offCurve['mlsp'],linewidth=4,
+plt.plot(offCurve['msq'],offCurve['mlsp'],linewidth=4,
             color='black',label='ATLAS-CONF-2019-040')
-plt.xlabel(r'$m_{\tilde{b}}$ (GeV)')
+plt.xlabel(r'$m_{\tilde{q}}$ (GeV)')
 plt.ylabel(r'$m_{\tilde{\chi}_1^0}$ (GeV)')
 # for pt in recastData:
     # if 0.5 < pt[2] < 0.9:
@@ -85,6 +85,6 @@ plt.ylabel(r'$m_{\tilde{\chi}_1^0}$ (GeV)')
                     # fontsize=10)
 cb.set_label("r")
 plt.legend()
-plt.title(r'$\tilde{b} \tilde{b}, \tilde{b} \to b + \tilde{\chi}_1^0$ (Best SR Exclusion, $r_{cons}$)')
-plt.savefig("atlas_conf_2019_040_T2bb.png")
+plt.title(r'$\tilde{q} \tilde{q}, \tilde{q} \to q + \tilde{\chi}_1^0$ (Best SR Exclusion, $r_{cons}$)')
+plt.savefig("atlas_conf_2019_040_T2.png")
 plt.show()
