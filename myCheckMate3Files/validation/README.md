@@ -69,3 +69,6 @@ using the data stored in [validation_slha.tar.gz](./validation_slha.tar.gz) and 
 
 
 ![Alt text](validation_plots/atlas_conf_2019_040_T2.png?raw=true "Validation Plot")
+
+
+![Alt text](validation_plots/atlas_conf_2019_040_T2_delta.png?raw=true "Validation Plot")

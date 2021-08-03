@@ -46,10 +46,16 @@ The latest searches containing jets, b-jets or taus plus MET in the final state 
 
 ### BS1' Results ###
 
+#### SModelS Exclusion ####
+
 The exclusion obtained by SModelS relies on the assumption that the efficiencies for  &chi;<sub>1</sub> &chi;<sub>1</sub> production followed by &chi;<sub>1</sub> &#8594; &chi;<sub>0</sub> + b  + &nu;  are the same as for sbottom production followed by a decay to bottom plus MET.
+The result is shown below:
 
+![Alt text](BS1p_SModelS.png?raw=true "BS1p exclusion SModelS")
 
+Most of the results are limit to mass differences above 10-20 GeV, resulting in the sudden cut of the exclusion curves. However [ATLAS-SUSY-2018-34](https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2018-34/) goes all the way down to 5 GeV, providing the strongest constraints for the compressed region.
 
+We also point out that [CMS-SUS-16-032](http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-032) only provide results for a mass difference larger than 25 GeV, so the compressed region is not tested by the upper limit map. 
 
 
 --------Everything below needs to be updated-----------------
