@@ -99,14 +99,14 @@ plt.ylabel(r'$m_{\tilde{\chi}_1^0}$ (GeV)')
                     # fontsize=10)
 cb.set_label("r")
 plt.legend()
-plt.title(r'$\tilde{b} \tilde{b}, \tilde{b} \to b + \tilde{\chi}_1^0$ (Best SR Exclusion, $r_{cons}$)')
+plt.title(r'$\tilde{b} \tilde{b}, \tilde{b} \to b + \tilde{\chi}_1^0$ (Best SR Exclusion, $r_{obs}$)')
 plt.savefig("cms_sus_16_032_T2bb_best.png")
 plt.show()
 
 
 ## %% --------------------Combined SR:
 ## Get exclusion contours for combined results (signal +- 20%)
-contours = getContour(recastData[:,0],recastData[:,1],recastData[:,5],levels=[0.8,1.0,1.2])
+contours = getContour(recastData[:,0],recastData[:,1],recastData[:,4],levels=[0.8,1.0,1.2])
 
 
 # %% plot result
@@ -135,6 +135,6 @@ plt.ylabel(r'$m_{\tilde{\chi}_1^0}$ (GeV)')
                     # fontsize=10)
 cb.set_label("r")
 plt.legend()
-plt.title(r'$\tilde{b} \tilde{b}, \tilde{b} \to b + \tilde{\chi}_1^0$ (Combined Exclusion, $r_{cons}$)')
+plt.title(r'$\tilde{b} \tilde{b}, \tilde{b} \to b + \tilde{\chi}_1^0$ (Combined Exclusion, $r_{obs}$)')
 plt.savefig("cms_sus_16_032_T2bb.png")
 plt.show()

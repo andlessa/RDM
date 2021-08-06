@@ -48,48 +48,35 @@ The latest searches containing jets, b-jets or taus plus MET in the final state 
 
 #### SModelS Exclusion ####
 
-The exclusion obtained by SModelS relies on the assumption that the efficiencies for  &chi;<sub>1</sub> &chi;<sub>1</sub> production followed by &chi;<sub>1</sub> &#8594; &chi;<sub>0</sub> + b  + &nu;  are the same as for sbottom production followed by a decay to bottom plus MET.
-The result is shown below:
+The exclusion obtained by SModelS **relies on the assumption that the efficiencies for  &chi;<sub>1</sub> &chi;<sub>1</sub> production followed by &chi;<sub>1</sub> &#8594; &chi;<sub>0</sub> + b  + &nu;  are the same as for sbottom production followed by a decay to bottom plus MET**.
+The result is shown below (the big oscillations in the exclusion curve between 700 GeV and 800 GeV are due to gaps in the ATLAS upper limit map):
 
 ![Alt text](BS1p_SModelS.png?raw=true "BS1p exclusion SModelS")
 
-Most of the results are limit to mass differences above 10-20 GeV, resulting in the sudden cut of the exclusion curves. However [ATLAS-SUSY-2018-34](https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2018-34/) goes all the way down to 5 GeV, providing the strongest constraints for the compressed region.
+Most of the results are limited to mass differences above 10-20 GeV, resulting in the sudden cut of the exclusion curves. However [ATLAS-SUSY-2018-34](https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2018-34/) goes all the way down to 5 GeV, providing the strongest constraints for the compressed region.
 
-We also point out that [CMS-SUS-16-032](http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-032) only provide results for a mass difference larger than 25 GeV, so the compressed region is not tested by the upper limit map. 
+We also point out that [CMS-SUS-16-032](http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-032) only provide results for a mass difference larger than 25 GeV, so the compressed region is not tested by the upper limit map.
 
+#### CheckMATE Exclusion ####
 
---------Everything below needs to be updated-----------------
+The [ATLAS-SUSY-2018-04](https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2018-04/), [CMS-SUS-16-032](http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-032/), [CMS-SUS-19-005](http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-19-005/index.html) and [ATLAS-EXOT-2018-06](http:/atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/EXOT-2018-06/) analyses have been added to CheckMATE in order to test this scenario.
 
-In this scenario we have BR(&chi;<sub>0</sub> + b + &nu;) ~ 50%, so the most relevant LHC searches are:
+For the [CMS-SUS-16-032](http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-032/) the covariance matrices provided by CMS were also used to combine the signal regions and obtain stronger limits (following the SModelS implementation and [CMS-NOTE-2017-001](https://cds.cern.ch/record/2242860?ln=en)).
 
- * Hadronic MT2 (137/fb): [CMS-SUS-19-005](http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-19-005/index.html)
- * b-jets plus MET (35.9/fb): [CMS-SUS-16-032](http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-032/index.html)
- * Hadronic MT2 (35.9/fb): [CMS-SUS-16-036](http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-036/index.html)
+The results are shown below:
 
-The hadronic MT2 analyses are relevant for large mass differences, while the b-jet analysis is more relevant at low mass gaps as shown below:
-
-![Alt text](T2bb_SModelSexclusion_BM2.png?raw=true "BM1 exclusion")
-
-The above curves are approximate, because they rely on the assumption that the &chi;<sub>0</sub> + b + &nu; decay presents the same
-kinematics as the sbottom to bottom + neutralino (T2bb) decay. The [CMS-SUS-19-005](http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-19-005/index.html)
-and [CMS-SUS-16-032](http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-032/index.html) analyses have been implemented
-in CheckMATE (see [validation](../myCheckMateFiles/validation) ). Furthermore the [CMS-SUS-16-032](http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-032/index.html)
-analysis has provided covariance matrices to allow for a combination of signal regions. This greatly improves the sensitivity of the analysis
-and it performs better than the [CMS-SUS-19-005](http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-19-005/index.html) (using the
-best signal region only).
-
-Therefore only the [CMS-SUS-16-032](http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-032/index.html) is considered,
-using the combination of signal regions, following the SModelS implementation and [CMS-NOTE-2017-001](https://cds.cern.ch/record/2242860?ln=en):
-
-![Alt text](BM2_exclusionAll.png?raw=true "BM2 exclusion")
-
-The limits are somewhat weaker than the SModelS rescaling because we adopt a conservative estimate of the reach including a 20% signal uncertainty
-according to the CheckMATE prescription.
-On the other hand, the reach extends to smaller mass gaps when compared to the ones obtained by SModelS because the official CMS upper limit
-grid for T2bb only goes down to 25 GeV.
+![Alt text](BS1p_CheckMate.png?raw=true "BS1p exclusion CheckMATE")
 
 
-![Alt text](exclusion_BM2.png?raw=true "BM2 exclusion")
+The limits are comparable to the ones obtained by SModelS. However the [ATLAS-SUSY-2018-34](https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2018-34/) analysis is not available in CheckMATE. In addition, the [CMS-SUS-16-032](http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-032/) available in SModelS only extends down to 25 GeV mass difference. The extremely compressed region, however, can be tested by this analysis due to the signal regions which test very soft b's.
+
+We also point out that the strong limits obtained by [ATLAS-CONF-2019-040](https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2019-040/) in the compressed region might not be reliable (see the compressed region in this [validation plot](../myCheckMate3Files/validation/validation_plots/atlas_conf_2019_040_T2_delta.png)). Hence this analysis will not be considered.
+
+### Combined Exclusion ###
+
+The combined SModelS and CheckMATE exclusion is shown below. The exclusion curve has been smoothed out a bit to avoid interpolation issues.
+
+![Alt text](BS1p_exclusion.png?raw=true "BS1p exclusion")
 
 ### BS2' ###
 
