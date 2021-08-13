@@ -59,7 +59,7 @@ We also point out that [CMS-SUS-16-032](http://cms-results.web.cern.ch/cms-resul
 
 #### CheckMATE Exclusion ####
 
-The [ATLAS-SUSY-2018-04](https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2018-04/), [CMS-SUS-16-032](http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-032/), [CMS-SUS-19-005](http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-19-005/index.html) and [ATLAS-EXOT-2018-06](http:/atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/EXOT-2018-06/) analyses have been added to CheckMATE in order to test this scenario.
+The  [CMS-SUS-16-032](http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-032/), [CMS-SUS-19-005](http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-19-005/index.html) and [ATLAS-EXOT-2018-06](http:/atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/EXOT-2018-06/) analyses have been added to CheckMATE in order to test this scenario.
 
 For the [CMS-SUS-16-032](http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-032/) the covariance matrices provided by CMS were also used to combine the signal regions and obtain stronger limits (following the SModelS implementation and [CMS-NOTE-2017-001](https://cds.cern.ch/record/2242860?ln=en)).
 
@@ -80,21 +80,26 @@ The combined SModelS and CheckMATE exclusion is shown below. The exclusion curve
 
 ### BS2' ###
 
-In this scenario we have BR(&chi;<sub>0</sub> + c + &tau;) ~ 100%, so the most relevant LHC searches are:
 
- * Hadronic taus plus MET (139/fb) : [ATLAS-SUSY-2018-04](https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2018-04/)
- * Hadronic MT2 (137/fb): [CMS-SUS-19-005](http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-19-005/index.html)
- * Soft OS leptons (35.9/fb): [CMS-SUS-16-048](http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-048/index.html)
+#### SModelS Exclusion ####
+
+The exclusion obtained by SModelS **relies on the assumption that the efficiencies for  &chi;<sub>1</sub> &chi;<sub>1</sub> production followed by &chi;<sub>1</sub> &#8594; &chi;<sub>0</sub> + c  + &tau;  are the same as for stau production followed by a decay to &tau; plus MET**.
+The upper limit maps for staus end around 450 GeV, so the
+exclusion is limited to these values, as shown below:
+
+![Alt text](BS2p_SModelS.png?raw=true "BS1p exclusion SModelS")
 
 
-The ATLAS analysis dominate over most of parameter space, while the CMS ones are mostly relevant in the compressed region.
-The [ATLAS-SUSY-2018-04](https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2018-04/)
-and [CMS-SUS-19-005](http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-19-005/index.html) analyses have been implemented
-in CheckMATE (see [validation](../myCheckMateFiles/validation) ).
-However, since the mono-jet searches have equal or better coverage than the CMS analyses,
-we only include the [ATLAS-SUSY-2018-04](https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2018-04/)
-result in the final exclusion curve:
+There is also a small region excluded by the (suppressed) decays to b plus MET.
 
-![Alt text](BM1_exclusionAll.png?raw=true "BM1 exclusion")
 
-![Alt text](exclusion_BM1.png?raw=true "BM1 exclusion curve")
+#### CheckMATE Exclusion ####
+
+The [ATLAS-SUSY-2018-04](https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2018-04/),  [CMS-SUS-19-005](http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-19-005/index.html) and [ATLAS-EXOT-2018-06](http:/atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/EXOT-2018-06/) analyses have been added to CheckMATE in order to test this scenario. The [CMS-SUS-16-032](http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-032/) has a veto for hadronically decaying taus, which reduces its efficiency for the signal.
+The results are shown below:
+
+![Alt text](BS2p_CheckMate.png?raw=true "BS1p exclusion CheckMATE")
+
+As it can be seen the mono-jet ([ATLAS-EXOT-2018-06](http:/atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/EXOT-2018-06/)) and hadronic MT2 ([CMS-SUS-19-005](http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-19-005/index.html)) searches are sensitive to the compressed region, while the soft lepton search ([CMS-SUS-16-048](http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-16-048/index.html)) and the tau plus MET search ([ATLAS-SUSY-2018-04](https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2018-04/)) exclude larger mass differences.
+
+Once again the [ATLAS-CONF-2019-040](https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2019-040/) analysis in the compressed region might not be reliable (see the compressed region in this [validation plot](../myCheckMate3Files/validation/validation_plots/atlas_conf_2019_040_T2_delta.png)). Hence this analysis is not considered.
