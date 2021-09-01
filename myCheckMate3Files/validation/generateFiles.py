@@ -8,7 +8,7 @@ import tarfile
 import itertools
 
 
-txname = "T2"
+txname = "T6bbWWoff"
 
 if txname == "T2bb_comp":
     sb_masses = np.linspace(300.,600.,31)
@@ -159,5 +159,30 @@ if txname == "T2":
             for i in range(68,76):
                 newdata[i] = newdata[i].replace('MSQUARK','%1.6e' %msq)
             newdata[90] = newdata[90].replace('MLSP','%1.6e' %mlsp)
+            for l in newdata:
+                fnew.write(l)
+
+
+if txname == "T6bbWWoff":
+    template = 'T6bbWWoff.template'
+    deltaMV = np.linspace(10,100,20)
+    mstV = np.linspace(300,500,10)
+    ftemplate = open(template, 'r')
+    data = ftemplate.readlines()
+    ftemplate.close()
+    slhaFolder = './validation_slha/'
+    for mst,deltaM in itertools.product(mstV,deltaMV):
+        mlsp = mst-deltaM
+        mc1 = (mst+mlsp)/2.0
+        if mlsp == 0.0: mlsp = 10.0
+        if mlsp > mst: continue
+        if mc1 > mst: continue
+        if mc1 < mlsp: continue
+        newfile = os.path.join(slhaFolder,'T6bbWWoff_%i_%i.slha' %(int(mst),int(mlsp)))
+        newdata = data[:]
+        with open(newfile,'w') as fnew:
+            newdata[29] = newdata[29].replace('M0','%1.6e' %mst)
+            newdata[41] = newdata[41].replace('M2','%1.6e' %mlsp)
+            newdata[45] = newdata[45].replace('M1','%1.6e' %mc1)
             for l in newdata:
                 fnew.write(l)
