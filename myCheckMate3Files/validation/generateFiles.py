@@ -165,8 +165,8 @@ if txname == "T2":
 
 if txname == "T6bbWWoff":
     template = 'T6bbWWoff.template'
-    deltaMV = np.linspace(10,100,20)
-    mstV = np.linspace(300,500,10)
+    deltaMV = np.linspace(10,100,21)
+    mstV = np.linspace(300,500,11)
     ftemplate = open(template, 'r')
     data = ftemplate.readlines()
     ftemplate.close()
@@ -181,8 +181,8 @@ if txname == "T6bbWWoff":
         newfile = os.path.join(slhaFolder,'T6bbWWoff_%i_%i.slha' %(int(mst),int(mlsp)))
         newdata = data[:]
         with open(newfile,'w') as fnew:
-            newdata[29] = newdata[29].replace('M0','%1.6e' %mst)
-            newdata[41] = newdata[41].replace('M2','%1.6e' %mlsp)
-            newdata[45] = newdata[45].replace('M1','%1.6e' %mc1)
+            newdata[55] = newdata[55].replace('M0','%1.6e' %mst)
+            newdata[67] = newdata[67].replace('M2','%1.6e' %mlsp)
+            newdata[71] = newdata[71].replace('M1','%1.6e' %mc1)
             for l in newdata:
                 fnew.write(l)
