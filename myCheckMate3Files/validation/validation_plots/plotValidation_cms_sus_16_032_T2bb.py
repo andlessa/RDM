@@ -15,7 +15,7 @@ pd.options.mode.chained_assignment = None #Disable copy warnings
 #Define plotting style:
 sns.set() #Set style
 sns.set_style('ticks',{'font.family':'serif', 'font.serif':'Times New Roman'})
-sns.set_context('paper', font_scale=1.8)
+sns.set_context('paper', font_scale=2.5)
 cm = plt.cm.get_cmap('RdYlBu')
 
 # %% Load data
@@ -136,15 +136,16 @@ for level,curves in contours.items():
 plt.fill_between(contours[1.0][0][:,0], contours[1.0][0][:,1], color='r', alpha=0.2)
 plt.plot(offCurve['msb'],offCurve['mlsp'],linewidth=4,
             color='black',label='CMS-SUS-16-032')
-plt.xlabel(r'$m_{\tilde{b}}$ (GeV)')
-plt.ylabel(r'$m_{\tilde{\chi}_1^0}$ (GeV)')
+plt.xlabel(r'$\mathregular{m_{\tilde{b}}}$ (GeV)',fontsize=30)
+plt.ylabel(r'$\mathregular{m_{\tilde{\chi}_1^0}}$ (GeV)',fontsize=30)
 # for pt in recastData:
     # if 0.5 < pt[2] < 0.9:
         # plt.annotate('%1.1f'%pt[2],(pt[0],pt[1]),
                     # fontsize=10)
 # cb.set_label("r")
-plt.ylim(0,800)
-plt.legend(loc='upper left')
-plt.title(r'$\tilde{b} \tilde{b}, \tilde{b} \to b + \tilde{\chi}_1^0$ (Non-Compressed SRs)')
+plt.ylim(0,1000)
+plt.legend(loc='upper left',framealpha=1.0)
+plt.title(r'CMS $b/c$ plus MET: $pp \to \tilde{b} \tilde{b}, \tilde{b} \to b + \tilde{\chi}_1^0$')
+plt.tight_layout()
 plt.savefig("cms_sus_16_032_T2bb.png")
 plt.show()

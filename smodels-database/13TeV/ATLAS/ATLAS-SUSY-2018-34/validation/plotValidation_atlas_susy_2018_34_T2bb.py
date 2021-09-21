@@ -14,7 +14,7 @@ pd.options.mode.chained_assignment = None #Disable copy warnings
 #Define plotting style:
 sns.set() #Set style
 sns.set_style('ticks',{'font.family':'serif', 'font.serif':'Times New Roman'})
-sns.set_context('paper', font_scale=1.8)
+sns.set_context('paper', font_scale=2.5)
 cm = plt.cm.get_cmap('RdYlBu')
 
 # %% Load data
@@ -69,10 +69,12 @@ for level,curves in contours.items():
 plt.fill_between(contours[1.0][0][:,0], contours[1.0][0][:,1], color='r', alpha=0.2)
 plt.plot(offCurve['msb'],offCurve['mlsp'],linewidth=4,
             color='black',label='ATLAS-SUSY-2018-34')
-plt.xlabel(r'$m_{\tilde{b}}$ (GeV)')
-plt.ylabel(r'$m_{\tilde{\chi}_1^0}$ (GeV)')
-plt.legend(loc=(0.02,0.2))
-plt.title(r'$\tilde{b} \tilde{b}, \tilde{b} \to b + \tilde{\chi}_1^0$ (SModelS)')
+plt.xlabel(r'$\mathregular{m_{\tilde{b}}}$ (GeV)',fontsize=30)
+plt.ylabel(r'$\mathregular{m_{\tilde{\chi}_1^0}}$ (GeV)',fontsize=30)
+plt.legend(loc='upper left',framealpha=1.0)
+plt.title(r'ATLAS $bb$ plus MET: $pp \to \tilde{b} \tilde{b}, \tilde{b} \to b + \tilde{\chi}_1^0$')
+plt.tight_layout()
+plt.ylim(100,1000)
 plt.xlim(400,1400)
 plt.savefig("atlas_susy_2018_34_T2bb.png")
 plt.show()

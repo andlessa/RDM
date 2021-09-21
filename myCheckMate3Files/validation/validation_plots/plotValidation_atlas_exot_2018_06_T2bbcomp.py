@@ -10,12 +10,13 @@ import pandas as pd
 from matplotlib import pyplot as plt
 import seaborn as sns
 from getContour import getContour
+from scipy.ndimage.filters import gaussian_filter1d
 
 pd.options.mode.chained_assignment = None #Disable copy warnings
 #Define plotting style:
 sns.set() #Set style
 sns.set_style('ticks',{'font.family':'serif', 'font.serif':'Times New Roman'})
-sns.set_context('paper', font_scale=1.8)
+sns.set_context('paper', font_scale=2.5)
 cm = plt.cm.get_cmap('RdYlBu')
 
 # %% Load data
@@ -53,14 +54,15 @@ contours = getContour(recastData[:,0],recastData[:,0]-recastData[:,1],recastData
 
 # %% plot result
 fig = plt.figure(figsize=(12,8))
-ax = plt.scatter(recastData[:,0],recastData[:,0]-recastData[:,1],
-    c=recastData[:,2],cmap=cm,vmin=0.0,vmax=2.0,s=70)
-cb = plt.colorbar(ax)
+# ax = plt.scatter(recastData[:,0],recastData[:,0]-recastData[:,1],
+    # c=recastData[:,2],cmap=cm,vmin=0.0,vmax=2.0,s=70)
+# cb = plt.colorbar(ax)
 for level,curves in contours.items():
     # if level != 1.0: continue
     npts = [len(c) for c in curves]
     for curve in curves:
         if len(curve) != max(npts): continue
+        contours[level] = [curve]
         if level == 1.0:
             ls = '-'
             label = r'Recast'
@@ -71,22 +73,27 @@ for level,curves in contours.items():
             ls = '--'
             label = None
 
-        plt.plot(curve[:,0],curve[:,1],c='r',label= label,linestyle=ls,linewidth=4)
 
-plt.fill_betweenx(contours[1.0][0][:,1], contours[1.0][0][:,0], color='r', alpha=0.2)
+
+        ysmoothed = gaussian_filter1d(curve[:,1], sigma=3)
+        plt.plot(curve[:,0],ysmoothed,c='r',label= label,linestyle=ls,linewidth=4)
+
+ysmoothed = gaussian_filter1d(contours[1.0][0][:,1], sigma=3)
+plt.fill_betweenx(ysmoothed, contours[1.0][0][:,0], color='r', alpha=0.2)
 plt.plot(offCurve['msb'],offCurve['msb']-offCurve['mlsp'],linewidth=4,
             color='black',label='ATLAS-EXOT-2018-06')
-plt.xlabel(r'$m_{\tilde{t}}$ (GeV)')
-plt.ylabel(r'$m_{\tilde{t}}-m_{\tilde{\chi}_1^0}$ (GeV)')
+plt.xlabel(r'$\mathregular{m_{\tilde{b}}}$ (GeV)',fontsize=30)
+plt.ylabel(r'$\mathregular{m_{\tilde{\chi}_1^0}}$ (GeV)',fontsize=30)
 # for pt in recastData:
-    # if pt[2] < 1.0:
+    # if 0.5 < pt[2] < 0.9:
         # plt.annotate('%1.1f'%pt[2],(pt[0],pt[1]),
                     # fontsize=10)
 # cb.set_label("r")
-plt.legend(loc='upper left')
-plt.xlim(200.,600)
-plt.ylim(0.,30)
 
-plt.title(r'$\tilde{b} \tilde{b}, \tilde{b} \to b + \tilde{\chi}_1^0$ (Best SR Exclusion)')
+plt.legend(loc='upper left',framealpha=1.0)
+plt.xlim(200.,600)
+plt.ylim(6.,25)
+plt.title(r'ATLAS monojet: $pp \to \tilde{b} \tilde{b}, \tilde{b} \to b + \tilde{\chi}_1^0$')
+plt.tight_layout()
 plt.savefig("atlas_exot_2018_06_T2bb.png")
 plt.show()

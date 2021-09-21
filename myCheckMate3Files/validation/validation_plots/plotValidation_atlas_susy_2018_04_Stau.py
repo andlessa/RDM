@@ -16,7 +16,7 @@ pd.options.mode.chained_assignment = None #Disable copy warnings
 #Define plotting style:
 sns.set() #Set style
 sns.set_style('ticks',{'font.family':'serif', 'font.serif':'Times New Roman'})
-sns.set_context('paper', font_scale=1.8)
+sns.set_context('paper', font_scale=2.5)
 cm = plt.cm.get_cmap('RdYlBu')
 
 # %% Load data
@@ -111,8 +111,8 @@ plt.savefig("atlas_susy_2018_04_StauEffs.png")
 
 
 ## %% Get exclusion contours for signal
-contoursHigh = getContour(rData[:,0],rData[:,1],rData[:,2],levels=[1.0])
-contoursLow = getContour(rData[:,0],rData[:,1],rData[:,3],levels=[1.0])
+contoursHigh = getContour(rData[:,0],rData[:,1],rData[:,2],levels=[0.8,1.0,1.2])
+contoursLow = getContour(rData[:,0],rData[:,1],rData[:,3],levels=[0.8,1.0,1.2])
 
 # %% Load data
 offCurveComb = np.genfromtxt('./ATLAS_data/HEPData-ins1765529-v2-Exclusion_contour_1_Obs.csv',
@@ -124,30 +124,59 @@ offCurveHigh = np.genfromtxt('./ATLAS_data/HEPData-ins1765529-v2-Exclusion_conto
 
 # %% Plot exclusion curve
 fig, axes = plt.subplots(nrows=1, ncols=2, figsize=(18,8))
-ax = axes[0].scatter(rData[:,0],rData[:,1],
-    c=rData[:,2],cmap=cm,vmin=0.0,vmax=2.0,s=70)
+# ax = axes[0].scatter(rData[:,0],rData[:,1],
+#     c=rData[:,2],cmap=cm,vmin=0.0,vmax=2.0,s=70)
 for level,curves in contoursHigh.items():
     for curve in curves:
-        axes[0].plot(curve[:,0],curve[:,1],label='Recast (r = %s)' %str(level),linestyle='--',linewidth=4)
+        if level == 1.0:
+            ls = '-'
+            label = r'Recast'
+        elif level == 0.8:
+            ls = '--'
+            label = r'Recast $\pm$ 20%'
+        elif level == 1.2:
+            ls = '--'
+            label = None
+        axes[0].plot(curve[:,0],curve[:,1],label=label,linestyle=ls,linewidth=4,c='r')
+
+axes[0].fill_betweenx(contoursHigh[1.0][0][:,1], contoursHigh[1.0][0][:,0], color='r', alpha=0.2)
 axes[0].plot(offCurveHigh['MSTAU_GeV'],offCurveHigh['MNEUTRALINO1_GeV'],linewidth=4,
         color='black',label='ATLAS-SUSY-2018-04 (High Mass)')
-
-ax = axes[1].scatter(rData[:,0],rData[:,1],
-    c=rData[:,3],cmap=cm,vmin=0.0,vmax=2.0,s=70)
+axes[0].set_ylim(0,200)
+axes[0].set_xlim(10,450)
+# ax = axes[1].scatter(rData[:,0],rData[:,1],
+#     c=rData[:,3],cmap=cm,vmin=0.0,vmax=2.0,s=70)
 for level,curves in contoursLow.items():
     for curve in curves:
-        axes[1].plot(curve[:,0],curve[:,1],label='Recast (r = %s)' %str(level),linestyle='--',linewidth=4)
+        if level == 1.0:
+            ls = '-'
+            label = r'Recast'
+        elif level == 0.8:
+            ls = '--'
+            label = r'Recast $\pm$ 20%'
+        elif level == 1.2:
+            ls = '--'
+            label = None
+        axes[1].plot(curve[:,0],curve[:,1],label=label,linestyle=ls,linewidth=4,c='r')
+
+axes[1].fill_betweenx(contoursLow[1.0][0][:,1], contoursLow[1.0][0][:,0], color='r', alpha=0.2)
 axes[1].plot(offCurveLow['MSTAU_GeV'],offCurveLow['MNEUTRALINO1_GeV'],linewidth=4,
         color='black',label='ATLAS-SUSY-2018-04 (Low Mass)')
-axes[0].legend()
-axes[0].set_xlabel(r'$m_{\tilde{\tau}}$ (GeV)')
-axes[0].set_ylabel(r'$m_{\tilde{\chi}_1^0}$ (GeV)')
-axes[0].set_title(r'$\tilde{\tau} \tilde{\tau}, \tilde{\tau} \to \tau + \tilde{\chi}_1^0$ (SR-HighMass)')
+
+
+axes[0].legend(loc='upper left',framealpha=1.0)
+axes[0].set_xlabel(r'$\mathregular{m_{\tilde{\tau}}}$ (GeV)',fontsize=30)
+axes[0].set_ylabel(r'$\mathregular{m_{\tilde{\chi}_1^0}}$ (GeV)',fontsize=30)
+# axes[0].set_title(r'$\tilde{\tau} \tilde{\tau}, \tilde{\tau} \to \tau + \tilde{\chi}_1^0$')
 axes[1].legend()
 axes[1].set_xlabel(r'$m_{\tilde{\tau}}$ (GeV)')
-axes[1].set_title(r'$\tilde{\tau} \tilde{\tau}, \tilde{\tau} \to \tau + \tilde{\chi}_1^0$ (SR-lowMass)')
-
-cb = fig.colorbar(ax, ax=axes.ravel().tolist())
-cb.set_label(r'$r = \sigma/\sigma_{UL}^{95}$')
+# axes[1].set_title(r'$\tilde{\tau} \tilde{\tau}, \tilde{\tau} \to \tau + \tilde{\chi}_1^0$')
+axes[1].set_ylim(0,200)
+axes[1].set_xlim(10,300)
+plt.suptitle(r'ATLAS $\tau \tau$ plus MET: $pp \to \tilde{\tau} \tilde{\tau}, \tilde{\tau} \to \tau + \tilde{\chi}_1^0$')
+# cb = fig.colorbar(ax, ax=axes.ravel().tolist())
+# cb.set_label(r'$r = \sigma/\sigma_{UL}^{95}$')
+plt.tight_layout()
 plt.savefig("atlas_susy_2018_04_Stau.png")
+
 plt.show()
