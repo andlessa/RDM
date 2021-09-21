@@ -142,18 +142,23 @@ if echo "$answer" | grep -iq "^y" ;then
   make;
   cd $homeDIR
 fi
-#
-#
-# echo -n "Install MadAnalysis (y/n)? "
-# madana=v1.9_beta
-# URL=https://code.launchpad.net/~ma5dev/madanalysis5/$madana
-# read answer
-# if echo "$answer" | grep -iq "^y" ;then
-#   echo "[installer] getting MadAnalysis";
-#   bzr branch lp:~ma5dev/madanalysis5/v1.9_beta;
-#   mv v1.9_beta MadAnalysis5
-#   echo "[installer] done";
-# fi
+
+
+echo -n "Install MadAnalysis (y/n)? "
+madana=v1.9_beta
+URL=https://code.launchpad.net/~ma5dev/madanalysis5/$madana
+read answer
+if echo "$answer" | grep -iq "^y" ;then
+   echo "[installer] getting MadAnalysis";
+   bzr branch lp:~ma5dev/madanalysis5/v1.9_beta;
+   mv v1.9_beta MadAnalysis5
+   cd MadAnalysis5/bin
+   echo -e "install fastjet\ninstall zlib\ninstall delphes\ninstall PAD\nexit\n" > mad_install.txt
+   ./ma5 -f < mad_install.txt
+   rm mad_install.txt
+   cd $homeDIR
+   echo "[installer] done";
+fi
 #
 #
 # echo -n "Install CutLang (y/n)? "

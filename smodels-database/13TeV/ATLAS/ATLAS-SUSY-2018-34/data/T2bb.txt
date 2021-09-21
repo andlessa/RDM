@@ -3,8 +3,8 @@ constraint: [[['b']],[['b']]]
 condition: None
 conditionDescription: None
 susyProcess: pp --> sbottom sbottom, sbottom  --> bottom lsp
-figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2018-34/figaux_01a.png;https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2018-34/figaux_01b.png
-dataUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2018-34/figaux_01a.png;https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2018-34/figaux_01b.png
+figureUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2018-34/figaux_01b.png;https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2018-34/figaux_01a.png
+dataUrl: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2018-34/figaux_01b.png;https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2018-34/figaux_01a.png
 source: ATLAS
 validated: True
 axes: [[x, x - y], [x, x - y]]; [[x, y], [x, y]]
