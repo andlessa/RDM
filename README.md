@@ -20,7 +20,7 @@ The searches used for obtaining the LHC exclusion rely on recasting through Chec
 
 
 
-More information about the CheckMATE implementation and validation can be found [here](./myCheckMateFiles3/validation/)
+More information about the CheckMATE implementation and validation can be found [here](./myCheckMate3Files/validation/)
 and more details about the results can be found in [results](./results).
 
 ## Basic Installation ##

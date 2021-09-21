@@ -48,33 +48,45 @@ for slhaFile in glob.glob(slhaFolder+'T2bbcomp*.slha'):
 recastData = np.array(recastData)
 
 ## %% Get exclusion contours for combined results (signal +- 20%)
-contours = getContour(recastData[:,0],recastData[:,1],recastData[:,2],levels=[0.8,1.0,1.2])
+contours = getContour(recastData[:,0],recastData[:,0]-recastData[:,1],recastData[:,2],levels=[0.8,1.0,1.2])
 
 
 # %% plot result
 fig = plt.figure(figsize=(12,8))
-ax = plt.scatter(recastData[:,0],recastData[:,1],
+ax = plt.scatter(recastData[:,0],recastData[:,0]-recastData[:,1],
     c=recastData[:,2],cmap=cm,vmin=0.0,vmax=2.0,s=70)
 cb = plt.colorbar(ax)
 for level,curves in contours.items():
-    if level != 1.0: continue
-    for i,curve in enumerate(curves):
-        if i == 0:
-            plt.plot(curve[:,0],curve[:,1],label='Recast (r = %s)' %str(level),
-                linestyle='--',linewidth=4)
-        else:
-            plt.plot(curve[:,0],curve[:,1],
-                linestyle='--',linewidth=4)
-plt.plot(offCurve['msb'],offCurve['mlsp'],linewidth=4,
+    # if level != 1.0: continue
+    npts = [len(c) for c in curves]
+    for curve in curves:
+        if len(curve) != max(npts): continue
+        if level == 1.0:
+            ls = '-'
+            label = r'Recast'
+        elif level == 0.8:
+            ls = '--'
+            label = r'Recast $\pm$ 20%'
+        elif level == 1.2:
+            ls = '--'
+            label = None
+
+        plt.plot(curve[:,0],curve[:,1],c='r',label= label,linestyle=ls,linewidth=4)
+
+plt.fill_betweenx(contours[1.0][0][:,1], contours[1.0][0][:,0], color='r', alpha=0.2)
+plt.plot(offCurve['msb'],offCurve['msb']-offCurve['mlsp'],linewidth=4,
             color='black',label='ATLAS-EXOT-2018-06')
-plt.xlabel(r'$m_{\tilde{b}}$ (GeV)')
-plt.ylabel(r'$m_{\tilde{\chi}_1^0}$ (GeV)')
+plt.xlabel(r'$m_{\tilde{t}}$ (GeV)')
+plt.ylabel(r'$m_{\tilde{t}}-m_{\tilde{\chi}_1^0}$ (GeV)')
 # for pt in recastData:
     # if pt[2] < 1.0:
         # plt.annotate('%1.1f'%pt[2],(pt[0],pt[1]),
                     # fontsize=10)
-cb.set_label("r")
-plt.legend()
-plt.title(r'$\tilde{t} \tilde{b}, \tilde{b} \to b + \tilde{\chi}_1^0$ (Best SR Exclusion)')
+# cb.set_label("r")
+plt.legend(loc='upper left')
+plt.xlim(200.,600)
+plt.ylim(0.,30)
+
+plt.title(r'$\tilde{b} \tilde{b}, \tilde{b} \to b + \tilde{\chi}_1^0$ (Best SR Exclusion)')
 plt.savefig("atlas_exot_2018_06_T2bb.png")
 plt.show()
